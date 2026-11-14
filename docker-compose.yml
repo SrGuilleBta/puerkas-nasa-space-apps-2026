@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: puerkas
+    ports:
+      - "8000:8000"
+    environment:
+      # Llave de la API de NASA (ver .env.example)
+      - NASA_API_KEY=${NASA_API_KEY:-DEMO_KEY}
