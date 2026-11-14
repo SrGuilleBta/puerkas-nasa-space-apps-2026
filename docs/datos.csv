@@ -1,0 +1,31 @@
+Dataset,Origen,Módulo,Qué aporta,Cobertura,Resolución,Acceso,Requiere login,URL,Prioridad,Verificado
+NASA POWER,NASA,Clima / Suelo,"Temp, precipitación, humedad, radiación, humedad de suelo, climatología",Global,~0.5° diario desde 1981,REST JSON,No,https://power.larc.nasa.gov/,MVP,Sí 2026-11-14
+SMAP,NASA,Suelo,Humedad superficial y estado congelado/descongelado,Global,9-36 km cada 2-3 días,Earthdata / CMR,Sí,https://www.earthdata.nasa.gov/data/platforms/space-based-platforms/smap,MVP,Metadatos CMR
+GPM IMERG,NASA,Clima,Precipitación global,Global,0.1° 30 min/diario,Earthdata / Worldview,Sí,https://gpm.nasa.gov/data,MVP,No
+MODIS / VIIRS,NASA,Línea de tiempo / Cultivos,NDVI/EVI y estrés de vegetación,Global,250 m-1 km,LP DAAC / Earthdata Search,Sí,https://lpdaac.usgs.gov/products/,MVP,No
+Landsat,NASA/USGS,Línea de tiempo,NDVI a escala de parcela y suelo desnudo,Global,30 m,EarthExplorer,Sí,https://earthexplorer.usgs.gov/,Fase 2,No
+ECOSTRESS,NASA,Suelo / Clima,Temperatura de superficie y evapotranspiración,Global (irregular),~70 m,Earthdata,Sí,https://ecostress.jpl.nasa.gov/data,Fase 2,No
+GLDAS / NLDAS,NASA,Suelo,"Humedad de suelo, ET, T y lluvia continuas (NLDAS solo EE. UU.)",Global / EE. UU.,0.25°,Earthdata Search,Sí,https://www.earthdata.nasa.gov/,Fase 2,No
+SRTM,NASA,Suelo / Ubicación,"Elevación, pendiente, erosión",Global,30 m,Earthdata,Sí,https://www.earthdata.nasa.gov/data/instruments/srtm,Fase 2,No
+GRACE / GRACE-FO,NASA,Clima,Tendencias de agua almacenada,Global,~300 km,Earthdata,Sí,https://www.earthdata.nasa.gov/,Opcional,No
+GEDI L4,NASA/UMD,Cultivos,Biomasa y dosel,Global (muestreo),25 m,gedi.umd.edu,Sí,https://gedi.umd.edu/data,Opcional,No
+Open-Meteo forecast,Externo,Principal / Clima,"Pronóstico 7 días, ET0, humedad y temp. de suelo",Global,Horario,REST JSON,No,https://open-meteo.com/,MVP,Sí 2026-11-14
+Open-Meteo geocoding,Externo,Ubicación,Nombre a lat/lon/zona horaria,Global,n/a,REST JSON,No,https://open-meteo.com/en/docs/geocoding-api,MVP,Sí 2026-11-14
+SoilGrids (ISRIC),Externo,Suelo,"pH, carbono orgánico, textura por profundidad",Global,250 m,REST JSON,No,https://rest.isric.org/soilgrids/v2.0/docs,MVP,Sí (null en zona urbana)
+FAO EcoCrop / GAEZ,Externo,Cultivos,"Rangos de T, lluvia, pH y ciclo; idoneidad",Global,n/a,Descarga web,No,https://gaez.fao.org/,MVP,No
+FAOSTAT precios al productor,Externo,Mercado,Precios anuales (1991+) y mensuales (2010+),193 países,País,Bulk CSV / API,No,https://www.fao.org/faostat/,MVP,Responde 200
+World Bank Pink Sheet,Externo,Mercado,Precios internacionales mensuales,Global,Mensual,Excel,No,https://www.worldbank.org/en/research/commodity-markets,Fase 2,Responde 200
+ERA5,Externo (ECMWF),Clima,Reanálisis horario,Global,~0.25°,CDS API,Sí (cuenta gratis),https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=overview,Fase 2,No
+Sentinel-2,Externo (ESA),Línea de tiempo,Imágenes multiespectrales para NDVI,Global,10-20 m,Copernicus Data Space,Sí,https://dataspace.copernicus.eu/,Fase 2,No
+OpenET,Externo,Clima / Suelo,ET a escala de parcela,Oeste de EE. UU.,Parcela,API,Sí,https://openetdata.org/,Fase 2 (frontera EE. UU.),No
+USDA CDL / CropScape,Externo (USDA),Cultivos,Clasificación de cultivos anual,EE. UU.,30 m,Web / API,No,https://nassgeodata.gmu.edu/CropScape/,Fase 2 (frontera EE. UU.),No
+USDA Web Soil Survey / SSURGO,Externo (USDA),Suelo,Propiedades de suelo detalladas,EE. UU.,Campo,Web / API,No,https://websoilsurvey.nrcs.usda.gov/app/,Fase 2 (frontera EE. UU.),No
+USDA NASS QuickStats,Externo (USDA),Mercado / Cultivos,"Rendimientos, superficie, producción",EE. UU.,Condado,API con llave gratis,Llave,https://quickstats.nass.usda.gov/,Fase 2 (frontera EE. UU.),No
+USDA AMS Market News,Externo (USDA),Mercado,Precios de commodities,EE. UU.,Mercado,API MARS,Llave,https://www.ams.usda.gov/market-news,Fase 2 (frontera EE. UU.),No
+PRISM,Externo (Oregon State),Clima,Climatología detallada,EE. UU.,4 km,Descarga,No,https://prism.oregonstate.edu/,Fase 2 (frontera EE. UU.),No
+SIAP Cierre de la Producción Agrícola,Externo (México),Cultivos / Mercado / Línea de tiempo,"Superficie, volumen, rendimiento y precio medio rural por municipio, cultivo, ciclo y modalidad",México,Municipio anual 1980-2025,CSV directo,No,https://nube.agricultura.gob.mx/datosAbiertos/Agricola.php,MVP,Sí 2026-11-14 (2024: 36992 filas)
+SMN/CONAGUA pronóstico municipal,Externo (México),Principal / Clima,"Tmax, Tmin, lluvia, humedad y viento por municipio",México,Municipio,JSON gzip,No,https://smn.conagua.gob.mx/tools/GUI/webservices/?method=1,MVP (opcional),Sí 2026-11-14
+SNIIM,Externo (México),Mercado,"Precios de mayoreo diarios de frutas, hortalizas, granos e insumos",México,Central de abasto,Web HTML (sin API),No,http://www.economia-sniim.gob.mx/,Fase 2,Sitio responde; sin API
+INEGI Edafología 1:250 000,Externo (México),Suelo,Tipos de suelo y erosión,México,1:250 000,Shapefile,No,https://www.inegi.org.mx/temas/edafologia/,Fase 2,Página responde
+INEGI Uso de suelo y vegetación,Externo (México),Línea de tiempo / Ubicación,Cobertura y uso de suelo,México,1:250 000,Shapefile,No,https://www.inegi.org.mx/temas/usosuelo/,Fase 2,No
+SIAP Avance agrícola,Externo (México),Línea de tiempo,Avance de siembra y cosecha del año en curso,México,Municipio,Web,No,https://nube.agricultura.gob.mx/avance_agricola/,Opcional,No

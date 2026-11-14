@@ -18,6 +18,8 @@ COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/app ./app
+# Datasets locales (SIAP, etc.); el código los lee desde /code/data
+COPY backend/data ./data
 COPY --from=frontend /frontend/dist ./static
 
 EXPOSE 8000
