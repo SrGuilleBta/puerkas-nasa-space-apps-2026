@@ -50,3 +50,9 @@ cd frontend && npm install && npm run dev   # http://localhost:5173
 ```
 
 El proxy de Vite manda `/api` al backend en `localhost:8000`.
+
+
+### DATOS
+
+https://docs.google.com/spreadsheets/d/1HQcgaiH6-ikuGKZWbB0F6XbkSEmYJTXf9zZksEYQKdY/edit?usp=sharing
+
