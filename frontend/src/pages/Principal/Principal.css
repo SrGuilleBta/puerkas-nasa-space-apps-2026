@@ -1,0 +1,769 @@
+/* ---------- Distribución de la página ---------- */
+.principal {
+  display: grid;
+  gap: 16px;
+}
+
+.principal__columna {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  min-width: 0;
+}
+
+/* En pantalla ancha: aviso arriba y dos columnas debajo */
+@media (min-width: 900px) {
+  .principal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .principal__aviso,
+  .principal__plan {
+    grid-column: 1 / -1;
+  }
+
+  .principal__columna {
+    gap: 20px;
+  }
+}
+
+/* ---------- Banner preventivo ---------- */
+.banner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(240, 109, 109, 0.25);
+  border-radius: 18px;
+  background: var(--coral-claro);
+}
+
+.banner__icono {
+  display: grid;
+  place-items: center;
+  grid-row: span 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(240, 109, 109, 0.18);
+  color: var(--coral);
+}
+
+.banner__titulo {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--coral);
+}
+
+.banner__texto {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--tinta-suave);
+}
+
+.banner__accion {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---------- Insignia y enlaces ---------- */
+.insignia {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.insignia i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--verde);
+}
+
+.enlace {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--verde-oscuro);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ---------- Pronóstico semanal ---------- */
+.dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.dia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px 0 10px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(0, 230, 118, 0.1), rgba(0, 230, 118, 0.04));
+}
+
+.dia--hoy {
+  border-color: var(--verde);
+  background: linear-gradient(180deg, rgba(0, 230, 118, 0.2), rgba(0, 230, 118, 0.06));
+}
+
+.dia__nombre {
+  position: relative;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--tinta-suave);
+}
+
+.dia__hoy {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: var(--verde);
+  color: var(--tinta);
+  font-size: 7px;
+}
+
+.dia__cielo {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.dia__cielo--sol {
+  background: var(--coral-claro);
+  color: var(--coral);
+}
+
+.dia__cielo--nube,
+.dia__cielo--lluvia {
+  background: rgba(240, 109, 109, 0.1);
+  color: var(--coral);
+}
+
+.dia__temp {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dia__lluvia {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 9px;
+  color: var(--verde-oscuro);
+}
+
+.hoy {
+  display: grid;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--borde);
+}
+
+.hoy__principal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hoy__icono {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--coral-claro);
+  color: var(--coral);
+}
+
+.hoy__temp {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hoy__sensacion {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.hoy__cielo {
+  padding-left: 12px;
+  border-left: 1px solid var(--borde);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hoy__cielo span {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  color: var(--verde-oscuro);
+}
+
+.hoy__medidas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+
+.medida {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--turquesa);
+}
+
+.medida dt {
+  font-size: 10px;
+  color: var(--tinta-suave);
+}
+
+.medida dd {
+  margin: 2px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+@media (min-width: 480px) {
+  .hoy__medidas {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Alerta regional ---------- */
+.alerta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--tarjeta);
+  box-shadow: var(--sombra);
+  text-align: left;
+}
+
+.alerta__icono {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(20, 200, 192, 0.14);
+  color: #0e8a85;
+}
+
+.alerta__cuerpo {
+  display: grid;
+  flex: 1;
+  gap: 3px;
+}
+
+.alerta__etiqueta {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+
+.alerta__cuerpo strong {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.alerta__cuerpo small {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+/* ---------- Cultivo activo ---------- */
+.cultivo__imagen {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 84px;
+  margin-bottom: 16px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgba(0, 230, 118, 0.25), rgba(0, 230, 118, 0.05));
+  overflow: hidden;
+}
+
+.cultivo__brote {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border: 1px solid rgba(0, 230, 118, 0.5);
+  border-radius: 50%;
+  color: var(--verde-oscuro);
+}
+
+.cultivo__etapa {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--verde-oscuro);
+}
+
+.cultivo__fila {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cultivo__nombre {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cultivo__meta {
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.cultivo__variacion {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cultivo__fila--precio {
+  align-items: baseline;
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.cultivo__fila--precio strong {
+  font-size: 20px;
+  color: var(--tinta);
+}
+
+.cultivo__fila--precio small {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--tinta-suave);
+}
+
+.progreso {
+  height: 6px;
+  margin: 8px 0;
+  border-radius: 999px;
+  background: rgba(18, 48, 74, 0.08);
+  overflow: hidden;
+}
+
+.progreso i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--verde), var(--turquesa));
+}
+
+.cultivo__fila--cosecha {
+  font-size: 10px;
+  color: var(--tinta-suave);
+}
+
+.cultivo__fila--cosecha strong {
+  color: var(--tinta);
+}
+
+.cultivo__chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 20px 0 14px;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 14px;
+  font-size: 11px;
+}
+
+.chip strong,
+.chip small {
+  display: block;
+}
+
+.chip small {
+  margin-top: 1px;
+  font-size: 9px;
+  color: var(--tinta-suave);
+}
+
+.chip__icono {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.chip--positivo {
+  background: rgba(0, 230, 118, 0.1);
+}
+
+.chip--positivo .chip__icono {
+  background: var(--verde);
+  color: var(--tinta);
+}
+
+.chip--riesgo {
+  background: rgba(240, 109, 109, 0.1);
+}
+
+.chip--riesgo .chip__icono {
+  background: rgba(240, 109, 109, 0.5);
+  color: #fff;
+}
+
+.boton-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid rgba(0, 230, 118, 0.35);
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0, 230, 118, 0.2), rgba(20, 200, 192, 0.2));
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ---------- Plan anual ---------- */
+.plan__encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.boton-secundario {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: rgba(20, 200, 192, 0.1);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+  font-size: 10px;
+  color: var(--tinta-suave);
+}
+
+.leyenda i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 3px;
+  border-radius: 50%;
+}
+
+.lineatiempo__meses {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0 0 6px;
+  padding: 0;
+  list-style: none;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: var(--tinta-suave);
+}
+
+.lineatiempo__pista {
+  position: relative;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+  border-radius: 14px;
+  list-style: none;
+  background: linear-gradient(
+    90deg,
+    rgba(107, 138, 176, 0.14) 0 22%,
+    rgba(34, 224, 122, 0.14) 22% 47%,
+    rgba(25, 195, 230, 0.14) 47% 72%,
+    rgba(242, 125, 125, 0.14) 72% 97%,
+    rgba(107, 138, 176, 0.14) 97%
+  );
+}
+
+.barra {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-content: center;
+  column-gap: 5px;
+  min-width: 0;
+  padding: 0 8px;
+  border-left: 3px solid var(--color);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--color) 22%, white);
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.barra svg {
+  grid-row: span 2;
+  align-self: center;
+}
+
+.barra__nombre {
+  overflow: hidden;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.barra__fechas {
+  grid-column: 2;
+  overflow: hidden;
+  font-size: 8px;
+  color: var(--tinta-suave);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hoy-marca {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  width: 2px;
+  background: var(--verde);
+}
+
+.hoy-marca b {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: var(--verde);
+  font-size: 8px;
+}
+
+/* ---------- Escritorio: todo en una pantalla, sin scroll vertical ---------- */
+@media (min-width: 900px) {
+  .principal,
+  .principal__columna {
+    gap: 12px;
+  }
+
+  .principal .tarjeta {
+    padding: 14px 18px;
+  }
+
+  .principal .tarjeta__encabezado {
+    margin-bottom: 10px;
+  }
+
+  .banner {
+    padding: 8px 14px;
+  }
+
+  .dias {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .dia {
+    gap: 8px;
+    padding: 8px 0;
+  }
+
+  .dia__hoy {
+    top: -18px;
+  }
+
+  .dia__cielo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dia__temp {
+    font-size: 16px;
+  }
+
+  .hoy {
+    gap: 10px;
+    padding-top: 12px;
+  }
+
+  .hoy__icono {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hoy__temp {
+    font-size: 26px;
+  }
+
+  .alerta {
+    padding: 10px 14px;
+  }
+
+  .cultivo__imagen {
+    height: 52px;
+    margin-bottom: 10px;
+  }
+
+  .cultivo__brote {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cultivo__fila--precio {
+    margin-top: 10px;
+  }
+
+  .cultivo__chips {
+    margin: 12px 0 10px;
+  }
+
+  .boton-principal {
+    padding: 10px;
+  }
+
+  .plan__encabezado {
+    margin-bottom: 6px;
+  }
+
+  .leyenda {
+    margin-bottom: 8px;
+  }
+
+  .lineatiempo__pista {
+    height: 48px;
+  }
+
+  .barra {
+    top: 8px;
+    bottom: 8px;
+  }
+}
+
+/* Escritorio: si sobra alto, las tarjetas se estiran para llenarlo */
+@media (min-width: 900px) {
+  .principal {
+    flex: 1;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .principal__columna {
+    grid-template-rows: 1fr;
+  }
+
+  .principal__columna:nth-of-type(2) {
+    grid-template-rows: 1fr auto;
+  }
+
+  .principal .tarjeta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .principal .dias {
+    flex: 1;
+  }
+
+  .principal .cultivo__imagen {
+    flex: 1;
+    min-height: 52px;
+  }
+
+  .principal .cultivo__imagen,
+  .principal .dias {
+    align-items: stretch;
+  }
+}
+
+/* Reparto del alto sobrante */
+@media (min-width: 900px) {
+  .principal .dia {
+    justify-content: space-evenly;
+  }
+
+  .principal .cultivo__imagen {
+    max-height: 150px;
+  }
+
+  .principal .tarjeta:has(.cultivo__imagen) {
+    justify-content: space-between;
+  }
+}

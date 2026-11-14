@@ -1,0 +1,210 @@
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 16px 40px;
+}
+
+.layout__barra {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.layout__menu,
+.layout__cerrar {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: var(--tarjeta);
+  box-shadow: var(--sombra);
+}
+
+.layout__marca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.layout__logo {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--verde);
+  color: var(--tinta);
+}
+
+.layout__nombre {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--verde-oscuro);
+}
+
+.layout__nombre span {
+  color: var(--tinta);
+  font-weight: 600;
+}
+
+.layout__beta {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.layout__municipio {
+  flex: 1;
+  min-width: 0;
+  margin-left: auto;
+  max-width: 190px;
+}
+
+.layout__municipio select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: var(--tarjeta);
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: var(--sombra);
+}
+
+.layout__contenido {
+  display: grid;
+  gap: 16px;
+}
+
+/* Menú lateral */
+.layout__fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 48, 74, 0.35);
+  z-index: 10;
+}
+
+.layout__lateral {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(300px, 82vw);
+  padding: 16px;
+  background: #f7fdfa;
+  box-shadow: 8px 0 32px rgba(18, 48, 74, 0.15);
+  transform: translateX(-105%);
+  transition: transform 0.25s ease;
+  visibility: hidden;
+}
+
+.layout__lateral--abierto {
+  transform: none;
+  visibility: visible;
+}
+
+.layout__lateral ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.layout__enlace {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.layout__enlace:disabled {
+  color: var(--tinta-suave);
+  cursor: default;
+}
+
+.layout__enlace small {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.layout__enlace--activo {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.layout__parcela {
+  display: grid;
+  gap: 2px;
+  margin-top: auto;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--verde-claro);
+}
+
+.layout__parcela p {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--verde-oscuro);
+}
+
+.layout__parcela span {
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+@media (min-width: 900px) {
+  .layout {
+    padding: 12px 20px 16px;
+  }
+
+  .layout__barra {
+    margin-bottom: 12px;
+  }
+
+  .layout__menu,
+  .layout__municipio select {
+    height: 40px;
+  }
+
+  .layout__menu {
+    width: 40px;
+  }
+}
+
+/* Escritorio: la página ocupa todo el alto de la ventana */
+@media (min-width: 900px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  .layout__contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}

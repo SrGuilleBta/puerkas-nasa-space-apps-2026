@@ -1,22 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { getParcela } from "./api/principal.js";
+import Layout, { MUNICIPIOS } from "./components/Layout.jsx";
+import useDatos from "./hooks/useDatos.js";
+import Principal from "./pages/Principal/Principal.jsx";
+
+const SIN_PARCELA = { nombre: "—", hectareas: "—" };
 
 export default function App() {
-  const [backend, setBackend] = useState("conectando…");
-
-  useEffect(() => {
-    fetch("/api/health")
-      .then((r) => r.json())
-      .then((d) => setBackend(d.status))
-      .catch(() => setBackend("sin conexión"));
-  }, []);
+  const [municipio, setMunicipio] = useState(MUNICIPIOS[0]);
+  const parcela = useDatos(getParcela, []);
 
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
-      <h1>Adapting Farms with NASA Data</h1>
-      <p>NASA Space Apps 2026</p>
-      <p>
-        Backend: <strong>{backend}</strong>
-      </p>
-    </main>
+    <Layout
+      municipio={municipio}
+      onMunicipio={setMunicipio}
+      parcela={parcela.datos ?? SIN_PARCELA}
+    >
+      <Principal municipio={municipio} />
+    </Layout>
   );
 }
