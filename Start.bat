@@ -41,7 +41,7 @@ set TRIES=0
 curl -s -f http://localhost:8000/api/health >nul 2>&1
 if not errorlevel 1 goto ready
 set /a TRIES+=1
-if %TRIES% GEQ 30 goto timeout
+if %TRIES% GEQ 90 goto timeout
 ping -n 3 127.0.0.1 >nul
 goto wait
 
@@ -52,7 +52,7 @@ echo  Listo. La app esta corriendo en:
 echo    http://localhost:8000        (app)
 echo    http://localhost:8000/docs   (documentacion API)
 echo.
-echo  Ver logs:  docker logs -f puerkas
+echo  Ver logs:  docker compose logs -f
 echo  Apagar:    docker compose down
 echo ================================================
 start "" http://localhost:8000
@@ -63,7 +63,7 @@ exit /b 0
 :timeout
 echo.
 echo [ERROR] La app no respondio a tiempo.
-echo Revisa los logs con: docker logs puerkas
+echo Revisa los logs con: docker compose logs
 echo.
 pause
 exit /b 1

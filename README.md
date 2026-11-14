@@ -7,8 +7,9 @@ NASA Space Apps Challenge 2026 — reto
 
 - **Backend:** Python 3.12 + FastAPI (`backend/`)
 - **Frontend:** React 18 + Vite (`frontend/`)
-- **Contenedor:** uno solo. El `Dockerfile` compila el frontend y FastAPI lo
-  sirve junto con la API.
+- **Docker:** `docker-compose.yml` levanta los dos y los cambios se reflejan al
+  guardar el archivo (sin reconstruir). El `Dockerfile` arma una sola imagen con
+  todo junto, para demo o producción.
 
 ## Cómo correrlo
 
@@ -20,37 +21,44 @@ cd puerkas-nasa-space-apps-2026
 Start.bat
 ```
 
-`Start.bat` crea el `.env` si no existe, construye y levanta el contenedor,
-espera a que responda y abre el navegador. La primera vez tarda unos minutos.
+`Start.bat` crea el `.env` si no existe, levanta todo, espera a que responda y
+abre el navegador. La primera vez tarda unos minutos (instala dependencias).
 Para cambiar la llave de la API de NASA, edita `.env`.
 
-Equivalente manual: `docker compose up --build -d`.
+Equivalente manual: `docker compose up -d`.
+
+**Una sola dirección: http://localhost:8000**
 
 | Qué | URL |
 |---|---|
-| App (frontend + API) | http://localhost:8000 |
+| App | http://localhost:8000 |
 | Docs de la API | http://localhost:8000/docs |
 | Health check | http://localhost:8000/api/health |
 
-El contenedor se llama `puerkas`. Después de cambiar código (backend o
-frontend) hay que reconstruirlo:
+Guardas un archivo del backend o del frontend y se ve el cambio solo. Solo si
+agregas una librería (`requirements.txt` o `package.json`) hay que reiniciar:
 
 ```bash
-docker compose up --build -d
+docker compose up -d --force-recreate
 ```
 
-Logs: `docker logs -f puerkas` · Apagar: `docker compose down`.
+Logs: `docker compose logs -f` · Apagar: `docker compose down`.
 
-## Desarrollo con recarga en vivo (opcional)
 
-Para ver cambios del frontend al instante, fuera de Docker:
+## Documentación
 
-```bash
-cd frontend && npm install && npm run dev   # http://localhost:5173
-```
+| Qué | Dónde |
+|---|---|
+| Qué hará cada pantalla (según el Figma) y qué datos necesita | [docs/funcionalidades.md](docs/funcionalidades.md) |
+| Cómo organizar el código y agregar un módulo (con ejemplo completo) | [docs/estructura.md](docs/estructura.md) |
+| Qué datos usa cada pantalla y de dónde salen | [docs/datos.md](docs/datos.md) ([versión CSV](docs/datos.csv)) |
+| Los CSV de SIAP: formato y cómo descargar otros años | [backend/data/siap/README.md](backend/data/siap/README.md) |
 
-El proxy de Vite manda `/api` al backend en `localhost:8000`.
+Resumen para empezar a programar:
 
+1. `Start.bat` y abrir http://localhost:8000.
+2. Elegir **un módulo** (Clima, Suelo, Mercado, Cultivos...) y trabajar solo en sus archivos.
+3. Guardar el archivo: el cambio se ve solo, sin reiniciar.
 
 ### RECURSOS DE EQUIPO:
 

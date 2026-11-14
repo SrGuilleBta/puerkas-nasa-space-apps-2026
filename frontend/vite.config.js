@@ -8,9 +8,11 @@ export default defineConfig({
     port: 5173,
     // En Windows los eventos de archivos no cruzan al contenedor: polling
     watch: { usePolling: true },
+    // El navegador solo habla con este servidor; él reenvía la API y sus docs al backend
     proxy: {
-      // Solo para desarrollo local con `npm run dev` fuera de Docker
       "/api": process.env.API_URL || "http://localhost:8000",
+      "/docs": process.env.API_URL || "http://localhost:8000",
+      "/openapi.json": process.env.API_URL || "http://localhost:8000",
     },
   },
 });

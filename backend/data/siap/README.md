@@ -14,11 +14,16 @@ curl -L -o cierre_agricola_mun_2014.csv \
 
 - Codificación **ISO-8859-1** (no UTF-8). En pandas: `pd.read_csv(f, encoding="latin1")`.
 - Una fila por año × municipio × ciclo × modalidad × cultivo (~37 mil filas por año).
-- Columnas: `Anio, Idestado, Nomestado, Idddr, Nomddr, Idcader, Nomcader, Idmunicipio,
-  Nommunicipio, Idciclo, Nomcicloproductivo, Idmodalidad, Nommodalidad, Idunidadmedida,
-  Nomunidad, Idcultivo, Nomcultivo, Sembrada, Cosechada, Siniestrada, Volumenproduccion,
-  Rendimiento, Preciomediorural, Valorproduccion`.
+- Columnas (24, mismo orden en todos los años): `Anio, Idestado, Nomestado, Idddr, Nomddr,
+  Idcader, Nomcader, Idmunicipio, Nommunicipio, Idciclo, Nomcicloproductivo, Idmodalidad,
+  Nommodalidad, Idunidadmedida, Nomunidad, Idcultivo, Nomcultivo, Sembrada, Cosechada,
+  Siniestrada, Volumenproduccion, Rendimiento, Preciomediorural, Valorproduccion`.
+- **Ojo: los nombres de dos columnas cambian en 2015–2020.** Esos archivos traen
+  `Nomcultivo Sin Um` (en vez de `Nomcultivo`) y `Precio` (en vez de `Preciomediorural`). Por la
+  posición (columnas 17 y 23) parecen ser lo mismo; en la primera fila de 2015,
+  `Volumenproduccion × Precio` da `Valorproduccion`. No lo confirmé con el diccionario de SIAP. Al cargarlos hay que renombrar esas dos columnas.
 - `Preciomediorural` es precio al productor (pesos por unidad de `Nomunidad`), no de mayoreo.
+- Git normalizó los saltos de línea a LF al commitear; el contenido no cambia.
 - Ciclos: Otoño-Invierno, Primavera-Verano, Perennes. Modalidad: Riego o Temporal.
 - Diccionario oficial de campos: en la misma página de SIAP.
 
