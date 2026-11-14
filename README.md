@@ -52,7 +52,8 @@ cd frontend && npm install && npm run dev   # http://localhost:5173
 El proxy de Vite manda `/api` al backend en `localhost:8000`.
 
 
-### DATOS
+### RECURSOS DE EQUIPO:
 
-https://docs.google.com/spreadsheets/d/1HQcgaiH6-ikuGKZWbB0F6XbkSEmYJTXf9zZksEYQKdY/edit?usp=sharing
+- Excel Recursos x Modulo: https://docs.google.com/spreadsheets/d/1HQcgaiH6-ikuGKZWbB0F6XbkSEmYJTXf9zZksEYQKdY/edit?usp=sharing
+- Figma: https://www.figma.com/make/u0K7IcKBPNddczAZhtR4ic/Dise%C3%B1ar-Dashboard-Agr%C3%ADcola-Org%C3%A1nico?t=PF9eQYg05PTj8hxM-1
 
