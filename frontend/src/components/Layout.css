@@ -136,18 +136,6 @@
   text-align: left;
 }
 
-.layout__enlace:disabled {
-  color: var(--tinta-suave);
-  cursor: default;
-}
-
-.layout__enlace small {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
 .layout__enlace--activo {
   background: var(--verde-claro);
   color: var(--verde-oscuro);

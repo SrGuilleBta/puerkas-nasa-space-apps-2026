@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SECCIONES } from "../routes.js";
 import { Brote, Cerrar, Menu } from "./Iconos.jsx";
 import "./Layout.css";
 
@@ -9,17 +10,7 @@ export const MUNICIPIOS = [
   "Mérida, YUC",
 ];
 
-// Por ahora solo existe Principal; el resto se habilita al crear cada pantalla.
-const SECCIONES = [
-  { id: "principal", nombre: "Principal" },
-  { id: "clima", nombre: "Clima" },
-  { id: "mercado", nombre: "Mercado" },
-  { id: "cultivos", nombre: "Cultivos" },
-  { id: "planificador", nombre: "Planificador" },
-  { id: "noticias", nombre: "Noticias" },
-];
-
-export default function Layout({ municipio, onMunicipio, parcela, children }) {
+export default function Layout({ seccion, municipio, onMunicipio, parcela, children }) {
   const [menuAbierto, setMenuAbierto] = useState(false);
 
   useEffect(() => {
@@ -84,20 +75,18 @@ export default function Layout({ municipio, onMunicipio, parcela, children }) {
 
         <ul>
           {SECCIONES.map((s) => {
-            const activa = s.id === "principal";
+            const activa = s.id === seccion.id;
             return (
               <li key={s.id}>
-                <button
-                  type="button"
+                <a
+                  href={s.hash}
                   className={`layout__enlace ${activa ? "layout__enlace--activo" : ""}`}
-                  disabled={!activa}
                   tabIndex={menuAbierto ? 0 : -1}
                   aria-current={activa ? "page" : undefined}
                   onClick={() => setMenuAbierto(false)}
                 >
                   {s.nombre}
-                  {!activa && <small>Pronto</small>}
-                </button>
+                </a>
               </li>
             );
           })}

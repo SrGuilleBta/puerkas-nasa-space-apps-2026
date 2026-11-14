@@ -1,5 +1,6 @@
 import Tarjeta, { EncabezadoTarjeta } from "../../components/Tarjeta.jsx";
 import { Brote, Flecha, Mas, Menos, Tendencia } from "../../components/Iconos.jsx";
+import { hashDe } from "../../routes.js";
 import { fechaLarga } from "../../utils/fechas.js";
 
 const pesos = new Intl.NumberFormat("es-MX");
@@ -13,9 +14,9 @@ export default function CultivoActivo({ cultivo }) {
         etiqueta="Cultivos activos"
         titulo="Tu cosecha"
         derecha={
-          <button type="button" className="enlace">
+          <a className="enlace" href={hashDe("cultivos")}>
             Ver todos
-          </button>
+          </a>
         }
       />
 
@@ -75,9 +76,9 @@ export default function CultivoActivo({ cultivo }) {
         ))}
       </div>
 
-      <button type="button" className="boton-principal">
+      <a className="boton-principal" href={hashDe("planificador")}>
         Ver plan del cultivo <Flecha size={16} />
-      </button>
+      </a>
     </Tarjeta>
   );
 }

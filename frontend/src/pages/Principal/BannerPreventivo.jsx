@@ -1,4 +1,5 @@
 import { Alerta, Flecha } from "../../components/Iconos.jsx";
+import { hashDe } from "../../routes.js";
 
 export default function BannerPreventivo({ titulo, texto }) {
   return (
@@ -8,9 +9,9 @@ export default function BannerPreventivo({ titulo, texto }) {
       </span>
       <p className="banner__titulo">{titulo}</p>
       <p className="banner__texto">{texto}</p>
-      <button type="button" className="banner__accion">
+      <a className="banner__accion" href={hashDe("clima")}>
         Ver pronóstico <Flecha size={14} />
-      </button>
+      </a>
     </div>
   );
 }

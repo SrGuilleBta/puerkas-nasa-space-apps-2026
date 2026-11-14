@@ -1,5 +1,6 @@
 import Tarjeta from "../../components/Tarjeta.jsx";
 import { Calendario, Lapiz } from "../../components/Iconos.jsx";
+import { hashDe } from "../../routes.js";
 import { fechaCorta, mesCorto, porcentajeDelAnio } from "../../utils/fechas.js";
 
 const ESTACIONES = [
@@ -23,9 +24,9 @@ export default function PlanAnual({ plan }) {
             {plan.nombre} · {anio}
           </h2>
         </div>
-        <button type="button" className="boton-secundario">
+        <a className="boton-secundario" href={hashDe("planificador")}>
           <Calendario size={16} /> Plan completo
-        </button>
+        </a>
       </header>
 
       <ul className="leyenda">
