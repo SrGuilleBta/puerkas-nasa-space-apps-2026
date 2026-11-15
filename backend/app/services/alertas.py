@@ -22,6 +22,8 @@ MARGEN = 3  # °C antes del límite del cultivo en que ya se avisa (nivel "media
 DIAS_MINIMOS_LLUVIA = 10  # días con dato de lluvia observada para juzgar si hay déficit
 DEFICIT_ALTO = 0.5  # lluvia observada / necesaria por debajo de esto: nivel "alta"
 DEFICIT_MEDIO = 0.75  # y por debajo de esto: nivel "media"
+PERCENTIL_SECO = 30  # humedad del suelo (SMAP) en este percentil o menos: más seco de lo normal (D0)
+PERCENTIL_MUY_SECO = 10  # y en este o menos: nivel "alta" (D2 del Drought Monitor)
 
 # Tipos de cultivo (del catálogo del Planificador) a los que aplica cada riesgo
 TIPOS_HONGOS = {"cereal", "leguminosa", "hortaliza", "frutal", "oleaginosa"}
@@ -133,6 +135,31 @@ def _del_clima(dias: list[dict], hoy_clima: dict, hoy: date, cultivos: list[dict
             f"Gusts of {viento} km/h. Do not apply agrochemicals and check structures and netting.",
         ))
     return alertas
+
+
+def _de_suelo_seco(suelo: dict | None, cultivos: list[dict], alertas: list[dict]) -> None:
+    """Suma la humedad del suelo (SMAP, percentil contra otros años) a la alerta de sequía.
+
+    Si ya hay déficit de lluvia, lo confirma y sube el nivel; si no, avisa por sí sola.
+    Con suelo normal o húmedo no hace nada."""
+    if not suelo or not cultivos or suelo["percentil"] > PERCENTIL_SECO:
+        return
+    nivel = "alta" if suelo["percentil"] <= PERCENTIL_MUY_SECO else "media"
+    frase = (
+        f"Satellite readings (NASA SMAP) show your soil is drier than in {100 - round(suelo['percentil'])}% of past years "
+        f"at this time ({suelo['humedad']:g}% against a usual {suelo['normal']:g}%)."
+    )
+    existente = next((a for a in alertas if a["id"] == "sequia"), None)
+    if existente:
+        existente["detalle"] += " " + frase
+        if nivel == "alta":
+            existente["nivel"] = "alta"
+        return
+    alertas.append(_alerta(
+        "sequia", "clima", nivel, "Dry soil for your crops",
+        frase + " Check your crops and consider irrigating if you can.",
+        list(dict.fromkeys(c["nombre"] for c in cultivos)),
+    ))
 
 
 def _de_lluvia_por_cultivo(dias: list[dict], reciente: dict | None, cultivos: list[dict], hoy: date) -> list[dict]:
@@ -251,11 +278,12 @@ def _lluvia_por_dia(ficha: dict | None) -> float | None:
 
 
 def calcular(clima: dict, activos: list[dict], hoy: date, fichas: dict | None = None,
-             lluvia_reciente: dict | None = None) -> list[dict]:
+             lluvia_reciente: dict | None = None, suelo: dict | None = None) -> list[dict]:
     """Alertas ordenadas por gravedad. `clima` es lo que devuelve meteomatics.clima, `activos` las
     siembras en curso (planificador.siembras_en_curso), `fichas` las fichas del catálogo de esos
     cultivos por id (catalogo_cultivos.fichas_de; sin ellas se usan umbrales generales) y
-    `lluvia_reciente` la lluvia observada de los últimos 30 días (nasa_power.periodo)."""
+    `lluvia_reciente` la lluvia observada de los últimos 30 días (nasa_power.periodo) y `suelo` la humedad
+    del suelo contra otros años (suelo_ubicacion.humedad_vs_normal)."""
     dias = [d for d in clima["pronostico"] if date.fromisoformat(d["fecha"]) >= hoy]
     fichas = fichas or {}
     cultivos = []
@@ -276,4 +304,5 @@ def calcular(clima: dict, activos: list[dict], hoy: date, fichas: dict | None = 
         + _de_lluvia_por_cultivo(dias, lluvia_reciente, cultivos, hoy)
         + _de_plagas(dias, clima["hoy"], cultivos)
     )
+    _de_suelo_seco(suelo, cultivos, alertas)
     return sorted(alertas, key=lambda a: ORDEN_NIVEL[a["nivel"]])  # estable: clima antes que plagas

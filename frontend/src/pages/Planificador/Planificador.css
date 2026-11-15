@@ -902,9 +902,9 @@
   gap: 6px;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
   .tareas__nueva {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) auto auto;
   }
 
   .tareas__nueva input:first-child {
@@ -993,4 +993,30 @@
   font-weight: 700;
   text-decoration: underline;
   color: var(--verde-oscuro);
+}
+
+/* Compatibilidad del pH del suelo con el cultivo */
+.info-siembra__ficha .ph-compat {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border-left: 3px solid currentColor;
+}
+
+.ph-compat--bien {
+  color: var(--verde-oscuro);
+  background: var(--verde-claro);
+}
+
+.ph-compat--regular {
+  color: #8a6a1a;
+  background: rgba(214, 160, 40, 0.14);
+}
+
+.ph-compat--mal {
+  color: #a63f3f;
+  background: rgba(166, 63, 63, 0.1);
+}
+
+.info-siembra__ficha .ph-compat b {
+  color: inherit;
 }
