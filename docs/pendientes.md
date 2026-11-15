@@ -20,9 +20,13 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 
 ## Alertas de Principal
 
-- **Plagas y enfermedades:** el equipo pondrá la información después. Hoy son reglas generales en
-  `backend/app/services/alertas.py` (hongos, pulgón y mosca blanca, gusano cogollero en maíz). Cambiar
-  textos, cultivos y umbrales cuando llegue esa información.
+- ~~Plagas y enfermedades~~: hecho con el motor de la rama `plagas` ([plagas.md](plagas.md)). Los cultivos en
+  curso con análisis avisan con EPPO + clima + registros cercanos; los demás siguen con las reglas generales de
+  `services/alertas.py` (hongos, pulgón y mosca blanca, gusano cogollero). La primera consulta de un cultivo
+  nuevo no alcanza a salir en el primer aviso (se calcula en segundo plano). Cuando todos los cultivos tengan
+  análisis se pueden quitar las reglas generales. El aviso solo sale con plagas **críticas**; falta calibrar los
+  umbrales de riesgo por plaga (hoy casi todas salen en riesgo alto casi todo el año), tarea de quien armó el
+  motor: ver "Pendiente" en [plagas.md](plagas.md).
 - El pronóstico de Principal cubre hoy y los 6 días siguientes, así que las alertas siempre ven la
   semana que viene. Si Clima ofrece más días, usarlos.
 
@@ -49,7 +53,7 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
   afinar con variedades (el trigo de otoño sale "regular" porque EcoCrop trae un solo rango de temperatura).
 - ~~Umbrales de las alertas por cultivo~~: hecho para helada y calor (rango absoluto de temperatura del
   catálogo). También hecha la lluvia por cultivo (déficit y encharcamiento; solo ~78 de 399 cultivos traen su rango
-  de lluvia). Falta las plagas por cultivo con el motor de la rama `plagas`.
+  de lluvia). Las plagas por cultivo ya salen del motor de plagas (ver arriba).
 - ~~Precio, rendimiento y chips en "Cultivos activos"~~: hecho con SIAP (estado de la ubicación o, si no, nacional). Un dato de **demanda** no existe en SIAP: se muestra la variación del precio contra su mediana de 10 años. Falta: la demanda real, si aparece una fuente (Mercado).
 - ~~Rotación más fina~~: hecha con familia y nitrógeno. Mejoras: usar el precio y el agua; sólo ~80 de 399
   cultivos traen familia y marca de nitrógeno (los demás se deducen del tipo).
@@ -65,7 +69,8 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 - ~~Tareas vencidas en Principal y Noticias~~: hecho (aviso ámbar en Principal y noticia propia). Las tareas
   no se copian al duplicar el plan a propósito: son del ciclo que ya pasó.
 - El calendario sugerido de tareas es una plantilla general; se podría armar con las etapas del cultivo y
-  los cuidados de la agenda del INIFAP.
+  los cuidados de la agenda del INIFAP. También se podrían sugerir tareas de revisión de plagas cuando el
+  motor marque riesgo alto.
 - El texto del INIFAP está en español (la rama `cultivos_v2` lo traduce); la mediana nacional como cifra de
   partida no es precio de mercado de hoy.
 - ~~Indicadores "N earlier / N later" de siembras fuera de la vista en el calendario~~: hechos (y saltan a la más cercana).

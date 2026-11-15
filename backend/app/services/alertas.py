@@ -6,7 +6,8 @@ siempre dice "condiciones favorables" y nunca "hay plaga".
 
 Helada y calor se miden contra lo que tolera cada cultivo en curso (rango de temperatura del
 catálogo de Cultivos, EcoCrop). Si un cultivo no viene del catálogo, o no hay cultivos en curso, se
-usan umbrales generales. Los de plagas siguen siendo reglas generales por tipo de cultivo.
+usan umbrales generales. Las plagas de cada cultivo salen del motor de plagas (services/plagas, EPPO + clima + registros) cuando
+ya hay un análisis; los cultivos que aún no lo tienen siguen con reglas generales por tipo de cultivo.
 
 La falta de lluvia compara la lluvia observada en los últimos 30 días (NASA POWER) con lo que el
 cultivo necesita por día en su ciclo (rango de lluvia ideal del catálogo entre los días del ciclo);
@@ -277,13 +278,42 @@ def _lluvia_por_dia(ficha: dict | None) -> float | None:
     return ideal[0] / (sum(ciclo) / len(ciclo))
 
 
+def _del_motor_de_plagas(cultivos: list[dict], plagas: dict) -> list[dict]:
+    """Un aviso por cultivo con plagas de riesgo crítico según el motor de plagas (EPPO + clima + registros).
+
+    Solo las críticas (clima favorable y registros de la plaga a menos de 100 km): con los umbrales actuales casi
+    todas las plagas salen en riesgo alto casi todo el año, y avisar de todas haría que el aviso no sirviera. El
+    detalle completo (también las de riesgo alto) está en la guía del cultivo, en el Planificador.
+    """
+    alertas = []
+    for c in cultivos:
+        criticas = [p for p in plagas[c["catalogo_id"]]["plagas"] if p["riesgo"] == "critical"]
+        if not criticas:
+            continue
+        nombres = [p["nombre"] for p in criticas[:3]]
+        mas = len(criticas) - len(nombres)
+        lista = ", ".join(nombres) + (f" and {mas} more" if mas > 0 else "")
+        alertas.append(_alerta(
+            f"plagas-{c['catalogo_id']}", "plaga", "alta",
+            f"Conditions favorable for pests in {c['nombre']}",
+            f"Watch for {lista}. The weather favors {'it' if len(criticas) == 1 else 'them'} and "
+            f"{'it has' if len(criticas) == 1 else 'they have'} been recorded within 100 km. "
+            "This is a risk check, not a detection: inspect the field. "
+            "The full list is in the crop guide in the Planner.",
+            [c["nombre"]],
+        ))
+    return alertas
+
+
 def calcular(clima: dict, activos: list[dict], hoy: date, fichas: dict | None = None,
-             lluvia_reciente: dict | None = None, suelo: dict | None = None) -> list[dict]:
+             lluvia_reciente: dict | None = None, suelo: dict | None = None, plagas: dict | None = None) -> list[dict]:
     """Alertas ordenadas por gravedad. `clima` es lo que devuelve meteomatics.clima, `activos` las
     siembras en curso (planificador.siembras_en_curso), `fichas` las fichas del catálogo de esos
     cultivos por id (catalogo_cultivos.fichas_de; sin ellas se usan umbrales generales) y
     `lluvia_reciente` la lluvia observada de los últimos 30 días (nasa_power.periodo) y `suelo` la humedad
-    del suelo contra otros años (suelo_ubicacion.humedad_vs_normal)."""
+    del suelo contra otros años (suelo_ubicacion.humedad_vs_normal). `plagas` son los resultados vigentes del motor
+    de plagas por id del catálogo (plagas.para_alertas): los cultivos que lo tienen avisan con él (solo plagas críticas)
+    y los demás con las reglas generales."""
     dias = [d for d in clima["pronostico"] if date.fromisoformat(d["fecha"]) >= hoy]
     fichas = fichas or {}
     cultivos = []
@@ -298,11 +328,16 @@ def calcular(clima: dict, activos: list[dict], hoy: date, fichas: dict | None = 
             "nombre": a["cultivo"]["nombre"], "tipo": a["cultivo"]["tipo"], "frio": frio, "calor": calor,
             "lluvia_dia": _lluvia_por_dia(ficha),
             "encharca": (ficha or {}).get("tolerancia_encharcamiento") in ("sensible", "sensitive"),
+            "catalogo_id": a["cultivo"].get("catalogo_id"),
         })
+    plagas = plagas or {}
+    con_motor = [c for c in cultivos if c["catalogo_id"] in plagas]
+    sin_motor = [c for c in cultivos if c["catalogo_id"] not in plagas]
     alertas = (
         _del_clima(dias, clima["hoy"], hoy, cultivos)
         + _de_lluvia_por_cultivo(dias, lluvia_reciente, cultivos, hoy)
-        + _de_plagas(dias, clima["hoy"], cultivos)
+        + _de_plagas(dias, clima["hoy"], sin_motor)
+        + _del_motor_de_plagas(con_motor, plagas)
     )
     _de_suelo_seco(suelo, cultivos, alertas)
     return sorted(alertas, key=lambda a: ORDEN_NIVEL[a["nivel"]])  # estable: clima antes que plagas

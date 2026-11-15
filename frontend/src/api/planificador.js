@@ -41,6 +41,10 @@ export const getFichaCatalogo = (catalogoId, municipio) =>
 export const getVentanaSiembra = (catalogoId, municipio) =>
   obtener(`${R}/catalogo/${catalogoId}/ventana-siembra`, { municipio });
 
+// Plagas de un cultivo del catálogo y su riesgo hoy en la ubicación (motor de plagas). Responde de inmediato:
+// `estado` es "listo", "calculando" (volver a preguntar), "error" o "no_disponible".
+export const getPlagas = (catalogoId, municipio) => obtener(`${R}/catalogo/${catalogoId}/plagas`, { municipio });
+
 // Tareas de una siembra (fertilizar, regar, cosechar...) con marca de hecha.
 export const listarTareas = (siembraId) => obtener(`${R}/siembras/${siembraId}/tareas`);
 export const crearTarea = (siembraId, datos) => enviar("POST", `${R}/siembras/${siembraId}/tareas`, datos);

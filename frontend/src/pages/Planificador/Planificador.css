@@ -793,6 +793,152 @@
   }
 }
 
+/* Plagas y enfermedades de un cultivo (motor de plagas): cerrado por defecto y discreto, al final de la guía */
+.plagas {
+  border-top: 1px solid var(--borde);
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+.plagas > summary,
+.plaga > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.plagas > summary::-webkit-details-marker,
+.plaga > summary::-webkit-details-marker {
+  display: none;
+}
+
+.plagas > summary::before,
+.plaga > summary::before {
+  content: "›";
+  flex: none;
+  width: 10px;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--tinta-suave);
+  transition: transform 0.15s;
+}
+
+.plagas[open] > summary::before,
+.plaga[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.plagas h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.plagas__estado {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.plagas__cuerpo {
+  display: grid;
+  gap: 4px;
+  padding-top: 8px;
+}
+
+.plagas__aviso {
+  margin: 0 0 4px;
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.plagas small {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.plaga {
+  border-bottom: 1px solid var(--borde);
+}
+
+.plaga > summary {
+  padding: 7px 0;
+  font-size: 13px;
+}
+
+.plaga__punto {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--verde);
+}
+
+.plaga__punto--critical {
+  background: var(--coral);
+}
+
+.plaga__punto--high {
+  background: var(--ambar);
+}
+
+.plaga__punto--medium {
+  background: var(--turquesa);
+}
+
+.plaga__nombre {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+  font-weight: 600;
+}
+
+.plaga__nombre small {
+  font-weight: 400;
+}
+
+.plaga__nivel {
+  flex: none;
+  margin-left: auto;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--verde-claro);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+
+.plagas__estado .plaga__nivel {
+  margin-left: 0;
+}
+
+.plaga__nivel--critical {
+  background: var(--coral-claro);
+  color: #a63a3a;
+}
+
+.plaga__nivel--high {
+  background: #fdf0d3;
+  color: #8a5a00;
+}
+
+.plaga__nivel--medium {
+  background: #d6f5f3;
+  color: #0b6f6a;
+}
+
+.plaga__detalle {
+  display: grid;
+  gap: 6px;
+  padding: 0 0 10px 18px;
+  font-size: 12px;
+}
+
+.plaga__detalle p {
+  margin: 0;
+}
+
 /* ---------- Costos e ingresos, tareas y manejo del INIFAP ---------- */
 .economia-form {
   display: grid;

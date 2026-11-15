@@ -28,6 +28,7 @@ from app.schemas.planificador import (
     TareaPatch,
 )
 from app.services import catalogo_cultivos, nasa_power, plan_extras, rotacion, tareas, ubicaciones, ventana_siembra
+from app.services import plagas as motor_plagas
 from app.services import planificador as servicio
 
 router = APIRouter(prefix="/api/planificador", tags=["planificador"])
@@ -182,6 +183,20 @@ async def ventana_de_siembra(catalogo_id: str, municipio: str, con=Depends(con_d
     except nasa_power.ErrorNasaPower as e:
         raise HTTPException(502, str(e))
     return ventana_siembra.calcular(ficha, clima["temp"], clima["lluviaMm"])
+
+
+@router.get("/catalogo/{catalogo_id}/plagas")
+async def plagas_del_cultivo(catalogo_id: str, municipio: str, con=Depends(con_db)):
+    """Plagas de un cultivo del catálogo y su riesgo hoy en la ubicación (motor de plagas: EPPO, clima y registros).
+
+    Responde de inmediato: `estado` es "listo" (con el análisis), "calculando" (pedir de nuevo en unos segundos),
+    "error" o "no_disponible" (con `mensaje`). La primera vez de un cultivo tarda en calcularse; después sale de la caché.
+    """
+    ficha = catalogo_cultivos.ficha_del_catalogo(catalogo_id)
+    ciudad = ubicaciones.buscar(con, municipio)
+    if ciudad is None:
+        raise servicio.NoEncontrado(f"Unknown location: {municipio}")
+    return {"catalogoId": catalogo_id, "cultivo": ficha["nombre"], **motor_plagas.pedir(ficha.get("eppocode"), ciudad)}
 
 
 def _estado_de(con, municipio: str | None) -> str | None:

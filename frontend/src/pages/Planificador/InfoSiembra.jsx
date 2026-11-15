@@ -6,6 +6,7 @@ import useDatos from "../../hooks/useDatos.js";
 import { aISO, deISO, diasEntre, fechaConAnio, sumarDias } from "../../utils/fechas.js";
 import EconomiaSiembra from "./EconomiaSiembra.jsx";
 import ManejoInifap from "./ManejoInifap.jsx";
+import PlagasCultivo from "./PlagasCultivo.jsx";
 import TareasSiembra from "./TareasSiembra.jsx";
 import VentanaSiembra from "./VentanaSiembra.jsx";
 import { etiquetaTipo } from "../../utils/tipos.js";
@@ -187,7 +188,7 @@ function FichaCultivo({ cultivoId, municipio }) {
 }
 
 // Vistas informativas de una siembra. `vista` elige qué se muestra: "resumen" (estado, fechas, economía y
-// vecinas en la parcela), "tareas" o "guia" (cuándo sembrar, ficha del cultivo y clima de NASA).
+// vecinas en la parcela), "tareas" o "guia" (cuándo sembrar, ficha del cultivo, clima de NASA y, al final, las plagas).
 export default function InfoSiembra({ parcela, siembra, hoy, municipio, onTareas, vista = "resumen" }) {
   const inicio = deISO(siembra.fechaSiembra);
   const fin = deISO(siembra.fechaCosecha);
@@ -239,6 +240,7 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio, onTareas
         )}
         <FichaCultivo cultivoId={siembra.cultivo.id} municipio={municipio} />
         {municipio && <ClimaNasa municipio={municipio} inicio={inicio} fin={fin} hoy={hoy} />}
+        {siembra.cultivo.catalogoId && municipio && <PlagasCultivo catalogoId={siembra.cultivo.catalogoId} municipio={municipio} />}
       </div>
     );
   }

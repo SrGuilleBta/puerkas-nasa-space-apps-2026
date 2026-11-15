@@ -50,6 +50,7 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   ├── suelo/           módulo Suelo: NASA POWER, SMAP, MODIS, SRTM, GRACE y SoilGrids (ver suelo.md)
 │   │   │   ├── suelo_ubicacion.py pH, humedad y percentil de humedad de una ubicación, con el módulo Suelo
 │   │   │   ├── alertas.py       reglas de clima, plagas y enfermedades
+│   │   │   ├── plagas/          motor de plagas por cultivo (EPPO, clima, GBIF e iNaturalist; ver docs/plagas.md)
 │   │   │   ├── planificador.py  reglas del plan (sin traslapes, rotación, resumen)
 │   │   │   ├── ubicaciones.py   lugares guardados y geocodificación (solo México)
 │   │   │   ├── catalogo_cultivos.py  une el Planificador con el catálogo de Cultivos (lista, alta y ficha)

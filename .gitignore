@@ -25,3 +25,6 @@ backend/data/srtm/
 backend/data/grace/
 backend/data/suelo/smap/
 backend/data/suelo/modis/
+
+# Caché del motor de plagas (respuestas de EPPO, GBIF e iNaturalist; se regenera sola)
+backend/data/plagas/cache/

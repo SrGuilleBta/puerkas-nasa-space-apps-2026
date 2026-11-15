@@ -8,6 +8,7 @@ from app.schemas.planificador import CultivoActivoOut, TareasVencidasOut
 from app.services import alertas, catalogo_cultivos, nasa_power, suelo_ubicacion, tareas, ubicaciones
 from app.services import clima as clima_servicio
 from app.services import planificador as plan_servicio
+from app.services import plagas as motor_plagas
 
 router = APIRouter(prefix="/api/principal", tags=["principal"])
 
@@ -90,7 +91,11 @@ async def alertas_del_dia(
             suelo = await asyncio.wait_for(suelo_ubicacion.humedad_vs_normal(ciudad), ESPERA_SUELO_SEGUNDOS)
         except asyncio.TimeoutError:
             suelo = None
-    return alertas.calcular(datos, activos, dia, catalogo_cultivos.fichas_de(activos), reciente, suelo)
+    fichas = catalogo_cultivos.fichas_de(activos)
+    # Plagas por cultivo con el motor (EPPO): lo que ya esté calculado entra; lo demás se calcula en segundo plano
+    # y mientras tanto avisan las reglas generales
+    plagas = motor_plagas.para_alertas(fichas, ciudad)
+    return alertas.calcular(datos, activos, dia, fichas, reciente, suelo, plagas)
 
 
 @router.get("/cultivos-activos", response_model=list[CultivoActivoOut])
