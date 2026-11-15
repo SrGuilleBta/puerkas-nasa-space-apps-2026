@@ -1,0 +1,608 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/chihuahua.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "08",
+  "estado": "Chihuahua",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Chihuahua. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Alfalfa",
+      "cientifico": "Medicago sativa L.",
+      "paginas": [
+        11,
+        18
+      ],
+      "cultivo_ids": [
+        "alfalfa-verde"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Suelos profundos, franco-arenosos a franco-arcillosos, pH 6.5 a 7.5, conductividad eléctrica no mayor a 2 dS/m y pendiente menor al 3 %. Germina entre 5 y 35 °C y crece mejor entre 25 y 30 °C.",
+      "siembra": {
+        "texto": "Época óptima del 15 de septiembre al 31 de octubre.",
+        "meses": [
+          9,
+          10
+        ]
+      },
+      "variedades": [
+        "Excelente 9 HQML",
+        "El Camino 999 ML",
+        "Excelente Plus",
+        "Belleza Verde",
+        "P 59N59",
+        "Ojo Caliente",
+        "Río Conchos",
+        "El Camino 888",
+        "El Camino 1010",
+        "JUPITER",
+        "SW 14",
+        "WL 711",
+        "CUF 101"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "30 a 40 kg/ha de semilla pura germinable, certificada e inoculada (ajustar si la semilla viene peletizada).",
+      "fertilizacion": "Según análisis de suelo (P-Olsen): con 15 mg/kg o menos, 200 kg/ha de P2O5; de 15 a 25 mg/kg, 100 kg/ha de P2O5; arriba de 25 mg/kg, no aplicar fósforo. Incorporarlo con la rastra antes de sembrar. Nitrógeno solo en dosis bajas (es leguminosa).",
+      "riego": "Lámina anual de 170 a 180 cm. Establecimiento: 40 cm en cinco riegos de 8 cm, antes de que se endurezca la capa superficial. En abril, mayo y junio, dos riegos ligeros (unos 10 cm) entre cortes; el resto del año, uno. Regar justo después de levantar las pacas y descontar lluvias de más de 20 mm.",
+      "plagas": [
+        "Pulgón verde",
+        "Pulgón manchado",
+        "Trips",
+        "Periquito tricornudo",
+        "Gusano soldado",
+        "Gusano falso medidor",
+        "Gusano verde"
+      ],
+      "enfermedades": [],
+      "malezas": "En siembras en fecha óptima, los primeros dos o tres cortes eliminan las malezas; en siembras tardías (febrero) hay invasión de mostacilla, borraja, malva, cadillo, quelite y trompillo. De 1 a 10 malezas por m² bajan 25 % el primer corte, y 11 o más, 50 % o más. Control cultural: adelantar el corte; controlar antes de que la maleza pase de 10 cm. Usar semilla certificada para evitar cuscuta.",
+      "cosecha": "En primavera y verano, cortar en botón medio. En otoño e invierno, cortar cuando el 60 % de las coronas tenga rebrotes de 1.5 a 2.5 cm.",
+      "cuidados": [
+        "Sembrar del 15 de septiembre al 31 de octubre para que la alfalfa forme raíz profunda antes del primer corte.",
+        "Preparar bien la cama de siembra (barbecho, rastra, desterronar) y nivelar en riego por gravedad para evitar encharcamientos.",
+        "Usar semilla certificada e inoculada y ajustar la densidad a la semilla pura germinable.",
+        "Hacer análisis de suelo para decidir la dosis de fósforo.",
+        "Muestrear plagas con frecuencia y actuar por umbral (p. ej., más de 20 pulgones por tallo o 25 gusanos en 100 redadas), cuidando la fauna benéfica.",
+        "Regar inmediatamente después de levantar las pacas y dar dos riegos entre cortes en los meses calurosos."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 21850,
+          "rendimiento": 18000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 3.5,
+          "ingreso_neto": 41150,
+          "relacion_bc": 2.88
+        }
+      ],
+      "nota": "Costos del Cuadro 4 (mantenimiento en el tercer año, riego por bombeo). El cuadro de establecimiento (Cuadro 2) no cuadra: costo 40,300 e ingreso bruto 70,000 dan ingreso neto 29,700 y B/C 1.74, no 31,300 y 1.81. El del segundo año (Cuadro 3) reporta ingreso bruto 70,000 aunque 22,000 kg × 3.5 = 77,000. La agenda no indica cuáles variedades son públicas y cuáles comerciales; se listan todas en variedades tal como aparecen.",
+      "revisado": false
+    },
+    {
+      "ficha": "Avena forrajera",
+      "cientifico": "Avena sativa",
+      "paginas": [
+        19,
+        25
+      ],
+      "cultivo_ids": [
+        "avena-forrajera-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Cultivo de clima fresco, sensible al calor (más de 33 °C en floración tira flores); temperatura de 5 a 30 °C, óptima 17.5 °C. Lluvia de 250 a 900 mm (mejor 500 mm). Prefiere suelos arcillo-limosos y franco-arcillosos no calcáreos; en suelos pesados se acama.",
+      "siembra": {
+        "texto": "Región de Cuauhtémoc, temporal: junio y julio. Ciclo tardío del 20 de junio al 15 de julio; intermedio e intermedio-tardío del 1 al 15 de julio; precoz del 15 al 31 de julio.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Cuauhtemoc",
+        "Chihuahua",
+        "Guelatao",
+        "Páramo",
+        "Diamante",
+        "Huamantla",
+        "Tarahumara",
+        "Gema",
+        "Tulancingo",
+        "Juchitepec",
+        "Dorada",
+        "Pampas",
+        "Papigochi",
+        "Babícora",
+        "Cusihuiriachi",
+        "Rarámuri",
+        "Karma",
+        "Avemex",
+        "Obsidiana",
+        "Menonita",
+        "Bachiniva",
+        "Teporaca",
+        "Turquesa",
+        "Arareco",
+        "Ágata",
+        "Jade"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "100 a 120 kg/ha de semilla con 300 mm o más de lluvia en el ciclo; 90 kg/ha si se espera poca lluvia. A unos 5 cm de profundidad, en hileras de 11 a 25 cm (o corrugaciones de 30 a 40 cm, o surcos de 70 a 80 cm).",
+      "fertilizacion": "Con buena lluvia (300 a 400 mm): 60-40-00 a la siembra (87 kg de fosfato diamónico 18-46-00 más 100 kg de urea o 200 kg de sulfato de amonio), junto con la semilla. Si no se fertilizó al sembrar y llueve bien, 20 a 40 kg/ha de N en amacollamiento (25 a 35 días después de sembrar). Con menos de 300 mm: 30-40-00. Fraccionar el N y aplicarlo con humedad.",
+      "riego": null,
+      "plagas": [
+        "Pulgón de la espiga"
+      ],
+      "enfermedades": [
+        "Roya o chahuixtle del tallo"
+      ],
+      "malezas": "Principales: avena silvestre, mostacilla, rabanillo y mostaza. Reducirlas con buena preparación del terreno, siembra en fecha oportuna, semilla certificada y rastreos en verano y otoño durante un año. La hoja ancha se controla entre 25 y 30 días después de sembrar o hasta amacollamiento.",
+      "cosecha": "En embuche (más proteína, pero solo 30 a 40 % de la materia seca) o en grano lechoso-masoso a madurez fisiológica (mayor rendimiento, 4 a 6 t/ha de materia seca). En Chihuahua se cosecha tradicionalmente en madurez fisiológica.",
+      "cuidados": [
+        "Barbechar de octubre a enero, antes de que se pierda la humedad, a 15 a 30 cm.",
+        "Hacer surcos con contras después de sembrar para captar más agua de lluvia.",
+        "Sembrar según el ciclo de la variedad: tardías desde el 20 de junio, precoces hasta el 31 de julio.",
+        "Elegir variedades con resistencia moderada a la roya del tallo (Diamante R-31, Ágata, Jade).",
+        "Vigilar el pulgón de la espiga desde embuche hasta grano masoso; el umbral es de 10 a 15 pulgones por espiga en un muestreo de cien espigas.",
+        "Decidir la etapa de corte según el objetivo: embuche para más calidad, madurez fisiológica para más forraje por hectárea."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 15901,
+          "rendimiento": 5500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Costos del Cuadro 5 (establecimiento de temporal), que viene dentro de la sección de cosecha del extraído. El costo total (15,901) sí cuadra con la suma de los conceptos, pero con ingreso bruto de 22,000 el ingreso neto sería 6,099 y la B/C 1.38, no 7,099 y 1.48 como imprime el cuadro; por eso van en null. El precio por kg no viene impreso.",
+      "revisado": false
+    },
+    {
+      "ficha": "Cebolla",
+      "cientifico": "Allium cepa L.",
+      "paginas": [
+        26,
+        34
+      ],
+      "cultivo_ids": [
+        "cebolla"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": null,
+      "region": "Se cultiva con riego en el Noroeste (Ahumada, Janos, Ascensión; 1,200 a 1,500 msnm, 15 a 17 °C, 160 a 300 mm) y en el Centro-Sur (Jiménez, Delicias, Meoqui, Camargo, Aldama, Ojinaga; 1,100 a 1,300 msnm, 17 a 20 °C, 250 a 400 mm).",
+      "siembra": {
+        "texto": "Variedades de fotoperiodo corto: almácigo del 10 al 30 de septiembre. Trasplante con 3 a 4 hojas verdaderas (50 a 70 días en variedades de invierno; 120 a 140 días en las de primavera).",
+        "meses": [
+          9
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Carta Blanca",
+        "Blanca Montejo",
+        "Monja Blanca",
+        "Yellow Granex",
+        "Cirrus",
+        "Stratus",
+        "Sofire",
+        "Matahari",
+        "Rasta",
+        "Snowball",
+        "Sierra Blanca",
+        "Cimarrón",
+        "Red Floyd",
+        "Cometa",
+        "Rhea",
+        "White Cloud",
+        "Mont Blanc",
+        "Vaquero",
+        "Ranchero"
+      ],
+      "densidad": "Almácigo: 2.5 kg de semilla por hectárea de trasplante. Gravedad: dos hileras por camellón o 4 a 5 por cama, a 8 a 10 cm entre plantas (278,000 a 555,000 plantas/ha). Cintilla: camas de 4 a 6 hileras a tresbolillo (333,000 a 460,000 plantas/ha).",
+      "fertilizacion": "Almácigo: 41-46-00 al establecerlo (100 kg de fosfato diamónico y 50 kg de urea) y 23-00-00 (50 kg de urea) a los 20 días. Cultivo: 100 kg/ha de N con cintilla o 180 kg/ha con gravedad, más 80 kg/ha de P2O5. El fósforo al preparar el terreno; el N en cuatro aplicaciones.",
+      "riego": "Riegos frecuentes y ligeros; 35 a 45 cm de lámina. Unos 12 riegos por gravedad o 20 por cintilla. Etapa crítica: crecimiento y llenado del bulbo. Suspender cuando inicia el doblado del follaje (unas dos semanas antes de cosechar); los riegos tardíos favorecen brotación y pudriciones.",
+      "plagas": [
+        "Trips",
+        "Minador",
+        "Gusano o mosca de la cebolla"
+      ],
+      "enfermedades": [
+        "Raíz rosada",
+        "Mancha púrpura",
+        "Tizón del follaje",
+        "Pudrición blanca",
+        "Pudrición basal (Fusarium)"
+      ],
+      "malezas": "Integrar control mecánico, manual y químico. Principales malezas: avena silvestre, alpistillo, quelite cenizo, mostacilla, mostaza, correhuela anual, quelite común, verdolaga y oreja de ratón.",
+      "cosecha": "Cuando 70 a 90 % de las plantas tienen el cuello doblado; en cebollas de invierno, a los 210 a 235 días. En primavera, doblar el follaje mecánicamente. Curar uno o dos días antes de empacar en arpillas de 30 kg.",
+      "cuidados": [
+        "Elegir la variedad por fotoperiodo: corto en otoño-invierno, intermedio a largo en primavera.",
+        "No adelantar el almácigo (riesgo de floración prematura) ni retrasarlo (baja el rendimiento).",
+        "Al trasplantar, podar la mitad del follaje y dos tercios de la raíz, y regar de inmediato.",
+        "Cubrir el bulbo con tierra en la última labor de cultivo (principios de abril) para evitar verdeo y quemaduras de sol.",
+        "Rotar con cereales para reducir raíz rosada y pudrición blanca.",
+        "Vigilar trips (umbral de 20 por planta) y minador (3 a 5 galerías por hoja o 20 % de hojas con larva)."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 148388.5,
+          "rendimiento": 50000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.0,
+          "ingreso_neto": 51611.5,
+          "relacion_bc": 1.35
+        }
+      ],
+      "nota": "La ficha cubre cebolla de otoño-invierno y de primavera, por eso ciclo va en null (la sección de región dice primavera-verano, pero el texto también recomienda variedades de fotoperiodo corto para otoño-invierno). Solo da fecha para el almácigo de fotoperiodo corto. Los materiales del Cuadro 8 se presentan como híbridos recomendados, sin empresa. Costos del Cuadro 9 (riego por cintilla).",
+      "revisado": false
+    },
+    {
+      "ficha": "Chile jalapeño",
+      "cientifico": "Capsicum annum",
+      "paginas": [
+        35,
+        45
+      ],
+      "cultivo_ids": [
+        "chile-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Se adapta a varios suelos, pero lo mejor son suelos franco-arenosos, aireados, con pocas sales (CE menor a 1.5 dS/m), unos 70 cm de profundidad y pendiente menor al 4 %. Ascensión, Buenaventura, Janos y Ahumada dan más de la mitad de la producción estatal.",
+      "siembra": {
+        "texto": "Trasplante en periodo libre de heladas, del 15 de marzo al 5 de abril (región de Delicias). Siembra directa a mediados de febrero.",
+        "meses": [
+          2,
+          3,
+          4
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Imperial",
+        "Mixteco"
+      ],
+      "densidad": "Trasplante: 33,000 a 40,500 plantas/ha. Siembra directa: 20 a 30 semillas por punto y aclareo, unas 120,000 semillas/ha. Surcos de 80 a 100 cm y 20 a 30 cm entre plantas.",
+      "fertilizacion": "225-80-120 (N-P2O5-K2O) repartido semana a semana durante unas 17 semanas tras el trasplante, más aplicaciones foliares de calcio y micronutrientes.",
+      "riego": "Gravedad: 80 a 120 cm; goteo: 55 a 80 cm. De 12 a 14 riegos.",
+      "plagas": [
+        "Mosquita blanca",
+        "Trips",
+        "Picudo del chile",
+        "Gusano del fruto",
+        "Minador de la hoja",
+        "Pulgón"
+      ],
+      "enfermedades": [
+        "Secadera o damping off",
+        "Marchitez del chile (Phytophthora capsici)",
+        "Fusariosis",
+        "Verticiliosis",
+        "Cenicilla",
+        "Bacteriosis (Xanthomonas)",
+        "Virosis (jaspeado del tabaco y mosaico del pepino)"
+      ],
+      "malezas": "En siembra en seco, control preemergente en banda de 40 cm sobre el lomo del camellón, con riego de activación a más tardar 24 horas después; no romper después esa capa protectora. Complementar con cultivadora y deshierbe manual.",
+      "cosecha": "Primer corte cuando haya en promedio cinco a ocho frutos maduros por planta (fruto firme y brilloso); después, cortes cada 18 a 25 días, de tres a seis en total. No cosechar con agua en el follaje ni dejar el fruto al sol. Rendimiento esperado de 44 t/ha (22 a 46).",
+      "cuidados": [
+        "Trasplantar plántulas de 10 a 15 cm con 6 hojas verdaderas y cepellón, fuera del periodo de heladas.",
+        "Monitorear plagas y actuar por umbral: 4 a 5 mosquitas blancas por planta, un picudo en 100 terminales, 10 pulgones por hoja o 10 trips por flor.",
+        "Rotar cultivos y usar semilla sana para reducir enfermedades del suelo y virosis; controlar a los insectos vectores.",
+        "No retrasar el primer corte: envejece la planta y puede bajar la producción hasta 20 %.",
+        "Con acolchado y cintilla, la primera pizca llega unos 10 días antes que solo con cintilla."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 209689,
+          "rendimiento": 45000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6.5,
+          "ingreso_neto": 82811,
+          "relacion_bc": 1.39
+        }
+      ],
+      "nota": "Se asigna chile-verde porque la agenda trata la cosecha en verde. Costos del Cuadro 14 (riego por cintilla, Delicias).",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz para grano",
+      "cientifico": "Zea maiz L.",
+      "paginas": [
+        46,
+        54
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Maíz de riego en cuatro regiones: Baja Babícora (1,800 a 2,050 msnm, 10 a 14 °C), Desierto Chihuahuense (1,200 a 1,700 msnm, 15 a 17 °C), Alta Babícora (2,100 a 2,350 msnm, 10 a 13 °C) y las vegas de los ríos Florido, San Pedro y Conchos (maíces criollos).",
+      "siembra": {
+        "texto": "Alta y Baja Babícora: del 15 de abril al 30 de mayo. Desierto Chihuahuense: temprana del 15 de abril al 15 de mayo o tardía del 15 de mayo al 30 de junio, para que la floración no coincida con el calor.",
+        "meses": [
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "38T83",
+        "P-1898",
+        "P-1382",
+        "P-1445",
+        "P-1906",
+        "32B10",
+        "RX-715",
+        "RX-717",
+        "RX-840",
+        "RX-860",
+        "N83N5",
+        "NK-307",
+        "NK-821",
+        "NK-780",
+        "NK-925W",
+        "NK921W",
+        "NK-914W",
+        "P-1588",
+        "P-4021",
+        "P-3917W",
+        "P-3966",
+        "XR35A (Ceres)",
+        "B-937",
+        "B-555",
+        "P-3097",
+        "P-4082",
+        "Antílope",
+        "Hipopótamo",
+        "Supremo",
+        "NB-940"
+      ],
+      "densidad": "Surcos a 80 cm, 7 a 8 semillas por metro. 80 a 90 mil plantas/ha en suelos poco fértiles y 100 mil en suelos fértiles.",
+      "fertilizacion": "Región de Cuauhtémoc: 250-150-00, con todo el fósforo y la mitad del N a la siembra y el resto del N en V6. Aplicar a un lado de la hilera y tapar con tierra.",
+      "riego": "Lámina de 110 cm por gravedad u 80 cm por cintilla, en unos nueve riegos: establecimiento, V6 (31 días), V11, V16, floración (76 días), grano acuoso, lechoso, masoso y dentado (124 días).",
+      "plagas": [
+        "Trips",
+        "Gusano cogollero",
+        "Gusano elotero",
+        "Gallina ciega",
+        "Araña roja"
+      ],
+      "enfermedades": [
+        "Carbón de la espiga",
+        "Pudrición de raíz",
+        "Tizón foliar",
+        "Roya del maíz"
+      ],
+      "malezas": "Periodo crítico: los primeros 40 días. En siembras a tierra venida, descopete justo después de sembrar y dos escardas; cultivar al menos dos veces en las primeras etapas.",
+      "cosecha": "En madurez fisiológica (capa negra, grano con 30 a 35 % de humedad, unos 145 días). Dejar secar en campo cerca de un mes hasta 13 a 15 % de humedad. Se cosecha a máquina, por lo general en noviembre.",
+      "cuidados": [
+        "Barbechar a 30 cm inmediatamente después de la cosecha (noviembre-diciembre) para incorporar residuos y reducir plagas.",
+        "Usar semilla certificada de híbridos adaptados a la región.",
+        "Respetar la fecha de siembra de cada región; en el desierto, evitar que la floración coincida con las altas temperaturas.",
+        "Mantener el cultivo limpio de malezas los primeros 40 días.",
+        "Monitorear plagas por umbral (10 trips por 100 plantas, 20 plantas dañadas por cogollero en 100) y usar control biológico con Trichogramma para el elotero.",
+        "Rotar cultivos y usar semilla certificada para reducir carbón de la espiga y pudriciones de raíz."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 50263,
+          "rendimiento": 11000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.6,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Costos del Cuadro 19 (Delicias), que viene dentro de la sección de cosecha del extraído. El costo total (50,263) cuadra con la suma de los conceptos y el ingreso bruto es 61,600, pero el cuadro imprime ingreso neto 61,600 (debería ser unos 11,337) y B/C 1.26 (daría 1.23); van en null. La agenda marca 32B10 como de grano blanco.",
+      "revisado": false
+    },
+    {
+      "ficha": "Manzana",
+      "cientifico": "Malus domestica Borkh",
+      "paginas": [
+        55,
+        65
+      ],
+      "cultivo_ids": [
+        "manzana"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Clima templado, 18 a 24 °C en crecimiento y unas 800 horas frío en invierno; 800 mm de lluvia (o riego). En Chihuahua se cultiva cerca de 2,000 msnm. Suelos profundos (1.2 a 1.5 m), bien drenados, francos, pH 6.4 a 6.9 y sin sales.",
+      "siembra": {
+        "texto": null,
+        "meses": []
+      },
+      "variedades": [
+        "Golden Delicious",
+        "Golden Glory",
+        "Granny Smith",
+        "Red Delicious",
+        "Gala"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Baja: 634 a 900 árboles/ha; media: 900 a 3,000; alta: más de 3,000. Distancia de 4 a 4.5 m entre hileras y 3 a 3.5 m entre árboles. Un árbol polinizador por cada 10 comerciales.",
+      "fertilizacion": "Según análisis de suelo; para 40 t/ha: 75 a 100 kg de N, 40 a 60 de P2O5, 110 a 150 de K2O, 40 a 70 de CaO y 15 a 30 de MgO, más boro, zinc, hierro, manganeso y cobre. De 10 a 14 aplicaciones foliares de calcio desde el amarre hasta la maduración.",
+      "riego": "En plena producción, 90 a 110 cm por goteo, repartidos por etapa: dormancia 2 a 3 cm, brotación 10 a 12, amarre 24 a 28, crecimiento del fruto 25 a 30, maduración 24 a 25 y poscosecha 10 a 12.",
+      "plagas": [
+        "Palomilla de la manzana",
+        "Pulgón lanígero"
+      ],
+      "enfermedades": [
+        "Mancha o fuego bacteriano (Erwinia amylovora)",
+        "Cenicilla",
+        "Pudrición del cuello (Phytophthora)",
+        "Mancha necrótica o pudrición amarga (Colletotrichum)"
+      ],
+      "malezas": null,
+      "cosecha": "Manual, principalmente en septiembre, octubre y noviembre. Rendimiento promedio de 30 a 40 t/ha, hasta 60 t/ha en condiciones óptimas.",
+      "cuidados": [
+        "Plantar árboles injertados a raíz desnuda, con la unión del injerto 6 a 8 cm sobre el suelo.",
+        "Elegir el portainjerto por vigor y sanidad: las series Geneva y MM resisten el pulgón lanígero; MM.106 es muy susceptible a la pudrición del cuello.",
+        "Podar en invierno y aclarear frutos cuando miden 10 a 15 mm, dejando 1 a 2 por rama.",
+        "Proteger contra heladas desde la brotación hasta el cuajado (calentones, abanicos y riego durante la helada) y poner malla antigranizo de mayo a noviembre.",
+        "Podar y quemar material enfermo y desinfectar herramientas para frenar el fuego bacteriano y la cenicilla.",
+        "Usar la red de alertas del INIFAP y el gobierno del estado para decidir el control de la palomilla."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 198936,
+          "rendimiento": 40000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 13,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "No hay fecha de plantación en el texto. El cuadro de costos no indica modalidad; se pone riego porque la ficha es de riego. Costos del Cuadro 23 (mantenimiento, Cuauhtémoc): el costo total 198,936 cuadra con la suma de los conceptos, pero el ingreso neto impreso (324,384) y la B/C (2.66) corresponden a un costo de 195,616; con 198,936 serían 321,064 y 2.61. Van en null.",
+      "revisado": false
+    },
+    {
+      "ficha": "Melón",
+      "cientifico": "Cucumis melo L.",
+      "paginas": [
+        66,
+        72
+      ],
+      "cultivo_ids": [
+        "melon"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Clima cálido y seco, 18 a 30 °C (máx. 32, mín. 15 °C). Suelos profundos de textura media, bien drenados, pH 6.0 a 7.5. Poco tolerante a sales: CE máxima de 2.2 dS/m en suelo y 1.5 dS/m en el agua de riego.",
+      "siembra": {
+        "texto": "Fecha óptima del 15 de marzo al 15 de abril. Siembra directa de mediados de marzo a finales de abril, con mejores rendimientos en marzo.",
+        "meses": [
+          3,
+          4
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Cruiser",
+        "Nitro",
+        "Gold Express",
+        "Ovation",
+        "Acclaim",
+        "Expedition"
+      ],
+      "densidad": "Siembra directa: 18,500 a 22,200 plantas/ha, dos semillas por punto. Trasplante: 16,600 a 26,600 plantas/ha. Camas de 1.6 a 1.8 m con acolchado.",
+      "fertilizacion": "150-60-80 (N-P2O5-K2O): a la siembra 85 kg de urea, 115 kg de MAP y 90 kg de nitrato de potasio; en la 5.ª hoja verdadera 85 kg de urea; en floración 85 kg de urea y 85 kg de nitrato de potasio.",
+      "riego": "Goteo: 60 a 70 cm en 15 a 20 riegos. Gravedad: 75 a 100 cm en 5 a 6 riegos.",
+      "plagas": [
+        "Mosca blanca",
+        "Pulgón",
+        "Trips",
+        "Gusano soldado",
+        "Ácaros (araña roja)",
+        "Minador de la hoja",
+        "Gusano barrenador"
+      ],
+      "enfermedades": [
+        "Mildiú velloso",
+        "Oídio",
+        "Antracnosis",
+        "Fusarium",
+        "Virus del mosaico"
+      ],
+      "malezas": "Perennes: coquillo, hierba amargosa, trompillo, zacate chino y zacate Johnson. Anuales: cadillo, correhuela, quelite, toloache, verdolaga, zacate pegarropa y zacate pinto. En camas meloneras se usa control preemergente, complementado con cultivadora y escardas.",
+      "cosecha": "Cantaloupe a los 65 a 80 días de sembrado; honeydew a los 75 a 90 días. Rendimiento probable de 50 t/ha.",
+      "cuidados": [
+        "Sembrar de mediados de marzo a mediados de abril; las siembras tempranas arriesgan heladas y las tardías más plagas y enfermedades.",
+        "Elegir el híbrido según la fecha de siembra y evaluar los nuevos antes de usarlos en grande.",
+        "Producir plántula con cepellón para que sobreviva mejor al trasplante.",
+        "Evitar suelos y agua salinos.",
+        "Actuar por umbral: más de 5 moscas blancas por hoja, 5 a 10 trips por flor, 1 a 2 larvas de gusano soldado por metro; contra pulgón actuar desde infestaciones leves para evitar virosis.",
+        "Rotar cultivos y usar materiales resistentes contra Fusarium y mildiú."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": null,
+          "rendimiento": 40000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Costos del Cuadro 27 (Delicias): el costo total impreso (106,973) no cuadra con la suma de sus conceptos (118,973; parece faltar la cosecha de 12,000). El ingreso neto (45,027) y la B/C (1.42) se calcularon con el total erróneo, así que van en null; el ingreso bruto impreso es 152,000 y el precio por kg no viene. El cuadro usa 40 t/ha, mientras el texto de cosecha habla de 50 t/ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Nogal pecanero",
+      "cientifico": "Carya illinoinensis K. Koch",
+      "paginas": [
+        73,
+        83
+      ],
+      "cultivo_ids": [
+        "nuez"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Se cultiva con riego en las regiones Conchos (Camargo, Saucillo, Delicias), Centro (Chihuahua, Aldama), Noroeste (Casas Grandes) y Sur-Oriente (Jiménez), entre 1,100 y 1,500 msnm, con 250 a 450 mm de lluvia. Suelos profundos, bien drenados, de textura media y sin sales.",
+      "siembra": {
+        "texto": "Trasplante de preferencia entre febrero y la primera quincena de marzo.",
+        "meses": [
+          2,
+          3
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [],
+      "densidad": "Marco real de 13 × 13 m (60 árboles/ha), el más usado; también 9 × 9 m (123 árboles/ha) y 4.6 × 9 m (239 árboles/ha), que requieren más poda y aclareo.",
+      "fertilizacion": "Con base en análisis de suelo, agua y hoja. En producción: 120 a 200 kg/ha de N (de marzo a junio), 40 a 80 kg/ha de P2O5 (al inicio del ciclo) y 0 a 150 kg/ha de K2O (de mayo a julio). En gravedad, todo el fósforo y parte del N en el primer riego. Foliares de zinc (con urea) desde poco después de la brotación, cada 7 a 10 días, al menos cinco aplicaciones.",
+      "riego": "Árboles adultos: 130 a 135 cm por ciclo, desde antes de la brotación hasta la apertura del ruezno, en unos nueve riegos (del 15 de marzo al 15 de septiembre). Etapas críticas: floración, desarrollo y llenado de la nuez. Riego de invierno en la primera quincena de enero. Árboles recién plantados: cada 10 días los primeros cinco riegos, luego cada 15.",
+      "plagas": [
+        "Pulgones amarillo y negro",
+        "Gusano barrenador de la nuez",
+        "Gusano barrenador del ruezno",
+        "Chinches",
+        "Gallina ciega"
+      ],
+      "enfermedades": [
+        "Pudrición texana"
+      ],
+      "malezas": "Principales: zacate gramma, zacate Johnson, coquillo, correhuela, quelite y trompillo. Manejo integrado: limpiar la maquinaria, rastreos y segados oportunos, riego localizado y mantillos orgánicos.",
+      "cosecha": "Cuando el ruezno empieza a abrir, por lo general a finales de septiembre. Vibrar los árboles, recolectar, limpiar y clasificar; almacenar en sacos ventilados hasta unos 5 % de humedad. Rendimiento promedio de 1.8 a 2.5 t/ha.",
+      "cuidados": [
+        "Nivelar el terreno con pendiente de 0.2 a 0.4 % y, en gravedad, no hacer hileras de más de 150 m.",
+        "Al plantar, dejar el cuello al nivel del vivero, podar 33 a 50 % del tallo y regar de inmediato.",
+        "Formar el árbol con líder central y ramas con ángulos mayores a 60°; podar en invierno y mantener 2 m entre copas.",
+        "No dejar que falte agua en floración, desarrollo y llenado de la nuez, y dar el riego de invierno en enero.",
+        "Monitorear plagas con trampas de feromona y por umbral (p. ej., 30 pulgones amarillos o 3 a 4 negros por hoja compuesta) y conservar crisopas y catarinas.",
+        "Ante pudrición texana, confirmar con análisis de raíces e incorporar materia orgánica, azufre agrícola y sulfato de amonio (tratamiento Arizona)."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 92575,
+          "rendimiento": 2000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 65,
+          "ingreso_neto": 37460,
+          "relacion_bc": 1.4
+        }
+      ],
+      "nota": "Costos del Cuadro 33 (mantenimiento, Delicias); el Cuadro 34 es idéntico. El costo total 92,575 cuadra con la suma de los conceptos; el ingreso neto impreso (37,460) parte de 92,540, una diferencia de 35 pesos que se deja tal cual (lo exacto serían 37,425). La agenda no menciona variedades de nogal.",
+      "revisado": false
+    }
+  ]
+}

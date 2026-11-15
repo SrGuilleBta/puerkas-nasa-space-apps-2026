@@ -1,0 +1,781 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/mexico.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "15",
+  "estado": "Estado de México",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola del Estado de México. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Amaranto",
+      "cientifico": "Amaranthus sp. L.",
+      "paginas": [
+        12,
+        20
+      ],
+      "cultivo_ids": [
+        "amaranto"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Zonas de temporal de 2,000 a 2,800 msnm, clima templado subhúmedo con lluvias en verano (máximas de 19 a 23 °C, mínimas de 9 a 11 °C). No tolera inundaciones ni encharcamientos. Se siembra sobre todo en Tenango del Aire, Juchitepec, Ozumba, Temamatla, Tepetlixpa, Ayapango, Amecameca, Tlalmanalco y Ocuilan.",
+      "siembra": {
+        "texto": "Con el establecimiento de las lluvias: desde la primera quincena de mayo y todo el mes (con riesgo de heladas tempranas); en regiones templadas, todo mayo hasta el 15 de junio. La fecha ideal depende del ciclo de la variedad.",
+        "meses": [
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Nutrisol (INIFAP)",
+        "Revancha (INIFAP)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Con la sembradora de amaranto adaptada (tipo Z), de 500 a 750 g de semilla por ha; no requiere aclareo.",
+      "fertilizacion": "Fórmula 80-40-00, aplicada toda a la siembra (la sembradora fertiliza a la par).",
+      "riego": null,
+      "plagas": [
+        "Picudo barrenador del tallo (Hypolixus truncatulus)",
+        "Mosca minadora del tallo (Amauromyza abnormalis)",
+        "Gusanos defoliadores (Spodoptera exigua)",
+        "Chapulines",
+        "Pulgones",
+        "Gallina ciega (Phyllophaga spp.)"
+      ],
+      "enfermedades": [
+        "Roya blanca (Albugo bliti)",
+        "Mancha foliar y tizón (Alternaria alternata)",
+        "Pudrición de raíz (Fusarium, Rhizoctonia y Pythium)"
+      ],
+      "malezas": "Periodo crítico: los primeros 30 días. Principales: zacate Johnson, quelite y falsa correhuela. No hay herbicidas para amaranto: control mecánico o manual. Pasar cultivadora rotativa cuando la planta mide de 5 a 10 cm, escardar a los 25 cm (arrimando tierra) y, si se puede, una segunda escarda.",
+      "cosecha": "Trilla mecanizada con trilladoras estacionarias de flujo axial (de 250 a 1,000 kg por hora) y limpieza con sopladora; reduce la mano de obra y el tiempo de cosecha. Rendimiento de referencia del cuadro de costos: 2,600 kg/ha.",
+      "cuidados": [
+        "Preparar bien el terreno (barbecho a 25 cm y uno o dos rastreos) para que la sembradora deposite la semilla a profundidad pareja.",
+        "Sembrar con el temporal ya establecido, en mayo y hasta el 15 de junio; las siembras tempranas corren riesgo de heladas.",
+        "Mantener el cultivo limpio de maleza los primeros 30 días, con cultivadora y escardas.",
+        "Arrimar tierra al pie de la planta en la escarda para evitar el acame.",
+        "Vigilar barrenadores del tallo y gallina ciega; las plagas también transmiten enfermedades."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 30272,
+          "rendimiento": 2600,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 13,
+          "ingreso_neto": 3528,
+          "relacion_bc": 1.12
+        }
+      ],
+      "nota": "Costos del Cuadro 1 (paquete mecanizado, parcelas de Ozumba y Tepexpan): ingreso bruto 33,800 = 2,600 kg × 13 $/kg. El subtotal impreso de 'Otros gastos' (1,550) difiere de su único concepto (1,512); el costo total (30,272) cuadra con 1,512.",
+      "revisado": false
+    },
+    {
+      "ficha": "Avena",
+      "cientifico": "Avena sativa L.",
+      "paginas": [
+        21,
+        33
+      ],
+      "cultivo_ids": [
+        "avena-grano",
+        "avena-forrajera-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Temporal de 2,100 a 3,200 msnm con 300 a 900 mm de lluvia. Tres ambientes: potencial alto (más de 650 mm; DDR Toluca, Atlacomulco y Texcoco), medio (400 a 650 mm; Jilotepec, Texcoco y Valle de Bravo) y bajo (menos de 400 mm; Zumpango, Texcoco y Jilotepec).",
+      "siembra": {
+        "texto": "Grano: potencial alto, 1 al 25 de junio; medio, 20 de junio al 10 de julio; bajo, 1 al 20 de julio. Forraje: alto, 25 de junio al 10 de julio; medio, 5 al 25 de julio; bajo, 15 al 30 de julio.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Turquesa (INIFAP)",
+        "Ágata (INIFAP)",
+        "Jade (INIFAP)",
+        "Rubí (INIFAP)",
+        "Zafiro (INIFAP)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Con sembradora de cereales (la más recomendable), de 110 a 120 kg de semilla por ha; al voleo y tapado con rastra, de 130 a 140 kg/ha, con semilla certificada.",
+      "fertilizacion": "Potencial alto: 60-40-20; medio: 40-20-00; bajo: 30-00-00. En alto y medio, la mitad del nitrógeno a la siembra y la otra mitad al amacollamiento; fósforo y potasio a la siembra.",
+      "riego": null,
+      "plagas": [
+        "Gusano soldado (Spodoptera exigua)",
+        "Pulgones (Schizaphis graminum)"
+      ],
+      "enfermedades": [
+        "Roya del tallo (Puccinia graminis f. sp. avenae)",
+        "Tizones y manchas foliares (Drechslera avenacea, Septoria avenae, Colletotrichum graminicola)"
+      ],
+      "malezas": "Hoja ancha y hoja angosta; la etapa crítica de competencia es de 25 a 40 días después de la siembra.",
+      "cosecha": "Con trilladora combinada bien calibrada, cuando las panículas se desgranan fácilmente y el grano tiene 13 % de humedad. Rendimiento esperado: alto 4.0 a 5.0 t/ha, medio 3.0 a 4.0 t/ha, bajo 2.0 a 3.0 t/ha.",
+      "cuidados": [
+        "Elegir fecha de siembra, dosis de fertilizante y variedad según el ambiente (potencial alto, medio o bajo).",
+        "Usar semilla certificada y buena preparación del terreno (barbecho y uno o dos rastreos de 15 a 20 cm).",
+        "Controlar la maleza entre los 25 y 40 días después de la siembra.",
+        "Vigilar la roya del tallo desde encañe a embuche (40 a 50 días); Rubí y Zafiro son resistentes, Turquesa, Ágata y Jade requieren protección.",
+        "Trillar con el grano a 13 % de humedad."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 16831.2,
+          "rendimiento": 4500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": 10168.8,
+          "relacion_bc": 1.6
+        },
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 15261,
+          "rendimiento": 3500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": 5739,
+          "relacion_bc": 1.38
+        },
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 12546,
+          "rendimiento": 2900,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": 4854,
+          "relacion_bc": 1.39
+        }
+      ],
+      "nota": "Ids de grano y forraje en verde porque la ficha da fechas para ambos usos (el texto no dice si el forraje es verde, achicalado o seco). Los tres costos son de grano en temporal, en orden: potencial alto (Cuadro 3), medio (Cuadro 4) y bajo (Cuadro 5), todos a 6 $/kg. El Cuadro 3 quedó revuelto en las secciones cosecha y enfermedades del extraído. El Cuadro 5 presupuesta la fórmula 40-20-00, aunque el texto recomienda 30-00-00 para potencial bajo.",
+      "revisado": false
+    },
+    {
+      "ficha": "Cebada",
+      "cientifico": "Hordeum vulgare L. y Hordeum distichum L.",
+      "paginas": [
+        34,
+        43
+      ],
+      "cultivo_ids": [
+        "cebada-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Valles Altos de 2,200 a 2,700 msnm, clima templado subhúmedo, 800 a 1,000 mm de lluvia concentrada de junio a septiembre; riesgo de heladas tempranas y temporal errático. Principales municipios: Axapusco, Temascalapa, Otumba, Nopaltepec y Acolman.",
+      "siembra": {
+        "texto": "Desde el inicio de las lluvias (mayo y junio), con fecha límite el 30 de junio por el riesgo de heladas en etapas críticas.",
+        "meses": [
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Maravilla (alimentación animal)",
+        "Monserrat (alimentación humana)",
+        "Estelar OH (maltera, whisky)",
+        "Zurita (maltera, cerveza, y alimentación humana)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "De 100 a 120 kg de semilla por ha en siembra convencional; de 80 a 100 kg/ha para Maravilla, Estelar OH, Monserrat y Zurita. Usar semilla certificada y, de preferencia, sembradora de precisión.",
+      "fertilizacion": "Para primavera-verano: 46-46-30 (N-P-K).",
+      "riego": null,
+      "plagas": [
+        "Pulgón ruso (Diuraphis noxia)",
+        "Pulgón verde (Schizaphis graminum)",
+        "Pulgón del cogollo (Rhopalosiphum padi)",
+        "Pulgón de la espiga (Sitobion avenae)"
+      ],
+      "enfermedades": [
+        "Roya de la hoja (Puccinia hordei)",
+        "Roya lineal amarilla (Puccinia striiformis f. sp. hordei)",
+        "Escaldadura (Rhynchosporium secalis)",
+        "Mancha marrón (Helminthosporium sativum)"
+      ],
+      "malezas": "Hoja ancha: trébol, nabo o mostaza, quelite cenizo, borraja, chayotillo y acahual; hoja angosta: avena silvestre y alpiste silvestre. Un paso de rastra superficial (10 cm) antes de sembrar, con humedad, elimina las primeras generaciones de maleza.",
+      "cosecha": "Trillar con el grano maduro, seco, amarillo cremoso y con máximo 13.5 % de humedad (normalmente en octubre y noviembre). Cóncavo a 500-700 rpm y avance de 3 a 4 km/h para no quebrar ni pelar el grano. Rendimiento esperado: 2.5 a 3.0 t/ha en años malos a regulares y 3.5 a 4.0 t/ha en años regulares a buenos.",
+      "cuidados": [
+        "Preparar el terreno justo después de la cosecha anterior para aprovechar la humedad; subsoleo cada tres años.",
+        "No sembrar después del 30 de junio por el riesgo de heladas.",
+        "Preferir sembradora a la siembra al voleo: ahorra semilla y da nacencia uniforme.",
+        "Vigilar pulgones, favorecidos por calor y baja humedad.",
+        "Calibrar la trilladora: la industria maltera rechaza granos quebrados o sin cáscara (se pide al menos 90 % de germinación)."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 23885,
+          "rendimiento": 3500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7,
+          "ingreso_neto": 615,
+          "relacion_bc": 1.03
+        }
+      ],
+      "nota": "Costos del Cuadro 9 (año ideal, productores cooperantes): ingreso bruto 24,500 = 3,500 kg × 7 $/kg. La relación B/C impresa es 1.02; calculada como ingreso bruto / costo total da 1.03. El retorno impreso (2.57 %) cuadra con 615 / 23,885.",
+      "revisado": false
+    },
+    {
+      "ficha": "Frijol",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        44,
+        50
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "De 1,200 a 2,800 msnm, de 16 a 27 °C y 400 a 800 mm de lluvia; 83 % de la superficie es de temporal. Suelos bien aireados y drenados, textura media, 3 a 5 % de materia orgánica y pH de 6.5 a 7.5.",
+      "siembra": {
+        "texto": "Del 15 de mayo al 30 de junio. (En climas cálidos también se siembra en otoño-invierno, sin fechas en la agenda.)",
+        "meses": [
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Pinto Saltillo",
+        "Pinto Rarámuri",
+        "Flor de Mayo Dolores",
+        "Flor de Junio Marcela",
+        "Negro 8025",
+        "Primavera 28"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "De 30 a 40 kg de semilla por ha según el tamaño del grano, en surcos de 60 a 80 cm y a 3 a 4 cm de profundidad.",
+      "fertilizacion": "Riego: 40-40-00; temporal: 20-40-00, todo a la siembra con humedad en el suelo (urea y DAP). Dos aplicaciones de fertilizante foliar con micronutrientes: antes de la floración y al inicio de la formación de vainas.",
+      "riego": "Si hay agua, dar un riego a la siembra para asegurar la emergencia y otro al inicio de la floración para favorecer la polinización.",
+      "plagas": [
+        "Conchuela (Epilachna varivestis)",
+        "Chapulín (Sphenarium purpurascens)",
+        "Mosquita blanca (Bemisia tabaci)",
+        "Picudo del ejote (Apion godmani)",
+        "Gorgojo (Acanthoscelides obtectus)"
+      ],
+      "enfermedades": [
+        "Pudrición de la raíz (Rhizoctonia solani)",
+        "Roya (Uromyces appendiculatus)",
+        "Tizón común (Xanthomonas campestris pv. phaseoli)",
+        "Tizón de halo (Pseudomonas syringae pv. phaseolicola)",
+        "Antracnosis (Colletotrichum lindemuthianum)",
+        "Mancha angular (Pseudocercospora griseola)"
+      ],
+      "malezas": "Hoja ancha y pastos. Control cultural con rotación de cultivos y cobertura de rastrojo; control mecánico con escardas, aporque y deshierbes manuales a tiempo.",
+      "cosecha": "En noviembre y diciembre, manual o mecanizada. Mantener el grano entre 8 y 10 % de humedad y almacenarlo en lugar fresco y seco. Rendimiento esperado: 1.0 t/ha en temporal y 1.5 t/ha en riego.",
+      "cuidados": [
+        "Barbecho profundo tras la cosecha anterior y uno o dos rastreos al sembrar.",
+        "Primera escarda con tres hojas compuestas bien desarrolladas; aporque cuando la planta pase de 25 cm.",
+        "Prevenir enfermedades con variedades resistentes, buena nutrición y rotación de cultivos.",
+        "Fertilizar solo con humedad en el suelo o con riego inmediato.",
+        "Proteger el grano almacenado del gorgojo."
+      ],
+      "costos": [
+        {
+          "modalidad": null,
+          "costo_total_ha": 21834,
+          "rendimiento": 1500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 27,
+          "ingreso_neto": 18666,
+          "relacion_bc": 1.85
+        }
+      ],
+      "nota": "Modalidad null porque la ficha cubre riego y temporal. Variedades recomendadas por el INIFAP (Cuadro 11). Costos del Cuadro 12: ingreso bruto 40,500 = 1,500 kg × 27 $/kg. El cuadro no indica la modalidad; su rendimiento (1,500 kg/ha) es el esperado en riego, pero no incluye costos de riego. Se omitieron las marcas de los fertilizantes foliares.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz Grano de Temporal",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        51,
+        58
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Altiplanicie con climas de templado a frío, de 3 a 25 °C y unos 900 mm de lluvia anual. Principales municipios: Almoloya, San José del Rincón, Villa Victoria, Ixtlahuaca y Temascalcingo.",
+      "siembra": {
+        "texto": "Según el DDR: Toluca y Coatepec de Harinas, 1 de marzo al 15 de abril; Zumpango, Texcoco y Jilotepec, 1 de abril al 15 de mayo; Tejupilco, 1 de mayo al 15 de junio; Atlacomulco, 15 de abril al 15 de mayo; Valle de Bravo, 15 de marzo al 15 de mayo.",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Grano blanco (INIFAP): H-40, H-48, H-50, H-52, H-66, H-70, Gacela H-72, Venado H-74, H-76, H-77, VS-22, H-516, H-562, H-563, VS-535, V-559",
+        "Grano azul (INIFAP): Vampiro-H10, Vampiro-H12, Drácula-H13, Chimpancé-H14",
+        "Grano amarillo (INIFAP): V-53 A, V-54 A, V-55 A, HV-59A",
+        "Razas nativas: Palomero Toluqueño, Arrocillo, Cónicos, Elotes Cónicos, Cacahuacintle, Chalqueño, Tuxpeño, Cónico Norteño"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "20 kg de semilla por ha, a 5-7 cm de profundidad, surcos a 80 cm y 21 cm entre plantas: unas 60,000 plantas/ha.",
+      "fertilizacion": "Lluvias regulares: 100-20-20 (8 bultos de urea de 25 kg, 1 bulto de DAP de 50 kg y 1.3 bultos de cloruro de potasio de 25 kg). Lluvias erráticas: 75-15-00 (5 bultos de urea y 1 de DAP). Mitad del nitrógeno y todo el fósforo y potasio a la siembra; el resto del nitrógeno en la escarda. Inocular la semilla con micorriza (1 kg por 25-30 kg de semilla) y dos aplicaciones foliares (a 5-6 hojas y a 8-10 hojas).",
+      "riego": null,
+      "plagas": [
+        "Gusano de alambre",
+        "Gallina ciega (Phyllophaga spp.)",
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Gusano soldado (Spodoptera exigua)",
+        "Picudos (Nicentrites testaceipes, Geraeus senilis)",
+        "Gusano elotero (Helicoverpa zea)",
+        "Trips (Frankliniella spp.)"
+      ],
+      "enfermedades": [],
+      "malezas": "Control mecánico en los primeros 40 días con dos o tres labores de cultivo, azadón o machete. Primera escarda entre 15 y 22 días después de la siembra y la segunda 15 días después.",
+      "cosecha": "Madurez fisiológica hacia los 165 días: hojas del tercio inferior amarillas y grano con 30 a 35 % de humedad. Dejar secar las mazorcas en campo hasta 12-14 % (cosecha manual, normalmente en noviembre). Almacenar el grano limpio y seco (12 %) en silos herméticos o costales nuevos, sobre tarimas. Rendimiento esperado: 6 a 8 t/ha con lluvias regulares y 4 a 6 t/ha con lluvias erráticas.",
+      "cuidados": [
+        "Sembrar dentro de la ventana de su DDR.",
+        "Barbecho en diciembre-enero (30 cm en suelos profundos, 15 cm en delgados) y nivelar para repartir el agua de lluvia.",
+        "Ajustar la fórmula de fertilización a si el temporal es regular o errático.",
+        "Control preventivo de plagas: rotación, limpiar bordes y liberar Trichogramma (dos a tres liberaciones semanales de 30,000 huevos).",
+        "Rotar cultivos y usar los materiales recomendados para prevenir enfermedades."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 24180,
+          "rendimiento": 8000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5,
+          "ingreso_neto": 15820,
+          "relacion_bc": 1.65
+        }
+      ],
+      "nota": "Enfermedades en []: la agenda solo dice que hay enfermedades por hongos, bacterias y virus, sin nombrarlas. Todos los híbridos y variedades del Cuadro 14 son del INIFAP (no hay híbridos comerciales privados). Costos del Cuadro 15: ingreso bruto 40,000 = 8,000 kg × 5 $/kg. Se omitieron las marcas de fertilizantes foliares.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz Grano de Riego",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        59,
+        66
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Altiplanicie, de 1,330 a 2,800 msnm, clima mayormente templado subhúmedo, 900 mm de lluvia anual y de 3 a 25 °C. El principal municipio de riego es Ixtlahuaca.",
+      "siembra": {
+        "texto": "Según el DDR: Toluca y Coatepec de Harinas, 1 de marzo al 15 de abril; Zumpango, Texcoco y Jilotepec, 1 de abril al 15 de mayo; Tejupilco, 1 de mayo al 15 de junio; Atlacomulco, 15 de abril al 15 de mayo; Valle de Bravo, 15 de marzo al 15 de mayo.",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Grano blanco (INIFAP): H-40, H-48, H-50, H-52, H-66, H-70, Gacela H-72, Venado H-74, H-76, H-77, H-155",
+        "Grano azul (INIFAP): Vampiro-H10, Vampiro-H12, Drácula-H13, Chimpancé-H14",
+        "Grano amarillo (INIFAP): V-53 A, V-54 A, V-55 A, HV-59A"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Surcos a 80 cm y 17 cm entre semillas (seis por metro): unas 75,000 plantas/ha, de 25 a 30 kg de semilla.",
+      "fertilizacion": "Con análisis de suelo, en tres momentos: 30 % a la siembra, 50 % en la escarda y 20 % antes de la floración. Dosis por DDR: Toluca y Coatepec de Harinas 160-40-30; Zumpango 100-20-00; Texcoco 120-40-00; Tejupilco 140-40-00; Atlacomulco y Jilotepec 140-40-30; Valle de Bravo 150-40-30. Micorriza (1 kg por 25-30 kg de semilla) y fertilización foliar.",
+      "riego": "Cuatro riegos de auxilio con lámina de 10 cm. Que no falte agua en emergencia, desarrollo vegetativo, floración y llenado de grano.",
+      "plagas": [
+        "Gusano trozador (Agrotis ipsilon)",
+        "Gusano de alambre (Colaspis spp.)",
+        "Gusano alfilerillo (Diabrotica spp.)",
+        "Gallina ciega (Phyllophaga spp.)",
+        "Gusano barrenador (Diatraea saccharalis)",
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Gusano soldado (Spodoptera exigua)",
+        "Picudos (Nicentrites testaceipes, Geraeus senilis)",
+        "Gusano elotero (Helicoverpa zea)",
+        "Trips (Frankliniella spp.)"
+      ],
+      "enfermedades": [
+        "Pudriciones de raíz, tallo y mazorca (Pythium, Diplodia, Fusarium)",
+        "Royas (Puccinia sorghi, P. polysora)"
+      ],
+      "malezas": "Control mecánico en los primeros 40 días con dos o tres labores de cultivo o herramientas manuales. Primera escarda entre 15 y 22 días después de la siembra y la segunda 15 días después.",
+      "cosecha": "Mecánica con el grano a 14 % de humedad; manual cuando aparece la capa negra en la base del grano y el totomoxtle cambia de color. Presecar mazorcas al sol hasta 12-14 % y almacenar el grano a 12 % en silos herméticos o costales nuevos. Rendimiento esperado: 10.0 t/ha.",
+      "cuidados": [
+        "Barbecho a 30 cm en diciembre-enero y uno o dos rastreos antes de sembrar.",
+        "Hacer análisis de suelo y usar la dosis de fertilización de su DDR, repartida en tres aplicaciones.",
+        "No dejar que falte el agua en floración y llenado de grano.",
+        "Manejo integrado de plagas: rotación, limpieza de bordes, fechas recomendadas y Trichogramma contra barrenador y elotero.",
+        "Ajustar la trilladora para no dañar el grano."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 36573,
+          "rendimiento": 10,
+          "unidad_rendimiento": "t/ha",
+          "precio": 5000,
+          "ingreso_neto": 13427,
+          "relacion_bc": 1.37
+        }
+      ],
+      "nota": "Todos los materiales del Cuadro 17 son del INIFAP (no hay híbridos comerciales privados). Costos del Cuadro 19: ingreso bruto 50,000 = 10 t × 5,000 $/t. La relación B/C impresa es 1.36; calculada da 1.37. El cuadro presupuesta riego de siembra y tres auxilios, mientras el texto recomienda cuatro auxilios.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz Forrajero",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        67,
+        76
+      ],
+      "cultivo_ids": [
+        "maiz-forrajero-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Altiplanicie de 1,330 a 2,800 msnm, clima mayormente templado subhúmedo y 900 mm de lluvia anual. Se siembra en los DDR de Zumpango, Texcoco y Jilotepec (unas 15,000 ha); principales municipios: Zumpango, Nextlalpan, Tecámac, Cuautitlán, Texcoco, Polotitlán, Aculco y Jilotepec.",
+      "siembra": {
+        "texto": "En abril donde hay riego; en temporal favorable, del 15 de abril al 30 de mayo.",
+        "meses": [
+          4,
+          5
+        ]
+      },
+      "variedades": [
+        "Precoces (INIFAP): VS-46, H-44, H-76, H-77",
+        "Intermedios (INIFAP): H-28, H-40, H-42, VS-22, H-50, H-66, H-70",
+        "Tardíos (INIFAP): H-135, V-107, Canguro-H173, HV-65"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Riego: 27 a 30 kg de semilla, 15 cm entre plantas, unas 85,000 plantas/ha. Temporal: 25 kg/ha, 18 cm entre plantas, unas 70,000 plantas/ha. Surcos a 80 cm y semilla a 5 cm.",
+      "fertilizacion": "Riego: 180-90-30 (352 kg de urea, 196 kg de DAP y 50 kg de KCl por ha); a la siembra 7 bultos de urea de 25 kg, 4 de DAP de 50 kg y el KCl; en la segunda escarda otros 7 bultos de urea. Punta de riego y buen temporal: 120-60-30 (222 kg de urea, 130 kg de DAP y 50 kg de KCl), con la mitad de la urea a la siembra y la otra en la segunda escarda.",
+      "riego": "Riego por gravedad: lámina de 15 cm a la siembra y auxilios de 10 cm en crecimiento vegetativo medio, floración y llenado de mazorca. Después de la segunda quincena de junio el temporal suele cubrir las necesidades.",
+      "plagas": [
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Gallina ciega (Phyllophaga spp.)",
+        "Gusano soldado (Spodoptera exigua)",
+        "Picudos (Nicentrites testaceipes, Geraeus senilis)",
+        "Gusano elotero (Helicoverpa zea)",
+        "Trips (Frankliniella spp.)"
+      ],
+      "enfermedades": [
+        "Pudriciones de raíz, tallo y mazorca (Pythium, Diplodia, Fusarium)",
+        "Royas (Puccinia sorghi, P. polysora)"
+      ],
+      "malezas": "Pueden bajar la producción hasta 50 %. Sembrar a tiempo y con alta densidad (el maíz sombrea la maleza) y dar dos escardas: a los 15-20 y a los 40 días después de la siembra.",
+      "cosecha": "Para ensilar, cosechar con la planta a 30-35 % de materia seca (línea de leche del grano a la mitad o a tres cuartos). Picar en trozos de menos de 2.5 cm, llevar al silo en menos de 3 a 5 días, apisonar por capas de 50 cm, sellar con plástico y tierra y dar al ganado después de 40 días. Rendimiento de forraje verde de los materiales INIFAP: 42 a 100 t/ha (80 t/ha en el cuadro de costos).",
+      "cuidados": [
+        "Subsolear cada tres años (no en suelos arenosos o de menos de 60 cm) y barbechar siguiendo curvas de nivel en laderas.",
+        "Usar la densidad según riego o temporal para que el cultivo cubra el suelo.",
+        "Instalar trampas de feromona (4 por ha) contra cogollero y elotero justo después de sembrar.",
+        "Cosechar en el punto de 30-35 % de materia seca para un buen ensilado.",
+        "Compactar bien y sellar el silo para sacar el aire."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 34614,
+          "rendimiento": 80,
+          "unidad_rendimiento": "t/ha",
+          "precio": 1000,
+          "ingreso_neto": 45386,
+          "relacion_bc": null
+        },
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 69014,
+          "rendimiento": 72,
+          "unidad_rendimiento": "t/ha",
+          "precio": 1700,
+          "ingreso_neto": 53386,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Modalidad null porque la ficha cubre riego y temporal. Todos los materiales son del INIFAP. El Cuadro 23 (costo de 34,614 $/ha, que incluye riego) quedó dentro de la sección de cosecha y el extractor no lo leyó. Primer costo: venta en pie como forraje verde (80 t × 1,000 $/t = 80,000); segundo: venta como ensilado (72 t tras 10 % de merma × 1,700 $/t = 122,400; el costo incluye ensilado, sellado y merma). Las ganancias netas cuadran, pero las relaciones B/C impresas (1.3 y 0.8) no cuadran con ingreso / costo (2.31 y 1.77), por eso van en null. El texto dice 34,114 $/ha y '$60,014,614' para el ensilado; los cuadros dicen 34,614 y 69,014, que sí suman. Se omitieron las marcas del herbicida y de las trampas.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz Potencial Productivo",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        77,
+        83
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "De 340 a 2,800 msnm, de 12 a 36 °C, 550 a 1,600 mm de lluvia y pendiente de 0 a 15 % para manejo mecanizado; ciclo primavera-verano en temporal y riego. Paquete de alta productividad para zonas de potencial muy bueno y bueno, según el estudio de potencial productivo por municipio del INIFAP.",
+      "siembra": {
+        "texto": "En Valles Altos, del 15 de marzo al 10 de mayo o al establecerse las lluvias.",
+        "meses": [
+          3,
+          4,
+          5
+        ]
+      },
+      "variedades": [
+        "H-40",
+        "H-42",
+        "H-44",
+        "H-48",
+        "H-50",
+        "H-66",
+        "H-70",
+        "H-151",
+        "H-431",
+        "H-515",
+        "H-516",
+        "H-519C",
+        "H-553C",
+        "HV-521",
+        "V-537C",
+        "V-538C",
+        "VT-401",
+        "Variedades sintéticas del INIFAP",
+        "Criollos mejorados",
+        "Tuxpeño mejorado"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "De 25 a 30 kg de semilla por ha. Manual: surcos a 80 cm y matas a 50 cm con 3 semillas, dejando 2 o 3 plantas. Con sembradora, 30 kg/ha y aclareo en la primera labor. Meta: 60,000 plantas/ha. En roza, tumba y quema, surcos a 76 cm.",
+      "fertilizacion": "Zonas de muy bueno y buen potencial y de riego, mecanizadas: 150-130-150. Roza, tumba y quema (siembra con espeque): 100-90-90. Fuentes: urea, 18-46-00, KCl, fosfonitrato y nitrato de potasio. A la siembra, 70 % del nitrógeno y del potasio y todo el fósforo; el resto en la segunda escarda. Biofertilizante (Glomus intraradices): 500 a 1,000 g por ha en la semilla, según la concentración de esporas.",
+      "riego": null,
+      "plagas": [],
+      "enfermedades": [],
+      "malezas": "Mantener el maíz libre de maleza al menos los primeros 50 días después de la emergencia. Control mecánico con dos labores: a los 25 y a los 40 días después de la siembra.",
+      "cosecha": "Mecánica con el grano a 14-15 % de humedad; manual cuando aparece la capa negra en la base del grano y las hojas se tornan amarillo-café o el totomoxtle está seco. Rendimiento esperado: 10 a 12 t/ha.",
+      "cuidados": [
+        "Revisar el potencial productivo de su municipio: define la meta de rendimiento y cuánto conviene invertir.",
+        "Barbecho a 30 cm en diciembre-enero y surcos trazados con nivel.",
+        "Fertilizar con la dosis completa para una meta de 10 t/ha en zonas de buen potencial.",
+        "Mantener la parcela sin maleza los primeros 50 días.",
+        "Usar híbridos y variedades recomendados para su zona agroecológica."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 42892.6,
+          "rendimiento": 10000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.525,
+          "ingreso_neto": 12357.4,
+          "relacion_bc": 1.29
+        }
+      ],
+      "nota": "Se trata como ficha de cultivo y no como sección general: es un paquete tecnológico completo de maíz grano (región, preparación, fecha y densidad de siembra, fertilización, malezas, materiales, cosecha y Cuadro 24 de costos) para zonas de alto potencial. Plagas y enfermedades en []: el texto solo da productos para plagas del suelo y del follaje, sin nombrar plagas. La agenda no dice si los materiales son del INIFAP o privados (los nombres corresponden a la nomenclatura del INIFAP), así que van en variedades. Costos del Cuadro 24 (temporal): el precio aparece como '$5.53.00'; se tomó 5.525 $/kg = 55,250 / 10,000. La relación B/C impresa es 1.28; calculada da 1.29. La fórmula 'Química: 130-120-120' del texto no tiene contexto claro y no se copió. Se omitieron las marcas de plaguicidas.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz Raza Palomero Toluqueño",
+      "cientifico": "Zea mays L. f. var. praecox",
+      "paginas": [
+        84,
+        91
+      ],
+      "cultivo_ids": [
+        "maiz-palomero"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Laguna Seca y San Marcos Tlazalpan (municipio de San Bartolo Morelos), a unos 2,715 msnm, clima templado subhúmedo con lluvias en verano e invierno semifrío, 15 °C de media y 970 mm de lluvia. Terrenos pedregosos y con pendiente.",
+      "siembra": {
+        "texto": "Al establecerse las lluvias, de fines de abril a mediados de mayo, para esquivar heladas tempranas en el llenado del grano. Las comunidades siembran entre fines de marzo y mediados de abril.",
+        "meses": [
+          4,
+          5
+        ]
+      },
+      "variedades": [
+        "Poblaciones criollas de la raza Palomero Toluqueño"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "De 40,000 a 45,000 plantas/ha (4 semillas por metro, surcos de 80 a 90 cm); más población causa acame.",
+      "fertilizacion": "Meta 80-60-60. Inocular la semilla con Azospirillum y micorrizas; aplicar 2 a 3 t/ha de bocashi o composta al preparar el terreno. A la siembra, localizado al costado y debajo de la semilla: todo el fósforo y el potasio y el 35 % del nitrógeno (DAP y cloruro de potasio), más 10 kg/ha de sulfato de zinc y 5 kg/ha de boro. En V4-V6, el 65 % restante del nitrógeno (urea o sulfato de amonio), enterrado con la cultivadora.",
+      "riego": null,
+      "plagas": [
+        "Gallina ciega (Phyllophaga spp.)",
+        "Gusano cogollero (Spodoptera frugiperda)"
+      ],
+      "enfermedades": [
+        "Roya común (Puccinia sorghi)"
+      ],
+      "malezas": "Primera escarda a los 20-25 días después de la emergencia y segunda en V6, aporcando para evitar el acame. Se pueden dejar arvenses no agresivas después de la segunda labor como cobertura. La milpa con frijol ayocote y calabaza cubre el suelo y frena la maleza.",
+      "cosecha": "Pizca manual con la planta seca en pie, cuando el totomoxtle está seco y aparece la capa negra en la base del grano. Secar el grano a la sombra, lento y en capas delgadas (sin calor directo), hasta 13.5-14.0 % de humedad para que reviente bien. Meta de rendimiento: 2.0 a 2.5 t/ha.",
+      "cuidados": [
+        "Seleccionar semilla de mazorcas sanas, sin granos chupados ni perforados, y por flotación.",
+        "No sobresembrar: la caña es frágil y se acama.",
+        "Gallina ciega: control biológico con hongos entomopatógenos (Beauveria bassiana o Metarhizium anisopliae) a la siembra.",
+        "Gusano cogollero: actuar cuando 10-15 % de las plantas tenga daño fresco, de preferencia con control biológico (Bacillus thuringiensis).",
+        "Asegurar todo el potasio a la siembra: ayuda a la planta contra la roya.",
+        "Nunca secar el grano con calor directo: se pierde la capacidad de reventar."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 47205,
+          "rendimiento": 3500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 14,
+          "ingreso_neto": 1795,
+          "relacion_bc": 1.04
+        }
+      ],
+      "nota": "Costos del Cuadro 25 (municipio de Morelos): ingreso bruto 49,000 = 3,500 kg × 14 $/kg. La relación B/C impresa es 1.03; calculada da 1.04. El rendimiento del cuadro (3,500 kg/ha) es mayor que la meta del texto (2.0 a 2.5 t/ha). Dentro del cuadro, 'Mano de obra' de fertilizantes orgánicos dice 8 jornales × 350 = 280 (debería ser 2,800), pero el subtotal y el total usan 280.",
+      "revisado": false
+    },
+    {
+      "ficha": "Papa",
+      "cientifico": "Solanum tuberosum L.",
+      "paginas": [
+        92,
+        101
+      ],
+      "cultivo_ids": [
+        "papa"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": null,
+      "region": "Desde 50 hasta 3,250 msnm, en riego y temporal (Valles Altos y serranías). Suelos con buen drenaje y estructura suelta, pH de 5.0 a 7.0 y pendiente ideal de 0 a 4 %. Temperatura óptima de 17 a 23 °C (por debajo de 10 °C o arriba de 30 °C hay daño). Principales municipios: San José del Rincón, Villa Victoria, Zinacantepec y Tenango del Valle.",
+      "siembra": {
+        "texto": null,
+        "meses": []
+      },
+      "variedades": [
+        "Cristal (INIFAP)",
+        "Sierras (INIFAP)",
+        "Granate (INIFAP)",
+        "Nau (INIFAP)",
+        "Citlali (INIFAP)",
+        "Ameyali (INIFAP)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Surcos a 90 cm con 5 a 6 plantas por metro: unas 61,000 plantas/ha.",
+      "fertilizacion": "Fórmula 170-230-170-90-20-20-20-20-20-20-20 (N, P, K, S, Ca, Mg, Fe, Cu, Zn, Mn, B), con 500 kg de DAP, 250 kg de fosfonitrato, 300 kg de cloruro de potasio, 100 kg de nitrato de calcio y 100 kg de azufre; 70 % a la siembra y 30 % en la segunda escarda. Si hace falta, entre 55 y 70 días aplicar al suelo calcio, boro y sulfato de potasio para el llenado de tubérculos.",
+      "riego": "Lámina total de 120 cm en 6 riegos de 20 cm: cada 18-20 días en suelos pesados o cada 10-12 días en arenosos. En temporal, zonas con 700 a 1,200 mm de lluvia.",
+      "plagas": [
+        "Paratrioza",
+        "Insectos chupadores",
+        "Gusano trozador",
+        "Nematodos"
+      ],
+      "enfermedades": [
+        "Tizón tardío",
+        "Punta morada o zebra chip"
+      ],
+      "malezas": "Mantener el cultivo libre de maleza, que también hospeda insectos transmisores de enfermedades. Primera escarda cuando la planta mide 20 cm y segunda 15 días después, tras la segunda fertilización.",
+      "cosecha": "Eliminar el follaje cuando el 70 % de los tubérculos sea de primera (muestreo de 5 m). Cosechar 8 a 15 días después, cuando la piel no se desprenda al frotarla (prueba del pantalón) y sin suelo muy húmedo. Clasificar por tamaños. La semilla se guarda al menos tres meses en cajas, con luz difusa, ventilación y fresco, volteándola cada 2 o 3 semanas. Rendimiento de referencia del cuadro de costos: 60 t/ha con variedades mexicanas.",
+      "cuidados": [
+        "Preparar el terreno con humedad de punto y nivelar para evitar encharcamientos; en laderas, sembrar en contorno.",
+        "Usar variedades INIFAP tolerantes a tizón tardío y, algunas, a punta morada.",
+        "Hacer las escardas a tiempo para oxigenar el suelo y proteger del tizón tardío.",
+        "Antes de quitar el follaje, arrancar plantas enfermas o fuera de tipo.",
+        "Usar semilla certificada o seleccionada y almacenarla bien."
+      ],
+      "costos": [
+        {
+          "modalidad": null,
+          "costo_total_ha": null,
+          "rendimiento": 60000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 14,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Modalidad null porque la ficha cubre riego y temporal. Ciclo null y siembra vacía: la agenda no da fecha de siembra. Plagas tomadas de la tabla de insecticidas (sin productos). Cuadro 28: el ingreso bruto (840,000 = 60,000 kg × 14 $/kg) cuadra, pero el costo total impreso (233,252.97) no cuadra con la suma de sus conceptos (288,830); por eso costo total, ingreso neto (606,747.03 impreso) y relación B/C (3.60 impresa) van en null. La fórmula de fertilización del texto incluye insecticidas de suelo; no se copiaron.",
+      "revisado": false
+    },
+    {
+      "ficha": "Trigo",
+      "cientifico": "Triticum aestivum L.",
+      "paginas": [
+        102,
+        114
+      ],
+      "cultivo_ids": [
+        "trigo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "De 2,100 a 2,800 msnm con 400 a 800 mm de lluvia. Tres ambientes: potencial alto (5 t/ha, más de 650 mm; DDR Toluca, Atlacomulco y Texcoco-Juchitepec), medio (4 t/ha, 400 a 650 mm; Jilotepec y Texcoco-Ixtapaluca) y bajo (3 t/ha, menos de 400 mm; Zumpango y partes de Texcoco y Jilotepec).",
+      "siembra": {
+        "texto": "Potencial alto: 20 de mayo al 15 de junio. Medio: 1 al 25 de junio. Bajo: 15 de junio al 5 de julio.",
+        "meses": [
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Terre F2022 (INIFAP)",
+        "Nely F2022 (INIFAP)",
+        "Valles F2015 (INIFAP)",
+        "Altiplano F2007 (INIFAP)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Con sembradora de cereales, de 110 a 120 kg de semilla por ha; al voleo y tapado con rastra, de 130 a 140 kg/ha, con semilla certificada.",
+      "fertilizacion": "Potencial alto: 80-40-20; medio: 60-30-00; bajo: 40-20-00. En alto y medio, la mitad del nitrógeno a la siembra y la otra mitad al amacollamiento; fósforo y potasio a la siembra.",
+      "riego": null,
+      "plagas": [
+        "Gusano soldado (Spodoptera exigua)",
+        "Pulgones (Schizaphis graminum, Sitobion avenae)"
+      ],
+      "enfermedades": [
+        "Roya amarilla (Puccinia striiformis f. sp. tritici)",
+        "Roya de la hoja (Puccinia triticina)",
+        "Tizones y manchas foliares (Septoria tritici, S. nodorum, Pyrenophora tritici-repentis, Cochliobolus sativus)"
+      ],
+      "malezas": "Hoja ancha y hoja angosta; la etapa crítica de competencia es de 25 a 40 días después de la siembra.",
+      "cosecha": "Con trilladora combinada bien calibrada, cuando las espigas se desgranan fácilmente y el grano tiene 13 % de humedad. Rendimiento esperado: alto 4.5 a 6.0 t/ha, medio 3.5 a 4.5 t/ha, bajo 2.5 a 3.5 t/ha.",
+      "cuidados": [
+        "Elegir fecha, fórmula de fertilización y variedad según el ambiente de producción.",
+        "Barbecho profundo tras la cosecha y uno o dos rastreos cerca de la siembra, con buena humedad.",
+        "Controlar la maleza entre los 25 y 40 días después de la siembra.",
+        "Vigilar las royas desde encañe a embuche (40 a 50 días), sobre todo en Valles F2015 y Altiplano F2007; Terre y Nely F2022 son resistentes.",
+        "Trillar con el grano a 13 % de humedad."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 18507.2,
+          "rendimiento": 4800,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": 10292.8,
+          "relacion_bc": 1.56
+        },
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 17135,
+          "rendimiento": 3800,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": 5665,
+          "relacion_bc": 1.33
+        },
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 12546,
+          "rendimiento": 2900,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": 4854,
+          "relacion_bc": 1.39
+        }
+      ],
+      "nota": "Costos de grano en temporal, en orden: potencial alto (Cuadro 30), medio (Cuadro 31) y bajo (Cuadro 32), a 6 $/kg. En el Cuadro 32, la relación B/C impresa es 1.38 (calculada 1.39) y el retorno impreso '380.00 %' es una errata (es 38.7 %). El Cuadro 32 es idéntico al Cuadro 5 de avena.",
+      "revisado": false
+    }
+  ]
+}
