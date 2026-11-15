@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 
 def _variable(nombre: str) -> str:
@@ -8,3 +9,8 @@ def _variable(nombre: str) -> str:
 
 METEOMATICS_USER = _variable("METEOMATICS_USER")
 METEOMATICS_PASSWORD = _variable("METEOMATICS_PASSWORD")
+
+# Base de datos del Planificador (SQLite). Vive en backend/data, que se comparte con el
+# contenedor, y no se sube a git. Se puede cambiar con PLANIFICADOR_DB (por ejemplo en pruebas).
+BASE_DIR = Path(__file__).resolve().parent.parent
+DB_PATH = Path(os.environ.get("PLANIFICADOR_DB") or BASE_DIR / "data" / "planificador.db")

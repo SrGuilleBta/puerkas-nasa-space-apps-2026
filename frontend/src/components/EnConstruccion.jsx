@@ -11,9 +11,9 @@ export default function EnConstruccion({ nombre }) {
         <Brote size={28} />
       </span>
       <h1>{nombre}</h1>
-      <p>Esta pantalla todavía está en construcción.</p>
+      <p>This screen is still under construction.</p>
       <a className="boton-principal construccion__volver" href={hashDe("principal")}>
-        Volver a Principal <Flecha size={16} />
+        Back to Home <Flecha size={16} />
       </a>
     </Tarjeta>
   );

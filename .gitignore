@@ -8,3 +8,7 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+
+# Base de datos local del Planificador (cada quien arranca con los datos de demo)
+backend/data/*.db
+backend/data/*.db-journal

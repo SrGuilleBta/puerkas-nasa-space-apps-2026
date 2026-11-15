@@ -5,8 +5,8 @@
 export const parcela = { nombre: "La Esperanza", hectareas: 12.4 };
 
 export const aviso = {
-  titulo: "Atención preventiva",
-  texto: "Se aproxima un frente de lluvia intensa para el próximo mes. Considera ajustar el riego.",
+  titulo: "Preventive notice",
+  texto: "A heavy rain front is approaching next month. Consider adjusting irrigation.",
 };
 
 // Un valor por día, de lunes a domingo.
@@ -23,7 +23,7 @@ export const pronostico = [
 export const hoy = {
   temperatura: 30,
   sensacion: 31,
-  cielo: "Soleado",
+  cielo: "Sunny",
   icono: "sol",
   optimoParaCampo: true,
   humedad: 48,
@@ -34,32 +34,6 @@ export const hoy = {
 
 export const alertaRegional = {
   hace: "35 min",
-  titulo: "Se pronostica un fuerte huracán en la zona norte del país",
-  detalle: "Protección Civil recomienda revisar cultivos e infraestructura de riego.",
-};
-
-export const cultivoActivo = {
-  nombre: "Maíz amarillo",
-  hectareas: 8.2,
-  dia: 74,
-  cicloDias: 125,
-  etapa: 3,
-  etapas: 5,
-  precio: 6420,
-  variacion: 8.4,
-  cosecha: new Date(new Date().getFullYear(), 8, 18),
-  chips: [
-    { tipo: "positivo", titulo: "Alta demanda", detalle: "Precio favorable" },
-    { tipo: "riesgo", titulo: "Estrés hídrico", detalle: "Riesgo en 4 días" },
-  ],
-};
-
-// Siembras del plan principal: inicio y fin como [mes (0-11), día].
-export const planAnual = {
-  nombre: "Plan principal",
-  siembras: [
-    { nombre: "Frijol pinto", inicio: [0, 12], fin: [3, 28], color: "var(--primavera)" },
-    { nombre: "Maíz amarillo", inicio: [4, 15], fin: [8, 18], color: "var(--verano)" },
-    { nombre: "Trigo", inicio: [9, 12], fin: [11, 28], color: "var(--otono)" },
-  ],
+  titulo: "A strong hurricane is forecast for the north of the country",
+  detalle: "Civil Protection recommends checking crops and irrigation infrastructure.",
 };

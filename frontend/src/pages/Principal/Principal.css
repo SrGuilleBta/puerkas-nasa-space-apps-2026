@@ -327,7 +327,11 @@
   height: 84px;
   margin-bottom: 16px;
   border-radius: 20px;
-  background: linear-gradient(90deg, rgba(0, 230, 118, 0.25), rgba(0, 230, 118, 0.05));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color, var(--verde)) 35%, transparent),
+    color-mix(in srgb, var(--color, var(--verde)) 6%, transparent)
+  );
   overflow: hidden;
 }
 
@@ -367,18 +371,6 @@
   margin-top: 2px;
   font-size: 11px;
   color: var(--tinta-suave);
-}
-
-.cultivo__variacion {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 6px 10px;
-  border-radius: 12px;
-  background: var(--verde-claro);
-  color: var(--verde-oscuro);
-  font-size: 11px;
-  font-weight: 700;
 }
 
 .cultivo__fila--precio {
@@ -423,60 +415,6 @@
   color: var(--tinta);
 }
 
-.cultivo__chips {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin: 20px 0 14px;
-}
-
-.chip {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px;
-  border-radius: 14px;
-  font-size: 11px;
-}
-
-.chip strong,
-.chip small {
-  display: block;
-}
-
-.chip small {
-  margin-top: 1px;
-  font-size: 9px;
-  color: var(--tinta-suave);
-}
-
-.chip__icono {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-}
-
-.chip--positivo {
-  background: rgba(0, 230, 118, 0.1);
-}
-
-.chip--positivo .chip__icono {
-  background: var(--verde);
-  color: var(--tinta);
-}
-
-.chip--riesgo {
-  background: rgba(240, 109, 109, 0.1);
-}
-
-.chip--riesgo .chip__icono {
-  background: rgba(240, 109, 109, 0.5);
-  color: #fff;
-}
-
 .boton-principal {
   display: flex;
   align-items: center;
@@ -511,111 +449,6 @@
   background: rgba(20, 200, 192, 0.1);
   font-size: 11px;
   font-weight: 600;
-}
-
-.leyenda {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 14px;
-  margin: 0 0 14px;
-  padding: 0;
-  list-style: none;
-  font-size: 10px;
-  color: var(--tinta-suave);
-}
-
-.leyenda i {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  margin-right: 3px;
-  border-radius: 50%;
-}
-
-.lineatiempo__meses {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  margin: 0 0 6px;
-  padding: 0;
-  list-style: none;
-  font-size: 8px;
-  letter-spacing: 0.06em;
-  text-align: center;
-  color: var(--tinta-suave);
-}
-
-.lineatiempo__pista {
-  position: relative;
-  height: 56px;
-  margin: 0;
-  padding: 0;
-  border-radius: 14px;
-  list-style: none;
-  background: linear-gradient(
-    90deg,
-    rgba(107, 138, 176, 0.14) 0 22%,
-    rgba(34, 224, 122, 0.14) 22% 47%,
-    rgba(25, 195, 230, 0.14) 47% 72%,
-    rgba(242, 125, 125, 0.14) 72% 97%,
-    rgba(107, 138, 176, 0.14) 97%
-  );
-}
-
-.barra {
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-content: center;
-  column-gap: 5px;
-  min-width: 0;
-  padding: 0 8px;
-  border-left: 3px solid var(--color);
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--color) 22%, white);
-  font-size: 10px;
-  overflow: hidden;
-}
-
-.barra svg {
-  grid-row: span 2;
-  align-self: center;
-}
-
-.barra__nombre {
-  overflow: hidden;
-  font-weight: 700;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.barra__fechas {
-  grid-column: 2;
-  overflow: hidden;
-  font-size: 8px;
-  color: var(--tinta-suave);
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.hoy-marca {
-  position: absolute;
-  top: -4px;
-  bottom: -4px;
-  width: 2px;
-  background: var(--verde);
-}
-
-.hoy-marca b {
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 1px 5px;
-  border-radius: 6px;
-  background: var(--verde);
-  font-size: 8px;
 }
 
 /* ---------- Escritorio: todo en una pantalla, sin scroll vertical ---------- */
@@ -692,10 +525,6 @@
     margin-top: 10px;
   }
 
-  .cultivo__chips {
-    margin: 12px 0 10px;
-  }
-
   .boton-principal {
     padding: 10px;
   }
@@ -704,18 +533,6 @@
     margin-bottom: 6px;
   }
 
-  .leyenda {
-    margin-bottom: 8px;
-  }
-
-  .lineatiempo__pista {
-    height: 48px;
-  }
-
-  .barra {
-    top: 8px;
-    bottom: 8px;
-  }
 }
 
 /* Escritorio: si sobra alto, las tarjetas se estiran para llenarlo */
@@ -763,9 +580,6 @@
     max-height: 150px;
   }
 
-  .principal .tarjeta:has(.cultivo__imagen) {
-    justify-content: space-between;
-  }
 }
 
 /* ---------- Enlace "Más detalles" (lleva a Clima) ---------- */
@@ -781,4 +595,321 @@
   font-size: 11px;
   font-weight: 700;
   white-space: nowrap;
+}
+
+/* ---------- Cultivos activos (carrusel) ---------- */
+.carrusel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  margin-bottom: 14px;
+}
+
+.carrusel__pista {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carrusel__pista::-webkit-scrollbar {
+  display: none;
+}
+
+.carrusel__diapositiva {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.carrusel__diapositiva .cultivo__imagen {
+  margin-bottom: 0;
+}
+
+.carrusel__controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carrusel__flecha {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--borde);
+  border-radius: 50%;
+  background: var(--tarjeta);
+}
+
+.carrusel__flecha--atras svg {
+  transform: scaleX(-1);
+}
+
+.carrusel__flecha:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.carrusel__puntos {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.carrusel__punto {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(18, 48, 74, 0.2);
+  transition: width 0.2s ease;
+}
+
+.carrusel__punto::after {
+  content: "";
+  position: absolute;
+  inset: -9px -4px; /* área de toque más grande que el punto */
+}
+
+.carrusel__punto--activo {
+  width: 20px;
+  background: var(--verde-oscuro);
+}
+
+.cultivos__vacio {
+  display: grid;
+  flex: 1;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  padding: 16px 0;
+  color: var(--tinta-suave);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ---------- Plan anual (próximos 12 meses, una fila por parcela) ---------- */
+.plan__vacio {
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.plan__cal {
+  display: grid;
+  gap: 4px;
+}
+
+.plan__fila {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.plan__parcela {
+  overflow: hidden;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.plan__meses {
+  position: relative;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plan__meses li {
+  position: absolute;
+  top: 0;
+  display: grid;
+  justify-items: center;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  color: var(--tinta-suave);
+}
+
+.plan__meses small {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+.plan__hoy-etiqueta {
+  top: auto !important;
+  bottom: 0;
+  transform: translateX(-50%);
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: var(--verde);
+  color: var(--tinta) !important;
+  font-weight: 800;
+  z-index: 2;
+}
+
+.plan__pista {
+  position: relative;
+  height: 31px;
+  border-radius: 12px;
+  background: rgba(18, 48, 74, 0.045);
+  overflow: hidden;
+}
+
+.plan__linea {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(18, 48, 74, 0.08);
+}
+
+.plan__hoy {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--verde);
+  z-index: 1;
+}
+
+.plan__barras {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.barra {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-content: center;
+  column-gap: 4px;
+  padding: 0 6px;
+  border-left: 3px solid var(--color);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--color) 26%, white);
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.barra svg {
+  grid-row: span 2;
+  align-self: center;
+  opacity: 0.7;
+}
+
+.barra__nombre {
+  overflow: hidden;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.barra__fechas {
+  grid-column: 2;
+  overflow: hidden;
+  font-size: 8px;
+  color: var(--tinta-suave);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.plan__mas {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .plan__fila {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .plan__meses li {
+    font-size: 7px;
+    letter-spacing: 0;
+  }
+}
+
+/* ---------- Alertas (banner y lista) ---------- */
+.banner--tranquilo {
+  border-color: rgba(0, 150, 80, 0.25);
+  background: var(--verde-claro);
+}
+
+.banner--tranquilo .banner__icono {
+  background: rgba(0, 230, 118, 0.25);
+  color: var(--verde-oscuro);
+}
+
+.banner--tranquilo .banner__titulo {
+  color: var(--verde-oscuro);
+}
+
+.banner__titulo,
+.banner__texto {
+  min-width: 0;
+}
+
+.alertas-lista {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.alertas-lista__item {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--borde);
+  border-radius: 14px;
+  background: rgba(18, 48, 74, 0.04);
+}
+
+.alertas-lista__item--alta {
+  border-left-color: var(--coral);
+  background: var(--coral-claro);
+}
+
+.alertas-lista__item--media {
+  border-left-color: #e0a526;
+}
+
+.alertas-lista__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+
+.alertas-lista__cabecera span,
+.alertas-lista__item small {
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.alertas-lista__item p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
 }
