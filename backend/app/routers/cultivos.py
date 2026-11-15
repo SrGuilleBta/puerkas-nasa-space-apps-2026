@@ -9,7 +9,7 @@ CLAVE = Query(..., pattern=r"^(\d{2}|\d{5})$",
 
 
 def _no_encontrado(e: cultivos.SinDatos):
-    raise HTTPException(404, f"Sin datos: {e}. ¿Se corrió la pipeline? (python -m pipeline.cultivos)")
+    raise HTTPException(404, f"No data: {e}. Has the pipeline been run? (python -m pipeline.cultivos)")
 
 
 @router.get("/catalogo")

@@ -1,8 +1,34 @@
 """Ficha estática de cada cultivo: datos curados + rangos agronómicos de EcoCrop."""
 
+import json
 import math
+import re
+from pathlib import Path
 
 import pandas as pd
+
+from . import traduccion
+from .fuentes import slug
+
+EPPO_JSON = Path(__file__).resolve().parent / "eppo.json"
+
+
+def _cargar_eppo() -> list[tuple[str, list, list]]:
+    """Reglas (código, nombres, excluir) de eppo.json, con patrones de palabra completa."""
+    with open(EPPO_JSON, encoding="utf-8") as f:
+        codigos = json.load(f)["codigos"]
+    palabra = lambda t: re.compile(rf"(?<![a-z]){re.escape(slug(t).replace('-', ' '))}(?![a-z])")
+    return [(c["eppocode"], [palabra(n) for n in c["nombres"]], [palabra(n) for n in c.get("excluir", [])])
+            for c in codigos]
+
+
+def eppocode(nombre: str, reglas) -> str | None:
+    """Código EPPO de un cultivo SIAP según su nombre (ver eppo.json)."""
+    n = slug(nombre).replace("-", " ")
+    for codigo, nombres, excluir in reglas:
+        if any(p.search(n) for p in nombres) and not any(p.search(n) for p in excluir):
+            return codigo
+    return None
 
 # EcoCrop usa nombres de familia antiguos.
 FAMILIAS = {
@@ -29,13 +55,13 @@ def _consumo_agua(lluvia_opt):
     if not lluvia_opt:
         return None
     lo = lluvia_opt[0]
-    return "bajo" if lo < 500 else "medio" if lo < 1000 else "alto"
+    return "low" if lo < 500 else "medium" if lo < 1000 else "high"
 
 
 def _encharcamiento(dra):
     if not isinstance(dra, str):
         return None
-    return "tolera" if "poorly" in dra else "sensible"
+    return "tolerant" if "poorly" in dra else "sensitive"
 
 
 def _tipo_por_nombre(nombre: str):
@@ -53,6 +79,7 @@ def construir(nombres_cult: pd.DataFrame, curado: dict, ecocrop: pd.DataFrame,
               nacional: pd.DataFrame) -> tuple[list, dict]:
     """Devuelve (catalogo, rasgos). `rasgos` alimenta la puntuación de rotación."""
     catalogo, rasgos = [], {}
+    reglas_eppo = _cargar_eppo()
     nac = nacional.set_index("cultivo_id")
     for cid, fila_n in nombres_cult.iterrows():
         if cid not in nac.index:
@@ -74,9 +101,10 @@ def construir(nombres_cult: pd.DataFrame, curado: dict, ecocrop: pd.DataFrame,
 
         entrada = {
             "id": cid,
-            "nombre": nombre,
-            "unidad": unidad,
-            "tipo": c.get("tipo") or _tipo_por_nombre(nombre),
+            "nombre": traduccion.cultivo(nombre),
+            "eppocode": eppocode(nombre, reglas_eppo),
+            "unidad": traduccion.unidad(unidad),
+            "tipo": traduccion.tipo(c.get("tipo") or _tipo_por_nombre(nombre)),
             "cientifico": c.get("cientifico"),
             "familia": familia,
             "fija_nitrogeno": c.get("fija_nitrogeno"),
@@ -104,7 +132,7 @@ def construir(nombres_cult: pd.DataFrame, curado: dict, ecocrop: pd.DataFrame,
                 "pmr_real_p50": None if pd.isna(n["pmr_real_p50"]) else round(float(n["pmr_real_p50"]), 0),
                 "n_municipios": int(n["n_municipios"]),
             },
-            "fuentes": [s for s, ok in (("SIAP", True), ("EcoCrop", bool(eco)), ("Curado", bool(c))) if ok],
+            "fuentes": [s for s, ok in (("SIAP", True), ("EcoCrop", bool(eco)), ("Curated", bool(c))) if ok],
         }
         catalogo.append(entrada)
         rasgos[cid] = {"familia": familia, "fija_nitrogeno": bool(c.get("fija_nitrogeno"))}

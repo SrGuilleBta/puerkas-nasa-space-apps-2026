@@ -15,7 +15,7 @@ from .indicadores import GEO
 MIN_COOCURRENCIAS = 2
 MIN_PRACTICA = 0.03   # por debajo, el socio es anecdótico en la zona
 MAX_SOCIOS = 5
-NOMBRE_CICLO = {"OI": "Otoño-Invierno", "PV": "Primavera-Verano"}
+NOMBRE_CICLO = {"OI": "Fall-Winter", "PV": "Spring-Summer"}
 
 
 def coocurrencia(agg: pd.DataFrame, desde: int) -> pd.DataFrame:
@@ -63,19 +63,19 @@ def coocurrencia(agg: pd.DataFrame, desde: int) -> pd.DataFrame:
 
 def _agronomia(a: dict, b: dict, mismo: bool):
     if mismo:
-        return 0.1, ["Monocultivo: repite el mismo cultivo en ambos ciclos"]
+        return 0.1, ["Monoculture: the same crop is repeated in both cycles"]
     puntos, razones = 0.5, []
     fa, fb = a.get("familia"), b.get("familia")
     if fa and fb:
         if fa == fb:
             puntos -= 0.35
-            razones.append(f"Misma familia ({fa}): comparte plagas y enfermedades")
+            razones.append(f"Same family ({fa}): shares pests and diseases")
         else:
             puntos += 0.2
-            razones.append("Familia distinta: corta el ciclo de plagas")
+            razones.append("Different family: breaks pest cycles")
     if b.get("fija_nitrogeno") and not a.get("fija_nitrogeno"):
         puntos += 0.3
-        razones.append("Leguminosa: fija nitrógeno y reduce fertilizante")
+        razones.append("Legume: fixes nitrogen and reduces fertilizer needs")
     return max(0.0, min(1.0, puntos)), razones
 
 
@@ -84,10 +84,9 @@ def puntuar(co: pd.DataFrame, rasgos: dict, nombres: dict) -> pd.DataFrame:
     for r in co[co["practica"] >= MIN_PRACTICA].itertuples(index=False):
         a, b = rasgos.get(r.cultivo_id, {}), rasgos.get(r.cultivo_id_socio, {})
         agr, razones = _agronomia(a, b, r.cultivo_id == r.cultivo_id_socio)
-        unidad = "años" if r.nivel == "municipio" else "municipios-año"
-        razones.insert(0, f"En {r.frecuencia:.0%} de los {unidad} se siembra en "
-                          f"{NOMBRE_CICLO[r.ciclo_socio]} (superficie equivalente al "
-                          f"{r.area_relativa:.0%})")
+        unidad = "years" if r.nivel == "municipio" else "municipality-years"
+        razones.insert(0, f"Planted in the {NOMBRE_CICLO[r.ciclo_socio]} cycle in {r.frecuencia:.0%} of "
+                          f"the {unidad} with this crop (area equivalent to {r.area_relativa:.0%})")
         filas.append({
             "nivel": r.nivel, "clave": r.clave, "cultivo_id": r.cultivo_id,
             "socio_id": r.cultivo_id_socio, "socio": nombres.get(r.cultivo_id_socio, r.cultivo_id_socio),

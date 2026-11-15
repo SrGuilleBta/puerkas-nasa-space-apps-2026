@@ -1,12 +1,12 @@
 {
-  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/baja_california_sur.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, built from the text in data/inifap/extraido/baja_california_sur.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
   "cve_ent": "03",
   "estado": "Baja California Sur",
   "edicion": 2026,
-  "fuente": "INIFAP. Agenda Técnica Agrícola de Baja California Sur. INIFAP, Ciudad de México, 2026.",
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Baja California Sur [Agricultural Technical Agenda of Baja California Sur]. INIFAP, Mexico City, 2026.",
   "fichas": [
     {
-      "ficha": "Garbanzo",
+      "ficha": "Chickpea",
       "cientifico": "Cicer arietinum L.",
       "paginas": [
         11,
@@ -15,12 +15,12 @@
       "cultivo_ids": [
         "garbanzo-grano"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "riego",
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
       "ciclo": "OI",
-      "region": "Clima subtropical árido semicálido. Suelos regosol, yermosol y vertisol; en las zonas agrícolas casi todos son alcalinos (pH promedio 8.41) y de textura media a franco-arenosa.",
+      "region": "Semi-warm arid subtropical climate. Regosol, yermosol and vertisol soils; in the farming areas almost all are alkaline (average pH 8.41) with medium to sandy loam texture.",
       "siembra": {
-        "texto": "En el Valle de Santo Domingo rinde bien del 1 de octubre a la segunda quincena de diciembre, pero el periodo óptimo es del 25 de noviembre al 31 de diciembre. Las siembras de octubre sufren más plagas por el calor; las de octubre y noviembre arriesgan heladas en el llenado de vainas; las de enero, más enfermedades foliares y plagas.",
+        "texto": "In the Valle de Santo Domingo it yields well from October 1 to the second half of December, but the optimal period is November 25 to December 31. October plantings suffer more pests because of the heat; October and November plantings risk frost during pod filling; January plantings, more foliar diseases and pests.",
         "meses": [
           11,
           12
@@ -35,31 +35,31 @@
         "Blanco Sinaloa-92"
       ],
       "hibridos_comerciales": [],
-      "densidad": "12 semillas por metro lineal, a unos 5 cm de profundidad. Surcos a 80 cm con hilera sencilla, o camas de 1.60 m con doble hilera a 40 cm.",
-      "fertilizacion": "Fórmula 90-40-00 con UAN 32 y ácido fosfórico. El N se divide en tres aplicaciones a los 10, 35 y 60 días después de la siembra; todo el P a los 10 días. Aplicaciones foliares de quelatos de hierro para prevenir o corregir deficiencias.",
-      "riego": "Por gravedad: riego de aniego inicial y de dos a tres auxilios a partir de la floración, en surcos menores de 100 m. Por goteo: siembra en seco y riegos semanales de unas siete horas. Por pivote central: humedecer para la siembra y de tres a cinco auxilios de tres a cinco días cada uno.",
+      "densidad": "12 seeds per linear meter, about 5 cm deep. Rows 80 cm apart with a single line, or 1.60 m beds with double lines 40 cm apart.",
+      "fertilizacion": "Formula 90-40-00 with UAN 32 and phosphoric acid. The N is split into three applications at 10, 35 and 60 days after sowing; all the P at 10 days. Foliar applications of iron chelates to prevent or correct deficiencies.",
+      "riego": "Furrow (gravity): an initial flood irrigation and two to three supplemental irrigations starting at flowering, in furrows shorter than 100 m. Drip: dry planting and weekly irrigations of about seven hours. Center pivot: wet the soil for planting and three to five supplemental irrigations of three to five days each.",
       "plagas": [
-        "Minador de la hoja (Liriomyza sativae)",
-        "Gusano de la cápsula (Chloridea virescens y Helicoverpa zea)",
-        "Complejo de gusanos soldado"
+        "Leafminer (Liriomyza sativae)",
+        "Pod borer (Chloridea virescens and Helicoverpa zea)",
+        "Armyworm complex"
       ],
       "enfermedades": [
-        "Rabia (complejo de hongos)",
-        "Mildiu"
+        "Chickpea wilt (fungal complex)",
+        "Downy mildew"
       ],
-      "malezas": "Principales: flor amarilla (Aldama dentata), gloria de la mañana (Ipomoea purpurea) y quelite (Amaranthus hybridus). Se controlan con una aplicación de herbicida en preemergencia.",
-      "cosecha": "Cortar cuando la planta esté seca pero el grano siga blando, y dejar secar en el campo hasta 12 % de humedad. Las variedades sugeridas superan 3 t/ha con el paquete tecnológico.",
+      "malezas": "Main weeds: yellow flower (Aldama dentata), morning glory (Ipomoea purpurea) and quelite (Amaranthus hybridus). Controlled with one pre-emergence herbicide application.",
+      "cosecha": "Cut when the plant is dry but the grain is still soft, and let it dry in the field down to 12 % moisture. The suggested varieties exceed 3 t/ha with the technology package.",
       "cuidados": [
-        "Sembrar del 25 de noviembre al 31 de diciembre para reducir daños por plagas, heladas y enfermedades.",
-        "Inocular la semilla con Mesorhizobium ciceri a la sombra, según el fabricante, y sembrarla el mismo día.",
-        "Hacer el barbecho solo si el terreno está muy compactado o hay muchos roedores.",
-        "Aplicar control de plagas solo al llegar al umbral: 20 % de follaje dañado con larvas vivas de minador, o dos o más larvas de gusano de la cápsula por metro lineal.",
-        "Prevenir enfermedades con variedades tolerantes, rotación de cultivos, fecha de siembra recomendada y semilla de calidad.",
-        "Dividir el nitrógeno en tres aplicaciones (10, 35 y 60 días después de la siembra)."
+        "Plant from November 25 to December 31 to reduce damage from pests, frost and diseases.",
+        "Inoculate the seed with Mesorhizobium ciceri in the shade, following the manufacturer, and plant it the same day.",
+        "Plow only if the land is very compacted or there are many rodents.",
+        "Apply pest control only when the threshold is reached: 20 % of foliage damaged with live leafminer larvae, or two or more pod borer larvae per linear meter.",
+        "Prevent diseases with tolerant varieties, crop rotation, the recommended planting date and quality seed.",
+        "Split the nitrogen into three applications (10, 35 and 60 days after sowing)."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 51685,
           "rendimiento": 3.0,
           "unidad_rendimiento": "t/ha",
@@ -68,11 +68,11 @@
           "relacion_bc": 1.2
         }
       ],
-      "nota": "Costos del Cuadro 2 (FIRA 2026), con riego por goteo. El costo total de 51,685 $/ha coincide con la suma de los rubros y el ingreso bruto es 3.0 t × 20,625 $/t = 61,875 $/ha (el cuadro lo llama 'Beneficio ha'). El cuadro imprime relación B/C 1.22 y costo por tonelada 16,856 $, que corresponden a un costo de unos 50,568 $/ha y no cuadran con el total; aquí se calcularon ingreso neto (61,875 − 51,685) y relación B/C (61,875 / 51,685 ≈ 1.20). El precio es por tonelada.",
+      "nota": "Costs from Table 2 (FIRA 2026), with drip irrigation. The total cost of 51,685 $/ha matches the sum of the items and gross income is 3.0 t × 20,625 $/t = 61,875 $/ha (the table calls it 'Beneficio ha'). The table prints a B/C ratio of 1.22 and a cost per ton of 16,856 $, which correspond to a cost of about 50,568 $/ha and do not match the total; here net income (61,875 − 51,685) and B/C ratio (61,875 / 51,685 ≈ 1.20) were calculated. The price is per ton.",
       "revisado": false
     },
     {
-      "ficha": "Garbanzo forrajero",
+      "ficha": "Forage chickpea",
       "cientifico": "Cicer arietinum L.",
       "paginas": [
         17,
@@ -81,12 +81,12 @@
       "cultivo_ids": [
         "garbanzo-forrajero"
       ],
-      "tipo_cultivo": "anual",
+      "tipo_cultivo": "annual",
       "modalidad": null,
       "ciclo": "OI",
-      "region": "Garbanzo tipo Desi de otoño-invierno, de 110 a 140 días. Se adapta del nivel del mar a 1,800 m; temperatura ideal de 18 a 26 °C y humedad relativa baja. Las heladas fuertes en floración lo dañan. De temporal necesita de 400 a 650 mm bien distribuidos, aunque produce forraje aceptable con humedad residual.",
+      "region": "Fall-winter Desi-type chickpea, 110 to 140 days. Adapts from sea level to 1,800 m; ideal temperature 18 to 26 °C and low relative humidity. Hard frosts at flowering damage it. Rainfed it needs 400 to 650 mm well distributed, although it produces acceptable forage with residual soil moisture.",
       "siembra": {
-        "texto": "La siembra ideal va del 15 de noviembre al 15 de diciembre. En el Valle de Santo Domingo rinde bien del 15 de octubre al 15 de enero, y las siembras del 25 de noviembre al 31 de diciembre dan el mayor rendimiento. Las de octubre dan más forraje y esquilmos que las de enero.",
+        "texto": "The ideal planting runs from November 15 to December 15. In the Valle de Santo Domingo it yields well from October 15 to January 15, and plantings from November 25 to December 31 give the highest yield. October plantings give more forage and crop residues than January ones.",
         "meses": [
           11,
           12
@@ -98,27 +98,27 @@
         "San Antonio 05"
       ],
       "hibridos_comerciales": [],
-      "densidad": "10 granos por metro lineal (27 kg de semilla pura viable por ha), a 5 cm de profundidad, en surcos de hilera sencilla a 80 cm.",
-      "fertilizacion": "Basar la nutrición en un análisis de suelo. Fórmula 120-70-00: el N en tres partes iguales a los 15, 30 y 50 días después de la siembra, y todo el P a los 15 días.",
-      "riego": "Por gravedad: riego de aniego, un auxilio antes de la floración y dos más después, en surcos menores de 100 m. Por goteo en suelos arcillosos: siembra en seco y riegos semanales de unas siete horas (cinta calibre 6 milésimas, goteros a 20 cm). Por pivote central: humedecer para la siembra y de tres a cuatro auxilios.",
+      "densidad": "10 seeds per linear meter (27 kg of pure live seed per ha), 5 cm deep, in single-line rows 80 cm apart.",
+      "fertilizacion": "Base nutrition on a soil analysis. Formula 120-70-00: the N in three equal parts at 15, 30 and 50 days after sowing, and all the P at 15 days.",
+      "riego": "Furrow (gravity): a flood irrigation, one supplemental irrigation before flowering and two more after, in furrows shorter than 100 m. Drip on clay soils: dry planting and weekly irrigations of about seven hours (6-mil tape, emitters every 20 cm). Center pivot: wet the soil for planting and three to four supplemental irrigations.",
       "plagas": [
-        "Gusano soldado (Spodoptera exigua)",
-        "Gusano del fruto (Heliothis virescens)",
-        "Mosca minadora de la hoja (Liriomyza sp.)"
+        "Beet armyworm (Spodoptera exigua)",
+        "Fruit worm (Heliothis virescens)",
+        "Leafminer fly (Liriomyza sp.)"
       ],
       "enfermedades": [],
-      "malezas": "La competencia de malezas en los primeros 40 días reduce mucho el rendimiento de grano y paja. Se recomienda control preemergente activado con el agua de riego.",
-      "cosecha": "Para forraje en floración, cortar a unos 70 días; en formación de cápsula, a unos 100 días; en madurez, cuando la planta esté seca y el grano blando, y secar hasta 10 a 12 % de humedad (130 a 140 días). Más edad da más forraje pero menos calidad. En condiciones óptimas produce de 8 a 12 t/ha de forraje seco y de 2.5 a 3.5 t/ha de grano.",
+      "malezas": "Weed competition in the first 40 days greatly reduces grain and straw yield. Pre-emergence control activated with the irrigation water is recommended.",
+      "cosecha": "For forage at flowering, cut at about 70 days; at pod formation, at about 100 days; at maturity, when the plant is dry and the grain soft, and dry down to 10 to 12 % moisture (130 to 140 days). Older plants give more forage but lower quality. Under optimal conditions it produces 8 to 12 t/ha of dry forage and 2.5 to 3.5 t/ha of grain.",
       "cuidados": [
-        "Mantener el cultivo limpio de malezas durante los primeros 40 días.",
-        "Usar variedades tolerantes a la rabia, rotar cultivos, sembrar en fecha y usar semilla de buena calidad.",
-        "Vigilar plagas al terminar el frío: sin control pueden bajar el grano de 5 a 10 %.",
-        "Elegir la etapa de corte según la necesidad de forraje: más tarde hay más volumen pero menos calidad.",
-        "Subsolear o arar solo en terrenos compactados o con muchas plagas del suelo."
+        "Keep the crop free of weeds during the first 40 days.",
+        "Use varieties tolerant to chickpea wilt, rotate crops, plant on time and use good-quality seed.",
+        "Monitor pests when the cold season ends: without control they can cut grain by 5 to 10 %.",
+        "Choose the cutting stage according to forage needs: later cutting gives more volume but lower quality.",
+        "Subsoil or plow only on compacted land or land with many soil pests."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 35558,
           "rendimiento": 2500,
           "unidad_rendimiento": "kg/ha",
@@ -127,11 +127,11 @@
           "relacion_bc": 1.37
         }
       ],
-      "nota": "La ficha cubre riego y temporal (modalidad null); el Cuadro 3 (FIRA 2026) es de riego por gravedad con presiembra y 3 auxilios. El rendimiento del cuadro es de semilla (grano), no de forraje. El precio (19.5 $/kg) no viene impreso: se calculó como ingreso bruto / rendimiento (48,750 / 2,500). Costo total, ingreso neto y relación B/C cuadran. El texto da dos ventanas de siembra (15 nov–15 dic como ideal y 25 nov–31 dic como de mayor rendimiento). Enfermedades: el texto no nombra ninguna en esa sección; solo menciona tolerancia de las variedades a la rabia.",
+      "nota": "The sheet covers irrigated and rainfed (modalidad null); Table 3 (FIRA 2026) is for furrow (gravity) irrigation with pre-planting irrigation and 3 supplemental irrigations. The table's yield is seed (grain), not forage. The price (19.5 $/kg) is not printed: it was calculated as gross income / yield (48,750 / 2,500). Total cost, net income and B/C ratio match. The text gives two planting windows (Nov 15–Dec 15 as ideal and Nov 25–Dec 31 as highest yielding). Diseases: the text names none in that section; it only mentions the varieties' tolerance to chickpea wilt.",
       "revisado": false
     },
     {
-      "ficha": "Maíz",
+      "ficha": "Maize",
       "cientifico": "Zea mays L.",
       "paginas": [
         24,
@@ -140,12 +140,12 @@
       "cultivo_ids": [
         "maiz-grano"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "riego",
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
       "ciclo": null,
-      "region": "Subtrópico árido semicálido, temperatura media de 22.1 °C y lluvia anual de 172 mm. Suelo regosol eútrico franco-arenoso, de 20 a 100 cm de profundidad, con 0.6 % de materia orgánica y pH 8.2. El 90 % del maíz se siembra en Comondú.",
+      "region": "Semi-warm arid subtropics, mean temperature of 22.1 °C and annual rainfall of 172 mm. Sandy loam eutric regosol soil, 20 to 100 cm deep, with 0.6 % organic matter and pH 8.2. 90 % of the maize is planted in Comondú.",
       "siembra": {
-        "texto": "Del 5 de febrero al 20 de marzo en primavera-verano y del 15 de agosto al 15 de septiembre en otoño-invierno.",
+        "texto": "From February 5 to March 20 in spring-summer and from August 15 to September 15 in fall-winter.",
         "meses": [
           2,
           3,
@@ -167,39 +167,39 @@
         "D-4050",
         "V-560"
       ],
-      "densidad": "Seis a siete plantas por metro lineal (75 a 87 mil plantas/ha; algunos materiales soportan 100 mil), con 18 a 20 kg de semilla. Surcos a 75–80 cm y 14 a 16 cm entre plantas; en goteo, camas de 1.6 m con doble hilera a 40 cm. Profundidad de 5 a 8 cm.",
-      "fertilizacion": "Hasta 200-80-100 por ha, aunque hay buena respuesta con 180 de N y 40 a 60 de P, útil para bajar costos. Fraccionar el nitrógeno.",
-      "riego": "Necesita de 500 a 550 mm. Materiales precoces: cuatro riegos a los 0, 45, 65 y 85 días (18, 12, 12 y 12 cm). Intermedios y tardíos: cinco riegos (18, 12, 10, 10 y 10 cm). Etapas críticas: desarrollo, encañe, floración y grano lechoso-masoso. Gravedad en surcos de 100 m; aspersión con presiembra de 16 cm y auxilios de 8 cm; goteo con un riego inicial de unas 16 h y unos 25 auxilios de 5 a 7 h.",
+      "densidad": "Six to seven plants per linear meter (75 to 87 thousand plants/ha; some materials tolerate 100 thousand), with 18 to 20 kg of seed. Rows 75–80 cm apart and 14 to 16 cm between plants; with drip, 1.6 m beds with double lines 40 cm apart. Depth of 5 to 8 cm.",
+      "fertilizacion": "Up to 200-80-100 per ha, although there is good response with 180 of N and 40 to 60 of P, useful to lower costs. Split the nitrogen.",
+      "riego": "Needs 500 to 550 mm. Early materials: four irrigations at 0, 45, 65 and 85 days (18, 12, 12 and 12 cm). Intermediate and late materials: five irrigations (18, 12, 10, 10 and 10 cm). Critical stages: development, stem elongation, flowering and milk-dough grain. Gravity in 100 m furrows; sprinkler with a 16 cm pre-planting irrigation and 8 cm supplemental irrigations; drip with an initial irrigation of about 16 h and about 25 supplemental irrigations of 5 to 7 h.",
       "plagas": [
-        "Gusano saltarín (Elasmopalpus lignosellus)",
-        "Gusano trozador (Agrotis ipsilon)",
-        "Gusano cogollero (Spodoptera frugiperda)",
-        "Pulga saltona",
-        "Trips",
-        "Chicharritas",
-        "Chinche apestosa (Nezara viridula)",
-        "Gusano elotero (Heliothis zea)",
-        "Mosquita de los estigmas"
+        "Lesser cornstalk borer (Elasmopalpus lignosellus)",
+        "Cutworm (Agrotis ipsilon)",
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Flea beetle",
+        "Thrips",
+        "Leafhoppers",
+        "Southern green stink bug (Nezara viridula)",
+        "Corn earworm (Heliothis zea)",
+        "Silk fly"
       ],
       "enfermedades": [
-        "Chahuixtle o roya común",
-        "Carbón común",
-        "Falsa cenicilla",
-        "Achaparramiento (transmitido por chicharritas)"
+        "Common rust",
+        "Common smut",
+        "False powdery mildew",
+        "Corn stunt (transmitted by leafhoppers)"
       ],
-      "malezas": "Elegir terrenos libres de gloria de la mañana y usar estiércol bien podrido. Sembrar en húmedo con semilla certificada. Hacer cultivos mecánicos entre 30 y 35 días después de la siembra y deshierbe manual. Cerca de la cosecha, deshierbar o chapear para que la maleza no suelte semilla, o controlar justo después de cosechar.",
-      "cosecha": "Cosechar con 16 a 18 % de humedad en el grano: más seco merma el rendimiento y más húmedo causa pérdidas en almacén. La tierra de diatomeas reduce las plagas de almacén. Rendimiento esperado: 10 t/ha.",
+      "malezas": "Choose land free of morning glory and use well-rotted manure. Plant into moist soil with certified seed. Do mechanical cultivations between 30 and 35 days after sowing and hand weeding. Near harvest, weed or slash so weeds do not shed seed, or control right after harvest.",
+      "cosecha": "Harvest at 16 to 18 % grain moisture: drier reduces yield and wetter causes storage losses. Diatomaceous earth reduces storage pests. Expected yield: 10 t/ha.",
       "cuidados": [
-        "Evitar terrenos arenosos que vienen de sorgo, trigo, maíz o garbanzo con mucho gusano saltarín o trozador.",
-        "Controlar el gusano cogollero solo si hay 10 % de daño en plantas menores de 20 cm o 20 % en plantas de 20 a 40 cm.",
-        "Liberar avispitas Trichogramma (100 a 150 mil por ha, dos veces por semana) desde la floración hasta grano masoso contra el gusano elotero.",
-        "Proteger a los insectos benéficos (catarinas, crisopas, avispas y abejas).",
-        "Asegurar el agua en floración y llenado de grano.",
-        "Cosechar con el grano entre 16 y 18 % de humedad."
+        "Avoid sandy land coming from sorghum, wheat, maize or chickpea with heavy lesser cornstalk borer or cutworm pressure.",
+        "Control fall armyworm only if there is 10 % damage in plants shorter than 20 cm or 20 % in plants 20 to 40 cm tall.",
+        "Release Trichogramma wasps (100 to 150 thousand per ha, twice a week) from flowering to dough grain against corn earworm.",
+        "Protect beneficial insects (lady beetles, lacewings, wasps and bees).",
+        "Ensure water during flowering and grain filling.",
+        "Harvest with grain moisture between 16 and 18 %."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 43500,
           "rendimiento": 10000,
           "unidad_rendimiento": "kg/ha",
@@ -208,11 +208,11 @@
           "relacion_bc": 1.38
         }
       ],
-      "nota": "Siembra en dos ciclos (PV y OI), por eso ciclo null. El texto no dice el origen ni la empresa de los genotipos sugeridos; se listan tal como aparecen y no se separaron variedades públicas. Costos del Cuadro 4 (FIRA 2025): el costo total de 43,500 $/ha cuadra con la suma de los rubros y el ingreso bruto es 10,000 kg × 6 $/kg = 60,000 $. El cuadro imprime ingreso neto 20,100 y relación B/C 1.50, calculados con un costo de 39,900 $ que no coincide con el total; aquí se calcularon con 43,500 $ (neto 16,500; B/C ≈ 1.38). La cuota de agua del cuadro (5 × 500) aparece como 2,250 en lugar de 2,500.",
+      "nota": "Planted in two cycles (PV and OI), hence ciclo null. The text does not state the origin or company of the suggested genotypes; they are listed as they appear and public varieties were not separated. Costs from Table 4 (FIRA 2025): the total cost of 43,500 $/ha matches the sum of the items and gross income is 10,000 kg × 6 $/kg = 60,000 $. The table prints net income of 20,100 and B/C ratio of 1.50, calculated with a cost of 39,900 $ that does not match the total; here they were calculated with 43,500 $ (net 16,500; B/C ≈ 1.38). The table's water fee (5 × 500) appears as 2,250 instead of 2,500.",
       "revisado": false
     },
     {
-      "ficha": "Maíz forrajero",
+      "ficha": "Forage maize",
       "cientifico": "Zea mays L.",
       "paginas": [
         31,
@@ -221,12 +221,12 @@
       "cultivo_ids": [
         "maiz-forrajero-en-verde"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "riego",
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
       "ciclo": null,
-      "region": "Clima muy seco en casi todo el estado, temperatura media de 18 a 22 °C y menos de 200 mm de lluvia al año, concentrada de julio a septiembre; por eso se cultiva solo con riego. Rango térmico óptimo de 18 a 33 °C; necesita más de 10 °C para germinar.",
+      "region": "Very dry climate in almost the whole state, mean temperature of 18 to 22 °C and less than 200 mm of rain per year, concentrated from July to September; that is why it is grown only under irrigation. Optimal temperature range of 18 to 33 °C; needs more than 10 °C to germinate.",
       "siembra": {
-        "texto": "Del 5 de febrero al 20 de marzo en primavera-verano y del 15 de agosto al 15 de septiembre en otoño-invierno.",
+        "texto": "From February 5 to March 20 in spring-summer and from August 15 to September 15 in fall-winter.",
         "meses": [
           2,
           3,
@@ -246,37 +246,37 @@
         "AS General",
         "AS Coronel"
       ],
-      "densidad": "Siete a ocho plantas por metro de surco (87,500 a 100,000 plantas/ha) en hilera sencilla; en goteo, camas de 1.6 m con doble hilera a 0.4 m y 14 a 16 plantas por metro de cama. De 20 a 23 kg de semilla por ha.",
-      "fertilizacion": "Fórmula 180-60-00. Con riego superficial, todo el P y 40 % del N en la siembra y el 60 % de N restante en la escarda. Con riego presurizado, el N por etapas: 15 % en siembra (0–30 días), 40 % en crecimiento (30–50), 30 % en floración-jilote (50–75) y 15 % en llenado de grano (75–100).",
-      "riego": "Consumo de 500 a 660 mm. Gravedad: precoces con aniego (18 cm) y auxilios a los 40–45, 65–70 y 85–90 días (12 cm); intermedios y tardíos con auxilios a los 40–45, 60–65, 80–85 y 100–105 días (12 cm). Aspersión: presiembra de 160 mm y auxilios de 80 mm (unos 500 mm en total). Goteo: unos 450 mm con riego de germinación y unos 25 auxilios cada tres o cuatro días. Etapas críticas: floración, polinización, formación y llenado de grano.",
+      "densidad": "Seven to eight plants per meter of row (87,500 to 100,000 plants/ha) in a single line; with drip, 1.6 m beds with double lines 0.4 m apart and 14 to 16 plants per meter of bed. 20 to 23 kg of seed per ha.",
+      "fertilizacion": "Formula 180-60-00. With surface irrigation, all the P and 40 % of the N at planting and the remaining 60 % of N at the cultivation pass. With pressurized irrigation, N by stages: 15 % at planting (0–30 days), 40 % during growth (30–50), 30 % at flowering-silking (50–75) and 15 % at grain filling (75–100).",
+      "riego": "Water use of 500 to 660 mm. Gravity: early materials with a flood irrigation (18 cm) and supplemental irrigations at 40–45, 65–70 and 85–90 days (12 cm); intermediate and late materials with supplemental irrigations at 40–45, 60–65, 80–85 and 100–105 days (12 cm). Sprinkler: 160 mm pre-planting irrigation and 80 mm supplemental irrigations (about 500 mm in total). Drip: about 450 mm with a germination irrigation and about 25 supplemental irrigations every three or four days. Critical stages: flowering, pollination, grain formation and grain filling.",
       "plagas": [
-        "Gusano saltarín (Elasmopalpus lignosellus)",
-        "Gusano trozador (Agrotis ipsilon)",
-        "Gusano cogollero (Spodoptera frugiperda)",
-        "Pulga saltona (Epitrix spp.)",
-        "Trips",
-        "Chicharrita (Dalbulus maidis)",
-        "Chinche apestosa (Euschistus servus)",
-        "Gusano elotero"
+        "Lesser cornstalk borer (Elasmopalpus lignosellus)",
+        "Cutworm (Agrotis ipsilon)",
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Flea beetle (Epitrix spp.)",
+        "Thrips",
+        "Corn leafhopper (Dalbulus maidis)",
+        "Brown stink bug (Euschistus servus)",
+        "Corn earworm"
       ],
       "enfermedades": [
-        "Chahuixtle o roya común (Puccinia sorghi)",
-        "Carbón común (Ustilago maydis)",
-        "Achaparramiento (Spiroplasma kunkelii, transmitido por chicharritas)"
+        "Common rust (Puccinia sorghi)",
+        "Common smut (Ustilago maydis)",
+        "Corn stunt (Spiroplasma kunkelii, transmitted by leafhoppers)"
       ],
-      "malezas": "Elegir terrenos libres o poco infestados de gloria de la mañana y usar semilla certificada libre de otras especies. Hacer una o dos escardas mecánicas entre los 30 y 40 días.",
-      "cosecha": "Cosechar cuando la línea de leche del grano avance de 30 a 50 %, punto óptimo para picado en verde o ensilaje.",
+      "malezas": "Choose land free of or lightly infested with morning glory and use certified seed free of other species. Do one or two mechanical cultivation passes between 30 and 40 days.",
+      "cosecha": "Harvest when the grain milk line has advanced 30 to 50 %, the optimal point for green chopping or silage.",
       "cuidados": [
-        "Evitar terrenos arenosos que vienen de sorgo, trigo, maíz o garbanzo con mucho gusano saltarín o trozador.",
-        "Usar híbridos o variedades con resistencia a plagas cuando sea posible.",
-        "Contra la chinche apestosa: monitoreo, plantas trampa en los bordes y conservar los enemigos naturales.",
-        "Contra el carbón común: no pasarse de la densidad recomendada y destruir las agallas.",
-        "Contra el achaparramiento: sembrar en fecha, usar genotipos tolerantes y vigilar a las chicharritas.",
-        "Cosechar con la línea de leche entre 30 y 50 %."
+        "Avoid sandy land coming from sorghum, wheat, maize or chickpea with heavy lesser cornstalk borer or cutworm pressure.",
+        "Use hybrids or varieties with pest resistance when possible.",
+        "Against stink bugs: monitoring, trap plants on the edges and conserving natural enemies.",
+        "Against common smut: do not exceed the recommended density and destroy the galls.",
+        "Against corn stunt: plant on time, use tolerant genotypes and monitor leafhoppers.",
+        "Harvest with the milk line between 30 and 50 %."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 43237,
           "rendimiento": 50,
           "unidad_rendimiento": "t/ha",
@@ -285,11 +285,11 @@
           "relacion_bc": 1.13
         }
       ],
-      "nota": "Siembra en dos ciclos (PV y OI), por eso ciclo null. El texto no dice el origen ni la empresa de los materiales recomendados; se listan tal como aparecen. Costos del Cuadro 8 (con base en Agrocostos de FIRA): rendimiento de forraje verde. Costo total, ingreso bruto (48,850 $) e ingreso neto cuadran. El precio (977 $/t) no viene impreso: se calculó como ingreso bruto / rendimiento. El cuadro imprime relación B/C 0.12, que en realidad es ingreso neto / costo (12.98 % de retorno); aquí se puso ingreso bruto / costo ≈ 1.13.",
+      "nota": "Planted in two cycles (PV and OI), hence ciclo null. The text does not state the origin or company of the recommended materials; they are listed as they appear. Costs from Table 8 (based on FIRA Agrocostos): green forage yield. Total cost, gross income (48,850 $) and net income match. The price (977 $/t) is not printed: it was calculated as gross income / yield. The table prints a B/C ratio of 0.12, which is actually net income / cost (12.98 % return); here gross income / cost ≈ 1.13 was used.",
       "revisado": false
     },
     {
-      "ficha": "Sorgo forrajero",
+      "ficha": "Forage sorghum",
       "cientifico": "Sorghum bicolor (L.) Moench",
       "paginas": [
         38,
@@ -298,12 +298,12 @@
       "cultivo_ids": [
         "sorgo-forrajero-en-verde"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "riego",
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
       "ciclo": "PV",
-      "region": "Clima subtropical árido semicálido. Suelos regosol, yermosol y vertisol; en las zonas agrícolas casi todos son alcalinos (pH promedio 8.41) y de textura media a franco-arenosa. Tolera sequía, calor y salinidad, y usa hasta 30 % menos agua que el maíz.",
+      "region": "Semi-warm arid subtropical climate. Regosol, yermosol and vertisol soils; in the farming areas almost all are alkaline (average pH 8.41) with medium to sandy loam texture. Tolerates drought, heat and salinity, and uses up to 30 % less water than maize.",
       "siembra": {
-        "texto": "La mejor fecha en primavera-verano es la segunda quincena de abril, con riego por goteo en el Valle de Santo Domingo.",
+        "texto": "The best date in spring-summer is the second half of April, with drip irrigation in the Valle de Santo Domingo.",
         "meses": [
           4
         ]
@@ -314,31 +314,31 @@
         "Sinaloense 202"
       ],
       "hibridos_comerciales": [],
-      "densidad": "De 16 a 18 kg de semilla por ha según su tamaño, en surcos a 80 cm. Profundidad de 3 cm en siembra en seco y de 5 cm en húmedo.",
-      "fertilizacion": "Fórmula 100-60-00 con UAN 32 y ácido fosfórico. El N en tres partes iguales a los 10, 35 y 60 días después de la siembra; todo el P a los 10 días. Aplicaciones foliares de quelatos de hierro.",
-      "riego": "Con goteo: riego de nacencia de 12 horas y después riegos semanales de 7 horas.",
+      "densidad": "16 to 18 kg of seed per ha depending on seed size, in rows 80 cm apart. Depth of 3 cm in dry planting and 5 cm in moist soil.",
+      "fertilizacion": "Formula 100-60-00 with UAN 32 and phosphoric acid. The N in three equal parts at 10, 35 and 60 days after sowing; all the P at 10 days. Foliar applications of iron chelates.",
+      "riego": "With drip: a 12-hour emergence irrigation and then weekly 7-hour irrigations.",
       "plagas": [
-        "Trips",
-        "Pulgón del cogollo",
-        "Gusano cogollero",
-        "Pulgón amarillo",
-        "Mosca de la panoja"
+        "Thrips",
+        "Corn leaf aphid",
+        "Fall armyworm",
+        "Sugarcane aphid",
+        "Sorghum midge"
       ],
       "enfermedades": [
-        "Mildiu (Peronosclerospora sorghi)"
+        "Downy mildew (Peronosclerospora sorghi)"
       ],
-      "malezas": "Una escarda mecánica entre los 30 y 40 días después de la siembra. Malezas principales: malva, mostacilla (Sisymbrium irio), verdolaga, quelite o bledo, lengua de vaca, flor amarilla y gloria de la mañana.",
-      "cosecha": "Para ensilaje, cortar en grano lechoso-masoso. Para pastoreo, esperar al menos 60 cm de altura para evitar intoxicación por ácido cianhídrico o nitratos. Rendimiento esperado: unas 63 t/ha de forraje verde.",
+      "malezas": "One mechanical cultivation pass between 30 and 40 days after sowing. Main weeds: mallow, London rocket (Sisymbrium irio), purslane, quelite or pigweed, dock, yellow flower and morning glory.",
+      "cosecha": "For silage, cut at milk-dough grain. For grazing, wait for at least 60 cm of height to avoid hydrocyanic acid or nitrate poisoning. Expected yield: about 63 t/ha of green forage.",
       "cuidados": [
-        "Sembrar en la segunda quincena de abril.",
-        "No pastorear antes de que la planta mida 60 cm, para evitar intoxicación del ganado.",
-        "Conservar a las catarinas, que controlan al pulgón amarillo de forma natural.",
-        "Vigilar el mildiu, la principal enfermedad en el Valle de Santo Domingo; Gavatero 203 es susceptible.",
-        "Hacer una escarda entre los 30 y 40 días para controlar malezas."
+        "Plant in the second half of April.",
+        "Do not graze before the plant is 60 cm tall, to avoid livestock poisoning.",
+        "Conserve lady beetles, which naturally control the sugarcane aphid.",
+        "Watch for downy mildew, the main disease in the Valle de Santo Domingo; Gavatero 203 is susceptible.",
+        "Do one cultivation pass between 30 and 40 days to control weeds."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 53874,
           "rendimiento": 63,
           "unidad_rendimiento": "t/ha",
@@ -347,7 +347,7 @@
           "relacion_bc": 1.4
         }
       ],
-      "nota": "El extraído marcaba tipo de cultivo 'anual/perenne'; el texto dice que el sorgo para forraje es una especie anual. Costos del Cuadro 10 (FIRA 2026), con riego por goteo: el costo total de 53,874 $/ha cuadra con la suma de los rubros y el ingreso bruto es 63 t × 1,200 $/t = 75,600 $ (el cuadro lo llama 'Beneficio ha'). El cuadro imprime relación B/C 1.42 y costo por tonelada 842.33 $, que no cuadran con el total; aquí se calcularon ingreso neto (75,600 − 53,874) y B/C (≈ 1.40).",
+      "nota": "The extracted data marked the crop type as 'anual/perenne'; the text says forage sorghum is an annual species. Costs from Table 10 (FIRA 2026), with drip irrigation: the total cost of 53,874 $/ha matches the sum of the items and gross income is 63 t × 1,200 $/t = 75,600 $ (the table calls it 'Beneficio ha'). The table prints a B/C ratio of 1.42 and a cost per ton of 842.33 $, which do not match the total; here net income (75,600 − 53,874) and B/C (≈ 1.40) were calculated.",
       "revisado": false
     }
   ]

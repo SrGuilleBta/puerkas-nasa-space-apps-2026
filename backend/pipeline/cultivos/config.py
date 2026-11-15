@@ -49,5 +49,6 @@ TEMPORADAS = {
 }
 
 CICLOS = {"Otoño-Invierno": "OI", "Primavera-Verano": "PV", "Perennes": "PER"}
-NOMBRE_CICLO = {"OI": "Otoño-Invierno", "PV": "Primavera-Verano", "PER": "Perennes"}
-MODALIDADES = {"Riego": "riego", "Temporal": "temporal"}
+# Los valores que salen en los JSON van en inglés (los datos de Cultivos se publican en inglés).
+NOMBRE_CICLO = {"OI": "Fall-Winter", "PV": "Spring-Summer", "PER": "Perennial"}
+MODALIDADES = {"Riego": "irrigated", "Temporal": "rainfed"}

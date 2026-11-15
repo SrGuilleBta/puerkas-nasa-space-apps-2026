@@ -43,11 +43,11 @@ def ubicaciones() -> dict:
 @lru_cache(maxsize=1)
 def _indice_ubicaciones() -> dict:
     """clave -> descriptor de ubicación, para todas las claves válidas (con o sin datos)."""
-    idx = {"00": {"nivel": "nacional", "clave": "00", "nombre": "México"}}
+    idx = {"00": {"nivel": "national", "clave": "00", "nombre": "Mexico"}}
     for e in ubicaciones()["estados"]:
-        idx[e["clave"]] = {"nivel": "estado", "clave": e["clave"], "nombre": e["nombre"]}
+        idx[e["clave"]] = {"nivel": "state", "clave": e["clave"], "nombre": e["nombre"]}
         for m in e["municipios"]:
-            idx[m["clave"]] = {"nivel": "municipio", "clave": m["clave"], "nombre": m["nombre"],
+            idx[m["clave"]] = {"nivel": "municipality", "clave": m["clave"], "nombre": m["nombre"],
                                "cve_ent": e["clave"], "estado": e["nombre"]}
     return idx
 
@@ -89,10 +89,10 @@ def viabilidad(clave: str, cultivo: str) -> dict:
     """
     ficha = catalogo()["por_id"].get(cultivo)
     if ficha is None:
-        raise SinDatos(f"cultivo {cultivo}")
+        raise SinDatos(f"crop {cultivo}")
     descriptor = _indice_ubicaciones().get(clave)
     if descriptor is None:
-        raise SinDatos(f"ubicación {clave}")
+        raise SinDatos(f"location {clave}")
 
     cadena = [clave]
     if len(clave) == 5:
@@ -111,7 +111,7 @@ def viabilidad(clave: str, cultivo: str) -> dict:
             break
 
     enchar = ficha.get("tolerancia_encharcamiento")
-    cve_ent = descriptor.get("cve_ent") or (clave if descriptor["nivel"] == "estado" else None)
+    cve_ent = descriptor.get("cve_ent") or (clave if descriptor["nivel"] == "state" else None)
     pct_riego = ((indicadores or {}).get("riesgo_hidrico") or {}).get("pct_riego")
     return {
         "ubicacion": descriptor,
@@ -124,9 +124,9 @@ def viabilidad(clave: str, cultivo: str) -> dict:
         "ubicacion_datos": origen,
         "indicadores": indicadores,
         "sensibilidad_inundacion": {
-            "nivel": {"tolera": "baja", "sensible": "alta"}.get(enchar),
-            "fuente": "EcoCrop (tolerancia a mal drenaje)",
-            "pendiente": "Atlas Nacional de Riesgos (CENAPRED)",
+            "nivel": {"tolerant": "low", "sensitive": "high"}.get(enchar),
+            "fuente": "EcoCrop (tolerance to poor drainage)",
+            "pendiente": "National Risk Atlas (CENAPRED)",
         },
         "manejo": manejo(cve_ent, cultivo, ficha, pct_riego),
     }
@@ -162,17 +162,17 @@ def manejo(cve_ent: str | None, cultivo: str, ficha: dict, pct_riego: float | No
     sustituto = ESTADO_SUSTITUTO.get(cve_ent)
     fichas = list(_fichas_inifap().get((sustituto or cve_ent, cultivo), [])) if cve_ent else []
     if fichas:
-        preferida = None if pct_riego is None else ("riego" if pct_riego >= 0.5 else "temporal")
+        preferida = None if pct_riego is None else ("irrigated" if pct_riego >= 0.5 else "rainfed")
         fichas.sort(key=lambda f: f.get("modalidad") != preferida)
         return {
             "fuente": "INIFAP",
-            "nota": "Ciudad de México no tiene Agenda Técnica; se usa la del Estado de México." if sustituto else None,
+            "nota": "Mexico City has no INIFAP Technical Agenda; the State of Mexico agenda is used." if sustituto else None,
             "fichas": fichas,
             "siembra_meses": fichas[0]["siembra"]["meses"],
         }
     return {
         "fuente": "general" if ficha.get("cuidados") else None,
-        "nota": "Sin agenda técnica INIFAP para este estado y cultivo; texto general en borrador.",
+        "nota": "No INIFAP technical agenda for this state and crop; general draft text.",
         "cuidados": ficha.get("cuidados"),
         "fichas": [],
         "siembra_meses": None,
@@ -186,7 +186,7 @@ def biblioteca(clave: str | None = None, buscar: str | None = None) -> list[dict
     locales = {}
     if clave:
         if clave not in _indice_ubicaciones():
-            raise SinDatos(f"ubicación {clave}")
+            raise SinDatos(f"location {clave}")
         try:
             locales = {c["id"]: c for c in ubicacion(clave)["cultivos"]}
         except SinDatos:
