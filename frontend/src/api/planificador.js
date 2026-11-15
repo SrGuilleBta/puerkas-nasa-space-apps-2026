@@ -31,8 +31,23 @@ export const borrarSiembra = (id) => enviar("DELETE", `${R}/siembras/${id}`);
 // Catálogo de Cultivos: lista para elegir, cultivo del Planificador a partir de uno del catálogo y su ficha.
 export const getCatalogo = () => obtener(`${R}/catalogo`);
 export const cultivoDesdeCatalogo = (catalogoId) => enviar("POST", `${R}/cultivos/desde-catalogo`, { catalogoId });
-export const getFicha = (cultivoId) => obtener(`${R}/cultivos/${cultivoId}/ficha`);
+// `municipio` (el nombre de la ubicación activa) sirve para traer el manejo del INIFAP de su estado.
+const conMunicipio = (municipio) => (municipio ? { municipio } : {});
+export const getFicha = (cultivoId, municipio) => obtener(`${R}/cultivos/${cultivoId}/ficha`, conMunicipio(municipio));
+export const getFichaCatalogo = (catalogoId, municipio) =>
+  obtener(`${R}/catalogo/${catalogoId}/ficha`, conMunicipio(municipio));
 
 // Mejor época para sembrar un cultivo del catálogo en una ubicación (NASA POWER + temperatura ideal).
 export const getVentanaSiembra = (catalogoId, municipio) =>
   obtener(`${R}/catalogo/${catalogoId}/ventana-siembra`, { municipio });
+
+// Tareas de una siembra (fertilizar, regar, cosechar...) con marca de hecha.
+export const listarTareas = (siembraId) => obtener(`${R}/siembras/${siembraId}/tareas`);
+export const crearTarea = (siembraId, datos) => enviar("POST", `${R}/siembras/${siembraId}/tareas`, datos);
+export const tareasSugeridas = (siembraId) => enviar("POST", `${R}/siembras/${siembraId}/tareas/sugeridas`, {});
+export const editarTarea = (id, cambios) => enviar("PATCH", `${R}/tareas/${id}`, cambios);
+export const borrarTarea = (id) => enviar("DELETE", `${R}/tareas/${id}`);
+
+// Copiar el plan a otro año ({ nombre, anios }) y descargarlo en CSV.
+export const duplicarPlan = (id, datos) => enviar("POST", `${R}/planes/${id}/duplicar`, datos);
+export const urlExportarPlan = (id) => `${R}/planes/${id}/exportar`;

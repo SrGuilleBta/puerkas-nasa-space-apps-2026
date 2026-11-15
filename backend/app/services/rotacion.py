@@ -18,6 +18,7 @@ from datetime import date, timedelta
 from app.db import clave
 from app.services import catalogo_cultivos as catalogo
 from app.services import planificador as plan_servicio
+from app.services import tareas
 
 # Tipos de cultivo que se rotan con esta regla (los perennes, forrajes e industriales no)
 TIPOS_QUE_ROTAN = {"cereal", "leguminosa", "hortaliza", "oleaginosa", "tuberculo"}
@@ -107,4 +108,5 @@ def recomendaciones(con, plan: dict, hoy: date) -> list[dict]:
 
 def analisis(con, plan_id: int, hoy: date) -> dict:
     plan = plan_servicio.obtener_plan(con, plan_id)
-    return {"resumen": plan_servicio.resumen_plan(plan, hoy), "recomendaciones": recomendaciones(con, plan, hoy)}
+    resumen = {**plan_servicio.resumen_plan(plan, hoy), **tareas.conteo_plan(con, plan_id, hoy)}
+    return {"resumen": resumen, "recomendaciones": recomendaciones(con, plan, hoy)}

@@ -12,6 +12,7 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 import httpx
 
 from app.db import clave
+from app.services import estados
 from app.services.planificador import Conflicto, Invalido, NoEncontrado
 
 NOMBRE_MI_UBICACION = "My location"
@@ -30,6 +31,8 @@ class Ubicacion:
     # en las demás el suelo busca un punto con dato cerca de (lat, lon).
     lat_suelo: float | None = None
     lon_suelo: float | None = None
+    # Estado (clave INEGI de 2 dígitos) para mostrar el manejo del INIFAP de ese estado; None si no se sabe
+    cve_ent: str | None = None
 
 
 class ErrorBusqueda(Exception):
@@ -37,7 +40,7 @@ class ErrorBusqueda(Exception):
 
 
 def _desde_fila(f: sqlite3.Row) -> Ubicacion:
-    return Ubicacion(f["id"], f["nombre"], f["lat"], f["lon"], f["zona"], f["lat_suelo"], f["lon_suelo"])
+    return Ubicacion(f["id"], f["nombre"], f["lat"], f["lon"], f["zona"], f["lat_suelo"], f["lon_suelo"], f["cve_ent"])
 
 
 def listar(con) -> list[Ubicacion]:
@@ -62,16 +65,32 @@ def _validar(nombre: str, lat: float, lon: float, zona: str) -> str:
     return nombre
 
 
-def crear(con, nombre: str, lat: float, lon: float, zona: str) -> Ubicacion:
+def _validar_estado(cve_ent: str | None) -> str | None:
+    if cve_ent is not None and cve_ent not in estados.ESTADOS:
+        raise Invalido(f"Unknown state code \"{cve_ent}\"")
+    return cve_ent
+
+
+def crear(con, nombre: str, lat: float, lon: float, zona: str, cve_ent: str | None = None) -> Ubicacion:
     nombre = _validar(nombre, lat, lon, zona)
+    cve_ent = _validar_estado(cve_ent)
     existente = buscar(con, nombre)
     if existente:
         raise Conflicto(f"You already saved \"{existente.nombre}\"")
     with con:
         id_ = con.execute(
-            "INSERT INTO ubicacion (nombre, clave, lat, lon, zona) VALUES (?, ?, ?, ?, ?)",
-            (nombre, clave(nombre), lat, lon, zona),
+            "INSERT INTO ubicacion (nombre, clave, lat, lon, zona, cve_ent) VALUES (?, ?, ?, ?, ?, ?)",
+            (nombre, clave(nombre), lat, lon, zona, cve_ent),
         ).lastrowid
+    return buscar_por_id(con, id_)
+
+
+def fijar_estado(con, id_: int, cve_ent: str | None) -> Ubicacion:
+    """Guarda (o borra, con None) el estado de una ubicación."""
+    buscar_por_id(con, id_)
+    cve_ent = _validar_estado(cve_ent)
+    with con:
+        con.execute("UPDATE ubicacion SET cve_ent = ? WHERE id = ?", (cve_ent, id_))
     return buscar_por_id(con, id_)
 
 
@@ -81,7 +100,10 @@ def guardar_mi_ubicacion(con, lat: float, lon: float, zona: str) -> Ubicacion:
     with con:
         con.execute(
             "INSERT INTO ubicacion (nombre, clave, lat, lon, zona) VALUES (?, ?, ?, ?, ?) "
-            "ON CONFLICT(clave) DO UPDATE SET lat = excluded.lat, lon = excluded.lon, zona = excluded.zona",
+            "ON CONFLICT(clave) DO UPDATE SET lat = excluded.lat, lon = excluded.lon, zona = excluded.zona, "
+            # si la persona se movió a otro lugar (más de 0.5 grados, unos 55 km) ya no sabemos su estado
+            "cve_ent = CASE WHEN abs(lat - excluded.lat) > 0.5 OR abs(lon - excluded.lon) > 0.5 "
+            "THEN NULL ELSE cve_ent END",
             (nombre, clave(nombre), lat, lon, zona),
         )
     return buscar(con, nombre)
@@ -130,7 +152,8 @@ async def geocodificar(texto: str) -> list[dict]:
         partes = [x.get("name"), x.get("admin1"), x.get("country")]
         nombre = ", ".join(dict.fromkeys(p for p in partes if p))  # sin repetir (p. ej. ciudad = estado)
         if x.get("timezone") and nombre:
-            candidatos.append(
-                {"nombre": nombre, "lat": x["latitude"], "lon": x["longitude"], "zona": x["timezone"]}
-            )
+            candidatos.append({
+                "nombre": nombre, "lat": x["latitude"], "lon": x["longitude"], "zona": x["timezone"],
+                "cve_ent": estados.estado_de(x.get("admin1")),
+            })
     return candidatos

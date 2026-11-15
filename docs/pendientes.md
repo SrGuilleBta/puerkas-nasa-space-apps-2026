@@ -37,8 +37,8 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
   nombres de los cultivos del Planificador se sincronizan solos con el catálogo al arrancar, y los tipos
   se aceptan en español o inglés ("Leguminosa" o "Legume"). Al fusionarla, revisar que sigan igual los
   ids del catálogo y los campos `ciclo_dias`, `temperatura_*` y `fija_nitrogeno`.
-- **Falta usar:** las agendas INIFAP por estado (`manejo` en `services/cultivos.py`) y la ventana de
-  siembra por mes. Necesitan saber el estado de la ubicación (hoy solo guardamos lat/lon).
+- Las agendas INIFAP ya se usan (estado guardado en cada ubicación). Falta usar los **meses de siembra** de
+  esas agendas para afinar la franja de "cuándo sembrar aquí".
 
 ## Lo que sigue
 
@@ -55,9 +55,15 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 
 ## Planificador
 
-- Costos e ingresos estimados por siembra (hectáreas, rendimiento y precio editables).
-- Tareas por siembra (fertilizar, riego, cosecha) con marca de hecho.
-- Copiar el plan de otro año o exportarlo a PDF.
+- Hechos: costos e ingresos por siembra, tareas por siembra, copiar el plan a otro año, exportar a CSV
+  y la agenda del INIFAP por estado.
+- Exportar a PDF (hoy solo CSV).
+- Las tareas no se copian al duplicar el plan y no aparecen todavía en Principal ni en Noticias (por ejemplo
+  "tienes 3 tareas vencidas").
+- El calendario sugerido de tareas es una plantilla general; se podría armar con las etapas del cultivo y
+  los cuidados de la agenda del INIFAP.
+- El texto del INIFAP está en español (la rama `cultivos_v2` lo traduce); la mediana nacional como cifra de
+  partida no es precio de mercado de hoy.
 - Indicadores por fila de siembras fuera de la vista ("N antes / N después") en el calendario.
 
 ## Por verificar

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { borrarPlan, crearPlan, renombrarPlan } from "../../api/planificador.js";
+import { borrarPlan, crearPlan, duplicarPlan, renombrarPlan } from "../../api/planificador.js";
 import Dialogo from "../../components/Dialogo.jsx";
 
 // `plan` es null para crear uno nuevo; si viene, se renombra o se elimina.
@@ -10,6 +10,9 @@ function Formulario({ plan, onGuardado, onCerrar }) {
   const [error, setError] = useState(null);
   const [guardando, setGuardando] = useState(false);
   const [confirmaBorrar, setConfirmaBorrar] = useState(false);
+  // Copiar el plan a otro año: mismas parcelas y siembras con las fechas movidas
+  const [nombreCopia, setNombreCopia] = useState(plan ? `${plan.nombre} (copy)` : "");
+  const [anios, setAnios] = useState("1");
 
   async function ejecutar(accion) {
     setGuardando(true);
@@ -39,6 +42,44 @@ function Formulario({ plan, onGuardado, onCerrar }) {
         Plan name
         <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="e.g. 2027 Plan" autoFocus maxLength={80} />
       </label>
+
+      {editando && (
+        <fieldset className="economia-form">
+          <legend>Copy to another year</legend>
+          <p className="campo__ayuda">
+            Creates a new plan with the same plots and plantings (and their yield, price and cost) with the dates moved
+            forward. The original stays as it is.
+          </p>
+          <div className="campos">
+            <label className="campo">
+              Name of the copy
+              <input value={nombreCopia} onChange={(e) => setNombreCopia(e.target.value)} maxLength={80} />
+            </label>
+            <label className="campo">
+              Move dates by
+              <select value={anios} onChange={(e) => setAnios(e.target.value)}>
+                <option value="0">0 years (exact copy)</option>
+                <option value="1">1 year</option>
+                <option value="2">2 years</option>
+                <option value="3">3 years</option>
+              </select>
+            </label>
+          </div>
+          <button
+            type="button"
+            className="btn"
+            disabled={guardando || !nombreCopia.trim()}
+            onClick={() =>
+              ejecutar(async () => ({
+                plan: await duplicarPlan(plan.id, { nombre: nombreCopia.trim(), anios: Number(anios) }),
+                borrado: false,
+              }))
+            }
+          >
+            Create copy
+          </button>
+        </fieldset>
+      )}
 
       {error && (
         <div className="aviso aviso--error" role="alert">

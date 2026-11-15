@@ -16,3 +16,7 @@ export const crearUbicacion = (datos) => enviar("POST", R, datos);
 export const guardarMiUbicacion = (datos) => enviar("PUT", `${R}/mi-ubicacion`, datos);
 
 export const borrarUbicacion = (id) => enviar("DELETE", `${R}/${id}`);
+
+// Estados de México y el estado de una ubicación (para el manejo del INIFAP de ese estado).
+export const listarEstados = () => obtener(`${R}/estados`);
+export const fijarEstado = (id, cveEnt) => enviar("PATCH", `${R}/${id}`, { cveEnt });

@@ -8,6 +8,7 @@ export default function Controles({
   onPlan,
   onNuevoPlan,
   onEditarPlan,
+  exportHref,
   meses,
   onMover,
   onZoom,
@@ -30,6 +31,11 @@ export default function Controles({
         <button type="button" className="btn" onClick={onEditarPlan}>
           Edit plan
         </button>
+        {exportHref && (
+          <a className="btn" href={exportHref} download>
+            Export CSV
+          </a>
+        )}
         <button type="button" className="btn btn--primario" onClick={onNuevoPlan}>
           New plan
         </button>
