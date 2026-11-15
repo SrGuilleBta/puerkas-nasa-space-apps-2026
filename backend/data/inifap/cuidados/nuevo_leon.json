@@ -1,0 +1,697 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/nuevo_leon.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "19",
+  "estado": "Nuevo León",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Nuevo León. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Ajo",
+      "cientifico": "Allium sativum L.",
+      "paginas": [
+        12,
+        19
+      ],
+      "cultivo_ids": [
+        "ajo"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Sur del estado (Galeana y Aramberri), clima templado semiseco a subhúmedo, de 300 a 800 mm de lluvia al año.",
+      "siembra": {
+        "texto": "Lo ideal es la segunda quincena de septiembre; se puede sembrar del 1 de septiembre al 15 de octubre.",
+        "meses": [
+          9,
+          10
+        ]
+      },
+      "variedades": [
+        "Ajo jaspeado (zona sur)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "400 mil plantas/ha: dientes a 10 cm en hileras dobles separadas 20 cm, en camas de 1 m. Semilla: 1 a 1.2 t/ha en variedades de diente grande y 700 kg/ha en diente chico.",
+      "fertilizacion": "Presiembra: 152 kg/ha de 18-46-00 al centro de la cama. El resto por la cintilla (fosfonitrato, sulfato de magnesio y sulfato de potasio) por etapa: total 155-70-130 kg/ha de N-P-K más 23 kg/ha de Mg. Ajustar con análisis de planta y suelo.",
+      "riego": "Goteo con cintilla y tensiómetros a 15 y 30 cm. Riego de establecimiento de 20 a 25 h. Primeros 100 días: regar 3 veces por semana (2 a 3 h) entre 15 y 30 cb; después, 3 veces por semana de 4 a 5 h entre 10 y 20 cb. Suspender cuando se secan las puntas de las hojas.",
+      "plagas": [
+        "Trips",
+        "Minador de la hoja",
+        "Nematodos (Ditylenchus dipsaci)"
+      ],
+      "enfermedades": [
+        "Pudrición blanca (Sclerotium cepivorum)",
+        "Mancha púrpura (Alternaria porri)",
+        "Mildiú (Peronospora destructor)"
+      ],
+      "malezas": "Mantener el cultivo limpio sobre todo los primeros 70 días, con deshierbe manual para cuidar la calidad del bulbo.",
+      "cosecha": "Cuando 60 a 70 % de las hojas tienen las puntas secas y las túnicas de los dientes parecen papel. Arranque mecánico y recolección manual; secar 1 a 2 semanas cubierto con follaje. Rendimiento esperado: 12 t/ha.",
+      "cuidados": [
+        "Sembrar en seco el diente a 4-6 cm de profundidad, con la base hacia abajo.",
+        "Desgranar los bulbos cinco días antes de sembrar y cuidar que la túnica del diente quede intacta.",
+        "Desinfectar la semilla antes de sembrar para prevenir la pudrición blanca.",
+        "Vigilar la humedad del suelo con tensiómetros: cerca de 70 cb indica estrés.",
+        "Tras la cosecha, cortar follaje y raíces, clasificar y guardar en lugar fresco, seco y ventilado (o cuarto frío de -2 a 1 °C); evitar 5 a 10 °C."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 163414,
+          "rendimiento": 12000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 22,
+          "ingreso_neto": 100586,
+          "relacion_bc": 1.61
+        }
+      ],
+      "nota": "Costos del Cuadro 2: ingreso bruto 264,000 (12,000 kg a $22). Ingreso neto y relación B/C cuadran con el costo total impreso, aunque algunos subtotales del cuadro no coinciden con sus partidas.",
+      "revisado": false
+    },
+    {
+      "ficha": "Frijol",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        20,
+        31
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": null,
+      "region": "Temporal en la región centro (Cadereyta Jiménez, General Terán, Montemorelos; 16 a 24 °C y 500 a 1,100 mm) y en el sur (Dr. Arroyo y Galeana; más seco y frío, 8 a 20 °C y 200 a 800 mm).",
+      "siembra": {
+        "texto": "La agenda indica que la fecha depende de la región agroecológica y no da una ventana.",
+        "meses": []
+      },
+      "variedades": [
+        "Pinto Saltillo",
+        "Negro Michigan",
+        "Negro Jamapa",
+        "Tipo Pinto Americano (su grano se daña con lluvia en madurez)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "125,000 plantas/ha (10 a 12 plantas por metro), unos 40 kg de semilla/ha con al menos 85 % de germinación, en surcos a 80 o 90 cm.",
+      "fertilizacion": "Fija nitrógeno, por lo que no se considera relevante aplicarlo. Opcional: foliar de urea al 2 % y ácido fosfórico al 1 %; contra deficiencia de hierro, dos aplicaciones de sulfato ferroso al 1 % entre 20 y 30 días después de la siembra. Inocular la semilla con Rhizobium y micorriza INIFAP (1 kg/ha) un día antes de sembrar, a la sombra.",
+      "riego": null,
+      "plagas": [
+        "Gusano cortador",
+        "Pequeño barrenador del tallo",
+        "Gusano falso medidor",
+        "Gusano terciopelo",
+        "Chicharritas",
+        "Mosca blanca",
+        "Diabróticas",
+        "Picudo del ejote"
+      ],
+      "enfermedades": [
+        "Hongos que pudren la raíz y matan plántulas"
+      ],
+      "malezas": "Correhuela, polocote, quelites, mostaza y zacate Johnson. Rastreo antes de sembrar y escardas con deshierbe manual en el surco los primeros 45 días tras la emergencia.",
+      "cosecha": "Arrancar o cortar cuando la planta está amarillenta y empiezan a caer las hojas, antes de que se seque del todo, de madrugada para evitar el desgrane; secar en cordón unos 8 días y trillar. Rendimiento esperado en temporal (región centro): 2.7 t/ha.",
+      "cuidados": [
+        "Usar semilla certificada con al menos 85 % de germinación.",
+        "Barbechar a 25-30 cm por lo menos tres meses antes de sembrar.",
+        "Captar la lluvia con curvas de nivel o pileteo y labranza de conservación; usar variedades precoces contra la sequía.",
+        "Inocular la semilla con Rhizobium y micorriza un día antes de sembrar, sin exponerla al sol.",
+        "Dar al menos una escarda y deshierbar los primeros 45 días."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 10230,
+          "rendimiento": 2700,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 16770,
+          "relacion_bc": 2.6
+        },
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 7500,
+          "rendimiento": 450,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 4650,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Cuadro 3 (temporal, región norte): el cuadro dice 'Rendimiento kg 27,000', que en realidad es el ingreso bruto en pesos (10,230 + 16,770); se usó el rendimiento de 2.7 t/ha del texto, que la agenda da para la región centro. Cuadro 4 (región sur): ingreso bruto 12,150 con 450 kg/ha; la relación B/C impresa (0.6) es el retorno neto, no ingreso/costo (sería 1.62), por eso va en null. Hay manejo específico para la región sur que no quedó en el texto extraído. Sin fecha de siembra, no se asignó ciclo.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        32,
+        43
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "93 % de la superficie es de temporal en el sur (Dr. Arroyo y Galeana, a más de 1,600 msnm; clima seco a templado, 200 a 800 mm). En el centro es marginal, sobre todo de temporal y poco de riego.",
+      "siembra": {
+        "texto": "Temporal en el sur: del 15 de abril al 31 de mayo. Temporal y riego en el centro: del 1 de julio al 10 de agosto.",
+        "meses": [
+          4,
+          5,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Tremes",
+        "Maíz Alto",
+        "Maíz Colorado",
+        "Pinto Mosca"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "3 a 4 plantas por metro lineal (37,000 a 50,000 plantas/ha), en surcos a 80-90 cm y 5 a 7 cm de profundidad.",
+      "fertilizacion": "50 a 60 kg/ha de N y 30 a 40 kg/ha de P, con buena humedad (igual en riego del centro-norte). Complementar con micorriza INIFAP (1 kg/ha).",
+      "riego": "En riego (centro-norte), el cuadro de costos considera un riego de presiembra y tres de auxilio.",
+      "plagas": [
+        "Gusano cogollero (plaga primaria)",
+        "Gusano trozador",
+        "Gusano elotero",
+        "Pulga negra",
+        "Araña roja",
+        "Diabróticas"
+      ],
+      "enfermedades": [],
+      "malezas": "Rastreos antes de sembrar, y escardas y deshierbes manuales en la hilera durante los primeros 45 días.",
+      "cosecha": "En el sur, cosecha manual: cortar con machete poco después de la madurez fisiológica (capa negra) para aprovechar el rastrojo; pizca y desgrane manual o con trilladora. Rendimiento esperado en temporal del sur: 3,060 kg/ha.",
+      "cuidados": [
+        "Barbechar a 25-30 cm al menos tres meses antes de sembrar y rastrear para conservar la humedad.",
+        "Sembrar con suelo húmedo, a 5-7 cm de profundidad.",
+        "En temporal, bajar la densidad y usar variedades precoces para escapar a la sequía.",
+        "Considerar la labranza de conservación para aumentar materia orgánica y reducir evaporación.",
+        "Dar al menos una escarda; vigilar el gusano cogollero, que es la plaga primaria."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 7310,
+          "rendimiento": 3060,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.1,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        },
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 14122,
+          "rendimiento": 1500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": -6472,
+          "relacion_bc": null
+        },
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 29105,
+          "rendimiento": 5000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.84,
+          "ingreso_neto": null,
+          "relacion_bc": 1.0
+        }
+      ],
+      "nota": "Costos: 1) Cuadro 5, temporal sur, precio $5,100/t del 17 de junio de 2026; la ganancia (-4,250) y la B/C (-0.42) impresas restan kilos a pesos (3,060 - 7,310) y no cuadran, por eso van en null (con ese precio, el ingreso bruto sería 15,606). 2) Cuadro 7, temporal centro: ingreso bruto 7,650; la B/C impresa es -0.542 (con signo erróneo; 7,650/14,122 = 0.54), en null. 3) Cuadro 9, riego centro-norte: ingreso bruto 29,200; el ingreso neto impreso (105) no cuadra (29,200 - 29,105 = 95), en null. Siembras del centro y de riego, y su fertilización, vienen del texto que quedó dentro de los cuadros de costos; no hubo enfermedades de importancia en la región.",
+      "revisado": false
+    },
+    {
+      "ficha": "Mandarina",
+      "cientifico": "Citrus reticulata Blanco.",
+      "paginas": [
+        44,
+        51
+      ],
+      "cultivo_ids": [
+        "mandarina"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Montemorelos y General Terán. Región centro (DDR Montemorelos), clima semicálido-subhúmedo, 15 a 23 °C y 350 a 750 mm de lluvia al año; terreno plano a ligeramente ondulado con suelos calcáreos, que son la principal limitante.",
+      "siembra": {
+        "texto": null,
+        "meses": []
+      },
+      "variedades": [
+        "Dancy (principal)",
+        "Orlando",
+        "Honey",
+        "Murcott",
+        "Lee",
+        "Ortanique",
+        "Fairchild"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "312 árboles/ha en marco de 8 x 4 m.",
+      "fertilizacion": "Huertas adultas con buen riego: 150 a 200 kg/ha de N (50 a 75 kg/ha con déficit de agua), en 3 a 4 aplicaciones (sulfato de amonio o urea); 70 a 90 kg/ha de P como fosfato monoamónico (11-52-00 o 12-61-00) en al menos dos aplicaciones; 150 kg/ha de nitrato de potasio en una sola aplicación. Micronutrientes por vía foliar por los suelos calcáreos; de preferencia por fertirriego. Hacer análisis foliar (agosto es el mes ideal).",
+      "riego": "Requerimiento anual de 1,400 mm (gravedad), 1,111 mm (microaspersión) y 1,063 mm (goteo). Primer riego antes de la brotación y floración (febrero); después mantener humedad en el suelo hasta noviembre, según las lluvias.",
+      "plagas": [
+        "Mosca mexicana de la fruta",
+        "Arador o negrilla",
+        "Psílido asiático de los cítricos (Diaphorina citri)",
+        "Minador"
+      ],
+      "enfermedades": [
+        "Gomosis o pudrición del pie (Phytophthora)",
+        "Antracnosis",
+        "Huanglongbing (HLB)"
+      ],
+      "malezas": "Malezas principales: polocote, zacate Johnson y quelites. Deshierbe manual bajo la copa y chapoleo o rastreo en las calles. Los cultivos de cobertura son una opción agroecológica.",
+      "cosecha": "Manual con tijeras, cuando el fruto llega a unos 8 °Brix; de septiembre a abril. Rendimiento posible: 25 a 30 t/ha.",
+      "cuidados": [
+        "Rastrear al menos cuatro veces al año (después del riego si es por gravedad).",
+        "Podar árboles mayores de cinco años cuando las copas se juntan, y quitar chupones y madera muerta.",
+        "Monitorear el arador cada 7 a 10 días (80 frutos); intervenir con 2 ácaros en promedio por campo de lupa 10X por fruto.",
+        "Usar trampas (trampa transparente y cebo INIFAP) y recoger y destruir la fruta caída contra la mosca mexicana.",
+        "No repetir el mismo producto contra la diaforina para evitar resistencia.",
+        "Con HLB, mantener humedad y buena nutrición para reducir el estrés del árbol."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 42518,
+          "rendimiento": 25000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 157482,
+          "relacion_bc": 4.7
+        }
+      ],
+      "nota": "Costos del Cuadro 10 (huerta en producción): ingreso bruto implícito 200,000; no se imprime el precio.",
+      "revisado": false
+    },
+    {
+      "ficha": "Manzana",
+      "cientifico": "Malus domestica Borkh.",
+      "paginas": [
+        52,
+        57
+      ],
+      "cultivo_ids": [
+        "manzana"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Partes altas de Santiago (centro; 10 a 24 °C, 500 a 1,200 mm) y Galeana (sur; clima seco estepario frío y templado, 393 mm). Requiere suelos profundos y con buen drenaje.",
+      "siembra": {
+        "texto": "No da fecha de plantación: hoyos de 40x40x50 cm preparados días antes, en marco real o en curvas de nivel.",
+        "meses": []
+      },
+      "variedades": [
+        "Golden Delicious",
+        "Red Delicious (mejor en las partes altas)",
+        "Golden Agua Nueva",
+        "Pacific Gala"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "156 árboles/ha (8 x 8 m) o 208 árboles/ha (8 x 6 m).",
+      "fertilizacion": "Según análisis de suelo y foliar. Al menos 90 kg/ha de N en caída de pétalos; complementar con estiércol seco o composta y foliares con Fe, Ca, Mg, B y Zn en floración, caída de pétalos y amarre.",
+      "riego": "Primer riego pesado en marzo para iniciar la brotación; después regar cuando el tensiómetro marque 50 centibares (unos 30 % de humedad).",
+      "plagas": [
+        "Palomilla de la manzana",
+        "Pulgón lanígero",
+        "Mosca mexicana de la fruta"
+      ],
+      "enfermedades": [
+        "Roña del manzano",
+        "Cenicilla del manzano"
+      ],
+      "malezas": "Chapoleo o rastreo en las calles; bajo la copa, aplicación dirigida de un herbicida permitido. Eliminar las malezas antes de que florezcan.",
+      "cosecha": "Con 12 a 14 °Brix, firmeza de unas 14 libras y semilla oscura; corte manual con tijeras, sin golpear el fruto. Producción esperada: 4 t/ha.",
+      "cuidados": [
+        "Subsolear antes de plantar para romper capas duras y nivelar para evitar encharcamientos.",
+        "Podar en febrero-marzo y quemar las ramas podadas para reducir la roña; aplicar cura-poda en los cortes.",
+        "Ralear frutos pequeños y dañados de junio a agosto.",
+        "Decidir el control de la palomilla por unidades calor (120 UC); liberar Trichogramma desde las 50 UC (20 sobres/ha).",
+        "Controlar el pulgón lanígero con crisopas (10,000 huevecillos/ha)."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 28515,
+          "rendimiento": 4000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8,
+          "ingreso_neto": 3485,
+          "relacion_bc": 1.12
+        }
+      ],
+      "nota": "Costos del Cuadro 11: ingreso bruto 32,000 (4,000 kg a $8).",
+      "revisado": false
+    },
+    {
+      "ficha": "Naranja",
+      "cientifico": "Citrus sinensis (L.)",
+      "paginas": [
+        58,
+        65
+      ],
+      "cultivo_ids": [
+        "naranja"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Montemorelos, General Terán, Cadereyta Jiménez, Linares, Hualahuises y Allende. Región centro (DDR Montemorelos), clima semicálido-subhúmedo, 15 a 23 °C y 350 a 750 mm de lluvia al año; terreno plano a ligeramente ondulado con suelos calcáreos, que son la principal limitante.",
+      "siembra": {
+        "texto": null,
+        "meses": []
+      },
+      "variedades": [
+        "Valencia (principal, tardía)",
+        "Pineapple",
+        "Parson Brown",
+        "Hamlin",
+        "Marrs",
+        "Valencia Criolla Cubana",
+        "Olinda",
+        "Campbell"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Predomina 312 árboles/ha (8 x 4 m); puede subir a 555 (6 x 3 m) o 833 árboles/ha (6 x 2 m).",
+      "fertilizacion": "Huertas adultas con buen riego: 150 a 200 kg/ha de N (50 a 75 kg/ha con déficit de agua), en 3 a 4 aplicaciones (sulfato de amonio o urea); 70 a 90 kg/ha de P como fosfato monoamónico (11-52-00 o 12-61-00) en al menos dos aplicaciones; 150 kg/ha de nitrato de potasio en una sola aplicación. Micronutrientes por vía foliar por los suelos calcáreos; de preferencia por fertirriego.",
+      "riego": "Requerimiento anual de 1,400 mm (gravedad), 1,111 mm (microaspersión) y 1,063 mm (goteo). Primer riego antes de la brotación y floración (febrero); después mantener humedad en el suelo hasta noviembre, según las lluvias.",
+      "plagas": [
+        "Mosca mexicana de la fruta",
+        "Arador o negrilla",
+        "Psílido asiático de los cítricos (Diaphorina citri)",
+        "Minador"
+      ],
+      "enfermedades": [
+        "Gomosis o pudrición del pie (Phytophthora)",
+        "Antracnosis",
+        "Huanglongbing (HLB)"
+      ],
+      "malezas": "Malezas principales: polocote, zacate Johnson y quelites. Deshierbe manual bajo la copa y chapoleo o rastreo en las calles. Los cultivos de cobertura son una opción agroecológica.",
+      "cosecha": "Manual, cuando el fruto llega a unos 8 °Brix; de octubre a mayo. Producción promedio posible: 20 t/ha (potencial de 60 t/ha).",
+      "cuidados": [
+        "Rastrear al menos cuatro veces al año, y cada vez que se riegue por gravedad.",
+        "Podar continuamente para quitar chupones, madera muerta y ramas mal distribuidas.",
+        "Monitorear el arador cada 7 a 10 días (80 frutos); intervenir con 2 ácaros en promedio por campo de lupa 10X por fruto.",
+        "Usar trampas (trampa transparente y cebo INIFAP) contra la mosca mexicana de la fruta.",
+        "Producir la planta con el injerto al menos a 30 cm del patrón para prevenir la gomosis.",
+        "Con HLB, mantener humedad y buena nutrición para reducir el estrés del árbol."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 42518,
+          "rendimiento": 20000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 117482,
+          "relacion_bc": 3.76
+        }
+      ],
+      "nota": "Costos del Cuadro 12: ingreso bruto implícito 160,000; no se imprime el precio.",
+      "revisado": false
+    },
+    {
+      "ficha": "Nogal",
+      "cientifico": "Carya illinoinensis",
+      "paginas": [
+        66,
+        72
+      ],
+      "cultivo_ids": [
+        "nuez"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "29 municipios, sobre todo Rayones, Bustamante y General Terán: climas de seco semicálido a semicálido subhúmedo, 12 a 24 °C y 300 a 900 mm. Suelos de migajón arenoso a arcilloso, pH neutro a alcalino; no se recomiendan suelos muy pesados ni tipo pizarra.",
+      "siembra": {
+        "texto": "Plantar desde los últimos días de diciembre hasta el 15 de febrero; evitar árboles ya brotados.",
+        "meses": [
+          12,
+          1,
+          2
+        ]
+      },
+      "variedades": [
+        "Western",
+        "Wichita",
+        "Barton",
+        "Sioux",
+        "Cheyenne",
+        "Choctaw"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "70 árboles/ha en marco real de 12 x 12 m; cepas de 1 m³; árboles de 1.5 a 2 m.",
+      "fertilizacion": "N al suelo: 100 g/árbol en el primer año y 200 a 700 g/árbol de los 2 a los 7 años. En producción, 100 kg/ha de N por tonelada de nuez esperada, en tres o más aplicaciones de finales de marzo a finales de julio, con el riego. Zinc foliar en 5 aplicaciones desde la brotación.",
+      "riego": "Primer riego al iniciar la brotación (fin de invierno, inicio de primavera) y después 6 a 7 riegos según la etapa: floración, estado acuoso y endurecimiento de cáscara.",
+      "plagas": [
+        "Barrenador de la nuez",
+        "Barrenador del ruezno",
+        "Gusano del nogal",
+        "Gusano telarañero",
+        "Pulgón amarillo",
+        "Pulgón negro"
+      ],
+      "enfermedades": [
+        "Roña",
+        "Pudrición texana de la raíz"
+      ],
+      "malezas": "Chapoleo o rastreo en las calles (al menos tres pasos); bajo la copa, aplicación dirigida de herbicidas autorizados. Eliminar las malezas antes de que florezcan.",
+      "cosecha": "Cuando el ruezno se despega: desde mediados de agosto en nogales criollos y mediados de septiembre en variedades mejoradas. Sacudir las ramas y recoger del suelo, 2 a 3 veces; no golpear con varas. Producción promedio: 1.2 t/ha.",
+      "cuidados": [
+        "Romper la capa dura del suelo 30 a 45 días antes de plantar y nivelar.",
+        "Plantar al mismo nivel que en el vivero para evitar enfermedades.",
+        "Poner trampas Delta con feromona (1 por cada 5 ha) y liberar Trichogramma al caer la primera palomilla; consultar al Comité Estatal de Sanidad Vegetal las fechas de control.",
+        "Contra la roña, aplicar antes de 36 horas después de una lluvia.",
+        "Evitar plantar donde haya antecedentes de pudrición texana; en árboles enfermos usar el tratamiento Arizona (estiércol, azufre y sulfato de amonio en la zona de goteo).",
+        "Liberar crisopas contra los pulgones."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 30829,
+          "rendimiento": 1200,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 80,
+          "ingreso_neto": 65171,
+          "relacion_bc": 3.11
+        }
+      ],
+      "nota": "Costos del Cuadro 13: ingreso bruto 96,000 (1,200 kg a $80). El subtotal impreso de fertilización (2,952) no coincide con sus partidas (3,952), pero el costo total sí cuadra.",
+      "revisado": false
+    },
+    {
+      "ficha": "Sorgo",
+      "cientifico": "Sorghum bicolor (L.)",
+      "paginas": [
+        73,
+        83
+      ],
+      "cultivo_ids": [
+        "sorgo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Regiones centro y norte, sobre todo General Bravo, China, Linares y Pesquería: climas semisecos a semicálidos subhúmedos, 16 a 24 °C y 500 a 1,100 mm.",
+      "siembra": {
+        "texto": "Temporal: del 20 de junio al 31 de julio (P-V), según la lluvia.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "RB-Patrón",
+        "RB-Norteño",
+        "RB-Huasteco"
+      ],
+      "hibridos_comerciales": [
+        "82G63",
+        "82G19",
+        "Genex 987",
+        "DK-47"
+      ],
+      "densidad": "Temporal: unas 150,000 plantas/ha con 6 a 7 kg de semilla (al menos 85 % de germinación), surcos a 80-90 cm y 5 cm de profundidad. Riego: 250,000 plantas/ha.",
+      "fertilizacion": "Al menos 50 a 60 kg/ha de N y 30 a 40 kg/ha de P, con buena humedad en el suelo. Inocular la semilla con micorriza INIFAP (1 kg/ha) un día antes de sembrar.",
+      "riego": null,
+      "plagas": [
+        "Pulgón amarillo (Melanaphis sacchari)"
+      ],
+      "enfermedades": [
+        "Pudriciones de raíz (Macrophomina, Fusarium), aún sin importancia"
+      ],
+      "malezas": "Rastreo de presiembra y escardas con deshierbe manual los primeros 45 días tras la emergencia. Malezas de hoja ancha: correhuela, meloncillo, polocote y quelite.",
+      "cosecha": "Con el grano a unos 14 % de humedad o según la norma del comprador. Rendimiento esperado en temporal: 2,000 kg/ha.",
+      "cuidados": [
+        "Preferir labranza de conservación para mejorar el suelo y la materia orgánica.",
+        "Preparar el suelo justo después de la cosecha anterior para captar humedad.",
+        "En temporal, usar menor densidad y variedades precoces para escapar a la sequía.",
+        "Escardar antes de que las plantas crezcan tanto que se dañen o se acamen.",
+        "Vigilar el pulgón amarillo: forma colonias grandes en poco tiempo y su mielecilla causa fumagina."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": null,
+          "rendimiento": 2000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        },
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 29290,
+          "rendimiento": 4000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": -6445,
+          "relacion_bc": 0.8
+        }
+      ],
+      "nota": "La agenda lista 82G63, 82G19, Genex 987, RB-Patrón, DK-47, RB-Norteño y RB-Huasteco como híbridos sin decir empresa; los RB se pusieron en variedades por ser, al parecer, materiales del INIFAP (Campo Experimental Río Bravo): verificar. Cuadro 15 (temporal): el costo impreso (12,820) no coincide con sus partidas (18,020) y la ganancia (-4,231) y la B/C (0.70) no cuadran entre sí; solo se dejó el rendimiento. Cuadro 17 (riego): ingreso bruto implícito 22,845 (B/C 0.78 vs 0.80 impreso). El manejo de sorgo de riego (fecha, riegos) quedó truncado en el texto extraído.",
+      "revisado": false
+    },
+    {
+      "ficha": "Toronja",
+      "cientifico": "Citrus paradisi Macf.",
+      "paginas": [
+        84,
+        90
+      ],
+      "cultivo_ids": [
+        "toronja-pomelo"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Montemorelos y General Terán (región centro, DDR Montemorelos), de 250 a 350 msnm; terreno plano a ligeramente ondulado con suelos calcáreos, que son la principal limitante.",
+      "siembra": {
+        "texto": null,
+        "meses": []
+      },
+      "variedades": [
+        "Río Red",
+        "Rubí",
+        "Star Rubí",
+        "Marsh"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Predominan marcos de 8 x 8, 8 x 7 y 8 x 4 m.",
+      "fertilizacion": "Huertas adultas con buen riego: 150 a 200 kg/ha de N (50 a 75 kg/ha con déficit de agua), en 3 a 4 aplicaciones (sulfato de amonio o urea); 70 a 90 kg/ha de P como fosfato monoamónico (11-52-00 o 12-61-00) en al menos dos aplicaciones; 150 kg/ha de nitrato de potasio en una sola aplicación. Micronutrientes por vía foliar por los suelos calcáreos; de preferencia por fertirriego.",
+      "riego": "Primer riego antes de la brotación y floración (febrero); después mantener humedad en el suelo hasta noviembre, según las lluvias. Un buen riego ayuda al árbol a soportar el HLB.",
+      "plagas": [
+        "Mosca mexicana de la fruta",
+        "Arador o negrilla",
+        "Psílido asiático de los cítricos (Diaphorina citri)",
+        "Minador"
+      ],
+      "enfermedades": [
+        "Gomosis o pudrición del pie (Phytophthora)",
+        "Antracnosis",
+        "Huanglongbing (HLB)"
+      ],
+      "malezas": "Malezas principales: polocote, zacate Johnson y quelites. Deshierbe manual bajo la copa y chapoleo o rastreo en las calles. Los cultivos de cobertura son una opción agroecológica.",
+      "cosecha": "Manual, cuando el fruto llega a unos 8 °Brix; de octubre a mayo. Producción promedio posible: 35 a 40 t/ha.",
+      "cuidados": [
+        "Rastrear al menos cuatro veces al año; en suelos arcillosos pesados conviene la labranza tradicional, en otros se puede usar cero o mínima labranza.",
+        "Evitar podar a finales del verano y en otoño: los brotes pueden dañarse con heladas.",
+        "Monitorear el arador cada 7 a 10 días (80 frutos); intervenir con 2 ácaros en promedio por campo de lupa 10X por fruto.",
+        "Usar trampas (trampa transparente y cebo INIFAP) contra la mosca mexicana de la fruta.",
+        "Con HLB, asegurar buena nutrición y riego."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 42518,
+          "rendimiento": 30000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 137482,
+          "relacion_bc": 4.23
+        }
+      ],
+      "nota": "Costos del Cuadro 18: ingreso bruto implícito 180,000; el cuadro usa 30 t/ha aunque el texto habla de 35 a 40 t/ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Trigo",
+      "cientifico": "Triticum aestivum L.",
+      "paginas": [
+        91,
+        100
+      ],
+      "cultivo_ids": [
+        "trigo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "OI",
+      "region": "19 municipios, sobre todo en el centro (Cadereyta Jiménez, General Terán, Pesquería y Los Ramones): clima semicálido subhúmedo a seco cálido, 20 a 24 °C y 500 a 900 mm.",
+      "siembra": {
+        "texto": "Temporal: del 10 de noviembre al 31 de diciembre, según la lluvia. Riego: a partir del 10 de noviembre (el final de la ventana quedó truncado en el extraído).",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Monarca F2007",
+        "Norteña F2007",
+        "Cachanilla F2000",
+        "Conatrigo F2015",
+        "Bacorehuis F2015",
+        "Borlaug 100",
+        "Noreste F2018"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Temporal: 70 a 100 kg/ha de semilla certificada, en hileras a 17.5-20 cm. Riego: 200 a 250 plantas/m² con 120 a 150 kg/ha, en plano o 2 a 3 hileras sobre surcos de 81 a 86 cm.",
+      "fertilizacion": "50 a 60 kg/ha de N y de P: en la práctica, 100 kg de urea y 100 kg de DAP por ha, con muy buena humedad. Complementar con micorriza INIFAP (al menos 3 kg/ha).",
+      "riego": "En riego se siembra en seco y luego se aplica el riego; requiere nivelación y melgueo.",
+      "plagas": [
+        "Pulgones"
+      ],
+      "enfermedades": [
+        "Roya de la hoja",
+        "Roya lineal amarilla"
+      ],
+      "malezas": "Rastreo antes de la siembra para eliminar la maleza emergida; la hoja ancha se atiende en amacollamiento.",
+      "cosecha": "Con el grano al 14 % de humedad o según la norma del comprador. Rendimiento esperado en temporal: 2,000 kg/ha.",
+      "cuidados": [
+        "Usar semilla certificada de variedades INIFAP con resistencia a royas.",
+        "Decidir el control de royas según la severidad en la hoja bandera.",
+        "Controlar pulgones con liberaciones de crisopas.",
+        "Fertilizar solo con muy buena humedad en el suelo.",
+        "Inocular la semilla con micorriza un día antes de sembrar, a la sombra."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": null,
+          "rendimiento": 2000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        },
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 26770,
+          "rendimiento": 3160,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": -3610,
+          "relacion_bc": 0.86
+        }
+      ],
+      "nota": "El Cuadro 19 (trigo, sin modalidad) es idéntico al Cuadro 20 (riego), incluye aplicación de riegos y usa 3,160 kg/ha, contra 2,000 kg/ha que el texto da para temporal; por eso en temporal solo se dejó el rendimiento del texto. Cuadro 20: ingreso bruto implícito 23,160.",
+      "revisado": false
+    }
+  ]
+}

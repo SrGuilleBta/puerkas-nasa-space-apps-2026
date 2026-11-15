@@ -159,14 +159,55 @@ ausente como "sin dato".
 `/api/cultivos/viabilidad?clave=19039&cultivo=maiz-grano` (Monterrey: no tiene registros
 agrícolas, así que responde con los datos de Nuevo León).
 
+## Cuidados por estado (INIFAP)
+
+Los textos de manejo salen de las **Agendas Técnicas Agrícolas del INIFAP, edición 2026**: 31
+estados con la misma plantilla. Ciudad de México no tiene agenda; la API usa la del Estado de México.
+
+1. **PDF → texto por sección (automático).** `python -m pipeline.inifap` lee
+   `backend/data/inifap/agendas/<estado>.pdf` y escribe `backend/data/inifap/extraido/<estado>.json`.
+   Toma las fichas y sus páginas del índice general, lee de cada una el nombre científico, el
+   "Tipo de cultivo" y el "Régimen hídrico", y separa las secciones (región agroecológica,
+   manejo, siembra, riego, fertilización, plagas, enfermedades, maleza, variedades, cosecha) con
+   un diccionario de sinónimos en [extraer.py](../backend/pipeline/inifap/extraer.py). De los
+   cuadros "Costo beneficio" (Agrocostos FIRA) extrae con reglas el costo total por ha, el
+   rendimiento, el precio, el ingreso bruto y neto, y la relación beneficio-costo. Resultado:
+   297 fichas, 272 con costos. Michoacán (sin saltos de línea) queda como `texto_completo`.
+2. **Texto → resumen (con Claude, en sesión).** Cada `extraido/<estado>.json` se resume en
+   `backend/data/inifap/cuidados/<estado>.json`: ventana de siembra (texto y meses), variedades,
+   densidad, fertilización, riego, plagas, enfermedades, cosecha y 4–6 cuidados. El resumen usa
+   solo el texto de la agenda, cita las páginas y **omite marcas y dosis de plaguicidas**. Todas
+   las fichas llevan `revisado: false` hasta que alguien las coteje con el PDF. Las reglas y el
+   formato están en [instrucciones_resumen.md](../backend/pipeline/inifap/instrucciones_resumen.md).
+3. **API.** `/api/cultivos/viabilidad` agrega `manejo`: las fichas del estado consultado, primero la
+   que coincide con la modalidad que domina en la zona (riego o temporal), con su cita y
+   `siembra_meses` (la **siembra ideal** del Figma). Si el estado no tiene resumen, devuelve los
+   cuidados generales de `curado.json`.
+
+Los PDF y el texto extraído no se versionan (`.gitignore`); solo `cuidados/`. Los nombres de los
+PDF y cómo actualizar están en [backend/data/inifap/README.md](../backend/data/inifap/README.md).
+
+**Estado actual (2026-11-15):** los 31 estados están resumidos (edición 2026): 298 fichas, 283 con
+costos, 266 con meses de siembra y 575 híbridos comerciales listados en `hibridos_comerciales`.
+Todas llevan `revisado: false`. La auditoría (ids válidos en el catálogo, meses 1–12, sin
+nombres ni dosis de plaguicidas) pasó en los 31 archivos.
+
+Pendientes conocidos del extractor:
+- 14 fichas de 10 estados se resumieron cuando el texto posterior al primer cuadro de costos se
+  perdía (ya corregido en `extraer.py`): conviene una pasada de actualización sobre esas fichas.
+- La Soya de Campeche viene fusionada con Sorgo grano y la Chía de Guanajuato con Cebolla (el
+  índice no las separa). La Chía se separó a mano en el resumen; la Soya de Campeche falta.
+- Los valores de costos parseados por reglas fallan seguido. Los resúmenes toman las cifras de la
+  tabla cruda y dejan en `null` lo que no cuadra; muchos cuadros impresos traen errores de suma.
+
 ## Limitaciones y pendientes
 
 1. **GAEZ** (idoneidad biofísica y brecha de rendimiento): requiere bajar los rásters de S3 y hacer
    estadística zonal contra el Marco Geoestadístico del INEGI (geopandas y rasterio). Va en una etapa nueva.
 2. **CENAPRED** para inundación y **disponibilidad de acuíferos** (DOF) para el riesgo hídrico de los cultivos de riego.
-3. **Textos de manejo**: `curado.json` tiene descripción y cuidados para 22 cultivos. Son un
-   borrador general (`texto_revisado: false`); hay que revisarlos contra las fichas del INIFAP.
-   Los demás cultivos solo tienen datos de EcoCrop o ninguno.
+3. **Textos de manejo**: los 31 estados están resumidos, pero ninguna ficha ha sido revisada
+   por una persona contra el PDF (`revisado: false`). Para el resto se usa el borrador general de `curado.json` (22 cultivos,
+   `texto_revisado: false`).
 4. **SIAP no distingue variedades** ("Maíz grano", no "Maíz amarillo"; "Frijol", no "Frijol pinto").
    La biblioteca del Figma tendrá que usar los nombres de SIAP.
 5. El **precio medio rural** es precio al productor, promedio anual. No sirve como precio de mercado diario.

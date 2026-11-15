@@ -1,0 +1,761 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/morelos.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "17",
+  "estado": "Morelos",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Morelos. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Amaranto",
+      "cientifico": "Amaranthus spp.",
+      "paginas": [
+        11,
+        23
+      ],
+      "cultivo_ids": [
+        "amaranto"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Oriente y noreste de Morelos (Temoac, Jantetelco, Zacualpan de Amilpas, Tetela del Volcán): clima semicálido a cálido subhúmedo, 800 a 1,200 mm de lluvia, 1,400 a 2,200 msnm, suelos planos pero pobres y algo pedregosos (Regosoles, Vertisoles). En julio y agosto se presenta la canícula.",
+      "siembra": {
+        "texto": "Del 15 de junio al 15 de julio.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Criollo de Amilcingo",
+        "Revancha",
+        "Payasa"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "3 kg/ha de semilla limpia y nueva a chorrillo o mateada; con sembradora basta 500 g/ha para unas 125,000 plantas/ha, sin necesidad de aclareo. En siembra manual, ralear a una planta cada 10 cm.",
+      "fertilizacion": "40-40-20 al sembrar (200 kg de sulfato de amonio + 90 kg de superfosfato de calcio triple + 33 kg de cloruro de potasio) y 40-00-00 a los 30-40 días, en la primera labor (200 kg de sulfato de amonio), para sumar 80-40-20. En suelos ácidos usar urea (87 kg/ha en cada aplicación) y aplicarla a mano, no con sembradora. Fertilizar con suelo húmedo y tapar el fertilizante.",
+      "riego": null,
+      "plagas": [
+        "Gallina ciega (nixticuil)",
+        "Gusano de alambre",
+        "Hormiga arriera",
+        "Gusano soldado o trozador",
+        "Gusano telarañero"
+      ],
+      "enfermedades": [
+        "Secadera o damping-off (Pythium, Fusarium, Rhizoctonia)",
+        "Pudrición de la base del tallo (Rhizoctonia)",
+        "Roya blanca (Albugo bliti)"
+      ],
+      "malezas": "Periodo crítico: los primeros 30 días después de la siembra (golondrina, acahual, verdolaga). Eliminarlas con escarda o a mano; las nuevas infestaciones, con otra escarda y tlamatecas. No hay herbicidas selectivos para hoja ancha en amaranto.",
+      "cosecha": "A mano cuando se secan las hojas bajas, las de arriba amarillean y el grano se desprende fácil al presionarlo o al golpear la panoja (grano con 'ojo de pescado'). Cortar las panojas temprano en la mañana, trillar y asolear el grano hasta cerca de 11 % de humedad. Rendimiento esperado: 2 t/ha.",
+      "cuidados": [
+        "No sembrar donde el ciclo anterior se usaron herbicidas residuales (como los del sorgo): la plántula de amaranto es muy sensible.",
+        "Barbechar a 25 cm y dejar el suelo bien mullido para que la semilla quede a la misma profundidad.",
+        "Drenar pronto los excesos de agua en la etapa de plántula para evitar la secadera.",
+        "Dar el primer aporque a los 30 cm de altura (unos 40 días) y el segundo ('cajón') antes de que cierren los surcos.",
+        "Vigilar el gusano telarañero desde los 35 días, cuando empieza a formarse la panoja, sobre todo en la canícula.",
+        "Almacenar el grano seco, limpio de tamo."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 36316,
+          "rendimiento": 2000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 29,
+          "ingreso_neto": 21684,
+          "relacion_bc": 1.6
+        },
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": null,
+          "rendimiento": 2000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 29,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Dos cuadros de costos: el primero es el sistema manual (Cuadro 5) y el segundo el semi-mecanizado (impreso como 'Cuadro 2'). Precio de 29 $/kg deducido de ingreso bruto / rendimiento (58,000 / 2,000). En el semi-mecanizado el cuadro da costo de 24,995 $/ha, ingreso neto 33,005 y B/C 2.32, pero la suma de sus conceptos da unos 32,959 $/ha (incluye el primer y segundo aporque repetidos): se dejaron en null el costo total, el ingreso neto y la B/C. Conviene cotejarlo con el PDF. En la agenda la almacenación dice 'no almacenar con menos del 14 % de humedad', lo que parece una errata (debería ser 'más'); no se incluyó.",
+      "revisado": false
+    },
+    {
+      "ficha": "Arroz",
+      "cientifico": "Oryza sativa L.",
+      "paginas": [
+        24,
+        35
+      ],
+      "cultivo_ids": [
+        "arroz-palay"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": null,
+      "region": "Trópico seco de la Depresión del Balsas, clima cálido subhúmedo, unos 900 mm de lluvia, suelos calcáreos. Se cultiva por trasplante y con riego, en una parte alta (1,000-1,400 msnm: Cuautla, Ayala, Yautepec, Emiliano Zapata, Jiutepec, Temixco, Cuernavaca) y una parte baja (800-1,000 msnm: Zacatepec, Jojutla, Tlaquiltenango, Tlaltizapán, Puente de Ixtla y otros).",
+      "siembra": {
+        "texto": "Almácigo: parte alta del 1 de enero al 25 de marzo; parte baja del 1 de febrero al 10 de mayo. Trasplante a los 40-45 días del almácigo en la parte alta y a los 35-40 días en la parte baja.",
+        "meses": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "variedades": [
+        "Morelos A-92",
+        "Morelos A-98",
+        "Morelos A-2010",
+        "Morelos A-2016"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Almácigo de 200 m² con 150 g de semilla por m² (30 kg/ha) para trasplantar una hectárea; en el terreno definitivo 1 o 2 plántulas cada 25 cm, unas 250,000 plantas/ha.",
+      "fertilizacion": "Almácigo: 40 g de sulfato de amonio + 15 g de superfosfato triple por m² antes de sembrar y 40 g de sulfato de amonio por m² a los 20 días. Terreno definitivo con agua limpia: 120-45-45 a los 25-30 días del trasplante y 60-00-00 al inicio del primordio (70-85 días en la parte alta, 60-75 en la baja). Con agua residual reducir el nitrógeno: 100-45-45 y luego 50-00-00. Contra la clorosis, sulfato ferroso a 50 kg/ha.",
+      "riego": "Almácigo: riego ligero al sembrar y luego cada 3 a 4 días. Terreno definitivo: tajos inundados al trasplantar y lámina de 10 cm, regando cada tercer día antes de las lluvias; lámina total del ciclo de 1.7 m.",
+      "plagas": [
+        "Barrenadores del tallo (Rupela albinella, Diatraea spp., Eoreuma loftini)",
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Picudo acuático del arroz (Lissorhoptrus spp.)"
+      ],
+      "enfermedades": [
+        "Quema o avanamiento del grano",
+        "Secadera",
+        "Mancha café",
+        "Manchado del grano"
+      ],
+      "malezas": "Principales: cucharilla, hierba prieta, saucillo, clavillo, zacate colorado, zacate de agua, zacate espiga blanca, zacate cola de zorra, coquillo, cebolleta del pantano y pelillo. Prevención con semilla certificada, implementos y canales de riego limpios; deshierbe manual (tlamateca) a los 25 días en el almácigo; limpiar bordos y alrededores un mes antes de la cosecha.",
+      "cosecha": "Con el grano a 22-25 % de humedad, manual o mecánica; después secar a 12-14 %. Rendimiento esperado de arroz palay: 9 a 12 t/ha, promedio 10 t/ha.",
+      "cuidados": [
+        "Usar semilla certificada de variedades resistentes y desinfectarla antes de sembrar.",
+        "Muestrear antes de decidir un control contra barrenadores: dentro del tallo las larvas casi no se controlan.",
+        "Eliminar o incorporar los residuos de cosecha y controlar malezas dentro y alrededor del lote, que hospedan plagas.",
+        "Usar trampas con feromonas (barrenador Diatraea) y trampas pegajosas (gusano cogollero).",
+        "Mantener la lámina de agua y fertilizar después de quitar las malezas.",
+        "Cosechar con 22-25 % de humedad y secar bien para obtener más grano entero en el molino."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 56355.64,
+          "rendimiento": 10000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7,
+          "ingreso_neto": 13644.36,
+          "relacion_bc": 1.24
+        }
+      ],
+      "nota": "Ciclo en null: la siembra del almácigo va de enero a mayo según la zona, y el texto no dice el ciclo. Precio de 7 $/kg deducido de ingreso bruto / rendimiento (70,000 / 10,000); la suma de los conceptos del cuadro coincide con el costo total.",
+      "revisado": false
+    },
+    {
+      "ficha": "Caña de azúcar",
+      "cientifico": "Saccharum officinarum L.",
+      "paginas": [
+        36,
+        44
+      ],
+      "cultivo_ids": [
+        "cana-de-azucar"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Trópico húmedo y trópico seco; temperatura óptima de 16 a 25 °C y necesidad de agua de 1,200 a 1,500 mm al año. Se adapta a suelos arcillosos y arenosos; no a los calichosos.",
+      "siembra": {
+        "texto": "De agosto a enero del año siguiente.",
+        "meses": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          1
+        ]
+      },
+      "variedades": [
+        "CP 72-2086",
+        "MEX 69-290",
+        "MY 55-14",
+        "ITV 92-1424",
+        "MEX 94-8",
+        "MEX 95-59",
+        "MEX 97-20",
+        "MOTZMEX 01-403"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Surco sencillo a 1.30 m: 16 a 18 t de semilla, unas 42,000 plantas/ha (cosecha manual). Surco doble o piña a 1.40-1.60 m con hileras a 30 cm: 20 a 25 t de semilla, hasta 72,000 plantas/ha (cosecha mecanizada).",
+      "fertilizacion": "Según análisis de suelo y rendimiento esperado. Fórmula general 300-100-200 para 150 t/ha, en dos aplicaciones, con sulfato de amonio o urea, fosfato diamónico y cloruro de potasio. Opción químico-orgánica: 10 a 20 t de abono orgánico, cachaza o lombricomposta más la mitad del fertilizante químico.",
+      "riego": "Riego de asiento al sembrar y humedad constante para una brotación pareja. La mayor demanda es de 1 a 6 meses de edad; regar cada 30 días en suelos arcillosos y cada 15 en arenosos. Regar en cuanto sea posible después de la cosecha.",
+      "plagas": [
+        "Barrenadores (Diatraea sp., Eoreuma loftini)",
+        "Picudo del tronco (Sphenophorus incurrens)",
+        "Mosca pinta o salivazo (Aeneolamia sp.)",
+        "Escama acanalada (Praelongorthezia acapulcoa)",
+        "Chinche de encaje (Leptodictya tabida)",
+        "Rata de campo (Sigmodon sp., Oryzomys sp.)"
+      ],
+      "enfermedades": [
+        "Marchitez (Fusarium sp.)",
+        "Carbón (Sporisorium scitaminea)",
+        "Raya roja (Acidovorax avenae)"
+      ],
+      "malezas": "Mantener el cultivo limpio desde la siembra hasta los 4 o 5 meses, cuando cierra el cultivo. Control mecánico con cultivadora y el aporque, que también elimina maleza.",
+      "cosecha": "De los 12 meses (variedades precoces) a los 18 meses (tardías). Manual con quema y machete, o mecánica en verde sin quemar. Rendimiento promedio en Morelos: 94 t/ha; puede llegar a 250 t/ha.",
+      "cuidados": [
+        "Subsolear a 60 cm en suelos compactados e incorporar materia orgánica o residuos de cosecha.",
+        "Nivelar bien el terreno y evitar encharcamientos para prevenir la marchitez por Fusarium.",
+        "Usar variedades resistentes: es el control recomendado para el carbón y la raya roja.",
+        "Contra barrenadores, eliminar malezas hospederas, poner trampas con feromonas y usar hongos entomopatógenos si hay más de 20 corazones muertos por hectárea.",
+        "Después de la cosecha, destroncar, no requemar el rastrojo, regar y aplicar Trichoderma y entomopatógenos al suelo.",
+        "Contra las ratas de campo, conservar aves rapaces con perchas y mantener limpios el cultivo y sus alrededores."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": null,
+          "rendimiento": 94,
+          "unidad_rendimiento": "t/ha",
+          "precio": 1250,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Precio de 1,250 $/t deducido de ingreso bruto / rendimiento (117,500 / 94). El cuadro da costo de 116,450 $/ha, ingreso neto 1,050 y B/C 1.009, pero la suma de sus conceptos da unos 155,610 $/ha (algunas celdas no cuadran, p. ej. mano de obra de siembra 1 × 22,000 = 20,000): se dejaron en null el costo total, el ingreso neto y la B/C. El cuadro incluye plantación (semilla y siembra), no separa establecimiento y soca. Conviene cotejar el Cuadro 5 con el PDF.",
+      "revisado": false
+    },
+    {
+      "ficha": "Jitomate",
+      "cientifico": "Solanum lycopersicum L.",
+      "paginas": [
+        45,
+        57
+      ],
+      "cultivo_ids": [
+        "tomate-rojo-jitomate"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": null,
+      "region": "Producción orgánica bajo cubierta (invernadero o malla sombra) en climas cálido, semicálido y templado subhúmedos, hasta 1,500 msnm. Temperatura óptima de 20 a 30 °C de día y 14 a 17 °C de noche.",
+      "siembra": {
+        "texto": "La agenda no da fecha de siembra. El almácigo en charolas dura 25 a 30 días y se trasplanta con 4 a 5 hojas verdaderas y unos 15 cm de altura.",
+        "meses": []
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Gaby",
+        "DT-22",
+        "Tobalá",
+        "Moctezuma",
+        "Macizo",
+        "Lubino",
+        "Ramsés"
+      ],
+      "densidad": "Camas de 65 cm separadas 1.55 m, dos hileras de plantas cada 65 cm en tresbolillo y dos tallos por planta: 4 tallos/m². Se puede bajar a 2.5 tallos/m² para fruto más grande o con poca luz.",
+      "fertilizacion": "Según análisis de suelo, descontando lo que aporta el agua de riego. Agregar composta o estiércol si la materia orgánica es menor de 5 %. Nutrir por fertirriego en tres etapas (trasplante a 40 días; de 41 días a la cosecha de los dos primeros racimos; hasta la cosecha final), con solución de pH 5.5 a 6.5; para mercado orgánico puro, té de composta. Monitorear la solución del suelo cada mes.",
+      "riego": "Riego por cintilla a libre demanda según tensiómetros: en la etapa I regar cuando marque 0 a 20 kPa a 15 cm; en las etapas II y III, 20 a 30 kPa a 30 cm; suspender cuando el de 45 cm baje a 10 kPa. Los primeros dos días después del trasplante, solo agua.",
+      "plagas": [
+        "Mosquita blanca (Bemisia tabaci)",
+        "Trips (Frankliniella occidentalis)",
+        "Pulgones (Myzus persicae)",
+        "Ácaro del bronceado (Aculops lycopersici)",
+        "Nematodo agallador (Meloidogyne)"
+      ],
+      "enfermedades": [
+        "Cenicilla (Leveillula taurica)",
+        "Pudrición vascular (Fusarium oxysporum)",
+        "Tizón tardío (Phytophthora infestans)",
+        "Tizón temprano (Alternaria solani)",
+        "Cáncer bacteriano (Clavibacter michiganensis subsp. michiganensis)"
+      ],
+      "malezas": null,
+      "cosecha": "Empieza unos 75 días después del trasplante; en cultivares indeterminados más de 10 cortes, cada 8 días aproximadamente. Rendimiento esperado: 158.6 t/ha.",
+      "cuidados": [
+        "Revisar que techo y laterales del invernadero no tengan orificios por donde entren insectos, y mantener limpio el interior.",
+        "Analizar el suelo y el agua al menos tres meses antes de la siembra.",
+        "Usar trampas azules para trips y eliminar plantas silvestres alrededor del invernadero.",
+        "Iniciar el control de pulgones cuando haya en promedio 5 adultos por punto de crecimiento; usar control biológico (Beauveria, Metarhizium, Trichoderma, Bacillus).",
+        "No mojar en exceso el follaje y ventilar el invernadero para prevenir el tizón tardío.",
+        "Desinfectar charolas y herramientas de poda, y lavarse las manos antes de manejar plantas sanas."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": null,
+          "rendimiento": 158.619,
+          "unidad_rendimiento": "t/ha",
+          "precio": null,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Producción orgánica en invernadero. El INIFAP no ha liberado variedades de jitomate; los cultivares que menciona (sin empresa) se pusieron en hibridos_comerciales. El cuadro de costos del extraído está cortado (termina en 'Maquinaria y equipo Motoas', 3,000 caracteres) y no trae costo total, ingreso ni B/C: solo se conserva el rendimiento esperado del texto. Ciclo en null: no hay fecha de siembra.",
+      "revisado": false
+    },
+    {
+      "ficha": "Limón Persa",
+      "cientifico": "Citrus latifolia Tan.",
+      "paginas": [
+        58,
+        68
+      ],
+      "cultivo_ids": [
+        "limon"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": null,
+      "ciclo": "PER",
+      "region": "Clima cálido, temperatura media mayor de 22 °C, menos de 600 msnm y pendiente menor de 4 %. Requiere 900 a 1,200 mm de lluvia y humedad relativa de 50 a 60 %; suelos franco arenosos a franco arcillosos de 1.20 m o más de profundidad y pH cercano a 6.5. Principalmente en Coatlán del Río, Tlaquiltenango, Jojutla, Zacatepec, Puente de Ixtla, Tepalcingo, Tlaltizapán y Ayala.",
+      "siembra": {
+        "texto": "Plantar una vez establecidas las lluvias (junio), o en cualquier época si hay riego.",
+        "meses": [
+          6
+        ]
+      },
+      "variedades": [
+        "Limón Persa (yema certificada) sobre portainjerto Volkameriana (Citrus volkameriana)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Marco rectangular de 6 x 4 m, unos 416 árboles/ha, en cepas de 50 x 50 x 50 cm.",
+      "fertilizacion": "En huertas de 2 o más años: 1.2-0.6-0.6 kg de N-P-K por árbol al año en tres aplicaciones: agosto-septiembre 0.4-0.6-0.6 kg (1.5 kg de sulfato de amonio + 1.3 kg de fosfato diamónico + 1.2 kg de sulfato de potasio por árbol); diciembre-enero y abril-mayo 0.4 kg de N cada una (1.5 kg de sulfato de amonio). En suelos calizos, microelementos (hierro, zinc, magnesio, manganeso, azufre) a 25 kg/ha junto con la primera aplicación.",
+      "riego": "Necesario en la sequía de noviembre a mayo. Regar al plantar y 3 a 4 veces los primeros meses. Árboles jóvenes: 2 a 4 riegos por semana de 3 a 6 horas; adultos: 1 a 2 por semana de 6 a 10 horas (goteo o aspersión). Unos 100 L por árbol al día.",
+      "plagas": [
+        "Minador de la hoja (Phyllocnistis citrella)",
+        "Mosquita blanca (Dialeurodes spp.)",
+        "Pulgones (Aphis citricola, Toxoptera citricida)",
+        "Psílido o chicharrita (Diaphorina citri)"
+      ],
+      "enfermedades": [
+        "Gomosis y muerte descendente (Lasiodiplodia spp.)",
+        "Antracnosis (Colletotrichum acutatum)",
+        "Virus de la tristeza de los cítricos",
+        "Huanglongbing (HLB o dragón amarillo)"
+      ],
+      "malezas": "Mayor incidencia en el temporal (junio a octubre): 2 a 3 rastreos entre calles y chaponeos en la zona de goteo; en secas, dos rastreos.",
+      "cosecha": "De 105 a 120 días después del amarre: fruto verde intenso y brillante, cáscara lisa y más de 42 % de jugo. Se cosecha todo el año, con 80 % de mayo a octubre. Cortar a mano con canastilla, antes de las 11 de la mañana o por la tarde, y transportar en cajas de máximo 28 kg a la sombra. Rendimiento medio: más de 30 t/ha.",
+      "cuidados": [
+        "Usar planta injertada sobre Volkameriana a 60 cm de altura y yema certificada.",
+        "No plantar donde el manto freático suba a menos de 1.5 m; evitar que el agua de riego toque el tronco.",
+        "Sellar los cortes de poda y las heridas con pasta bordelesa o pintura vinílica.",
+        "Poda de formación los primeros cuatro años, de sanidad en adultos y de fructificación en agosto-septiembre.",
+        "Proteger brotes y flores de la antracnosis en lluvias y vigilar a Diaphorina citri, vector del HLB.",
+        "Para producir fuera de temporada (precios altos de noviembre a abril), combinar poda de fructificación, estrés hídrico e inducción de floración en septiembre-octubre."
+      ],
+      "costos": [
+        {
+          "modalidad": null,
+          "costo_total_ha": 154143,
+          "rendimiento": 27000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 22,
+          "ingreso_neto": 439857,
+          "relacion_bc": 3.85
+        }
+      ],
+      "nota": "La ficha cubre temporal y riego. Costo de producción plena (más de 5 años) del Cuadro 1. Precio de 22 $/kg deducido de ingreso bruto / rendimiento (594,000 / 27,000). El cuadro imprime B/C de 2.85, que es ingreso neto / costo; la B/C se calculó como ingreso bruto / costo total (3.85, valor que también aparece en el cuadro). La suma de los conceptos legibles da 151,103 $/ha porque algunas celdas vienen sin costo (p. ej. aplicación de fertilizantes). El texto de trazo dice 'limón mexicano', probablemente por copia de otra ficha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz de temporal en la región del trópico seco",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        69,
+        76
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Zona baja o cálida (700-1,400 msnm), clima cálido subhúmedo con lluvias en verano, 21 a 25 °C y 600 a 1,000 mm de lluvia; suelos vertisoles calcáreos. Municipios: Tepalcingo, Jonacatepec, Yautepec, Tlaquiltenango, Ayala, Miacatlán, Axochiapan, Jantetelco, Puente de Ixtla, Cuautla, Tlaltizapán, Amacuzac y otros.",
+      "siembra": {
+        "texto": "Del 15 de junio al 5 de julio, con el temporal ya establecido. Empezar con genotipos tardíos y terminar con precoces.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "H-443 A",
+        "H-515",
+        "H-516",
+        "H-562",
+        "H-563",
+        "H-377",
+        "H-382 A",
+        "V-240 EL",
+        "VS-535"
+      ],
+      "hibridos_comerciales": [
+        "SAN ANDRÉS",
+        "ZAPATA-10",
+        "ZAPATA-8",
+        "ZAPATA 2A",
+        "SYN-750",
+        "SORENTO",
+        "IMPACTO",
+        "P4028W",
+        "P4039",
+        "P4279W",
+        "30F35",
+        "P4063 W",
+        "P-4082 W",
+        "AMARILLO CCC",
+        "NB722",
+        "NA-35",
+        "CRM-52",
+        "CRM-57",
+        "DK2037",
+        "DK2061",
+        "DK2061 Y",
+        "ANTÍLOPE",
+        "COSTEÑO MEJORADO",
+        "LUCINO",
+        "NB-21"
+      ],
+      "densidad": "Variedades de polinización libre: 25-30 kg/ha de semilla certificada; híbridos, según distancia. Surcos a 0.8 m con 5-6 semillas por metro, hasta 75,000 plantas/ha. En pendiente, surcos en contorno.",
+      "fertilizacion": "Según análisis de suelo; en general 120-60-45. Al sembrar 40-60-45 (36 kg de urea + 130.5 kg de fosfato diamónico + 75 kg de cloruro de potasio) y a los 40-45 días o al cierre 80-00-00 (174 kg de urea), en el fondo del surco o en banda sin tocar la semilla. En suelos calichosos corregir la clorosis con sulfato ferroso foliar (5 a 10 kg por 100 L de agua).",
+      "riego": null,
+      "plagas": [
+        "Gallina ciega",
+        "Gusano de alambre",
+        "Insectos chupadores",
+        "Chicharrita (vector del rayado fino)",
+        "Gusano cogollero",
+        "Gusano barrenador del tallo"
+      ],
+      "enfermedades": [
+        "Rayado fino del maíz"
+      ],
+      "malezas": "Periodo crítico: hasta los 45 días después de la siembra. En el sistema tradicional, dos escardas (20-25 y 35-40 días); mantener limpio alrededor del terreno.",
+      "cosecha": "En madurez comercial, con 18-20 % de humedad (unos 140 días); asolear hasta 14 %. Para cosecha mecánica, cerca de 14 %. Guardar el grano en sacos limpios en lugar seco y ventilado. Rendimiento esperado: 7.0 t/ha.",
+      "cuidados": [
+        "Sembrar en la fecha recomendada y con semilla certificada para evitar enfermedades.",
+        "Subsolear cada 5 años o cuando haya piso de arado.",
+        "Controlar el gusano cogollero durante los primeros 45 días.",
+        "Prevenir chicharritas con control biológico (Metarhizium anisopliae y Beauveria bassiana).",
+        "Mantener el cultivo sin malezas los primeros 45 días.",
+        "Dividir la fertilización en dos aplicaciones, sin que el fertilizante toque la semilla."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 34753.89,
+          "rendimiento": 7000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7,
+          "ingreso_neto": 14246.11,
+          "relacion_bc": 1.41
+        }
+      ],
+      "nota": "Costos de labranza de conservación (Cuadro 6), sin costales, renta, combustible ni asesoría; precio de garantía de 7,000 $/t. El costo total no viene impreso: se obtuvo de la suma de conceptos (34,753.89), que coincide con ingreso bruto − ingreso neto. B/C calculada 1.41 (el cuadro imprime 1.40). En variedades se pusieron los materiales con nomenclatura INIFAP (H-, V-, VS-); el texto no dice la empresa de los demás. Los de clasificación dudosa (San Andrés, Zapata, Costeño Mejorado, Lucino, CRM, NB, NA-35, Amarillo CCC, Antílope, Sorento, Impacto) se pusieron en hibridos_comerciales: conviene revisarlos. El asterisco del cuadro (grano amarillo) se omitió.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz de temporal en la región del subtrópico subhúmedo",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        77,
+        85
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Zona alta o fría (1,400-2,000 msnm), clima subtropical subhúmedo con lluvias en verano, 16 a 24 °C y 1,000 a 2,000 mm de lluvia. Municipios: Yecapixtla, Ocuituco, Tepoztlán, Atlatlahucan, Totolapan, Temoac, Cuernavaca, Zacualpan de Amilpas, Tlayacapan y partes de Tlalnepantla, Hueyapan, Tetela del Volcán, Huitzilac y las partes altas de Cuautla, Jantetelco, Jonacatepec, Miacatlán, Temixco y Yautepec.",
+      "siembra": {
+        "texto": "Del 5 al 30 de junio, con el temporal ya establecido. Empezar con genotipos tardíos y terminar con precoces.",
+        "meses": [
+          6
+        ]
+      },
+      "variedades": [
+        "V-240 EL",
+        "H-318",
+        "H-377",
+        "H-382 A",
+        "Criollo local"
+      ],
+      "hibridos_comerciales": [
+        "Costeño mejorado",
+        "San Andrés",
+        "Lucino",
+        "Sorento",
+        "Impacto",
+        "P-3055 W",
+        "P-2844 A"
+      ],
+      "densidad": "Variedades de polinización libre: 20-25 kg/ha de semilla certificada; híbridos, según distancia. Surcos a 0.8 m con 6-7 semillas por metro, hasta 75,000 plantas/ha. En pendiente, surcos en contorno.",
+      "fertilizacion": "Según análisis de suelo; en general 160-60-45. Al sembrar 80-60-45 (123 kg de urea + 130.5 kg de fosfato diamónico + 75 kg de cloruro de potasio + 142.5 kg de sulfato de magnesio) y a los 40-45 días o al cierre 80-00-00 (174 kg de urea), sin tocar la semilla. En suelos calichosos corregir la clorosis con sulfato ferroso foliar.",
+      "riego": null,
+      "plagas": [
+        "Gallina ciega",
+        "Gusano de alambre",
+        "Insectos chupadores",
+        "Chicharrita (vector del rayado fino)",
+        "Gusano cogollero",
+        "Gusano barrenador del tallo"
+      ],
+      "enfermedades": [
+        "Rayado fino del maíz"
+      ],
+      "malezas": "Periodo crítico: hasta los 45 días después de la siembra. En el sistema tradicional, dos escardas (20-25 y 35-40 días); mantener limpio alrededor del terreno.",
+      "cosecha": "En madurez comercial, con 18-20 % de humedad (unos 170 días); asolear hasta 14 %. Para cosecha mecánica, cerca de 14 %. Guardar el grano en sacos limpios en lugar seco y ventilado. Rendimiento esperado: 7.0 t/ha.",
+      "cuidados": [
+        "Sembrar en junio con el temporal establecido y con semilla certificada.",
+        "Subsolear cada 5 años o cuando haya piso de arado.",
+        "Controlar el gusano cogollero durante los primeros 45 días.",
+        "Prevenir chicharritas con control biológico (Metarhizium anisopliae y Beauveria bassiana).",
+        "Mantener el cultivo sin malezas los primeros 45 días.",
+        "Dividir la fertilización en dos aplicaciones, sin que el fertilizante toque la semilla."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 36392.29,
+          "rendimiento": 7000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7,
+          "ingreso_neto": 12607.71,
+          "relacion_bc": 1.35
+        }
+      ],
+      "nota": "Costos de labranza de conservación (Cuadro 6), sin costales, renta, combustible ni asesoría; precio de garantía de 7,000 $/t. El costo total no viene impreso: se obtuvo de la suma de conceptos (36,392.29), que coincide con ingreso bruto − ingreso neto. B/C calculada 1.35 (el cuadro imprime 1.34). La agenda copia textos de la ficha del trópico seco: la fecha de siembra dice 'zona baja', el Cuadro 2 dice 'trópico seco (zona baja)' y la lista de municipios dice 'zona baja', aunque todo corresponde a la zona alta. 'Criollo local' se puso en variedades; la clasificación de Costeño mejorado, San Andrés y Lucino es dudosa (el texto no da la empresa).",
+      "revisado": false
+    },
+    {
+      "ficha": "Nochebuena",
+      "cientifico": "Euphorbia pulcherrima Willd. ex Klotzsch",
+      "paginas": [
+        86,
+        97
+      ],
+      "cultivo_ids": [
+        "nochebuena",
+        "nochebuena-planta"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Se produce en invernadero, cubierta plástica o malla sombra, entre 1,200 y casi 2,000 msnm (Cuernavaca, Jiutepec, Tepoztlán, Emiliano Zapata, Yautepec, Cuautla). Temperatura óptima de 23 a 26 °C; el crecimiento se detiene bajo 10 °C o sobre 30 °C. Necesita 12 horas de oscuridad para pigmentar, lo que en Morelos ocurre de forma natural desde septiembre; humedad relativa menor de 60 % en la etapa reproductiva.",
+      "siembra": {
+        "texto": "Planta madre: de enero a febrero. El esqueje enraizado se recibe y se pone en maceta de fines de abril a principios de mayo (macetas de 7 y 8 pulgadas). Esquejes enraizados: 21 de marzo para macetas de 8 a 12 pulgadas, 20 de mayo para 7, 20 de julio para 6, y 10 de agosto para 2.5 a 4 pulgadas.",
+        "meses": [
+          4,
+          5
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Prestige Red",
+        "Prestige Maroon",
+        "Primero Red",
+        "Primero Red Glitter",
+        "Primero White",
+        "Premium Ice Crystal",
+        "Freedom Red",
+        "Ice Punch",
+        "Winter Rose Early Red",
+        "Orange Spice",
+        "Luv Pink"
+      ],
+      "densidad": "Un esqueje enraizado por maceta (3 a 4 en colgantes y macetones). En maceta de 6 pulgadas, 8 macetas por m² separadas 35 x 35 cm.",
+      "fertilizacion": "Por el riego: 1 g/L de 15-5-25 alternado con nitrato de calcio a la misma dosis y un riego de agua limpia por semana; o solución Steiner al 80 % (esqueje), 120 % (crecimiento) y 80 % (floración); o 1 g/L de fórmula iniciadora y luego 15-20-25 en desarrollo. Conductividad eléctrica menor de 2 mmhos/cm y pH de 5.5.",
+      "riego": "Por goteo (espagueti) diario, o con bastón cada tercer día con 240 a 300 ml por maceta. Desde la pigmentación no mojar las brácteas porque se manchan.",
+      "plagas": [
+        "Mosquita blanca (Bemisia tabaci)",
+        "Araña roja (Tetranychus spp.)"
+      ],
+      "enfermedades": [
+        "Pudrición de la raíz (Fusarium spp.)",
+        "Moho o mancha gris (Botrytis cinerea)",
+        "Cenicilla (Oidium sp.)"
+      ],
+      "malezas": null,
+      "cosecha": "Lista para venta desde la primera semana de noviembre hasta el 15 de diciembre; se protege con mangas de papel para el traslado.",
+      "cuidados": [
+        "Comprar el esqueje enraizado a proveedores reconocidos y pedirlo con meses de anticipación.",
+        "Podar (pinch) según el número de brácteas deseado; es riesgoso podar en la primera semana de septiembre.",
+        "Evitar el exceso de agua en el sustrato y usar sustratos tratados (vapor o solarización) contra Fusarium; hay cepas de Trichoderma que lo controlan.",
+        "Retirar restos de plantas muertas, espaciar las macetas y ventilar para bajar la humedad y evitar Botrytis.",
+        "Monitorear cada semana mosquita blanca y ácaros y actuar en cuanto aparezcan.",
+        "No mojar las brácteas durante la pigmentación."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": null,
+          "rendimiento": 8,
+          "unidad_rendimiento": "plantas/m2",
+          "precio": 48,
+          "ingreso_neto": null,
+          "relacion_bc": 1.67
+        }
+      ],
+      "nota": "Las variedades del INIFAP están en licenciamiento; las que se usan son comerciales (el texto no da la empresa). Costos por planta en maceta de 6 pulgadas (Cuadro 4), no por hectárea: costo de 28.77 $/planta y 230.16 $/m², precio de venta 48 $/planta, ingreso bruto 384 $/m², ingreso neto 153.84 $/m². Por eso costo_total_ha e ingreso_neto van en null; la B/C (384 / 230.16 = 1.67) no depende de la unidad. Ciclo PV deducido de las fechas de abril-mayo a noviembre-diciembre.",
+      "revisado": false
+    },
+    {
+      "ficha": "Nopal",
+      "cientifico": "Opuntia ficus-indica L. Miller",
+      "paginas": [
+        98,
+        107
+      ],
+      "cultivo_ids": [
+        "nopalitos"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "temporal",
+      "ciclo": "PER",
+      "region": "Norte de Morelos (Tlalnepantla, Totolapan, Tlayacapan y Tepoztlán), entre 1,500 y 2,100 msnm; climas templado, semifrío y semicálido subhúmedos con lluvias en verano, 8 a 20 °C y 1,200 a 1,500 mm de lluvia.",
+      "siembra": {
+        "texto": "Antes de la temporada de lluvias; en Morelos normalmente de febrero a abril.",
+        "meses": [
+          2,
+          3,
+          4
+        ]
+      },
+      "variedades": [
+        "Milpa Alta",
+        "Copena",
+        "Villanueva"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Sistema tradicional: 10,000 a 30,000 cladodios/ha a 30-40 cm entre pencas. Microtúnel (zonas con heladas o poca agua): 20,000 a 60,000 cladodios/ha. Enterrar dos terceras partes del cladodio.",
+      "fertilizacion": "120-100-00 con 585 kg/ha de sulfato de amonio y 217 kg/ha de superfosfato de calcio triple, más 3.5 a 5 t/ha de composta. Muchos productores aplican el abono orgánico de febrero a mayo y el fertilizante en junio.",
+      "riego": "Se produce de temporal; en sequía se recomienda un riego de auxilio con pipa al menos una vez al mes.",
+      "plagas": [
+        "Picudo del nopal (Metamasius spinolae)",
+        "Cochinilla silvestre (Dactylopius opuntiae)"
+      ],
+      "enfermedades": [
+        "Mancha negra (Pseudocercospora opuntiae)"
+      ],
+      "malezas": "Control manual con jornales o químico. Principales de hoja ancha: rosa amarilla, epazote cenizo, verdolaga y hierba del pollo. Mantener la huerta limpia, porque la maleza favorece la mancha negra y el picudo.",
+      "cosecha": "Todo el año, una o dos veces por semana, cuando caen las tres primeras hileras de hojitas de la base del brote. Cortar con cuchillo afilado unos milímetros arriba de la unión con la penca. Temporada alta de marzo a septiembre y baja de octubre a febrero. Rendimiento: 85 a 105 t/ha al año.",
+      "cuidados": [
+        "Barbechar y rastrear varias veces dejando el suelo al sol para reducir plagas del suelo.",
+        "Revisar las pencas para plantar y descartar las que traigan cochinilla.",
+        "Poda generalizada en diciembre; de formación los tres primeros años y de rejuvenecimiento en huertas de más de 10 años.",
+        "Recorrer la huerta seguido para detectar mancha negra y picudo; retirar y quemar o compostear los cladodios enfermos.",
+        "Quitar a mano los adultos de picudo y cortar las pencas dañadas antes de que las larvas lleguen al centro de la planta.",
+        "Hacer análisis de residuos de plaguicidas y microbiológicos para vender en cadenas comerciales o exportar."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 175980,
+          "rendimiento": 100,
+          "unidad_rendimiento": "t/ha",
+          "precio": 3400,
+          "ingreso_neto": 164020,
+          "relacion_bc": 1.93
+        }
+      ],
+      "nota": "Se usó el costo del año 2 (producción, 175,980 $/ha); el del año 1 con establecimiento es 317,180 $/ha (la suma de conceptos coincide). Precio de 3,400 $/t deducido de ingreso bruto / rendimiento (340,000 / 100); B/C calculada 1.93 (el cuadro imprime 1.9). En el extraído, el Cuadro 1 de estadísticas dice 'nochebuena' por error de la agenda; la ficha tiene dos cuadros numerados 'Cuadro 1'.",
+      "revisado": false
+    },
+    {
+      "ficha": "Sorgo",
+      "cientifico": "Sorghum bicolor L. Moench.",
+      "paginas": [
+        108,
+        114
+      ],
+      "cultivo_ids": [
+        "sorgo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Trópico seco y subtrópico subhúmedo, de 700 a 1,800 msnm: Amacuzac, Axochiapan, Ayala, Cuautla, Jojutla, Puente de Ixtla, Tepalcingo, Tlaltizapán, Tlaquiltenango, Yautepec y otros, más la parte media-baja de Atlatlahucan, Cuernavaca, Ocuituco, Tepoztlán, Tlayacapan, Yecapixtla y Zacualpan.",
+      "siembra": {
+        "texto": "Desde que se regulariza el temporal hasta el 15 de julio; primero los híbridos tardíos y al final los precoces.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "RB-3030 (INIFAP)"
+      ],
+      "hibridos_comerciales": [
+        "85P15 (Pioneer)",
+        "8418 (Pioneer)",
+        "84G88 (Pioneer)",
+        "85P20 (Pioneer)",
+        "DKS-48 (Monsanto)",
+        "Ámbar (Monsanto)",
+        "D-65 (Monsanto)",
+        "D-73 (Monsanto)",
+        "DK-55 (Monsanto)",
+        "Galio (Monsanto)",
+        "Kilate (Monsanto)",
+        "Mercurio (Monsanto)",
+        "MSD-422 (Monsanto)",
+        "Níquel (Monsanto)",
+        "Plata (Monsanto)",
+        "KS 989 (Sorghum Partners)",
+        "NK-8830 (Sorghum Partners)",
+        "NK-8831 (Sorghum Partners)",
+        "NK-9916 (Sorghum Partners)",
+        "Argos (Unisem)",
+        "San Bernardo (Cincinnati)",
+        "San Jerónimo (Cincinnati)",
+        "Apache (Warner)",
+        "WAC-685 (Warner)",
+        "W-917-E (Warner)",
+        "ACA-506 (ACA)",
+        "M-550 (Majestic)",
+        "SYN-5265 (Syngenta)",
+        "SG-673 (Sun Rey)",
+        "MAS-330 (Midstates Ag Services)",
+        "MAS-421 (Midstates Ag Services)",
+        "MAS-510 (Midstates Ag Services)",
+        "MAS-715 (Midstates Ag Services)",
+        "UPM-219 (United Phosphorus de México)"
+      ],
+      "densidad": "15 kg/ha de semilla certificada en surcos a 75 cm, con labranza mínima o de conservación. En lomerío, surcos en contorno.",
+      "fertilizacion": "Según análisis de suelo; si no lo hay, 120-46-00. Con biofertilizantes (inocular la semilla y reforzar a los 20-30 días) se baja a 90-35-00. Suelos con pH mayor de 6.5: 98 kg de sulfato de amonio + 76 kg de superfosfato triple al sembrar y 342 kg de sulfato de amonio al cierre. pH menor de 6.5: 24 kg de CAN-27 + 76 kg de fosfato diamónico al sembrar y 259 kg de CAN-27 después. En suelos calichosos, sulfato ferroso foliar contra la clorosis.",
+      "riego": null,
+      "plagas": [
+        "Gallina ciega",
+        "Gusano de alambre",
+        "Hormigas",
+        "Pulgón amarillo del sorgo",
+        "Gusano cogollero"
+      ],
+      "enfermedades": [],
+      "malezas": "Mantener el cultivo limpio sobre todo los primeros 40 días después de la siembra; si hace falta, deshierbe manual. Cuidar que los herbicidas arrastrados por el viento no dañen cultivos de hoja ancha vecinos.",
+      "cosecha": "De 120 a 150 días después de la siembra, con el grano casi seco (12 % de humedad), cuando truena al morderlo.",
+      "cuidados": [
+        "Sembrar semilla certificada y tratada por el distribuidor contra plagas del suelo y chupadores.",
+        "Vigilar el pulgón amarillo en macollamiento y embuche: actuar si hay mielecilla en el tercio inferior o muchos pulgones por hoja.",
+        "Elegir productos que no dañen insectos benéficos ni abejas.",
+        "Controlar el gusano cogollero en los primeros 45 días; hay opciones biológicas (Bacillus thuringiensis, Beauveria, Metarhizium).",
+        "Usar biofertilizantes para reducir 25 % el fertilizante químico.",
+        "Ajustarse a las fechas de siembra como medida preventiva contra enfermedades."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 25819.82,
+          "rendimiento": 7000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.8,
+          "ingreso_neto": 7780.18,
+          "relacion_bc": 1.3
+        }
+      ],
+      "nota": "La agenda no da el ingreso bruto ni el precio: el precio de 4.8 $/kg se dedujo de (costo total + ganancia neta) / rendimiento = 33,600 / 7,000; la B/C impresa (1.30) coincide. El rendimiento de 7,000 kg/ha viene solo del cuadro. Meses de siembra: el texto da hasta el 15 de julio desde que se regulariza el temporal; se incluyó junio como inicio probable. La agenda no nombra enfermedades. El asterisco de KS 989 se omitió (el texto no lo explica).",
+      "revisado": false
+    }
+  ]
+}

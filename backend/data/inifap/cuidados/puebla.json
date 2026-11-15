@@ -1,0 +1,460 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/puebla.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "21",
+  "estado": "Puebla",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Puebla. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Maíz",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        13,
+        19
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Valles altos secos y húmedos de 2,200 a 3,000 msnm (Teziutlán, Ciudad Serdán, Chignahuapan, Cholula, Atlixco, Tecamachalco, Libres, Tehuacán, entre otros), 18 a 24 °C y 700 a 1,300 mm de lluvia. Suelos con materia orgánica, franco a franco-arcillosos, con buen drenaje y pH de 5.5 a 7.0.",
+      "siembra": {
+        "texto": "Ciclo P-V de temporal: sembrar en marzo y abril, cuando se establezcan lluvias profundas en la parcela (ciclo de unos 125 días). Después aumenta el riesgo de heladas en octubre. Si no se pudo sembrar en marzo o abril, usar criollos morados, azules o rojos de 90 a 100 días para aprovechar las lluvias de septiembre.",
+        "meses": [
+          3,
+          4
+        ]
+      },
+      "variedades": [
+        "H-40",
+        "H-48",
+        "H-50",
+        "H-66",
+        "H-137",
+        "H-139",
+        "H-30",
+        "H-34",
+        "H-33",
+        "VS-22",
+        "Amarillo 61",
+        "Amarillo 62"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Semilla: 15 a 20 kg/ha a golpe, 20 a 25 kg/ha con sembradora de tracción animal y 25 a 35 kg/ha con sembradora de tractor. Población: 65,000 plantas/ha en temporal; 40,000 a 60,000 plantas/ha en secano; 50,000 a 60,000 en ambiente mixto; 85,000 a 95,000 con híbridos en ambientes con potencial de riego. Surcos a 90 cm con criollo y de 60 a 80 cm con materiales mejorados.",
+      "fertilizacion": "Zonas templadas subhúmedas: 160-60-80 (297 kg de urea, 130 kg de DAP y 133 kg de cloruro de potasio). Zonas secas y semicálidas a cálidas: 120-50-70 (218 kg de urea, 109 kg de DAP y 116 kg de cloruro de potasio). Zonas frías: 160-80-90 (280 kg de urea, 174 kg de DAP y 150 kg de cloruro de potasio). Todo el fósforo y 30 % del nitrógeno a la siembra, a 5–10 cm de la semilla, con al menos 20 kg/ha de microelementos; el resto del nitrógeno y el potasio en la segunda labor. Dosis pensadas para unas 70,000 plantas/ha.",
+      "riego": "Temporal: depende de la lluvia. Un rendimiento medio requiere unos 480 mm acumulados y el desarrollo óptimo de 700 a 1,300 mm en el ciclo.",
+      "plagas": [
+        "Gallina ciega (Phyllophaga spp.)",
+        "Gusano cogollero",
+        "Gusano de alambre (Melanotus y Agriotes spp.)",
+        "Larvas de diabrótica (Diabrotica spp.)",
+        "Trips (Frankliniella occidentalis)",
+        "Araña roja (Oligonychus mexicanus y Tetranychus spp.)",
+        "Chicharrita del maíz",
+        "Picudo de la hoja",
+        "Pulgones (Rhopalosiphum maidis y Schizaphis graminum)"
+      ],
+      "enfermedades": [],
+      "malezas": "Mantener el cultivo limpio los primeros 40 días después de la siembra. Dos escardas: la primera a los 30 días (plantas de 30 a 40 cm) y la segunda entre los 45 y 55 días (60 a 70 cm). Si la maleza es abundante se usa control químico.",
+      "cosecha": "En madurez fisiológica: al quitar el pedicelo debe verse una capa negra en la base del grano. No tumbar la planta seca al suelo; amogotar. Para guardar hasta medio año, secar al sol hasta 12–15 % de humedad (prueba de la sal o del frasco); para más tiempo, módulos BIOGRAN. Rendimiento esperado de 3 a 4 t/ha en temporal.",
+      "cuidados": [
+        "Sembrar en marzo y abril con lluvias ya establecidas; si se atrasa, usar criollos de color de ciclo corto (90 a 100 días).",
+        "Barbechar a unos 30 cm y surcar al contorno en terrenos con pendiente; en pendientes fuertes, hacer terrazas.",
+        "Aplicar todo el fósforo a la siembra y dividir el nitrógeno: 30 % al inicio y el resto en la segunda labor con el potasio.",
+        "Mantener la parcela sin maleza los primeros 40 días con dos escardas.",
+        "Manejar plagas de forma preventiva con extractos de ajo, chile o neem, jabones potásicos y trampas (bandas azules y amarillas, feromonas, luz); usar insecticidas autorizados solo si se rebasa el umbral de daño.",
+        "Cosechar cuando aparezca la capa negra en la base del grano y almacenar con 12 a 15 % de humedad."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 25432,
+          "rendimiento": 3500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8,
+          "ingreso_neto": 2568,
+          "relacion_bc": 1.1
+        }
+      ],
+      "nota": "Los híbridos H-40 a H-66, H-30 a H-139 y las variedades sintéticas VS-22, Amarillo 61 y Amarillo 62 son del catálogo de semillas certificadas del INIFAP; se listan como variedades públicas. Las variedades VS-22, Amarillo 61 y Amarillo 62 se recomiendan para maíz de interés forrajero. La agenda indica que en Puebla no se han reportado enfermedades sobresalientes del maíz.",
+      "revisado": false
+    },
+    {
+      "ficha": "Frijol",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        20,
+        26
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Valles Altos de 2,000 a 3,400 msnm, sobre todo los DDR Tecamachalco, Libres y Cholula; 12 a 25 °C y lluvias de junio a octubre (300 a 600 mm en zonas semiáridas, más de 1,200 mm en el norte y este). Suelos ricos en nutrientes o materia orgánica, pH de 4.5 a 8.0.",
+      "siembra": {
+        "texto": "Del 25 de mayo y durante junio; más tarde hay riesgo de heladas tempranas. Los tipos Flor de Junio y Flor de Mayo van en las primeras fechas y los Pinto al final del periodo.",
+        "meses": [
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Salinas",
+        "Rarámuri",
+        "San Rafael",
+        "Río Grande",
+        "Tepehuan RS",
+        "Dalia",
+        "Junio León",
+        "Junio Nur",
+        "Flor de Mayo Eugenia",
+        "Negro Comapa",
+        "Negro 8025",
+        "San Luis"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Surcos a 70 cm y 125,000 plantas/ha, con 45 a 50 kg/ha de semilla según la variedad y su germinación.",
+      "fertilizacion": "40-40-00 de N-P-K: 87 kg de urea y 87 kg de superfosfato de calcio triple por hectárea.",
+      "riego": "Temporal.",
+      "plagas": [
+        "Mosca blanca",
+        "Chapulines",
+        "Chicharrita",
+        "Diabrótica"
+      ],
+      "enfermedades": [
+        "Pudrición de raíces (Fusarium sp., Rhizoctonia sp. y Pythium sp.)",
+        "Roya o chahuixtle (Uromyces appendiculatus var. appendiculatus)",
+        "Antracnosis (Colletotrichum lindemuthianum)"
+      ],
+      "malezas": "Limpia manual en las hileras al mismo tiempo que los dos cultivos mecánicos (a los 25 días de la siembra y 15 días después). Si se usa herbicida postemergente, aplicarlo con la maleza de 2 a 4 hojas verdaderas.",
+      "cosecha": "Entre 95 y 115 días después de la siembra. Arrancar las plantas cuando 60 % de las hojas estén amarillas y empiecen a caer; formar montones o \"piñas\" apretadas para proteger las vainas de la lluvia y que no se manche el grano. Trillar a la semana, con el frijol seco, evitando superficies duras. Rendimiento esperado de 1.8 t/ha.",
+      "cuidados": [
+        "Sembrar del 25 de mayo a fines de junio para evitar heladas tempranas; Flor de Junio y Flor de Mayo primero, Pinto al final.",
+        "Barbechar después de la cosecha anterior para conservar la humedad de las lluvias de invierno; dar una rastra después del barbecho y otra antes de sembrar.",
+        "Contra chapulines, controlarlos en los pastos antes de que entren al cultivo; contra mosca blanca, chicharrita y diabrótica se puede usar Beauveria bassiana.",
+        "Para pudrición de raíz, rotar cultivos, sembrar en terrenos con buen drenaje y tratar la semilla (en producción agroecológica, con Trichoderma spp.).",
+        "Contra antracnosis, usar semilla sana y rotar con gramíneas; vigilar la roya desde los primeros síntomas.",
+        "Arrancar cuando 60 % de las hojas amarillee y proteger las plantas en \"piñas\" hasta trillar en seco."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 28232,
+          "rendimiento": 1800,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 27,
+          "ingreso_neto": 20368,
+          "relacion_bc": 1.72
+        }
+      ],
+      "nota": "La sección de región da un rendimiento esperado de 1.2 t/ha (hasta 2.0 t/ha en el DDR Cholula), mientras que la de cosecha y el cuadro de costos usan 1.8 t/ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Elote",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        27,
+        35
+      ],
+      "cultivo_ids": [
+        "elote"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "De 2,200 a 3,000 msnm en Atlixco, Tecamachalco, Valle de Puebla, Valle de Tehuacán, Ciudad Serdán, Cholula, Libres, Huixcolotla y otras zonas; 18 a 24 °C y 700 a 1,300 mm de lluvia. Suelos con materia orgánica, franco a franco-arcillosos, con buen drenaje y pH de 5.5 a 7.0.",
+      "siembra": {
+        "texto": "Valle de Puebla: de la primera semana de marzo a la primera de julio. Valle de Tehuacán: de la primera semana de marzo a la última de junio. En Atlixco pueden lograrse dos ciclos con manejo intensivo. En general se siembra en marzo y abril (ciclo de unos 90 días); después hay riesgo de las primeras heladas en octubre.",
+        "meses": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "H-70",
+        "H-50",
+        "Huaco Amarillo"
+      ],
+      "hibridos_comerciales": [
+        "AS-722",
+        "SBA470",
+        "Albatros",
+        "Antilope",
+        "Faisan",
+        "Comanche",
+        "Cherokee"
+      ],
+      "densidad": "60,000 a 75,000 plantas/ha según la semilla (se indican 60,000 a 65,000 como recomendadas), con surcos a 80 cm y sembradora de precisión calibrada a una semilla cada 30 cm.",
+      "fertilizacion": "150-60-60 de N-P-K por hectárea (11 bultos): 125 kg de DAP 18-46-00, 250 kg de urea y 125 kg de cloruro de potasio. A la siembra, todo el DAP, todo el cloruro de potasio y un bulto de urea, sin quemar la plántula; al mes, el resto del nitrógeno. Cada híbrido puede tener su propio paquete.",
+      "riego": "Cinco riegos en el ciclo: el primero después de la siembra y luego cada 20 días, dando prioridad al jiloteo y al llenado del elote.",
+      "plagas": [
+        "Gallina ciega (Phyllophaga spp.)",
+        "Gusano cogollero",
+        "Gusano de alambre (Melanotus y Agriotes spp.)",
+        "Larvas de diabrótica (Diabrotica spp.)",
+        "Trips (Frankliniella occidentalis)",
+        "Araña roja (Oligonychus mexicanus y Tetranychus spp.)",
+        "Chicharrita del maíz",
+        "Picudo de la hoja",
+        "Pulgones (Rhopalosiphum maidis y Schizaphis graminum)"
+      ],
+      "enfermedades": [
+        "Damping off (Pythium spp.)",
+        "Tizón de la hoja (Helminthosporium spp.)",
+        "Pudrición de plántula (Fusarium oxysporum)",
+        "Carbón de la espiga (Sphacelotheca reiliana)",
+        "Cornezuelo o falso huitlacoche (Claviceps spp.)",
+        "Pudrición del tallo y raíz"
+      ],
+      "malezas": "Mantener el cultivo limpio los primeros 40 días después de la siembra. Dos escardas: a los 30 días (plantas de 30 a 40 cm) y entre los 45 y 55 días (60 a 70 cm), que además dan sostén a la planta. Malezas citadas: hierba amargosa, quelite y zacates Johnson, chaparro y pinto.",
+      "cosecha": "Los estigmas pasan de amarillo a café y se sienten secos, las brácteas siguen verdes y el elote está lleno hasta la punta. Si el grano se ve transparente, todavía no; si al presionarlo suelta líquido lechoso, está en punto sazón. Casi todos los híbridos están listos alrededor de los 90 días. Rendimiento esperado de 9 a 10 t/ha en riego.",
+      "cuidados": [
+        "Usar semilla elotera de ciclo precoz y, de preferencia, con alto índice de cuateo.",
+        "Dejar el terreno barbechado al sol unos 3 días para reducir larvas de plagas del suelo.",
+        "Dar cinco riegos, cada 20 días, sin que falte agua en el jiloteo y el llenado del elote.",
+        "Aporcar cuando aparezcan las raíces adventicias para que el viento no tumbe las plantas.",
+        "Vigilar el cultivo de forma constante, sobre todo con humedad y temperatura altas, que favorecen las enfermedades.",
+        "Cosechar en punto sazón, cuando el grano suelte líquido lechoso al presionarlo."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 44880,
+          "rendimiento": 60000,
+          "unidad_rendimiento": "piezas/ha",
+          "precio": 2,
+          "ingreso_neto": 75120,
+          "relacion_bc": 2.67
+        }
+      ],
+      "nota": "El cuadro de costos expresa el rendimiento en piezas de elote por hectárea (60,000) y el precio por pieza ($2), no en kg. La agenda da dos cantidades de semilla distintas para la sembradora de precisión (30 a 40 kg/ha y 12 a 15 kg/ha); no se incluyen en densidad. Los meses de siembra cubren las ventanas del Valle de Puebla y de Tehuacán (marzo a julio), aunque lo común es marzo y abril. Los materiales comerciales se listan sin empresa porque el texto no la da.",
+      "revisado": false
+    },
+    {
+      "ficha": "Naranja",
+      "cientifico": "Citrus sinensis (L.) Osbeck",
+      "paginas": [
+        36,
+        46
+      ],
+      "cultivo_ids": [
+        "naranja"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "temporal",
+      "ciclo": "PER",
+      "region": "Sierra Norte y Sierra Nororiental, de 150 a 900 msnm (Francisco Z. Mena, San José Acateno, Venustiano Carranza, Pantepec, Hueytamalco), clima cálido o semicálido húmedo, 20 a 26 °C y 1,200 a 2,500 mm de lluvia. Suelos profundos, bien drenados, francos, franco-arcillosos o franco-arenosos, pH de 5.5 a 7.0.",
+      "siembra": {
+        "texto": "Plantar preferentemente entre julio y agosto, con lluvias moderadas; evitar suelos saturados o lluvias intensas.",
+        "meses": [
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Valencia tardía",
+        "Marrs",
+        "Hamlin",
+        "Washington Navel",
+        "Pineapple"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Marco de 7 x 7 m (204 árboles/ha) o de 7 x 6 m (238 árboles/ha).",
+      "fertilizacion": "Establecimiento: DAP 18-46-00, 0.165 kg por árbol (33.66 kg/ha) en julio-agosto. En producción, tres aplicaciones al suelo: enero, 15.5-00-00 + 19 Ca + 0.3 B, 0.714 kg por árbol (145.66 kg/ha); marzo, 12-11-18 + 2.7 MgO + 8 S + micronutrientes, 0.714 kg por árbol (145.66 kg/ha); junio-julio, 19-04-19 + 3 MgO + 2 S + 0.12 B + 0.10 Zn, 0.857 kg por árbol (174.83 kg/ha). Foliares: boro en floración (febrero-marzo, 1 L/ha de 65 g/L N + 150 g/L B); N-Mg-Mn-Zn en marzo-abril (2 L/ha) y N-Mg en junio-julio (3 L/ha).",
+      "riego": "Depende de la lluvia, que suele cubrir lo que necesita el cultivo; riegos de auxilio cuando sean necesarios.",
+      "plagas": [
+        "Psílido asiático de los cítricos (Diaphorina citri)",
+        "Minador de la hoja (Phyllocnistis citrella)",
+        "Ácaros fitófagos (Brevipalpus spp., Phyllocoptruta oleivora y Panonychus citri)",
+        "Pulgones (Aphis citricidus y Aphis spiraecola)"
+      ],
+      "enfermedades": [
+        "Huanglongbing (HLB)",
+        "Leprosis de los cítricos",
+        "Virus de la tristeza de los cítricos",
+        "Gomosis (Phytophthora spp.)",
+        "Antracnosis (Colletotrichum spp.)",
+        "Mancha grasienta (Zasmidium citri-griseum)"
+      ],
+      "malezas": "Conservar una cobertura vegetal manejada entre calles, sobre todo en ladera, para reducir erosión y conservar humedad. El control de arvenses se dirige solo a la línea de plantación, en enero, abril y junio, sin tocar follaje, brotes ni tronco.",
+      "cosecha": "Manual, sin dañar fruto ni árbol, cuando el fruto tenga desarrollo, color y jugo adecuados. La fruta de temporada se cosecha sobre todo entre enero y marzo. Rendimiento de 7 t/ha con manejo convencional y hasta 15 t/ha con el paquete tecnológico del INIFAP.",
+      "cuidados": [
+        "Usar solo plantas certificadas de viveros autorizados por SENASICA; no usar naranjo agrio como portainjerto en huertas nuevas por su susceptibilidad a la tristeza (se recomiendan Volkameriana, citrumelo Swingle, citranges Carrizo, Troyer y C-35 y mandarina Cleopatra).",
+        "En ladera, plantar en curvas a nivel y mantener cobertura vegetal entre calles; en suelos con mal drenaje, hacer drenaje superficial antes de plantar.",
+        "Intensificar el monitoreo del psílido en las brotaciones de febrero-marzo y octubre, y del minador en febrero-marzo y junio-julio.",
+        "Usar control biológico: Tamarixia radiata contra el psílido y Chrysoperla carnea contra pulgones; conservar los enemigos naturales de los ácaros.",
+        "Deschuponar en diciembre para quitar los brotes vigorosos del tronco y las ramas principales.",
+        "Fertilizar tres veces al año (enero, marzo y junio-julio) siguiendo la brotación, la floración y el llenado del fruto."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 47188.53,
+          "rendimiento": 15000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 21311.82,
+          "relacion_bc": 1.45
+        }
+      ],
+      "nota": "El cuadro de costos es de mantenimiento de huertas en producción con el paquete tecnológico (15 t/ha); no incluye los costos de establecimiento de los años 1 a 3 (preparación del terreno y plantación aparecen en el cuadro pero no se suman). El cuadro no da el precio de venta, por eso va en null; el ingreso bruto es de $68,500.35/ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Café",
+      "cientifico": "Coffea arabica L.",
+      "paginas": [
+        47,
+        59
+      ],
+      "cultivo_ids": [
+        "cafe-cereza"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "temporal",
+      "ciclo": "PER",
+      "region": "Montaña de 800 a 1,400 msnm en la Sierra Norte, Sierra Nororiental y Sierra Negra (Xicotepec, Huauchinango, Zihuateutla, Ajalpan, Cuetzalan, Tlatlauquitepec, Teziutlán, Coyomeapan), 18 a 24 °C y 1,500 a 2,500 mm de lluvia, en sistemas agroforestales con sombra. Andosoles, Luvisoles y Cambisoles profundos, pH de 5.5 a 6.5.",
+      "siembra": {
+        "texto": "Plantar cuando las lluvias ya están establecidas, del 15 de mayo al 15 de junio; el periodo óptimo de humedad y temperatura para plantar termina alrededor del 15 de octubre.",
+        "meses": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "variedades": [
+        "Oro Azteca",
+        "Costa Rica 95",
+        "Sarchimor T-5296",
+        "Marsellesa",
+        "IAPAR-59",
+        "Colombia",
+        "Typica",
+        "Borbón",
+        "Mundo Novo",
+        "Geisha",
+        "Pacamara",
+        "Catuaí",
+        "Garnica",
+        "Caturra"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Porte alto: 2,000 a 2,500 cafetos/ha (2.5 x 2.0 m o 2.0 x 2.0 m). Porte bajo: más de 3,000 cafetos/ha (2.5 x 1.25 m, 2.0 x 1.5 m o 1.75 x 1.75 m). Se puede usar doble postura. Plantas de vivero de 8 a 10 meses, de 25 a 30 cm de altura.",
+      "fertilizacion": "Mezcla de 100 kg de urea, 50 kg de DAP y 75 kg de KCl: año 1, cada tres meses 50 g por planta; año 2, tres aplicaciones de 100 g por planta; año 3, tres aplicaciones de 150 g por planta de la mezcla con 100 kg de KCl. En producción (35 a 55 % de sombra): marzo-abril, 100 g por planta de 100 kg de urea + 55 kg de DAP + 80 kg de KCl + 66 kg de K-Mag; junio-julio, 80 g de 100 kg de urea + 55 kg de DAP + 76 kg de KCl + 66 kg de K-Mag; agosto-septiembre, 60 g de urea por planta. Tapar el fertilizante en cajete o en el área de goteo, considerando lluvias en los dos o tres días.",
+      "riego": null,
+      "plagas": [
+        "Broca del grano de café (Hypothenemus hampei)",
+        "Barrenadores del tallo y ramas (Plagiohammus maculosus, P. mexicanus y P. spinipennis)"
+      ],
+      "enfermedades": [
+        "Roya del cafeto (Hemileia vastatrix)",
+        "Nematodos (Meloidogyne paranaensis, corchosis; Meloidogyne incognita)"
+      ],
+      "malezas": "Cafetales jóvenes: de seis a ocho limpias por año. En producción: dos a tres chapeos al año a unos 10 cm del suelo, en marzo, junio-julio y octubre-noviembre, sin dejar el suelo desnudo, sobre todo en ladera.",
+      "cosecha": "Corte selectivo solo de frutos maduros, de color rojo intenso (y algunos sobremaduros púrpura); los verdes o pintones bajan la calidad en taza y los secos se procesan aparte. Prueba de flotación antes de despulpar, despulpadoras limpias y calibradas, grano a no más de 45 °C al secar y secado hasta 10–12 % de humedad; guardar en costales con bolsa hermética en lugar limpio, seco y ventilado. Puebla promedia unos 12.5 quintales/ha; con el paquete tecnológico, cerca de 10 t/ha de café cereza (más de 30 quintales de pergamino seco).",
+      "cuidados": [
+        "Preferir variedades resistentes o tolerantes a la roya (Oro Azteca, Costa Rica 95, Sarchimor T-5296, Marsellesa, IAPAR-59).",
+        "Mantener sombra de 40 a 60 % con unos 133 árboles/ha y regularla entre marzo y mayo; en los dos primeros años usar sombra temporal (plátano, gandul, crotalaria y otras).",
+        "Contra la broca: recoger los frutos que quedan en la planta y el suelo tras la cosecha, poner 16 trampas/ha con atrayente de etanol y metanol cambiado cada 15 días y aplicar Beauveria bassiana por la tarde o en días nublados cuando el fruto tenga 90 a 120 días. No se recomienda el control químico de la broca.",
+        "Hacer podas de rejuvenecimiento por franjas, entre marzo y mayo, para no cortar la producción.",
+        "Contra nematodos, injertar sobre portainjertos resistentes de Coffea canephora (injerto \"Reyna\") y aportar abonos orgánicos.",
+        "Preparar el terreno entre febrero y mayo con desmonte selectivo, sin quemas, y plantar en curvas a nivel en pendientes de más de 15 %."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 64523,
+          "rendimiento": 8000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 18.5,
+          "ingreso_neto": 83477,
+          "relacion_bc": 2.3
+        }
+      ],
+      "nota": "El cuadro de costos es de un ciclo anual de un cafetal en producción; no suma la preparación del terreno ni el establecimiento. El precio ($18.5/kg) es el promedio de la cosecha 2024/2025; el cuadro no dice si el rendimiento de 8,000 kg/ha es de café cereza. La ficha no tiene sección de riego (el cultivo es de temporal). Coffea arabica sin autor en el extraído; se completó con \"L.\" según el texto de la sección de región.",
+      "revisado": false
+    },
+    {
+      "ficha": "Caña de azúcar",
+      "cientifico": "Saccharum officinarum L.",
+      "paginas": [
+        60,
+        76
+      ],
+      "cultivo_ids": [
+        "cana-de-azucar"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": null,
+      "ciclo": "PER",
+      "region": "Zonas de abasto de los ingenios Atencingo (Chietla) y Calípam (Coxcatlán), cálidas subhúmedas, con 800 a 1,000 mm de lluvia en Atencingo y 450 a 600 mm en Calípam, por lo que dependen del riego. Óptimo de 26 a 30 °C. Terrenos con buen drenaje, de preferencia francos y con más de 2 % de materia orgánica.",
+      "siembra": {
+        "texto": "La mejor época en la región Centro de Puebla es de julio a septiembre.",
+        "meses": [
+          7,
+          8,
+          9
+        ]
+      },
+      "variedades": [
+        "CP 72-2086",
+        "Mex 69-290",
+        "Mex 79-431",
+        "ITV 92-1424",
+        "MEX 94-8"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Cordón sencillo: estacas de 50 a 60 cm con 4 a 5 yemas, 8 a 10 t de semilla/ha. Cordón doble: 12 a 14 t/ha. Mateado: 12 yemas por metro (a 15 cm) en surcos de 1.2 a 1.4 m, 4 a 6 t/ha. Vitroplantas: 1.4 x 0.70 m, 10,000 a 12,000 plántulas/ha. Surcos de 1.20 a 1.30 m con cosecha manual y más de 1.40 m con cosecha mecánica (1.4 a 1.5 m en temporal).",
+      "fertilizacion": "La definen los comités técnicos de cada ingenio. Atencingo: 500 kg/ha de 16-16-16 más 500 kg/ha de sulfato de amonio. Calípam: gallinaza o estiércol vacuno con 20-10-20 y urea. Aplicar todo el fósforo, el potasio y los correctores (sulfato ferroso, 25 kg/ha, contra clorosis férrica) a la siembra o al destronque, y el resto del nitrógeno a los 60 o 90 días. Se sugiere 75 % de fertilización química y 25 % con biofertilizantes (micorrizas y rizobacterias).",
+      "riego": "Atencingo: hasta 12 riegos en plantilla y 8 en socas y resocas. Calípam: 8 a 10 riegos al año por gravedad en terrazas. Suspender todo riego 60 días antes de la cosecha para concentrar la sacarosa.",
+      "plagas": [
+        "Gusano barrenador del tallo (Diatraea spp. y Eoreuma loftini)",
+        "Picudo de la cepa",
+        "Nematodos (Meloidogyne javanica y Pratylenchus zeae)",
+        "Mosca pinta (Aeneolamia postica)",
+        "Gusano falso medidor"
+      ],
+      "enfermedades": [
+        "Marchitez vascular o secadera (Fusarium sacchari, Fusarium verticillioides)",
+        "Carbón (Ustilago scitaminea)",
+        "Royas (Puccinia spp.)",
+        "Mosaico",
+        "Hoja amarilla"
+      ],
+      "malezas": "Combinar limpias manuales (machete o azadón), cultivos mecánicos y control químico pre o postemergente según la etapa del cultivo y el tipo de maleza (hoja ancha, hoja angosta, gramíneas y ciperáceas).",
+      "cosecha": "Mayormente manual con alce mecánico; la quema antes del corte sigue siendo común porque 85 % de la superficie no permite cosecha mecanizada, y la cosecha en verde se limita al 15 % plano y mecanizado. Después del corte, alce, acarreo y flete al ingenio. Rendimiento esperado de 110 t/ha.",
+      "cuidados": [
+        "Plantar de julio a septiembre con semilla desinfectada de semilleros de 8 a 10 meses.",
+        "Resembrar cuando las fallas de germinación lleguen a cerca de 10 %, y dar uno o dos pasos de cultivo a los 50–60 y 90 días.",
+        "En socas, juntar el tlazole sin quemarlo y destroncar al ras del suelo para que los brotes salgan vigorosos.",
+        "Suspender el riego 60 días antes de la cosecha.",
+        "Contra el barrenador, usar trampas con feromonas y liberar Trichogramma pretiosum; contra el picudo de la cepa, trampas de trozos de caña con melaza.",
+        "Prevenir enfermedades con variedades resistentes (como CP 72-2086), terrenos que drenen bien y cultivo libre de malezas; contra la secadera, aplicar Trichoderma 25 días después de la siembra o el destronque."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 85810,
+          "rendimiento": 110,
+          "unidad_rendimiento": "t/ha",
+          "precio": 800,
+          "ingreso_neto": 2190,
+          "relacion_bc": 1.03
+        }
+      ],
+      "nota": "El cuadro de costos es de caña en plantilla e incluye $4,000 de jornales de riego; según la agenda, para temporal estricto hay que restar ese concepto. El precio es de $800 por tonelada. La ficha cubre riego y temporal, por eso la modalidad va en null.",
+      "revisado": false
+    }
+  ]
+}

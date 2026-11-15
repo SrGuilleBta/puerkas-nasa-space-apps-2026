@@ -11,3 +11,7 @@ __pycache__/
 
 # Salida de la pipeline de Cultivos (se regenera: python -m pipeline.cultivos)
 backend/data/cultivos/
+
+# PDFs de INIFAP y su texto extraído (solo se versiona cuidados_inifap.json)
+backend/data/inifap/agendas/
+backend/data/inifap/extraido/

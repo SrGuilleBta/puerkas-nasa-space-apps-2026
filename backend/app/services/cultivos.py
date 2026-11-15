@@ -111,6 +111,8 @@ def viabilidad(clave: str, cultivo: str) -> dict:
             break
 
     enchar = ficha.get("tolerancia_encharcamiento")
+    cve_ent = descriptor.get("cve_ent") or (clave if descriptor["nivel"] == "estado" else None)
+    pct_riego = ((indicadores or {}).get("riesgo_hidrico") or {}).get("pct_riego")
     return {
         "ubicacion": descriptor,
         "contexto": pedida["contexto"] if pedida else None,
@@ -126,6 +128,54 @@ def viabilidad(clave: str, cultivo: str) -> dict:
             "fuente": "EcoCrop (tolerancia a mal drenaje)",
             "pendiente": "Atlas Nacional de Riesgos (CENAPRED)",
         },
+        "manejo": manejo(cve_ent, cultivo, ficha, pct_riego),
+    }
+
+
+# ---------------------------------------------------------------- Manejo INIFAP
+
+CUIDADOS_DIR = DATOS.parent / "inifap" / "cuidados"
+# Ciudad de México no tiene Agenda Técnica: se usa la del Estado de México.
+ESTADO_SUSTITUTO = {"09": "15"}
+
+
+@lru_cache(maxsize=1)
+def _fichas_inifap() -> dict:
+    """(cve_ent, cultivo_id) -> fichas de las Agendas Técnicas del INIFAP (un JSON por estado)."""
+    idx = {}
+    for ruta in sorted(CUIDADOS_DIR.glob("*.json")):
+        with open(ruta, encoding="utf-8") as f:
+            datos = json.load(f)
+        for fi in datos["fichas"]:
+            fi = {**fi, "cita": datos["fuente"].rstrip(".") + f", pp. {fi['paginas'][0]}–{fi['paginas'][1]}."}
+            for cid in fi["cultivo_ids"]:
+                idx.setdefault((datos["cve_ent"], cid), []).append(fi)
+    return idx
+
+
+def manejo(cve_ent: str | None, cultivo: str, ficha: dict, pct_riego: float | None) -> dict:
+    """Cuidados del cultivo: fichas INIFAP del estado si existen; si no, el texto general.
+
+    Las fichas se ordenan poniendo primero la modalidad que domina en la zona
+    (riego si al menos la mitad de la superficie es de riego).
+    """
+    sustituto = ESTADO_SUSTITUTO.get(cve_ent)
+    fichas = list(_fichas_inifap().get((sustituto or cve_ent, cultivo), [])) if cve_ent else []
+    if fichas:
+        preferida = None if pct_riego is None else ("riego" if pct_riego >= 0.5 else "temporal")
+        fichas.sort(key=lambda f: f.get("modalidad") != preferida)
+        return {
+            "fuente": "INIFAP",
+            "nota": "Ciudad de México no tiene Agenda Técnica; se usa la del Estado de México." if sustituto else None,
+            "fichas": fichas,
+            "siembra_meses": fichas[0]["siembra"]["meses"],
+        }
+    return {
+        "fuente": "general" if ficha.get("cuidados") else None,
+        "nota": "Sin agenda técnica INIFAP para este estado y cultivo; texto general en borrador.",
+        "cuidados": ficha.get("cuidados"),
+        "fichas": [],
+        "siembra_meses": None,
     }
 
 

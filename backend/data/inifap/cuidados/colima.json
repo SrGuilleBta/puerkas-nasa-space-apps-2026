@@ -1,0 +1,139 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/colima.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "06",
+  "estado": "Colima",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Colima. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Limón mexicano",
+      "cientifico": "Citrus aurantifolia (Christm) Swingle",
+      "paginas": [
+        12,
+        33
+      ],
+      "cultivo_ids": [
+        "limon"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "De 10 a 500 m s.n.m., con temperaturas óptimas de 23 a 32 °C (sin crecimiento debajo de 13 °C) y lluvias de 700 a 1,500 mm en verano, por lo que necesita riego seguro en secas. Prefiere clima cálido semiseco y suelos francos, franco-arenosos o franco-arcillosos, de más de 90 cm de profundidad, con buen drenaje, sin salinidad y pH de 6.0 a 7.0 (tolera 4.8 a 8.3); pendientes menores de 5 %.",
+      "siembra": {
+        "texto": "Se puede plantar en cualquier época del año si se cuenta con riego, pero se recomienda hacerlo en la época de lluvias.",
+        "meses": []
+      },
+      "variedades": [
+        "Colimex",
+        "Lise",
+        "Portainjerto Macrofila (Citrus macrophylla Wester)",
+        "Portainjerto Volkameriana (Citrus volkameriana Pasq.)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "8 x 4 m (312 árboles/ha), 7 x 4 m (357 árboles/ha) o 6 x 4 m (416 árboles/ha); de preferencia las densidades más altas para recuperar la inversión y compensar pérdidas por HLB. Hileras orientadas norte-sur; cepas de 30 cm de diámetro y 50 cm de profundidad, con el cuello de la raíz al nivel del suelo.",
+      "fertilizacion": "Basarse en análisis de suelo, pasta saturada y foliar. Sin análisis: en el primer año aplicar 25, 50, 75 y 150 kg/ha de N a los 3, 6, 9 y 12 meses de la plantación. En huertos en producción la dosis (kg/árbol/año de N, P2O5 y K2O) depende de la edad y la densidad (Cuadro 1); por ejemplo, árboles de 9 años o más con más de 300 árboles/ha: 0.70 N, 0.35 P2O5 y 0.35 K2O. Fraccionar la dosis en el mayor número de aplicaciones posible (vía riego cada 8 a 15 días en riego presurizado). Al suelo, enterrar el fertilizante a 15 cm de profundidad, a la mitad entre el tronco y el borde de la copa, con el suelo húmedo. Incorporar materia orgánica (compost, ácidos húmicos y fúlvicos) y aplicar Fe, Zn, Mn y B por vía foliar.",
+      "riego": "Por gravedad, regar cada 21 días en suelo arenoso durante las secas o cuando la humedad residual baje a 15 %; con frutos en desarrollo mantenerla arriba de 65 %. En riego presurizado (goteo o microaspersión), al menos dos riegos por semana según el diámetro de copa. Una huerta adulta usa unos 1,300 mm al año: de 140 L por árbol por día en enero a 200 L en julio. Es sensible a la salinidad: agua con CE de 3.3 reduce la producción hasta 50 %. Instalar el sistema de riego antes de plantar.",
+      "plagas": [
+        "Araña roja",
+        "Escama de nieve",
+        "Mosca prieta de los cítricos",
+        "Pulgones (incluido el pulgón café, vector del virus tristeza de los cítricos)",
+        "Mosquita blanca",
+        "Minador de la hoja de los cítricos",
+        "Psílido asiático de los cítricos (Diaphorina citri)"
+      ],
+      "enfermedades": [
+        "Gomosis o pudrición del pie (Phytophthora)",
+        "Antracnosis",
+        "Fumagina",
+        "Muerte de ramas (Lasiodiplodia)",
+        "Huanglongbing (HLB)"
+      ],
+      "malezas": "Retirar a mano las plantas parásitas (malojo y cúscuta), cortando la rama si es necesario, y desarraigar las trepadoras (correhuela, campanilla). Entre hileras, pasar la desvaradora cada 30 a 40 días; en cajetes, control manual o químico. En huertos jóvenes no usar herbicidas preemergentes ni herbicidas hormonales volátiles, porque dañan raíces, brotes y flores.",
+      "cosecha": "Cortar solo fruta con madurez de corte: forma elipsoide a esférica, 31 a 40 mm de diámetro, cáscara verde claro lisa y brillante y más de 45 % de jugo. Cosechar en la mañana cuando hojas y frutos estén secos, mantener la fruta a la sombra y llevarla al empaque el mismo día en cajas de plástico de 30 kg sin sobrellenar. Se cosecha todo el año; en Colima el 80 % sale de mayo a octubre. Almacenar a 11 °C y 85 a 90 % de humedad relativa (debajo de 7 °C hay daño por frío). Colimex y Lise rinden de 15 a 25 t/ha desde el cuarto año con 416 árboles/ha.",
+      "cuidados": [
+        "Comprar planta certificada libre de virus, viroides y HLB, con el injerto a 30 a 40 cm del sustrato, y pedir carta garantía.",
+        "Vigilar los brotes tiernos y controlar al psílido asiático de forma coordinada con los vecinos, sobre todo al final de las lluvias, porque transmite el HLB.",
+        "Evitar heridas en tronco y ramas, mantener buen drenaje y usar portainjertos tolerantes para prevenir la gomosis.",
+        "Fraccionar la fertilización y reforzar la nutrición foliar (Fe, Zn, Mn, B) en árboles con HLB para mantener su producción.",
+        "Regar con frecuencia en secas para evitar el polvo en hojas, que favorece a la araña roja, y muestrear frutos del tamaño de cerillo a canica.",
+        "Podar madera muerta y chupones; en adultos, controlar altura y copa para que entre la luz."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 181245.44,
+          "rendimiento": 22230,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 9.05,
+          "ingreso_neto": 19936.1,
+          "relacion_bc": 1.11
+        }
+      ],
+      "nota": "Los costos son del Cuadro 3 (huerto en producción de 5 años), que en el extraído viene dentro del texto de cosecha y no en 'costos'. Cuadran: la suma de rubros da 181,245.44, el ingreso bruto 201,181.5 = 22,230 kg x $9.05, y B/C = 201,181.5 / 181,245.44 = 1.11. No se usó el Cuadro 2, de establecimiento (151,050.92 $/ha). La agenda no da meses exactos de plantación, solo 'época de lluvias'.",
+      "revisado": false
+    },
+    {
+      "ficha": "Tamarindo",
+      "cientifico": "Tamarindus indica",
+      "paginas": [
+        34,
+        47
+      ],
+      "cultivo_ids": [
+        "tamarindo"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": null,
+      "ciclo": "PER",
+      "region": "Trópico seco a menos de 800 m s.n.m., sin invierno definido, con máximas de 33 a 37 °C, mínimas de 9.5 a 20 °C y 500 a 1,500 mm de lluvia; resiste la sequía y los vientos fuertes. Necesita invierno y primavera secos para florecer y llenar fruto. Mejor en suelos aluviales profundos, con buen drenaje, de migajón arenoso a migajón arcilloso y pH de 5.5 a 7.5; en suelos con carbonato de sodio presenta amarillamiento por falta de fierro.",
+      "siembra": {
+        "texto": "Establecer las plantaciones en la época de lluvias (julio a septiembre); con riego se puede plantar en cualquier época del año.",
+        "meses": [
+          7,
+          8,
+          9
+        ]
+      },
+      "variedades": [
+        "Colima 204 (INIFAP)",
+        "INIFAP 149 (INIFAP)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Por semilla, marco real de 10 x 10 m (100 árboles/ha). Con árboles injertados, de 6 a 10 m; se sugieren 9 x 7, 8 x 7, 9 x 6 y 8 x 6 m (158, 178, 185 y 208 árboles/ha), en marco real o tresbolillo, con hileras norte-sur en densidades altas. Cepas de 60 cm de profundidad y 50 cm de ancho.",
+      "fertilizacion": "Basarse en análisis de suelo, foliar y de agua. Sin análisis, por árbol por año: 1.er año 80 g de N, 2.º año 100 g de N y 3.er año 140 g de N (en 4 aplicaciones); 4.º año 200 g de N en 2 aplicaciones; 5.º año 300-100-100 g de N-P-K; 6.º año 400-100-100; 7.º año 640-150-150; 8.º y 9.º año 800-200-200; del 10.º año en adelante 1,000-300-300, siempre en 2 aplicaciones al año (en brotación, floración y desarrollo del fruto).",
+      "riego": "Regar en la época seca (noviembre a junio). Plantaciones menores de dos años: cada 20 a 30 días en secas. Huertos adultos: dos a tres riegos después de la cosecha (abril o mayo) para estimular brotación y floración, y riegos de auxilio de noviembre a enero. Se riega por inundación, microaspersión o goteo.",
+      "plagas": [
+        "Barrenador de ramas y tronco",
+        "Barrenador del fruto (Caryedon gonagra)",
+        "Hormigas arrieras o chancharras (Atta spp.)"
+      ],
+      "enfermedades": [
+        "Cenicilla polvorienta (Oidium tamarindi)"
+      ],
+      "malezas": "Es un problema serio en huertos recién establecidos, porque el árbol crece lento y la maleza rápido. Combinar control manual, mecánico (desvarado) y químico.",
+      "cosecha": "De marzo a junio, en unos tres cortes (los dos primeros son los más abundantes); las huertas de temporal maduran antes que las de riego. El fruto está listo cuando se deshidrata, se pone café o gris pardo, suena hueco al chocar, la cáscara se quiebra al presionarla y la semilla está dura y brillante. Cortar con tijera y recibir en canastos o 'cangureras', o tender lona o red bajo la copa para que no caiga al suelo. Asolear 2 a 3 días, seleccionar por tamaño y sanidad y empacar en cajas de 16 kg sin impurezas. Los huertos con Colima 204 producen 80 a 90 kg por árbol, con potencial de 12 a 15 t/ha.",
+      "cuidados": [
+        "Plantar la variedad Colima 204 del INIFAP, la más adaptada y preferida en la región.",
+        "Vigilar la huerta de julio a octubre, cuando salen las brotaciones principales, para detectar a tiempo la cenicilla, y apoyar su control con poda, riego, fertilización y limpieza de residuos.",
+        "Inspeccionar cada 15 días de noviembre a abril, podar y quemar las ramas con barrenador.",
+        "Cortar los frutos que quedan en el árbol después de la cosecha para reducir al barrenador del fruto.",
+        "Contra hormigas arrieras, podar la falda del árbol a 40-50 cm del suelo y poner barreras (cera vegetal sobre una franja de plástico o conos de plástico en plantas chicas).",
+        "Producción temprana: poda de sanidad en marzo-abril, defoliación inducida a fines de abril y tres riegos pesados (lámina de 20 a 30 cm) cada 12 a 15 días; adelanta la cosecha 20 a 30 días y escapa a la cenicilla."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": null,
+          "rendimiento": 9000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 35,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "La ficha cubre huertos de riego y de temporal, por eso modalidad es null aunque el extraído dice 'riego'; el cuadro de costos incluye riegos. Cuadro 7 con errores: el costo impreso (70,043 $/ha) no coincide con la suma de rubros (81,970 $/ha); la cosecha dice 562.5 cajas x $50 = 39,375, pero eso da 28,125; el ingreso neto impreso (244,237.5) no es 315,000 - 70,043, y la B/C de 3.48 equivale a ingreso neto / costo, no a ingreso bruto / costo. Solo se copiaron el rendimiento (9 t/ha) y el precio ($35/kg), que cuadran con el ingreso bruto de 315,000. La producción temprana usa un regulador de crecimiento para defoliar; se omitieron el producto y la dosis.",
+      "revisado": false
+    }
+  ]
+}
