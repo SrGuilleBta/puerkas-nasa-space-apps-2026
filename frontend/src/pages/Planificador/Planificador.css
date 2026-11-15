@@ -756,3 +756,241 @@
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
+
+/* ---------- Costos e ingresos, tareas y manejo del INIFAP ---------- */
+.economia-form {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+}
+
+.economia-form legend {
+  padding: 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.campos--tres {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 480px) {
+  .campos--tres {
+    grid-template-columns: 1fr;
+  }
+}
+
+.economia {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--verde-claro);
+}
+
+.economia h3,
+.tareas h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.economia small {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.economia__ganancia {
+  color: var(--verde-oscuro);
+}
+
+.economia__perdida {
+  color: #a63f3f;
+}
+
+.tareas {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(18, 48, 74, 0.04);
+}
+
+.tareas__vacio {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+}
+
+.tareas__vacio p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.tareas__lista {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tarea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  background: var(--tarjeta);
+}
+
+.tarea input[type="checkbox"] {
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+
+.tarea__texto {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+}
+
+.tarea__texto small {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.tarea--hecha .tarea__texto b {
+  text-decoration: line-through;
+  color: var(--tinta-suave);
+}
+
+.tarea--vencida {
+  background: var(--coral-claro);
+}
+
+.tarea--vencida .tarea__texto small {
+  color: #a63f3f;
+  font-weight: 700;
+}
+
+.tarea__borrar {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--tinta-suave);
+}
+
+.tarea__borrar:hover {
+  background: var(--coral-claro);
+  color: #a63f3f;
+}
+
+.tareas__nueva {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  gap: 6px;
+}
+
+@media (max-width: 560px) {
+  .tareas__nueva {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tareas__nueva input:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.manejo {
+  display: grid;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--borde);
+}
+
+.manejo ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.manejo__region {
+  margin: 0;
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.manejo__modalidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.manejo__modalidades button {
+  padding: 4px 10px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: var(--tarjeta);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+
+.manejo__modalidades button[aria-selected="true"] {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.manejo__datos {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+
+.manejo__datos dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.manejo__datos dd {
+  margin: 0;
+}
+
+.manejo__estado {
+  display: grid;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--borde);
+}
+
+.manejo__estado p {
+  margin: 0;
+}
+
+.manejo__estado-fila {
+  display: flex;
+  gap: 6px;
+}
+
+.manejo__cambiar {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--verde-oscuro);
+}

@@ -23,6 +23,11 @@ class PlanIn(Modelo):
     nombre: Nombre
 
 
+class DuplicarPlanIn(Modelo):
+    nombre: Nombre | None = None  # si no se manda: "<nombre del plan> (copy)"
+    anios: int = Field(default=1, ge=0, le=10)  # cuántos años se mueven las fechas (0 = copia exacta)
+
+
 class ParcelaIn(Modelo):
     nombre: Nombre
     hectareas: float = Field(gt=0, le=HECTAREAS_MAX)
@@ -43,12 +48,21 @@ class CatalogoIn(Modelo):
     catalogo_id: str = Field(min_length=1, max_length=80)  # id del catálogo de Cultivos, p. ej. "maiz-grano"
 
 
+# Datos económicos opcionales de una siembra (los captura el usuario): rendimiento esperado, precio de
+# venta por tonelada y costo por hectárea, en pesos.
+RENDIMIENTO_MAX = 1000  # t/ha
+PESOS_MAX = 10_000_000
+
+
 class SiembraIn(Modelo):
     cultivo_id: int
     fecha_siembra: date
     # Si no se manda, la cosecha se calcula con el ciclo del cultivo y las hectáreas son las de la parcela
     fecha_cosecha: date | None = None
     hectareas: float | None = Field(default=None, gt=0, le=HECTAREAS_MAX)
+    rendimiento_t_ha: float | None = Field(default=None, ge=0, le=RENDIMIENTO_MAX)
+    precio_t: float | None = Field(default=None, ge=0, le=PESOS_MAX)
+    costo_ha: float | None = Field(default=None, ge=0, le=PESOS_MAX)
 
 
 class SiembraPatch(Modelo):
@@ -58,9 +72,37 @@ class SiembraPatch(Modelo):
     fecha_siembra: date | None = None
     fecha_cosecha: date | None = None
     hectareas: float | None = Field(default=None, gt=0, le=HECTAREAS_MAX)
+    # Para borrar un dato económico se manda null
+    rendimiento_t_ha: float | None = Field(default=None, ge=0, le=RENDIMIENTO_MAX)
+    precio_t: float | None = Field(default=None, ge=0, le=PESOS_MAX)
+    costo_ha: float | None = Field(default=None, ge=0, le=PESOS_MAX)
+
+
+class TareaIn(Modelo):
+    titulo: Nombre
+    tipo: str = "other"  # plant, weed, fertilize, irrigate, pests, harvest, other
+    fecha: date
+
+
+class TareaPatch(Modelo):
+    """Solo se cambia lo que se manda."""
+
+    titulo: Nombre | None = None
+    tipo: str | None = None
+    fecha: date | None = None
+    hecha: bool | None = None
 
 
 # ---------- Salida ----------
+class TareaOut(Modelo):
+    id: int
+    siembra_id: int
+    titulo: str
+    tipo: str
+    fecha: date
+    hecha: bool
+
+
 class CultivoOut(Modelo):
     id: int
     nombre: str
@@ -84,6 +126,13 @@ class SiembraOut(Modelo):
     fecha_siembra: date
     fecha_cosecha: date
     hectareas: float
+    rendimiento_t_ha: float | None = None
+    precio_t: float | None = None
+    costo_ha: float | None = None
+    # Calculados: solo hay cifra si el usuario capturó los datos que hacen falta
+    ingreso_estimado: float | None = None
+    costo_total: float | None = None
+    ganancia_estimada: float | None = None
 
 
 class ParcelaOut(Modelo):
@@ -127,6 +176,13 @@ class ProximaCosechaOut(Modelo):
 
 
 class ResumenOut(Modelo):
+    # Economía estimada del plan: suma de las siembras que tienen los datos (null si ninguna)
+    inversion_estimada: float | None = None
+    ingreso_estimado: float | None = None
+    ganancia_estimada: float | None = None
+    siembras_con_economia: int = 0
+    tareas_pendientes: int = 0
+    tareas_vencidas: int = 0
     total_siembras: int
     cultivos_distintos: int
     en_curso: int

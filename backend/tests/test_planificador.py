@@ -362,6 +362,7 @@ class PruebasUbicaciones(unittest.TestCase):
         con = sqlite3.connect(":memory:")
         con.row_factory = sqlite3.Row
         con.executescript(db.MIGRACION_UBICACIONES)
+        con.execute("ALTER TABLE ubicacion ADD COLUMN cve_ent TEXT")  # como lo deja la migración 5
         con.execute("INSERT INTO ubicacion (nombre, clave, lat, lon, zona) VALUES ('Única', 'unica', 1, 1, 'UTC')")
         with self.assertRaises(servicio.Conflicto):
             servicio.borrar(con, 1)
@@ -372,7 +373,8 @@ class PruebasUbicaciones(unittest.TestCase):
         candidatos = [dict(self.GDL)]
         with patch.object(servicio, "geocodificar", new=AsyncMock(return_value=candidatos)):
             r = self.c.get(f"{self.U}/buscar", params={"q": "Guadalajara"})
-        self.assertEqual((r.status_code, r.json()), (200, candidatos))
+        # cveEnt (el estado) va null cuando el buscador no lo trae
+        self.assertEqual((r.status_code, r.json()), (200, [{**candidatos[0], "cveEnt": None}]))
         with patch.object(servicio, "geocodificar", new=AsyncMock(side_effect=servicio.ErrorBusqueda("sin servicio"))):
             self.assertEqual(self.c.get(f"{self.U}/buscar", params={"q": "Guadalajara"}).status_code, 502)
         # Una búsqueda de menos de 2 letras se rechaza sin llamar al servicio externo

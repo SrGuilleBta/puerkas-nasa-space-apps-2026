@@ -9,6 +9,7 @@ import unicodedata
 
 from app.db import clave
 from app.services import cultivos as catalogo_servicio
+from app.services import estados
 from app.services.planificador import NoEncontrado, _cultivo_dict, _existe, _fila
 
 CICLO_PERENNE = 365  # un frutal o pasto perenne se planea por año
@@ -118,14 +119,68 @@ def ficha_del_catalogo(catalogo_id: str) -> dict:
     return datos
 
 
-def ficha(con, cultivo_id: int) -> dict | None:
-    """Ficha del catálogo de un cultivo del Planificador; None si no viene del catálogo."""
-    fila = _existe(con, "cultivo", cultivo_id, "crop")
-    datos = _catalogo()["por_id"].get(fila["catalogo_id"]) if fila["catalogo_id"] else None
+def _ficha_inifap(f: dict) -> dict:
+    """Una ficha de la Agenda Técnica del INIFAP, con las llaves en camelCase para el frontend."""
+    return {
+        "modalidad": f.get("modalidad"), "ciclo": f.get("ciclo"), "region": f.get("region"),
+        "siembra": f.get("siembra"), "variedades": f.get("variedades") or [], "densidad": f.get("densidad"),
+        "fertilizacion": f.get("fertilizacion"), "riego": f.get("riego"), "plagas": f.get("plagas") or [],
+        "enfermedades": f.get("enfermedades") or [], "malezas": f.get("malezas"), "cosecha": f.get("cosecha"),
+        "cuidados": f.get("cuidados") or [], "cita": f.get("cita"), "revisado": bool(f.get("revisado")),
+        "costos": [
+            {"modalidad": c.get("modalidad"), "costoTotalHa": c.get("costo_total_ha"), "rendimiento": c.get("rendimiento"),
+             "unidadRendimiento": c.get("unidad_rendimiento"), "precio": c.get("precio")}
+            for c in f.get("costos") or []
+        ],
+    }
+
+
+def _manejo(datos: dict, cve_ent: str | None) -> dict:
+    """Manejo del cultivo según las agendas del INIFAP del estado; pide el estado si no se conoce."""
+    if not cve_ent:
+        return {"necesitaEstado": True, "estado": None, "fuente": None, "nota": None, "fichas": []}
+    m = catalogo_servicio.manejo(cve_ent, datos["id"], datos, None)
+    hay_inifap = m.get("fuente") == "INIFAP"
+    return {
+        "necesitaEstado": False, "estado": estados.ESTADOS.get(cve_ent), "fuente": "INIFAP" if hay_inifap else None,
+        "nota": m.get("nota"), "fichas": [_ficha_inifap(f) for f in m.get("fichas", [])] if hay_inifap else [],
+    }
+
+
+def estimaciones_economia(datos: dict, manejo: dict) -> list[dict]:
+    """Cifras de partida para costos e ingresos: las tablas de costos del INIFAP del estado (costo por
+    hectárea, rendimiento y precio) y la mediana nacional de SIAP. La persona las revisa y las ajusta."""
+    opciones = []
+    for f in manejo["fichas"]:
+        for c in f["costos"]:
+            if c["costoTotalHa"] is None:
+                continue
+            en_kg = c["unidadRendimiento"] == "kg/ha" and c["rendimiento"] is not None
+            opciones.append({
+                "fuente": f"INIFAP · {manejo['estado']}",
+                "modalidad": c["modalidad"],
+                "rendimientoTHa": round(c["rendimiento"] / 1000, 2) if en_kg else None,
+                "precioT": round(c["precio"] * 1000) if en_kg and c["precio"] is not None else None,  # $/kg -> $/t
+                "costoHa": c["costoTotalHa"],
+            })
+    nacional = datos.get("nacional") or {}
+    if datos.get("unidad") in ("Tonelada", "Ton") and nacional.get("rend_p50") and nacional.get("pmr_real_p50"):
+        opciones.append({
+            "fuente": "SIAP national median", "modalidad": None, "rendimientoTHa": nacional["rend_p50"],
+            "precioT": nacional["pmr_real_p50"], "costoHa": None,
+        })
+    return opciones
+
+
+def ficha_por_catalogo(catalogo_id: str, cve_ent: str | None = None) -> dict | None:
+    """Ficha completa de un cultivo del catálogo: condiciones, manejo del INIFAP (si se conoce el estado)
+    y cifras sugeridas para costos e ingresos. None si el id no existe en el catálogo."""
+    datos = _catalogo()["por_id"].get(catalogo_id)
     if datos is None:
         return None
     nacional = datos.get("nacional") or {}
     agua = datos.get("agua") or {}
+    manejo = _manejo(datos, cve_ent)
     return {
         "catalogoId": datos["id"],
         "nombreCientifico": datos.get("cientifico"),
@@ -142,4 +197,12 @@ def ficha(con, cultivo_id: int) -> dict | None:
         "rendimientoNacionalTHa": nacional.get("rend_p50"),
         "textoRevisado": bool(datos.get("texto_revisado")),
         "fuentes": datos.get("fuentes") or [],
+        "manejo": manejo,
+        "estimaciones": estimaciones_economia(datos, manejo),
     }
+
+
+def ficha(con, cultivo_id: int, cve_ent: str | None = None) -> dict | None:
+    """Ficha del catálogo de un cultivo del Planificador; None si no viene del catálogo."""
+    fila = _existe(con, "cultivo", cultivo_id, "crop")
+    return ficha_por_catalogo(fila["catalogo_id"], cve_ent) if fila["catalogo_id"] else None

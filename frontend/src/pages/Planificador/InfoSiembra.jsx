@@ -3,6 +3,9 @@ import { getClimaNasa } from "../../api/principal.js";
 import Cargable from "../../components/Cargable.jsx";
 import useDatos from "../../hooks/useDatos.js";
 import { aISO, deISO, diasEntre, fechaConAnio, sumarDias } from "../../utils/fechas.js";
+import EconomiaSiembra from "./EconomiaSiembra.jsx";
+import ManejoInifap from "./ManejoInifap.jsx";
+import TareasSiembra from "./TareasSiembra.jsx";
 import VentanaSiembra from "./VentanaSiembra.jsx";
 import { etiquetaTipo } from "../../utils/tipos.js";
 
@@ -68,8 +71,9 @@ const AGUA = { bajo: "Low", medio: "Medium", alto: "High", low: "Low", medium: "
 const rango = (r, unidad) => (r ? `${r[0]}–${r[1]}${unidad}` : "—");
 
 // Ficha del cultivo (catálogo de Cultivos): condiciones ideales y cuidados. No aparece si el cultivo no viene del catálogo.
-function FichaCultivo({ cultivoId }) {
-  const ficha = useDatos(() => getFicha(cultivoId), [cultivoId]).datos;
+function FichaCultivo({ cultivoId, municipio }) {
+  const estado = useDatos(() => getFicha(cultivoId, municipio), [cultivoId, municipio]);
+  const ficha = estado.datos;
   if (!ficha) return null;
   return (
     <section className="info-siembra__ficha" aria-label="Crop guide">
@@ -108,6 +112,7 @@ function FichaCultivo({ cultivoId }) {
           </ul>
         </>
       )}
+      {municipio && <ManejoInifap manejo={ficha.manejo} municipio={municipio} onEstado={estado.recargar} />}
       <small>
         Source: {ficha.fuentes.join(", ") || "Crops catalog"}.
         {!ficha.textoRevisado && " General draft text: confirm with a local technician before acting on it."}
@@ -117,7 +122,7 @@ function FichaCultivo({ cultivoId }) {
 }
 
 // Pestaña informativa de una siembra: estado, avance del ciclo y contexto dentro de su parcela.
-export default function InfoSiembra({ parcela, siembra, hoy, municipio }) {
+export default function InfoSiembra({ parcela, siembra, hoy, municipio, onTareas }) {
   const inicio = deISO(siembra.fechaSiembra);
   const fin = deISO(siembra.fechaCosecha);
   const total = Math.max(1, diasEntre(inicio, fin));
@@ -191,11 +196,15 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio }) {
         </div>
       </dl>
 
+      <EconomiaSiembra siembra={siembra} />
+
+      <TareasSiembra siembra={siembra} hoy={hoy} onCambio={onTareas} />
+
       {siembra.cultivo.catalogoId && municipio && (
         <VentanaSiembra catalogoId={siembra.cultivo.catalogoId} municipio={municipio} mesInicio={inicio.getMonth() + 1} />
       )}
 
-      <FichaCultivo cultivoId={siembra.cultivo.id} />
+      <FichaCultivo cultivoId={siembra.cultivo.id} municipio={municipio} />
 
       {municipio && <ClimaNasa municipio={municipio} inicio={inicio} fin={fin} hoy={hoy} />}
 
