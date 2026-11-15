@@ -42,6 +42,8 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 
 ## Lo que sigue
 
+- ~~Conectar Suelo~~: hecho en Principal (pH y humedad del módulo Suelo), el popup del cultivo (pH del suelo contra el ideal) y las alertas (suelo más seco de lo normal, SMAP). Falta usar el suelo en la franja de "cuándo sembrar aquí" y la textura en las fichas. `services/soilgrids.py` (viejo) ya no se usa: se puede borrar.
+
 - ~~Mejor fecha de siembra~~: hecha con temperatura (catálogo contra NASA POWER). Mejoras: usar los meses
   de siembra de las agendas INIFAP cuando haya estado, sumar el pH y el suelo cuando esté esa parte, y
   afinar con variedades (el trigo de otoño sale "regular" porque EcoCrop trae un solo rango de temperatura).

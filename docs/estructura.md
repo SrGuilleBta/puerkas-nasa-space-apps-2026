@@ -44,7 +44,8 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   └── noticias.py      noticias propias y feeds externos
 │   │   ├── services/            lógica y clientes de datos; no importan FastAPI
 │   │   │   ├── meteomatics.py   pronóstico y condiciones de hoy (caché de 10 min)
-│   │   │   ├── soilgrids.py     pH del suelo (caché de 24 h, busca puntos vecinos)
+│   │   │   ├── soilgrids.py     pH del suelo, versión anterior (Principal ya usa suelo_ubicacion.py)
+│   │   │   ├── suelo_ubicacion.py pH, humedad y percentil de humedad de una ubicación, con el módulo Suelo
 │   │   │   ├── alertas.py       reglas de clima, plagas y enfermedades
 │   │   │   ├── planificador.py  reglas del plan (sin traslapes, rotación, resumen)
 │   │   │   ├── ubicaciones.py   lugares guardados y geocodificación (solo México)

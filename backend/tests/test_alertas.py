@@ -176,6 +176,28 @@ class PruebasAlertas(unittest.TestCase):
         poco = clima([dia("2026-11-12", lluvia=40)])
         self.assertNotIn("encharcamiento", ids(alertas.calcular(poco, [sensible], HOY, f1)))
 
+    def test_suelo_seco_avisa_por_si_solo(self):
+        c = clima([dia("2026-11-11"), dia("2026-11-12")])
+        suelo = {"percentil": 8.0, "categoria": "D2", "humedad": 12.0, "normal": 20.0}
+        r = alertas.calcular(c, [activo("Trigo", "cereal")], HOY, suelo=suelo)
+        self.assertEqual(ids(r), ["sequia"])
+        self.assertEqual(r[0]["nivel"], "alta")
+        self.assertEqual(r[0]["cultivos"], ["Trigo"])
+
+    def test_suelo_normal_o_sin_cultivos_no_avisa(self):
+        c = clima([dia("2026-11-11")])
+        normal = {"percentil": 55.0, "categoria": None, "humedad": 20.0, "normal": 19.0}
+        seco = {"percentil": 8.0, "categoria": "D2", "humedad": 12.0, "normal": 20.0}
+        self.assertEqual(alertas.calcular(c, [activo("Trigo", "cereal")], HOY, suelo=normal), [])
+        self.assertEqual(alertas.calcular(c, [], HOY, suelo=seco), [])
+
+    def test_suelo_seco_se_suma_al_deficit_de_lluvia(self):
+        c = clima([dia("2026-11-11")])
+        suelo = {"percentil": 25.0, "categoria": "D0", "humedad": 15.0, "normal": 19.0}
+        r = alertas.calcular(c, [activo("Trigo", "cereal")], HOY, suelo=suelo)
+        self.assertEqual(r[0]["nivel"], "media")
+        self.assertIn("NASA SMAP", r[0]["detalle"])
+
 
 if __name__ == "__main__":
     unittest.main()
