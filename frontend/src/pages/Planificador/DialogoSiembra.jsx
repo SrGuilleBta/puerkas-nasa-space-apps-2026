@@ -1,6 +1,7 @@
 import { useId, useState } from "react";
 import { borrarSiembra, crearCultivo, crearSiembra, editarSiembra } from "../../api/planificador.js";
 import Dialogo from "../../components/Dialogo.jsx";
+import InfoSiembra from "./InfoSiembra.jsx";
 import { aISO, deISO, diasEntre, fechaConAnio, normalizar, sumarDias } from "../../utils/fechas.js";
 
 const TIPOS = ["cereal", "leguminosa", "frutal", "hortaliza", "oleaginosa", "forraje", "otro"];
@@ -258,11 +259,48 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
   );
 }
 
+// Una siembra existente se abre en "Información"; "Editar" tiene el formulario. Una nueva va directo al formulario.
+function Contenido({ parcela, siembra, ...resto }) {
+  const [pestana, setPestana] = useState("info");
+  if (!siembra) return <Formulario parcela={parcela} siembra={siembra} {...resto} />;
+
+  return (
+    <>
+      <div className="pestanas" role="tablist">
+        {[
+          ["info", "Información"],
+          ["editar", "Editar"],
+        ].map(([id, texto]) => (
+          <button key={id} type="button" role="tab" aria-selected={pestana === id} onClick={() => setPestana(id)}>
+            {texto}
+          </button>
+        ))}
+      </div>
+      {pestana === "info" ? (
+        <>
+          <InfoSiembra parcela={parcela} siembra={siembra} hoy={resto.hoy} />
+          <div className="acciones">
+            <span className="acciones__espacio" />
+            <button type="button" className="btn" onClick={resto.onCerrar}>
+              Cerrar
+            </button>
+            <button type="button" className="btn btn--primario" onClick={() => setPestana("editar")}>
+              Editar
+            </button>
+          </div>
+        </>
+      ) : (
+        <Formulario parcela={parcela} siembra={siembra} {...resto} />
+      )}
+    </>
+  );
+}
+
 export default function DialogoSiembra({ abierto, parcela, siembra, sugerencia, cultivos, hoy, onCerrar, onGuardado, onCultivoCreado }) {
   return (
-    <Dialogo abierto={abierto} titulo={siembra ? "Editar cultivo" : "Añadir cultivo"} onCerrar={onCerrar}>
+    <Dialogo abierto={abierto} titulo={siembra ? siembra.cultivo.nombre : "Añadir cultivo"} onCerrar={onCerrar}>
       {parcela && (
-        <Formulario
+        <Contenido
           parcela={parcela}
           siembra={siembra}
           sugerencia={sugerencia}

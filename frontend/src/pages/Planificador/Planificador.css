@@ -499,3 +499,127 @@
 .tiempo__pista:active .tiempo__manija {
   background: #5f5f5f;
 }
+
+/* ---------- Popup de siembra: pestañas e información ---------- */
+.pestanas {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  background: rgba(0, 230, 118, 0.1);
+}
+
+.pestanas button {
+  flex: 1;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+
+.pestanas button[aria-selected="true"] {
+  background: var(--tarjeta);
+  color: var(--verde-oscuro);
+  box-shadow: var(--sombra);
+}
+
+.info-siembra {
+  display: grid;
+  gap: 10px;
+}
+
+.info-siembra__estado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-siembra__estado p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.info-siembra__sello {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(18, 48, 74, 0.08);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.info-siembra__sello--curso {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.info-siembra__avance {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(18, 48, 74, 0.08);
+}
+
+.info-siembra__avance span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--verde);
+}
+
+.info-siembra__datos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0;
+}
+
+.info-siembra__datos div {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(0, 230, 118, 0.07);
+}
+
+.info-siembra__datos dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.info-siembra__datos dd {
+  display: grid;
+  margin: 2px 0 0;
+  font-weight: 700;
+}
+
+.info-siembra__datos small {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--tinta-suave);
+}
+
+.info-siembra__vecinas {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.info-siembra__vecinas p {
+  margin: 0;
+}
+
+.info-siembra .acciones {
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .info-siembra__datos {
+    grid-template-columns: 1fr;
+  }
+}
