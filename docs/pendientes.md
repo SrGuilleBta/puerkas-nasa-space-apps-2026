@@ -8,16 +8,15 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 - ~~Idioma de la plataforma~~: resuelto. La interfaz (pantallas, fechas y mensajes del backend) está
   en inglés; el código, los comentarios, los docs y los datos (cultivos, planes, parcelas) siguen en
   español. Los tipos de cultivo se guardan en español y se muestran con `utils/tipos.js`.
-  Pendiente: **traducir las pantallas nuevas a inglés desde el principio** (Noticias).
+  Las pantallas nuevas se hacen directamente en inglés.
 
-## Noticias (no empezada)
+## Noticias
 
-- Combinar **datos propios** (alertas, cosechas próximas, cambios del clima) con un **feed externo**.
-- Antes de elegir fuentes, verificar qué RSS responden y qué idioma traen (SADER, SMN, Conagua).
-- El feed externo no debe romper la pantalla si falla: las noticias propias siempre se muestran.
-- Pantalla `pages/Noticias/` y router `routers/noticias.py` (hoy es "En construcción").
-- La **alerta regional** de Principal sigue con texto de ejemplo y enlaza a Noticias: conectarla
-  cuando exista esa pantalla.
+- Hecha: avisos propios más feeds de CIMMYT y NASA Earth Observatory (en inglés).
+- Falta una noticia de **precios** (pendiente extra; depende de Mercado) y más fuentes si aparece
+  algún feed de México o la FAO que responda.
+- La tarjeta de Principal (antes "alerta regional") ya muestra el último titular de Noticias. Si se
+  consigue una fuente oficial de alertas (Protección Civil, SMN), se puede volver a usar ahí.
 
 ## Alertas de Principal
 

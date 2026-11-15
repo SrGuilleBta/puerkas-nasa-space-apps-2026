@@ -8,8 +8,8 @@ que importa es qué muestra cada pieza, no el valor.
 Para cada pantalla: qué muestra, de dónde saldría cada dato (fuentes en [datos.md](datos.md)) y si
 el dato está **resuelto**, **parcial** o **falta**. Es un punto de partida para mejorarlo.
 
-**Avance (2026-11-14):** **Principal** y **Planificador** ya están implementados con datos reales
-(clima de Meteomatics, pH de SoilGrids, planes en SQLite). Clima, Mercado, Cultivos y Noticias
+**Avance (2026-11-14):** **Principal**, **Planificador** y **Noticias** ya están implementados con datos reales
+(clima de Meteomatics, pH de SoilGrids, planes en SQLite, feeds de CIMMYT y NASA). Clima, Mercado y Cultivos
 siguen pendientes. Donde la tabla dice "Implementado" ya funciona en la aplicación.
 
 ## Piezas compartidas (en todas las pantallas)
@@ -30,7 +30,7 @@ Resumen de todo en una pantalla.
 | **Banner de alertas** (clima, plagas y enfermedades) | Reglas sobre el pronóstico de Meteomatics y los cultivos en curso del plan (`services/alertas.py`, `GET /api/principal/alertas`). Avisa helada, calor, lluvia fuerte y viento, y "condiciones favorables" para hongos (roya, tizón), pulgón/mosca blanca/araña roja y gusano cogollero. Son avisos para revisar el campo, no detecciones; los umbrales son generales y se afinarán con el catálogo de Cultivos. Alcance: lo que queda de la semana (el pronóstico es de lunes a domingo) | **Implementado** |
 | **Pronóstico semanal**: 7 días con temperatura y % de lluvia, marcando "hoy" | Meteomatics (Tmax/Tmin, probabilidad de lluvia, símbolo del cielo), con caché de 10 minutos | **Implementado** |
 | **Condiciones de hoy**: temperatura, sensación térmica, cielo, "óptimo para campo", humedad, viento, humedad del suelo, pH del suelo | Meteomatics (todo menos pH) y SoilGrids (pH; en zonas urbanas busca el punto con dato más cercano; si tarda más de 4 s sale vacío y queda en caché). "Óptimo para campo" es una regla nuestra | **Implementado** |
-| **Alerta regional** (ej. huracán, "hace 35 min", Protección Civil) | Alertas oficiales: no verifiqué ninguna API. Hoy muestra un ejemplo fijo | Falta (dato de ejemplo) |
+| **Alerta regional** (ej. huracán, Protección Civil) | No hay una API oficial de alertas que funcione. La tarjeta ahora muestra el **último titular de Noticias** (una externa si hay, si no un aviso propio) y lleva a esa pantalla; si Noticias falla, no aparece | **Implementado** (como "Latest news"); alertas oficiales siguen faltando |
 | **Cultivos activos**: carrusel con los cultivos en curso del plan, hectáreas, día del ciclo, etapa y avance | Del Planificador (`GET /api/principal/cultivos-activos`). Precio, variación y chips de demanda dependen de SIAP y no están | **Implementado** (sin precio) |
 | **Plan anual**: barras por cultivo con fechas y línea de "hoy" | Del Planificador (mismo plan) | **Implementado** |
 
@@ -80,10 +80,15 @@ Es el gestor de proyectos de cultivos del documento original. Los datos se guard
 
 ## 6. Noticias
 
+Mezcla **avisos propios** (calculados con los datos del usuario, siempre disponibles) y **titulares
+externos** de feeds RSS en inglés. Si un feed falla, se omite y la pantalla avisa sin romperse.
+
 | Qué muestra | Dato / fuente | Estado |
 |---|---|---|
-| Filtros Todas / Clima / Mercado / Región | Solo interfaz | Resuelto |
-| Tarjetas: alerta regional, precio del maíz, programas de agua, cultivos alternativos | No hay fuente definida (no verifiqué ninguna): podría ser contenido que escribimos, alertas calculadas con nuestros datos, o un feed externo | **Falta decidir** |
+| Filtros All / My farm / Weather / Research | Solo interfaz | **Implementado** |
+| **Avisos propios**: alertas de clima y plagas, cosechas que llegan en 45 días o menos, y la lluvia de los últimos 30 días en la ubicación activa. Cada uno abre la pantalla relacionada | Alertas (`services/alertas.py`), plan del Planificador y NASA POWER (`services/noticias.py`, `GET /api/noticias`) | **Implementado** |
+| **Titulares externos** con enlace a la fuente original | Feeds RSS de CIMMYT (centro internacional de maíz y trigo) y NASA Earth Observatory, con caché de 30 min. FAO, USDA y SADER no tienen feed utilizable (probados el 2026-11-14) | **Implementado** |
+| Precio del maíz y programas de agua del Figma | Dependen de Mercado y de una fuente de programas que no existe | Falta |
 
 ## Qué cambió respecto al documento original
 
@@ -101,7 +106,7 @@ Es el gestor de proyectos de cultivos del documento original. Los datos se guard
 2. Predicción de precios.
 3. Alertas oficiales (huracán, lluvia intensa) y pronóstico a un mes. (Las alertas de clima y plagas
    de Principal ya se calculan con nuestras reglas; esto se refiere a avisos oficiales.)
-4. Contenido de Noticias.
+4. ~~Contenido de Noticias~~ (resuelto: avisos propios y feeds de CIMMYT y NASA; falta lo de precios).
 5. Siembra ideal por cultivo.
 6. Capas del mapa global.
 
@@ -109,7 +114,7 @@ Es el gestor de proyectos de cultivos del documento original. Los datos se guard
 
 1. ~~¿Dónde se guardan las parcelas y planes del usuario?~~ Resuelto: SQLite en `backend/data/` (un solo usuario por ahora).
 2. **¿Mercado con datos reales o con serie anual de SIAP?** Con SIAP solo hay vista de 1 año; semana y mes exigen el scraper de SNIIM.
-3. **¿Noticias reales, escritas por nosotros o calculadas?**
+3. ~~¿Noticias reales, escritas por nosotros o calculadas?~~ Resuelto: calculadas con nuestros datos más feeds externos.
 4. **¿El mapa global usa capas NASA o puntos por ciudad?**
 5. ~~¿Qué ciudades?~~ Resuelto: 4 de inicio más las que agregue el usuario (solo México). Falta ligar cada lugar con SIAP.
 6. ~~Estructura de carpetas~~: ya está ajustada al Figma (`pages/` tiene Principal, Clima, Mercado, Cultivos, Planificador y Noticias).

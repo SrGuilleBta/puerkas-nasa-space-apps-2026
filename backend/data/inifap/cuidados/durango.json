@@ -1,0 +1,195 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/durango.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "10",
+  "estado": "Durango",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Durango. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Frijol",
+      "cientifico": "Phaseolus vulgaris",
+      "paginas": [11, 20],
+      "cultivo_ids": ["frijol"],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Clima semiárido templado, 17 °C de media anual, 350 a 535 mm de lluvia en verano y de 1,600 a 1,897 msnm. Suelos francos, con poca materia orgánica (<1.5 %), pH de 7.9 y pendientes de 2 a 7 % que favorecen la erosión.",
+      "siembra": {
+        "texto": "Fecha óptima del 24 de junio al 10 de julio, en riego y temporal, para todas las variedades. Las siembras tempranas piden más agua de riego y alargan el ciclo de variedades sensibles al fotoperiodo como Pinto Saltillo; las tardías bajan el rendimiento.",
+        "meses": [6, 7]
+      },
+      "variedades": [
+        "Pinto Saltillo (INIFAP)",
+        "Pinto Centauro (INIFAP)",
+        "PID 1 (INIFAP)",
+        "PID 2 (INIFAP)",
+        "AD 1 (INIFAP)",
+        "NOD 1 (INIFAP)",
+        "Pinto Nacional (criollo)",
+        "Negro San Luis (criollo)",
+        "Querétaro o Río Grande (criollo)",
+        "Canario (criollo)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Pinto Saltillo, Pinto Nacional y Negro San Luis de grano mediano: 35 a 37 kg/ha de semilla (105 a 120 mil plantas/ha). PID 1, Pinto Centauro y Negro San Luis de grano grande: 40 kg/ha en riego y 40 a 45 en temporal. Querétaro y Canario (grano pequeño): 32 a 35 kg/ha en riego y 30 en temporal. AD 1: 50 kg/ha.",
+      "fertilizacion": "Hacer análisis de suelo. Dosis media en riego: 35-50-00. Para una meta de 3 t/ha: 230 kg de urea y 250 kg de sulfato de potasio por ha (el azufre ayuda en suelos alcalinos). Inocular la semilla con 1 kg de Micorriza INIFAP. Con menos de 1.5 % de materia orgánica, incorporar 6 t/ha de abono orgánico y reincorporar la paja cada ciclo.",
+      "riego": "Presiembra unos 8 días antes de sembrar. Primer auxilio a los 25 a 35 días de la siembra si no ha llovido lo suficiente; segundo, 25 días después, para cubrir prefloración, floración y amarre de vainas (etapas críticas); tercero solo si falta humedad. Es sensible al encharcamiento: nivelar el terreno.",
+      "plagas": [
+        "Conchuela, borreguillo o pachona (Epilachna varivestis)",
+        "Picudo del ejote (Apion spp.)",
+        "Gallina ciega (Phyllophaga spp.)"
+      ],
+      "enfermedades": [
+        "Antracnosis",
+        "Tizón común",
+        "Roya o chahuixtle",
+        "Pudriciones de raíz (Rhizoctonia, Fusarium y Pythium)"
+      ],
+      "malezas": "Mantener el cultivo limpio los primeros 45 días después de la emergencia. Primera escarda a los 22 días de la siembra y segunda 20 días después, con deshierbe manual sobre la hilera si quedan malezas; el herbicida es el último recurso. Si se aplica en postemergencia, hacerlo con la maleza de unas cuatro hojas y menos de 10 cm, por la mañana, en día soleado y sin viento, sequía ni amenaza de lluvia. Principales: aceitilla, quelite, quelite cenizo, verdolaga y zacate agrarista.",
+      "cosecha": "Cortar al final de la madurez fisiológica, cuando las hojas pasan de verde a amarillo y las primeras vainas están casi secas; trillar unos 10 días después del corte y alomillado. Calibrar la trilladora para no quebrar grano. Rendimiento esperado: 3,000 kg/ha en riego en fecha óptima (1,400 en siembra tardía) y 1,000 kg/ha en temporal (hasta 300 con siembra tardía y lluvias irregulares).",
+      "cuidados": [
+        "Sembrar entre el 24 de junio y el 10 de julio; fuera de esa ventana baja el rendimiento.",
+        "Barbechar al menos a 30 cm al terminar la cosecha y subsolear si el suelo está compactado; esto también reduce gallina ciega y malezas.",
+        "Mantener libre de malezas los primeros 45 días con escardas a los 22 días y 20 días después; hacer pileteo para captar lluvia y frenar la erosión.",
+        "Dar el segundo riego de auxilio en prefloración y floración, las etapas críticas.",
+        "Vigilar la conchuela: actuar cuando haya 3 a 4 larvas de menos de 1 cm por metro de surco; contra el picudo, al empezar a abrir las flores.",
+        "Prevenir enfermedades con variedades mejoradas, rotación, semilla limpia y quitando plantas enfermas; no entrar al cultivo con el follaje mojado."
+      ],
+      "costos": [
+        {"modalidad": "riego", "costo_total_ha": 32729, "rendimiento": 3000, "unidad_rendimiento": "kg/ha",
+         "precio": 20, "ingreso_neto": 27271, "relacion_bc": 1.83},
+        {"modalidad": "temporal", "costo_total_ha": 16679, "rendimiento": 1000, "unidad_rendimiento": "kg/ha",
+         "precio": 20, "ingreso_neto": 3321, "relacion_bc": 1.19}
+      ],
+      "nota": "La ficha cubre riego y temporal (Cuadros 3 y 4). En riego el cuadro no da el precio: los 20 $/kg salen de ingreso bruto / rendimiento (60,000 / 3,000); en temporal el precio sí está en el texto. Costos totales tomados del texto de los cuadros (el extractor no los leyó); cuadran con ingreso bruto − ingreso neto y con la relación B/C.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz de riego",
+      "cientifico": "Zea mays L.",
+      "paginas": [21, 30],
+      "cultivo_ids": ["maiz-grano", "maiz-forrajero-en-verde"],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Climas de templado a muy seco, con 17.7 °C de media anual. En el Valle del Guadiana, suelos de 80 a 180 cm de profundidad, lluvia de verano de unos 444 mm y altitud media de 1,710 msnm.",
+      "siembra": {
+        "texto": "Maíces tardíos: del 1 al 15 de mayo. Intermedios: del 15 al 31 de mayo. Precoces: del 1 al 20 de junio (alternativa para siembras retrasadas). Cosecha aproximada del 20 de noviembre al 15 de diciembre.",
+        "meses": [5, 6]
+      },
+      "variedades": [
+        "H-135, H-366 y H-369 (tardíos, más de 160 días a madurez)",
+        "H-311, H-358 y H-376 (intermedios, 140 a 160 días)",
+        "H-323, H-324, VS-334 y H-326 (precoces, menos de 140 días)",
+        "H-383",
+        "H-385",
+        "H-379",
+        "H-443-A",
+        "H-386-A",
+        "H-384-A",
+        "H-377",
+        "H-327"
+      ],
+      "hibridos_comerciales": [
+        "A-7573",
+        "DK-2038",
+        "DK-2060",
+        "DK-2027",
+        "DK-2042",
+        "Cimarrón",
+        "Caimán",
+        "Gorila",
+        "AS-910",
+        "AS-905",
+        "AS-900",
+        "30G54",
+        "SB-304",
+        "Arrayán",
+        "M-355",
+        "Ocelote",
+        "AS-1501"
+      ],
+      "densidad": "Surcos a 0.81 m. Tardíos: 6 plantas por metro (68 mil/ha). Intermedios: 7 plantas por metro (80 mil/ha). Precoces: 8 semillas por metro (92 mil/ha). Forraje: hasta 120 mil plantas/ha.",
+      "fertilizacion": "Calcular el nitrógeno con análisis de suelo (N inorgánico en ppm × 4 = kg/ha de N disponible), una meta de rendimiento según el historial de la parcela y un requerimiento de 14 kg de N por tonelada de materia seca. Eficiencia del N: 0.6 en riego por gravedad no tecnificado, 0.7 tecnificado y 0.8 en aspersión o goteo. El cuadro de costos considera 379 kg de urea y 173 kg de DAP por ha.",
+      "riego": "Riego de presiembra y auxilios. Intermedio-precoces: 1.º a los 35 días de la siembra, 2.º 35 días después, 3.º en floración (jilotes), 4.º 10 a 15 días después de la floración y 5.º con el grano lechoso-masoso. Intermedios: 1.º a los 35 días, 2.º y 3.º cada 25 días, 4.º en floración, 5.º 10 a 15 días después y 6.º con el grano lechoso. Floración y llenado de grano son críticas. Si llueve más de 30 mm, no regar para evitar acame.",
+      "plagas": [
+        "Gusano trozador (Agrotis ipsilon)",
+        "Gusano cogollero (Spodoptera frugiperda)"
+      ],
+      "enfermedades": [
+        "Carbón de la espiga (Sphacelotheca reiliana)"
+      ],
+      "malezas": "Mantener el cultivo limpio los primeros 50 días después de la siembra; luego el follaje cubre el suelo. El control preemergente se hace inmediatamente después de la siembra y el de zacate Johnson después de la primera escarda y antes del primer auxilio. Dos escardas. Principales: correhuela, hierba amargosa, trompillo, quelite, cadillo y zacates pinto, pegarropa y Johnson.",
+      "cosecha": "Grano: cosechar con menos de 14 % de humedad (el grano se quiebra con los dientes); rendimiento esperado de 12 t/ha. Forraje: cuando la línea de leche avanza de 1/4 a 1/3 del grano y la materia seca está entre 28 y 35 %; rendimiento de 20 t/ha de materia seca (60 t de forraje verde).",
+      "cuidados": [
+        "Sembrar según el ciclo del híbrido: tardíos del 1 al 15 de mayo, intermedios del 15 al 31 de mayo y precoces del 1 al 20 de junio.",
+        "Renovar la semilla de híbrido cada año: si se resiembra, el rendimiento baja mucho.",
+        "Nivelar el terreno (5 a 20 cm por cada 100 m) y surcar contra la pendiente para no encharcar ni desperdiciar agua.",
+        "No dejar sin riego la floración ni el llenado de grano; si llueve más de 30 mm, no regar.",
+        "Mantener limpio de malezas los primeros 50 días.",
+        "Donde haya carbón de la espiga, rotar cultivos o sembrar un híbrido resistente."
+      ],
+      "costos": [
+        {"modalidad": "riego", "costo_total_ha": 36939, "rendimiento": 12000, "unidad_rendimiento": "kg/ha",
+         "precio": 6, "ingreso_neto": 35061, "relacion_bc": 1.94},
+        {"modalidad": "riego", "costo_total_ha": 33339, "rendimiento": 60000, "unidad_rendimiento": "kg/ha",
+         "precio": 1, "ingreso_neto": 26661, "relacion_bc": 1.79}
+      ],
+      "nota": "El Cuadro 10 trae dos casos: el primer costo es maíz para grano (6 $/kg) y el segundo maíz forrajero (60 t/ha de forraje verde a 1 $/kg en pie). Costos totales tomados del texto (el extractor no los leyó); cuadran con ingreso bruto − neto. Las relaciones B/C impresas (1.94 y 1.79) están truncadas: el cálculo da 1.95 y 1.80. Los híbridos H- y VS- se pusieron en variedades por ser la nomenclatura de los materiales públicos del INIFAP; la agenda no lo dice ni da la empresa de los demás. M-355 se dejó como comercial por no poder confirmarlo. Las fechas de siembra del Cuadro 9 por híbrido van del 1 de mayo al 20 de junio.",
+      "revisado": false
+    },
+    {
+      "ficha": "Tomate rojo",
+      "cientifico": null,
+      "paginas": [31, 37],
+      "cultivo_ids": ["tomate-rojo-jitomate"],
+      "tipo_cultivo": "anual en invernadero",
+      "modalidad": "riego",
+      "ciclo": null,
+      "region": "Clima templado subhúmedo con lluvias en verano, 14 a 17 °C de media anual, heladas en invierno y periodo libre de heladas de finales de abril a finales de octubre. Lluvia de 450 a 650 mm. Suelos de más de 90 cm, pH de 6.2 a 7.8 y pendientes de 0 a 5 %.",
+      "siembra": {
+        "texto": "Trasplante en la segunda quincena de marzo, con las camas a humedad cercana a capacidad de campo.",
+        "meses": [3]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Heredero",
+        "Mago",
+        "San Blas",
+        "Blindon"
+      ],
+      "densidad": "Una hilera al centro de cada cama, con 15 cm entre plantas: 30 mil plantas/ha.",
+      "fertilizacion": "Fertirriego diario, ajustado a la etapa del cultivo, la variedad, el clima y el análisis de suelo y agua. Antes de formar las camas se incorporan 75 t/ha de materia orgánica.",
+      "riego": "Riego por goteo con cintilla bajo acolchado plástico; el requerimiento diario de agua varía según la etapa del cultivo.",
+      "plagas": [
+        "Mosca blanca (Bemisia tabaci)",
+        "Paratrioza (Bactericera cockerelli)",
+        "Trips (Thrips spp.)",
+        "Pulgones"
+      ],
+      "enfermedades": [
+        "Pudriciones de raíz por Fusarium spp. y Rhizoctonia spp.",
+        "Alternaria spp.",
+        "Cenicillas",
+        "Virus rugoso del tomate (ToBRFV)",
+        "Cáncer bacteriano (Clavibacter michiganensis)"
+      ],
+      "malezas": "Malva, zacate Johnson y quelites. Manejo integrado con control mecánico y químico; el herbicida se aplica dirigido solo a la maleza, con pantallas en las boquillas para no quemar el cultivo.",
+      "cosecha": "Empieza a los 80 días del trasplante y sigue de dos a tres veces por semana hasta terminar el ciclo. Rendimiento estimado: 250 t/ha.",
+      "cuidados": [
+        "Preparar el suelo: limpiar residuos, subsolear, rastrear, incorporar 75 t/ha de materia orgánica y formar camas con cintilla y acolchado.",
+        "Trasplantar en la segunda quincena de marzo, con las camas húmedas, a 15 cm entre plantas.",
+        "Hacer a tiempo tutoreo, anillado y enrede, y podas de desbrote y deshoje para airear la planta.",
+        "Asegurar la polinización para el amarre de frutos.",
+        "Contra Fusarium y Rhizoctonia, usar control biológico (Trichoderma harzianum, Streptomyces lydicus).",
+        "Prevenir el virus rugoso y Clavibacter desinfectando la herramienta con hipoclorito de sodio y restringiendo la entrada de personal a las áreas infectadas."
+      ],
+      "costos": [
+        {"modalidad": "riego", "costo_total_ha": 1380509, "rendimiento": 250000, "unidad_rendimiento": "kg/ha",
+         "precio": 10, "ingreso_neto": 1119491, "relacion_bc": 1.81}
+      ],
+      "nota": "Producción en invernadero con riego por goteo, por eso la modalidad es riego (el cuadro de costos no la indica). Ciclo en null: la agenda solo da el trasplante en marzo y no nombra el ciclo. La agenda no da nombre científico. Las variedades recomendadas (Heredero, Mago, San Blas, Blindon) se pusieron como comerciales; la agenda no da la empresa. El costo total (1,380,509 $/ha) cuadra con ingreso bruto − neto y con la suma de los rubros, pero algunos subtotales del Cuadro 11 (fungicidas, labores manuales) no cuadran con sus renglones; conviene cotejarlo con el PDF. El texto de riego y fertilización parece incompleto (probablemente había cuadros que no se extrajeron).",
+      "revisado": false
+    }
+  ]
+}

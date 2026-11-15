@@ -53,6 +53,7 @@ Logs: `docker compose logs -f` · Apagar: `docker compose down`.
 | Cómo organizar el código y agregar un módulo (con ejemplo completo) | [docs/estructura.md](docs/estructura.md) |
 | Qué datos usa cada pantalla y de dónde salen | [docs/datos.md](docs/datos.md) ([versión CSV](docs/datos.csv)) |
 | Los CSV de SIAP: formato y cómo descargar otros años | [backend/data/siap/README.md](backend/data/siap/README.md) |
+| Pipeline de Cultivos: indicadores por municipio, JSON generados y `/api/cultivos` | [docs/cultivos-pipeline.md](docs/cultivos-pipeline.md) |
 
 Resumen para empezar a programar:
 

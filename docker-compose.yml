@@ -6,8 +6,14 @@ services:
   backend:
     image: python:3.12-slim
     working_dir: /code
+    # Si faltan los datos de Cultivos (backend/data/cultivos), corre la pipeline una vez
+    # antes de arrancar (~1 min). Para regenerarlos: docker compose run --rm backend
+    #   sh -c "pip install -r pipeline/requirements.txt && python -m pipeline.cultivos"
     command: >
       sh -c "pip install --no-cache-dir -r requirements.txt &&
+             (test -f data/cultivos/meta.json ||
+              (pip install --no-cache-dir -r pipeline/requirements.txt && python -m pipeline.cultivos) ||
+              echo 'AVISO: la pipeline de Cultivos fallo; /api/cultivos respondera 404') &&
              uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
     volumes:
       - ./backend:/code

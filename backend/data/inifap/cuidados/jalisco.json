@@ -1,0 +1,912 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/jalisco.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "14",
+  "estado": "Jalisco",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Jalisco. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Agave tequilero",
+      "cientifico": "Agave tequilana Weber var. azul",
+      "paginas": [
+        11,
+        24
+      ],
+      "cultivo_ids": [
+        "agave"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": null,
+      "ciclo": "PER",
+      "region": "Regiones semiáridas y subhúmedas con mucho sol, de 1,000 a 2,200 msnm (óptimo 1,000 a 2,000), temperatura media cercana a 20 °C y 700 a 1,200 mm de lluvia. Sensible al frío y a las heladas. Suelos de textura media (francos, franco-arenosos o franco-arcillosos), aun con pendiente.",
+      "siembra": {
+        "texto": "Según la localidad, de marzo a agosto; idealmente al inicio del temporal (mayo a septiembre) para asegurar el establecimiento.",
+        "meses": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Agave tequilana Weber var. azul (único taxón permitido por la NOM-006-SCFI-2012; se propaga por hijuelos)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "3,300 plantas/ha (hileras a 3 m) o 4,000 plantas/ha (hileras a 2.5 m), con un metro entre plantas.",
+      "fertilizacion": "Si el suelo tiene menos de 2 % de materia orgánica, al plantar al menos 250 g de composta más 50 g de 18-46-00 por planta. Del 2º al 4º año, urea, DAP, cloruro de potasio y micronutrientes (kg/ha, para 3,300 plantas/ha): 2º año 200-320-160-20; 3º año 280-400-200-20; 4º año 320-400-200-20. Aplicar a un lado de la planta, a 25-30 cm de la base de la piña, e incorporar con rastra.",
+      "riego": null,
+      "plagas": [
+        "Gallina ciega",
+        "Escarabajo rinoceronte",
+        "Piojo harinoso",
+        "Escama armada",
+        "Chinche del agave",
+        "Chapulines",
+        "Trozador del cogollo",
+        "Picudo del agave"
+      ],
+      "enfermedades": [
+        "Marchitez del agave (Fusarium oxysporum), la principal",
+        "Tizón foliar (Cercospora sp.)",
+        "Mancha anular (Didymosphaeria sp.)",
+        "Pudrición del cogollo (Erwinia grupo carotovora)"
+      ],
+      "malezas": "Combinar deshierbes manuales, rastreos donde el terreno lo permita y coberturas vegetales (de preferencia leguminosas). Desde el 2º año, paso de arado en secas, rastra al inicio de lluvias, deshierbe manual a mitad del temporal y otro al final, dejando la maleza cortada entre hileras para evitar incendios y erosión.",
+      "cosecha": "Jima a los 6 a 8 años, cuando aparece el quiote (cortarlo para no perder azúcares) y las hojas basales se ven hinchadas, amarillentas o rojizas. Piñas de 30 a 70 kg. Rendimiento esperado de hasta 132 t/ha.",
+      "cuidados": [
+        "Hacer análisis de suelo antes de plantar; si es ácido, encalar e incorporar con rastra.",
+        "Desinfectar los hijuelos antes de plantar y dejarlos al sol dos semanas.",
+        "En terrenos con más de 2 % de pendiente, plantar en curvas a nivel.",
+        "Aplicar desde el primer año, en julio o al inicio del temporal, la solución preventiva de sulfato de cobre contra la marchitez.",
+        "Revisar las plantas y actuar contra plagas solo al llegar al umbral (p. ej. 20 % de 200 plantas revisadas con daño de trozador o picudo).",
+        "Cortar el quiote en cuanto aparezca para no perder azúcares de la piña."
+      ],
+      "costos": [
+        {
+          "modalidad": null,
+          "costo_total_ha": 106325.4,
+          "rendimiento": 132000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.5,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "tipo_cultivo venía vacío en el extraído; se puso perenne según el texto. El Cuadro 7 suma los costos de todo el ciclo (establecimiento, años 2 a 5 y jima), no de un año. El texto del cuadro está truncado después del ingreso bruto ($594,000): el ingreso neto (487,110.6) y la relación B/C (5.56) del extraído no cuadran con 594,000 − 106,325.4, por lo que quedan en null. El cuadro llama 'rendimiento de hijuelo' a los 132,000 kg/ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Avena",
+      "cientifico": "Avena sativa L.",
+      "paginas": [
+        25,
+        31
+      ],
+      "cultivo_ids": [
+        "avena-forrajera-en-verde",
+        "avena-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "De 1,500 a 2,850 msnm, temperatura media de 14 a 18 °C, 500 a 700 mm de lluvia y estación de crecimiento de 90 a 100 días. Principalmente en Los Altos (temporal); en la Ciénega de Chapala se siembra de riego en otoño-invierno.",
+      "siembra": {
+        "texto": "Ojuelos, Lagos de Moreno y Villa Hidalgo: al inicio del temporal. Tepatitlán, Arandas y Jesús María: segunda quincena de junio a primera quincena de julio (antes, el exceso de humedad puede acamar las plantas).",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Turquesa",
+        "Obsidiana",
+        "Rubí",
+        "Zafiro",
+        "Agatha",
+        "Jade"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "100 a 110 kg de semilla/ha con sembradora triguera (chuzos a 15 cm, semilla a 5 cm); 130 kg/ha si se siembra al voleo.",
+      "fertilizacion": "Arandas, Jesús María y Tepatitlán: 100 kg de urea con 50 kg de superfosfato de calcio triple. Zonas semiáridas (Ojuelos, Lagos de Moreno, Villa Hidalgo): 50 kg de urea con superfosfato triple. La mitad de la urea y todo el superfosfato a la siembra; el resto de la urea a los 40 días, con humedad en el suelo.",
+      "riego": null,
+      "plagas": [
+        "Pulgón de la espiga (Sitobion avenae), vector del virus del enanismo amarillo de la cebada"
+      ],
+      "enfermedades": [
+        "Royas o chahuixtles (Puccinia coronata y P. graminis)"
+      ],
+      "malezas": "Puede reducir el rendimiento más de 40 %. Controlar cuando la avena tiene de 3 a 4 hojas y 5 cm de altura; el barbecho y el rastreo previos ayudan a limpiar el terreno.",
+      "cosecha": "Para forraje, cortar, engavillar y amonar con 80 % de madurez fisiológica (grano lleno, hojas aún verdes). Trillar con el grano cerca de 13 % de humedad. Rendimiento esperado: hasta 4 t/ha de grano y hasta 27 t/ha de forraje.",
+      "cuidados": [
+        "Usar semilla certificada; si es de años anteriores, hacer prueba de germinación (al menos 80 %).",
+        "Sembrar variedades resistentes a roya y en la fecha recomendada.",
+        "No sembrar Chihuahua: es muy susceptible a royas y en temporal lluvioso puede perderse toda la cosecha.",
+        "Revisar el pulgón en espigamiento o floración; el umbral es de 35 a 40 pulgones por tallo.",
+        "Para mejor calidad de forraje, cortar en embuche; para más volumen, en grano lechoso a masoso."
+      ],
+      "costos": [
+        {
+          "modalidad": null,
+          "costo_total_ha": 21685,
+          "rendimiento": 23000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 1.06,
+          "ingreso_neto": 2695,
+          "relacion_bc": 1.12
+        }
+      ],
+      "nota": "La ficha cubre temporal (PV, con fechas) y riego en la Ciénega (OI, sin fechas); se usó ciclo PV. El Cuadro 10 llama 'rendimiento de semilla' a 23,000 kg/ha a $1.06/kg, que corresponde a forraje; incluye además costos de riego.",
+      "revisado": false
+    },
+    {
+      "ficha": "Cártamo",
+      "cientifico": "Carthamus tinctorius L.",
+      "paginas": [
+        32,
+        40
+      ],
+      "cultivo_ids": [
+        "cartamo"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "OI",
+      "region": "Regiones de Lagos de Moreno, Ameca, El Grullo y Colotlán, con temperatura media de 16 a 24 °C y 500 a 1,200 mm de lluvia según la zona. Se siembra en otoño-invierno con riego o humedad residual.",
+      "siembra": {
+        "texto": "Regiones Centro y Sur: del 20 de noviembre al 30 de diciembre, cuando se retiren las lluvias y haya humedad; óptimo en la primera quincena de diciembre. Cada día de retraso baja unos 20 kg/ha de grano.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Watson (oleica)",
+        "Chey-OL",
+        "Che All",
+        "Semay OL",
+        "CIANO-OL",
+        "Guayalejo",
+        "CIANO-LIN",
+        "Serie RC (RC-1002-L, RC-1005-L, RC-1033-L)",
+        "Forrcart (forrajera)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "12 kg/ha de semilla certificada (mínimo 80 % de germinación), unas 230,000 plantas/ha; 16 kg/ha en siembras tardías de humedad residual.",
+      "fertilizacion": "Riego: 120 kg de N y 46 kg de P al sembrar. En humedad residual no responde a fertilizante sólido; aplicar fertilización foliar al inicio de la ramificación.",
+      "riego": "Siembra en seco con riego de emergencia pesado (lámina de 18 a 20 cm). Calendario sugerido de 0-50-80-100 días, solo en suelos arcillosos.",
+      "plagas": [
+        "Barrenador del tallo",
+        "Pulgón (Myzus)",
+        "Chinches lygus y apestosa",
+        "Gusano soldado (Spodoptera exigua)",
+        "Falso medidor de la col"
+      ],
+      "enfermedades": [
+        "Falsa cenicilla (Ramularia carthami), la principal",
+        "Mancha foliar (Alternaria carthami)",
+        "Pudrición de raíz (Phytophthora, Pythium, Fusarium)",
+        "Roya o chahuixtle (Puccinia carthami)"
+      ],
+      "malezas": "Periodo crítico: los primeros 40 días tras la emergencia. En lotes enmalezados sembrar en húmedo; pasar cultivadora a los 30 días y después del primer riego de auxilio, y deshierbar. Evitar que la maleza semille. Principales: girasol, mostaza, malva, mostacilla, alpistillo, avena silvestre, correhuela y zacate Johnson.",
+      "cosecha": "De 140 a 190 días después de la siembra, cuando las brácteas se ponen café y la semilla se desprende fácil, con 6 a 8 % de humedad. Almacenar con menos de 15 %. Rendimiento esperado: 2 a 2.5 t/ha de grano y 7 a 8 t/ha de materia seca de forraje.",
+      "cuidados": [
+        "Sembrar en la primera quincena de diciembre: el retraso cuesta rendimiento.",
+        "Usar semilla certificada y no sembrar muy denso para prevenir la mancha foliar.",
+        "Dar dos escardas: a los 30 días y después del primer riego de auxilio.",
+        "Mantener el cultivo limpio los primeros 40 días.",
+        "Evitar exceso de humedad en el suelo para prevenir pudrición de raíz.",
+        "Combatir el pulgón solo si las hojas se enmielan; los defoliadores, al ver 20 % o más de daño."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 22510,
+          "rendimiento": 3000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 2690,
+          "relacion_bc": 1.11
+        }
+      ],
+      "nota": "El precio no viene en el Cuadro 14 (los $7.50 son costo por kg); el ingreso bruto impreso es $25,200. El cuadro incluye costos de riego, por eso su modalidad es riego.",
+      "revisado": false
+    },
+    {
+      "ficha": "Chía",
+      "cientifico": "Salvia hispanica L.",
+      "paginas": [
+        41,
+        46
+      ],
+      "cultivo_ids": [
+        "chia"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "De 1,000 a 2,500 msnm, temperatura media de 18 a 26 °C, 800 a 1,000 mm de lluvia y pendiente menor de 4 %. Planta de día corto. Suelos con drenaje medio a bueno y pH de 5.5 a 7.3. Se concentra en Acatic, Cuquío, Zapotlanejo, Ixtlahuacán del Río, Jamay, Zapotlán del Rey y Tomatlán.",
+      "siembra": {
+        "texto": "Del 15 al 31 de julio. Antes hay exceso de follaje y acame; después baja el rendimiento.",
+        "meses": [
+          7
+        ]
+      },
+      "variedades": [
+        "B54 (semilla blanca)",
+        "P75 'Pinta'"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "De 6 a 10 kg de semilla/ha, sembrada superficial, en surcos de 70 a 80 cm.",
+      "fertilizacion": "80-40-40 más micronutrientes: 40-40-40 más micronutrientes a la siembra y 40-00-00 a los 40 días de la emergencia.",
+      "riego": "Temporal con lluvias bien distribuidas; donde llueve poco se requieren riegos de auxilio.",
+      "plagas": [
+        "Gallina ciega (Phyllophaga sp.)",
+        "Mosquita blanca",
+        "Chapulín"
+      ],
+      "enfermedades": [],
+      "malezas": "Muy sensible a la maleza los primeros 45 días. Dar un paso de rastra antes de sembrar para eliminar la primera generación de malezas y controlar en postemergencia cuando la maleza mida menos de 5 cm.",
+      "cosecha": "Cuando el 80 % del follaje pierde color y se oscurece, la espiga pierde su color y al sacudir la planta caen semillas. Manual (manojos y trilla) o con trilladora adaptada. Secar la semilla a 8 % de humedad y guardar en sacos sellados. Rendimiento esperado: unos 960 kg/ha.",
+      "cuidados": [
+        "Respetar la ventana del 15 al 31 de julio.",
+        "No enterrar la semilla más de 2 cm, sobre todo en suelos arcillosos.",
+        "Mantener libre de maleza los primeros 45 días.",
+        "Fertilizar poco: es un cultivo rústico.",
+        "Secar la semilla a 8 % de humedad antes de guardarla."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": null,
+          "rendimiento": 960,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 35781.14,
+          "relacion_bc": 2.63
+        }
+      ],
+      "nota": "Cuadro 16 con errores: el costo total impreso ($21,410) no coincide con la suma de los rubros ($21,819), y el ingreso neto y la relación B/C impresos cuadran con $21,819; el costo total queda en null. El precio impreso ($68) no cuadra con el ingreso bruto ($57,600 = 960 kg × $60), por lo que también queda en null. La agenda no da enfermedades para esta ficha. B54 y P75 se describen como variedades 'existentes en el mercado', sin indicar empresa.",
+      "revisado": false
+    },
+    {
+      "ficha": "Frijol",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        47,
+        54
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Desde el nivel del mar hasta 2,000 msnm, temperatura media de 20 a 22 °C durante el ciclo y 600 a 900 mm de lluvia anual.",
+      "siembra": {
+        "texto": "DDR 01, 03, 06 y 07: con el temporal establecido, del 10-20 de julio al 10 de agosto. Altos Norte (Lagos de Moreno): del 24 de junio al 10 de julio. Altos Sur (Acatic, Tepatitlán, Arandas, Jesús María): del 10 de julio al 10 de agosto.",
+        "meses": [
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Regional 87",
+        "Azufrasin",
+        "Bayo Azteca",
+        "Higuera",
+        "Janasa",
+        "Noroeste",
+        "Dalia",
+        "Junio León",
+        "Marcela",
+        "Anita",
+        "Dolores",
+        "Eugenia",
+        "Pinto Villa",
+        "Pinto Bayacora",
+        "Pinto Saltillo",
+        "Azufrado Tapatío",
+        "Flor de Mayo M-38",
+        "Alteño 2001",
+        "Bayo INIFAP",
+        "Criollas"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Surcos a 60 cm con 10 semillas por metro (unos 45 kg/ha, ~155,000 plantas/ha); en surcos a 76 cm, 15 a 18 semillas por metro (~220,000 plantas/ha).",
+      "fertilizacion": "Centro, Sur y Altos Sur: 64-46-00 a la siembra (100 kg de DAP + 100 kg de urea o 230 kg de sulfato de amonio). Altos Norte: 46-46-00 a la siembra (100 kg de DAP + 60 kg de urea o 140 kg de sulfato de amonio). Se puede usar micorriza INIFAP (Glomus intraradices) a 1 kg/ha.",
+      "riego": "En el sur (p. ej. Zacoalco de Torres), 4 a 6 riegos ligeros. Riego de presiembra pesado (20 a 30 cm) y auxilios ligeros (6 a 8 cm) para no tirar flores; un auxilio a los 40-45 días, de 6 a 8 días después de iniciar la floración.",
+      "plagas": [
+        "Chicharrita (Empoasca kraemeri)",
+        "Conchuela (Epilachna varivestis)",
+        "Diabróticas (Diabrotica spp.)",
+        "Mosquita blanca",
+        "Gallina ciega y gusano de alambre",
+        "Roedores"
+      ],
+      "enfermedades": [
+        "Tizón de halo",
+        "Tizón común",
+        "Antracnosis",
+        "Roya",
+        "Tizón foliar (Alternaria spp.)",
+        "Virus del mosaico común",
+        "Virus del mosaico amarillo"
+      ],
+      "malezas": "Mantener limpio desde la primera hoja trifoliada hasta la formación de las primeras vainas. Control manual o con escardas (una a los 30 días de sembrado); lo más eficiente es combinar una aplicación preemergente con deshierbes manuales o mecánicos.",
+      "cosecha": "Arrancar cuando la planta esté defoliada más de 75 %, las vainas secas y el grano con 25 a 30 % de humedad; trillar con 15 a 18 %. Almacenar seco (12 a 14 %) en bodega limpia, en costales apilados a menos de 3 m, revisando humedad y gorgojos. Rendimiento esperado según la agenda: 2.5 a 4 t/ha.",
+      "cuidados": [
+        "No sembrar antes de la fecha recomendada: el exceso de humedad enferma al frijol.",
+        "Usar semilla certificada de variedades resistentes: varias enfermedades se transmiten por semilla.",
+        "Mantener el cultivo limpio entre la primera hoja trifoliada y las primeras vainas.",
+        "Revisar plagas y actuar al llegar al umbral (p. ej. 15 % de plantas con daño de conchuela o más de cinco diabróticas por planta).",
+        "Secar el grano a 12-14 % antes de almacenar y revisar gorgojos."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 23590,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 18.7,
+          "ingreso_neto": 23160,
+          "relacion_bc": 1.98
+        }
+      ],
+      "nota": null,
+      "revisado": false
+    },
+    {
+      "ficha": "Garbanzo Blanco",
+      "cientifico": "Cicer arietinum L.",
+      "paginas": [
+        55,
+        64
+      ],
+      "cultivo_ids": [
+        "garbanzo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Ciénega de Chapala (DDR 06 La Barca): 1,300 a 1,600 msnm, temperatura media de 18 a 20 °C, 800 a 900 mm de lluvia y pendiente menor de 10 %. Suelos profundos con buena retención de humedad y buen drenaje (Vertisol pélico, Feozem háplico, Luvisol férrico).",
+      "siembra": {
+        "texto": "Del 15 de noviembre al último día de febrero; hasta el 15 de marzo si se vende en verde. Las siembras de noviembre-diciembre tienen más riesgo de heladas; las de febrero-marzo dan menos vainas pero mejor precio.",
+        "meses": [
+          11,
+          12,
+          1,
+          2,
+          3
+        ]
+      },
+      "variedades": [
+        "Blanco Sinaloa 92",
+        "Costa 2004",
+        "BlancoSon",
+        "Blanoro",
+        "Jumbo 2010",
+        "Mazocahui",
+        "Nubia",
+        "Tequi",
+        "Blanco 98",
+        "El Patrón",
+        "Lerma",
+        "Pénjamo",
+        "San Antonio 05"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Noviembre-diciembre: 14 a 16 semillas por metro (100 a 130 kg/ha). Enero-marzo: 16 a 18 semillas por metro (130 a 150 kg/ha). Surcos de 76 a 90 cm o camas de 1.00 a 1.20 m con dos hileras; semilla de 5 a 10 cm de profundidad.",
+      "fertilizacion": "Inocular la semilla con Rhizobium donde no se haya sembrado garbanzo en los tres años anteriores; con inoculación correcta por varios años no hace falta fertilización química.",
+      "riego": "Sembrar a tierra venida (no en seco con riego de germinación, porque daña la semilla). Con variedades de ciclo intermedio basta un riego de auxilio, que también ayuda a recuperar flores y vainas tras una helada.",
+      "plagas": [
+        "Gusano soldado (Spodoptera exigua)",
+        "Minador de la hoja",
+        "Palomilla de los graneros (Sitotroga cerealella)"
+      ],
+      "enfermedades": [
+        "Rabia (Fusarium oxysporum y otras especies de Fusarium)"
+      ],
+      "malezas": "Mantener limpio los primeros 45 días. La maleza de hoja ancha es el principal problema y no hay herbicida postemergente para ella en garbanzo: sembrar a tierra venida para eliminarla con la rastra antes de sembrar, y luego deshierbes manuales y pasos de cultivadora.",
+      "cosecha": "En verde ('guasana'), arrancar cuando vainas y grano estén bien desarrollados. Para grano, cortar cuando la planta pase de verde a verde amarillento, en la mañana con rocío, y trillar ya seco cuidando no quebrar el grano. Rendimiento esperado: 3.5 a 4.0 t/ha en guasana.",
+      "cuidados": [
+        "Nivelar bien el terreno: el encharcamiento favorece la rabia y frena el crecimiento.",
+        "Inocular la semilla con Rhizobium el mismo día de la siembra, sin dejarla al sol ni al viento.",
+        "Contra la rabia, manejo integrado: variedades tolerantes, nivelación y rotación de cultivos.",
+        "Si se vende en verde, preferir control orgánico o biológico y trampas con feromona para el gusano soldado.",
+        "Vigilar plagas desde febrero, cuando termina el frío; atender el minador con 20 % de hojas dañadas."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 20300,
+          "rendimiento": 3500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 10,
+          "ingreso_neto": 14700,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "El extraído marca régimen temporal/riego, pero el texto trata garbanzo blanco de riego en otoño-invierno en la Ciénega; se puso modalidad riego. El rendimiento del Cuadro 21 es de garbanzo en verde. La relación B/C impresa (0.72) no cuadra con 35,000 / 20,300 (= 1.72; 0.72 es el ingreso neto entre el costo), por lo que queda en null. El texto de región dice 'área factible de cultivar sorgo', aparente error de la agenda.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz forrajero",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        65,
+        72
+      ],
+      "cultivo_ids": [
+        "maiz-forrajero-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Centro, Valles, Ciénega de Chapala y Sur (DDR 01, 02, 03, 06 y 07), de 400 a 1,600 msnm, temperatura media de 18 a 22 °C, 700 a 1,100 mm de lluvia y pendiente de 6 a 10 %. Jalisco es el primer productor nacional; se siembra sobre todo en las regiones Norte, Altos Norte y Altos Sur.",
+      "siembra": {
+        "texto": "Temporal: entre mayo y junio, según las lluvias. Punta de riego o humedad residual: desde finales de abril o inicios de mayo, con híbridos de ciclo intermedio-tardío.",
+        "meses": [
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "H-318",
+        "H-383",
+        "H-355",
+        "H-377",
+        "H-358",
+        "H-391",
+        "H-392",
+        "H-378A",
+        "H-380A",
+        "H-381A",
+        "H-384A",
+        "H-385A",
+        "H-386A"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Temporal: 85,000 semillas/ha (hasta 95,000 en suelos fértiles), para 80,000-90,000 plantas. Punta de riego: 100,000 a 116,500 semillas/ha, para 90,000-105,000 plantas.",
+      "fertilizacion": "Suelos arcillosos, fértiles y profundos: 260-46-60, con 90 kg de N y todo el fósforo a la siembra y 170 kg de N en la segunda aplicación con buena humedad. Suelos menos fértiles o delgados: 240-46-00 (70 kg de N y todo el P a la siembra; 170 kg de N después, que pueden fraccionarse).",
+      "riego": "Punta de riego: 1 o 2 riegos a la siembra y en la emergencia, o hasta las 4 hojas liguladas.",
+      "plagas": [
+        "Gallina ciega o nixticuil",
+        "Gusano alfilerillo (Diabrotica virgifera zeae)",
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Gusano soldado (Spodoptera exigua)",
+        "Picudos (Geraeus senilis, Nicentrites testaceipes, Sphenophorus sp.)",
+        "Trips (Frankliniella spp.)"
+      ],
+      "enfermedades": [
+        "Pudrición del tallo y la mazorca (Fusarium moniliforme), la principal",
+        "Carbón común",
+        "Carbón de la espiga",
+        "Mildiu",
+        "Pudriciones de mazorca (Gibberella zeae, Diplodia spp.)"
+      ],
+      "malezas": "Malezas de hoja angosta (zacates pitillo, triguillo, pinto, navajita, salado y timbuque, coquillo y la nueva 'avena canadiense' o cañita) y de hoja ancha (fresadilla, andán, quiebraplato, chayotillo, quelite). El control empieza en preemergencia.",
+      "cosecha": "Ensilar con 30 a 35 % de materia seca, cuando la línea de leche del grano va a 2/3 hacia la madurez (entre grano dentado y madurez fisiológica). Rendimiento esperado: 70 a 90 t/ha de forraje; 50 a 65 t/ha en zonas de potencial intermedio.",
+      "cuidados": [
+        "Usar híbridos de ciclo intermedio-tardío en siembras tempranas de punta de riego.",
+        "Ajustar la densidad a la fertilidad del terreno.",
+        "Aplicar la segunda dosis de nitrógeno con el suelo bien mojado.",
+        "Contra plagas de raíz se pueden usar hongos entomopatógenos (Metarhizium o Beauveria) con 4 a 6 hojas liguladas.",
+        "Sembrar híbridos tolerantes a pudriciones y rotar cultivos.",
+        "Cortar para ensilar en el punto de 2/3 de línea de leche."
+      ],
+      "costos": [
+        {
+          "modalidad": null,
+          "costo_total_ha": 41678,
+          "rendimiento": 70000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 0.95,
+          "ingreso_neto": 24822,
+          "relacion_bc": 1.6
+        }
+      ],
+      "nota": "Los híbridos H- son del INIFAP (variedades públicas); H-377 aparece dos veces en el Cuadro 23. En el Cuadro 25 la suma de los rubros da $41,578, $100 menos que el costo total impreso ($41,678); el ingreso neto y la relación B/C cuadran con el total impreso.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz grano",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        73,
+        80
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Centro, Valles, Ciénega de Chapala y Sur, de 400 a 1,600 msnm, temperatura media de 18 a 22 °C, 700 a 1,100 mm de lluvia y pendiente de 6 a 10 %. Se siembra en casi todos los municipios; Jalisco es el primer productor nacional.",
+      "siembra": {
+        "texto": "Punta de riego o humedad residual: desde finales de abril o inicios de mayo. Temporal: desde el inicio del temporal hasta el 5 de julio. En la Ciénega muchos siembran en seco o al inicio de las lluvias por los suelos arcillosos.",
+        "meses": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "H-318",
+        "H-383",
+        "H-355",
+        "H-377",
+        "H-358",
+        "H-391",
+        "H-392",
+        "H-378A",
+        "H-380A",
+        "H-381A",
+        "H-384A",
+        "H-385A",
+        "H-386A"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Temporal: 85,000 semillas/ha (hasta 95,000 en suelos fértiles). Punta de riego: 100,000 a 116,500 semillas/ha.",
+      "fertilizacion": "Suelos arcillosos, fértiles y profundos: 260-46-60 (90 kg de N y todo el P a la siembra; 170 kg de N después, con buena humedad). Suelos menos fértiles: 240-46-00. Para metas de más de 12 t/ha: 180 a 340 kg de N, 46 a 92 kg de P y 60 kg de K, con 75,000 a 105,000 plantas/ha.",
+      "riego": "Punta de riego: 1 o 2 riegos a la siembra y en la emergencia, o hasta las 4 hojas liguladas.",
+      "plagas": [
+        "Gallina ciega o nixticuil",
+        "Gusano alfilerillo (Diabrotica virgifera zeae)",
+        "Gusano colaspis",
+        "Gusano de alambre",
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Gusano soldado (Spodoptera exigua)",
+        "Picudos",
+        "Trips (Frankliniella spp.)"
+      ],
+      "enfermedades": [
+        "Pudrición del tallo y la mazorca (Fusarium moniliforme), la principal",
+        "Carbón común",
+        "Carbón de la espiga",
+        "Mildiu",
+        "Pudriciones de mazorca (Gibberella zeae, Diplodia spp.)"
+      ],
+      "malezas": "La de hoja angosta es la de mayor importancia económica (zacates pitillo, triguillo, pinto, navajita, salado y timbuque, coquillo, avena canadiense o cañita); de hoja ancha: fresadilla, andán, quiebraplato, chayotillo y quelite.",
+      "cosecha": "Con 14 a 15 % de humedad en el grano; si se retrasa, la mazorca puede dañarse por hongos. Ajustar la trilladora para no dañar el grano. Guardar con menos de 14 % y no más de 2 a 4 meses. Rendimiento esperado: 10 a 13 t/ha en zonas de alto potencial y 8 a 9.5 t/ha en zonas intermedias.",
+      "cuidados": [
+        "Sembrar híbridos de ciclo intermedio-tardío; los precoces solo en siembras tardías.",
+        "Sembrar con equipo de labranza cero.",
+        "Aplicar la segunda dosis de nitrógeno con buena humedad en el suelo.",
+        "Sembrar híbridos tolerantes a pudriciones y rotar cultivos.",
+        "No retrasar la cosecha y guardar el grano seco por poco tiempo."
+      ],
+      "costos": [
+        {
+          "modalidad": null,
+          "costo_total_ha": 40178,
+          "rendimiento": 12000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8,
+          "ingreso_neto": 55822,
+          "relacion_bc": 2.39
+        }
+      ],
+      "nota": "El extraído marca tipo 'anual/perenne'; es anual según el texto. El Cuadro 29 se titula 'maíz forrajero' por error, pero corresponde a maíz grano (12,000 kg/ha a $8/kg). Los híbridos H- son del INIFAP.",
+      "revisado": false
+    },
+    {
+      "ficha": "Pasto llanero",
+      "cientifico": "Andropogon gayanus Kunth",
+      "paginas": [
+        81,
+        86
+      ],
+      "cultivo_ids": [
+        "pastos-y-praderas"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "temporal",
+      "ciclo": "PER",
+      "region": "Trópico subhúmedo cálido de la Costa Norte y Costa Sur (p. ej. Cabo Corrientes, Puerto Vallarta, Tomatlán), de 0 a 800 msnm, 24 a 26 °C y 900 a 1,500 mm de lluvia. Se adapta a suelos de mediana a baja fertilidad, ligeros y bien drenados.",
+      "siembra": {
+        "texto": "Al establecerse el temporal, del 20 de junio en adelante; se puede sembrar en seco 15 días antes de las lluvias o al inicio de ellas.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Llanero (Andropogon gayanus)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "De 8 a 10 kg de semilla/ha, al voleo o mateada en el lomo del surco cada 70 a 90 cm, a no más de 2 cm de profundidad (1 cm en siembra a espeque en cerros).",
+      "fertilizacion": "No fertilizar a la siembra para no favorecer la maleza. En pradera establecida: 50 kg de fósforo/ha al inicio de lluvias (110 kg de superfosfato triple) y 100 kg de nitrógeno en dos partes, a los 15 días de iniciadas las lluvias y 20 días antes de que terminen.",
+      "riego": null,
+      "plagas": [
+        "Hormigas (en la emergencia y plántulas)"
+      ],
+      "enfermedades": [],
+      "malezas": "Mantener libre de maleza los primeros 45 días, a mano o con control de hoja ancha; aplicar cuando el pasto esté bien establecido, la maleza activa y haya humedad. No pastorear las áreas tratadas en al menos 20 días.",
+      "cosecha": "Pastoreo directo al llegar a 90 cm; no dejarlo pasar de 1.5 m porque se lignifica y pierde calidad. Pastoreo rotacional de 7 días con 21 días de descanso en lluvias y al menos 35 en secas. Rendimiento esperado: 45 a 55 t/ha de forraje verde.",
+      "cuidados": [
+        "En laderas y suelos con piedra, limpiar sin remover el suelo para evitar erosión.",
+        "Sembrar en curvas a nivel en terrenos de cerro.",
+        "No fertilizar al sembrar; hacerlo una vez establecida la pradera.",
+        "Usar pastoreo rotacional y ajustar la carga animal según la época.",
+        "Manejar bien el pastoreo: puede escapar del potrero y desplazar vegetación nativa."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 18460,
+          "rendimiento": 45000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 1,
+          "ingreso_neto": 26540,
+          "relacion_bc": 2.44
+        }
+      ],
+      "nota": "El Cuadro 31 es de establecimiento de la pradera (no hay cuadro de mantenimiento) y llama 'rendimiento de semilla' a 45,000 kg/ha de forraje. La agenda dice que es resistente a la mosca pinta o salivazo. Sin enfermedades en la ficha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Pasto brachiaria",
+      "cientifico": "Brachiaria spp.",
+      "paginas": [
+        87,
+        91
+      ],
+      "cultivo_ids": [
+        "pastos-y-praderas"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "temporal",
+      "ciclo": "PER",
+      "region": "Trópico subhúmedo cálido de la Costa Norte y Costa Sur, de 0 a 800 msnm, 24 a 26 °C y 900 a 1,500 mm de lluvia. B. decumbens y B. humidicola toleran baja fertilidad; B. brizantha pide fertilidad mediana y buen drenaje.",
+      "siembra": {
+        "texto": "Al inicio del temporal, con las primeras lluvias (24 de junio en adelante). Con riego, también a finales de octubre. No sembrar en invierno.",
+        "meses": [
+          6,
+          7,
+          10
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Humidícola",
+        "Señal",
+        "Mulato I",
+        "Mulato II",
+        "Toledo",
+        "Insurgente",
+        "Cobra",
+        "Cayman",
+        "Convert"
+      ],
+      "densidad": "De 8 a 10 kg de semilla/ha a chorrito en surcos a 50 cm, a no más de 2 cm de profundidad; al voleo se requiere más semilla.",
+      "fertilizacion": "En pradera establecida: 40 kg de fósforo/ha al inicio de lluvias y 50 kg de nitrógeno en dos partes (a los 15 días de iniciadas las lluvias y 20 días antes de que terminen).",
+      "riego": null,
+      "plagas": [
+        "Mosca pinta o salivazo (las brachiarias tienen cierta resistencia)"
+      ],
+      "enfermedades": [],
+      "malezas": "Mantener libre de maleza los primeros 45 días a mano o con control de hoja ancha; también hay que atender arbustivas como el huizache. No pastorear las áreas tratadas en al menos 15 días.",
+      "cosecha": "Primer aprovechamiento en prefloración, hacia los 90 días; después cada 28 a 30 días en lluvias, de preferencia con pastoreo rotacional y 28 días de descanso. Rendimiento esperado: 50 a 60 t/ha de forraje verde.",
+      "cuidados": [
+        "Sembrar con las primeras lluvias; no en invierno.",
+        "Elegir la especie según el suelo: B. humidicola para suelos ácidos o anegados, B. brizantha para fertilidad mediana y buen drenaje.",
+        "Aprovechar el pasto a tiempo: madura rápido y pierde energía y proteína.",
+        "Usar pastoreo rotacional con 28 días de descanso y ajustar la carga animal.",
+        "Evitar tanto el sobrepastoreo como la subutilización de la pradera."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 21685,
+          "rendimiento": 50000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 1,
+          "ingreso_neto": 28315,
+          "relacion_bc": 2.3
+        }
+      ],
+      "nota": "La agenda llama a la lista 'variedades comerciales disponibles en el mercado' sin nombrar empresas; se pusieron en hibridos_comerciales (según el texto, Mulato es un híbrido B. brizantha × B. ruziziensis). El Cuadro 33 es de establecimiento; el precio es $1,000 por tonelada de forraje. Sin enfermedades en la ficha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Pasto Rhodes",
+      "cientifico": "Chloris gayana Kunth",
+      "paginas": [
+        92,
+        98
+      ],
+      "cultivo_ids": [
+        "pastos-y-praderas"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "temporal",
+      "ciclo": "PER",
+      "region": "Climas cálidos, semicálidos y templados de 0 a 2,200 msnm, con 600 a 1,000 mm de lluvia; soporta hasta 6 meses de secas. Suelos arcillosos a franco-arenosos, incluso salino-sódicos, con pH de 5.0 a 8.3. En Jalisco: Centro, Altos Norte y Sur, Valles, Sierra Occidental y Norte.",
+      "siembra": {
+        "texto": "Temporal: al inicio de las lluvias, nunca después de 40 días de iniciado el temporal. Con riego: en cualquier fecha excepto invierno, de preferencia en meses calurosos.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Común",
+        "Bell",
+        "Katambora",
+        "Pockott",
+        "Callide",
+        "Samford",
+        "Australiano",
+        "Pioneer"
+      ],
+      "densidad": "De 10 a 15 kg/ha de semilla comercial de buena calidad (20 % más al voleo), en surcos a 0.45-0.70 m o al voleo; con material vegetativo, 600 a 800 kg/ha.",
+      "fertilizacion": "Al establecer, 50-30-00. En temporal, 20 kg de N/ha después de cada pastoreo y 30 kg de P/ha al año. Con riego, 40 a 50 kg de N/ha después de cada pastoreo y 80 kg de P/ha al año.",
+      "riego": null,
+      "plagas": [
+        "Gallina ciega",
+        "Mosca pinta"
+      ],
+      "enfermedades": [],
+      "malezas": "Mantener libre de maleza los primeros 45 días a mano o con control de hoja ancha; el barbecho ayuda contra correhuela y zacate Johnson. No pastorear las áreas tratadas en al menos 20 días.",
+      "cosecha": "Mejor etapa: inicio de floración (10 a 12 % de proteína cruda). Forraje verde, heno o pastoreo rotacional de 7 días con 21 de descanso en lluvias y al menos 35 en secas. Promedio de 7.6 t/ha de materia seca; rendimiento esperado de 35 a 55 t/ha de forraje verde.",
+      "cuidados": [
+        "Sembrar al inicio del temporal, antes de 40 días de iniciadas las lluvias.",
+        "Fertilizar con nitrógeno después de cada pastoreo.",
+        "Descompactar con subsoleo al menos cada dos años y dejar descansar 30 días.",
+        "En praderas de más de tres años, diferir el pastoreo 120 días para que florezca y se resiembre.",
+        "Usar pastoreo rotacional y ajustar la carga animal según la época."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 19520,
+          "rendimiento": 45000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 1,
+          "ingreso_neto": 25480,
+          "relacion_bc": 2.31
+        }
+      ],
+      "nota": "La agenda llama a la lista 'variedades comerciales' sin nombrar empresas; se pusieron en hibridos_comerciales. El Cuadro 35 es de establecimiento y llama 'rendimiento de semilla' a 45,000 kg/ha de forraje. En el extraído, plagas y malezas quedaron dentro de la sección de fertilización. Sin enfermedades en la ficha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Sorgo temporal",
+      "cientifico": "Sorghum bicolor L.",
+      "paginas": [
+        99,
+        108
+      ],
+      "cultivo_ids": [
+        "sorgo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Cultivo rústico y tolerante a sequía, con ventaja donde llueve poco (400 a 650 mm). Suelos de 1 a 2 m de profundidad, bien drenados, no calcáreos, pH de 5.5 a 8.5; temperatura óptima de 27 a 35 °C; pendiente menor de 4 %.",
+      "siembra": {
+        "texto": "Temporal: con el establecimiento de las lluvias, del 15 de junio al 15 de julio. Primero los híbridos de ciclo intermedio-tardío y al cierre los intermedios.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "RB Norteño",
+        "RB Paloma",
+        "RB-Huasteco"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Sembradora de platos: 8 kg/ha (grano pequeño o mediano) o 10 kg/ha (grano grande), 150,000 a 210,000 plantas/ha. Sembradora de precisión: 6 a 7 kg/ha, 150,000 a 170,000 plantas/ha. Surcos de 80 cm, semilla a 3-5 cm.",
+      "fertilizacion": "160-46-00: a la siembra 80 kg de N (con sulfato de amonio y DAP, que aportan azufre) y todo el fósforo; el resto del N con urea a los 45 días.",
+      "riego": null,
+      "plagas": [
+        "Pulgón amarillo (Melanaphis sacchari)",
+        "Gallina ciega",
+        "Gusano de alambre",
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Gusano soldado (Spodoptera exigua)",
+        "Barrenador del tallo (Diatraea grandiosella)",
+        "Chinche café (Oebalus mexicana)",
+        "Mosquita del sorgo (Contarinia sorghicola)"
+      ],
+      "enfermedades": [
+        "Roya (Puccinia purpurea)",
+        "Tizón foliar (Exserohilum turcicum)",
+        "Antracnosis foliar (Colletotrichum graminicola)",
+        "Enfermedad por Microdochium sorghi (lesiones circulares con bandas)"
+      ],
+      "malezas": "Mantener limpio los primeros 40 días. Hoja angosta: zacates navajita (el más difícil), pitillo, pinto, triguillo, salado, sabana, huizapol y Johnson; hoja ancha: andán, quelites, enredadera, chayotillo y lechosilla. También se controla con labores culturales.",
+      "cosecha": "Con 13 a 15 % de humedad del grano (18 a 21 % si hay secado). Desde septiembre, si el grano tiene menos de 20 %, no retrasar la cosecha. Rendimiento esperado: 3.5 a 6.2 t/ha.",
+      "cuidados": [
+        "Sembrar dentro de la ventana del 15 de junio al 15 de julio; evitar siembras tardías.",
+        "No pasar de la densidad recomendada: no sube el rendimiento y favorece enfermedades y acame.",
+        "Usar semilla certificada de híbridos con resistencia genética.",
+        "Iniciar el monitoreo de enfermedades a los 40 días de la siembra.",
+        "Contra el gusano cogollero, muestrear y actuar al llegar a 15 % de plantas dañadas."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 30546,
+          "rendimiento": 6200,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.75,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "La ficha mezcla sorgo para grano y sorgo dulce. En el Cuadro 40, el ingreso neto (−3,245.40) y la relación B/C (0.90) impresos no cuadran con el ingreso bruto ($29,450) y el costo total ($30,546) (darían −1,096 y 0.96), por lo que quedan en null. El nombre común de la enfermedad por Microdochium sorghi no aparece en el extraído.",
+      "revisado": false
+    },
+    {
+      "ficha": "Trigo",
+      "cientifico": "Triticum aestivum L.",
+      "paginas": [
+        109,
+        117
+      ],
+      "cultivo_ids": [
+        "trigo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Ciénega de Chapala, de topografía plana, 1,300 a 1,600 msnm, 18 a 20 °C de temperatura media y 800 a 900 mm de lluvia; suelos Vertisol pélico, Feozem háplico y Luvisol férrico. Otras zonas: Unión de Tula, Mascota, Magdalena y Etzatlán.",
+      "siembra": {
+        "texto": "Zona Centro: del 15 de diciembre al 15 de enero; óptimo del 15 al 30 de diciembre. Al cierre, usar variedades precoces y más semilla.",
+        "meses": [
+          12,
+          1
+        ]
+      },
+      "variedades": [
+        "Faisán S2016",
+        "Elia M2016",
+        "Ibis M2016"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "De 140 a 180 kg/ha de semilla certificada.",
+      "fertilizacion": "Rotación maíz-trigo o sorgo-trigo: 200-69 (N-P) con 140-160 kg de semilla; 240-69 con 220 kg. En la Ciénega, después de maíz: 230-69-30 con 140 kg de semilla (subir máximo 30 % si la densidad es mayor). 40 % del N a la siembra y 60 % antes del primer riego de auxilio; P y K todo a la siembra. Con micorrizas se puede reducir el N hasta 30 %.",
+      "riego": "Mínimo 4 y máximo 5 riegos: 0-45-75-100 días o 0-35-65-85-105 días después de la siembra, según suelo y disponibilidad de agua.",
+      "plagas": [
+        "Pulgón del follaje o de la espiga (Schizaphis graminum)"
+      ],
+      "enfermedades": [
+        "Secadera o madurez prematura (Fusarium spp.)",
+        "Roya de la hoja (Puccinia triticina)",
+        "Roya lineal o amarilla (Puccinia striiformis)",
+        "Tizones foliares (Helminthosporium sp., Alternaria sp.)"
+      ],
+      "malezas": "Puede reducir el rendimiento hasta 80 %. Principales: avena silvestre y alpistillo; también maíz mostrenco, lengua de vaca y zacate de agua. Controlar hacia los 30 días después de la siembra, antes del primer riego de auxilio.",
+      "cosecha": "En abril o mayo, con el grano a máximo 13 % de humedad (trillar con 13 a 14 %). Rendimiento esperado: 7 t/ha.",
+      "cuidados": [
+        "Sembrar del 15 al 30 de diciembre; en siembras tardías usar variedades precoces.",
+        "Nivelar bien el terreno para regar de forma eficiente.",
+        "No pasarse de la dosis de nitrógeno: provoca acame y baja la proteína.",
+        "Controlar avena silvestre y alpistillo a los 30 días, antes del primer auxilio.",
+        "Usar variedades resistentes a royas.",
+        "Aprovechar el control biológico del pulgón (avispitas parasitoides y catarinas)."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 31897,
+          "rendimiento": 7000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.8,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "En el Cuadro 44, el ingreso neto (9,081) y la relación B/C (1.28) impresos no cuadran con el ingreso bruto ($40,600) y el costo total ($31,897), que coincide con la suma de los rubros (darían 8,703 y 1.27), por lo que quedan en null.",
+      "revisado": false
+    }
+  ]
+}

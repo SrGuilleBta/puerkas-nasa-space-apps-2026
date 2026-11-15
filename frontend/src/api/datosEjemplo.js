@@ -32,8 +32,3 @@ export const hoy = {
   phSuelo: 6.8,
 };
 
-export const alertaRegional = {
-  hace: "35 min",
-  titulo: "A strong hurricane is forecast for the north of the country",
-  detalle: "Civil Protection recommends checking crops and irrigation infrastructure.",
-};

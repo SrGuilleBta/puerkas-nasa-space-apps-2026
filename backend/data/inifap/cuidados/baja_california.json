@@ -1,0 +1,427 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/baja_california.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "02",
+  "estado": "Baja California",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Baja California. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Alfalfa",
+      "cientifico": "Medicago sativa",
+      "paginas": [
+        11,
+        18
+      ],
+      "cultivo_ids": [
+        "alfalfa-verde",
+        "alfalfa-achicalada"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Valle de Mexicali: clima muy seco, temperatura media de 22.3 °C (de menos de 0 °C hasta 50 °C) y unos 200 mm de lluvia al año, por lo que solo se produce bajo riego. Prefiere suelos profundos franco-arenosos a franco-arcillosos, pH de 6.5 a 7.5 y conductividad eléctrica menor de 4 dS/m.",
+      "siembra": {
+        "texto": "Del 15 de octubre al 30 de noviembre; favorece raíces y coronas antes de los cortes y reduce la competencia de malezas.",
+        "meses": [
+          10,
+          11
+        ]
+      },
+      "variedades": [
+        "CUF-101",
+        "UC Cibola",
+        "Highline"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "30 a 35 kg/ha de semilla certificada (SNICS u otro órgano acreditado) con 85 a 90 % de germinación. Con drilla, a 1.5 a 2.0 cm de profundidad; al voleo, incorporar después con rodillo cultipacker o rastra.",
+      "fertilizacion": "Alfalfa nueva (octubre-noviembre): 40 a 50 kg/ha de N en presiembra. Alfalfares de un año o más: la misma dosis en febrero. Fuentes sólidas se incorporan con rastra; líquidas o gaseosas, con el riego de germinación. Fósforo: 100 kg/ha de P al año, la mitad en primavera y la mitad en otoño. Si hay estiércol seco, incorporarlo en presiembra.",
+      "riego": "Tras el riego de germinación, dos o tres riegos de auxilio; después, uno a dos riegos entre cortes según clima y suelo. En verano, riegos muy ligeros: el espejo de agua no debe durar más de 24 horas; con calor extremo, suspender el riego y reanudarlo cinco a ocho días después del corte.",
+      "plagas": [
+        "Picudo egipcio",
+        "Chinche lygus",
+        "Periquito tricornudo",
+        "Gusano verde",
+        "Gusano soldado",
+        "Trips",
+        "Chicharritas",
+        "Pulgón verde",
+        "Pulgón azul",
+        "Pulgón manchado",
+        "Nematodos de raíz y tallo"
+      ],
+      "enfermedades": [
+        "Pudrición texana",
+        "Cenicilla vellosa (mildiú velloso)",
+        "Chahuixtle",
+        "Pudrición de la corona"
+      ],
+      "malezas": "Hoja angosta en primavera-verano (zacate de agua, zacate pinto, grama, zacate Johnson, coquillos) y avena silvestre y alpiste a finales de otoño; hoja ancha como cuscuta, gloria de la mañana, mostacilla, quelite y chuales. Control: semilla certificada, sembrar a tierra venida, deshierbe de canales y regaderas, limpiar la maquinaria después del corte y deshierbes manuales si hace falta.",
+      "cosecha": "Ocho a nueve cortes al año durante tres a cinco años. Cortar al inicio del 10 % de floración; en invierno, con 35 cm de altura mínima y rebrotes de 3 a 5 cm; en julio y agosto, con 20 a 30 % de floración y 40 a 50 cm de altura. Empacar temprano por la mañana con unos 20 % de humedad (la cutícula del tallo no se desprende al rasparla con la uña).",
+      "cuidados": [
+        "Sembrar entre el 15 de octubre y el 30 de noviembre con semilla certificada e inoculada con Rhizobium específico para alfalfa, protegida del sol y el viento.",
+        "Nivelar bien el terreno y ajustar las melgas al suelo; en arcillosos con mal drenaje, subsolear cada tres o cuatro años.",
+        "En verano, regar muy ligero y no dejar el agua encharcada más de 24 horas para evitar que la alfalfa se queme.",
+        "Cortar en el momento oportuno (10 % de floración) para conservar la población de plantas y frenar las malezas.",
+        "La frecuencia de corte ayuda a controlar las plagas; contra nematodos, usar variedades resistentes o rotar con sorgo, trigo o cebada.",
+        "Empacar con alrededor de 20 % de humedad para evitar que el heno se caliente y se pudra."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 45472.33,
+          "rendimiento": 14000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 3.8,
+          "ingreso_neto": 7728,
+          "relacion_bc": 1.17
+        }
+      ],
+      "nota": "Costos de FIRA (2026) para Mexicali: el costo es el promedio de 3 años (año 1: $52,983; años 2 y 3: $41,717 por ha) y el rendimiento es el promedio de forraje de 3 años (14,000 kg/ha a $3.8 por kg; ingreso bruto $53,200). La introducción da un rendimiento medio regional de 83.70 t/ha, que no corresponde al del cuadro. Se asignan alfalfa-verde y alfalfa-achicalada porque la ficha cubre forraje y su henificado.",
+      "revisado": false
+    },
+    {
+      "ficha": "Algodón",
+      "cientifico": "Gossypium hirsutum",
+      "paginas": [
+        19,
+        30
+      ],
+      "cultivo_ids": [
+        "algodon-hueso"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Valle de Mexicali: clima seco desértico, máximas de verano de 41 a 43 °C y unos 90 mm de lluvia al año; depende del riego del río Colorado. El monzón (julio a septiembre) combina calor y humedad y provoca caída de cuadros, flores y bellotas. Los mejores rendimientos se dan en suelos medios profundos con buen drenaje.",
+      "siembra": {
+        "texto": "Del 15 de febrero al 31 de marzo. La ventana se abre al acumular 300 unidades calor desde el 1 de enero (óptimo de 400 a 700 UC) y con el suelo a 15 °C o más a 10 cm, a las 8:00 h, por cinco días seguidos. Empezar con variedades de ciclo intermedio y largo y terminar con las precoces.",
+        "meses": [
+          2,
+          3
+        ]
+      },
+      "variedades": [
+        "Gos 27",
+        "CIAN PRECOZ"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "100,000 a 120,000 plantas/ha: 10 a 12 plantas por metro en surcos de 1.0 m (sembradora calibrada a unas 150,000 semillas/ha), o 9 a 10 plantas por metro en camas de 172 cm a doble hilera. En tierra venida, semilla a 5 a 6 cm de profundidad. Con esta población no hace falta aclarear.",
+      "fertilizacion": "Nitrógeno según la meta: 22 a 29 kg de N por cada paca de fibra de 227 kg, en tres partes iguales (inicio y pico de formación de cuadros y floración, con los tres primeros auxilios). Si el cultivo anterior fue sorgo o sudán, agregar 50 a 60 kg/ha de N en presiembra. Fósforo según análisis Olsen (0-30 y 30-60 cm): si hay menos de 21 kg/ha de P asimilable, aplicar 9 kg de P por cada unidad faltante, granulado en presiembra o líquido en la siembra y el primer auxilio.",
+      "riego": "Primer auxilio al inicio de la formación de cuadros, antes de las primeras flores (700 a 1,100 UC desde la siembra). Siguientes riegos al abatirse 35 % de la humedad del suelo (sin bajar de 50 %) o cada 15 a 20 días en suelos medios, cubriendo formación de cuadros, floración, formación de bellotas y apertura de primeros capullos. Último riego: 10 a 12 días después del cutout en ciclo corto; uno o dos auxilios más en ciclo largo.",
+      "plagas": [
+        "Mosquita blanca",
+        "Chinche lygus",
+        "Gusano rosado",
+        "Gusano bellotero",
+        "Gusano perforador de la hoja",
+        "Gusano peludo",
+        "Gusano soldado",
+        "Araña roja",
+        "Piojo harinoso"
+      ],
+      "enfermedades": [
+        "Damping-off (Pythium y Rhizoctonia)",
+        "Pudrición texana",
+        "Marchitez por Fusarium",
+        "Marchitez por Verticillium",
+        "Nematodos"
+      ],
+      "malezas": "Zacate salado, zacate de agua, zacate pinto, trompillo, grama, quelite, coquillo, tomatillo, correhuela y zacate Johnson; sin control reducen hasta 50 % el rendimiento. Manejo integrado: limpiar el equipo, semilla certificada y trampas de semillas en canales; sembrar a tierra venida y pasar rastra ('gallinitas') tras la emergencia de la maleza; deshierbe manual de las especies más nocivas.",
+      "cosecha": "Cosecha mecánica cuando todos los capullos estén abiertos y secos; entrar antes baja el rendimiento en despepite y mancha la fibra. Defoliar con cuatro a cinco ramas fructíferas por encima de la última bellota abierta (60 a 70 % de apertura), unos 20 días después del último riego. Al terminar, desvarar y barbechar para reducir mosca blanca y piojo harinoso.",
+      "cuidados": [
+        "Sembrar entre el 15 de febrero y el 31 de marzo; las siembras tardías sufren más el estrés del monzón.",
+        "Programar el primer riego al inicio de la formación de cuadros y no dejar que la humedad del suelo baje de 50 %.",
+        "Calcular el nitrógeno según la meta de pacas y dividirlo en tres aplicaciones; evitar excesos, que favorecen Verticillium.",
+        "Vigilar mosquita blanca y chinche lygus: sin control pueden reducir hasta 50 % la producción.",
+        "En variedades vigorosas, equilibrar crecimiento y fructificación con reguladores de crecimiento, siempre con asesoría técnica.",
+        "Desvarar y barbechar justo después de la cosecha para cortar el ciclo de las plagas."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 51709.5,
+          "rendimiento": 1750,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 1030.25,
+          "relacion_bc": 1.02
+        }
+      ],
+      "nota": "Cuadro de FIRA (2026): ingreso bruto $52,739.65. El precio por kg no viene impreso (sería unos $30.14) y se deja en null. El rendimiento del cuadro (1,750 kg/ha de algodón en hueso) no concuerda con el texto, que da rendimientos de 3.84 a 4.61 t/ha y un punto de equilibrio de unas 4.5 t/ha en P-V 2022; además, algunas partidas del cuadro no cuadran (desvare de $817 anotado como $8,171; rastreo). La defoliación aparece en el texto dentro de la sección de malezas.",
+      "revisado": false
+    },
+    {
+      "ficha": "Cártamo",
+      "cientifico": "Carthamus tinctorius L.",
+      "paginas": [
+        31,
+        37
+      ],
+      "cultivo_ids": [
+        "cartamo"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Oleaginosa del ciclo otoño-invierno, alternativa al trigo en el Valle de Mexicali por su bajo requerimiento de agua. Prefiere poca lluvia y baja humedad, temperaturas de 20 a 35 °C (le afectan las menores de 5 a 10 °C), altitudes de 0 a 800 m y suelos fértiles y bien drenados.",
+      "siembra": {
+        "texto": "Del 15 de noviembre al 31 de diciembre.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Chey-Ol",
+        "Semay-Ol",
+        "Huatson Ol",
+        "S-323",
+        "S-390",
+        "CW-3268",
+        "AS-3427",
+        "AS-23"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "12 a 15 kg/ha de semilla certificada con al menos 80 % de germinación. Suelos medios y ligeros: surcos de 75 cm a una hilera o de 100 cm a doble hilera (25 a 30 cm entre hileras). Suelos arcillosos: camas de 1.0 a 1.5 m a doble hilera en seco, semilla a 2 a 3 cm.",
+      "fertilizacion": "120 a 140 kg/ha de N (la dosis mayor en suelos pesados): la mitad en presiembra y el resto en el primer riego de auxilio.",
+      "riego": "Cultivo ahorrador de agua por su raíz profunda, pero hay que evitar el estrés hídrico en germinación, ramificación, formación de botones florales y floración.",
+      "plagas": [
+        "Pulgón Myzus",
+        "Chinche lygus"
+      ],
+      "enfermedades": [
+        "Chahuixtle o roya",
+        "Pudrición de raíz",
+        "Falsa cenicilla (Ramularia carthami)"
+      ],
+      "malezas": "Avena silvestre, alpiste silvestre, mostacilla, alambrillo y trébol. Por su crecimiento inicial lento, mantener el cultivo limpio en el periodo crítico después de la emergencia: dos cultivos mecánicos (a los 20 a 25 días de la emergencia y después del primer auxilio, con el suelo en punto) y deshierbe manual sobre el lomo del surco.",
+      "cosecha": "Trillar cuando la planta esté completamente seca y la semilla se desprenda fácilmente del capítulo, con alrededor de 6 % de humedad.",
+      "cuidados": [
+        "Sembrar del 15 de noviembre al 31 de diciembre con semilla certificada.",
+        "Nivelar bien el terreno: el encharcamiento causa pudrición de raíz, sobre todo en suelos pesados.",
+        "Mantener el cultivo libre de malezas al inicio, cuando crece lento, con dos cultivos mecánicos y deshierbe manual.",
+        "Evitar la falta de agua en germinación, ramificación, botón floral y floración.",
+        "La chinche lygus es plaga secundaria: hasta 30 chinches por redada no bajan el rendimiento.",
+        "La roya no causa pérdidas económicas; ante la falsa cenicilla, consultar al técnico."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 24168,
+          "rendimiento": 2.5,
+          "unidad_rendimiento": "t/ha",
+          "precio": 8390,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Precio en $ por tonelada. El cuadro de FIRA (2026) rotula 'Ingreso prob. Neto' $20,975, pero esa cifra es el ingreso bruto (2.5 t x $8,390); el ingreso neto resultante sería negativo (unos -$3,193) y el cuadro no imprime ingreso neto ni relación beneficio/costo, por lo que se dejan en null. El 'punto de equilibrio 2.5' tampoco concuerda con esos valores. La agenda no distingue entre variedades públicas y comerciales en el Cuadro 10 (todas oleicas, recomendadas por el CEMEXI).",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz grano",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        38,
+        47
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Distrito de Riego 002 Río Colorado. Suelos franco-limosos o franco-arcillosos de un metro o más de profundidad y pH de 5.5 a 7.5. Temperaturas favorables de 25 a 33 °C de día y 17 a 22 °C de noche; con 40 °C se deshidrata la espiga y baja la viabilidad del polen.",
+      "siembra": {
+        "texto": "Primavera: durante el mes de febrero; sembrar más tarde baja el rendimiento y aumenta el riesgo de aflatoxinas. Verano: a lo largo de todo julio.",
+        "meses": [
+          2,
+          7
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Hipopótamo",
+        "PG143",
+        "PG145",
+        "P1445",
+        "RX860",
+        "RX840"
+      ],
+      "densidad": "75,000 a 100,000 plantas/ha: seis a ocho plantas por metro en surcos de 80 cm (75 a 80 cm en suelos medios y ligeros), con sembradora neumática o de precisión. Siembra en húmedo sobre el lomo del surco, a 5 a 6 cm. Más plantas aumentan el riesgo de acame.",
+      "fertilizacion": "Nitrógeno: unos 25 kg por tonelada de grano; para 10 t/ha, 250 kg/ha de N repartidos en 92 kg en siembra o presiembra, 115 kg entre el primer y segundo auxilio y 43 kg en el tercero (sumar o restar 40 kg de N por tonelada de diferencia). Fósforo: 7 kg de P2O5 por tonelada (70 kg para 10 t/ha), en presiembra. Potasio solo si el diagnóstico lo pide: granulado en presiembra o líquido en el segundo y tercer auxilio.",
+      "riego": "Siembras de febrero en suelo medio: seis a siete auxilios (40-45, 60-65, 75-80, 90-95, 100-105, 110-115 y 120-125 días después de la siembra), de desarrollo vegetativo a grano lechoso. Siembras de julio: cinco a seis auxilios (30-35, 45-50, 55-60, 65-70, 75-80 y 85-90 días), cubriendo espigamiento y llenado de grano.",
+      "plagas": [
+        "Gusano saltarín",
+        "Gusanos trozadores",
+        "Gusano cogollero",
+        "Chicharritas",
+        "Pulga negra",
+        "Gusano elotero"
+      ],
+      "enfermedades": [
+        "Aflatoxinas (Aspergillus flavus y A. parasiticus)",
+        "Pudrición del tallo",
+        "Fitoplasmosis o achaparramiento",
+        "Huitlacoche o carbón común"
+      ],
+      "malezas": "Mantener el cultivo limpio los primeros 50 días después de la emergencia. Hoja angosta (zacate de agua, zacate pinto, grama, zacate Johnson, coquillos; avena y alpiste silvestres a fines de otoño) y hoja ancha (quelites, chuales, chamizo, mostacillas, lechuguilla, correhuela, gloria de la mañana). Limpia manual tras el cultivo mecánico y el levante de surco, sobre todo contra zacate Johnson y correhuela.",
+      "cosecha": "Al llegar a madurez fisiológica (capa negra en la base del grano) o midiendo la humedad con un medidor; cosechar con 14 a 16 % de humedad. En siembras de verano la madurez llega a fines de noviembre o principios de diciembre y no conviene esperar en campo por la humedad invernal; consultar al técnico. Rendimiento esperado: de 9 a más de 12 t/ha.",
+      "cuidados": [
+        "Sembrar en febrero (o en julio para el ciclo de verano); las siembras tardías elevan el riesgo de aflatoxinas.",
+        "Elegir híbridos con buen rendimiento y tolerancia a aflatoxinas, que exige el mercado local de maíz blanco.",
+        "Evitar el estrés de la planta, sobre todo en floración y llenado de grano, cumpliendo el calendario de riegos.",
+        "No exceder la densidad recomendada ni el nitrógeno: favorecen acame, pudrición del tallo y huitlacoche.",
+        "Vigilar gusano elotero y cogollero: los granos dañados son el foco principal de aflatoxinas.",
+        "Mantener el cultivo libre de malezas durante los primeros 50 días."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 46341.36,
+          "rendimiento": 11000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.895,
+          "ingreso_neto": 7503.64,
+          "relacion_bc": 1.16
+        }
+      ],
+      "nota": "Híbridos del Cuadro 16 sin empresa indicada: blancos Hipopótamo, PG143 y PG145; amarillos P1445, RX860 y RX840. La ficha cubre dos fechas (febrero, 'siembras de primavera', y julio, 'ciclo de verano'); se marca como PV. Costos de FIRA (2026), ingreso bruto $53,845 por ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Palma datilera",
+      "cientifico": "Phoenix dactylifera L.",
+      "paginas": [
+        48,
+        59
+      ],
+      "cultivo_ids": [
+        "datil"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Frutal subtropical de zonas áridas: necesita veranos calurosos e inviernos templados. Crece entre 9 y 44 °C (se detiene bajo 7 °C; 5 °C daña hojas, flores y racimos) y requiere ambiente seco en polinización y maduración. Tolera pH de 7.7 a 8.7 (hasta 11) y salinidad de 3 a 11 dS/m.",
+      "siembra": {
+        "texto": "Extracción y trasplante de hijuelos del 15 de marzo al 15 de junio (Valle de Mexicali y San Luis Río Colorado).",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Mejhoul (Medjool)",
+        "Deglet Noor",
+        "Barhee",
+        "Zahidí",
+        "Khadrawy",
+        "Halawy"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "8 m entre hileras y 8 m entre palmas. Cepas de 1 x 1 x 1 m, o de 0.7 a 1 m de diámetro y 1 m de profundidad si se hacen con broca. Propagación por hijuelos, el método tradicional que conserva la calidad.",
+      "fertilizacion": "Según análisis de suelo y agua (cada dos años) y foliar (cada año). Repartir el programa de febrero a octubre (5, 10, 12, 20, 21, 14, 8, 5 y 5 %). Para Mejhoul, las unidades por hectárea suben con la edad: año 2, 55-17-58 de N-P2O5-K2O; año 4, 110-39-120; con más de 25 años, 525-138-540, además de composta y micronutrientes.",
+      "riego": "Tolera sequía, pero para crecer y producir bien necesita de 10,000 a 20,000 m³/ha al año, según el clima, la textura del suelo, el método de riego y la edad de la plantación.",
+      "plagas": [
+        "Polilla de los dátiles (Ectomyelois ceratoniae)",
+        "Palomilla pequeña de los dátiles (Batrachedra amydraula)"
+      ],
+      "enfermedades": [
+        "Moho negro (Aspergillus niger)",
+        "Pudrición blanca del fruto (Rhizopus spp.)"
+      ],
+      "malezas": "Las malezas afectan sobre todo en los primeros cuatro o cinco años tras el trasplante. Las más difíciles son la correhuela, que trepa a las palmas jóvenes, y el pasto Bermuda, muy invasivo en el establecimiento.",
+      "cosecha": "Dejar los frutos en la palma hasta la madurez comercial; se requieren dos o tres cortes selectivos porque la maduración es dispareja. Al cosechar, el dátil tiene la piel arrugada, el ápice brillante y la base opaca. Palmas adultas: 80 a 120 kg por planta; Mejhoul de 12 a 15 años, 6.78 a 7.90 t/ha. Almacenar con humedad relativa de 65 a 75 %.",
+      "cuidados": [
+        "Trasplantar hijuelos del 15 de marzo al 15 de junio.",
+        "Polinizar a mano la flor femenina con mezcla de harina y polen seco (de 2:1 a 6:1).",
+        "Ralear de 3 a 4 semanas después de la polinización, dejando 2.5 a 3 cm entre frutos, y mantener de 8 a 10 hojas por racimo (nunca menos de 6).",
+        "Embolsar los racimos con tela o malla antiáfidos para protegerlos de polillas y otras plagas.",
+        "Ventilar el racimo (anillos de alambre o quitar hebras del centro) para reducir la humedad y los hongos del fruto.",
+        "Basar la fertilización en análisis de suelo, agua y hoja."
+      ],
+      "costos": [],
+      "nota": "El Cuadro 20 (FIRA 2026) da costos por año del 1 al 8, pero el texto extraído está cortado antes de los últimos totales, el rendimiento y el ingreso, así que no se pudo confirmar ningún valor de producción plena. Totales legibles: año 1 (establecimiento) $329,312; años 2 a 4 unos $48,000; años 5 a 7 de $161,362 a $179,914 por ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Trigo",
+      "cientifico": "Triticum spp.",
+      "paginas": [
+        60,
+        69
+      ],
+      "cultivo_ids": [
+        "trigo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Valle de Mexicali, ciclo otoño-invierno: frío al inicio y ambiente templado (6 a 24 °C) en floración y llenado; más de 30 °C o menos de 10 °C en la formación del grano bajan el rendimiento. Requiere una lámina de riego de 85 a 100 cm y rinde más en suelos ligeros a medios, bien drenados.",
+      "siembra": {
+        "texto": "Del 15 de noviembre al 31 de diciembre; los rendimientos más altos se logran en la primera quincena de diciembre.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "CIRNO C2008 (cristalino)",
+        "QUETCHEHUECA ORO C2013 (cristalino)",
+        "CENEB ORO C2017 (cristalino)",
+        "ISABEL ORO C2018 (cristalino)",
+        "NOROESTE C2021 (cristalino)",
+        "CAMACHO ORO C2022 (cristalino)",
+        "ROELY HP C2024 (cristalino)",
+        "CRUZ ORO C2025 (cristalino)",
+        "NOHELY F2018 (harinero)",
+        "HANS F2019 (harinero)",
+        "MARCELA F2023 (harinero)",
+        "FINORTE F2024 (harinero)",
+        "BORLAUG 100 (harinero)",
+        "CIANO M2018 (harinero)",
+        "PITAHAYA M2024 (harinero)",
+        "SAFIN M2024 (harinero)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "120 a 160 kg/ha de semilla con sembradora de granos pequeños (drilla); en seco, a no más de 3 cm. Exceso de semilla causa acame. Melgas de 12 a 20 m de ancho según el suelo.",
+      "fertilizacion": "Unos 35 kg de N por tonelada esperada; todo el fósforo antes de la siembra (10 kg/ha por tonelada). Para 7 t/ha: 70 kg de P y N a la siembra, 55 de N al amacollo, 75 en encañe y embuche y 40 en floración. Una fracción de N en floración o inicio de llenado sube la proteína de 1 a 3 puntos.",
+      "riego": "Etapas críticas: encañe, espigamiento y llenado de grano. Suelos medios: presiembra y cuatro auxilios (amacollamiento a los 45-55 días; encañe 30 días después; espigamiento 25 días después; lechoso-masoso 15 a 20 días después). Suelos ligeros: un riego más con menor lámina; pesados: germinación y cinco auxilios. Regar después del estado lechoso-masoso causa acame.",
+      "plagas": [
+        "Pulgón verde del follaje",
+        "Pulgón de la espiga",
+        "Pulgón negro del follaje",
+        "Pulgón del cogollo"
+      ],
+      "enfermedades": [
+        "Roya amarilla",
+        "Roya de la hoja"
+      ],
+      "malezas": "Preventivo: semilla certificada, maquinaria limpia, no pastorear las socas y limpiar canales y regaderas. Mecánico: sembrar a tierra venida; en surcos a doble hilera, dos escardas (20 a 25 días tras la emergencia y después del primer auxilio). Biológico: contra la correhuela, inocular el ácaro agallador (Aceria malherbae) después del segundo auxilio.",
+      "cosecha": "Mayo y junio, con 8 a 13 % de humedad en el grano; con menos se pierde por desgrane y quebrado. Cuidar la trilla de los trigos duros. Rendimiento esperado: 6 a 7 t/ha en suelos arcillosos y 8 a 9 t/ha en suelos francos libres de malezas.",
+      "cuidados": [
+        "Sembrar en la primera quincena de diciembre para los mejores rendimientos (ventana del 15 de noviembre al 31 de diciembre).",
+        "No usar más semilla de la recomendada para evitar el acame.",
+        "No dejar faltar agua en encañe, espigamiento y llenado; la falta puede quitar hasta 1,000 kg/ha.",
+        "Aplicar parte del nitrógeno en floración para alcanzar la proteína mínima (12.5 % en panificables y cristalinos, 10 % en galleteros).",
+        "Sembrar variedades resistentes a roya amarilla, la estrategia más rentable.",
+        "Proteger a la catarinita y a la chinche Orius, que controlan a los pulgones de forma natural."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 30106,
+          "rendimiento": 6580,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 8150,
+          "relacion_bc": 1.27
+        }
+      ],
+      "nota": "Cuadro de FIRA (2026): ingreso bruto $38,256. El precio por kg no viene impreso (sería unos $5.81) y se deja en null. Variedades del Cuadro 25 en mayúsculas tal como se imprimen; la letra indica el grupo de calidad (C cristalino, F gluten fuerte, M gluten medio fuerte).",
+      "revisado": false
+    }
+  ]
+}
