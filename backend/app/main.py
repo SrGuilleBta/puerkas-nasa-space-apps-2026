@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from app import db
-from app.routers import cultivos, planificador, principal, ubicaciones
+from app.routers import cultivos, noticias, planificador, principal, ubicaciones
 from app.services.planificador import ErrorPlanificador
 
 
@@ -20,6 +20,7 @@ app = FastAPI(title="Adapting Farms with NASA Data", version="0.1.0", lifespan=l
 app.include_router(principal.router)
 app.include_router(planificador.router)
 app.include_router(ubicaciones.router)
+app.include_router(noticias.router)
 app.include_router(cultivos.router)
 app.add_exception_handler(ErrorPlanificador, planificador.error_planificador)
 

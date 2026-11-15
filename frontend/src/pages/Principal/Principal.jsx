@@ -1,4 +1,5 @@
-import { getAlertaRegional, getAlertas, getClima, getPlanificacion } from "../../api/principal.js";
+import { getNoticias } from "../../api/noticias.js";
+import { getAlertas, getClima, getPlanificacion } from "../../api/principal.js";
 import Cargable from "../../components/Cargable.jsx";
 import useDatos from "../../hooks/useDatos.js";
 import AlertaRegional from "./AlertaRegional.jsx";
@@ -12,7 +13,7 @@ import "./Principal.css";
 // (ver src/api/principal.js) sin tocar las demás.
 export default function Principal({ municipio }) {
   const clima = useDatos(() => getClima(municipio), [municipio]);
-  const alerta = useDatos(() => getAlertaRegional(municipio), [municipio]);
+  const noticias = useDatos(() => getNoticias(municipio), [municipio]);
   // Cultivos activos y plan anual salen del mismo plan del Planificador, por eso van juntos.
   const planificacion = useDatos(getPlanificacion, []);
   // Las alertas dependen del clima y de los cultivos del plan que se está viendo
@@ -31,9 +32,15 @@ export default function Principal({ municipio }) {
         <Cargable estado={clima} alto={520}>
           {(d) => <PronosticoSemanal {...d} />}
         </Cargable>
-        <Cargable estado={alerta} alto={100}>
-          {(d) => <AlertaRegional {...d} />}
-        </Cargable>
+        {/* Si las noticias fallan, la tarjeta simplemente no aparece (no es un dato esencial) */}
+        {!noticias.error && (
+          <Cargable estado={noticias} alto={100}>
+            {({ items }) => {
+              const noticia = items.find((n) => n.enlace) ?? items[0];
+              return noticia && <AlertaRegional noticia={noticia} />;
+            }}
+          </Cargable>
+        )}
       </div>
       <div className="principal__columna">
         <Cargable estado={planificacion} alto={460}>

@@ -28,8 +28,6 @@ export const getClima = async (municipio) => {
   return { pronostico, hoy, esEjemplo: false };
 };
 
-export const getAlertaRegional = (municipio) => simular(ejemplo.alertaRegional);
-
 // Lo que viene del Planificador: el plan que se está viendo (el elegido allá o el primero) y sus
 // siembras en curso hoy. Alimenta las tarjetas "Cultivos activos" y "Plan anual".
 // Devuelve { plan: null, activos: [] } si todavía no hay ningún plan.

@@ -41,13 +41,14 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   ├── clima.py         [pendiente]
 │   │   │   ├── mercado.py       [pendiente]
 │   │   │   ├── cultivos.py      catálogo, indicadores por municipio y cuidados por estado (/api/cultivos)
-│   │   │   └── noticias.py      [pendiente]
+│   │   │   └── noticias.py      noticias propias y feeds externos
 │   │   ├── services/            lógica y clientes de datos; no importan FastAPI
 │   │   │   ├── meteomatics.py   pronóstico y condiciones de hoy (caché de 10 min)
 │   │   │   ├── soilgrids.py     pH del suelo (caché de 24 h, busca puntos vecinos)
 │   │   │   ├── alertas.py       reglas de clima, plagas y enfermedades
 │   │   │   ├── planificador.py  reglas del plan (sin traslapes, rotación, resumen)
 │   │   │   ├── ubicaciones.py   lugares guardados y geocodificación (solo México)
+│   │   │   ├── noticias.py      avisos propios y lectura de feeds RSS (CIMMYT, NASA)
 │   │   │   ├── nasa_power.py    clima observado por satélite (lluvia, temperatura, radiación, humedad de raíz)
 │   │   │   ├── cultivos.py      lee los JSON que genera la pipeline en backend/data/cultivos
 │   │   │   ├── siap.py          [pendiente] leerá los CSV de backend/data/siap
@@ -74,7 +75,8 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │       ├── pages/               una carpeta por pantalla
 │       │   ├── Principal/       banner de alertas, pronóstico, cultivos activos, plan anual
 │       │   ├── Planificador/    calendario, barra de tiempo, popups, resumen, recomendaciones
-│       │   ├── Clima/, Mercado/, Cultivos/, Noticias/   [pendiente]
+│       │   ├── Noticias/        filtros y tarjetas de noticias propias y externas
+│       │   ├── Clima/, Mercado/, Cultivos/   [pendiente]
 │       ├── components/          Layout, Dialogo, Cargable, SelectorUbicacion, Iconos...
 │       ├── hooks/               useDatos (cargando / error / recargar)
 │       ├── utils/               fechas, ventana de tiempo, colores, plan activo
