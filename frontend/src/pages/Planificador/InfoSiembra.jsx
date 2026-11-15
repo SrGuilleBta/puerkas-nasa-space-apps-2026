@@ -1,3 +1,4 @@
+import { getFicha } from "../../api/planificador.js";
 import { getClimaNasa } from "../../api/principal.js";
 import Cargable from "../../components/Cargable.jsx";
 import useDatos from "../../hooks/useDatos.js";
@@ -62,6 +63,58 @@ function ClimaNasa({ municipio, inicio, fin, hoy }) {
   );
 }
 
+const AGUA = { bajo: "Low", medio: "Medium", alto: "High" };
+const rango = (r, unidad) => (r ? `${r[0]}–${r[1]}${unidad}` : "—");
+
+// Ficha del cultivo (catálogo de Cultivos): condiciones ideales y cuidados. No aparece si el cultivo no viene del catálogo.
+function FichaCultivo({ cultivoId }) {
+  const ficha = useDatos(() => getFicha(cultivoId), [cultivoId]).datos;
+  if (!ficha) return null;
+  return (
+    <section className="info-siembra__ficha" aria-label="Crop guide">
+      <h3>Crop guide</h3>
+      {ficha.descripcion && <p>{ficha.descripcion}</p>}
+      <dl className="info-siembra__nasa-datos">
+        <div>
+          <dt>Best temperature</dt>
+          <dd>{rango(ficha.temperaturaOptimaC, " °C")}</dd>
+        </div>
+        <div>
+          <dt>Water use</dt>
+          <dd>{AGUA[ficha.consumoAgua] ?? "—"}</dd>
+        </div>
+        <div>
+          <dt>Best soil pH</dt>
+          <dd>{rango(ficha.phOptimo, "")}</dd>
+        </div>
+        <div>
+          <dt>Fixes nitrogen</dt>
+          <dd>{ficha.fijaNitrogeno ? "Yes" : "No"}</dd>
+        </div>
+      </dl>
+      {ficha.suelo && (
+        <p>
+          <b>Soil:</b> {ficha.suelo}
+        </p>
+      )}
+      {ficha.cuidados.length > 0 && (
+        <>
+          <b>Care tips</b>
+          <ul>
+            {ficha.cuidados.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+        </>
+      )}
+      <small>
+        Source: {ficha.fuentes.join(", ") || "Crops catalog"}.
+        {!ficha.textoRevisado && " General draft text: confirm with a local technician before acting on it."}
+      </small>
+    </section>
+  );
+}
+
 // Pestaña informativa de una siembra: estado, avance del ciclo y contexto dentro de su parcela.
 export default function InfoSiembra({ parcela, siembra, hoy, municipio }) {
   const inicio = deISO(siembra.fechaSiembra);
@@ -120,7 +173,7 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio }) {
           <dd>
             {parcela.nombre}
             <small>
-              {siembra.hectareas} de {parcela.hectareas} ha ({ocupa}%)
+              {siembra.hectareas} of {parcela.hectareas} ha ({ocupa}%)
             </small>
           </dd>
         </div>
@@ -136,6 +189,8 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio }) {
           </dd>
         </div>
       </dl>
+
+      <FichaCultivo cultivoId={siembra.cultivo.id} />
 
       {municipio && <ClimaNasa municipio={municipio} inicio={inicio} fin={fin} hoy={hoy} />}
 

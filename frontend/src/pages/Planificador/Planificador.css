@@ -660,3 +660,32 @@
   font-size: 11px;
   color: var(--tinta-suave);
 }
+
+.info-siembra__ficha {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(18, 48, 74, 0.04);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.info-siembra__ficha h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.info-siembra__ficha p,
+.info-siembra__ficha ul {
+  margin: 0;
+}
+
+.info-siembra__ficha ul {
+  padding-left: 18px;
+}
+
+.info-siembra__ficha small {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}

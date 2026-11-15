@@ -39,6 +39,10 @@ class CultivoIn(Modelo):
     ciclo_dias: int = Field(gt=0, le=1500)
 
 
+class CatalogoIn(Modelo):
+    catalogo_id: str = Field(min_length=1, max_length=80)  # id del catálogo de Cultivos, p. ej. "maiz-grano"
+
+
 class SiembraIn(Modelo):
     cultivo_id: int
     fecha_siembra: date
@@ -62,6 +66,14 @@ class CultivoOut(Modelo):
     nombre: str
     tipo: str
     ciclo_dias: int
+
+
+class CatalogoItemOut(Modelo):
+    id: str
+    nombre: str
+    tipo: str
+    ciclo_dias: int
+    perenne: bool
 
 
 class SiembraOut(Modelo):

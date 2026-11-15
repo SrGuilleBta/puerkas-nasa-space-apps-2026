@@ -9,6 +9,8 @@ from pydantic.alias_generators import to_camel
 from app import db
 from app.schemas.planificador import (
     AnalisisOut,
+    CatalogoIn,
+    CatalogoItemOut,
     CultivoIn,
     CultivoOut,
     ParcelaIn,
@@ -21,6 +23,7 @@ from app.schemas.planificador import (
     SiembraOut,
     SiembraPatch,
 )
+from app.services import catalogo_cultivos
 from app.services import planificador as servicio
 
 router = APIRouter(prefix="/api/planificador", tags=["planificador"])
@@ -109,6 +112,24 @@ def listar_cultivos(q: str | None = None, con=Depends(con_db)):
 @router.post("/cultivos", response_model=CultivoOut, status_code=201)
 def crear_cultivo(datos: CultivoIn, con=Depends(con_db)):
     return servicio.crear_cultivo(con, datos.nombre, datos.tipo, datos.ciclo_dias)
+
+
+@router.get("/catalogo", response_model=list[CatalogoItemOut])
+def listar_catalogo():
+    """Cultivos del catálogo de Cultivos (los que se pueden elegir al sembrar)."""
+    return catalogo_cultivos.listar()
+
+
+@router.post("/cultivos/desde-catalogo", response_model=CultivoOut, status_code=201)
+def cultivo_desde_catalogo(datos: CatalogoIn, con=Depends(con_db)):
+    """Crea (o reutiliza) en el Planificador el cultivo elegido del catálogo."""
+    return catalogo_cultivos.asegurar_cultivo(con, datos.catalogo_id)
+
+
+@router.get("/cultivos/{cultivo_id}/ficha")
+def ficha_cultivo(cultivo_id: int, con=Depends(con_db)):
+    """Ficha del catálogo (cuidados, temperatura, agua, suelo); null si el cultivo no viene del catálogo."""
+    return catalogo_cultivos.ficha(con, cultivo_id)
 
 
 # ---------- Siembras ----------

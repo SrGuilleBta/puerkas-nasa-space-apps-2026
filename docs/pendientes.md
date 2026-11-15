@@ -26,19 +26,25 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 - El pronóstico llega hasta el domingo, así que las alertas del domingo ven solo ese día.
   Si Clima ofrece más días, usarlos.
 
-## Depende de Cultivos (otro compañero)
+## Catálogo de Cultivos (ya llegó)
 
-- **Catálogo en inglés.** Los nombres de cultivos de hoy (Maíz amarillo, Frijol pinto...) son de demo
-  en español; el catálogo de Cultivos vendrá en inglés. Al conectarlo, revisar que los **tipos**
-  (`cereal`, `leguminosa`, `frutal`, `hortaliza`, `oleaginosa`, `forraje`, `otro`) sigan siendo los
-  mismos valores, porque las reglas de rotación y de plagas dependen de ellos; si llegan en inglés
-  hay que hacer un mapa en el backend. La alerta del cogollero ya reconoce "corn" y "maize".
+- Hecho: el Planificador elige cultivos del catálogo (399) y muestra su ficha en el popup. Migración
+  v4: `cultivo.catalogo_id`; los cultivos de demo se renombraron al nombre del catálogo.
+- Los **tipos** del catálogo ("Cereal", "Tubérculo", "Industrial"...) se guardan en minúsculas y sin
+  acentos; "Semilla" y los que no traen tipo pasan a `otro`. La rotación solo tiene regla para
+  cereal y leguminosa.
+- Los nombres del catálogo están en español. Cuando Cultivos los pase a inglés, no hay que tocar nada
+  salvo la migración de nombres de demo si cambian.
+- **Falta usar:** las agendas INIFAP por estado (`manejo` en `services/cultivos.py`) y la ventana de
+  siembra por mes. Necesitan saber el estado de la ubicación (hoy solo guardamos lat/lon).
 
-- **Mejor fecha de siembra** por cultivo con el clima histórico de NASA POWER: necesita el rango de
-  temperatura y de lluvia de cada cultivo.
-- Umbrales de las alertas por cultivo (helada, calor, lluvia).
-- Precio, variación y chips de demanda en "Cultivos activos" (SIAP).
-- Recomendación de rotación más fina (nitrógeno, agua, raíz, precio) en vez de solo tipo de cultivo.
+## Lo que sigue
+
+- **Mejor fecha de siembra** por cultivo: rango de temperatura del catálogo contra el clima histórico
+  de NASA POWER (y los meses de siembra de las agendas INIFAP cuando haya estado).
+- Umbrales de las alertas por cultivo (helada, calor, lluvia) con los rangos de EcoCrop del catálogo.
+- Precio, rendimiento y chips de demanda en "Cultivos activos" (SIAP, vía el catálogo).
+- Recomendación de rotación más fina con familia y fijación de nitrógeno del catálogo.
 - Rentabilidad en el resumen del plan.
 
 ## Planificador
