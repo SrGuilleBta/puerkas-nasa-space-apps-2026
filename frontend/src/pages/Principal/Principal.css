@@ -767,3 +767,18 @@
     justify-content: space-between;
   }
 }
+
+/* ---------- Enlace "Más detalles" (lleva a Clima) ---------- */
+.hoy__mas {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  padding: 8px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: rgba(20, 200, 192, 0.1);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}

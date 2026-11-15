@@ -1,5 +1,6 @@
 import Tarjeta, { EncabezadoTarjeta } from "../../components/Tarjeta.jsx";
-import { Gota, Lluvia, Nube, Sol, Suelo, Viento } from "../../components/Iconos.jsx";
+import { Flecha, Gota, Lluvia, Nube, Sol, Suelo, Viento } from "../../components/Iconos.jsx";
+import { hashDe } from "../../routes.js";
 import { etiquetaDia, mismoDia, semanaDe } from "../../utils/fechas.js";
 
 const ICONO_CIELO = { sol: Sol, nube: Nube, lluvia: Lluvia };
@@ -75,6 +76,9 @@ export default function PronosticoSemanal({ pronostico, hoy, esEjemplo }) {
             <p>{hoy.cielo ?? "—"}</p>
             {hoy.optimoParaCampo && <span>Óptimo para campo</span>}
           </div>
+          <a className="hoy__mas" href={hashDe("clima")}>
+            Más detalles <Flecha size={14} />
+          </a>
         </div>
 
         <dl className="hoy__medidas">
