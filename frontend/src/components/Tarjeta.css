@@ -1,0 +1,69 @@
+.tarjeta {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.estado--cargando {
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.5) 30%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.5) 70%
+  );
+  background-size: 300% 100%;
+  animation: brillo 1.4s ease-in-out infinite;
+}
+
+.estado--error {
+  display: grid;
+  gap: 4px;
+  color: var(--coral);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.estado--error small {
+  color: var(--tinta-suave);
+  font-weight: 400;
+}
+
+@keyframes brillo {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .estado--cargando {
+    animation: none;
+  }
+}
+
+.tarjeta__encabezado {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.tarjeta__etiqueta {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--verde-oscuro);
+}
+
+.tarjeta__titulo {
+  margin-top: 4px;
+  font-size: 18px;
+  font-weight: 700;
+}

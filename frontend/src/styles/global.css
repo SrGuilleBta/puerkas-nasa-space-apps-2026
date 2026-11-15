@@ -1,0 +1,74 @@
+:root {
+  --fondo-1: #f1fbf6;
+  --fondo-2: #e2f5ee;
+  --tinta: #12304a;
+  --tinta-suave: #5d7587;
+  --verde: #00e676;
+  --verde-oscuro: #0a7a4b;
+  --verde-claro: #d9f7e8;
+  --turquesa: #14c8c0;
+  --coral: #f06d6d;
+  --coral-claro: #fde4e4;
+  --primavera: #22e07a;
+  --verano: #19c3e6;
+  --otono: #f27d7d;
+  --invierno: #6b8ab0;
+  --tarjeta: rgba(255, 255, 255, 0.72);
+  --borde: rgba(18, 48, 74, 0.07);
+  --sombra: 0 8px 28px rgba(10, 122, 75, 0.08);
+  --radio: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--tinta);
+  background: linear-gradient(160deg, var(--fondo-1), var(--fondo-2)) fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--verde-oscuro);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

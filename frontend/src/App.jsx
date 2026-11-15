@@ -1,22 +1,49 @@
 import { useEffect, useState } from "react";
+import { getParcela } from "./api/principal.js";
+import EnConstruccion from "./components/EnConstruccion.jsx";
+import Layout, { MUNICIPIOS } from "./components/Layout.jsx";
+import useDatos from "./hooks/useDatos.js";
+import Principal from "./pages/Principal/Principal.jsx";
+import { useSeccion } from "./routes.js";
+
+const SIN_PARCELA = { nombre: "—", hectareas: "—" };
+const CLAVE_MUNICIPIO = "municipio";
+
+// Recuerda el municipio elegido; si el almacenamiento no está disponible, no pasa nada.
+function municipioGuardado() {
+  try {
+    const guardado = localStorage.getItem(CLAVE_MUNICIPIO);
+    return MUNICIPIOS.includes(guardado) ? guardado : MUNICIPIOS[0];
+  } catch {
+    return MUNICIPIOS[0];
+  }
+}
 
 export default function App() {
-  const [backend, setBackend] = useState("conectando…");
+  const [municipio, setMunicipio] = useState(municipioGuardado);
+  const parcela = useDatos(getParcela, []);
+  const seccion = useSeccion();
 
   useEffect(() => {
-    fetch("/api/health")
-      .then((r) => r.json())
-      .then((d) => setBackend(d.status))
-      .catch(() => setBackend("sin conexión"));
-  }, []);
+    try {
+      localStorage.setItem(CLAVE_MUNICIPIO, municipio);
+    } catch {
+      /* sin almacenamiento: se usa el valor por defecto la próxima vez */
+    }
+  }, [municipio]);
 
   return (
-    <main style={{ fontFamily: "system-ui, sans-serif", padding: "2rem" }}>
-      <h1>Adapting Farms with NASA Data</h1>
-      <p>NASA Space Apps 2026</p>
-      <p>
-        Backend: <strong>{backend}</strong>
-      </p>
-    </main>
+    <Layout
+      seccion={seccion}
+      municipio={municipio}
+      onMunicipio={setMunicipio}
+      parcela={parcela.datos ?? SIN_PARCELA}
+    >
+      {seccion.id === "principal" ? (
+        <Principal municipio={municipio} />
+      ) : (
+        <EnConstruccion nombre={seccion.nombre} />
+      )}
+    </Layout>
   );
 }
