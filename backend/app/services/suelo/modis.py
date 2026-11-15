@@ -122,36 +122,81 @@ def clase_usgs(ndvi: float) -> str:
     return "dense vegetation"
 
 
-def _archivo(lat: float, lon: float) -> Path:
-    return CARPETA / f"ndvi_{lat:.4f}_{lon:.4f}.json"
+# Calidad del píxel (pixel reliability de MOD13Q1): 0 bueno, 1 marginal, 2 nieve/hielo, 3 nublado,
+# -1 sin dato. Solo se usan 0 y 1 (guía de usuario de MOD13, Didan et al. 2015): las nubes bajan el
+# NDVI y harían ver "suelo desnudo" donde no lo hay (pasó en Monterrey el 16-oct-2026:
+# NDVI 0.236 con píxel nublado, contra 0.696 dos semanas antes).
+VAR_CALIDAD = "/MODIS_Grid_16DAY_250m_500m_VI/Data_Fields/_250m_16_days_pixel_reliability"
+CALIDAD_BUENA = (0, 1)
+# capa: (variable en Earthdata, conversión del valor crudo)
+CAPAS = {
+    "ndvi": (VAR_NDVI, lambda v: None if v is None or v <= -3000 else round(v * 0.0001, 3)),
+    "calidad": (VAR_CALIDAD, lambda v: None if v is None or v < 0 else int(v)),
+}
+
+
+def _archivo(lat: float, lon: float, capa: str = "ndvi") -> Path:
+    return CARPETA / f"{capa}_{lat:.4f}_{lon:.4f}.json"
+
+
+def _leer_cache(lat: float, lon: float, capa: str = "ndvi") -> dict:
+    archivo = _archivo(lat, lon, capa)
+    return json.loads(archivo.read_text(encoding="utf-8")) if archivo.exists() else {}
+
+
+def _leer_caches(lat: float, lon: float) -> dict[str, dict]:
+    return {capa: _leer_cache(lat, lon, capa) for capa in CAPAS}
+
+
+def _guardar_caches(lat: float, lon: float, caches: dict[str, dict]) -> None:
+    # Se junta con lo que ya está en disco por si dos consultas del mismo punto corren al mismo
+    # tiempo: sin esto, la última en guardar borraría lo que bajó la otra.
+    CARPETA.mkdir(parents=True, exist_ok=True)
+    for capa, cache in caches.items():
+        junto = {**_leer_cache(lat, lon, capa), **cache}
+        _archivo(lat, lon, capa).write_text(json.dumps(junto, sort_keys=True), encoding="utf-8")
+
+
+def _buenos(caches: dict[str, dict], fechas) -> dict[str, float]:
+    """{fecha: ndvi} solo de las fechas con NDVI y calidad buena o marginal."""
+    return {f: caches["ndvi"][f] for f in fechas
+            if caches["ndvi"].get(f) is not None and caches["calidad"].get(f) in CALIDAD_BUENA}
+
+
+async def _llenar(cliente: httpx.AsyncClient, granulos: dict[str, str], caches: dict[str, dict],
+                  fila: int, col: int) -> list:
+    """Pide a Earthdata el NDVI y la calidad que falten en `caches`. Devuelve los errores."""
+    semaforo = asyncio.Semaphore(CONSULTAS_SIMULTANEAS)
+
+    async def una(fecha: str, granulo: str, capa: str):
+        var, convertir = CAPAS[capa]
+        async with semaforo:
+            caches[capa][fecha] = convertir(await _pixel(cliente, COLECCION_NDVI, granulo, var, fila, col, 4800))
+
+    tareas = [una(f, g, capa) for f, g in granulos.items() for capa in CAPAS if f not in caches[capa]]
+    resultados = await asyncio.gather(*tareas, return_exceptions=True)
+    return [x for x in resultados if isinstance(x, Exception)]
 
 
 async def _serie(lat: float, lon: float, anios: int) -> dict[str, float | None]:
-    """{fecha: ndvi} de los últimos `anios` años completos más el año en curso."""
-    archivo = _archivo(lat, lon)
-    cache = json.loads(archivo.read_text(encoding="utf-8")) if archivo.exists() else {}
+    """{fecha: ndvi} de los últimos `anios` años completos más el año en curso. Las fechas con nubes,
+    nieve o sin dato vienen en None."""
+    caches = _leer_caches(lat, lon)
     inicio = f"{date.today().year - anios}-01-01"
     h, v, fila, col = pixel_sinusoidal(lat, lon, 4800)
     try:
         async with httpx.AsyncClient(timeout=120, follow_redirects=True) as cliente:
             granulos = await _granulos(cliente, COLECCION_NDVI, lat, lon, f"h{h:02d}v{v:02d}",
                                        inicio, date.today().isoformat())
-            pendientes = {f: g for f, g in granulos.items() if f not in cache}
-            semaforo = asyncio.Semaphore(CONSULTAS_SIMULTANEAS)
-
-            async def una(fecha: str, granulo: str):
-                async with semaforo:
-                    valor = await _pixel(cliente, COLECCION_NDVI, granulo, VAR_NDVI, fila, col, 4800)
-                    cache[fecha] = None if valor is None or valor <= -3000 else round(valor * 0.0001, 3)
-
-            resultados = await asyncio.gather(*(una(f, g) for f, g in pendientes.items()), return_exceptions=True)
+            errores = await _llenar(cliente, granulos, caches, fila, col)
     except httpx.HTTPError as e:
         raise RuntimeError("MODIS (NASA Earthdata) did not respond. Please try again in a moment.") from e
-    CARPETA.mkdir(parents=True, exist_ok=True)
-    archivo.write_text(json.dumps(cache, sort_keys=True), encoding="utf-8")
-    if not any(f >= inicio for f in cache) and any(isinstance(x, Exception) for x in resultados):
+    _guardar_caches(lat, lon, caches)
+    fechas = [f for f in caches["ndvi"] if f >= inicio]
+    if not fechas and errores:
         raise RuntimeError("MODIS (NASA Earthdata) did not respond. Please try again in a moment.")
-    return {f: v for f, v in cache.items() if f >= inicio}
+    buenos = _buenos(caches, fechas)
+    return {f: buenos.get(f) for f in fechas}
 
 
 async def cobertura(lat: float, lon: float, anios: int = 3) -> dict:
@@ -176,7 +221,8 @@ async def cobertura(lat: float, lon: float, anios: int = 3) -> dict:
         "mes_menor_cobertura": min(con_dato, key=lambda m: m["ndvi_promedio"]) if con_dato else None,
         "serie_ultimo_anio": [{"fecha": f, "ndvi": v} for f, v in ultimos],
         "anios_promediados": f"{date.today().year - anios}-{date.today().year - 1}",
-        "metodo": "USGS classes: NDVI <= 0.1 bare soil; 0.2-0.3 shrubland/grassland; >= 0.6 dense vegetation",
+        "metodo": "USGS classes: NDVI <= 0.1 bare soil; 0.2-0.3 shrubland/grassland; >= 0.6 dense vegetation. "
+                  "Only pixels with good or marginal quality (no clouds or snow)",
         "fuente": "NASA MODIS MOD13Q1 v061 (NDVI, 250 m, 16 días) vía NASA Earthdata",
     }
 

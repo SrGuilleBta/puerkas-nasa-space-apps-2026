@@ -16,6 +16,7 @@ import Cargable from "../../components/Cargable.jsx";
 import { Brote, Gota, Suelo as IconoSuelo } from "../../components/Iconos.jsx";
 import Tarjeta, { EncabezadoTarjeta } from "../../components/Tarjeta.jsx";
 import useDatos from "../../hooks/useDatos.js";
+import Ayuda from "./Ayuda.jsx";
 import Escala from "./Escala.jsx";
 import GraficaLinea from "./GraficaLinea.jsx";
 import GraficaMeses from "./GraficaMeses.jsx";
@@ -181,6 +182,7 @@ export default function Suelo({ ubicacion }) {
               {(d) => (
                 <Tarjeta className={`suelo-sequia ${d.categoria ? "suelo-sequia--seca" : ""}`}>
                   <EncabezadoTarjeta etiqueta={`Soil · ${nombre}`} titulo="Soil moisture compared with other years" />
+                  <Ayuda termino="percentil" />
                   {d.mensaje ? (
                     <p className="suelo-nota">{d.mensaje}</p>
                   ) : (
@@ -222,6 +224,8 @@ export default function Suelo({ ubicacion }) {
             {(d) => (
               <Tarjeta>
                 <EncabezadoTarjeta etiqueta="NASA POWER model" titulo="Moisture and temperature" />
+                <Ayuda termino="modelo" />
+                <Ayuda termino="evaporacion" />
                 <div className="suelo-datos">
                   <Dato etiqueta="Surface" valor={d.humedad_superficie} unidad="%" />
                   <Dato etiqueta="Root zone" valor={d.humedad_raiz} unidad="%" />
@@ -239,6 +243,7 @@ export default function Suelo({ ubicacion }) {
             {(d) => (
               <Tarjeta>
                 <EncabezadoTarjeta etiqueta="Satellite measurement" titulo="SMAP moisture" />
+                <Ayuda termino="smap" />
                 {d.ultima ? (
                   <>
                     <div className="suelo-datos">
@@ -273,6 +278,7 @@ export default function Suelo({ ubicacion }) {
             {(d) => (
               <Tarjeta>
                 <EncabezadoTarjeta etiqueta="SMAP L4 · model corrected with satellite" titulo="Root-zone moisture" />
+                <Ayuda termino="raiz" />
                 {d.ultima ? (
                   <>
                     <div className="suelo-datos">
@@ -301,6 +307,7 @@ export default function Suelo({ ubicacion }) {
             {(d) => (
               <Tarjeta>
                 <EncabezadoTarjeta etiqueta="NASA MODIS · 250 m" titulo="Plant cover and bare soil" />
+                <Ayuda termino="ndvi" />
                 {d.ultimo && (
                   <span className={`suelo-chip ${d.ultimo.ndvi <= 0.1 ? "suelo-chip--alerta" : ""}`}>
                     Now: {mayuscula(d.ultimo.clase)} (NDVI {d.ultimo.ndvi})
@@ -325,6 +332,7 @@ export default function Suelo({ ubicacion }) {
               {(d) => (
                 <Tarjeta>
                   <EncabezadoTarjeta etiqueta="Last weeks" titulo="How your soil holds water" />
+                  <Ayuda termino="retencion" />
                   <GraficaRetencion dias={d.dias} />
                   <p className="suelo-nota">
                     When it rains, moisture goes up; if it drops fast, the soil holds little water. {d.nota}
@@ -340,6 +348,7 @@ export default function Suelo({ ubicacion }) {
               {(d) => (
                 <Tarjeta>
                   <EncabezadoTarjeta etiqueta="SoilGrids · 250 m" titulo="Soil properties" />
+                  <Ayuda termino="propiedades" />
                   {d.sin_datos ? (
                     <p className="suelo-nota">{d.aviso}</p>
                   ) : (
@@ -387,6 +396,7 @@ export default function Suelo({ ubicacion }) {
             {(d) => (
               <Tarjeta>
                 <EncabezadoTarjeta etiqueta="NASA SRTM · 30 m" titulo="Land and erosion" />
+                <Ayuda termino="erosion" />
                 <span className="suelo-chip suelo-chip--neutro">{mayuscula(d.clase_pendiente_fao)}</span>
                 <div className="suelo-datos">
                   <Dato etiqueta="Average slope" valor={d.terreno.pendiente_promedio_pct} unidad="%" />
@@ -413,6 +423,7 @@ export default function Suelo({ ubicacion }) {
             {(d) => (
               <Tarjeta>
                 <EncabezadoTarjeta etiqueta="NASA GRACE / GRACE-FO" titulo="Water stored in the region" />
+                <Ayuda termino="grace" />
                 <span className={`suelo-chip ${d.tendencia_cm_por_anio < 0 ? "suelo-chip--alerta" : ""}`}>
                   {d.lectura}: {d.tendencia_cm_por_anio} cm/year
                 </span>

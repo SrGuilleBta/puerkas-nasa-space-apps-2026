@@ -284,3 +284,25 @@
 .resumen__cuadro .suelo-nota {
   font-size: 15px;
 }
+
+/* ---------- "What does this mean?" (Ayuda.jsx) ---------- */
+.ayuda {
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+.ayuda summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  width: fit-content;
+}
+.ayuda summary:focus-visible {
+  outline: 2px solid var(--verde-oscuro);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.ayuda p {
+  margin-top: 6px;
+  line-height: 1.45;
+  color: var(--tinta);
+}

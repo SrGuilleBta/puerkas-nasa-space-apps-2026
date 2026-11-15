@@ -105,6 +105,7 @@ Regla del equipo: **nada de deducciones propias**. Cada clasificación usa una r
 | Textura (`/propiedades`) | Triángulo de texturas | USDA |
 | Factor LS (`/erosion`) | (As/22.13)^0.4 × (sen β/0.0896)^1.3, flujo D8 sobre SRTM; LS = 1 es la parcela estándar RUSLE | RUSLE (USDA), Moore y Burch (1986) |
 | Cobertura (`/cobertura`) | NDVI ≤ 0.1 suelo desnudo; 0.2–0.3 matorral/pastizal; ≥ 0.6 vegetación densa | USGS |
+| Calidad MODIS (`/cobertura`) | Solo píxeles con *pixel reliability* 0 (bueno) o 1 (marginal); se descartan nubes (3) y nieve (2) | Guía de usuario MOD13 (Didan et al., 2015) |
 | Materia orgánica estimada (`/propiedades`) | Carbono orgánico × 1.724 (factor empírico de Van Bemmelen; en algunos suelos el real se acerca a 2.0, Pribyl 2010) | NOM-021-SEMARNAT-2000 |
 | Tendencia de GRACE | Regresión lineal de la serie; negativa = pierde agua | Cálculo directo sobre datos NASA |
 
