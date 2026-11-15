@@ -1,7 +1,9 @@
 import { useId, useState } from "react";
-import { borrarSiembra, crearCultivo, crearSiembra, editarSiembra } from "../../api/planificador.js";
+import { borrarSiembra, crearCultivo, crearSiembra, cultivoDesdeCatalogo, editarSiembra, getCatalogo } from "../../api/planificador.js";
 import Dialogo from "../../components/Dialogo.jsx";
+import useDatos from "../../hooks/useDatos.js";
 import InfoSiembra from "./InfoSiembra.jsx";
+import VentanaSiembra from "./VentanaSiembra.jsx";
 import { aISO, deISO, diasEntre, fechaConAnio, normalizar, sumarDias } from "../../utils/fechas.js";
 import { TIPOS, etiquetaTipo } from "../../utils/tipos.js";
 
@@ -16,7 +18,7 @@ function primerDiaLibre(parcela, hoy) {
 }
 
 // `sugerencia` = { cultivo, inicio } viene de una recomendación: deja el formulario ya lleno.
-function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, onCultivoCreado, onCerrar }) {
+function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, municipio, onGuardado, onCultivoCreado, onCerrar }) {
   const idLista = useId();
   const editando = Boolean(siembra);
 
@@ -32,11 +34,19 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
   const [guardando, setGuardando] = useState(false);
   const [confirmaBorrar, setConfirmaBorrar] = useState(false);
 
-  const coincidencia = cultivos.find((c) => normalizar(c.nombre) === normalizar(texto));
+  // Cultivos que ya tiene el Planificador y, además, los del catálogo de Cultivos que aún no se usan.
+  // Elegir uno del catálogo lo agrega al Planificador al guardar (con su ficha de cuidados).
+  const catalogo = useDatos(getCatalogo, []);
+  const delCatalogo = (catalogo.datos ?? []).filter((c) => !cultivos.some((l) => normalizar(l.nombre) === normalizar(c.nombre)));
+  const opciones = [...cultivos, ...delCatalogo];
+
+  const local = cultivos.find((c) => normalizar(c.nombre) === normalizar(texto));
+  const nuevoDelCatalogo = local ? null : delCatalogo.find((c) => normalizar(c.nombre) === normalizar(texto));
+  const coincidencia = local ?? nuevoDelCatalogo;
   const esNuevo = texto.trim() !== "" && !coincidencia;
-  // Cultivos del catálogo que se parecen a lo escrito: evita crear "maiz" teniendo "Maíz amarillo".
+  // Cultivos que se parecen a lo escrito: evita crear "maiz" teniendo "Maíz grano".
   const parecidos = esNuevo
-    ? cultivos.filter((c) => normalizar(c.nombre).includes(normalizar(texto))).slice(0, 4)
+    ? opciones.filter((c) => normalizar(c.nombre).includes(normalizar(texto))).slice(0, 4)
     : [];
   const ciclo = coincidencia?.cicloDias ?? (esNuevo && Number(cicloNuevo) > 0 ? Number(cicloNuevo) : null);
 
@@ -73,8 +83,11 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
     setGuardando(true);
     setError(null);
     try {
-      let cultivo = coincidencia;
-      if (esNuevo) {
+      let cultivo = local;
+      if (nuevoDelCatalogo) {
+        cultivo = await cultivoDesdeCatalogo(nuevoDelCatalogo.id);
+        onCultivoCreado();
+      } else if (esNuevo) {
         try {
           cultivo = await crearCultivo({ nombre: texto.trim(), tipo: tipoNuevo, cicloDias: Number(cicloNuevo) });
         } catch (err) {
@@ -131,7 +144,7 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
           autoFocus={!editando}
         />
         <datalist id={idLista}>
-          {cultivos.map((c) => (
+          {opciones.map((c) => (
             <option key={c.id} value={c.nombre} />
           ))}
         </datalist>
@@ -141,6 +154,14 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
           </small>
         )}
       </label>
+
+      {(local?.catalogoId ?? nuevoDelCatalogo?.id) && municipio && (
+        <VentanaSiembra
+          catalogoId={local?.catalogoId ?? nuevoDelCatalogo.id}
+          municipio={municipio}
+          mesInicio={inicio ? Number(inicio.slice(5, 7)) : null}
+        />
+      )}
 
       {parecidos.length > 0 && (
         <div className="aviso aviso--info parecidos">

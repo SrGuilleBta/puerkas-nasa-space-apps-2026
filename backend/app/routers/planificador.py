@@ -2,13 +2,15 @@
 
 from datetime import date
 
-from fastapi import APIRouter, Depends, Request, Response
+from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from fastapi.responses import JSONResponse
 from pydantic.alias_generators import to_camel
 
 from app import db
 from app.schemas.planificador import (
     AnalisisOut,
+    CatalogoIn,
+    CatalogoItemOut,
     CultivoIn,
     CultivoOut,
     ParcelaIn,
@@ -21,6 +23,7 @@ from app.schemas.planificador import (
     SiembraOut,
     SiembraPatch,
 )
+from app.services import catalogo_cultivos, nasa_power, rotacion, ubicaciones, ventana_siembra
 from app.services import planificador as servicio
 
 router = APIRouter(prefix="/api/planificador", tags=["planificador"])
@@ -68,7 +71,7 @@ def analisis_plan(plan_id: int, hoy: date | None = None, con=Depends(con_db)):
 
     `hoy` (AAAA-MM-DD) lo manda el navegador para usar su fecha local; sin él se usa la de Monterrey.
     """
-    return servicio.analisis_plan(con, plan_id, hoy or db.hoy())
+    return rotacion.analisis(con, plan_id, hoy or db.hoy())
 
 
 @router.patch("/planes/{plan_id}", response_model=PlanResumenOut)
@@ -109,6 +112,39 @@ def listar_cultivos(q: str | None = None, con=Depends(con_db)):
 @router.post("/cultivos", response_model=CultivoOut, status_code=201)
 def crear_cultivo(datos: CultivoIn, con=Depends(con_db)):
     return servicio.crear_cultivo(con, datos.nombre, datos.tipo, datos.ciclo_dias)
+
+
+@router.get("/catalogo", response_model=list[CatalogoItemOut])
+def listar_catalogo():
+    """Cultivos del catálogo de Cultivos (los que se pueden elegir al sembrar)."""
+    return catalogo_cultivos.listar()
+
+
+@router.post("/cultivos/desde-catalogo", response_model=CultivoOut, status_code=201)
+def cultivo_desde_catalogo(datos: CatalogoIn, con=Depends(con_db)):
+    """Crea (o reutiliza) en el Planificador el cultivo elegido del catálogo."""
+    return catalogo_cultivos.asegurar_cultivo(con, datos.catalogo_id)
+
+
+@router.get("/catalogo/{catalogo_id}/ventana-siembra")
+async def ventana_de_siembra(catalogo_id: str, municipio: str, con=Depends(con_db)):
+    """Mejor época para sembrar un cultivo del catálogo en una ubicación guardada (temperatura ideal
+    del cultivo contra el clima promedio mensual de NASA POWER)."""
+    ficha = catalogo_cultivos.ficha_del_catalogo(catalogo_id)
+    ciudad = ubicaciones.buscar(con, municipio)
+    if ciudad is None:
+        raise servicio.NoEncontrado(f"Unknown location: {municipio}")
+    try:
+        clima = await nasa_power.climatologia(ciudad.lat, ciudad.lon)
+    except nasa_power.ErrorNasaPower as e:
+        raise HTTPException(502, str(e))
+    return ventana_siembra.calcular(ficha, clima["temp"], clima["lluviaMm"])
+
+
+@router.get("/cultivos/{cultivo_id}/ficha")
+def ficha_cultivo(cultivo_id: int, con=Depends(con_db)):
+    """Ficha del catálogo (cuidados, temperatura, agua, suelo); null si el cultivo no viene del catálogo."""
+    return catalogo_cultivos.ficha(con, cultivo_id)
 
 
 # ---------- Siembras ----------

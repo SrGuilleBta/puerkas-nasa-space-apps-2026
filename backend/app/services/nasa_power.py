@@ -48,6 +48,35 @@ def resumir(p: dict) -> dict:
     }
 
 
+_cache_clima: dict[tuple, tuple[float, dict]] = {}
+DIAS_DEL_MES = [31, 28.25, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+MESES = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+URL_CLIMATOLOGIA = "https://power.larc.nasa.gov/api/temporal/climatology/point"
+
+
+async def climatologia(lat: float, lon: float) -> dict:
+    """Clima promedio de cada mes del año en un punto: {"temp": [12 °C], "lluviaMm": [12 mm al mes]}."""
+    llave = (round(lat, 2), round(lon, 2))
+    guardado = _cache_clima.get(llave)
+    if guardado and time.monotonic() - guardado[0] < 24 * 3600:
+        return guardado[1]
+    params = {"parameters": "T2M,PRECTOTCORR", "community": "AG", "latitude": lat, "longitude": lon, "format": "JSON"}
+    try:
+        async with httpx.AsyncClient(timeout=30) as cliente:
+            r = await cliente.get(URL_CLIMATOLOGIA, params=params)
+            r.raise_for_status()
+        p = r.json()["properties"]["parameter"]
+        temp = [p["T2M"][m] for m in MESES]
+        lluvia_dia = [p["PRECTOTCORR"][m] for m in MESES]
+    except (httpx.HTTPError, KeyError, ValueError) as e:
+        raise ErrorNasaPower(f"Could not get the climate from NASA POWER ({type(e).__name__})") from e
+    if any(v is None or v < -900 for v in temp + lluvia_dia):
+        raise ErrorNasaPower("NASA POWER has no climate data for this place")
+    resultado = {"temp": temp, "lluviaMm": [round(d * n) for d, n in zip(lluvia_dia, DIAS_DEL_MES)]}
+    _cache_clima[llave] = (time.monotonic(), resultado)
+    return resultado
+
+
 async def periodo(lat: float, lon: float, desde: date, hasta: date) -> dict:
     if hasta < desde:
         raise ValueError("The end date is before the start date")

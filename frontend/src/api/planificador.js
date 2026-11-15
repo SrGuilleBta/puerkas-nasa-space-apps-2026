@@ -27,3 +27,12 @@ export const crearCultivo = (datos) => enviar("POST", `${R}/cultivos`, datos);
 export const crearSiembra = (parcelaId, datos) => enviar("POST", `${R}/parcelas/${parcelaId}/siembras`, datos);
 export const editarSiembra = (id, datos) => enviar("PATCH", `${R}/siembras/${id}`, datos);
 export const borrarSiembra = (id) => enviar("DELETE", `${R}/siembras/${id}`);
+
+// Catálogo de Cultivos: lista para elegir, cultivo del Planificador a partir de uno del catálogo y su ficha.
+export const getCatalogo = () => obtener(`${R}/catalogo`);
+export const cultivoDesdeCatalogo = (catalogoId) => enviar("POST", `${R}/cultivos/desde-catalogo`, { catalogoId });
+export const getFicha = (cultivoId) => obtener(`${R}/cultivos/${cultivoId}/ficha`);
+
+// Mejor época para sembrar un cultivo del catálogo en una ubicación (NASA POWER + temperatura ideal).
+export const getVentanaSiembra = (catalogoId, municipio) =>
+  obtener(`${R}/catalogo/${catalogoId}/ventana-siembra`, { municipio });

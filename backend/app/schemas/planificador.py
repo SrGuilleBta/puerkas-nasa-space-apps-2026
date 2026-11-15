@@ -39,6 +39,10 @@ class CultivoIn(Modelo):
     ciclo_dias: int = Field(gt=0, le=1500)
 
 
+class CatalogoIn(Modelo):
+    catalogo_id: str = Field(min_length=1, max_length=80)  # id del catálogo de Cultivos, p. ej. "maiz-grano"
+
+
 class SiembraIn(Modelo):
     cultivo_id: int
     fecha_siembra: date
@@ -62,6 +66,15 @@ class CultivoOut(Modelo):
     nombre: str
     tipo: str
     ciclo_dias: int
+    catalogo_id: str | None = None  # id en el catálogo de Cultivos, si viene de ahí
+
+
+class CatalogoItemOut(Modelo):
+    id: str
+    nombre: str
+    tipo: str
+    ciclo_dias: int
+    perenne: bool
 
 
 class SiembraOut(Modelo):
@@ -128,10 +141,20 @@ class DespuesDeOut(Modelo):
     fecha_cosecha: date
 
 
+class SugeridoOut(Modelo):
+    """Cultivo sugerido. `id` es null si todavía no está en el Planificador (viene del catálogo)."""
+
+    id: int | None = None
+    nombre: str
+    tipo: str
+    ciclo_dias: int
+    catalogo_id: str | None = None
+
+
 class RecomendacionOut(Modelo):
     parcela: ParcelaResumenOut
     despues_de: DespuesDeOut
-    sugerido: CultivoOut
+    sugerido: SugeridoOut
     desde: date  # primer día en que se puede sembrar
     razon: str
 

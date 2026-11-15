@@ -14,7 +14,7 @@ from zoneinfo import ZoneInfo
 
 from app import config
 
-VERSION_ESQUEMA = 3  # versión actual de la base (ver iniciar)
+VERSION_ESQUEMA = 4  # versión actual de la base (ver iniciar)
 
 # Zona horaria de referencia para "hoy" (el contenedor corre en UTC y de noche ya es mañana)
 ZONA = ZoneInfo("America/Monterrey")
@@ -144,8 +144,39 @@ def iniciar() -> None:
             with con:
                 _renombrar_mi_ubicacion(con)
                 con.execute("PRAGMA user_version = 3")
+        if version < 4:
+            _enlazar_catalogo(con)
     finally:
         con.close()
+
+
+# Cultivos de demo -> cultivo del catálogo de Cultivos (nombre viejo, nombre nuevo, id del catálogo)
+DEMO_A_CATALOGO = [
+    ("Maíz amarillo", "Maíz grano", "maiz-grano"),
+    ("Frijol pinto", "Frijol", "frijol"),
+    ("Trigo cristalino", "Trigo grano", "trigo-grano"),
+    ("Sorgo", "Sorgo grano", "sorgo-grano"),
+    ("Aguacate Hass", "Aguacate", "aguacate"),
+]
+
+
+def _enlazar_catalogo(con: sqlite3.Connection) -> None:
+    """Versión 4: cada cultivo puede venir del catálogo de Cultivos (columna `catalogo_id`).
+
+    Los cultivos de demo se renombran al nombre del catálogo y se enlazan, así tienen ficha. Solo si
+    la fila conserva exactamente el nombre de demo y el nombre nuevo no está ya tomado; los cultivos
+    que creó el usuario no se tocan.
+    """
+    with con:
+        con.execute("ALTER TABLE cultivo ADD COLUMN catalogo_id TEXT")
+        for viejo, nuevo, id_catalogo in DEMO_A_CATALOGO:
+            if con.execute("SELECT 1 FROM cultivo WHERE clave = ?", (clave(nuevo),)).fetchone():
+                continue
+            con.execute(
+                "UPDATE cultivo SET nombre = ?, clave = ?, catalogo_id = ? WHERE nombre = ?",
+                (nuevo, clave(nuevo), id_catalogo, viejo),
+            )
+        con.execute("PRAGMA user_version = 4")
 
 
 def _renombrar_mi_ubicacion(con: sqlite3.Connection) -> None:
