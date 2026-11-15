@@ -1,8 +1,12 @@
 import asyncio
+from datetime import date
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 
+from app import db
+from app.schemas.planificador import CultivoActivoOut
 from app.services import meteomatics, municipios, soilgrids
+from app.services import planificador as plan_servicio
 
 router = APIRouter(prefix="/api/principal", tags=["principal"])
 
@@ -35,3 +39,16 @@ async def clima(municipio: str):
         ph = None
     # `datos` está en la caché de meteomatics: se copia en vez de modificarlo
     return {**datos, "hoy": {**datos["hoy"], "phSuelo": ph}}
+
+
+@router.get("/cultivos-activos", response_model=list[CultivoActivoOut])
+def cultivos_activos(
+    plan_id: int | None = Query(default=None, alias="planId"),
+    hoy: date | None = None,
+    con=Depends(db.con_db),
+):
+    """Siembras en curso hoy en un plan (por defecto el primero), la que cosecha primero va primero.
+
+    `hoy` (AAAA-MM-DD) lo manda el navegador para usar su fecha local; sin él se usa la de Monterrey.
+    """
+    return plan_servicio.siembras_en_curso(con, plan_id, hoy or db.hoy())

@@ -3,6 +3,7 @@ import { getParcela } from "./api/principal.js";
 import EnConstruccion from "./components/EnConstruccion.jsx";
 import Layout, { MUNICIPIOS } from "./components/Layout.jsx";
 import useDatos from "./hooks/useDatos.js";
+import Planificador from "./pages/Planificador/Planificador.jsx";
 import Principal from "./pages/Principal/Principal.jsx";
 import { useSeccion } from "./routes.js";
 
@@ -41,6 +42,8 @@ export default function App() {
     >
       {seccion.id === "principal" ? (
         <Principal municipio={municipio} />
+      ) : seccion.id === "planificador" ? (
+        <Planificador />
       ) : (
         <EnConstruccion nombre={seccion.nombre} />
       )}

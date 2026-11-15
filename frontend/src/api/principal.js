@@ -6,8 +6,11 @@
 //   export const getClima = (municipio) => obtener("/api/principal/clima", { municipio });
 //
 // La pantalla no cambia mientras la forma del objeto devuelto sea la misma.
+import { aISO } from "../utils/fechas.js";
+import { leerPlanActivo } from "../utils/planActivo.js";
 import { obtener } from "./cliente.js";
 import * as ejemplo from "./datosEjemplo.js";
+import { getPlan, listarPlanes } from "./planificador.js";
 
 // Simula una consulta al backend. Se borra cuando la sección deje de usar el ejemplo.
 const simular = (datos) => Promise.resolve(datos);
@@ -25,6 +28,17 @@ export const getClima = async (municipio) => {
 
 export const getAlertaRegional = (municipio) => simular(ejemplo.alertaRegional);
 
-export const getCultivoActivo = (municipio) => simular(ejemplo.cultivoActivo);
-
-export const getPlanAnual = () => simular(ejemplo.planAnual);
+// Lo que viene del Planificador: el plan que se está viendo (el elegido allá o el primero) y sus
+// siembras en curso hoy. Alimenta las tarjetas "Cultivos activos" y "Plan anual".
+// Devuelve { plan: null, activos: [] } si todavía no hay ningún plan.
+export async function getPlanificacion() {
+  const planes = await listarPlanes();
+  const guardado = leerPlanActivo();
+  const planId = (planes.find((p) => p.id === guardado) ?? planes[0])?.id ?? null;
+  if (planId === null) return { plan: null, activos: [] };
+  const [plan, activos] = await Promise.all([
+    getPlan(planId),
+    obtener("/api/principal/cultivos-activos", { planId, hoy: aISO(new Date()) }),
+  ]);
+  return { plan, activos };
+}

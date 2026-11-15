@@ -37,29 +37,3 @@ export const alertaRegional = {
   titulo: "Se pronostica un fuerte huracán en la zona norte del país",
   detalle: "Protección Civil recomienda revisar cultivos e infraestructura de riego.",
 };
-
-export const cultivoActivo = {
-  nombre: "Maíz amarillo",
-  hectareas: 8.2,
-  dia: 74,
-  cicloDias: 125,
-  etapa: 3,
-  etapas: 5,
-  precio: 6420,
-  variacion: 8.4,
-  cosecha: new Date(new Date().getFullYear(), 8, 18),
-  chips: [
-    { tipo: "positivo", titulo: "Alta demanda", detalle: "Precio favorable" },
-    { tipo: "riesgo", titulo: "Estrés hídrico", detalle: "Riesgo en 4 días" },
-  ],
-};
-
-// Siembras del plan principal: inicio y fin como [mes (0-11), día].
-export const planAnual = {
-  nombre: "Plan principal",
-  siembras: [
-    { nombre: "Frijol pinto", inicio: [0, 12], fin: [3, 28], color: "var(--primavera)" },
-    { nombre: "Maíz amarillo", inicio: [4, 15], fin: [8, 18], color: "var(--verano)" },
-    { nombre: "Trigo", inicio: [9, 12], fin: [11, 28], color: "var(--otono)" },
-  ],
-};

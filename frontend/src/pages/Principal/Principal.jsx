@@ -1,15 +1,9 @@
-import {
-  getAlertaRegional,
-  getAviso,
-  getClima,
-  getCultivoActivo,
-  getPlanAnual,
-} from "../../api/principal.js";
+import { getAlertaRegional, getAviso, getClima, getPlanificacion } from "../../api/principal.js";
 import Cargable from "../../components/Cargable.jsx";
 import useDatos from "../../hooks/useDatos.js";
 import AlertaRegional from "./AlertaRegional.jsx";
 import BannerPreventivo from "./BannerPreventivo.jsx";
-import CultivoActivo from "./CultivoActivo.jsx";
+import CultivosActivos from "./CultivosActivos.jsx";
 import PlanAnual from "./PlanAnual.jsx";
 import PronosticoSemanal from "./PronosticoSemanal.jsx";
 import "./Principal.css";
@@ -20,8 +14,8 @@ export default function Principal({ municipio }) {
   const aviso = useDatos(() => getAviso(municipio), [municipio]);
   const clima = useDatos(() => getClima(municipio), [municipio]);
   const alerta = useDatos(() => getAlertaRegional(municipio), [municipio]);
-  const cultivo = useDatos(() => getCultivoActivo(municipio), [municipio]);
-  const plan = useDatos(() => getPlanAnual(), []);
+  // Cultivos activos y plan anual salen del mismo plan del Planificador, por eso van juntos.
+  const planificacion = useDatos(getPlanificacion, []);
 
   return (
     <div className="principal">
@@ -40,13 +34,13 @@ export default function Principal({ municipio }) {
         </Cargable>
       </div>
       <div className="principal__columna">
-        <Cargable estado={cultivo} alto={460}>
-          {(d) => <CultivoActivo cultivo={d} />}
+        <Cargable estado={planificacion} alto={460}>
+          {(d) => <CultivosActivos activos={d.activos} />}
         </Cargable>
       </div>
       <div className="principal__plan">
-        <Cargable estado={plan} alto={200}>
-          {(d) => <PlanAnual plan={d} />}
+        <Cargable estado={planificacion} alto={200}>
+          {(d) => <PlanAnual plan={d.plan} />}
         </Cargable>
       </div>
     </div>
