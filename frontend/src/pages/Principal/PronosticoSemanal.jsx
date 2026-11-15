@@ -40,7 +40,7 @@ function Medida({ icono: Icono, etiqueta, valor }) {
   );
 }
 
-export default function PronosticoSemanal({ pronostico, hoy, esEjemplo }) {
+export default function PronosticoSemanal({ pronostico, hoy }) {
   // El primer día es hoy: si llegara algún día anterior (respuesta vieja), se descarta. Los datos de
   // ejemplo no traen fecha: se cuentan desde hoy.
   const ahora = new Date();
@@ -62,7 +62,7 @@ export default function PronosticoSemanal({ pronostico, hoy, esEjemplo }) {
         titulo="Weather in your region"
         derecha={
           <span className="insignia">
-            <i /> {esEjemplo ? "SAMPLE DATA" : "LIVE DATA"}
+            <i /> LIVE DATA
           </span>
         }
       />

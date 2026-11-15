@@ -1,31 +1,17 @@
-// Datos de la pantalla Principal: una función por sección.
-//
-// Hoy todas devuelven el ejemplo de datosEjemplo.js. Para conectar una sección con datos
-// reales se cambia SOLO su función, por ejemplo:
-//
-//   export const getClima = (municipio) => obtener("/api/principal/clima", { municipio });
-//
-// La pantalla no cambia mientras la forma del objeto devuelto sea la misma.
+// Datos de la pantalla Principal: una función por sección, todas con datos reales del backend.
 import { aISO } from "../utils/fechas.js";
 import { leerPlanActivo } from "../utils/planActivo.js";
 import { obtener } from "./cliente.js";
-import * as ejemplo from "./datosEjemplo.js";
 import { getPlan, listarPlanes } from "./planificador.js";
-
-// Simula una consulta al backend. Se borra cuando la sección deje de usar el ejemplo.
-const simular = (datos) => Promise.resolve(datos);
-
-export const getParcela = () => simular(ejemplo.parcela);
 
 // Alertas reales: riesgos del clima y condiciones favorables para plagas según los cultivos en curso.
 export const getAlertas = (municipio, planId) =>
   obtener("/api/principal/alertas", { municipio, hoy: aISO(new Date()), ...(planId ? { planId } : {}) });
 
-// Clima real (Meteomatics, vía el backend). `esEjemplo` controla la insignia de la tarjeta.
-// El pH del suelo viene como null hasta que se conecte SoilGrids.
+// Clima real (Meteomatics, vía el backend); el pH y la humedad del suelo los agrega el módulo Suelo.
 export const getClima = async (municipio) => {
   const { pronostico, hoy } = await obtener("/api/principal/clima", { municipio });
-  return { pronostico, hoy, esEjemplo: false };
+  return { pronostico, hoy };
 };
 
 // Lo que viene del Planificador: el plan que se está viendo (el elegido allá o el primero) y sus

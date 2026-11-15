@@ -24,7 +24,7 @@ Navegador (React)  ──/api/...──▶  FastAPI  ──▶  fuentes de datos
 
 ## Árbol de carpetas
 
-Así está hoy el repo. `[pendiente]` = lo pone el módulo que falta (Clima, Mercado, Cultivos, Noticias).
+Así está hoy el repo. `[pendiente]` = lo pone el módulo que falta (Clima, Mercado y la pantalla de Cultivos).
 Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto tenga su primer archivo.
 
 ```
@@ -38,13 +38,14 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   ├── principal.py     clima, alertas y cultivos activos de Principal
 │   │   │   ├── planificador.py  planes, parcelas, siembras, resumen y recomendaciones
 │   │   │   ├── ubicaciones.py   lugares guardados, búsqueda por nombre y "Mi ubicación"
+│   │   │   ├── suelo/           /api/suelo: humedad, propiedades, erosión, agua subterránea, cobertura y resumen
 │   │   │   ├── clima.py         [pendiente]
 │   │   │   ├── mercado.py       [pendiente]
 │   │   │   ├── cultivos.py      catálogo, indicadores por municipio y cuidados por estado (/api/cultivos)
 │   │   │   └── noticias.py      noticias propias y feeds externos
 │   │   ├── services/            lógica y clientes de datos; no importan FastAPI
 │   │   │   ├── meteomatics.py   pronóstico y condiciones de hoy (caché de 10 min)
-│   │   │   ├── soilgrids.py     pH del suelo, versión anterior (Principal ya usa suelo_ubicacion.py)
+│   │   │   ├── suelo/           módulo Suelo: NASA POWER, SMAP, MODIS, SRTM, GRACE y SoilGrids (ver suelo.md)
 │   │   │   ├── suelo_ubicacion.py pH, humedad y percentil de humedad de una ubicación, con el módulo Suelo
 │   │   │   ├── alertas.py       reglas de clima, plagas y enfermedades
 │   │   │   ├── planificador.py  reglas del plan (sin traslapes, rotación, resumen)
@@ -77,14 +78,14 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │       ├── routes.js            rutas con hash (#/clima, #/planificador)
 │       ├── api/                 una función por consulta al backend
 │       │   ├── cliente.js       fetch común con manejo de errores
-│       │   ├── principal.js, planificador.js, ubicaciones.js
-│       │   └── datosEjemplo.js  datos de ejemplo de lo que aún no tiene backend
+│       │   └── principal.js, planificador.js, ubicaciones.js, noticias.js, suelo.js
 │       ├── pages/               una carpeta por pantalla
 │       │   ├── Principal/       banner de alertas, pronóstico, cultivos activos, plan anual
 │       │   ├── Planificador/    calendario, barra de tiempo, popups, resumen, recomendaciones
 │       │   ├── Noticias/        filtros y tarjetas de noticias propias y externas
+│       │   ├── Suelo/           humedad, plantas, terreno, agua subterránea y tipo de suelo, con gráficas y ayudas
 │       │   ├── Clima/, Mercado/, Cultivos/   [pendiente]
-│       ├── components/          Layout, Dialogo, Cargable, SelectorUbicacion, Iconos...
+│       ├── components/          Layout (con PlanLateral: el plan activo en el menú), Dialogo, Cargable, SelectorUbicacion, Iconos...
 │       ├── hooks/               useDatos (cargando / error / recargar)
 │       ├── utils/               fechas, ventana de tiempo, colores, plan activo
 │       └── styles/              global.css con los colores y medidas

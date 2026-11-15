@@ -1,7 +1,8 @@
-# Módulo Suelo (borrador)
+# Módulo Suelo
 
-Qué va a tener el módulo Suelo y qué necesita el backend. Es la base para empezar a programar;
-se ajusta conforme avancemos. Las fuentes generales están en [datos.md](datos.md).
+Qué muestra el módulo Suelo, de dónde salen sus datos y cómo está armado el backend. Ya está
+implementado y conectado a Principal, al popup del cultivo del Planificador y a las alertas. Las
+fuentes generales están en [datos.md](datos.md).
 
 ## Para qué sirve
 
@@ -14,20 +15,20 @@ erosion reduction, organic matter improvement* (y opcional *frost risk*, *vegeta
 
 ## Secciones de la pantalla
 
-| # | Sección | Qué muestra | Fuente | Prioridad |
+| # | Sección | Qué muestra | Fuente | Estado |
 |---|---|---|---|---|
-| 1 | **Estado general** | Semáforo 🟢🟡🔴: humedad actual vs. promedio histórico de ese mes | NASA POWER (cálculo propio) | MVP |
-| 2 | **Humedad del suelo** | Superficie, zona de raíz y perfil completo | NASA POWER (`GWETTOP`, `GWETROOT`, `GWETPROF`); Open-Meteo para hoy/pronóstico; SMAP después | MVP |
-| 3 | **Temperatura del suelo** | Temperatura de la superficie del suelo | NASA POWER (`TS`), Open-Meteo (`soil_temperature_0cm`) | MVP |
-| 4 | **Pérdida de agua (evaporación)** | Cuánta agua se va del suelo | NASA POWER / Open-Meteo (ET0); ECOSTRESS después | MVP |
-| 5 | **Propiedades del suelo** | pH, textura (arcilla/arena/limo), materia orgánica (carbono) | SoilGrids | MVP |
-| 6 | **Riesgo de erosión** | Pendiente del terreno + lluvias fuertes | SRTM + GPM/IMERG (o lluvia de POWER) | MVP |
-| 7 | **Agua subterránea** | Tendencia de largo plazo: ¿la región se está secando? | GRACE / GRACE-FO | Recomendado |
-| 8 | **Tendencia de humedad** | Gráfica mensual de ~20 años | NASA POWER | MVP |
-| 9 | Cobertura del suelo | ¿El terreno está sin plantas? (NDVI) | MODIS / Landsat | Fase 2 |
-| 10 | Suelo congelado | Riesgo de helada en el suelo | SMAP freeze/thaw o `TS` de POWER | Opcional |
+| 1 | **Estado general** | Humedad actual vs. otros años en esta época (percentil, categorías D0–D4) | NASA SMAP (ver "Cálculos") | Hecha |
+| 2 | **Humedad del suelo** | Superficie, zona de raíz y perfil completo | NASA POWER (`GWETTOP`, `GWETROOT`, `GWETPROF`); SMAP (medida) y SMAP L4 (raíz) | Hecha |
+| 3 | **Temperatura del suelo** | Temperatura de la superficie del suelo | NASA POWER (`TS`) | Hecha |
+| 4 | **Pérdida de agua (evaporación)** | Cuánta agua se va del suelo | NASA POWER (`EVLAND`) | Hecha |
+| 5 | **Propiedades del suelo** | pH, textura (arcilla/arena/limo), materia orgánica (carbono) | SoilGrids | Hecha |
+| 6 | **Riesgo de erosión** | Pendiente del terreno + lluvias fuertes | SRTM + lluvia de NASA POWER (R20mm) | Hecha |
+| 7 | **Agua subterránea** | Tendencia de largo plazo: ¿la región se está secando? | GRACE / GRACE-FO | Hecha |
+| 8 | **Tendencia de humedad** | Gráfica mensual de ~20 años | NASA POWER | Hecha |
+| 9 | Cobertura del suelo | ¿El terreno está sin plantas? (NDVI) | MODIS (MOD13, 250 m) | Hecha |
+| 10 | Suelo congelado | Riesgo de helada en el suelo | SMAP freeze/thaw o `TS` de POWER | Opcional, no hecha |
 
-## Endpoints propuestos
+## Endpoints
 
 Todos reciben **`municipio`** (el nombre de la ubicación guardada, ej. `Monterrey, NL`) o, si no,
 `lat` y `lon`. Con `municipio` se usa su punto de cultivo (ver "Ubicaciones" más abajo). La pantalla
@@ -35,25 +36,30 @@ de Suelo usa la ubicación que eligió el agricultor en el selector de arriba.
 
 | Ruta | Parámetros extra | Devuelve | Sección |
 |---|---|---|---|
-| `GET /api/suelo/actual` | — | Humedad (superficie, ~20 cm) y temperatura del suelo de hoy | 2, 3 |
-| `GET /api/suelo/dia` | `fecha` | Lo mismo para un día (pasado: POWER, futuro: Open-Meteo) | 2, 3 |
-| `GET /api/suelo/estado` | — | Semáforo y % vs. promedio histórico del mes | 1 |
-| `GET /api/suelo/historico` | `inicio`, `fin` | Serie mensual de humedad, temperatura y evaporación | 4, 8 |
+| `GET /api/suelo/actual` | — | Humedad (superficie, raíz, perfil) y temperatura del suelo del último día con datos | 2, 3 |
+| `GET /api/suelo/estado` | — | Humedad vs. otros años en esta época (percentil SMAP) | 1 |
+| `GET /api/suelo/historico` | `anio_inicio`, `anio_fin` | Serie mensual de humedad, temperatura y evaporación | 4, 8 |
 | `GET /api/suelo/propiedades` | — | pH, arcilla, arena, limo, carbono orgánico y textura | 5 |
-| `GET /api/suelo/erosion` | — | Pendiente (SRTM), lluvias fuertes (POWER) y nivel de riesgo | 6 |
+| `GET /api/suelo/erosion` | — | Pendiente (SRTM) con su clase FAO, factor LS y días de lluvia muy intensa | 6 |
 | `GET /api/suelo/agua-subterranea` | — | Tendencia de GRACE en la región | 7 |
+| `GET /api/suelo/smap` | — | Humedad superficial medida por SMAP, últimos días | 2 |
+| `GET /api/suelo/raiz` | — | Humedad de la zona de raíces (SMAP L4) | 2 |
+| `GET /api/suelo/retencion` | — | Cuánto sube y qué tan rápido baja la humedad con la lluvia (SMAP + POWER) | 2 |
+| `GET /api/suelo/cobertura` | — | NDVI de MODIS: promedio por mes, meses de suelo desnudo y último valor | 9 |
+| `GET /api/suelo/resumen` | — | Todo lo anterior ya clasificado, en una sola respuesta (ver "Para el Planificador") | todas |
 
 ## Variables por fuente
 
 | Fuente | Variables | Notas |
 |---|---|---|
 | NASA POWER | `GWETTOP`, `GWETROOT`, `GWETPROF`, `TS`, `PRECTOTCORR` | Sin llave. Humedad viene de 0 a 1. `-999` = sin dato. ~50 km de resolución |
-| Open-Meteo | `soil_moisture_0_to_1cm`, `soil_moisture_9_to_27cm`, `soil_temperature_0cm`, `et0_fao_evapotranspiration` | Sin llave. Solo se probó la temperatura a 0 cm; verificar las demás |
 | SoilGrids | `phh2o`, `clay`, `sand`, `silt`, `soc` (capas 0–5 y 5–15 cm) | Sin llave. Valores escalados (pH ×10, arcilla en g/kg). Da `null` en zonas urbanas |
-| SRTM | Elevación → pendiente | Fuente de descarga por definir |
-| GPM / IMERG | Lluvia diaria, eventos extremos | Pide login de Earthdata |
-| GRACE / GRACE-FO | Anomalía de almacenamiento de agua | Pide login de Earthdata. Resolución muy gruesa (cientos de km): solo tendencia regional |
-| SMAP | Humedad superficial, freeze/thaw | Pide login de Earthdata |
+| SRTM (SRTMGL1, 30 m) | Elevación → pendiente | Pide el token de Earthdata. Se baja el mosaico de 1°×1° la primera vez |
+| GRACE / GRACE-FO | Anomalía de almacenamiento de agua | Pide el token de Earthdata. Resolución muy gruesa (cientos de km): solo tendencia regional |
+| SMAP (L3 y L4) | Humedad superficial y de raíz | Pide el token de Earthdata |
+| MODIS | NDVI (MOD13) y cobertura del suelo (MCD12Q1) | Pide el token de Earthdata |
+
+Open-Meteo e IMERG se consideraron al inicio y no se usan en Suelo: la lluvia sale de NASA POWER.
 
 ## Cálculos del backend
 
@@ -73,7 +79,7 @@ de Suelo usa la ubicación que eligió el agricultor en el selector de arriba.
   de lluvia ≥20 mm (R20mm).
 - **Conversiones**: `-999` → `null`, pH ÷ 10, humedad 0–1 → %.
 
-## Estado actual (rama `suelo`)
+## Estado actual
 
 Todos los endpoints de la tabla ya funcionan (probados en lat 25.9, lon -100.2):
 
@@ -127,8 +133,8 @@ una sola vez el punto de campo de cada municipio y lo guarda en
   ```
   Espera 13 s entre consultas para no pasar el límite (~2,470 municipios ≈ 9 horas; se guarda
   después de cada punto, así que se puede cortar y continuar).
-- Trae las capas 0–5, 5–15 y 15–30 cm, así que también sirve para el pH de la Principal
-  (pendiente de platicar con Guille).
+- Trae las capas 0–5, 5–15 y 15–30 cm. Principal y el popup del cultivo del Planificador toman el pH de
+  aquí mismo (`services/suelo_ubicacion.py`), así que todas las pantallas muestran la misma cifra.
 
 ## Ubicaciones: de dónde sale el punto de suelo
 
@@ -143,8 +149,9 @@ La pantalla manda el nombre de la ubicación elegida (`?municipio=Monterrey, NL`
 2. Si no hay cultivo cerca o MODIS no responde, usa las coordenadas del lugar.
 
 No usa `lat_suelo`/`lon_suelo` de la tabla: al revisar los 4 puntos de inicio con MODIS, Pesquería (NL)
-y Hunucmá (YUC) salen como pastizal y Arteaga (COAH) como matorral; solo el de Culiacán es cultivo. Esos
-puntos los sigue usando la Principal para el pH.
+y Hunucmá (YUC) salen como pastizal y Arteaga (COAH) como matorral; solo el de Culiacán es cultivo. Principal,
+las alertas y el popup del cultivo usan este mismo punto (`services/suelo_ubicacion.py`), así que sus cifras
+coinciden con las de la pantalla Soil. Las columnas `lat_suelo`/`lon_suelo` de la tabla ya no se leen.
 
 Se probó con las 32 capitales: el cultivo más cercano quedó a 1–10 km en casi todas (Baja California
 Sur a ~47 km). Los datos ya descargados de esos puntos se quedan guardados, así que si el agricultor
@@ -209,11 +216,11 @@ y deben salir de una regla citable (p. ej. guías de la FAO), no inventadas.
 | Capa | Archivo |
 |---|---|
 | Router | `backend/app/routers/suelo/endpoints.py` |
-| Servicios | `backend/app/services/suelo/`: `nasa_power.py`, `soilgrids.py`, `srtm.py`, `grace.py`, `smap.py` (L3 y L4), `modis.py` |
+| Servicios | `backend/app/services/suelo/`: `nasa_power.py`, `soilgrids.py`, `srtm.py`, `grace.py`, `smap.py` (L3 y L4), `modis.py`, `puntos.py` (punto de cultivo de cada ubicación) |
+| Puente con otras pantallas | `backend/app/services/suelo_ubicacion.py`: pH, humedad y percentil de una ubicación, para Principal, el Planificador y las alertas |
 | Scripts | `backend/scripts/`: `generar_suelo_municipios.py` (tabla SoilGrids) y `precargar_suelo.py` (SMAP, SRTM, MODIS), para las ubicaciones guardadas |
 | Front (API) | `frontend/src/api/suelo.js` |
-| Front (pantalla) | `frontend/src/pages/Suelo/Suelo.jsx` |
-| Menú | Agregar "Suelo" en `frontend/src/App.jsx` |
+| Front (pantalla) | `frontend/src/pages/Suelo/`: `Suelo.jsx`, `Escala.jsx` y las gráficas, `resumen.js` (escalas y textos) y `Ayuda.jsx` (explicación de términos como "percentil") |
 
 ## Técnico
 
@@ -223,8 +230,9 @@ y deben salir de una regla citable (p. ej. guías de la FAO), no inventadas.
 
 ## Por decidir con el equipo
 
-1. Principal y Clima muestran humedad del suelo: ¿llaman a `/api/suelo` en vez de pedirla por su cuenta?
-2. Formato del semáforo para que lo use el Planificador.
+1. ~~Principal y Clima muestran humedad del suelo: ¿llaman a `/api/suelo`?~~ Decidido: Principal ya usa el
+   módulo Suelo (pH y humedad). Clima, cuando se haga, debería hacer lo mismo para no mostrar cifras distintas.
+2. ~~Formato del semáforo para que lo use el Planificador.~~ Resuelto: `/api/suelo/resumen` ya trae todo clasificado.
 3. ~~¿De dónde bajamos SRTM?~~ Decidido: SRTMGL1 (30 m) de LP DAAC con el token de Earthdata.
    Se baja el mosaico de 1°×1° la primera vez (~25 MB) y se guarda en `backend/data/srtm/`.
 4. ~~¿GRACE e IMERG entran al MVP?~~ Decidido: **GRACE sí entra** (hay que crear cuenta de

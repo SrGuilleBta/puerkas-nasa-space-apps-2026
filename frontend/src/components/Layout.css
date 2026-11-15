@@ -127,7 +127,7 @@
   color: var(--verde-oscuro);
 }
 
-.layout__parcela {
+.layout__plan {
   display: grid;
   gap: 2px;
   margin-top: auto;
@@ -136,7 +136,7 @@
   background: var(--verde-claro);
 }
 
-.layout__parcela p {
+.layout__plan p {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -144,7 +144,7 @@
   color: var(--verde-oscuro);
 }
 
-.layout__parcela span {
+.layout__plan span {
   font-size: 13px;
   color: var(--tinta-suave);
 }

@@ -13,7 +13,7 @@ export default function Escala({ tramos, valor, min = 0, max = 100, extremos = [
           inicio = t.hasta;
           return (
             <span
-              key={t.etiqueta}
+              key={t.hasta} // la etiqueta puede repetirse entre tramos; el límite superior no
               className="escala__tramo"
               style={{ left: `${izq}%`, width: `${ancho}%`, background: t.color }}
               title={t.etiqueta}

@@ -8,9 +8,10 @@ que importa es qué muestra cada pieza, no el valor.
 Para cada pantalla: qué muestra, de dónde saldría cada dato (fuentes en [datos.md](datos.md)) y si
 el dato está **resuelto**, **parcial** o **falta**. Es un punto de partida para mejorarlo.
 
-**Avance (2026-11-14):** **Principal**, **Planificador** y **Noticias** ya están implementados con datos reales
-(clima de Meteomatics, pH de SoilGrids, planes en SQLite, feeds de CIMMYT y NASA). Clima, Mercado y Cultivos
-siguen pendientes. Donde la tabla dice "Implementado" ya funciona en la aplicación.
+**Avance (2026-11-15):** **Principal**, **Planificador**, **Noticias** y **Suelo** ya están implementados con datos
+reales (clima de Meteomatics, suelo de NASA y SoilGrids, planes en SQLite, feeds de CIMMYT y NASA). **Clima** y
+**Mercado** siguen pendientes; de **Cultivos** ya están el catálogo y la API (`/api/cultivos`) y falta su pantalla.
+Donde la tabla dice "Implementado" ya funciona en la aplicación.
 
 ## Piezas compartidas (en todas las pantallas)
 
@@ -19,7 +20,7 @@ siguen pendientes. Donde la tabla dice "Implementado" ya funciona en la aplicaci
 | Selector de **ubicación** (arriba) | Elige dónde estás. Trae 4 ciudades de inicio (Monterrey, Saltillo, Culiacán, Mérida); se pueden **agregar lugares de México** buscándolos por nombre, **usar mi ubicación** (GPS del navegador, se guarda como "Mi ubicación") y quitar los que sobren (siempre debe quedar uno). Todo lo demás se recalcula para ese lugar | Tabla `ubicacion` en SQLite; búsqueda por nombre con el geocodificador de Open-Meteo limitado a México (`countryCode=MX`). Falta ligar cada lugar con el municipio de SIAP | **Implementado**; la equivalencia con SIAP hay que armarla |
 | "Datos actualizados 09:42" | Hora de la última consulta | La marca el backend al responder | Resuelto |
 | Menú lateral | Principal, Clima, Mercado, Cultivos, Planificador, Noticias | Solo navegación | Resuelto |
-| "Mi parcela" (abajo del menú) | Muestra la parcela del usuario (ej. "La Esperanza", 12.4 ha) | Datos que captura el usuario | Falta decidir dónde se guardan (ver "Preguntas") |
+| **Plan activo** (abajo del menú) | Muestra el plan que se está viendo en el Planificador: nombre, número de parcelas y hectáreas totales. Se vuelve a consultar cada vez que se abre el menú | `GET /api/planificador/planes` y `/planes/{id}` (componente `PlanLateral`) | **Implementado** |
 
 ## 1. Principal
 
@@ -96,12 +97,29 @@ externos** de feeds RSS en inglés. Si un feed falla, se omite y la pantalla avi
 | **Titulares externos** con enlace a la fuente original | Feeds RSS de CIMMYT (centro internacional de maíz y trigo) y NASA Earth Observatory, con caché de 30 min. FAO, USDA y SADER no tienen feed utilizable (probados el 2026-11-14) | **Implementado** |
 | Precio del maíz y programas de agua del Figma | Dependen de Mercado y de una fuente de programas que no existe | Falta |
 
+## 7. Suelo
+
+Pantalla propia (en el Figma original no existía). Dice cómo está el suelo hoy y hacia dónde va, con
+escalas de colores de reglas oficiales y una ayuda en pantalla para los términos técnicos. Todo sale del
+punto de cultivo más cercano a la ubicación activa (NASA MODIS). Detalle de fuentes, reglas y endpoints en
+[suelo.md](suelo.md).
+
+| Qué muestra | Dato / fuente | Estado |
+|---|---|---|
+| **Water in your soil**: humedad de hoy contra otros años en esta época | SMAP, percentil con las categorías del Monitor de Sequía (`/api/suelo/estado`) | **Implementado** |
+| **Plants on your land**: cuántas plantas cubren el terreno y el mes con menos | MODIS NDVI, escala USGS (`/api/suelo/cobertura`) | **Implementado** |
+| **Shape of the land**: pendiente y qué tanto favorece perder suelo con la lluvia | SRTM, clase FAO y factor LS de RUSLE (`/api/suelo/erosion`) | **Implementado** |
+| **Underground water**: tendencia de la región desde 2002 | GRACE / GRACE-FO (`/api/suelo/agua-subterranea`) | **Implementado** |
+| **Soil type**: textura, pH y materia orgánica | SoilGrids, triángulo USDA (`/api/suelo/propiedades`) | **Implementado** |
+| Detalles técnicos: humedad y temperatura por capa, evaporación, tendencia histórica, retención | NASA POWER y SMAP (`/actual`, `/historico`, `/raiz`, `/retencion`, `/smap`) | **Implementado** |
+| El pH y la humedad también salen en **Principal**, en el popup del cultivo y en las alertas | `services/suelo_ubicacion.py`: misma cifra que esta pantalla | **Implementado** |
+
 ## Qué cambió respecto al documento original
 
 | Documento original | Figma |
 |---|---|
 | Ubicación (pantalla aparte) | Ya no es pantalla: es el selector de municipio de arriba |
-| Suelo (pantalla aparte, "similar al clima") | Ya no es pantalla: son tarjetas en Principal y Clima y una capa del mapa |
+| Suelo (pantalla aparte, "similar al clima") | Sigue siendo pantalla (**Soil**, sección 7); además su pH y humedad salen en Principal |
 | Línea de tiempo | Se llama **Planificador** |
 | — | **Noticias** es nueva |
 | Datos de México | El mapa de Clima es global (Monterrey, Madrid, Sídney) |

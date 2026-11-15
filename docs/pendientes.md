@@ -1,6 +1,6 @@
 # Pendientes de Principal, Planificador y Noticias
 
-Lista de lo que queda por hacer en las pantallas de Guillermo (actualizada el 2026-11-14).
+Lista de lo que queda por hacer en las pantallas de Guillermo (actualizada el 2026-11-15).
 Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 
 ## Decidir
@@ -42,7 +42,7 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 
 ## Lo que sigue
 
-- ~~Conectar Suelo~~: hecho en Principal (pH y humedad del módulo Suelo), el popup del cultivo (pH del suelo contra el ideal) y las alertas (suelo más seco de lo normal, SMAP). Falta usar el suelo en la franja de "cuándo sembrar aquí" y la textura en las fichas. `services/soilgrids.py` (viejo) ya no se usa: se puede borrar.
+- ~~Conectar Suelo~~: hecho en Principal (pH y humedad del módulo Suelo), el popup del cultivo (pH del suelo contra el ideal) y las alertas (suelo más seco de lo normal, SMAP). Falta usar el suelo en la franja de "cuándo sembrar aquí" y la textura en las fichas. El `services/soilgrids.py` viejo ya se borró.
 
 - ~~Mejor fecha de siembra~~: hecha con temperatura (catálogo contra NASA POWER). Mejoras: usar los meses
   de siembra de las agendas INIFAP cuando haya estado, sumar el pH y el suelo cuando esté esa parte, y
@@ -78,6 +78,7 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 
 ## Pequeños
 
-- Los datos de ejemplo de `frontend/src/api/datosEjemplo.js` (alerta regional y parcela del menú)
-  se borran cuando dejen de usarse.
-- La parcela "Mi parcela" del menú lateral sigue siendo un ejemplo fijo.
+- ~~Datos de ejemplo (`datosEjemplo.js`)~~: borrados; ya nada los usaba.
+- ~~"Mi parcela" del menú lateral~~: ahora muestra el plan activo (nombre, parcelas y hectáreas).
+- Las columnas `lat_suelo` y `lon_suelo` de la tabla `ubicacion` ya no se leen (Suelo usa el punto de MODIS).
+  Se pueden quitar con una migración de la base.
