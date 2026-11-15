@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 import httpx
 
 from app import config
-from app.services.municipios import Municipio
+from app.services.ubicaciones import Ubicacion
 
 BASE = "https://api.meteomatics.com"
 SEGUNDOS_CACHE = 600  # 10 minutos: la API cobra por consulta y el clima no cambia tan rápido
@@ -86,7 +86,7 @@ def _redondear(valor: float | None, decimales: int = 0):
     return int(r) if decimales == 0 else r
 
 
-async def _consultar(cliente: httpx.AsyncClient, fecha: str, parametros: list[str], m: Municipio):
+async def _consultar(cliente: httpx.AsyncClient, fecha: str, parametros: list[str], m: Ubicacion):
     url = f"{BASE}/{fecha}/{','.join(parametros)}/{m.lat},{m.lon}/json"
     try:
         r = await cliente.get(url, auth=(config.METEOMATICS_USER, config.METEOMATICS_PASSWORD))
@@ -114,11 +114,12 @@ def _optimo_para_campo(temp, viento, prob_lluvia) -> bool | None:
     return 10 <= temp <= 35 and viento < 25 and prob_lluvia < 30
 
 
-async def clima(m: Municipio) -> dict:
+async def clima(m: Ubicacion) -> dict:
     if not config.METEOMATICS_USER or not config.METEOMATICS_PASSWORD:
         raise SinCredenciales("Faltan METEOMATICS_USER y METEOMATICS_PASSWORD en el .env")
 
-    guardado = _cache.get(m.nombre)
+    llave = f"{m.lat:.3f},{m.lon:.3f}"  # por coordenadas: "Mi ubicación" cambia de lugar con el mismo nombre
+    guardado = _cache.get(llave)
     if guardado and time.monotonic() - guardado[0] < SEGUNDOS_CACHE:
         return guardado[1]
 
@@ -169,5 +170,5 @@ async def clima(m: Municipio) -> dict:
             "phSuelo": None,  # Meteomatics no lo da: lo agrega el router con SoilGrids
         },
     }
-    _cache[m.nombre] = (time.monotonic(), resultado)
+    _cache[llave] = (time.monotonic(), resultado)
     return resultado

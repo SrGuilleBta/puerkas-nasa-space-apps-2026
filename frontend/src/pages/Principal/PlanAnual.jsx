@@ -3,14 +3,7 @@ import { Calendario, Lapiz } from "../../components/Iconos.jsx";
 import { hashDe } from "../../routes.js";
 import { colorCultivo } from "../../utils/colores.js";
 import { deISO, fechaCorta, sumarDias } from "../../utils/fechas.js";
-import { estaciones, mesesDeVentana, posicion, ventanaInicial } from "../../utils/ventana.js";
-
-const ESTACIONES = [
-  ["Primavera", "var(--primavera)"],
-  ["Verano", "var(--verano)"],
-  ["Otoño", "var(--otono)"],
-  ["Invierno", "var(--invierno)"],
-];
+import { mesesDeVentana, posicion, ventanaInicial } from "../../utils/ventana.js";
 
 const MAX_PARCELAS = 3; // más filas harían crecer demasiado la tarjeta; el resto está en el Planificador
 
@@ -64,19 +57,11 @@ export default function PlanAnual({ plan }) {
         </p>
       ) : (
         <>
-          <ul className="leyenda">
-            {ESTACIONES.map(([nombre, color]) => (
-              <li key={nombre}>
-                <i style={{ background: color }} /> {nombre}
-              </li>
-            ))}
-          </ul>
-
           <div className="plan__cal" role="img" aria-label={`Siembras de los próximos 12 meses del ${plan.nombre}`}>
             <div className="plan__fila">
               <span />
               <ol className="plan__meses">
-                {meses.map((m) => (
+                {meses.filter((m) => m.visible).map((m) => (
                   <li key={m.clave} style={{ left: `${m.izquierda}%`, width: `${m.ancho}%` }}>
                     {m.etiqueta}
                     {m.anio && <small>{m.anio}</small>}
@@ -96,8 +81,8 @@ export default function PlanAnual({ plan }) {
                   {p.nombre}
                 </span>
                 <div className="plan__pista">
-                  {estaciones(ventana).map((e, i) => (
-                    <span key={i} className={`plan__estacion plan__estacion--${e.nombre}`} style={{ left: `${e.izquierda}%`, width: `${e.ancho}%` }} />
+                  {meses.filter((m) => m.izquierda > 0 && m.izquierda < 100).map((m) => (
+                    <span key={m.clave} className="plan__linea" style={{ left: `${m.izquierda}%` }} />
                   ))}
                   {ahora >= 0 && ahora <= 100 && <span className="plan__hoy" style={{ left: `${ahora}%` }} />}
                   <ul className="plan__barras">

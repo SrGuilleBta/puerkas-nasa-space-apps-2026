@@ -1,20 +1,20 @@
+import { useEffect, useRef, useState } from "react";
 import { Lapiz, Mas } from "../../components/Iconos.jsx";
 import { colorCultivo } from "../../utils/colores.js";
 import { deISO, fechaCorta, sumarDias } from "../../utils/fechas.js";
-import { estaciones, mesesDeVentana, posicion } from "../../utils/ventana.js";
+import { mesesDeVentana, posicion } from "../../utils/ventana.js";
 
-// Fondo de estaciones y línea de "hoy": van dentro de la pista de cada parcela.
+// Fondo neutro de la pista: una línea tenue al inicio de cada mes y la línea de "hoy".
+// Los colores quedan solo para las barras de los cultivos.
 function Fondo({ ventana, hoy }) {
   const ahora = posicion(new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate(), 12), ventana);
   return (
     <>
-      {estaciones(ventana).map((e, i) => (
-        <span
-          key={i}
-          className={`cal__estacion cal__estacion--${e.nombre}`}
-          style={{ left: `${e.izquierda}%`, width: `${e.ancho}%` }}
-        />
-      ))}
+      {mesesDeVentana(ventana)
+        .filter((m) => m.izquierda > 0 && m.izquierda < 100)
+        .map((m) => (
+          <span key={m.clave} className="cal__linea" style={{ left: `${m.izquierda}%` }} />
+        ))}
       {ahora >= 0 && ahora <= 100 && <span className="cal__hoy" style={{ left: `${ahora}%` }} />}
     </>
   );
@@ -87,16 +87,103 @@ function Parcela({ parcela, ventana, hoy, onAgregar, onEditarParcela, onEditarSi
   );
 }
 
-export default function Calendario({ plan, ventana, hoy, onAgregarSiembra, onEditarSiembra, onEditarParcela }) {
+const UMBRAL_ARRASTRE = 4; // px que hay que mover para que cuente como arrastre y no como clic
+
+// `onDesplazar(fraccion)`: mueve la ventana esa fracción de su ancho (positivo = hacia el futuro).
+// Se puede arrastrar con el mouse o el dedo, usar la rueda lateral del trackpad (o Shift + rueda)
+// y las teclas ← → (un mes; con Shift, medio calendario) o Inicio para volver a hoy.
+export default function Calendario({ plan, ventana, hoy, onDesplazar, onHoy, onAgregarSiembra, onEditarSiembra, onEditarParcela }) {
   const meses = mesesDeVentana(ventana);
   const ahora = posicion(new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate(), 12), ventana);
 
+  const raiz = useRef(null);
+  const arrastre = useRef(null); // { id, x, ultimoX, movido }
+  const sinClic = useRef(false); // evita que soltar un arrastre encima de una barra la abra
+  const [arrastrando, setArrastrando] = useState(false);
+  // La rueda necesita un listener "no pasivo" (React los registra pasivos), y ese listener vive
+  // fuera del render: por eso se guardan aquí los valores más recientes.
+  const ultimo = useRef({});
+  ultimo.current = { onDesplazar };
+
+  // Ancho en pixeles de una pista: sirve para pasar pixeles a fracción de la ventana.
+  const anchoPista = () => raiz.current?.querySelector(".cal__pista")?.clientWidth || 1;
+
+  useEffect(() => {
+    const el = raiz.current;
+    function alRodar(e) {
+      const lateral = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+      if (!lateral && !e.shiftKey) return; // la rueda normal sigue desplazando la página
+      e.preventDefault();
+      const px = lateral ? e.deltaX : e.deltaY;
+      ultimo.current.onDesplazar(px / anchoPista());
+    }
+    el.addEventListener("wheel", alRodar, { passive: false });
+    return () => el.removeEventListener("wheel", alRodar);
+  }, []);
+
+  function alPresionar(e) {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    arrastre.current = { id: e.pointerId, x: e.clientX, ultimoX: e.clientX, movido: false };
+  }
+
+  function alMover(e) {
+    const a = arrastre.current;
+    if (!a || a.id !== e.pointerId) return;
+    if (!a.movido) {
+      if (Math.abs(e.clientX - a.x) < UMBRAL_ARRASTRE) return;
+      a.movido = true;
+      raiz.current.setPointerCapture(e.pointerId); // seguir el arrastre aunque el cursor salga del calendario
+      setArrastrando(true);
+    }
+    onDesplazar(-(e.clientX - a.ultimoX) / anchoPista());
+    a.ultimoX = e.clientX;
+  }
+
+  function alSoltar() {
+    if (arrastre.current?.movido) {
+      sinClic.current = true;
+      setTimeout(() => (sinClic.current = false), 0);
+    }
+    arrastre.current = null;
+    setArrastrando(false);
+  }
+
+  function alTeclear(e) {
+    if (e.target.closest("input, select, textarea")) return;
+    const paso = e.shiftKey ? 0.5 : 1 / ventana.meses; // un mes, o medio calendario con Shift
+    if (e.key === "ArrowLeft") onDesplazar(-paso);
+    else if (e.key === "ArrowRight") onDesplazar(paso);
+    else if (e.key === "Home") onHoy();
+    else return;
+    e.preventDefault();
+  }
+
   return (
-    <div className="cal">
+    <div
+      ref={raiz}
+      id="calendario-siembras"
+      className={`cal ${arrastrando ? "cal--arrastrando" : ""}`}
+      role="group"
+      aria-label="Calendario de siembras. Usa las flechas izquierda y derecha para moverte en el tiempo, Inicio para volver a hoy."
+      tabIndex={0}
+      onPointerDown={alPresionar}
+      onPointerMove={alMover}
+      onPointerUp={alSoltar}
+      onPointerCancel={alSoltar}
+      onKeyDown={alTeclear}
+      onClickCapture={(e) => {
+        if (sinClic.current) {
+          e.stopPropagation();
+          e.preventDefault();
+        }
+      }}
+    >
+      <p className="cal__ayuda">Arrastra el calendario o la barra de arriba para moverte en el tiempo</p>
+
       {/* Eje de meses: usa las mismas columnas que las filas para quedar alineado con las pistas */}
       <div className="cal__fila cal__eje">
         <ol className="cal__meses">
-          {meses.map((m) => (
+          {meses.filter((m) => m.visible).map((m) => (
             <li key={m.clave} style={{ left: `${m.izquierda}%`, width: `${m.ancho}%` }}>
               <b>{m.etiqueta}</b>
               {m.anio && <small>{m.anio}</small>}

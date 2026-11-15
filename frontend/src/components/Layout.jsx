@@ -3,14 +3,8 @@ import { SECCIONES } from "../routes.js";
 import { Brote, Cerrar, Menu } from "./Iconos.jsx";
 import "./Layout.css";
 
-export const MUNICIPIOS = [
-  "Monterrey, NL",
-  "Saltillo, COAH",
-  "Culiacán, SIN",
-  "Mérida, YUC",
-];
-
-export default function Layout({ seccion, municipio, onMunicipio, parcela, children }) {
+// `selector` es lo que va a la derecha del encabezado (el selector de ubicación).
+export default function Layout({ seccion, selector, parcela, children }) {
   const [menuAbierto, setMenuAbierto] = useState(false);
 
   useEffect(() => {
@@ -43,14 +37,7 @@ export default function Layout({ seccion, municipio, onMunicipio, parcela, child
           <span className="layout__beta">beta</span>
         </div>
 
-        <label className="layout__municipio">
-          <span className="sr-only">Municipio</span>
-          <select value={municipio} onChange={(e) => onMunicipio(e.target.value)}>
-            {MUNICIPIOS.map((m) => (
-              <option key={m}>{m}</option>
-            ))}
-          </select>
-        </label>
+        <div className="layout__selector">{selector}</div>
       </header>
 
       <main className="layout__contenido">{children}</main>

@@ -6,10 +6,13 @@ Se corren desde la carpeta backend (dentro del contenedor):
 Usan una base de datos temporal: no tocan backend/data/planificador.db.
 """
 
+import asyncio
 import os
+import sqlite3
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import AsyncMock, patch
 
 # Antes de importar la app: así config.DB_PATH apunta a una base temporal.
 _carpeta = tempfile.mkdtemp()
@@ -298,6 +301,147 @@ class PruebasPlanificador(unittest.TestCase):
 
     def test_analisis_de_un_plan_inexistente_da_404(self):
         self.assertEqual(self.c.get(f"{P}/planes/99999/analisis").status_code, 404)
+
+
+class PruebasUbicaciones(unittest.TestCase):
+    """Lugares para el clima: listar, agregar, "Mi ubicación", borrar, búsqueda y suelo."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls._ctx = TestClient(app)
+        cls.c = cls._ctx.__enter__()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls._ctx.__exit__(None, None, None)
+
+    U = "/api/ubicaciones"
+    GDL = {"nombre": "Guadalajara, Jalisco, México", "lat": 20.67, "lon": -103.35, "zona": "America/Mexico_City"}
+
+    def test_las_cuatro_ciudades_de_inicio(self):
+        nombres = [u["nombre"] for u in self.c.get(self.U).json()]
+        for n in ("Monterrey, NL", "Saltillo, COAH", "Culiacán, SIN", "Mérida, YUC"):
+            self.assertIn(n, nombres)
+
+    def test_agregar_y_quitar_un_lugar(self):
+        r = self.c.post(self.U, json=self.GDL)
+        self.assertEqual(r.status_code, 201)
+        nuevo = r.json()
+        self.assertEqual(nuevo["nombre"], self.GDL["nombre"])
+        # No se puede repetir, aunque cambien acentos, mayúsculas o espacios
+        r = self.c.post(self.U, json={**self.GDL, "nombre": "  GUADALAJARA,  jalisco, MEXICO "})
+        self.assertEqual(r.status_code, 409)
+        self.assertEqual(self.c.delete(f"{self.U}/{nuevo['id']}").status_code, 204)
+        self.assertEqual(self.c.delete(f"{self.U}/{nuevo['id']}").status_code, 404)
+
+    def test_datos_invalidos(self):
+        r = self.c.post(self.U, json={**self.GDL, "zona": "Marte/Olimpo"})
+        self.assertEqual(r.status_code, 422)
+        self.assertIn("zona horaria", r.json()["detail"]["mensaje"])
+        self.assertEqual(self.c.post(self.U, json={**self.GDL, "lat": 95}).status_code, 422)  # fuera de rango
+        self.assertEqual(self.c.post(self.U, json={**self.GDL, "nombre": "   "}).status_code, 422)
+
+    def test_mi_ubicacion_se_actualiza_y_es_una_sola(self):
+        a = self.c.put(f"{self.U}/mi-ubicacion", json={"lat": 25.5, "lon": -100.1, "zona": "America/Monterrey"}).json()
+        b = self.c.put(f"{self.U}/mi-ubicacion", json={"lat": 26.0, "lon": -101.0, "zona": "America/Monterrey"}).json()
+        self.assertEqual((a["nombre"], a["id"]), ("Mi ubicación", b["id"]))
+        self.assertEqual((b["lat"], b["lon"]), (26.0, -101.0))
+        self.assertEqual(sum(u["nombre"] == "Mi ubicación" for u in self.c.get(self.U).json()), 1)
+        self.c.delete(f"{self.U}/{b['id']}")
+
+    def test_no_se_puede_borrar_la_ultima_ubicacion(self):
+        from app import db
+        from app.services import ubicaciones as servicio
+
+        con = sqlite3.connect(":memory:")
+        con.row_factory = sqlite3.Row
+        con.executescript(db.MIGRACION_UBICACIONES)
+        con.execute("INSERT INTO ubicacion (nombre, clave, lat, lon, zona) VALUES ('Única', 'unica', 1, 1, 'UTC')")
+        with self.assertRaises(servicio.Conflicto):
+            servicio.borrar(con, 1)
+
+    def test_buscar_lugares_usa_el_geocodificador_sin_red(self):
+        from app.services import ubicaciones as servicio
+
+        candidatos = [dict(self.GDL)]
+        with patch.object(servicio, "geocodificar", new=AsyncMock(return_value=candidatos)):
+            r = self.c.get(f"{self.U}/buscar", params={"q": "Guadalajara"})
+        self.assertEqual((r.status_code, r.json()), (200, candidatos))
+        with patch.object(servicio, "geocodificar", new=AsyncMock(side_effect=servicio.ErrorBusqueda("sin servicio"))):
+            self.assertEqual(self.c.get(f"{self.U}/buscar", params={"q": "Guadalajara"}).status_code, 502)
+        # Una búsqueda de menos de 2 letras se rechaza sin llamar al servicio externo
+        r = self.c.get(f"{self.U}/buscar", params={"q": "a"})
+        self.assertEqual(r.status_code, 422)
+
+    def test_la_busqueda_se_limita_a_mexico(self):
+        from app.services import ubicaciones as servicio
+
+        class Respuesta:
+            def raise_for_status(self):
+                pass
+
+            def json(self):
+                return {"results": [
+                    {"name": "Hermosillo", "admin1": "Sonora", "country": "México", "country_code": "MX",
+                     "latitude": 29.07, "longitude": -110.95, "timezone": "America/Hermosillo"},
+                    {"name": "Benito Juárez", "admin1": "Buenos Aires", "country": "Argentina", "country_code": "AR",
+                     "latitude": -37.67, "longitude": -59.81, "timezone": "America/Argentina/Buenos_Aires"},
+                ]}
+
+        pedido = AsyncMock(return_value=Respuesta())
+        with patch("httpx.AsyncClient.get", new=pedido):
+            candidatos = asyncio.run(servicio.geocodificar("Hermosillo"))
+        self.assertEqual(pedido.await_args.kwargs["params"]["countryCode"], "MX")  # se pide solo México
+        self.assertEqual([c["nombre"] for c in candidatos], ["Hermosillo, Sonora, México"])  # y se descarta lo demás
+
+    def test_el_clima_busca_la_ubicacion_sin_importar_acentos_ni_mayusculas(self):
+        from app import db
+        from app.services import ubicaciones as servicio
+
+        con = db.conectar()
+        self.assertEqual(servicio.buscar(con, "culiacan, sin").nombre, "Culiacán, SIN")
+        self.assertIsNone(servicio.buscar(con, "Narnia"))
+        self.assertEqual(self.c.get("/api/principal/clima", params={"municipio": "Narnia"}).status_code, 404)
+
+    def test_migracion_de_una_base_antigua_conserva_los_datos(self):
+        from app import config, db
+
+        ruta = Path(tempfile.mkdtemp()) / "antigua.db"
+        con = sqlite3.connect(ruta)
+        con.executescript(db.ESQUEMA)  # una base como la de la versión 1: sin tabla de ubicaciones
+        con.execute("INSERT INTO plan (nombre) VALUES ('Plan de antes')")
+        con.execute("PRAGMA user_version = 1")
+        con.commit()
+        con.close()
+        with patch.object(config, "DB_PATH", ruta):
+            db.iniciar()
+            db.iniciar()  # una segunda vez no debe duplicar nada
+            con = db.conectar()
+            self.assertEqual(con.execute("SELECT COUNT(*) FROM ubicacion").fetchone()[0], 4)
+            self.assertEqual(con.execute("SELECT nombre FROM plan").fetchone()[0], "Plan de antes")
+            self.assertEqual(con.execute("PRAGMA user_version").fetchone()[0], 2)
+            con.close()
+
+    def test_suelo_busca_puntos_cercanos_solo_en_lugares_sin_punto_de_campo(self):
+        from app.services import soilgrids
+        from app.services.ubicaciones import Ubicacion
+
+        con_campo = Ubicacion(1, "Con campo", 10.0, 10.0, "UTC", 10.5, 10.5)
+        sin_campo = Ubicacion(2, "Sin campo", 11.0, 11.0, "UTC")
+        self.assertEqual(soilgrids._puntos(con_campo), [(10.5, 10.5)])
+        self.assertEqual(soilgrids._puntos(sin_campo)[0], (11.0, 11.0))
+        self.assertEqual(len(soilgrids._puntos(sin_campo)), 9)
+
+        # Los dos primeros puntos no tienen dato (centro urbano): usa el tercero y ya no sigue
+        nuevo = Ubicacion(3, "Ciudad nueva", 31.111, 41.111, "UTC")
+        mock = AsyncMock(side_effect=[None, None, 7.4])
+        with patch.object(soilgrids, "_consultar_punto", new=mock):
+            self.assertEqual(asyncio.run(soilgrids.ph(nuevo)), 7.4)
+        self.assertEqual(mock.await_count, 3)
+        # La segunda vez sale de la caché: no consulta
+        with patch.object(soilgrids, "_consultar_punto", new=mock):
+            self.assertEqual(asyncio.run(soilgrids.ph(nuevo)), 7.4)
+        self.assertEqual(mock.await_count, 3)
 
 
 if __name__ == "__main__":

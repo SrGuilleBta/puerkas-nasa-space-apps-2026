@@ -14,7 +14,7 @@ from zoneinfo import ZoneInfo
 
 from app import config
 
-VERSION_ESQUEMA = 1
+VERSION_ESQUEMA = 2  # versión actual de la base (ver iniciar)
 
 # Zona horaria de referencia para "hoy" (el contenedor corre en UTC y de noche ya es mañana)
 ZONA = ZoneInfo("America/Monterrey")
@@ -90,17 +90,56 @@ def conectar() -> sqlite3.Connection:
     return con
 
 
+# Versión 2: lugares para el clima. Las 4 ciudades de siempre son el punto de partida; el usuario
+# puede agregar más o quitarlas. (nombre, lat, lon, zona horaria, lat y lon de un campo agrícola
+# cercano para el suelo). SoilGrids no tiene dato en las zonas urbanas (el centro de la ciudad
+# devuelve null) y al agricultor le sirve el suelo del campo, no el de la ciudad; esos puntos están
+# verificados. Los lugares que se agreguen no traen punto de campo y se busca uno cerca.
+MIGRACION_UBICACIONES = """
+CREATE TABLE IF NOT EXISTS ubicacion (
+    id         INTEGER PRIMARY KEY,
+    nombre     TEXT NOT NULL,
+    clave      TEXT NOT NULL UNIQUE,        -- clave(nombre): evita duplicados
+    lat        REAL NOT NULL CHECK (lat BETWEEN -90 AND 90),
+    lon        REAL NOT NULL CHECK (lon BETWEEN -180 AND 180),
+    zona       TEXT NOT NULL,               -- zona horaria IANA
+    lat_suelo  REAL,
+    lon_suelo  REAL
+);
+"""
+
+UBICACIONES_INICIALES = [
+    ("Monterrey, NL", 25.6866, -100.3161, "America/Monterrey", 25.80, -100.00),  # Pesquería
+    ("Saltillo, COAH", 25.4232, -101.0053, "America/Monterrey", 25.44, -100.85),  # Arteaga
+    ("Culiacán, SIN", 24.8091, -107.3940, "America/Mazatlan", 24.60, -107.55),  # valle
+    ("Mérida, YUC", 20.9674, -89.5926, "America/Merida", 21.00, -89.87),  # Hunucmá
+]
+
+
 def iniciar() -> None:
-    """Crea la base y carga la demo si es la primera vez. Se llama al arrancar el backend."""
+    """Crea la base, carga la demo y aplica las migraciones pendientes. Se llama al arrancar.
+
+    `PRAGMA user_version` guarda hasta qué versión está la base, así una base que ya tiene datos
+    solo recibe lo nuevo y nunca se borra nada.
+    """
     config.DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     con = conectar()
     try:
-        if con.execute("PRAGMA user_version").fetchone()[0] >= VERSION_ESQUEMA:
-            return
-        con.executescript(ESQUEMA)
-        with con:  # una sola transacción: si algo falla no queda la demo a medias
-            _cargar_demo(con)
-            con.execute(f"PRAGMA user_version = {VERSION_ESQUEMA}")
+        version = con.execute("PRAGMA user_version").fetchone()[0]
+        if version < 1:
+            con.executescript(ESQUEMA)
+            with con:  # una sola transacción: si algo falla no queda la demo a medias
+                _cargar_demo(con)
+                con.execute("PRAGMA user_version = 1")
+        if version < 2:
+            con.executescript(MIGRACION_UBICACIONES)
+            with con:
+                con.executemany(
+                    "INSERT OR IGNORE INTO ubicacion (nombre, clave, lat, lon, zona, lat_suelo, lon_suelo)"
+                    " VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    [(n, clave(n), la, lo, z, ls, lns) for n, la, lo, z, ls, lns in UBICACIONES_INICIALES],
+                )
+                con.execute("PRAGMA user_version = 2")
     finally:
         con.close()
 

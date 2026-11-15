@@ -4,7 +4,8 @@ import Cargable from "../../components/Cargable.jsx";
 import Tarjeta from "../../components/Tarjeta.jsx";
 import useDatos from "../../hooks/useDatos.js";
 import { guardarPlanActivo, leerPlanActivo } from "../../utils/planActivo.js";
-import { cambiarZoom, mover, ventanaInicial } from "../../utils/ventana.js";
+import { cambiarZoom, desplazar, mover, moverA, rangoDelPlan, ventanaInicial } from "../../utils/ventana.js";
+import BarraTiempo from "./BarraTiempo.jsx";
 import Calendario from "./Calendario.jsx";
 import Controles from "./Controles.jsx";
 import DialogoParcela from "./DialogoParcela.jsx";
@@ -110,14 +111,30 @@ export default function Planificador() {
                       {p.parcelas.length === 0 ? (
                         <p className="planificador__aviso">Este plan aún no tiene parcelas. Añade la primera para empezar a planear.</p>
                       ) : (
-                        <Calendario
-                          plan={p}
-                          ventana={ventana}
-                          hoy={hoy}
-                          onAgregarSiembra={(parcela) => setDialogo({ tipo: "siembra", parcela, siembra: null })}
-                          onEditarSiembra={(parcela, siembra) => setDialogo({ tipo: "siembra", parcela, siembra })}
-                          onEditarParcela={(parcela) => setDialogo({ tipo: "parcela", parcela })}
-                        />
+                        <>
+                          {/* Barra de desplazamiento; usa las mismas columnas que el calendario para quedar alineada */}
+                          <div className="cal__fila tiempo-fila">
+                            <BarraTiempo
+                              ventana={ventana}
+                              rango={rangoDelPlan(p, hoy)}
+                              controla="calendario-siembras"
+                              onMoverA={(inicio) => setVentana((v) => moverA(v, inicio))}
+                              onDesplazar={(fraccion) => setVentana((v) => desplazar(v, fraccion))}
+                              onHoy={() => setVentana((v) => ventanaInicial(v.meses))}
+                            />
+                            <span />
+                          </div>
+                          <Calendario
+                            plan={p}
+                            ventana={ventana}
+                            hoy={hoy}
+                            onDesplazar={(fraccion) => setVentana((v) => desplazar(v, fraccion))}
+                            onHoy={() => setVentana((v) => ventanaInicial(v.meses))}
+                            onAgregarSiembra={(parcela) => setDialogo({ tipo: "siembra", parcela, siembra: null })}
+                            onEditarSiembra={(parcela, siembra) => setDialogo({ tipo: "siembra", parcela, siembra })}
+                            onEditarParcela={(parcela) => setDialogo({ tipo: "parcela", parcela })}
+                          />
+                        </>
                       )}
                       <button type="button" className="btn planificador__parcela-nueva" onClick={() => setDialogo({ tipo: "parcela", parcela: null })}>
                         + Añadir parcela

@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app import db
 from app.schemas.planificador import CultivoActivoOut
-from app.services import meteomatics, municipios, soilgrids
+from app.services import meteomatics, soilgrids, ubicaciones
 from app.services import planificador as plan_servicio
 
 router = APIRouter(prefix="/api/principal", tags=["principal"])
@@ -14,15 +14,16 @@ ESPERA_PH_SEGUNDOS = 4
 
 
 @router.get("/clima")
-async def clima(municipio: str):
-    """Pronóstico de la semana (lunes a domingo) y condiciones de hoy para un municipio.
+async def clima(municipio: str, con=Depends(db.con_db)):
+    """Pronóstico de la semana (lunes a domingo) y condiciones de hoy para una ubicación guardada.
 
-    El clima viene de Meteomatics y el pH del suelo de SoilGrids. Si SoilGrids no responde,
-    el pH queda en null pero el resto de la tarjeta se muestra igual.
+    `municipio` es el nombre de la ubicación (ver /api/ubicaciones). El clima viene de Meteomatics
+    y el pH del suelo de SoilGrids. Si SoilGrids no responde, el pH queda en null pero el resto de
+    la tarjeta se muestra igual.
     """
-    ciudad = municipios.buscar(municipio)
+    ciudad = ubicaciones.buscar(con, municipio)
     if ciudad is None:
-        raise HTTPException(404, f"Municipio desconocido: {municipio}")
+        raise HTTPException(404, f"Ubicación desconocida: {municipio}")
     # El pH se pide en paralelo, pero no se espera de más: SoilGrids a veces tarda varios
     # segundos. Si no llega a tiempo, sigue consultando de fondo y queda en caché para la
     # siguiente vez.

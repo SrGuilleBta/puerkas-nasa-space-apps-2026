@@ -451,25 +451,6 @@
   font-weight: 600;
 }
 
-.leyenda {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 14px;
-  margin: 0 0 14px;
-  padding: 0;
-  list-style: none;
-  font-size: 10px;
-  color: var(--tinta-suave);
-}
-
-.leyenda i {
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  margin-right: 3px;
-  border-radius: 50%;
-}
-
 /* ---------- Escritorio: todo en una pantalla, sin scroll vertical ---------- */
 @media (min-width: 900px) {
   .principal,
@@ -550,10 +531,6 @@
 
   .plan__encabezado {
     margin-bottom: 6px;
-  }
-
-  .leyenda {
-    margin-bottom: 8px;
   }
 
 }
@@ -751,7 +728,7 @@
 
 .plan__meses {
   position: relative;
-  height: 34px;
+  height: 32px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -787,33 +764,18 @@
 
 .plan__pista {
   position: relative;
-  height: 34px;
+  height: 31px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(18, 48, 74, 0.045);
   overflow: hidden;
 }
 
-.plan__estacion {
+.plan__linea {
   position: absolute;
   top: 0;
   bottom: 0;
-  opacity: 0.16;
-}
-
-.plan__estacion--primavera {
-  background: var(--primavera);
-}
-
-.plan__estacion--verano {
-  background: var(--verano);
-}
-
-.plan__estacion--otono {
-  background: var(--otono);
-}
-
-.plan__estacion--invierno {
-  background: var(--invierno);
+  width: 1px;
+  background: rgba(18, 48, 74, 0.08);
 }
 
 .plan__hoy {

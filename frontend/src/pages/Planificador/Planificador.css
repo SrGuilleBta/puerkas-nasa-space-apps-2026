@@ -154,31 +154,16 @@
   position: relative;
   min-height: 64px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(18, 48, 74, 0.045);
   overflow: hidden;
 }
 
-.cal__estacion {
+.cal__linea {
   position: absolute;
   top: 0;
   bottom: 0;
-  opacity: 0.16;
-}
-
-.cal__estacion--primavera {
-  background: var(--primavera);
-}
-
-.cal__estacion--verano {
-  background: var(--verano);
-}
-
-.cal__estacion--otono {
-  background: var(--otono);
-}
-
-.cal__estacion--invierno {
-  background: var(--invierno);
+  width: 1px;
+  background: rgba(18, 48, 74, 0.08);
 }
 
 .cal__hoy {
@@ -434,4 +419,83 @@
   font-size: 10px;
   line-height: 1.4;
   color: var(--tinta-suave);
+}
+
+/* ---------- Moverse por la línea del tiempo ---------- */
+.cal {
+  cursor: grab;
+  touch-action: pan-y; /* el movimiento vertical sigue desplazando la página; el horizontal es del calendario */
+  border-radius: 14px;
+}
+
+.cal--arrastrando {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.cal__ayuda {
+  margin: 0 0 6px;
+  font-size: 10px;
+  color: var(--tinta-suave);
+  text-align: right;
+}
+
+/* ---------- Barra de desplazamiento del calendario (estilo clásico) ---------- */
+.tiempo-fila {
+  margin-bottom: 8px;
+}
+
+.tiempo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 16px;
+}
+
+.tiempo__flecha {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #8a8a8a;
+  touch-action: none;
+}
+
+.tiempo__flecha:hover {
+  color: #5f5f5f;
+}
+
+.tiempo__flecha:active {
+  color: #3f3f3f;
+}
+
+.tiempo__pista {
+  position: relative;
+  flex: 1;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(18, 48, 74, 0.06);
+  touch-action: none; /* en pantallas táctiles el dedo mueve la manija, no la página */
+}
+
+.tiempo__manija {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  min-width: 28px;
+  border-radius: 999px;
+  background: #8c8c8c;
+  cursor: default;
+}
+
+.tiempo__manija:hover {
+  background: #747474;
+}
+
+.tiempo__pista:active .tiempo__manija {
+  background: #5f5f5f;
 }
