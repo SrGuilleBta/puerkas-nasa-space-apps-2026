@@ -40,7 +40,7 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   ├── ubicaciones.py   lugares guardados, búsqueda por nombre y "Mi ubicación"
 │   │   │   ├── clima.py         [pendiente]
 │   │   │   ├── mercado.py       [pendiente]
-│   │   │   ├── cultivos.py      [pendiente]
+│   │   │   ├── cultivos.py      catálogo, indicadores por municipio y cuidados por estado (/api/cultivos)
 │   │   │   └── noticias.py      [pendiente]
 │   │   ├── services/            lógica y clientes de datos; no importan FastAPI
 │   │   │   ├── meteomatics.py   pronóstico y condiciones de hoy (caché de 10 min)
@@ -49,11 +49,16 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   ├── planificador.py  reglas del plan (sin traslapes, rotación, resumen)
 │   │   │   ├── ubicaciones.py   lugares guardados y geocodificación (solo México)
 │   │   │   ├── nasa_power.py    clima observado por satélite (lluvia, temperatura, radiación, humedad de raíz)
+│   │   │   ├── cultivos.py      lee los JSON que genera la pipeline en backend/data/cultivos
 │   │   │   ├── siap.py          [pendiente] leerá los CSV de backend/data/siap
 │   │   │   └── ecocrop.py       [pendiente]
 │   │   └── schemas/             modelos Pydantic de las respuestas (camelCase hacia el frontend)
+│   ├── pipeline/
+│   │   └── cultivos/            batch que genera data/cultivos (ver cultivos-pipeline.md)
 │   ├── data/
 │   │   ├── siap/                CSV 2015-2025 y su README
+│   │   ├── sequia/, ecocrop/, inflacion/   entradas de la pipeline de Cultivos
+│   │   ├── cultivos/            generado por la pipeline (no se sube a git)
 │   │   └── planificador.db      base SQLite (se crea sola; no se sube a git)
 │   ├── tests/                   unittest: `python -m unittest discover -s tests`
 │   └── requirements.txt

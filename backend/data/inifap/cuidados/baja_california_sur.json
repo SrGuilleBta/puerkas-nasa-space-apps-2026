@@ -1,0 +1,354 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/baja_california_sur.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "03",
+  "estado": "Baja California Sur",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Baja California Sur. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Garbanzo",
+      "cientifico": "Cicer arietinum L.",
+      "paginas": [
+        11,
+        16
+      ],
+      "cultivo_ids": [
+        "garbanzo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Clima subtropical árido semicálido. Suelos regosol, yermosol y vertisol; en las zonas agrícolas casi todos son alcalinos (pH promedio 8.41) y de textura media a franco-arenosa.",
+      "siembra": {
+        "texto": "En el Valle de Santo Domingo rinde bien del 1 de octubre a la segunda quincena de diciembre, pero el periodo óptimo es del 25 de noviembre al 31 de diciembre. Las siembras de octubre sufren más plagas por el calor; las de octubre y noviembre arriesgan heladas en el llenado de vainas; las de enero, más enfermedades foliares y plagas.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Calisur",
+        "Blanoro",
+        "Blancoson",
+        "Mazocahui",
+        "Seri",
+        "Blanco Sinaloa-92"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "12 semillas por metro lineal, a unos 5 cm de profundidad. Surcos a 80 cm con hilera sencilla, o camas de 1.60 m con doble hilera a 40 cm.",
+      "fertilizacion": "Fórmula 90-40-00 con UAN 32 y ácido fosfórico. El N se divide en tres aplicaciones a los 10, 35 y 60 días después de la siembra; todo el P a los 10 días. Aplicaciones foliares de quelatos de hierro para prevenir o corregir deficiencias.",
+      "riego": "Por gravedad: riego de aniego inicial y de dos a tres auxilios a partir de la floración, en surcos menores de 100 m. Por goteo: siembra en seco y riegos semanales de unas siete horas. Por pivote central: humedecer para la siembra y de tres a cinco auxilios de tres a cinco días cada uno.",
+      "plagas": [
+        "Minador de la hoja (Liriomyza sativae)",
+        "Gusano de la cápsula (Chloridea virescens y Helicoverpa zea)",
+        "Complejo de gusanos soldado"
+      ],
+      "enfermedades": [
+        "Rabia (complejo de hongos)",
+        "Mildiu"
+      ],
+      "malezas": "Principales: flor amarilla (Aldama dentata), gloria de la mañana (Ipomoea purpurea) y quelite (Amaranthus hybridus). Se controlan con una aplicación de herbicida en preemergencia.",
+      "cosecha": "Cortar cuando la planta esté seca pero el grano siga blando, y dejar secar en el campo hasta 12 % de humedad. Las variedades sugeridas superan 3 t/ha con el paquete tecnológico.",
+      "cuidados": [
+        "Sembrar del 25 de noviembre al 31 de diciembre para reducir daños por plagas, heladas y enfermedades.",
+        "Inocular la semilla con Mesorhizobium ciceri a la sombra, según el fabricante, y sembrarla el mismo día.",
+        "Hacer el barbecho solo si el terreno está muy compactado o hay muchos roedores.",
+        "Aplicar control de plagas solo al llegar al umbral: 20 % de follaje dañado con larvas vivas de minador, o dos o más larvas de gusano de la cápsula por metro lineal.",
+        "Prevenir enfermedades con variedades tolerantes, rotación de cultivos, fecha de siembra recomendada y semilla de calidad.",
+        "Dividir el nitrógeno en tres aplicaciones (10, 35 y 60 días después de la siembra)."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 51685,
+          "rendimiento": 3.0,
+          "unidad_rendimiento": "t/ha",
+          "precio": 20625,
+          "ingreso_neto": 10190,
+          "relacion_bc": 1.2
+        }
+      ],
+      "nota": "Costos del Cuadro 2 (FIRA 2026), con riego por goteo. El costo total de 51,685 $/ha coincide con la suma de los rubros y el ingreso bruto es 3.0 t × 20,625 $/t = 61,875 $/ha (el cuadro lo llama 'Beneficio ha'). El cuadro imprime relación B/C 1.22 y costo por tonelada 16,856 $, que corresponden a un costo de unos 50,568 $/ha y no cuadran con el total; aquí se calcularon ingreso neto (61,875 − 51,685) y relación B/C (61,875 / 51,685 ≈ 1.20). El precio es por tonelada.",
+      "revisado": false
+    },
+    {
+      "ficha": "Garbanzo forrajero",
+      "cientifico": "Cicer arietinum L.",
+      "paginas": [
+        17,
+        23
+      ],
+      "cultivo_ids": [
+        "garbanzo-forrajero"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "OI",
+      "region": "Garbanzo tipo Desi de otoño-invierno, de 110 a 140 días. Se adapta del nivel del mar a 1,800 m; temperatura ideal de 18 a 26 °C y humedad relativa baja. Las heladas fuertes en floración lo dañan. De temporal necesita de 400 a 650 mm bien distribuidos, aunque produce forraje aceptable con humedad residual.",
+      "siembra": {
+        "texto": "La siembra ideal va del 15 de noviembre al 15 de diciembre. En el Valle de Santo Domingo rinde bien del 15 de octubre al 15 de enero, y las siembras del 25 de noviembre al 31 de diciembre dan el mayor rendimiento. Las de octubre dan más forraje y esquilmos que las de enero.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "El Patrón",
+        "Pénjamo",
+        "San Antonio 05"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "10 granos por metro lineal (27 kg de semilla pura viable por ha), a 5 cm de profundidad, en surcos de hilera sencilla a 80 cm.",
+      "fertilizacion": "Basar la nutrición en un análisis de suelo. Fórmula 120-70-00: el N en tres partes iguales a los 15, 30 y 50 días después de la siembra, y todo el P a los 15 días.",
+      "riego": "Por gravedad: riego de aniego, un auxilio antes de la floración y dos más después, en surcos menores de 100 m. Por goteo en suelos arcillosos: siembra en seco y riegos semanales de unas siete horas (cinta calibre 6 milésimas, goteros a 20 cm). Por pivote central: humedecer para la siembra y de tres a cuatro auxilios.",
+      "plagas": [
+        "Gusano soldado (Spodoptera exigua)",
+        "Gusano del fruto (Heliothis virescens)",
+        "Mosca minadora de la hoja (Liriomyza sp.)"
+      ],
+      "enfermedades": [],
+      "malezas": "La competencia de malezas en los primeros 40 días reduce mucho el rendimiento de grano y paja. Se recomienda control preemergente activado con el agua de riego.",
+      "cosecha": "Para forraje en floración, cortar a unos 70 días; en formación de cápsula, a unos 100 días; en madurez, cuando la planta esté seca y el grano blando, y secar hasta 10 a 12 % de humedad (130 a 140 días). Más edad da más forraje pero menos calidad. En condiciones óptimas produce de 8 a 12 t/ha de forraje seco y de 2.5 a 3.5 t/ha de grano.",
+      "cuidados": [
+        "Mantener el cultivo limpio de malezas durante los primeros 40 días.",
+        "Usar variedades tolerantes a la rabia, rotar cultivos, sembrar en fecha y usar semilla de buena calidad.",
+        "Vigilar plagas al terminar el frío: sin control pueden bajar el grano de 5 a 10 %.",
+        "Elegir la etapa de corte según la necesidad de forraje: más tarde hay más volumen pero menos calidad.",
+        "Subsolear o arar solo en terrenos compactados o con muchas plagas del suelo."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 35558,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 19.5,
+          "ingreso_neto": 13192,
+          "relacion_bc": 1.37
+        }
+      ],
+      "nota": "La ficha cubre riego y temporal (modalidad null); el Cuadro 3 (FIRA 2026) es de riego por gravedad con presiembra y 3 auxilios. El rendimiento del cuadro es de semilla (grano), no de forraje. El precio (19.5 $/kg) no viene impreso: se calculó como ingreso bruto / rendimiento (48,750 / 2,500). Costo total, ingreso neto y relación B/C cuadran. El texto da dos ventanas de siembra (15 nov–15 dic como ideal y 25 nov–31 dic como de mayor rendimiento). Enfermedades: el texto no nombra ninguna en esa sección; solo menciona tolerancia de las variedades a la rabia.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        24,
+        30
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": null,
+      "region": "Subtrópico árido semicálido, temperatura media de 22.1 °C y lluvia anual de 172 mm. Suelo regosol eútrico franco-arenoso, de 20 a 100 cm de profundidad, con 0.6 % de materia orgánica y pH 8.2. El 90 % del maíz se siembra en Comondú.",
+      "siembra": {
+        "texto": "Del 5 de febrero al 20 de marzo en primavera-verano y del 15 de agosto al 15 de septiembre en otoño-invierno.",
+        "meses": [
+          2,
+          3,
+          8,
+          9
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "H390c",
+        "AHipopotamo",
+        "ARinoceronte",
+        "A7573",
+        "NB 789",
+        "NB821",
+        "NB950",
+        "AS General",
+        "ASHercules",
+        "D-4050",
+        "V-560"
+      ],
+      "densidad": "Seis a siete plantas por metro lineal (75 a 87 mil plantas/ha; algunos materiales soportan 100 mil), con 18 a 20 kg de semilla. Surcos a 75–80 cm y 14 a 16 cm entre plantas; en goteo, camas de 1.6 m con doble hilera a 40 cm. Profundidad de 5 a 8 cm.",
+      "fertilizacion": "Hasta 200-80-100 por ha, aunque hay buena respuesta con 180 de N y 40 a 60 de P, útil para bajar costos. Fraccionar el nitrógeno.",
+      "riego": "Necesita de 500 a 550 mm. Materiales precoces: cuatro riegos a los 0, 45, 65 y 85 días (18, 12, 12 y 12 cm). Intermedios y tardíos: cinco riegos (18, 12, 10, 10 y 10 cm). Etapas críticas: desarrollo, encañe, floración y grano lechoso-masoso. Gravedad en surcos de 100 m; aspersión con presiembra de 16 cm y auxilios de 8 cm; goteo con un riego inicial de unas 16 h y unos 25 auxilios de 5 a 7 h.",
+      "plagas": [
+        "Gusano saltarín (Elasmopalpus lignosellus)",
+        "Gusano trozador (Agrotis ipsilon)",
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Pulga saltona",
+        "Trips",
+        "Chicharritas",
+        "Chinche apestosa (Nezara viridula)",
+        "Gusano elotero (Heliothis zea)",
+        "Mosquita de los estigmas"
+      ],
+      "enfermedades": [
+        "Chahuixtle o roya común",
+        "Carbón común",
+        "Falsa cenicilla",
+        "Achaparramiento (transmitido por chicharritas)"
+      ],
+      "malezas": "Elegir terrenos libres de gloria de la mañana y usar estiércol bien podrido. Sembrar en húmedo con semilla certificada. Hacer cultivos mecánicos entre 30 y 35 días después de la siembra y deshierbe manual. Cerca de la cosecha, deshierbar o chapear para que la maleza no suelte semilla, o controlar justo después de cosechar.",
+      "cosecha": "Cosechar con 16 a 18 % de humedad en el grano: más seco merma el rendimiento y más húmedo causa pérdidas en almacén. La tierra de diatomeas reduce las plagas de almacén. Rendimiento esperado: 10 t/ha.",
+      "cuidados": [
+        "Evitar terrenos arenosos que vienen de sorgo, trigo, maíz o garbanzo con mucho gusano saltarín o trozador.",
+        "Controlar el gusano cogollero solo si hay 10 % de daño en plantas menores de 20 cm o 20 % en plantas de 20 a 40 cm.",
+        "Liberar avispitas Trichogramma (100 a 150 mil por ha, dos veces por semana) desde la floración hasta grano masoso contra el gusano elotero.",
+        "Proteger a los insectos benéficos (catarinas, crisopas, avispas y abejas).",
+        "Asegurar el agua en floración y llenado de grano.",
+        "Cosechar con el grano entre 16 y 18 % de humedad."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 43500,
+          "rendimiento": 10000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": 16500,
+          "relacion_bc": 1.38
+        }
+      ],
+      "nota": "Siembra en dos ciclos (PV y OI), por eso ciclo null. El texto no dice el origen ni la empresa de los genotipos sugeridos; se listan tal como aparecen y no se separaron variedades públicas. Costos del Cuadro 4 (FIRA 2025): el costo total de 43,500 $/ha cuadra con la suma de los rubros y el ingreso bruto es 10,000 kg × 6 $/kg = 60,000 $. El cuadro imprime ingreso neto 20,100 y relación B/C 1.50, calculados con un costo de 39,900 $ que no coincide con el total; aquí se calcularon con 43,500 $ (neto 16,500; B/C ≈ 1.38). La cuota de agua del cuadro (5 × 500) aparece como 2,250 en lugar de 2,500.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz forrajero",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        31,
+        37
+      ],
+      "cultivo_ids": [
+        "maiz-forrajero-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": null,
+      "region": "Clima muy seco en casi todo el estado, temperatura media de 18 a 22 °C y menos de 200 mm de lluvia al año, concentrada de julio a septiembre; por eso se cultiva solo con riego. Rango térmico óptimo de 18 a 33 °C; necesita más de 10 °C para germinar.",
+      "siembra": {
+        "texto": "Del 5 de febrero al 20 de marzo en primavera-verano y del 15 de agosto al 15 de septiembre en otoño-invierno.",
+        "meses": [
+          2,
+          3,
+          8,
+          9
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "V 560",
+        "H 390C",
+        "A Hipopótamo",
+        "A Rinoceronte",
+        "A 7573",
+        "NB 787",
+        "NB 789",
+        "AS General",
+        "AS Coronel"
+      ],
+      "densidad": "Siete a ocho plantas por metro de surco (87,500 a 100,000 plantas/ha) en hilera sencilla; en goteo, camas de 1.6 m con doble hilera a 0.4 m y 14 a 16 plantas por metro de cama. De 20 a 23 kg de semilla por ha.",
+      "fertilizacion": "Fórmula 180-60-00. Con riego superficial, todo el P y 40 % del N en la siembra y el 60 % de N restante en la escarda. Con riego presurizado, el N por etapas: 15 % en siembra (0–30 días), 40 % en crecimiento (30–50), 30 % en floración-jilote (50–75) y 15 % en llenado de grano (75–100).",
+      "riego": "Consumo de 500 a 660 mm. Gravedad: precoces con aniego (18 cm) y auxilios a los 40–45, 65–70 y 85–90 días (12 cm); intermedios y tardíos con auxilios a los 40–45, 60–65, 80–85 y 100–105 días (12 cm). Aspersión: presiembra de 160 mm y auxilios de 80 mm (unos 500 mm en total). Goteo: unos 450 mm con riego de germinación y unos 25 auxilios cada tres o cuatro días. Etapas críticas: floración, polinización, formación y llenado de grano.",
+      "plagas": [
+        "Gusano saltarín (Elasmopalpus lignosellus)",
+        "Gusano trozador (Agrotis ipsilon)",
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Pulga saltona (Epitrix spp.)",
+        "Trips",
+        "Chicharrita (Dalbulus maidis)",
+        "Chinche apestosa (Euschistus servus)",
+        "Gusano elotero"
+      ],
+      "enfermedades": [
+        "Chahuixtle o roya común (Puccinia sorghi)",
+        "Carbón común (Ustilago maydis)",
+        "Achaparramiento (Spiroplasma kunkelii, transmitido por chicharritas)"
+      ],
+      "malezas": "Elegir terrenos libres o poco infestados de gloria de la mañana y usar semilla certificada libre de otras especies. Hacer una o dos escardas mecánicas entre los 30 y 40 días.",
+      "cosecha": "Cosechar cuando la línea de leche del grano avance de 30 a 50 %, punto óptimo para picado en verde o ensilaje.",
+      "cuidados": [
+        "Evitar terrenos arenosos que vienen de sorgo, trigo, maíz o garbanzo con mucho gusano saltarín o trozador.",
+        "Usar híbridos o variedades con resistencia a plagas cuando sea posible.",
+        "Contra la chinche apestosa: monitoreo, plantas trampa en los bordes y conservar los enemigos naturales.",
+        "Contra el carbón común: no pasarse de la densidad recomendada y destruir las agallas.",
+        "Contra el achaparramiento: sembrar en fecha, usar genotipos tolerantes y vigilar a las chicharritas.",
+        "Cosechar con la línea de leche entre 30 y 50 %."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 43237,
+          "rendimiento": 50,
+          "unidad_rendimiento": "t/ha",
+          "precio": 977,
+          "ingreso_neto": 5613,
+          "relacion_bc": 1.13
+        }
+      ],
+      "nota": "Siembra en dos ciclos (PV y OI), por eso ciclo null. El texto no dice el origen ni la empresa de los materiales recomendados; se listan tal como aparecen. Costos del Cuadro 8 (con base en Agrocostos de FIRA): rendimiento de forraje verde. Costo total, ingreso bruto (48,850 $) e ingreso neto cuadran. El precio (977 $/t) no viene impreso: se calculó como ingreso bruto / rendimiento. El cuadro imprime relación B/C 0.12, que en realidad es ingreso neto / costo (12.98 % de retorno); aquí se puso ingreso bruto / costo ≈ 1.13.",
+      "revisado": false
+    },
+    {
+      "ficha": "Sorgo forrajero",
+      "cientifico": "Sorghum bicolor (L.) Moench",
+      "paginas": [
+        38,
+        42
+      ],
+      "cultivo_ids": [
+        "sorgo-forrajero-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Clima subtropical árido semicálido. Suelos regosol, yermosol y vertisol; en las zonas agrícolas casi todos son alcalinos (pH promedio 8.41) y de textura media a franco-arenosa. Tolera sequía, calor y salinidad, y usa hasta 30 % menos agua que el maíz.",
+      "siembra": {
+        "texto": "La mejor fecha en primavera-verano es la segunda quincena de abril, con riego por goteo en el Valle de Santo Domingo.",
+        "meses": [
+          4
+        ]
+      },
+      "variedades": [
+        "Gavatero 203",
+        "Perla 101",
+        "Sinaloense 202"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "De 16 a 18 kg de semilla por ha según su tamaño, en surcos a 80 cm. Profundidad de 3 cm en siembra en seco y de 5 cm en húmedo.",
+      "fertilizacion": "Fórmula 100-60-00 con UAN 32 y ácido fosfórico. El N en tres partes iguales a los 10, 35 y 60 días después de la siembra; todo el P a los 10 días. Aplicaciones foliares de quelatos de hierro.",
+      "riego": "Con goteo: riego de nacencia de 12 horas y después riegos semanales de 7 horas.",
+      "plagas": [
+        "Trips",
+        "Pulgón del cogollo",
+        "Gusano cogollero",
+        "Pulgón amarillo",
+        "Mosca de la panoja"
+      ],
+      "enfermedades": [
+        "Mildiu (Peronosclerospora sorghi)"
+      ],
+      "malezas": "Una escarda mecánica entre los 30 y 40 días después de la siembra. Malezas principales: malva, mostacilla (Sisymbrium irio), verdolaga, quelite o bledo, lengua de vaca, flor amarilla y gloria de la mañana.",
+      "cosecha": "Para ensilaje, cortar en grano lechoso-masoso. Para pastoreo, esperar al menos 60 cm de altura para evitar intoxicación por ácido cianhídrico o nitratos. Rendimiento esperado: unas 63 t/ha de forraje verde.",
+      "cuidados": [
+        "Sembrar en la segunda quincena de abril.",
+        "No pastorear antes de que la planta mida 60 cm, para evitar intoxicación del ganado.",
+        "Conservar a las catarinas, que controlan al pulgón amarillo de forma natural.",
+        "Vigilar el mildiu, la principal enfermedad en el Valle de Santo Domingo; Gavatero 203 es susceptible.",
+        "Hacer una escarda entre los 30 y 40 días para controlar malezas."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 53874,
+          "rendimiento": 63,
+          "unidad_rendimiento": "t/ha",
+          "precio": 1200,
+          "ingreso_neto": 21726,
+          "relacion_bc": 1.4
+        }
+      ],
+      "nota": "El extraído marcaba tipo de cultivo 'anual/perenne'; el texto dice que el sorgo para forraje es una especie anual. Costos del Cuadro 10 (FIRA 2026), con riego por goteo: el costo total de 53,874 $/ha cuadra con la suma de los rubros y el ingreso bruto es 63 t × 1,200 $/t = 75,600 $ (el cuadro lo llama 'Beneficio ha'). El cuadro imprime relación B/C 1.42 y costo por tonelada 842.33 $, que no cuadran con el total; aquí se calcularon ingreso neto (75,600 − 53,874) y B/C (≈ 1.40).",
+      "revisado": false
+    }
+  ]
+}

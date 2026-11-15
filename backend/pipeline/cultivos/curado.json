@@ -1,0 +1,344 @@
+{
+  "_nota": "Datos curados a mano. Llave = nombre exacto del cultivo en SIAP. 'ecocrop' = nombre científico tal como aparece en la tabla EcoCrop (si difiere de 'cientifico'). descripcion/suelo/cuidados son un BORRADOR general: revisar contra paquetes tecnológicos y fichas del INIFAP antes de publicarlos como recomendación. ciclo_dias aquí sobrescribe el rango de EcoCrop, que suele ser demasiado amplio.",
+  "cultivos": {
+    "Maíz grano": {
+      "cientifico": "Zea mays", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [120, 150],
+      "descripcion": "Cultivo base de la alimentación en México y el de mayor superficie del país. Se siembra en casi todos los municipios, tanto en temporal como en riego, y tiene una gran diversidad de variedades e híbridos adaptados a cada región.",
+      "suelo": "Francos, profundos y bien drenados; pH 5.5 a 7.5.",
+      "cuidados": [
+        "Sembrar con el suelo húmedo; en temporal, al establecerse las lluvias.",
+        "Demanda mucho nitrógeno: fraccionar la fertilización entre la siembra y la etapa de 6 a 8 hojas.",
+        "Los periodos críticos de agua son la floración (espigamiento y jiloteo) y el llenado de grano.",
+        "Controlar malezas en los primeros 30 a 40 días.",
+        "Vigilar gusano cogollero y rotar con leguminosas para cortar el ciclo de plagas."
+      ]
+    },
+    "Frijol": {
+      "cientifico": "Phaseolus vulgaris", "tipo": "Leguminosa", "familia": "Fabaceae", "fija_nitrogeno": true,
+      "ciclo_dias": [90, 120],
+      "descripcion": "Leguminosa de grano básica en la dieta mexicana. Fija nitrógeno atmosférico, por lo que deja el suelo en mejores condiciones para un cereal en el siguiente ciclo.",
+      "suelo": "Francos y bien drenados; pH 6 a 7.5. No tolera el encharcamiento ni la salinidad.",
+      "cuidados": [
+        "Evitar suelos encharcables: la raíz es sensible a la falta de oxígeno.",
+        "Requiere poco nitrógeno; priorizar fósforo a la siembra.",
+        "La floración y la formación de vainas son las etapas más sensibles a la sequía.",
+        "Cosechar con el grano seco para evitar pudriciones; las lluvias en cosecha manchan el grano.",
+        "Vigilar mosca blanca, conchuela y enfermedades como antracnosis y roya."
+      ]
+    },
+    "Trigo grano": {
+      "cientifico": "Triticum durum", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [130, 160],
+      "descripcion": "Cereal de invierno. En México se concentra en el ciclo Otoño-Invierno bajo riego en el noroeste (Sonora, Baja California, Sinaloa) y en temporal en el Bajío y el altiplano. Incluye trigos cristalinos (para pasta) y harineros.",
+      "suelo": "Francos a arcillosos con buen drenaje; pH 6 a 7.5. Tolera algo de salinidad.",
+      "cuidados": [
+        "Sembrar en la ventana de noviembre a diciembre para que el llenado de grano no coincida con el calor.",
+        "Los riegos de amacollamiento, espigamiento y llenado de grano son los que más influyen en el rendimiento.",
+        "Fertilizar con nitrógeno en presiembra y al amacollamiento.",
+        "Vigilar roya de la hoja y roya amarilla; usar variedades resistentes.",
+        "Evitar el acame (que se doble la planta) con dosis de nitrógeno y riego ajustadas."
+      ]
+    },
+    "Sorgo grano": {
+      "cientifico": "Sorghum bicolor", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [100, 130],
+      "descripcion": "Cereal tolerante al calor y a la sequía, usado principalmente como alimento para ganado. Es común en Tamaulipas, Guanajuato y Sinaloa, y una alternativa al maíz donde la lluvia es irregular.",
+      "suelo": "Se adapta a muchos tipos de suelo; pH 5.5 a 8.5. Tolera salinidad moderada.",
+      "cuidados": [
+        "Tolera la sequía mejor que el maíz, pero la floración sigue siendo sensible a la falta de agua.",
+        "Fertilizar con nitrógeno a la siembra y a los 30 días.",
+        "Vigilar pulgón amarillo, una plaga importante en México desde 2013.",
+        "Controlar malezas en las primeras semanas: el sorgo crece despacio al inicio.",
+        "Cosechar a tiempo para reducir el daño de pájaros y las pérdidas por lluvia."
+      ]
+    },
+    "Aguacate": {
+      "cientifico": "Persea americana", "tipo": "Frutal", "familia": "Lauraceae", "fija_nitrogeno": false,
+      "descripcion": "Frutal perenne de alto valor; México es el principal productor del mundo, con Michoacán y Jalisco a la cabeza. La variedad dominante es Hass. Entra en producción comercial a partir del tercer o cuarto año.",
+      "suelo": "Profundos, sueltos y con excelente drenaje; pH 5 a 7. Muy sensible al encharcamiento.",
+      "cuidados": [
+        "El drenaje es crítico: el exceso de humedad favorece la tristeza del aguacatero (Phytophthora).",
+        "Riego regular en floración y amarre de fruto; el estrés hídrico provoca caída de frutos.",
+        "Sensible a heladas; evitar zonas bajas donde se acumula el aire frío.",
+        "Podar para mantener la altura y la entrada de luz.",
+        "Requiere certificación fitosanitaria para exportar (barrenadores del hueso y de ramas)."
+      ]
+    },
+    "Caña de azúcar": {
+      "cientifico": "Saccharum officinarum", "tipo": "Industrial", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [300, 540],
+      "descripcion": "Cultivo industrial perenne para la producción de azúcar y etanol. Se concentra en Veracruz, Jalisco, San Luis Potosí y Oaxaca, alrededor de los ingenios. Tras la plantación se cosechan varias socas.",
+      "suelo": "Profundos y fértiles; pH 5.5 a 7.5.",
+      "cuidados": [
+        "Necesita mucha agua (más de 1,500 mm al año o riego complementario).",
+        "Fertilizar con nitrógeno y potasio después de cada corte.",
+        "La zafra se coordina con el ingenio; cortar con la caña madura maximiza el contenido de azúcar.",
+        "Renovar la plantación cuando el rendimiento de las socas cae.",
+        "Vigilar barrenador del tallo y mosca pinta."
+      ]
+    },
+    "Tomate rojo (jitomate)": {
+      "cientifico": "Solanum lycopersicum", "ecocrop": "Lycopersicon esculentum", "tipo": "Hortaliza", "familia": "Solanaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 150],
+      "descripcion": "Hortaliza de mayor valor de exportación en México. Se produce a cielo abierto y cada vez más en invernadero y malla sombra, sobre todo en Sinaloa, San Luis Potosí y Michoacán.",
+      "suelo": "Francos, ricos en materia orgánica y bien drenados; pH 5.5 a 6.8.",
+      "cuidados": [
+        "Riego frecuente y uniforme (de preferencia por goteo); los cambios bruscos de humedad rajan el fruto y causan pudrición apical.",
+        "No repetir solanáceas (chile, papa, berenjena) en el mismo terreno: comparten enfermedades del suelo.",
+        "Tutorar y podar para mejorar la ventilación y la calidad del fruto.",
+        "Vigilar mosca blanca y paratrioza (transmiten virus) y tizón tardío.",
+        "Sensible a heladas y a temperaturas nocturnas bajas en floración."
+      ]
+    },
+    "Chile verde": {
+      "cientifico": "Capsicum annuum", "tipo": "Hortaliza", "familia": "Solanaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 180],
+      "descripcion": "Incluye jalapeño, serrano, poblano, morrón y otros tipos. Es de las hortalizas más extendidas del país; Chihuahua, Sinaloa y Zacatecas son productores importantes.",
+      "suelo": "Francos y bien drenados; pH 5.5 a 7. Sensible a la salinidad y al encharcamiento.",
+      "cuidados": [
+        "Producir plántula en almácigo o charola y trasplantar.",
+        "Riegos ligeros y frecuentes; el encharcamiento favorece la marchitez (Phytophthora capsici).",
+        "Rotar con gramíneas; no sembrar después de otras solanáceas.",
+        "Vigilar picudo del chile, mosca blanca y virus.",
+        "Fertilizar con potasio en fructificación para mejorar la calidad."
+      ]
+    },
+    "Agave": {
+      "cientifico": "Agave tequilana", "tipo": "Industrial", "familia": "Asparagaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [1800, 2900],
+      "descripcion": "Planta perenne de ciclo largo (de 5 a 8 años) cuya piña se usa para producir tequila y mezcal. Muy tolerante a la sequía. Jalisco concentra la mayor parte del agave tequilero, con denominación de origen.",
+      "suelo": "Pedregosos o arenosos y con buen drenaje; pH 6 a 8.",
+      "cuidados": [
+        "Muy tolerante a la sequía; el riesgo principal es el encharcamiento.",
+        "Plantar hijuelos sanos de plantas madre seleccionadas.",
+        "Deshierbar entre hileras los primeros años; se pueden intercalar cultivos anuales.",
+        "Vigilar picudo del agave y marchitez.",
+        "El precio es muy volátil: considerar contratos con la industria antes de plantar."
+      ]
+    },
+    "Limón": {
+      "cientifico": "Citrus aurantiifolia / Citrus latifolia", "ecocrop": "Citrus aurantifolia", "tipo": "Frutal", "familia": "Rutaceae", "fija_nitrogeno": false,
+      "descripcion": "Incluye limón mexicano (agrio) y limón persa. Frutal perenne de clima cálido; Michoacán, Veracruz, Colima y Oaxaca son los principales productores.",
+      "suelo": "Francos a arenosos y bien drenados; pH 5.5 a 7.5.",
+      "cuidados": [
+        "Sensible a heladas; propio de zonas cálidas bajo 1,000 msnm.",
+        "Riego regular; la falta de agua seguida de riego se usa para inducir floración.",
+        "Vigilar el HLB (Huanglongbing) y su vector, el psílido asiático de los cítricos.",
+        "Fertilizar varias veces al año según la producción esperada.",
+        "Podar para ventilación y para retirar ramas enfermas."
+      ]
+    },
+    "Naranja": {
+      "cientifico": "Citrus sinensis", "tipo": "Frutal", "familia": "Rutaceae", "fija_nitrogeno": false,
+      "descripcion": "Principal cítrico de México por superficie. Veracruz concentra cerca de la mitad de la producción, seguido de Tamaulipas y San Luis Potosí. Gran parte se cultiva en temporal.",
+      "suelo": "Profundos y con buen drenaje; pH 5.5 a 7.",
+      "cuidados": [
+        "En temporal, la sequía en floración reduce el amarre de fruto.",
+        "Vigilar HLB, mosca de la fruta y virus de la tristeza de los cítricos.",
+        "Usar portainjertos tolerantes a la tristeza.",
+        "Encalar en suelos ácidos y fertilizar con nitrógeno, potasio y micronutrientes.",
+        "Podar para mantener la copa abierta."
+      ]
+    },
+    "Papa": {
+      "cientifico": "Solanum tuberosum", "tipo": "Tubérculo", "familia": "Solanaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 140],
+      "descripcion": "Tubérculo de clima templado y fresco. Se produce en Sinaloa (invierno), Sonora, Chihuahua, Estado de México y otros estados del altiplano.",
+      "suelo": "Sueltos, francos o franco-arenosos, profundos; pH 5 a 6.5.",
+      "cuidados": [
+        "Usar semilla certificada libre de virus.",
+        "Aporcar (arrimar tierra a la planta) para proteger los tubérculos del sol y de plagas.",
+        "Riego constante durante la formación de tubérculos; el exceso favorece pudriciones.",
+        "Vigilar tizón tardío y paratrioza (punta morada).",
+        "No repetir solanáceas en el mismo terreno al menos 3 años."
+      ]
+    },
+    "Alfalfa verde": {
+      "cientifico": "Medicago sativa", "tipo": "Forraje", "familia": "Fabaceae", "fija_nitrogeno": true,
+      "descripcion": "Leguminosa forrajera perenne de alta calidad para ganado lechero. Se corta varias veces al año durante 3 a 5 años. Se concentra en Chihuahua, Hidalgo, Guanajuato y la Comarca Lagunera.",
+      "suelo": "Profundos y bien drenados; pH 6.5 a 7.5. No tolera la acidez ni el encharcamiento.",
+      "cuidados": [
+        "Consume mucha agua: en zonas con acuíferos sobreexplotados es un cultivo cuestionado.",
+        "Inocular la semilla con Rhizobium para asegurar la fijación de nitrógeno.",
+        "Cortar al inicio de la floración para equilibrar rendimiento y calidad.",
+        "Deja el suelo rico en nitrógeno para el cultivo siguiente al romper la pradera.",
+        "Vigilar pulgones y gusano soldado."
+      ]
+    },
+    "Café cereza": {
+      "cientifico": "Coffea arabica", "tipo": "Industrial", "familia": "Rubiaceae", "fija_nitrogeno": false,
+      "descripcion": "Arbusto perenne de montaña cultivado bajo sombra en Chiapas, Veracruz, Puebla y Oaxaca, mayormente por pequeños productores y en temporal.",
+      "suelo": "Ricos en materia orgánica y bien drenados; pH 5 a 6.5.",
+      "cuidados": [
+        "Mantener árboles de sombra para regular la temperatura y conservar el suelo.",
+        "Vigilar roya del cafeto y broca; usar variedades tolerantes a la roya.",
+        "Renovar los cafetales viejos para recuperar el rendimiento.",
+        "Cortar solo frutos maduros (rojos) para mejorar la calidad.",
+        "Se da entre 600 y 1,800 msnm; las zonas bajas son más vulnerables al calor."
+      ]
+    },
+    "Mango": {
+      "cientifico": "Mangifera indica", "tipo": "Frutal", "familia": "Anacardiaceae", "fija_nitrogeno": false,
+      "descripcion": "Frutal tropical perenne. México es uno de los principales exportadores (Ataulfo, Tommy Atkins, Kent). Se produce en Guerrero, Sinaloa, Nayarit, Chiapas y Michoacán.",
+      "suelo": "Profundos y bien drenados; pH 5.5 a 7.5.",
+      "cuidados": [
+        "Necesita una temporada seca antes de la floración para florecer bien.",
+        "La lluvia en floración favorece la antracnosis y reduce el amarre.",
+        "Vigilar mosca de la fruta (control obligatorio para exportar).",
+        "Podar después de la cosecha para controlar el tamaño del árbol.",
+        "Sensible a heladas."
+      ]
+    },
+    "Cebada grano": {
+      "cientifico": "Hordeum vulgare", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 130],
+      "descripcion": "Cereal de clima fresco usado sobre todo por la industria cervecera. Se siembra en temporal en el altiplano (Hidalgo, Tlaxcala, Puebla, Estado de México) y en riego en el Bajío.",
+      "suelo": "Francos y bien drenados; pH 6 a 8. Tolera salinidad moderada.",
+      "cuidados": [
+        "Ciclo corto: útil donde la temporada de lluvias es breve.",
+        "Las dosis altas de nitrógeno suben la proteína y bajan la calidad maltera.",
+        "Sembrar variedades malteras certificadas si se vende a la industria.",
+        "Vigilar roya y pulgones.",
+        "Cosechar con humedad de grano adecuada para no perder calidad."
+      ]
+    },
+    "Garbanzo grano": {
+      "cientifico": "Cicer arietinum", "tipo": "Leguminosa", "familia": "Fabaceae", "fija_nitrogeno": true,
+      "ciclo_dias": [100, 150],
+      "descripcion": "Leguminosa de invierno, muy tolerante a la sequía; suele aprovechar la humedad residual. Sonora y Sinaloa producen garbanzo blanco de exportación.",
+      "suelo": "Francos a arcillosos con buen drenaje; pH 6 a 8.",
+      "cuidados": [
+        "Tolera bien la sequía; el exceso de agua favorece la rabia del garbanzo (Fusarium).",
+        "Sembrar en Otoño-Invierno; buena rotación después de maíz o sorgo de verano.",
+        "Fija nitrógeno: requiere poca fertilización nitrogenada.",
+        "Usar semilla tratada y variedades tolerantes a enfermedades de raíz.",
+        "Vigilar gusano del fruto (Helicoverpa)."
+      ]
+    },
+    "Avena forrajera en verde": {
+      "cientifico": "Avena sativa", "tipo": "Forraje", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 120],
+      "descripcion": "Cereal forrajero de clima fresco que se corta en verde o se ensila para ganado. Se cultiva en el altiplano en temporal y en Otoño-Invierno con riego.",
+      "suelo": "Se adapta a suelos pobres y algo ácidos; pH 5 a 7.",
+      "cuidados": [
+        "Tolera frío y heladas ligeras mejor que otros cereales.",
+        "Cortar en estado lechoso-masoso del grano para buena calidad de forraje.",
+        "Se puede asociar con veza o chícharo para mejorar la proteína.",
+        "Fertilizar con nitrógeno a la siembra.",
+        "Útil en rotación para cubrir el suelo en invierno."
+      ]
+    },
+    "Fresa": {
+      "cientifico": "Fragaria x ananassa", "tipo": "Frutal", "familia": "Rosaceae", "fija_nitrogeno": false,
+      "descripcion": "Cultivo intensivo de alto valor, casi siempre con riego por goteo y acolchado plástico. Michoacán (Zamora) y Baja California concentran la producción, buena parte para exportación.",
+      "suelo": "Arenosos a francos, sueltos y bien drenados; pH 5.5 a 6.8.",
+      "cuidados": [
+        "Usar planta certificada de vivero.",
+        "Riego por goteo con fertirrigación; es sensible a la salinidad.",
+        "Acolchar con plástico para controlar malezas y mantener limpio el fruto.",
+        "Vigilar botritis (moho gris), araña roja y trips.",
+        "Cosecha diaria o cada dos días: requiere mucha mano de obra."
+      ]
+    },
+    "Soya": {
+      "cientifico": "Glycine max", "tipo": "Oleaginosa", "familia": "Fabaceae", "fija_nitrogeno": true,
+      "ciclo_dias": [90, 130],
+      "descripcion": "Leguminosa oleaginosa. En México se siembra en Tamaulipas, Campeche, San Luis Potosí y Chiapas, sobre todo en temporal de verano.",
+      "suelo": "Francos y bien drenados; pH 6 a 7.",
+      "cuidados": [
+        "Inocular la semilla con Bradyrhizobium si el terreno no ha tenido soya antes.",
+        "Elegir la variedad según la latitud: la floración depende de la duración del día.",
+        "Floración y llenado de vainas son las etapas más sensibles a la sequía.",
+        "Vigilar mosca blanca, chinches y roya asiática.",
+        "Buena rotación con maíz o sorgo: aporta nitrógeno al cereal siguiente."
+      ]
+    },
+    "Cebolla": {
+      "cientifico": "Allium cepa", "tipo": "Hortaliza", "familia": "Amaryllidaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 150],
+      "descripcion": "Hortaliza de bulbo que se siembra todo el año en distintas regiones. Chihuahua, Zacatecas, Tamaulipas y Baja California son productores importantes.",
+      "suelo": "Francos, sueltos y bien drenados; pH 6 a 7.",
+      "cuidados": [
+        "Elegir la variedad según la duración del día (de día corto, intermedio o largo) de la zona.",
+        "Raíz superficial: riegos ligeros y frecuentes; suspender antes de la cosecha.",
+        "Controlar malezas con cuidado: compite poco por su follaje delgado.",
+        "Vigilar trips y mildiu.",
+        "Curar (secar) los bulbos tras la cosecha para almacenarlos."
+      ]
+    },
+    "Maíz forrajero en verde": {
+      "cientifico": "Zea mays", "tipo": "Forraje", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 120],
+      "descripcion": "Maíz que se cosecha completo en verde para ensilar y alimentar ganado lechero. Se concentra en la Comarca Lagunera, Jalisco, Chihuahua y Aguascalientes.",
+      "suelo": "Francos, profundos y bien drenados; pH 5.5 a 7.5.",
+      "cuidados": [
+        "Cortar con el grano en estado de 1/3 a 1/2 de línea de leche para un buen ensilado.",
+        "Demanda alta de agua y nitrógeno, como el maíz grano.",
+        "Usar híbridos forrajeros de alta producción de materia seca.",
+        "Picar fino y compactar bien el silo para evitar pérdidas.",
+        "Rotar con avena o con leguminosas en Otoño-Invierno."
+      ]
+    },
+
+    "Pastos y praderas": {"cientifico": "Varias especies", "tipo": "Forraje", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Alfalfa achicalada": {"cientifico": "Medicago sativa", "tipo": "Forraje", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Sorgo forrajero en verde": {"cientifico": "Sorghum bicolor", "tipo": "Forraje", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Avena grano": {"cientifico": "Avena sativa", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Arroz palay": {"cientifico": "Oryza sativa", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Elote": {"cientifico": "Zea mays", "tipo": "Hortaliza", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Semilla de maíz grano": {"cientifico": "Zea mays", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Chile seco": {"cientifico": "Capsicum annuum", "tipo": "Hortaliza", "familia": "Solanaceae", "fija_nitrogeno": false},
+    "Tomate verde": {"cientifico": "Physalis philadelphica", "tipo": "Hortaliza", "familia": "Solanaceae", "fija_nitrogeno": false},
+    "Nuez": {"cientifico": "Carya illinoinensis", "ecocrop": "Carya illinoensis", "tipo": "Frutal", "familia": "Juglandaceae", "fija_nitrogeno": false},
+    "Plátano": {"cientifico": "Musa spp.", "ecocrop": "Musa acuminata x balbisiana", "tipo": "Frutal", "familia": "Musaceae", "fija_nitrogeno": false},
+    "Algodón hueso": {"cientifico": "Gossypium hirsutum", "tipo": "Industrial", "familia": "Malvaceae", "fija_nitrogeno": false},
+    "Manzana": {"cientifico": "Malus domestica", "tipo": "Frutal", "familia": "Rosaceae", "fija_nitrogeno": false},
+    "Espárrago": {"cientifico": "Asparagus officinalis", "tipo": "Hortaliza", "familia": "Asparagaceae", "fija_nitrogeno": false},
+    "Uva": {"cientifico": "Vitis vinifera", "tipo": "Frutal", "familia": "Vitaceae", "fija_nitrogeno": false},
+    "Piña": {"cientifico": "Ananas comosus", "tipo": "Frutal", "familia": "Bromeliaceae", "fija_nitrogeno": false},
+    "Copra": {"cientifico": "Cocos nucifera", "tipo": "Oleaginosa", "familia": "Arecaceae", "fija_nitrogeno": false},
+    "Coco fruta": {"cientifico": "Cocos nucifera", "tipo": "Frutal", "familia": "Arecaceae", "fija_nitrogeno": false},
+    "Sandía": {"cientifico": "Citrullus lanatus", "tipo": "Hortaliza", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Melón": {"cientifico": "Cucumis melo", "tipo": "Hortaliza", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Pepino": {"cientifico": "Cucumis sativus", "tipo": "Hortaliza", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Calabacita": {"cientifico": "Cucurbita pepo", "tipo": "Hortaliza", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Calabaza semilla o chihua": {"cientifico": "Cucurbita argyrosperma", "tipo": "Hortaliza", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Papaya": {"cientifico": "Carica papaya", "tipo": "Frutal", "familia": "Caricaceae", "fija_nitrogeno": false},
+    "Brócoli": {"cientifico": "Brassica oleracea var. italica", "tipo": "Hortaliza", "familia": "Brassicaceae", "fija_nitrogeno": false},
+    "Col (repollo)": {"cientifico": "Brassica oleracea var. capitata", "tipo": "Hortaliza", "familia": "Brassicaceae", "fija_nitrogeno": false},
+    "Coliflor": {"cientifico": "Brassica oleracea var. botrytis", "tipo": "Hortaliza", "familia": "Brassicaceae", "fija_nitrogeno": false},
+    "Lechuga": {"cientifico": "Lactuca sativa", "ecocrop": "Lactuca sativa var. capitata", "tipo": "Hortaliza", "familia": "Asteraceae", "fija_nitrogeno": false},
+    "Zanahoria": {"cientifico": "Daucus carota", "tipo": "Hortaliza", "familia": "Apiaceae", "fija_nitrogeno": false},
+    "Ajo": {"cientifico": "Allium sativum", "tipo": "Hortaliza", "familia": "Amaryllidaceae", "fija_nitrogeno": false},
+    "Ejote": {"cientifico": "Phaseolus vulgaris", "tipo": "Hortaliza", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Haba grano": {"cientifico": "Vicia faba", "tipo": "Leguminosa", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Chícharo": {"cientifico": "Pisum sativum", "tipo": "Leguminosa", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Cacahuate": {"cientifico": "Arachis hypogaea", "tipo": "Oleaginosa", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Ajonjolí": {"cientifico": "Sesamum indicum", "tipo": "Oleaginosa", "familia": "Pedaliaceae", "fija_nitrogeno": false},
+    "Cártamo": {"cientifico": "Carthamus tinctorius", "tipo": "Oleaginosa", "familia": "Asteraceae", "fija_nitrogeno": false},
+    "Girasol": {"cientifico": "Helianthus annuus", "tipo": "Oleaginosa", "familia": "Asteraceae", "fija_nitrogeno": false},
+    "Palma africana o de aceite": {"cientifico": "Elaeis guineensis", "tipo": "Oleaginosa", "familia": "Arecaceae", "fija_nitrogeno": false},
+    "Cacao": {"cientifico": "Theobroma cacao", "tipo": "Industrial", "familia": "Malvaceae", "fija_nitrogeno": false},
+    "Durazno": {"cientifico": "Prunus persica", "tipo": "Frutal", "familia": "Rosaceae", "fija_nitrogeno": false},
+    "Frambuesa": {"cientifico": "Rubus idaeus", "ecocrop": "Rubus idaeus ssp. idaeus", "tipo": "Frutal", "familia": "Rosaceae", "fija_nitrogeno": false},
+    "Zarzamora": {"cientifico": "Rubus spp.", "ecocrop": "Rubus sp.", "tipo": "Frutal", "familia": "Rosaceae", "fija_nitrogeno": false},
+    "Arándano": {"cientifico": "Vaccinium corymbosum", "tipo": "Frutal", "familia": "Ericaceae", "fija_nitrogeno": false},
+    "Tuna": {"cientifico": "Opuntia ficus-indica", "tipo": "Frutal", "familia": "Cactaceae", "fija_nitrogeno": false},
+    "Nopalitos": {"cientifico": "Opuntia ficus-indica", "tipo": "Hortaliza", "familia": "Cactaceae", "fija_nitrogeno": false},
+    "Guayaba": {"cientifico": "Psidium guajava", "tipo": "Frutal", "familia": "Myrtaceae", "fija_nitrogeno": false},
+    "Toronja (pomelo)": {"cientifico": "Citrus paradisi", "tipo": "Frutal", "familia": "Rutaceae", "fija_nitrogeno": false},
+    "Mandarina": {"cientifico": "Citrus reticulata", "tipo": "Frutal", "familia": "Rutaceae", "fija_nitrogeno": false},
+    "Tangerina": {"cientifico": "Citrus reticulata", "tipo": "Frutal", "familia": "Rutaceae", "fija_nitrogeno": false},
+    "Vainilla": {"cientifico": "Vanilla planifolia", "tipo": "Industrial", "familia": "Orchidaceae", "fija_nitrogeno": false},
+    "Tabaco": {"cientifico": "Nicotiana tabacum", "tipo": "Industrial", "familia": "Solanaceae", "fija_nitrogeno": false},
+    "Jamaica": {"cientifico": "Hibiscus sabdariffa", "tipo": "Industrial", "familia": "Malvaceae", "fija_nitrogeno": false},
+    "Jícama": {"cientifico": "Pachyrhizus erosus", "tipo": "Tubérculo", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Camote": {"cientifico": "Ipomoea batatas", "tipo": "Tubérculo", "familia": "Convolvulaceae", "fija_nitrogeno": false},
+    "Chayote": {"cientifico": "Sechium edule", "tipo": "Hortaliza", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Cilantro": {"cientifico": "Coriandrum sativum", "tipo": "Hortaliza", "familia": "Apiaceae", "fija_nitrogeno": false},
+    "Triticale grano": {"cientifico": "x Triticosecale", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Amaranto": {"cientifico": "Amaranthus hypochondriacus", "tipo": "Cereal", "familia": "Amaranthaceae", "fija_nitrogeno": false},
+    "Hule hevea": {"cientifico": "Hevea brasiliensis", "tipo": "Industrial", "familia": "Euphorbiaceae", "fija_nitrogeno": false}
+  }
+}

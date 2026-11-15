@@ -7,3 +7,5 @@
 .venv
 **/*.db
 **/*.db-journal
+# La imagen regenera los datos de Cultivos en el build
+backend/data/cultivos

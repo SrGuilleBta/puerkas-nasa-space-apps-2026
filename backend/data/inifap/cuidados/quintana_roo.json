@@ -1,0 +1,639 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/quintana_roo.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "23",
+  "estado": "Quintana Roo",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Quintana Roo. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Caña de Azúcar",
+      "cientifico": "Saccharum officinarum",
+      "paginas": [
+        11,
+        21
+      ],
+      "cultivo_ids": [
+        "cana-de-azucar"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "temporal",
+      "ciclo": "PER",
+      "region": "Clima tropical o subtropical húmedo a subhúmedo; en zonas secas necesita riego de auxilio. Crece mejor entre 21 y 38 °C; la maduración se favorece con días calientes y noches frescas en las 4 o 5 semanas antes de la zafra. Suelos Vertisoles, Luvisoles y Leptosoles de la zona del Ingenio San Rafael de Pucté.",
+      "siembra": {
+        "texto": "Bajo temporal, de mayo a mediados de noviembre, según el tipo de suelo, la variedad y la programación de la cosecha.",
+        "meses": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "variedades": [
+        "MEX 69-290 (madurez media, Vertisoles)",
+        "CP 72-2086 (temprana, Luvisoles y Leptosoles)",
+        "RD 75-11 (media-tardía, Luvisoles y Leptosoles)",
+        "ITV 92-1424 (temprana, Luvisoles y Leptosoles)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Surcos de 1.40 a 1.60 m (o al ancho del rodaje de la cosechadora si el corte es mecánico). Semilla en doble caña o cordón, trozada en tramos de 60 cm: 10 a 12 t/ha de semilla de 6 a 9 meses de edad, de lote verificado. Profundidad de 20 a 25 cm, tapada con 5 cm de suelo.",
+      "fertilizacion": "144-144-144 en dos aplicaciones: 425 kg/ha de triple 17 en banda al fondo del surco antes de la siembra (o al recorte en socas y resocas) y otros 425 kg/ha en el primer aporque. Ajustar con análisis de suelo. En socas, aplicar después del corte el 50 % de la fórmula e incorporarlo con cultivadora.",
+      "riego": null,
+      "plagas": [
+        "Gusano barrenador (Diatraea spp.)",
+        "Mosca pinta o salivazo (Aeneolamia postica)",
+        "Rata de campo (Sigmodon hispidus)",
+        "Gallina ciega (Phyllophaga spp.)",
+        "Cochinilla (especie sin identificar)"
+      ],
+      "enfermedades": [
+        "Marchitez de la caña (Fusarium sacchari)",
+        "Royas (Puccinia melanocephala y Puccinia kuehnii)",
+        "Carbón (Sporisorium scitamineum)",
+        "Mosaico de la caña (SCMV)",
+        "Pokkah boeng"
+      ],
+      "malezas": "Compiten por agua, luz y nutrientes y reducen el amacollo y la vida del cañal. Control manual con azadón o machete y escardas o cultivos con tracción animal o mecánica en los primeros dos a tres meses después de la siembra o del destronque, hasta que cierre el cultivo. Mantener limpios bordos, callejones y regaderas: los zacates hospedan a la mosca pinta y al gusano falso medidor. Malezas agresivas: zacate Johnson, Guinea y Grama.",
+      "cosecha": "Zafra de noviembre a mayo (o hasta el inicio de las lluvias), autorizada por el ingenio según el índice de madurez. Corte manual con quema previa (llevar la caña al batey en 24 horas como máximo) o mecánico en verde, sin quema. Rendimiento esperado: hasta 80 t/ha en temporal. Con buen manejo el cañal dura de 8 a 10 años.",
+      "cuidados": [
+        "Subsolear (excepto en Leptosoles), barbechar y rastrear; en Leptosoles usar solo rastra semipesada para conservar el suelo.",
+        "Emparejar las pequeñas depresiones del terreno para evitar fallas de cepas por encharcamiento en lluvias.",
+        "Usar semilla sana de 6 a 9 meses, de lote verificado, y revisar el tapado mecánico para cubrir a mano los tramos que queden destapados.",
+        "Contra el barrenador: semilla libre de la plaga, liberaciones mensuales de Trichogramma, muestreos quincenales y destronque al ras después del corte.",
+        "Contra la mosca pinta: eliminar zacates dentro y fuera del cultivo, evitar encharcamientos y monitorear con trampas amarillas cada ocho días.",
+        "Ante la marchitez por Fusarium, incorporar compostas, abonos o estiércoles y aplicar Trichoderma o Bacillus subtilis a la base de las plantas."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 62500,
+          "rendimiento": 80,
+          "unidad_rendimiento": "t/ha",
+          "precio": 900,
+          "ingreso_neto": 9500,
+          "relacion_bc": 1.15
+        }
+      ],
+      "nota": "Costos del Cuadro 2 para caña soca (mantenimiento), que no incluye preparación del terreno ni establecimiento; los rubros cuadran. La caña plantilla (establecimiento) cuesta 84,460 $/ha y, con 80 t/ha a 900 $/t (ingreso bruto 72,000), da ingreso neto de -12,460 y B/C 0.85. El texto de malezas salió dentro de la sección de enfermedades. Las variedades no son de empresas privadas según el texto; MEX 69-290 y CP 72-2086 ocupan más del 90 % de la superficie del ingenio.",
+      "revisado": false
+    },
+    {
+      "ficha": "Frijol negro",
+      "cientifico": "Phaseolus vulgaris",
+      "paginas": [
+        22,
+        28
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "OI",
+      "region": "Clima cálido subhúmedo. Se siembra aprovechando la humedad que queda al terminar la temporada fuerte de lluvias, sin riego. Suelos ya'ax-hom o k'ankab.",
+      "siembra": {
+        "texto": "Del 15 de octubre al 15 de noviembre. Antes hay más enfermedades; después, riesgo de plagas o falta de lluvia.",
+        "meses": [
+          10,
+          11
+        ]
+      },
+      "variedades": [
+        "Jamapa",
+        "Negro INIFAP",
+        "Negro Veracruz"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "185 mil plantas/ha con 35 kg/ha de semilla y sembradora. A espeque: 40 cm entre plantas y 80 cm entre hileras, a 5 cm de profundidad, con 20 a 25 kg/ha de semilla.",
+      "fertilizacion": "30-40-00: 65 kg/ha de urea más 87 kg/ha de superfosfato de calcio triple, o bien 87 kg/ha de 18-46-00 con 32 kg/ha de urea.",
+      "riego": null,
+      "plagas": [
+        "Doradillas o diabróticas (Diabrotica balteata)",
+        "Chicharritas (Cicadellidae)",
+        "Mosquita blanca (Bemisia tabaci)",
+        "Gusano cogollero",
+        "Gorgojos y palomillas del frijol almacenado"
+      ],
+      "enfermedades": [
+        "Tizón algodonoso (Pythium spp. o Sclerotinia sclerotiorum)",
+        "Rhizoctonia solani",
+        "Roya o chahuixtle",
+        "Mosaico común (BCMV) y mosaico amarillo (BYMV) del frijol"
+      ],
+      "malezas": "Mantener el cultivo libre de malezas los primeros 40 días. Principales: Amaranthus, verdolaga, bledo, zacate Johnson, zacate miel y cola de zorra. Control cultural con rotación de cultivos y acolchado con rastrojos o pajas; control mecánico con deshierbe manual o con herramientas.",
+      "cosecha": "Cuando las vainas maduran, a los 80 o 90 días después de la siembra. Cosechar por la mañana, con las vainas húmedas, para evitar pérdidas por desgrane. Rendimiento esperado: 1.5 a 2.0 t/ha.",
+      "cuidados": [
+        "Si el terreno viene de maíz, desvarar pronto y dar dos pasos de rastra cruzados; si estuvo ocioso, barbechar a 25-30 cm, de preferencia en la canícula de agosto.",
+        "Sembrar del 15 de octubre al 15 de noviembre con variedades de grano negro (Jamapa, Negro INIFAP, Negro Veracruz).",
+        "Colocar trampas de melaza y piña cada 20 m en la orilla de la parcela contra el gusano cogollero.",
+        "Vigilar chicharritas (actuar con 3 o más por planta joven o 5 o más en plantas adultas) y mosquita blanca (más de 4 por planta).",
+        "Mantener limpio de malezas los primeros 40 días y usar semilla certificada para prevenir enfermedades y mosaicos.",
+        "Cosechar por la mañana y proteger el grano almacenado de gorgojos y palomillas."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 11710,
+          "rendimiento": 1000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 27,
+          "ingreso_neto": 15290,
+          "relacion_bc": 2.31
+        }
+      ],
+      "nota": "Costos del Cuadro 5: los rubros suman 11,710 $/ha y el ingreso bruto es 1,000 kg × 27 $/kg (precio de garantía) = 27,000. El cuadro usa 1,000 kg/ha, menos que los 1.5 a 2.0 t/ha que da el texto de cosecha. Relación B/C calculada (27,000 / 11,710); el cuadro imprime 2.3.",
+      "revisado": false
+    },
+    {
+      "ficha": "Limón Persa",
+      "cientifico": "Citrus latifolia Tanaka",
+      "paginas": [
+        29,
+        38
+      ],
+      "cultivo_ids": [
+        "limon"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": null,
+      "ciclo": "PER",
+      "region": "Planicie kárstica de 0 a 100 msnm, de relieve plano, con 23 a 30 °C, 1,200 a 1,500 mm de lluvia (mayo a octubre), humedad relativa de 70 a 85 % y sin heladas. Suelos calizos bien drenados; la sequía de noviembre a abril obliga a regar.",
+      "siembra": {
+        "texto": "En temporal, en la época de lluvias; con riego, en cualquier época del año.",
+        "meses": []
+      },
+      "variedades": [
+        "Portainjerto naranjo agrio (Citrus aurantium)",
+        "Portainjerto limón macrophylla (Citrus macrophylla)",
+        "Portainjerto limón volkameriano (Citrus volkameriana)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "6 m entre hileras y 4 m entre plantas: 416 árboles/ha.",
+      "fertilizacion": "Según análisis de suelo y edad, en 4 aplicaciones al año (N-P2O5-K2O en g por árbol): 0-2 años, 25-13-4; 3-4 años, 43-9-15; 5-6 años, 175-58-85; 7-8 años (plena producción), 312-105-156. Al trasplante, al fondo de la poceta; después, en la zona de goteo de la copa.",
+      "riego": "Obligatorio en la sequía de noviembre a abril. Se usa microaspersión: al menos dos riegos por semana de 3 a 5 horas cada uno, según suelo, densidad y tamaño del árbol.",
+      "plagas": [
+        "Ácaros: arañuela roja, ácaro rojo plano, ácaro blanco, ácaro de la yema y ácaro del tostado",
+        "Minador de la hoja (Phyllocnistis citrella)",
+        "Psílido asiático de los cítricos (Diaphorina citri)",
+        "Pulgones (Aphididae)"
+      ],
+      "enfermedades": [
+        "Huanglongbing (HLB)",
+        "Gomosis (Phytophthora spp.)",
+        "Muerte descendente (Lasiodiplodia spp.)",
+        "Mancha grasienta (Mycosphaerella citri)",
+        "Viroides: exocortis y caquexia"
+      ],
+      "malezas": "Chapeos manuales o con desbrozadora en las hileras y desbroce con tractor en las calles; conservar coberturas benéficas que frenen a las malezas problemáticas.",
+      "cosecha": "Manual, cuando el fruto tiene 42 % de jugo o 50 a 63 mm de diámetro, de 110 a 120 días después de la floración (puede iniciar a los 85). Rendimiento potencial de 25 a 50 t/ha según la densidad; la máxima producción llega a los 5 o 6 años.",
+      "cuidados": [
+        "Plantar árboles certificados libres de HLB, de unidades de propagación autorizadas.",
+        "Injertar a 25-30 cm del suelo, evitar heridas en el tronco y drenar los encharcamientos para prevenir la gomosis.",
+        "Monitorear el psílido asiático en cada brotación y eliminar árboles con síntomas de HLB.",
+        "Hacer podas de formación, deschuponar y dar podas sanitarias; desinfectar las herramientas de corte con hipoclorito.",
+        "Regar con microaspersión dos veces por semana de noviembre a abril.",
+        "Conservar los enemigos naturales evitando aplicaciones innecesarias de insecticidas de amplio espectro."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 90779,
+          "rendimiento": 20000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8.5,
+          "ingreso_neto": 79221,
+          "relacion_bc": 1.87
+        }
+      ],
+      "nota": "La ficha cubre riego y temporal (modalidad null); el Cuadro 7 es de riego. Se usa el costo de producción del año 7 (90,779 $/ha, sus rubros cuadran) con su rendimiento (20,000 kg) y precio (8.5 $/kg; ingreso bruto 170,000); ingreso neto y B/C del año 7 se calcularon porque el cuadro solo los imprime acumulados. Acumulado de los años 1 a 7: costo 209,119, ingreso bruto 425,000, neto 215,881 y B/C 2. El establecimiento (año 1) cuesta 81,140 $/ha y el mantenimiento de los años 2 a 6 se da como 37,200 $. La agenda no nombra variedades de limón, solo portainjertos. No da meses de plantación, solo 'época de lluvias'.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz",
+      "cientifico": "Zea mays",
+      "paginas": [
+        39,
+        44
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Sistema milpa (roza-tumba-quema) en suelos muy pedregosos no mecanizables, chac-lu'um con lunares de k'ankab. El INIFAP propone dejar el rastrojo como cubierta para sembrar el mismo terreno varios años seguidos después del primer año con quema.",
+      "siembra": {
+        "texto": "Desde el inicio de las lluvias en mayo hasta el 31 de julio.",
+        "meses": [
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "V-539",
+        "Sac-Beh (grano blanco)",
+        "Chichén-Itzá (grano amarillo)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Un metro entre hileras y entre cepas, con 4 a 5 semillas por cepa a 5-7 cm de profundidad: mínimo 40 mil plantas/ha. Se necesitan 10 a 12 kg de semilla con al menos 80 % de germinación.",
+      "fertilizacion": "30-80-00 (no hace falta potasio) a los 15 o 20 días de la emergencia, con buena humedad: 65 kg de urea y 174 kg de superfosfato triple, 6 g de la mezcla por cepa. Además, tres aplicaciones foliares de biofertilizante cada 15 días desde los 30 días de la siembra (3 L por bomba de 20 L).",
+      "riego": null,
+      "plagas": [
+        "Gusano de la raíz (Diabrotica spp.)",
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Barrenadores del tallo"
+      ],
+      "enfermedades": [
+        "Achaparramiento del maíz, transmitido por la chicharrita (Dalbulus maidis)"
+      ],
+      "malezas": "Control manual cuando la maleza tiene de 20 a 30 cm de altura.",
+      "cosecha": "A la madurez, entre los 150 y 160 días después de la siembra. Rendimiento esperado: 2,000 kg/ha.",
+      "cuidados": [
+        "Sembrar en hileras con hilo o rafia marcada a un metro, para facilitar el deshierbe y la selección de plantas y mazorcas para semilla.",
+        "Sembrar dentro del periodo óptimo (mayo al 31 de julio) para evitar el achaparramiento.",
+        "Inocular la semilla con biofertilizante un día antes de sembrar (20 mL de inoculante y 50 mL de adherente por kg).",
+        "Fertilizar con 30-80-00 a los 15-20 días de emergido, 6 g de mezcla por cepa, con el suelo húmedo.",
+        "Monitorear cada semana la chicharrita y vigilar cogollero y barrenadores.",
+        "Deshierbar a mano cuando la maleza alcance 20 a 30 cm."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 13850,
+          "rendimiento": 2000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7.2,
+          "ingreso_neto": 550,
+          "relacion_bc": 1.04
+        }
+      ],
+      "nota": "Costos del Cuadro 8: los rubros suman 13,850 $/ha; ingreso bruto 2,000 kg × 7.2 $/kg (precio de garantía) = 14,400. Relación B/C calculada (14,400 / 13,850); el cuadro imprime 1. La introducción dice '1.5 a 2.0 Kg ha-1' con la tecnología, al parecer por t/ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Palma de coco",
+      "cientifico": "Cocos nucifera L.",
+      "paginas": [
+        45,
+        52
+      ],
+      "cultivo_ids": [
+        "coco-fruta",
+        "copra"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "temporal",
+      "ciclo": "PER",
+      "region": "Clima cálido subhúmedo, 1,300 mm de lluvia (mayo a octubre), sequía de noviembre a abril, 26 °C de promedio y 85 % de humedad relativa; riesgo de huracanes en agosto y septiembre. Suelos aptos: arenosoles, fluvisoles, regosoles, luvisoles, nitisoles, phaeozem y cambisoles; evitar gleysoles, vertisoles, leptosoles y calcisoles. Se cultiva sobre todo en Othón P. Blanco y Bacalar.",
+      "siembra": {
+        "texto": "Trasplante al inicio de las lluvias, con plántulas embolsadas de seis meses (primera hoja ya dividida) o de raíz desnuda de tres a cinco meses; nunca plantas de más de un año.",
+        "meses": []
+      },
+      "variedades": [
+        "Enano Acapulco",
+        "Criollos Altos del Pacífico: Capi, Costa Chica, Gigante y Felícitos",
+        "Híbridos Chactemal, Donají, Ordaz, Cancún y Xcaret",
+        "Enano verde"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Marco real o tresbolillo. Enano a 7 o 9 m (196 o 121 plantas/ha en marco real; 235 o 143 en tresbolillo); híbridos a 8.5 o 9 m (144 o 121; 160 o 143); Criollo Alto del Pacífico a 9 o 10 m (121 o 100; 143 o 115). Pocetas de 50 a 70 cm por lado en suelo arenoso (rellenas con arena y sargazo) y de 40 a 50 cm en suelo de transición (cáscara de coco y tierra o estiércol seco).",
+      "fertilizacion": "Según análisis de suelo y foliar. Referencia por planta al año (urea, superfosfato triple y cloruro de potasio, en g): año 1, 150-200-250 en tres huecos a 25 cm del tallo; año 2, 300-300-500 a 40 cm; año 3, 450-400-750 en zanja circular a 1.5 m; año 4 en adelante, 600-400-1,000 en zanja a 2 m. Dividir la dosis en al menos dos aplicaciones (hasta 12, una por mes). Alternativas: biofertilizantes, estiércol descompuesto, lombricomposta, abonos verdes y acolchado con residuos de coco.",
+      "riego": "Casi todo es de temporal, pero conviene dar riego de auxilio al menos de enero a mayo, cuando la producción baja cerca de 50 % por falta de agua.",
+      "plagas": [
+        "Picudo negro, mayate prieto o cucarachón (Rhynchophorus palmarum)",
+        "Ácaro o roña del fruto (Aceria guerreronis)"
+      ],
+      "enfermedades": [
+        "Amarillamiento letal del cocotero (ALC)",
+        "Anillo rojo (Bursaphelenchus cocophilus)",
+        "Mancha gris de la hoja (Pestalotia palmarum)",
+        "Helmintosporiosis o mancha foliar (Helminthosporium incurvatum)"
+      ],
+      "malezas": "Evitar el suelo desnudo. Si la maleza crece demasiado, control manual o mecánico. Usar acolchado con residuos de la plantación, coberteras en los callejones y cultivos intercalados entre las palmas.",
+      "cosecha": "Coco fruta: corte a los 7-8 meses (enano) u 8-9 meses (altos e híbridos); rendimiento por ha al año de 24,456 frutos (enano), 17,592 (criollos altos) y 25,596 (híbridos). Copra: corte a los 12 meses, de 2.6 a 3.1 t/ha (enano), 3.8 a 4.5 (altos) y 5.4 a 6.4 (híbridos). La primera cosecha llega entre el tercer y cuarto año; el corte lo hacen los compradores.",
+      "cuidados": [
+        "Comprar cultivares registrados en el SNICS, de origen que garantice pureza genética y resistencia al amarillamiento letal.",
+        "Trasplantar al inicio de las lluvias plántulas de seis meses; no usar plantas de más de un año.",
+        "Mantener la palma bien nutrida desde el establecimiento y fraccionar la fertilización en al menos dos aplicaciones al año.",
+        "Poner trampas con atrayente y feromona en la orilla de la plantación contra el picudo negro, vector del anillo rojo.",
+        "Derribar y sacar las palmas con anillo rojo; hacer poda fitosanitaria, despalape y encalado.",
+        "Dar riego de auxilio de enero a mayo y no dejar el suelo desnudo."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 35769.36,
+          "rendimiento": 25596,
+          "unidad_rendimiento": "frutos/ha",
+          "precio": 10,
+          "ingreso_neto": 220190.64,
+          "relacion_bc": 7.16
+        }
+      ],
+      "nota": "Costos del Cuadro 15 para cocotero híbrido (143 plantas/ha) en producción, del 5.º año en adelante: costo 35,769.36 $/ha, 25,596 frutos a 10 $ por fruto (ingreso bruto 255,960). El cuadro no desglosa el costo anual ni incluye la cosecha, porque la hacen los compradores. Relación B/C calculada (255,960 / 35,769.36); el cuadro imprime 7.15. Los cuatro primeros años cuestan 164,254.12 $/ha (sus rubros cuadran). Se asignan coco-fruta y copra porque la ficha da rendimientos de ambos. 'Enano verde' es el material que piden los productores; la agenda no da su origen.",
+      "revisado": false
+    },
+    {
+      "ficha": "Piña",
+      "cientifico": "Ananas comosus var. comosus",
+      "paginas": [
+        53,
+        64
+      ],
+      "cultivo_ids": [
+        "pina"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "1,000 a 1,800 mm de lluvia bien repartida, 24 a 25 °C (sin bajar de 20 ni pasar de 35 °C), hasta 250 msnm, pendiente menor a 6 % y vientos menores a 50 km/h. Suelos muy bien drenados, de más de un metro, arenosos o migajón arenoso, con pH de 4.5 a 5.5; con pH más alto aumentan las pudriciones por Phytophthora.",
+      "siembra": {
+        "texto": "Desde el inicio de las lluvias en mayo hasta el 31 de agosto.",
+        "meses": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Cayena lisa",
+        "Champaka"
+      ],
+      "hibridos_comerciales": [
+        "MD-2 o piña miel"
+      ],
+      "densidad": "35,000 a 40,000 plantas/ha en doble hilera: 60 cm entre hileras, calles de 90 cm y 33 cm entre plantas. Usar de preferencia 'clavos' grandes y vigorosos; dan fruta a los 12 a 16 meses.",
+      "fertilizacion": "350-150-350 en todo el ciclo. 1.ª: a los 10 días de la siembra, 10 g por planta de 18-46-00. 2.ª: tres meses después, 750 kg de sulfato de amonio y 300 kg de cloruro de potasio (26 g de mezcla por planta). 3.ª: tres meses después, 300 kg de urea y 300 kg de cloruro de potasio (15 g por planta, en las axilas de las hojas basales). Mezcla foliar de micronutrientes, potasio y calcio a los 4, 6 y 8 meses (7 kg por aplicación).",
+      "riego": "Cultivo de temporal; el riego, el acolchado plástico y la malla sombra reducen el efecto de los periodos secos.",
+      "plagas": [
+        "Comején (Gnathamitermes tubidormans)",
+        "Barrenador del fruto (Thecla basilides)",
+        "Picudo negro de las bromelias (Metamasius callizona)",
+        "Elaphria nucicolora",
+        "Piojos harinosos (Dysmicoccus brevipes y D. neobrevipes)",
+        "Ácaro rojo (Dolichotetranychus floridanus)",
+        "Gallina ciega (Phyllophaga sp.)",
+        "Sinfílidos (Scutigerella sakimurai)",
+        "Hormigas (Solenopsis geminata y Pheidole megacephala)",
+        "Ácaro blanco del fruto (Steneotarsonemus ananas)",
+        "Trips (Thrips tabaci)",
+        "Grillo de campo (Acheta assimilis)",
+        "Escarabajo del fruto podrido (Carpophilus hemipterus)",
+        "Tlacuache, tejón y aves silvestres"
+      ],
+      "enfermedades": [
+        "Nematodos (Pratylenchus, Meloidogyne y otros)",
+        "Marchitez roja (virus PMWaV-1, 2 y 3)",
+        "Pudrición del cogollo y de la raíz (Phytophthora nicotianae var. parasitica, P. cinnamomi)",
+        "Pudrición bacteriana del cogollo y del fruto (Erwinia chrysanthemi)",
+        "Pudrición de raíz (Pythium arrhenomanes)",
+        "Pudrición negra del tallo y del fruto (Thielaviopsis paradoxa)",
+        "Corchosidad entre frutillos (Penicillium funiculosum)",
+        "Pudrición del fruto por levaduras",
+        "Fruto jaspeado",
+        "Mancha café del fruto (desorden fisiológico)"
+      ],
+      "malezas": "Principales: cizaña (Asystasia gangetica) y caminadora (Rottboellia cochinchinensis). El acolchado plástico negro evita los herbicidas. Sin acolchado, se hacen cuatro deshierbes manuales, cada dos meses después de los tratamientos.",
+      "cosecha": "Manual, con canastos de hasta 20 frutos, sin golpes ni raspaduras y cuidando la inocuidad. Cosechar el fruto maduro, porque una vez cortado ya no madura. Rendimiento: 40 a 50 t/ha.",
+      "cuidados": [
+        "Hacer la roza y tumba en diciembre, sacar tocones y raíces y retirar residuos a la orilla para no dar refugio al comején.",
+        "Trazar las hileras de este a oeste; el acolchado plástico negro calibre 150 conserva humedad, evita malezas y dura unas dos cosechas.",
+        "Desinfectar el material de siembra y usar clavos grandes y vigorosos.",
+        "Hacer la inducción floral de preferencia cerca de diciembre-enero; suspender el nitrógeno un mes antes y dar prioridad al potasio.",
+        "Proteger el fruto del sol en sus dos últimos meses (malla sombra al 50 % o papel periódico), pues las quemaduras pueden dañar hasta 60 % de la fruta.",
+        "Monitorear plagas y enfermedades al menos cada dos meses por lotes, revisando raíz, tallo, hojas y frutos, y preferir productos orgánicos y biológicos."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 242690,
+          "rendimiento": 45000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": null,
+          "relacion_bc": 1.11
+        }
+      ],
+      "nota": "Costos del Cuadro 16: los rubros suman 242,690 $/ha; ingreso bruto 45,000 kg × 6 $/kg = 270,000. El cuadro imprime ingreso neto de 27,100, pero 270,000 − 242,690 = 27,310, por eso va en null. B/C calculada (270,000 / 242,690); el cuadro imprime 1.1. En el cuadro, el material vegetativo dice 3,500 unidades a 3 $ = 105,000, lo que parece ser 35,000 unidades. El costo del acolchado plástico no está incluido. Se dejó tipo_cultivo 'anual' como en el extraído, aunque el ciclo hasta la cosecha es de 12 a 16 meses. MD-2 se pone en híbridos porque el texto lo llama 'híbrido'; no da la empresa.",
+      "revisado": false
+    },
+    {
+      "ficha": "Pitahaya",
+      "cientifico": "Selenicereus undatus",
+      "paginas": [
+        65,
+        72
+      ],
+      "cultivo_ids": [
+        "pitahaya"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "temporal",
+      "ciclo": "PER",
+      "region": "Se adapta a suelos muy pedregosos, como los del norte del estado; rinde mejor en suelos profundos, con materia orgánica, humedad y buen drenaje, con pH de 6.0 a 7.0 (óptimo 6.5). La principal zona es Los Chunes, en Felipe Carrillo Puerto.",
+      "siembra": {
+        "texto": "En la temporada de lluvias, de junio a septiembre, a 5-10 cm de profundidad.",
+        "meses": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "variedades": [
+        "Criollo regional de cáscara roja-púrpura y pulpa blanca"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Sistema tradicional con tutores vivos a 3.0 m entre filas y 2.5 m entre plantas: unos 1,250 tutores/ha y un esqueje por tutor (1,200 esquejes). Tutores de 8 a 10 cm de diámetro y máximo 1.5 m de alto (jabín, chacá, dzidzilché). Otras opciones: 3.0 × 2.0 m (1,666 plantas/ha), palma de petate a 2.5 × 2.0 m (2,000) o albarrada a 4.0 × 1.0 m (2,500).",
+      "fertilizacion": "Para 1,666 plantas/ha: otoño (cosecha) 100-100-100; primavera (floración-producción) 00-50-100; verano (producción-cosecha) 00-100-150. Abono orgánico (gallinaza, bovinaza, porcinaza o bagazo de henequén): máximo 5 kg por planta al año en tres aplicaciones, con 1 kg por planta al trasplante.",
+      "riego": null,
+      "plagas": [
+        "Chinche de patas de hoja",
+        "Minador del tallo",
+        "Barrenador de tallos y fruto"
+      ],
+      "enfermedades": [
+        "Ojo de pescado",
+        "Antracnosis",
+        "Enfermedades bacterianas"
+      ],
+      "malezas": "Eliminar zacates y pequeñas leguminosas: dos limpias después de plantar los esquejes durante el establecimiento y de tres a cuatro chapeos al año en el mantenimiento.",
+      "cosecha": "Por la mañana, con tijera o navaja de acero inoxidable, cuando las brácteas se ponen rosas y el pedúnculo se vuelve quebradizo; madurez comercial a los 34 días de embolsar el fruto tras la caída de sépalos. Clasificar por madurez, tamaño y forma y empacar en cajas de 12 kg. Se cosecha en cuatro cortes de junio a octubre; con la tecnología se logran hasta 8 t/ha (promedio estatal 3 t/ha).",
+      "cuidados": [
+        "Escoger terrenos de huamil o acahual con cinco años o más de descanso, o de milpa del ciclo anterior, y conservar árboles como tutores vivos.",
+        "Atar el esqueje al tutor con bejuco, henequén o rafia que se descomponga y no ahorque la planta.",
+        "Dar una poda de formación ligera a los 50 días del trasplante, dejando dos brotes apicales.",
+        "Hacer podas sanitarias de las partes enfermas y destruir el material eliminado; evitar en lo posible los agroquímicos.",
+        "Fertilizar según la etapa: 100-100-100 en otoño, 00-50-100 en primavera y 00-100-150 en verano.",
+        "Cosechar por la mañana y no dejar la fruta cortada expuesta al sol."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 70950,
+          "rendimiento": 4500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 30,
+          "ingreso_neto": 64050,
+          "relacion_bc": 1.9
+        }
+      ],
+      "nota": "El extraído marcaba tipo de cultivo 'anual'; el texto describe una plantación perenne con etapas de establecimiento y mantenimiento, chapeos anuales y ha en desarrollo y en producción, por eso se corrigió a perenne. Costos del Cuadro 20: los rubros suman 70,950 $/ha y el ingreso bruto es 4,500 kg × 30 $/kg = 135,000; cuadran neto y B/C. Ojo: el cuadro incluye conceptos de establecimiento (limpieza, tutores, esquejes) y no separa el mantenimiento. Las plagas salieron dentro de la sección de fertilización (Cuadro 18). El texto de cosecha dice '8 a 10 ha-1' sin unidad; se usó el 'hasta ocho toneladas por hectárea' de la introducción.",
+      "revisado": false
+    },
+    {
+      "ficha": "Sandía",
+      "cientifico": "Citrullus lanatus",
+      "paginas": [
+        73,
+        82
+      ],
+      "cultivo_ids": [
+        "sandia"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "José María Morelos, zona centro-sur: clima cálido subhúmedo con lluvias en verano, 24 a 28 °C y 1,100 a 1,300 mm. Suelos calcáreos poco profundos, pedregosos y susceptibles a degradarse.",
+      "siembra": {
+        "texto": "Del 1 de diciembre al 15 de febrero (mayores rendimientos). Puede adelantarse desde el 1 de noviembre por mejores precios, con más riesgo de enfermedades.",
+        "meses": [
+          12,
+          1,
+          2
+        ]
+      },
+      "variedades": [
+        "Royal Majestic",
+        "Jubilee",
+        "Allsweet"
+      ],
+      "hibridos_comerciales": [
+        "Sangría"
+      ],
+      "densidad": "Camas a 6 m con dos hileras y 1.5 a 2.0 m entre plantas; 3 a 4 semillas por sitio a 2.5 cm, aclarando a una planta al tener dos hojas verdaderas. Unas 3,340 plantas/ha con 1.0 kg/ha de semilla. También se puede trasplantar plántula de charola.",
+      "fertilizacion": "200-300-250 en suelos rojos o cafés y 150-300-250 en suelos negros, en tres partes: a la siembra un tercio del N y todo el P y K; al inicio de la floración otro tercio del N; a los 45 días de la emergencia el último tercio. Fuentes: urea, superfosfato triple y cloruro de potasio, mezclados en la cepa mullida a 30 cm. Se puede complementar con fertirriego cada tercer día.",
+      "riego": "Dos riegos de preemergencia: uno pesado al sembrar (lámina de 15 a 20 cm) y otro a los cinco días (10 cm). El tercero a los 12-15 días de emergida la planta y luego uno por semana de 10 cm: de 13 a 15 riegos en el ciclo.",
+      "plagas": [
+        "Trozadores (gusanos, aves, grillos y hormigas)",
+        "Pulgón verde",
+        "Doradillas",
+        "Chicharritas",
+        "Minador de la hoja",
+        "Mosquita blanca",
+        "Barrenador de la guía o del fruto"
+      ],
+      "enfermedades": [
+        "Damping-off (complejo de hongos)",
+        "Tizón gomoso del tallo (Didymella bryoniae)",
+        "Tizón de la hoja (Alternaria spp.)",
+        "Marchitez (complejo de patógenos del suelo)",
+        "Virus de la sandía",
+        "Pudrición apical del fruto (trastorno por falta de calcio y riego irregular)"
+      ],
+      "malezas": "Mantener el cultivo limpio todo el ciclo, sobre todo al inicio: un aporque y tres deshierbes manuales. Acomodar y orientar las guías antes de cada riego para que los frutos no toquen el suelo húmedo.",
+      "cosecha": "Cuando se secan las hojas y el zarcillo junto al fruto y este suena seco al palmearlo; el primer corte suele ser entre los 85 y 90 días después de la siembra. Rendimiento: 30 a 50 t/ha.",
+      "cuidados": [
+        "Subsolear cada tres años, barbechar a 25-30 cm y nivelar para evitar encharcamientos que favorecen enfermedades.",
+        "Sembrar entre el 1 de diciembre y el 15 de febrero para esquivar enfermedades y el inicio de las lluvias.",
+        "Fraccionar el nitrógeno en tres aplicaciones para no perderlo por volatilización o lavado.",
+        "Regar cada semana con lámina de 10 cm tras los dos riegos de preemergencia.",
+        "Controlar pulgones, mosca blanca y malezas hospederas para prevenir los virus.",
+        "No sembrar en terrenos que se inundan y usar semilla desinfectada contra la marchitez."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 47524,
+          "rendimiento": 30000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4,
+          "ingreso_neto": 72476,
+          "relacion_bc": 2.53
+        }
+      ],
+      "nota": "Costos del Cuadro 24: los rubros suman 47,524 $/ha; ingreso bruto 30,000 kg × 4 $/kg = 120,000 y neto 72,476. B/C calculada (120,000 / 47,524); el cuadro imprime 2.5. El texto llama 'híbrido' solo a Sangría; no indica el origen ni la empresa de Royal Majestic, Jubilee y Allsweet, que se dejan en variedades. El nombre científico venía como 'Citrullus lanatusa' en el extraído. Parte del Cuadro 23 (pudrición apical) salió dentro de la sección de fertilización y parte del Cuadro 22 (barrenador) dentro de la de malezas.",
+      "revisado": false
+    },
+    {
+      "ficha": "Soya",
+      "cientifico": "Glycine max",
+      "paginas": [
+        83,
+        91
+      ],
+      "cultivo_ids": [
+        "soya"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Suelos mecanizables de buen drenaje superficial e interno, Luvisoles ródicos y crómicos (k'ankab y ya'ax-hom), con más de 500 mil ha potenciales en el estado.",
+      "siembra": {
+        "texto": "Ciclo PV de temporal: Huasteca 100 y Huasteca 300 del 15 de junio al 15 de julio; Huasteca 200 y Huasteca 400 del 15 de julio al 15 de agosto.",
+        "meses": [
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Huasteca 100",
+        "Huasteca 200",
+        "Huasteca 300",
+        "Huasteca 400"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Surcos a 80 cm con 23 a 25 semillas por metro: 300,000 plantas/ha. Semilla: 53 kg/ha (Huasteca 100), 55 (Huasteca 200), 69 (Huasteca 300) y 50 (Huasteca 400).",
+      "fertilizacion": "36-92-00 en banda a la siembra, con 200 kg/ha de DAP (18-46-00). No excederse en nitrógeno: da plantas muy grandes con pocas vainas o vainas vanas.",
+      "riego": null,
+      "plagas": [
+        "Gusano terciopelo (Anticarsia gemmatalis)",
+        "Falso medidor de la soya (Pseudoplusia includens)",
+        "Falso medidor de la col (Trichoplusia ni)",
+        "Chinche verde (Nezara viridula)",
+        "Burrita o botijón rayado (Epicauta vittata)",
+        "Burrita gris (Epicauta fabricii)",
+        "Diabrótica o doradilla (Diabrotica balteata)",
+        "Mosca blanca (Bemisia tabaci)"
+      ],
+      "enfermedades": [
+        "Ojo de rana (Cercospora sojina)",
+        "Antracnosis (Colletotrichum truncatum)",
+        "Damping-off o secadera (Pythium spp.)",
+        "Tizón foliar o mildiú velloso (Peronospora manshurica)",
+        "Pudrición carbonosa (Macrophomina phaseolina)",
+        "Mancha de la hoja y tallo (Alternaria spp.)",
+        "Roya asiática (Phakopsora pachyrhizi)",
+        "Tiro de munición"
+      ],
+      "malezas": "Periodo crítico: los primeros 45 días después de la emergencia. Zacates (Johnson, gramillas): primera escarda unos 20 días después de la emergencia y, si hace falta, otra 8 a 10 días después. Antes de la cosecha, chapeo o deshierbe manual si hay mucha maleza que estorbe la trilla. Hoja ancha: quelites y verdolaga.",
+      "cosecha": "Cuando los tallos están secos y las hojas cayeron. Para industria, trillar con 15 % de humedad y nunca con menos de 13 %, porque aumentan las pérdidas por desgrane. Ajustar la trilladora y moderar la velocidad. Rendimiento: hasta 3.0 t/ha.",
+      "cuidados": [
+        "Barbechar en abril a 30 cm y dar dos rastreos cruzados, el segundo tras las primeras lluvias para eliminar la primera brotación de malezas.",
+        "Sembrar en la fecha de cada variedad Huasteca, con semilla sana, para prevenir el ojo de rana.",
+        "Monitorear desde el inicio: actuar contra larvas defoliadoras con 10 a 20 larvas mayores de 1.5 cm y 15 a 30 % de defoliación (de floración a llenado de grano).",
+        "Vigilar la chinche verde en llenado y madurez (umbral: dos adultos por metro) y la mosca blanca (tres adultos por planta).",
+        "Favorecer el control biológico con Trichogramma y Chrysoperla carnea.",
+        "Trillar con 15 % de humedad y no con menos de 13 %."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 15400,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8,
+          "ingreso_neto": 4600,
+          "relacion_bc": 1.3
+        }
+      ],
+      "nota": "Costos del Cuadro 29: los rubros suman 15,400 $/ha; ingreso bruto 2,500 kg × 8 $/kg = 20,000; neto y B/C cuadran. El cuadro de variedades (Cuadro 28) quedó partido entre las secciones de variedades y siembra. El texto no dice el origen de las variedades Huasteca.",
+      "revisado": false
+    }
+  ]
+}

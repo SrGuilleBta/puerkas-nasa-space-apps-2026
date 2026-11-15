@@ -1,0 +1,1114 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/sonora.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "26",
+  "estado": "Sonora",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Sonora. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Ajo",
+      "cientifico": "Allium sativum L.",
+      "paginas": [
+        12,
+        23
+      ],
+      "cultivo_ids": [
+        "ajo"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Se siembra en ocho DDR, sobre todo en la región del río Sonora (distrito de Ures). La región alta es seca y semiárida; la baja es más cálida y con menos heladas. Prefiere suelos francos, planos, bien drenados y sin sales ni piedras.",
+      "siembra": {
+        "texto": "Del 15 de septiembre al 15 de octubre. Siembras más tardías reducen vigor, tamaño de bulbo y rendimiento; las muy tempranas alargan el ciclo, aumentan la maleza y el uso de agua.",
+        "meses": [
+          9,
+          10
+        ]
+      },
+      "variedades": [
+        "Singapur (región baja o costera; tolerante a nematodos)",
+        "Chino Blanco (zonas altas, arriba de 800 m)",
+        "Barretero (INIFAP; buen rendimiento, menor aceptación para exportación)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Sistema tradicional: surcos a doble hilera de 60 a 90 cm, plantas cada 7 a 10 cm (220,000 a 333,000 plantas/ha). Alta población con goteo: camas de 160 cm con seis hileras (472,000 plantas/ha). Usar bulbos de calibre 7 o mayor, con máximo 15 dientes, clasificados por tamaño.",
+      "fertilizacion": "250-100-265 (N-P2O5-K2O) más 120 kg/ha de calcio. En gravedad, repartir en cuatro aplicaciones; en goteo, por fertirriego en unas 18 aplicaciones.",
+      "riego": "Riegos ligeros y frecuentes al inicio; después cada 15 a 20 días (cada 8 a 10 días cuando sube el calor), manteniendo 60 % de humedad disponible. En goteo, cinta superficial o enterrada a 10-15 cm, goteros cada 30 cm, una cinta por cada dos hileras. Suspender el riego unas tres semanas antes de cosechar.",
+      "plagas": [
+        "Trips de la cebolla (Thrips tabaci)",
+        "Trips occidental de las flores (Frankliniella occidentalis)"
+      ],
+      "enfermedades": [
+        "Pudrición blanca (Sclerotium cepivorum; la más importante)",
+        "Pudrición de bulbos por Fusarium spp.",
+        "Moho azul (Penicillium spp.)",
+        "Mosaico (complejo de virus)",
+        "Mancha púrpura (Alternaria porri)",
+        "Pudrición por nematodos (Ditylenchus dipsaci)"
+      ],
+      "malezas": "Periodo crítico: primeros 35 a 50 días después de la siembra. Riego de presiembra para hacer nacer la maleza y eliminarla; deshierbes a los 15, 40 y 60 días después de la emergencia con cultivadora y azadón, sin dañar bulbos ni raíces; rotación de cultivos.",
+      "cosecha": "Cuando el tallo está flojo y se dobla sin resistencia, la cabeza tiene 90 % de dientes llenos y 50 a 70 % del follaje está seco. Aflojar con cuchilla 10 a 15 días después del último riego, curar en gavillas protegidas del sol y almacenar seco y ventilado (0 °C y 70 % HR para 5 a 6 meses). Rendimiento: hasta 14.9 t/ha (tradicional) y 21.5 t/ha (alta población con goteo).",
+      "cuidados": [
+        "Elegir terreno sin historial de pudrición blanca ni nematodos; rotar cultivos 3 a 4 años.",
+        "Usar semilla sana y certificada, clasificada por tamaño y tratada antes de sembrar.",
+        "Sembrar del 15 de septiembre al 15 de octubre.",
+        "Mantener el cultivo limpio de maleza los primeros 35 a 50 días.",
+        "Muestrear trips periódicamente y mantenerlos por debajo de 10 por planta.",
+        "Suspender el riego tres semanas antes de la cosecha para no dañar las túnicas del bulbo."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 196037,
+          "rendimiento": 14.9,
+          "unidad_rendimiento": "t/ha",
+          "precio": 30000,
+          "ingreso_neto": 250963,
+          "relacion_bc": 2.28
+        },
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 290198,
+          "rendimiento": 21.5,
+          "unidad_rendimiento": "t/ha",
+          "precio": 30000,
+          "ingreso_neto": 354802,
+          "relacion_bc": 2.22
+        }
+      ],
+      "nota": "Cuadro 3 con dos columnas: baja población (sistema tradicional, riego por gravedad) y alta población (camas con riego por goteo); van en ese orden. Precio en $/t. Las sumas cuadran.",
+      "revisado": false
+    },
+    {
+      "ficha": "Alfalfa",
+      "cientifico": "Medicago sativa L.",
+      "paginas": [
+        24,
+        32
+      ],
+      "cultivo_ids": [
+        "alfalfa-verde"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Del nivel del mar a 1,200 m. Suelos franco arenosos a franco arcillosos de al menos 1 m de profundidad, pH 6.3 a 7.5, CE de 0 a 2 dS/m y sodio intercambiable menor a 7 %. En Sonora la pradera suele durar 2 a 4 años.",
+      "siembra": {
+        "texto": "Segunda mitad de septiembre y octubre, con temperatura media de 24 a 28 °C. Opción de primavera en marzo, con mínimas de 10 °C, si se pasó la fecha de otoño.",
+        "meses": [
+          3,
+          9,
+          10
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Genex 3011",
+        "CUF-101",
+        "San Miguelito",
+        "Atlixco",
+        "Jupiter",
+        "Milenia",
+        "Highline",
+        "Amerigraze 701"
+      ],
+      "densidad": "20 kg/ha de semilla (30 kg/ha si es peletizada) para al menos 200 plantas/m². Al voleo en seco tapando con rastra de ramas o cultipacker, o en hileras a 36 cm; profundidad de 1 a 2.5 cm, nunca más de 3 cm.",
+      "fertilizacion": "En presiembra, 30 a 50 kg/ha de N (no más, para no inhibir la fijación) y 100 a 200 kg/ha de P2O5 según análisis de suelo. Inocular la semilla si no viene inoculada. En pastoreo, 20 kg/ha de N solo si hay deficiencia.",
+      "riego": "Riego de germinación muy lento. Tres a cuatro auxilios antes del primer corte; ya establecida, dos riegos entre cortes (uno justo después del corte y otro 15 a 20 días después). Lámina total de 1.5 a 2.0 m al año; evitar excesos y estrés.",
+      "plagas": [
+        "Chinche lygus (Lygus spp.)",
+        "Periquito tricornudo (Spissistilus festinus)",
+        "Pulgón verde (Schizaphis graminum)",
+        "Diabrótica (Diabrotica spp.)",
+        "Chicharritas (Empoasca spp.)",
+        "Gusano soldado (Spodoptera spp.)"
+      ],
+      "enfermedades": [],
+      "malezas": "Mostaza, malva, pumita, chinita, lengua de vaca, zacate Johnson y zacate bermuda, sobre todo en verano y lluvias. Usar semilla certificada limpia, cortar a tiempo, pastoreo cuando la alfalfa esté bien enraizada, deshierbe manual en parcelas chicas y buen manejo de densidad, riego y fertilización.",
+      "cosecha": "Cortar con 10 % de floración, a unos 5 cm del suelo; orear y empacar con alrededor de 15 % de humedad. Para pastoreo, entrar a los 60 días o con 20 a 25 % de floración, con 2,000 a 2,500 kg de peso vivo/ha; no pastorear con rocío ni suelo encharcado. Rendimiento según SIAP: 75 a 100 t/ha de forraje verde.",
+      "cuidados": [
+        "Sembrar en la segunda mitad de septiembre u octubre.",
+        "Usar semilla certificada e inoculada.",
+        "No enterrar la semilla a más de 3 cm.",
+        "Cortar o pastorear con 10 % de floración o rebrotes de corona de 5 a 7 cm, con cuchillas afiladas.",
+        "Controlar plagas de abril a junio y de septiembre a noviembre; adelantar cortes ayuda a bajar poblaciones.",
+        "Evitar suelos arcillosos mal drenados y el pisoteo con suelo húmedo."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 34000,
+          "rendimiento": 13.12,
+          "unidad_rendimiento": "t/ha",
+          "precio": 3200,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "La agenda no nombra enfermedades específicas; solo da medidas preventivas (variedades resistentes, buen drenaje, cortes oportunos). Las variedades listadas se dan como 'variedades con potencial para Sonora'; se pusieron en hibridos_comerciales por ser materiales comerciales, aunque el texto no nombra empresas. Cuadro 2: el costo (34,000) cuadra con la suma de conceptos e ingreso bruto 41,984 = 13.12 t × 3,200 $/t (el precio aparece mal rotulado como 'Rentabilidad neta'). La utilidad impresa (8,984) no cuadra (41,984 − 34,000 = 7,984) y la relación B/C impresa (1.3) tampoco (sería 1.23), por eso van en null. El cuadro no dice si las 13.12 t son de forraje verde o heno.",
+      "revisado": false
+    },
+    {
+      "ficha": "Calabacita italiana",
+      "cientifico": "Cucurbita pepo L.",
+      "paginas": [
+        33,
+        42
+      ],
+      "cultivo_ids": [
+        "calabacita"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": null,
+      "region": "Costa de Hermosillo y valle de Guaymas-Empalme: clima árido, 200 mm de lluvia, unos 60 m de altitud y 24.3 °C de media; suelos de textura media a pesada. No tolera heladas; germina mejor de 22 a 25 °C y crece de 18 a 35 °C.",
+      "siembra": {
+        "texto": "Costa de Hermosillo: primavera del 25 de febrero al 15 de marzo (desde finales de diciembre con microtúnel) y verano del 1 de agosto al 10 de septiembre. Guaymas-Empalme: del 1 al 30 de octubre y del 25 de octubre al 31 de enero.",
+        "meses": [
+          1,
+          2,
+          3,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Verde oscuro (exportación): Alessandra, Noche, Pasión, Raven, Equinox, Everglades, Onyx, Prestige",
+        "Gris o verde claro (mercado nacional): Selena, Andrea, Rocío, Adelita"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "25,000 a 36,900 plantas/ha en camas de 1.8 a 2.0 m, doble hilera, plantas cada 30 a 40 cm (igual en rodado y goteo). Alrededor de 1 kg de semilla por hectárea. Siembra directa; trasplante donde haya problemas.",
+      "fertilizacion": "160-80-00 (N-P-K): mitad del nitrógeno y todo el fósforo en presiembra; el resto del N en los tres primeros auxilios (riego convencional). Si falta potasio, 60 a 80 kg/ha de K en presiembra. Hacer análisis de suelo.",
+      "riego": "Evitar estrés en floración, amarre y desarrollo del fruto. En rodado, 5 a 12 auxilios sin que el agua suba a la cama. En goteo, programar con la evapotranspiración y Kc de 0.20 (inicial), 0.35 (vegetativo), 0.95 (máximo desarrollo) y 0.70 (final). Uso consuntivo cerca de 29 cm.",
+      "plagas": [
+        "Mosquita blanca",
+        "Pulgones",
+        "Minador de la hoja",
+        "Diabrótica",
+        "Gusano soldado",
+        "Ácaros"
+      ],
+      "enfermedades": [
+        "Mildiu velloso",
+        "Cenicilla polvorienta",
+        "Alternaria",
+        "Gomosis"
+      ],
+      "malezas": "Chual, quelite, tomatillo, correhuela, malva, chinita y mostaza. Dos o tres deshierbes manuales o mecánicos en el punto de siembra y orillas de las camas.",
+      "cosecha": "Primer corte a los 40 a 55 días; hasta 18 cortes por ciclo. Frutos de 15 a 28 cm según el mercado, o cuando la flor está seca o café. Cortar con guantes, poner a la sombra y preenfriar pronto. Rendimiento de 25 a 35 t/ha.",
+      "cuidados": [
+        "Elegir la variedad según el mercado: verde oscuro para exportación, gris o verde claro para el nacional.",
+        "Usar abejas para polinizar: es obligado para un buen cuajado sin deformidades.",
+        "Hacer el descole: quitar a mano los primeros frutos deformes.",
+        "No dejar que el agua suba a la cama, para evitar pudriciones del fruto.",
+        "Aplicar contra mosquita blanca y pulgones con presencias leves para prevenir virosis.",
+        "Manejar el fruto con cuidado y preenfriar lo antes posible."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 165263,
+          "rendimiento": 30000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 104737,
+          "relacion_bc": 1.63
+        }
+      ],
+      "nota": "Varias fechas de siembra en primavera, verano y otoño-invierno, por eso ciclo en null. Las variedades se listan tal como las da la agenda; el texto no indica si son públicas o comerciales ni nombra empresas. Cuadro 6: costo, ingreso bruto (270,000), ingreso neto y B/C cuadran; el precio no se imprime (equivale a 9 $/kg).",
+      "revisado": false
+    },
+    {
+      "ficha": "Canola",
+      "cientifico": "Brassica napus L.",
+      "paginas": [
+        43,
+        47
+      ],
+      "cultivo_ids": [
+        "canola"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Se adapta a muchos suelos, incluso con salinidad moderada; rinde mejor en suelos profundos de textura franca, arcillosa o de aluvión con buena retención de humedad. Usa el agua con eficiencia gracias a su raíz pivotante.",
+      "siembra": {
+        "texto": "Del 1 de noviembre al 15 de diciembre. En fechas tardías aumentan los pulgones, se acorta el ciclo y baja el rendimiento de grano y aceite.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Aztecan",
+        "Canomex",
+        "Centenario"
+      ],
+      "hibridos_comerciales": [
+        "NC101S"
+      ],
+      "densidad": "25 a 35 semillas por metro (1.5 a 2.0 kg/ha), a 2-3 cm de profundidad (nunca más de 5 cm), en surcos de 70 a 80 cm con doble hilera y sembradora de precisión. Población inicial de 20 a 28 plantas por metro.",
+      "fertilizacion": "100 a 140 kg/ha de N: 50 % a la siembra o presiembra y el resto en roseta, antes del primer auxilio (no aplicar N después de roseta). Fósforo según análisis (Bray P1), todo en presiembra o a la siembra. Por tonelada de grano requiere 60 kg N, 25 kg P2O5, 45 kg K2O y 12 kg de azufre.",
+      "riego": "Presiembra pesado (25 a 30 cm) y, si hace falta, un auxilio de 10 a 12 cm al inicio de floración (55 a 65 días). En suelos con poca retención, un segundo auxilio al final de la floración (89 a 95 días).",
+      "plagas": [
+        "Pulgones del follaje y de la inflorescencia (Brevicoryne brassicae, Lipaphis erysimi)",
+        "Gusano de la col (Pieris rapae)",
+        "Gusano falso medidor (Trichoplusia ni)",
+        "Gusano soldado (Spodoptera exigua)",
+        "Gusano dorso de diamante (Plutella xylostella)"
+      ],
+      "enfermedades": [],
+      "malezas": "No hay herbicidas selectivos para hoja ancha en postemergencia: sembrar en húmedo y dar uno o dos pasos de cultivadora.",
+      "cosecha": "Cuando las silicuas están completamente secas y el grano tiene 8 a 10 % de humedad; si hay desgrane, cosechar de noche con humedad relativa alta. Ajustar la cosechadora y sellar orificios. Las variedades precoces rinden 3.5 a 4.0 t/ha de potencial.",
+      "cuidados": [
+        "Sembrar del 1 de noviembre al 15 de diciembre para escapar a los pulgones.",
+        "Preparar muy bien el suelo: la semilla es muy pequeña.",
+        "No sembrar a más de 5 cm de profundidad.",
+        "No aplicar nitrógeno después de la etapa de roseta: baja el aceite.",
+        "Vigilar pulgones en floración y formación de silicuas.",
+        "Cosechar con grano de 8 a 10 % de humedad y la cosechadora bien sellada."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 20016,
+          "rendimiento": 2.5,
+          "unidad_rendimiento": "t/ha",
+          "precio": 9353,
+          "ingreso_neto": 3366,
+          "relacion_bc": 1.16
+        }
+      ],
+      "nota": "No hay sección de región; se tomó de la de preparación del terreno. La agenda no trata enfermedades. NC101S es un híbrido extranjero evaluado en O-I 2024-2026 (el texto no da la empresa). Cuadro 7: el costo total (20,016) cuadra con los conceptos; el subtotal impreso de fertilización (6,650) está mal, sus conceptos suman 6,550. Ingreso bruto 23,382 = 2.5 t × 9,353 $/t. El rendimiento viene rotulado como 'kg ha' pero son 2.5 t/ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Cártamo",
+      "cientifico": "Carthamus tinctorius L.",
+      "paginas": [
+        48,
+        59
+      ],
+      "cultivo_ids": [
+        "cartamo"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Valles del Yaqui y Mayo (sur de Sonora): clima seco y muy seco, cálido, con unos 300 mm de lluvia (73 % de julio a septiembre) y heladas de finales de diciembre a febrero. Suelos de aluvión (ligero o pesado) y barrial (profundo, pedregoso o compactado). Se siembra en riego y humedad residual.",
+      "siembra": {
+        "texto": "Barrial: del 15 de noviembre al 15 de febrero, óptimo del 1 de diciembre al 15 de enero. Aluvión: del 15 de diciembre al 15 de febrero, óptimo todo enero.",
+        "meses": [
+          1,
+          2,
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Linoleicas: RC-1002, CIANO-LIN, RC-1002-L, RC-1005-L, RC-1033-L",
+        "Oleicas: CIANO-OL, AS-23, CW-3268, S-323, SEMAY OL (resistente a falsa cenicilla y roya), HUATSON OL (resistente a ambas), CHEY OL (moderadamente susceptible a falsa cenicilla)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Unas 160,000 plantas/ha en siembras tempranas y hasta 240,000 en tardías, con 7 a 9 kg/ha de semilla. Por ejemplo, en surcos de 80 cm a hilera sencilla, 16 semillas por metro (temprana) o 22 (tardía). Usar sembradora de precisión.",
+      "fertilizacion": "Nitrógeno según cultivo anterior y suelo: de 85 a 180 kg/ha (p. ej. después de trigo 85 a 120; después de algodonero 120 a 180; después de maíz 120 a 145).",
+      "riego": "Barrial compactado: presiembra de 20 a 25 cm y tres auxilios de 12 cm (ramificación ~50 días, botón floral ~80 días, 10-15 % de floración ~110 días). Barrial profundo: presiembra de 20 cm y uno o dos auxilios de 10 cm. Aluvión: presiembra de 25 cm y un auxilio de 10 cm a los 65-70 días. Tiradas de no más de 250 m y sin encharcamientos.",
+      "plagas": [
+        "Gusanos trozadores (Agrotis ipsilon, Feltia subterranea)",
+        "Gusano saltarín (Elasmopalpus lignosellus)",
+        "Conchilla prieta (Blapstinus sp.)",
+        "Barrenador del tallo (Melanagromyza virens)",
+        "Pulgón (Myzus persicae)",
+        "Chinches lygus, rápida y apestosa",
+        "Falso medidor de la col (Trichoplusia ni)",
+        "Gusano soldado (Spodoptera exigua)",
+        "Gusano bellotero (Heliothis virescens)"
+      ],
+      "enfermedades": [
+        "Falsa cenicilla (Ramularia carthami; la principal, puede bajar el rendimiento hasta 90 %)",
+        "Pudrición de raíz (Phytophthora, Pythium, Fusarium)",
+        "Mancha foliar (Alternaria carthami)",
+        "Roya o chahuixtle (Puccinia carthami)"
+      ],
+      "malezas": "Periodo crítico: primeros 40 días después de la emergencia (puede bajar el rendimiento hasta 65 %). Girasol, mostaza, malva, mostacilla, alpistillo, avena silvestre, correhuela y zacate Johnson. Sembrar en húmedo, un paso de cultivadora a los 30 días y otro después del primer auxilio, más deshierbes manuales.",
+      "cosecha": "Entre 140 y 190 días según la fecha de siembra. Trillar cuando las brácteas están cafés y la semilla tiene 6 a 8 % de humedad; cilindro a 760-915 rpm y separación de 9.5 a 16 mm. Rendimiento promedio de 2.2 t/ha con 38 % de aceite.",
+      "cuidados": [
+        "Sembrar en la fecha óptima: las siembras tempranas alargan el ciclo y las tardías bajan el rendimiento.",
+        "Elegir variedades resistentes a falsa cenicilla; vigilar el tercio inferior desde el primer síntoma.",
+        "Mantener limpio de maleza los primeros 40 días.",
+        "Evitar encharcamientos y riegos pesados para prevenir pudrición de raíz.",
+        "Muestrear plagas y actuar solo con umbral (p. ej. 40 chinches lygus por 100 redadas en botón floral).",
+        "Evitar aplicaciones en floración para proteger a los polinizadores."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 21211,
+          "rendimiento": 2.2,
+          "unidad_rendimiento": "t/ha",
+          "precio": 8390,
+          "ingreso_neto": -2753,
+          "relacion_bc": 0.87
+        }
+      ],
+      "nota": "Cuadro 13: el costo total (21,211) cuadra con los conceptos; el subtotal impreso de siembra (1,950) está mal, sus conceptos suman 1,960. Ingreso bruto 18,458 = 2.2 t × 8,390 $/t (el precio aparece rotulado como 'Ingreso probable'). El cuadro da pérdida.",
+      "revisado": false
+    },
+    {
+      "ficha": "Espárrago",
+      "cientifico": "Asparagus officinalis L.",
+      "paginas": [
+        60,
+        66
+      ],
+      "cultivo_ids": [
+        "esparrago"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Norte (Caborca, 85 % del área) y sur del estado. Suelos profundos, bien drenados, franco a franco limosos (barrial profundo en el sur); pH 7.4 a 8.0. Crece mejor de 18 a 25 °C, con máxima de 40 °C y alta luminosidad.",
+      "siembra": {
+        "texto": "En los meses menos calientes: enero a marzo en el norte y octubre a marzo en el sur. Por semilla, plántula de 8 semanas o corona de un año.",
+        "meses": [
+          1,
+          2,
+          3,
+          10,
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Brock",
+        "UC-157 (no validada en el sur)",
+        "UC-115",
+        "Atlas",
+        "Early California",
+        "Jaleo"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "30 a 40 mil plantas/ha. Trasplante: 3 a 4 coronas por metro a doble hilera; semilla: 1.5 a 5 kg/ha. En el sur, plántulas en camas de 1.5 a 2.0 m: doble hilera cada 29 a 33 cm o hilera sencilla cada 20 a 22 cm.",
+      "fertilizacion": "En producción: 200 a 400 kg de N, 100 a 150 kg de P y 100 a 200 kg de K por hectárea. Al inicio de la plantación las necesidades son mínimas.",
+      "riego": "Goteo recomendado. Lámina anual de 1.3 a 1.8 m en Caborca y 1.0 a 1.3 m en el sur. Suspender 4 a 6 semanas antes de la cosecha y reanudar durante ella. Usar sensores y mantener cerca de 20 cb entre 40 y 80 cm de profundidad.",
+      "plagas": [
+        "Chicharra cantadora (Proarna bergi)",
+        "Pulgón europeo (Brachycorynella asparagi)",
+        "Gusano soldado (Spodoptera exigua)",
+        "Araña roja (Tetranychus urticae)",
+        "Mosquita blanca (Bemisia tabaci)",
+        "Gusano saltarín (Elasmopalpus lignosellus)"
+      ],
+      "enfermedades": [
+        "Roya (Puccinia asparagi)",
+        "Pudrición de corona y raíz (Fusarium)",
+        "Lesiones en tallo (Stemphylium)",
+        "Cercospora"
+      ],
+      "malezas": "Mantener limpio el primer año y en cada rebrote tras la cosecha hasta que cierre el cultivo. Quelite, chinita, zacates bermuda, Johnson, pinto y huachapori; en el sur también correhuela, avena silvestre y lechosa. Control manual; los establecimientos por semilla compiten mal con la maleza.",
+      "cosecha": "Diaria. Norte: octubre-noviembre o del 20 de diciembre al 20 de abril; sur: de la tercera semana de octubre a enero. Turiones verdes de 9 a 10 pulgadas. Potencial: bajo menos de 400, medio 400 a 600 y alto más de 600 cajas de 28 lb por hectárea.",
+      "cuidados": [
+        "Elegir bien el terreno: es un cultivo perenne que necesita suelo profundo y buen drenaje.",
+        "Preferir trasplante de plántula o corona: compiten mejor con la maleza que la siembra directa.",
+        "Al terminar el ciclo del follaje, desvarar, secar y rehacer la cama antes de la cosecha.",
+        "Suspender el riego 4 a 6 semanas antes de cosechar.",
+        "Cuidar los enemigos naturales al inicio del ciclo y evitar insecticidas no selectivos.",
+        "Manejar mosquita blanca y chicharra a nivel regional, eliminando hospederas."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 236455,
+          "rendimiento": 8400,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 54,
+          "ingreso_neto": 217140,
+          "relacion_bc": 1.92
+        }
+      ],
+      "nota": "Cuadro 17 con columnas Año 1 (establecimiento, 260,182 $/ha) y Año 3 (producción); se usa el Año 3. La tabla quedó desalineada: el rendimiento (8,400 kg/ha) y el precio (54 $/kg) aparecen juntos; se confirman porque 8,400 × 54 = 453,600 (ingreso bruto impreso) y los costos por kg (30.97 y 28.15) salen de 8,400 kg. El ingreso neto impreso del Año 3 (217,140) difiere en 5 pesos de lo exacto (217,145); se deja tal cual.",
+      "revisado": false
+    },
+    {
+      "ficha": "Frijol común",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        67,
+        79
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": null,
+      "region": "Valles del Yaqui y Mayo (82.9 % del área) y Costa de Hermosillo: climas muy áridos a semiáridos; en la costa, 75 a 200 mm de lluvia y suelos yermosol arenosos, pobres en materia orgánica y de 20 a 100 cm de profundidad.",
+      "siembra": {
+        "texto": "O-I: del 15 de septiembre al 31 de octubre (riesgo de heladas después del 5 de octubre); pintos desde el 15 de septiembre, negros hacia el 20 de septiembre, azufrados mejor después del 15 de octubre. P-V: del 15 de enero al 15 de febrero (óptimo última semana de enero y primera de febrero), solo pintos; con goteo hasta el 5 de marzo. En la Costa de Hermosillo solo P-V con pintos de ciclo corto.",
+        "meses": [
+          1,
+          2,
+          3,
+          9,
+          10
+        ]
+      },
+      "variedades": [
+        "Azufrados: Azufrado Higuera (predomina), Janasa, Azufrasin, Azufrado Regional 87, Azufrado Peruano 87",
+        "Pintos: Saltillo, Salinas, Rarámuri, Centauro, Chase, Bill-Z, Max, Durango, San Rafael",
+        "Pintos americanos (Costa de Hermosillo): Montrose, Arapaho, Pinto Bill-Z",
+        "Negros: San Blas, Jamapa, Black Velvet"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Población óptima de 257 a 298 mil plantas/ha (18 a 20 plantas por metro en surcos a 70 cm). Azufrados: 18 a 22 semillas/m (108 a 130 kg/ha). Pintos: 16 a 18 semillas/m (70 a 85 kg/ha). Negros: 14 a 16 semillas/m (unos 40 kg/ha). Surcos de 70 a 80 cm, triple hilera en camas de 150 cm o doble hilera en camas de 160 cm con goteo.",
+      "fertilizacion": "Según análisis de suelo: 60 a 80 kg/ha de N en presiembra más 30 a 40 kg/ha en el primer auxilio; 60 kg/ha de fósforo si hay poco P asimilable.",
+      "riego": "Gravedad en suelos medios: presiembra y cuatro auxilios a los 40, 60, 75 y 85 días con 15, 12, 10 y 8 cm. Goteo: 40 a 45 cm en total, sobre todo en floración y llenado (ahorra ~40 % de agua). Etapas críticas: nacencia, floración y llenado de grano.",
+      "plagas": [
+        "Chicharritas (Empoasca sp.)",
+        "Mosca blanca (Bemisia tabaci)",
+        "Trips (Frankliniella sp.)",
+        "Mosca minadora (Liriomyza sp.)",
+        "Ácaros (Tetranychus spp.)",
+        "Gusano bellotero (Heliothis sp.)",
+        "Diabróticas (Cerotoma sp., Diabrotica spp.)",
+        "Chinches (Nezara viridula, Euschistus servus)",
+        "Gorgojos de almacén (Zabrotes subfasciatus, Acanthoscelides obtectus)"
+      ],
+      "enfermedades": [
+        "Secadera o damping-off (Rhizoctonia, Macrophomina, Phytophthora, Fusarium)",
+        "Pudrición del tallo (Sclerotium rolfsii)",
+        "Virosis (mosaico común, mosaico sureño, mosaico dorado y otras)",
+        "Tizón común (Xanthomonas axonopodis pv. phaseoli)",
+        "Tizón del halo (Pseudomonas syringae pv. phaseolicola)",
+        "Moho blanco (Sclerotinia sclerotiorum)"
+      ],
+      "malezas": "Chual, pamita y zacates anuales en primavera; la correhuela limita la producción en ambos ciclos. Mantener limpio de los 30 a los 45 días después de la siembra, combinando control cultural y químico.",
+      "cosecha": "Cortar cuando la planta está amarillenta y las vainas café claro: entre 10 y 25 % de vainas verdes. O-I: 115 a 125 días; P-V: 100 a 108 días. Corte y enchorizado y trilla con combinada. Rendimiento esperado: gravedad 2.8-3.0 t/ha (aluvión) y 2.0-2.4 (barrial); goteo 3.3-4.0 (aluvión) y 2.4-2.8 (barrial).",
+      "cuidados": [
+        "Combinar bien variedad y fecha: azufrados en O-I después del 15 de octubre; en P-V solo pintos.",
+        "Usar semilla certificada de variedades tolerantes a secadera y bacteriosis.",
+        "Nivelar el terreno y evitar encharcamientos para prevenir pudriciones de raíz.",
+        "Muestrear mosca blanca, chicharritas y diabróticas: transmiten virus.",
+        "Cortar a tiempo (10 a 25 % de vainas verdes) para no perder grano ni calidad.",
+        "Almacenar el grano seco y en envases herméticos contra gorgojos."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 33807,
+          "rendimiento": 2.625,
+          "unidad_rendimiento": "t/ha",
+          "precio": 22000,
+          "ingreso_neto": 23943,
+          "relacion_bc": 1.71
+        }
+      ],
+      "nota": "Se siembra en O-I y P-V, por eso ciclo en null. Cuadro 20: subtotal 32,197 más costo financiero 1,609.85 = 33,806.86 $/ha (redondeado); rendimiento 2,625 kg/ha, precio 22,000 $/t; ingreso bruto 57,750, neto 23,943.14 y B/C 1.71 cuadran. La fuente del cuadro cita costos FIRA de frijol para Sinaloa y Durango.",
+      "revisado": false
+    },
+    {
+      "ficha": "Garbanzo",
+      "cientifico": "Cicer arietinum L.",
+      "paginas": [
+        80,
+        93
+      ],
+      "cultivo_ids": [
+        "garbanzo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "OI",
+      "region": "Sur de Sonora (Yaqui y Mayo) y Costa de Hermosillo: climas muy áridos a semiáridos; en la costa 75 a 200 mm de lluvia y suelos arenosos. Produce en suelos pesados y medios con buen manejo del riego; los ligeros no son adecuados.",
+      "siembra": {
+        "texto": "Costa de Hermosillo: del 25 de noviembre al 31 de diciembre (temporal en diciembre). Sur de Sonora: suelo arcilloso del 15 de noviembre al 20 de diciembre; aluvión del 15 de diciembre al 31 de enero.",
+        "meses": [
+          1,
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Blanco Sinaloa 92",
+        "Costa 2004",
+        "Blanoro",
+        "Mazocahui",
+        "BlancoSon",
+        "Seri",
+        "Sinalomex 2018",
+        "Combo 743"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "12 a 14 plantas por metro (sembrar 14 a 16 semillas/m) para 150 a 175 mil plantas/ha. En el sur, siembras tempranas 10 a 12 plantas/m; tardías o de temporal 12 a 16. Hileras de 50 a 100 cm o camas de 1.60 m a doble hilera. La semilla por hectárea depende del calibre y la separación (unos 104 a 298 kg/ha).",
+      "fertilizacion": "60 a 120 kg de N y 60 a 80 kg/ha de fósforo en presiembra, ajustados con análisis de suelo. En goteo, fertilizantes solubles.",
+      "riego": "Costa: solo presiembra (dos riegos, 60 a 70 cm) en suelos pesados; o presiembra de 25 a 30 cm y uno o dos auxilios ligeros (8 a 10 cm) al pegado de vainas y llenado; goteo unos 450 mm en total. Sur: calendario 0-45-65 en arcilloso (~44 cm) y 0-55-75 en aluvión (~40 cm). No regar con el cultivo cerrado y alta humedad.",
+      "plagas": [
+        "Gusano de la cápsula o bellotero (el más importante)",
+        "Gusano soldado",
+        "Minador de la hoja",
+        "Gusano trozador",
+        "Gorgojo de almacén"
+      ],
+      "enfermedades": [
+        "Rabia o secadera (Rhizoctonia solani, Macrophomina phaseolina, Fusarium oxysporum f. sp. ciceris, Fusarium solani)",
+        "Mildiú o cenicilla vellosa",
+        "Moho gris",
+        "Roya o chahuixtle"
+      ],
+      "malezas": "Mantener limpio hasta el inicio del pegado de vainas. En terrenos con trébol y mostaza, sembrar en húmedo y eliminar la maleza emergida; dos pasos de cultivadora a los 30 y 55 días y deshierbe manual en la hilera (girasol, pamita, chinita y trébol escapan al control químico).",
+      "cosecha": "Trilla directa con el grano bien seco, sin dejarlo secar de más para evitar desgrane. Almacenar en lugar seco y vigilar gorgojo. Rendimiento esperado: 2 a 2.5 t/ha en riego rodado y 3.0 a 3.5 t/ha con goteo.",
+      "cuidados": [
+        "Sembrar en la fecha recomendada: escapa a plagas y roya y da mejor calibre.",
+        "Usar variedades resistentes a la rabia y rotar con cultivos no hospederos.",
+        "Nivelar, dar riegos ligeros y evitar encharcamientos; surcos de no más de 250 m.",
+        "Controlar el gusano bellotero al llegar a 2 larvas por metro lineal desde la floración.",
+        "No regar con el cultivo cerrado y humedad ambiental alta.",
+        "Mantener limpio de maleza hasta el pegado de vainas."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 39850,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 18.29,
+          "ingreso_neto": 5875,
+          "relacion_bc": 1.15
+        },
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 44100,
+          "rendimiento": 3000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 18.29,
+          "ingreso_neto": 10770,
+          "relacion_bc": 1.24
+        }
+      ],
+      "nota": "La ficha cubre riego y una pequeña superficie de temporal en la Costa de Hermosillo, por eso modalidad en null. Costos: Cuadro 25 (riego rodado) y Cuadro 26 (riego por goteo), en ese orden; las sumas cuadran.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        94,
+        106
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Sur de Sonora (distritos de riego de los ríos Yaqui y Mayo): clima seco y muy seco, 250 a 300 mm de lluvia (73 % de julio a septiembre), 0 a 40 m de altitud y heladas de finales de diciembre a febrero. Suelos de aluvión y barrial; prefiere suelos fértiles, bien drenados, de textura media y pH 5.5 a 7.0.",
+      "siembra": {
+        "texto": "Ciclo O-I: del 15 de noviembre al 15 de diciembre, con 13 a 15 t/ha en riego por gravedad. Las siembras de enero y principios de febrero tienen menos riesgo de helada pero sufren el calor de abril y mayo.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "DK-4055",
+        "DK-4050",
+        "DK-2048",
+        "Hipopótamo",
+        "Armadillo",
+        "Rinoceronte",
+        "Delfín"
+      ],
+      "densidad": "110,000 semillas/ha (nueve por metro) sobre humedad a 5 cm de profundidad, en surcos de 75 a 80 cm a una hilera, con sembradora neumática de precisión.",
+      "fertilizacion": "Presiembra: 200 kg/ha de urea más 200 kg/ha de MAP 11-52-00 (114 kg N y 104 kg P2O5). Primer auxilio: 100 kg/ha de urea (46 kg N). En el agua de riego: 150 kg/ha de amoniaco anhidro (123 kg N). Segundo auxilio: 100 kg/ha de amoniaco anhidro (82 kg N). Unos 365 kg N/ha en total; ajustar con análisis de suelo.",
+      "riego": "Presiembra de unos 25 cm 10 a 15 días antes de sembrar y cinco auxilios de unos 14 cm en las etapas V6, V11, R1, R3 y R5.",
+      "plagas": [
+        "Gusano cogollero (Spodoptera frugiperda; la más importante)",
+        "Gusano trozador (Agrotis ipsilon)",
+        "Chicharrita del maíz (Dalbulus maidis)",
+        "Chinches apestosas (Nezara viridula, Euschistus servus)",
+        "Mosca de los estigmas (Euxesta stigmatias)",
+        "Pulgón (Rhopalosiphum maidis)",
+        "Gusano peludo (Estigmene acrea)"
+      ],
+      "enfermedades": [
+        "Tizón foliar (Exserohilum turcicum)",
+        "Roya común (Puccinia sorghi)",
+        "Estrangulamiento del tallo (Pythium spp. y Erwinia)",
+        "Mancha foliar por Alternaria y Curvularia",
+        "Hoja colorada o fitoplasmosis",
+        "Pudrición de tallo y raíz (Fusarium, Cephalosporium)",
+        "Pudrición de mazorca",
+        "Virosis (rayado fino y enanismo)"
+      ],
+      "malezas": "Mantener libre de maleza los primeros 40 días después de la emergencia. Limpiar maquinaria, usar semilla certificada, rotar cultivos, buena población; una escarda y deshierbe tras la emergencia y otra después del primer auxilio.",
+      "cosecha": "Mecánica con 14 a 18 % de humedad de grano, ajustando cabezal y cilindro. Almacenar grano seco, bajo techo y sin contacto con el suelo, sin mezclar con grano viejo. Rendimiento de 12 a 15 t/ha en riego (promedio estimado 12) y hasta 18 t/ha con goteo.",
+      "cuidados": [
+        "Sembrar del 15 de noviembre al 15 de diciembre.",
+        "Usar híbridos evaluados para el ciclo O-I y con buena cobertura de mazorca.",
+        "Dar riegos de auxilio en V6, V11, R1, R3 y R5.",
+        "Vigilar el gusano cogollero desde la emergencia hasta el jilote (10 % de daño en plantas de 10 a 20 cm).",
+        "No excederse con nitrógeno, población ni humedad: favorecen la pudrición de tallo.",
+        "Proteger catarinas, crisopas y avispas benéficas."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 54620,
+          "rendimiento": 11.0,
+          "unidad_rendimiento": "t/ha",
+          "precio": 5242,
+          "ingreso_neto": 3042,
+          "relacion_bc": 1.06
+        }
+      ],
+      "nota": "En el extraído, las plagas y enfermedades quedaron dentro de la sección de fertilización y el Cuadro 29 de híbridos quedó partido entre 'variedades' y 'cosecha'. Los híbridos se listan sin empresa porque el texto no la da. Hipopótamo y DK 4050 mostraron tolerancia a roya y tizón foliar. Cuadro 30: las sumas cuadran.",
+      "revisado": false
+    },
+    {
+      "ficha": "Nogal",
+      "cientifico": "Carya illinoinensis",
+      "paginas": [
+        107,
+        115
+      ],
+      "cultivo_ids": [
+        "nuez"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Costa de Hermosillo: terrenos planos, del nivel del mar a unos 200 m, clima seco con 22.3 °C de media, 309 mm de lluvia y 2,488 mm de evaporación; requiere riego. Necesita 400 a 600 horas frío y suelos de textura media, bien drenados, de al menos 2 m de profundidad.",
+      "siembra": {
+        "texto": "Plantar entre febrero y la primera quincena de marzo.",
+        "meses": [
+          2,
+          3
+        ]
+      },
+      "variedades": [
+        "Wichita (la más recomendada, productora)",
+        "Western (polinizadora)",
+        "Cheyenne",
+        "Shoshoni",
+        "Choctaw",
+        "Rincon",
+        "Mahan",
+        "Norteña (INIFAP)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Estándar 100 árboles/ha (10 × 10 m), alta 140 y extra alta 200 árboles/ha. Sistemas cuadrado, diagonal o rectangular (10 × 5 m, aclarando entre los 12 y 15 años). Árboles de vivero certificado con portainjerto de tres años e injerto de un año.",
+      "fertilizacion": "N por árbol: 50 g el primer año, 150 g el segundo, 250 g el tercero, 400 g el cuarto y 550 g el quinto. Adultos: 150 a 250 kg/ha de N. P y K según análisis foliar (80 a 100 kg/ha de cada uno si están bajos). Zinc: al menos cinco aspersiones foliares desde que el brote mide 1 cm.",
+      "riego": "Goteo con 2 a 3 mangueras por hilera en huertas jóvenes y 4 a 5 en adultas. Riego de formación del bulbo a mediados de marzo, antes de la brotación; después según evapotranspiración. Consumo de unos 136 cm en huertas adultas y 91.4 cm en jóvenes; mayor demanda de julio a septiembre.",
+      "plagas": [
+        "Gusano barrenador de la nuez (Acrobasis nuxvorella)",
+        "Pulgón amarillo de márgenes negros (Monelia caryella)",
+        "Pulgón negro (Melanocallis caryaefoliae)",
+        "Chinche de patas laminadas (Leptoglossus spp.)",
+        "Chinches apestosas"
+      ],
+      "enfermedades": [],
+      "malezas": "Anuales (quelite, trompillo, amargosa, zacate pinto, zacate de agua) y perennes (Johnson, bermuda, buffel, correhuela, lechosa). Dañan más a las huertas jóvenes. Rastreos entre hileras y podas a lo largo de las hileras; en huertas adultas la maleza manejada favorece la fauna benéfica.",
+      "cosecha": "De octubre a noviembre según la variedad, antes de que 50 % de los rueznos estén abiertos. Con 25 a 30 % de apertura, preparar el suelo limpio y parejo. Vibrar de noche y recolectar al amanecer; no dejar la nuez al sol. Almacenar con 3 a 5 % de humedad, lejos de olores fuertes. Rendimiento de referencia: 2,400 kg/ha.",
+      "cuidados": [
+        "Plantar Wichita con Western como polinizadora, considerando los vientos dominantes.",
+        "Comprar árboles de viveros certificados.",
+        "Podar en invierno; formación en árboles jóvenes y mecánica cuando el huerto se cierra.",
+        "Regar según evapotranspiración y monitorear la humedad con tensiómetros o sensores.",
+        "Monitorear plagas y conservar catarinas, crisopas y otros benéficos.",
+        "Cosechar antes de que se abra la mitad de los rueznos para evitar germinación."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 71179,
+          "rendimiento": 2400,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 144822,
+          "relacion_bc": 3.03
+        }
+      ],
+      "nota": "La agenda no trata enfermedades del nogal (solo menciona la tolerancia de Norteña a mancha vellosa y roña). Cuadro 32: costo anual de huerta en producción (fertilización, plagas, riego, poda y cosecha; sin establecimiento). Ingreso bruto 216,000; el neto impreso (144,822) difiere en 1 peso de lo exacto. El precio no se imprime (equivale a 90 $/kg).",
+      "revisado": false
+    },
+    {
+      "ficha": "Ryegrass anual",
+      "cientifico": "Lolium multiflorum Lam.",
+      "paginas": [
+        116,
+        121
+      ],
+      "cultivo_ids": [
+        "pastos-y-praderas"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Zona semiárida. Rinde mejor en suelos de fertilidad media a alta y textura media (migajón); también prospera en arenosos con buena fertilización y humedad.",
+      "siembra": {
+        "texto": "Norte y sierra fría: del 15 al 30 de septiembre. Centro-costa (Hermosillo, Caborca, Ures): del 1 al 15 de octubre. Sur (Navojoa, Ciudad Obregón): del 1 al 15 de noviembre.",
+        "meses": [
+          9,
+          10,
+          11
+        ]
+      },
+      "variedades": [
+        "Oregon o común",
+        "Tetraploide"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "25 a 30 kg/ha de semilla; sobre praderas de zacate bermuda, 30 a 45 kg/ha. Con sembradora de grano pequeño o al voleo, tapando con rastra de ramas o cultipacker a no más de 3 cm.",
+      "fertilizacion": "Al establecer: 200 kg/ha de MAP 11-52-00 y 200 kg/ha de sulfato de amonio en presiembra. Después de cada pastoreo, 50 kg/ha de N; si es urea, regar el mismo día (no más de 3 días sin riego).",
+      "riego": "Riego de siembra lento y otro ligero a los 5 a 7 días para romper la costra. Intervalos de 10 a 15 días en suelos arenosos, 15 a 20 en medios y 20 a 25 en arcillosos. Regar y fertilizar en cuanto se desocupa el potrero.",
+      "plagas": [],
+      "enfermedades": [],
+      "malezas": "La maleza es el principal problema: malva, pamitón, choal, mostacilla, tréboles y chinita, sobre todo al primer pastoreo o corte. Su control aumentó 48 % la producción de forraje; dejar al menos 20 días entre el control y el pastoreo.",
+      "cosecha": "Lista para pastoreo a los 60 días. Carga de 2,000 a 2,500 kg de peso vivo/ha (10 a 12 becerros de 180 a 200 kg). Entrada gradual: 3 horas el primer día y una más cada día. Esperar 20 días tras regar y fertilizar para evitar intoxicación por nitratos. Ganancia posible de 1,000 kg de peso vivo/ha.",
+      "cuidados": [
+        "Sembrar en la ventana de cada región (septiembre en el norte, octubre en el centro, noviembre en el sur).",
+        "Dar un riego ligero a la semana del de siembra para que la plántula rompa la costra.",
+        "Dividir la pradera con cerco eléctrico y regar y fertilizar en cuanto se desocupa cada franja.",
+        "No meter ganado hasta 20 días después de fertilizar, por riesgo de nitratos.",
+        "Introducir a los animales poco a poco y no hambrientos.",
+        "Evitar el pastoreo en días muy nublados de diciembre y enero."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 26045,
+          "rendimiento": 47916,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 0.75,
+          "ingreso_neto": 9892,
+          "relacion_bc": 1.38
+        }
+      ],
+      "nota": "El catálogo no tiene un id de ryegrass; se asignó 'pastos-y-praderas' como la categoría más cercana. El extraído marca régimen 'temporal/riego', pero el texto y el cuadro de costos solo describen riego. La agenda no trata plagas ni enfermedades; la información de malezas venía dentro de la sección de fertilización. Cuadro 34: rendimiento de forraje 47,916 kg/ha a 0.75 $/kg; las sumas cuadran.",
+      "revisado": false
+    },
+    {
+      "ficha": "Sorgo forrajero",
+      "cientifico": "Sorghum bicolor (L.) Moench",
+      "paginas": [
+        122,
+        126
+      ],
+      "cultivo_ids": [
+        "sorgo-forrajero-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Zonas áridas y semiáridas. Crece con mínimas de 16 °C y óptimo de 25 °C; usa menos agua que el maíz.",
+      "siembra": {
+        "texto": "De marzo a fines de junio, según la región.",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Pastoreo: S-23, Sumiel 220, Supersweet",
+        "Ensilaje o verde picado: Silo Miel 370 VCB, Silo Miel 315 VC, Silo Miel II, Gota de miel"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "10 a 25 kg/ha de semilla, a 2-4 cm de profundidad. Mejor en hileras (70 a 80 cm para verde picado o ensilaje) que al voleo.",
+      "fertilizacion": "80 a 100 kg/ha de N y 100 kg/ha de P: el fósforo sólido en presiembra; 40 % del N en presiembra y el resto dividido. En pastoreo, 50 kg/ha de N después de cada pastoreo.",
+      "riego": "Lámina de 80 a 150 cm según el suelo. Etapas críticas: germinación, crecimiento inicial, embuche, floración y llenado de grano. En pastoreo, regar justo después de cada pastoreo.",
+      "plagas": [
+        "Gusano cogollero",
+        "Gusano trozador",
+        "Pulgones"
+      ],
+      "enfermedades": [],
+      "malezas": "Hoja ancha: malva, quelite y mostaza. Limpiar después de la nacencia; en siembras en hileras usar cultivadora.",
+      "cosecha": "Pastoreo a los 50 a 60 días del riego de germinación, con al menos 60 cm de altura; evitarlo con falta de humedad o días nublados por riesgo de nitratos o ácido cianhídrico. Ensilaje con grano lechoso-masoso y 30 a 35 % de materia seca. Forraje verde de 55 a 100 t/ha y seco de 12 a 23 t/ha.",
+      "cuidados": [
+        "Sembrar en hileras: facilita el control de maleza y plagas.",
+        "Elegir variedad según uso: pastoreo o ensilaje.",
+        "No pastorear con sequía o días nublados prolongados (intoxicación del ganado).",
+        "Cosechar para ensilaje en grano lechoso-masoso.",
+        "Controlar plagas cuando más de 15 % de las plantas estén afectadas.",
+        "No dejar faltar agua en embuche, floración y llenado."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 24328,
+          "rendimiento": 50000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 13172,
+          "relacion_bc": 1.54
+        }
+      ],
+      "nota": "El extraído marca régimen 'temporal/riego', pero el texto y el costo describen riego. El nombre científico venía truncado ('Sorghum bicolor (L.'); se completó como (L.) Moench. La agenda no trata enfermedades. Las variedades se listan como las da la agenda ('en el mercado existen'), sin empresas. Cuadro 36: ingreso bruto 37,500 por 50,000 kg/ha de forraje verde; el precio no se imprime (equivale a 0.75 $/kg); las sumas cuadran.",
+      "revisado": false
+    },
+    {
+      "ficha": "Trigo",
+      "cientifico": "Triticum spp.",
+      "paginas": [
+        127,
+        137
+      ],
+      "cultivo_ids": [
+        "trigo-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Sur de Sonora: suelos de aluvión y barrial, clima seco con 250 a 300 mm de lluvia (julio a septiembre), 24 °C de media, heladas de finales de diciembre a febrero y unos 40 m de altitud. 75 % de la superficie estatal es trigo cristalino y 25 % harinero.",
+      "siembra": {
+        "texto": "Del 15 de noviembre al 15 de diciembre. Se siembra hasta fines de diciembre, pero el rendimiento baja al alejarse de la fecha.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Cristalinos: Tarro Oro C2024, ROELY HP C2024, Don Lupe Oro C2020, Noroeste C2021, CENEB Oro C2017, Baroyeca Oro C2013, Quetchehueca Oro C2013, CIRNO C2008 (susceptible a roya amarilla)",
+        "Harineros: Pitahaya M2024, Marcela F2023, Borlaug 100, CIANO M2018, Kronstad F2004, Onavas F2009"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "120 a 140 kg/ha para CIANO M2018, Noroeste C2021, Don Lupe Oro C2020, Pitahaya M2024, ROELY HP C2024 y Tarro Oro C2024; hasta 180 kg/ha para CIRNO C2008 y Borlaug 100. Tres o cuatro hileras sobre surcos de 75 a 80 cm; 5 a 8 cm de profundidad en húmedo y 2 a 3 cm en seco.",
+      "fertilizacion": "Unos 30 kg de N por tonelada de grano. Programa regional: presiembra 300 kg/ha de urea más 100 kg/ha de MAP 11-52-00 (149 kg N y 52 kg P2O5); primer auxilio 100 kg/ha de amoniaco anhidro (82 kg N); segundo auxilio 50 kg/ha (41 kg N). Total ~272 kg N/ha; ajustar con análisis de suelo.",
+      "riego": "Por gravedad, unos 7,500 m³/ha en cuatro riegos: presiembra; primer auxilio ~50 días (amacollamiento-encañe); segundo ~30 días después (inicio de espigamiento); tercero ~20 días más tarde (llenado de grano).",
+      "plagas": [
+        "Pulgones del follaje, tallo, cogollo, raíz y espiga",
+        "Gusano soldado",
+        "Chinche apestosa",
+        "Ácaro café"
+      ],
+      "enfermedades": [
+        "Roya de la hoja",
+        "Roya amarilla",
+        "Carbón parcial (Tilletia indica)"
+      ],
+      "malezas": "Hoja ancha: correhuela, malva, chual blanco y morado, girasol; hoja angosta: avena silvestre, alpistillo y otros zacates. Semilla certificada, limpieza de maquinaria, rotación, siembra en húmedo y un paso de cultivadora antes del primer auxilio. Controlar con la maleza de 3 a 4 hojas (20 a 25 días después de la emergencia).",
+      "cosecha": "Trillar con unos 12 % de humedad, con esparcidor de paja. El grano suele entregarse el mismo día. Rendimiento de 6.0 a 7.5 t/ha, promedio de unos 7.0 t/ha.",
+      "cuidados": [
+        "Sembrar del 15 de noviembre al 15 de diciembre.",
+        "Usar variedades resistentes a roya y vigilar más a CIRNO C2008.",
+        "No excederse con nitrógeno y fraccionarlo en los auxilios.",
+        "Aplicar contra plagas solo si se supera el umbral y revisar antes los pulgones parasitados (momias).",
+        "Eliminar plantas voluntarias y monitorear royas periódicamente.",
+        "Controlar la maleza temprano, antes del primer riego de auxilio."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 30111,
+          "rendimiento": 4.25,
+          "unidad_rendimiento": "t/ha",
+          "precio": 6125,
+          "ingreso_neto": -4079,
+          "relacion_bc": 0.86
+        }
+      ],
+      "nota": "Cuadro 42 (FIRA O-I 2025-2026): rendimiento de 4.25 t/ha, más bajo que el esperado en el texto (7 t/ha), por eso da pérdida. El rendimiento viene rotulado como 'kg' pero son t/ha. Ingreso neto impreso (-4,079) difiere en 1 peso de lo exacto; se deja tal cual.",
+      "revisado": false
+    },
+    {
+      "ficha": "Uva de mesa",
+      "cientifico": "Vitis vinifera L.",
+      "paginas": [
+        138,
+        145
+      ],
+      "cultivo_ids": [
+        "uva"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Regiones semiáridas (Caborca, Carbó, Guaymas, Hermosillo y San Miguel de Horcasitas), con cerca de 300 mm de lluvia y suelos de textura media.",
+      "siembra": {
+        "texto": "Plantar en febrero y marzo; hasta abril con plantas en maceta.",
+        "meses": [
+          2,
+          3,
+          4
+        ]
+      },
+      "variedades": [
+        "Verdes: Early Sweet, Sweet Globe, Timpson, Sugar Drop, Prime, Cotton Candy, Sugraone, Ivory, Honey Pop, Perlette, Great Green, Sugar Crisp",
+        "Negras: Summer Royal, Black Seedless, Candy Dreams, Sable Seedless, Midnight Beauty",
+        "Rojas: Flame, Sweet Celebration, Candy Snap, Ruby Rush, Karizma, Passion Fire, Red Globe, Bebop, Candy Hearts, Timco",
+        "Portainjertos: Saltcreek, Freedom, Harmony, Paulsen"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "3.60 a 4.0 m entre hileras y 0.80 a 2.0 m entre plantas, según vigor y conducción. Hileras de noreste a suroeste, de no más de 100 m (arenosos) o 120 m (medios o pesados), con cabeceras de 7 m.",
+      "fertilizacion": "Según análisis de suelo y foliar: N, P y K, más zinc, magnesio, calcio, hierro y boro si hay deficiencia. Ante clorosis férrica, corregir primero drenaje y aireación.",
+      "riego": "Goteo con goteros autocompensados cada 0.50 a 1.0 m; 90 a 120 cm por ciclo, con máxima demanda en mayo y junio. Riego de hidratación antes de la poda (40 h en franco-arenosos, 50 h en francos, 65 h en franco-arcillosos); después, reponer diario la evapotranspiración.",
+      "plagas": [
+        "Chicharrita de la vid",
+        "Trips",
+        "Piojo harinoso"
+      ],
+      "enfermedades": [
+        "Cenicilla polvorienta",
+        "Mildiu velloso",
+        "Pudrición texana",
+        "Enfermedades de la madera"
+      ],
+      "malezas": "Malezas perennes: control mecánico y cultural; si se usa herbicida, dirigido y moderado, sin tocar el cultivo.",
+      "cosecha": "De mayo a julio, con 16 a 20 °Brix en verdes y 18 a 24 °Brix en rojas y negras. Puede superar las 2,500 cajas/ha. Enfriar rápido para alargar la vida de anaquel.",
+      "cuidados": [
+        "Podar del 15 de diciembre al 15 de enero según variedad y vigor.",
+        "Desbrotar con brotes de 15 a 20 cm y aclarear racimos para mejorar forma y tamaño.",
+        "Deshojar antes del envero cerca del racimo, sin exponerlo al sol directo.",
+        "Monitorear chicharrita desde la primavera: puede transmitir enfermedades cuarentenarias.",
+        "Ante pudrición texana, eliminar y destruir plantas y usar portainjertos tolerantes.",
+        "Desinfectar herramientas de poda y proteger los cortes."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 701408,
+          "rendimiento": 17.5,
+          "unidad_rendimiento": "t/ha",
+          "precio": 53444,
+          "ingreso_neto": 233863,
+          "relacion_bc": 1.33
+        }
+      ],
+      "nota": "La agenda dice que muchas de las más de 56 variedades están sujetas a regalías, sin decir cuáles ni de qué empresa; por eso se listan todas en variedades. Cuadro 44: costo anual de viñedo en producción (sin preparación ni plantación). Ingreso 935,270 = 17.5 t × 53,444 $/t; las sumas cuadran.",
+      "revisado": false
+    },
+    {
+      "ficha": "Uva pasa",
+      "cientifico": "Vitis vinifera L.",
+      "paginas": [
+        146,
+        152
+      ],
+      "cultivo_ids": [
+        "uva"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Caborca, la principal zona de uva pasa del país: clima seco con más de 40 °C de junio a agosto, que ayuda al secado. Suelos francos, profundos y bien drenados; evitar caliche, mal drenaje y sales.",
+      "siembra": {
+        "texto": "Plantar entre enero y marzo, de preferencia con barbados.",
+        "meses": [
+          1,
+          2,
+          3
+        ]
+      },
+      "variedades": [
+        "Flame Seedless (la principal)",
+        "Fiesta",
+        "Perlette",
+        "Superior",
+        "Selma Pete (USDA)",
+        "Portainjertos: Harmony, Salt Creek, Freedom"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "3.5 a 4.0 m entre hileras y 1.0 a 1.5 m entre plantas. Hileras de 100 m (hasta 120 m) con cabeceras de 7 m. Material certificado libre de virus, plagas y enfermedades.",
+      "fertilizacion": "80 a 100 unidades de N, 40 a 50 de P y 80 a 100 de K por hectárea, según análisis. La falta de potasio baja el azúcar y da pasa vana.",
+      "riego": "Goteo según evapotranspiración; sensores cerca de 20 cb entre 40 y 80 cm. Riego inicial de 40 a 65 h según textura para formar el bulbo. Al llegar a unos 16 °Brix, reducir poco a poco el agua para acumular azúcar.",
+      "plagas": [
+        "Las mismas de la uva de mesa (chicharrita de la vid, trips, piojo harinoso)",
+        "Nematodos (Meloidogyne, Xiphinema)"
+      ],
+      "enfermedades": [
+        "Las mismas de la uva de mesa (cenicilla polvorienta, mildiu velloso, pudrición texana, enfermedades de la madera)"
+      ],
+      "malezas": "Igual que en uva de mesa.",
+      "cosecha": "De la segunda semana de junio al 30 de agosto, con al menos 20 °Brix (más azúcar requiere menos uva fresca por kilo de pasa). Secar sobre papel especial en camas inclinadas, con no más de 12 kg por papel.",
+      "cuidados": [
+        "Analizar el suelo antes de plantar para detectar nematodos y no plantar en suelos infestados.",
+        "Usar barbados certificados en lugar de sarmientos.",
+        "Podar del 15 de diciembre al 30 de enero.",
+        "Reducir el riego desde los 16 °Brix y cortar con 20 °Brix o más.",
+        "No poner más de 12 kg de uva por papel y dividir racimos grandes.",
+        "Asegurar el potasio para evitar pasa vana."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 144358,
+          "rendimiento": 10000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 20,
+          "ingreso_neto": 55642,
+          "relacion_bc": 1.39
+        }
+      ],
+      "nota": "Plagas, enfermedades y malezas remiten a la ficha de uva de mesa. En el extraído, la región trae también datos de preparación del terreno y la sección 'manejo' trae la densidad, fecha de plantación y poda. Cuadro 47: incluye preparación del terreno y siembra, sin separar establecimiento y producción; rendimiento de 10,000 kg/ha de pasa a 20 $/kg. Las sumas cuadran.",
+      "revisado": false
+    },
+    {
+      "ficha": "Zacate bermuda",
+      "cientifico": "Cynodon dactylon (L.) Pers.",
+      "paginas": [
+        153,
+        159
+      ],
+      "cultivo_ids": [
+        "pastos-y-praderas"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Del nivel del mar a 1,200 m. Crece mejor de 23 a 32 °C (se frena bajo 15 °C) y es sensible a las heladas. Tolera muchos suelos, la sequía y la salinidad; mejor con buen drenaje y pH 6.5 a 8.0. En climas secos rinde bien con riego.",
+      "siembra": {
+        "texto": "Cuando la mínima nocturna pasa de 16 °C de forma estable: marzo-abril en el sur, mayo en el centro y junio-julio en el norte. El trasplante de guías prende mejor en julio, agosto y septiembre.",
+        "meses": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "variedades": [
+        "Cruza I",
+        "Cruza II",
+        "Santo Domingo"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "800 a 1,000 kg/ha de guías al voleo (el doble si se quiere cubrir rápido). Los híbridos mejores son estériles y se propagan por material vegetativo; limpiar antes el terreno de bermuda común.",
+      "fertilizacion": "Presiembra: 60 a 80 kg/ha de P2O5 (115 a 155 kg de MAP 11-52-00), que dura 2 años; luego 60 kg/ha de P2O5 al año. A los 30 a 45 días del trasplante, 50 kg/ha de N. De junio a octubre, 50 kg/ha de N después de cada pastoreo (unos 200 kg/ha en total).",
+      "riego": "Humedad constante durante el establecimiento. Suelo arcilloso: unos 3 riegos con 30 a 40 cm en total. Si se riega desde agosto, se suspende en noviembre (latencia) y se reanuda en abril; pastorear 40 a 45 días después del primer riego.",
+      "plagas": [],
+      "enfermedades": [],
+      "malezas": "Por su crecimiento rastrero, el bermuda impide que prosperen otras especies.",
+      "cosecha": "Pastoreo rotacional en 4 a 6 potreros o en franjas con cerco eléctrico; fertilizar, regar y dejar descansar cada potrero. Solo bermuda: 950 kg de ganancia de peso por ciclo con 15 animales. Con ryegrass sembrado encima en invierno se mantienen 12 animales/ha durante 300 días.",
+      "cuidados": [
+        "Limpiar el terreno de bermuda común antes de trasplantar: invade a los híbridos.",
+        "Elegir guías largas y vigorosas y trasplantarlas lo antes posible tras el corte.",
+        "Proteger las guías del sol y mantenerlas húmedas en el traslado.",
+        "Trasplantar cuando las noches pasen de 16 °C.",
+        "Fertilizar con nitrógeno después de cada pastoreo de junio a octubre.",
+        "Rotar potreros y sembrar ryegrass encima en invierno para pastorear casi todo el año."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 27180,
+          "rendimiento": 54347,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 0.75,
+          "ingreso_neto": 13580,
+          "relacion_bc": 1.5
+        }
+      ],
+      "nota": "El catálogo no tiene un id de zacate bermuda; se asignó 'pastos-y-praderas'. El extraído marca régimen 'temporal/riego', pero el texto y el costo describen riego. El nombre científico venía truncado ('Cynodon dactylon (L.'); se completó como (L.) Pers. La agenda no trata plagas ni enfermedades. Cuadro 49: las sumas cuadran.",
+      "revisado": false
+    }
+  ]
+}
