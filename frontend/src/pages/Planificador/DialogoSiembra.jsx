@@ -298,7 +298,7 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, municipio, on
               {estimaciones.map((e, i) => (
                 <button key={i} type="button" onClick={() => usar(e)}>
                   {e.fuente}
-                  {e.modalidad && ` (${e.modalidad === "riego" ? "irrigated" : "rainfed"})`}:{" "}
+                  {e.modalidad && ` (${["riego", "irrigated"].includes(e.modalidad) ? "irrigated" : "rainfed"})`}:{" "}
                   {[e.rendimientoTHa != null && `${numero(e.rendimientoTHa)} t/ha`, e.precioT != null && `${pesos(e.precioT)}/t`, e.costoHa != null && `${pesos(e.costoHa)}/ha`]
                     .filter(Boolean)
                     .join(" · ")}

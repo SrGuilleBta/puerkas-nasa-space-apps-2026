@@ -1,0 +1,1329 @@
+{
+ "descripcion": "Respaldo de código EPPO y nombre científico por palabras del id SIAP (script asignar-eppo-code.py). Se usa solo cuando eppo.json no cubre el cultivo. Si varios tokens coinciden gana el más largo (más específico); a igual largo, el primero de la lista.",
+ "excepciones_id": [
+  {
+   "id": "calabaza-semilla-o-chihua",
+   "eppocode": "CUUMI",
+   "cientifico": "Cucurbita argyrosperma"
+  },
+  {
+   "id": "tomate-verde",
+   "eppocode": "PHYIX",
+   "cientifico": "Physalis philadelphica"
+  },
+  {
+   "id": "melon-amargo",
+   "eppocode": "MOMCH",
+   "cientifico": "Momordica charantia"
+  },
+  {
+   "id": "te-limon",
+   "eppocode": "CYGCI",
+   "cientifico": "Cymbopogon citratus"
+  }
+ ],
+ "excepciones_contiene": [
+  {
+   "contiene": "cebollin",
+   "eppocode": "ALLSC",
+   "cientifico": "Allium schoenoprasum"
+  },
+  {
+   "contiene": "limonium",
+   "eppocode": "LIISI",
+   "cientifico": "Limonium sinuatum"
+  }
+ ],
+ "tokens": [
+  {
+   "token": "maiz",
+   "eppocode": "ZEAMX",
+   "cientifico": "Zea mays"
+  },
+  {
+   "token": "elote",
+   "eppocode": "ZEAMX",
+   "cientifico": "Zea mays"
+  },
+  {
+   "token": "trigo",
+   "eppocode": "TRZAX",
+   "cientifico": "Triticum aestivum"
+  },
+  {
+   "token": "sorgo",
+   "eppocode": "SORVU",
+   "cientifico": "Sorghum bicolor"
+  },
+  {
+   "token": "arroz",
+   "eppocode": "ORYSA",
+   "cientifico": "Oryza sativa"
+  },
+  {
+   "token": "cebada",
+   "eppocode": "HORVX",
+   "cientifico": "Hordeum vulgare"
+  },
+  {
+   "token": "avena",
+   "eppocode": "AVESA",
+   "cientifico": "Avena sativa"
+  },
+  {
+   "token": "triticale",
+   "eppocode": "TTLRI",
+   "cientifico": "x Triticosecale"
+  },
+  {
+   "token": "centeno",
+   "eppocode": "SECCE",
+   "cientifico": "Secale cereale"
+  },
+  {
+   "token": "mijo",
+   "eppocode": "PANMI",
+   "cientifico": "Panicum miliaceum"
+  },
+  {
+   "token": "alpiste",
+   "eppocode": "PHACA",
+   "cientifico": "Phalaris canariensis"
+  },
+  {
+   "token": "amaranto",
+   "eppocode": "AMAHP",
+   "cientifico": "Amaranthus hypochondriacus"
+  },
+  {
+   "token": "quinoa",
+   "eppocode": "CHEQU",
+   "cientifico": "Chenopodium quinoa"
+  },
+  {
+   "token": "frijol",
+   "eppocode": "PHSVX",
+   "cientifico": "Phaseolus vulgaris"
+  },
+  {
+   "token": "ejote",
+   "eppocode": "PHSVX",
+   "cientifico": "Phaseolus vulgaris"
+  },
+  {
+   "token": "soya",
+   "eppocode": "GLXMA",
+   "cientifico": "Glycine max"
+  },
+  {
+   "token": "garbanzo",
+   "eppocode": "CIEAR",
+   "cientifico": "Cicer arietinum"
+  },
+  {
+   "token": "lenteja",
+   "eppocode": "LENCU",
+   "cientifico": "Vicia lens"
+  },
+  {
+   "token": "haba",
+   "eppocode": "VICFX",
+   "cientifico": "Vicia faba"
+  },
+  {
+   "token": "chicharo",
+   "eppocode": "PIBSX",
+   "cientifico": "Pisum sativum"
+  },
+  {
+   "token": "arvejon",
+   "eppocode": "PIBSX",
+   "cientifico": "Pisum sativum"
+  },
+  {
+   "token": "ebo",
+   "eppocode": "VICSA",
+   "cientifico": "Vicia sativa"
+  },
+  {
+   "token": "alfalfa",
+   "eppocode": "MEDSA",
+   "cientifico": "Medicago sativa"
+  },
+  {
+   "token": "trebol",
+   "eppocode": "TRFRE",
+   "cientifico": "Trifolium repens"
+  },
+  {
+   "token": "clyptoria",
+   "eppocode": "CXCTE",
+   "cientifico": "Clitoria ternatea"
+  },
+  {
+   "token": "guaje",
+   "eppocode": "LUALE",
+   "cientifico": "Leucaena leucocephala"
+  },
+  {
+   "token": "pasto-tapete",
+   "eppocode": "CYNDA",
+   "cientifico": "Cynodon dactylon"
+  },
+  {
+   "token": "pastos-y-praderas",
+   "eppocode": "CYNDA",
+   "cientifico": "Cynodon dactylon"
+  },
+  {
+   "token": "zacate",
+   "eppocode": "CYNDA",
+   "cientifico": "Cynodon dactylon"
+  },
+  {
+   "token": "girasol",
+   "eppocode": "HELAN",
+   "cientifico": "Helianthus annuus"
+  },
+  {
+   "token": "ajonjoli",
+   "eppocode": "SEGIN",
+   "cientifico": "Sesamum indicum"
+  },
+  {
+   "token": "cacahuate",
+   "eppocode": "ARHHY",
+   "cientifico": "Arachis hypogaea"
+  },
+  {
+   "token": "cartamo",
+   "eppocode": "CAUTI",
+   "cientifico": "Carthamus tinctorius"
+  },
+  {
+   "token": "canola",
+   "eppocode": "BRSNN",
+   "cientifico": "Brassica napus"
+  },
+  {
+   "token": "colza",
+   "eppocode": "BRSNN",
+   "cientifico": "Brassica napus"
+  },
+  {
+   "token": "linaza",
+   "eppocode": "LIUUT",
+   "cientifico": "Linum usitatissimum"
+  },
+  {
+   "token": "mostaza",
+   "eppocode": "SINAL",
+   "cientifico": "Sinapis alba"
+  },
+  {
+   "token": "palma-africana",
+   "eppocode": "EAIGU",
+   "cientifico": "Elaeis guineensis"
+  },
+  {
+   "token": "copra",
+   "eppocode": "CCNNU",
+   "cientifico": "Cocos nucifera"
+  },
+  {
+   "token": "coco-fruta",
+   "eppocode": "CCNNU",
+   "cientifico": "Cocos nucifera"
+  },
+  {
+   "token": "cana-de-azucar",
+   "eppocode": "SACOF",
+   "cientifico": "Saccharum officinarum"
+  },
+  {
+   "token": "cafe",
+   "eppocode": "COFAR",
+   "cientifico": "Coffea arabica"
+  },
+  {
+   "token": "algodon",
+   "eppocode": "GOSHI",
+   "cientifico": "Gossypium hirsutum"
+  },
+  {
+   "token": "cacao",
+   "eppocode": "THOCA",
+   "cientifico": "Theobroma cacao"
+  },
+  {
+   "token": "agave",
+   "eppocode": "AGVTE",
+   "cientifico": "Agave tequilana"
+  },
+  {
+   "token": "maguey",
+   "eppocode": "AGVSA",
+   "cientifico": "Agave salmiana"
+  },
+  {
+   "token": "henequen",
+   "eppocode": "AGVFO",
+   "cientifico": "Agave fourcroydes"
+  },
+  {
+   "token": "zapupe",
+   "eppocode": "AGVFO",
+   "cientifico": "Agave fourcroydes"
+  },
+  {
+   "token": "tabaco",
+   "eppocode": "NIOTA",
+   "cientifico": "Nicotiana tabacum"
+  },
+  {
+   "token": "hule-hevea",
+   "eppocode": "HVEBR",
+   "cientifico": "Hevea brasiliensis"
+  },
+  {
+   "token": "jamaica",
+   "eppocode": "HIBSA",
+   "cientifico": "Hibiscus sabdariffa"
+  },
+  {
+   "token": "vainilla",
+   "eppocode": "VANPL",
+   "cientifico": "Vanilla planifolia"
+  },
+  {
+   "token": "aceituna",
+   "eppocode": "OLVEU",
+   "cientifico": "Olea europaea"
+  },
+  {
+   "token": "sabila",
+   "eppocode": "ALFVE",
+   "cientifico": "Aloe vera"
+  },
+  {
+   "token": "chia",
+   "eppocode": "SALHI",
+   "cientifico": "Salvia hispanica"
+  },
+  {
+   "token": "higuerilla",
+   "eppocode": "RIICO",
+   "cientifico": "Ricinus communis"
+  },
+  {
+   "token": "achiote",
+   "eppocode": "BIXOR",
+   "cientifico": "Bixa orellana"
+  },
+  {
+   "token": "jatropha",
+   "eppocode": "IATCU",
+   "cientifico": "Jatropha curcas"
+  },
+  {
+   "token": "estropajo",
+   "eppocode": "LUFAE",
+   "cientifico": "Luffa aegyptiaca"
+  },
+  {
+   "token": "moringa",
+   "eppocode": "MOHOL",
+   "cientifico": "Moringa oleifera"
+  },
+  {
+   "token": "stevia",
+   "eppocode": "SVARE",
+   "cientifico": "Stevia rebaudiana"
+  },
+  {
+   "token": "bambu",
+   "eppocode": "BAMVU",
+   "cientifico": "Bambusa vulgaris"
+  },
+  {
+   "token": "neem",
+   "eppocode": "MEIAD",
+   "cientifico": "Azadirachta indica"
+  },
+  {
+   "token": "algarrobo",
+   "eppocode": "CEQSI",
+   "cientifico": "Ceratonia siliqua"
+  },
+  {
+   "token": "aguacate",
+   "eppocode": "PEBAM",
+   "cientifico": "Persea americana"
+  },
+  {
+   "token": "naranja",
+   "eppocode": "CIDSI",
+   "cientifico": "Citrus sinensis"
+  },
+  {
+   "token": "limon",
+   "eppocode": "CIDAF",
+   "cientifico": "Citrus x aurantiifolia"
+  },
+  {
+   "token": "lima",
+   "eppocode": "CIDAF",
+   "cientifico": "Citrus x aurantiifolia"
+  },
+  {
+   "token": "mandarina",
+   "eppocode": "CIDRE",
+   "cientifico": "Citrus reticulata"
+  },
+  {
+   "token": "tangerina",
+   "eppocode": "CIDRE",
+   "cientifico": "Citrus reticulata"
+  },
+  {
+   "token": "toronja",
+   "eppocode": "CIDPA",
+   "cientifico": "Citrus x paradisi"
+  },
+  {
+   "token": "tangelo",
+   "eppocode": "CIDRP",
+   "cientifico": "Citrus x tangelo"
+  },
+  {
+   "token": "mango",
+   "eppocode": "MNGIN",
+   "cientifico": "Mangifera indica"
+  },
+  {
+   "token": "platano",
+   "eppocode": "MUBPA",
+   "cientifico": "Musa x paradisiaca"
+  },
+  {
+   "token": "pina",
+   "eppocode": "ANHCO",
+   "cientifico": "Ananas comosus"
+  },
+  {
+   "token": "papaya",
+   "eppocode": "CIAPA",
+   "cientifico": "Carica papaya"
+  },
+  {
+   "token": "manzana",
+   "eppocode": "MABSD",
+   "cientifico": "Malus domestica"
+  },
+  {
+   "token": "peron",
+   "eppocode": "MABSD",
+   "cientifico": "Malus domestica"
+  },
+  {
+   "token": "pera",
+   "eppocode": "PYUCO",
+   "cientifico": "Pyrus communis"
+  },
+  {
+   "token": "durazno",
+   "eppocode": "PRNPS",
+   "cientifico": "Prunus persica"
+  },
+  {
+   "token": "ciruela",
+   "eppocode": "PRNDO",
+   "cientifico": "Prunus domestica"
+  },
+  {
+   "token": "chabacano",
+   "eppocode": "PRNAR",
+   "cientifico": "Prunus armeniaca"
+  },
+  {
+   "token": "cereza",
+   "eppocode": "PRNAV",
+   "cientifico": "Prunus avium"
+  },
+  {
+   "token": "capulin",
+   "eppocode": "PRNSO",
+   "cientifico": "Prunus serotina"
+  },
+  {
+   "token": "membrillo",
+   "eppocode": "CYDOB",
+   "cientifico": "Cydonia oblonga"
+  },
+  {
+   "token": "tejocote",
+   "eppocode": "CSCME",
+   "cientifico": "Crataegus mexicana"
+  },
+  {
+   "token": "nispero",
+   "eppocode": "EIOJA",
+   "cientifico": "Eriobotrya japonica"
+  },
+  {
+   "token": "uva",
+   "eppocode": "VITVI",
+   "cientifico": "Vitis vinifera"
+  },
+  {
+   "token": "fresa",
+   "eppocode": "FRAAN",
+   "cientifico": "Fragaria x ananassa"
+  },
+  {
+   "token": "zarzamora",
+   "eppocode": "RUBFR",
+   "cientifico": "Rubus fruticosus"
+  },
+  {
+   "token": "frambuesa",
+   "eppocode": "RUBID",
+   "cientifico": "Rubus idaeus"
+  },
+  {
+   "token": "arandano",
+   "eppocode": "VACCO",
+   "cientifico": "Vaccinium corymbosum"
+  },
+  {
+   "token": "nuez",
+   "eppocode": "CYAIL",
+   "cientifico": "Carya illinoinensis"
+  },
+  {
+   "token": "macadamia",
+   "eppocode": "MCDIN",
+   "cientifico": "Macadamia integrifolia"
+  },
+  {
+   "token": "pistache",
+   "eppocode": "PIAVE",
+   "cientifico": "Pistacia vera"
+  },
+  {
+   "token": "pinon",
+   "eppocode": "PIUCM",
+   "cientifico": "Pinus cembroides"
+  },
+  {
+   "token": "maranon",
+   "eppocode": "ANAOC",
+   "cientifico": "Anacardium occidentale"
+  },
+  {
+   "token": "tuna",
+   "eppocode": "OPUFI",
+   "cientifico": "Opuntia ficus-indica"
+  },
+  {
+   "token": "nopal",
+   "eppocode": "OPUFI",
+   "cientifico": "Opuntia ficus-indica"
+  },
+  {
+   "token": "nopalitos",
+   "eppocode": "OPUFI",
+   "cientifico": "Opuntia ficus-indica"
+  },
+  {
+   "token": "pitahaya",
+   "eppocode": "HCRUN",
+   "cientifico": "Selenicereus undatus"
+  },
+  {
+   "token": "pitaya",
+   "eppocode": "HCRUN",
+   "cientifico": "Selenicereus undatus"
+  },
+  {
+   "token": "guayaba",
+   "eppocode": "PSIGU",
+   "cientifico": "Psidium guajava"
+  },
+  {
+   "token": "arrayan",
+   "eppocode": "MYVCO",
+   "cientifico": "Myrtus communis"
+  },
+  {
+   "token": "tamarindo",
+   "eppocode": "TAMIN",
+   "cientifico": "Tamarindus indica"
+  },
+  {
+   "token": "guanabana",
+   "eppocode": "ANUMU",
+   "cientifico": "Annona muricata"
+  },
+  {
+   "token": "chirimoya",
+   "eppocode": "ANUCH",
+   "cientifico": "Annona cherimola"
+  },
+  {
+   "token": "saramuyo",
+   "eppocode": "ANUSQ",
+   "cientifico": "Annona squamosa"
+  },
+  {
+   "token": "mamey",
+   "eppocode": "POJSA",
+   "cientifico": "Pouteria sapota"
+  },
+  {
+   "token": "zapote",
+   "eppocode": "MNKZA",
+   "cientifico": "Manilkara zapota"
+  },
+  {
+   "token": "caimito",
+   "eppocode": "CSFCA",
+   "cientifico": "Chrysophyllum cainito"
+  },
+  {
+   "token": "persimonio",
+   "eppocode": "DOSKA",
+   "cientifico": "Diospyros kaki"
+  },
+  {
+   "token": "litchi",
+   "eppocode": "LIHCH",
+   "cientifico": "Litchi chinensis"
+  },
+  {
+   "token": "rambutan",
+   "eppocode": "NEELA",
+   "cientifico": "Nephelium lappaceum"
+  },
+  {
+   "token": "jaca",
+   "eppocode": "ABFHE",
+   "cientifico": "Artocarpus heterophyllus"
+  },
+  {
+   "token": "mangostan",
+   "eppocode": "GANMA",
+   "cientifico": "Garcinia mangostana"
+  },
+  {
+   "token": "carambolo",
+   "eppocode": "AVRCA",
+   "cientifico": "Averrhoa carambola"
+  },
+  {
+   "token": "maracuya",
+   "eppocode": "PAQED",
+   "cientifico": "Passiflora edulis"
+  },
+  {
+   "token": "granada",
+   "eppocode": "PUNGR",
+   "cientifico": "Punica granatum"
+  },
+  {
+   "token": "higo",
+   "eppocode": "FIUCA",
+   "cientifico": "Ficus carica"
+  },
+  {
+   "token": "datil",
+   "eppocode": "PHXDA",
+   "cientifico": "Phoenix dactylifera"
+  },
+  {
+   "token": "nanche",
+   "eppocode": "BYSCR",
+   "cientifico": "Byrsonima crassifolia"
+  },
+  {
+   "token": "guamuchil",
+   "eppocode": "PIFDU",
+   "cientifico": "Pithecellobium dulce"
+  },
+  {
+   "token": "noni",
+   "eppocode": "MOJCI",
+   "cientifico": "Morinda citrifolia"
+  },
+  {
+   "token": "tomate-rojo",
+   "eppocode": "LYPES",
+   "cientifico": "Solanum lycopersicum"
+  },
+  {
+   "token": "jitomate",
+   "eppocode": "LYPES",
+   "cientifico": "Solanum lycopersicum"
+  },
+  {
+   "token": "tomate-verde",
+   "eppocode": "PHYIX",
+   "cientifico": "Physalis philadelphica"
+  },
+  {
+   "token": "chile",
+   "eppocode": "CPSAN",
+   "cientifico": "Capsicum annuum"
+  },
+  {
+   "token": "papa",
+   "eppocode": "SOLTU",
+   "cientifico": "Solanum tuberosum"
+  },
+  {
+   "token": "berenjena",
+   "eppocode": "SOLME",
+   "cientifico": "Solanum melongena"
+  },
+  {
+   "token": "cebolla",
+   "eppocode": "ALLCE",
+   "cientifico": "Allium cepa"
+  },
+  {
+   "token": "ajo",
+   "eppocode": "ALLSA",
+   "cientifico": "Allium sativum"
+  },
+  {
+   "token": "poro",
+   "eppocode": "ALLPO",
+   "cientifico": "Allium porrum"
+  },
+  {
+   "token": "cebollin",
+   "eppocode": "ALLSC",
+   "cientifico": "Allium schoenoprasum"
+  },
+  {
+   "token": "chives",
+   "eppocode": "ALLSC",
+   "cientifico": "Allium schoenoprasum"
+  },
+  {
+   "token": "calabacita",
+   "eppocode": "CUUPE",
+   "cientifico": "Cucurbita pepo"
+  },
+  {
+   "token": "calabaza",
+   "eppocode": "CUUPE",
+   "cientifico": "Cucurbita pepo"
+  },
+  {
+   "token": "calabaza-semilla-o-chihua",
+   "eppocode": "CUUMI",
+   "cientifico": "Cucurbita argyrosperma"
+  },
+  {
+   "token": "chilacayote",
+   "eppocode": "CUUFI",
+   "cientifico": "Cucurbita ficifolia"
+  },
+  {
+   "token": "pepino",
+   "eppocode": "CUMSA",
+   "cientifico": "Cucumis sativus"
+  },
+  {
+   "token": "melon-amargo",
+   "eppocode": "MOMCH",
+   "cientifico": "Momordica charantia"
+  },
+  {
+   "token": "melon",
+   "eppocode": "CUMME",
+   "cientifico": "Cucumis melo"
+  },
+  {
+   "token": "sandia",
+   "eppocode": "CITLA",
+   "cientifico": "Citrullus lanatus"
+  },
+  {
+   "token": "chayote",
+   "eppocode": "SEHED",
+   "cientifico": "Sicyos edulis"
+  },
+  {
+   "token": "bangana",
+   "eppocode": "LGNSI",
+   "cientifico": "Lagenaria siceraria"
+  },
+  {
+   "token": "col-repollo",
+   "eppocode": "BRSOL",
+   "cientifico": "Brassica oleracea var. capitata"
+  },
+  {
+   "token": "brocoli",
+   "eppocode": "BRSOK",
+   "cientifico": "Brassica oleracea var. italica"
+  },
+  {
+   "token": "coliflor",
+   "eppocode": "BRSOB",
+   "cientifico": "Brassica oleracea var. botrytis"
+  },
+  {
+   "token": "col-de-bruselas",
+   "eppocode": "BRSOF",
+   "cientifico": "Brassica oleracea var. gemmifera"
+  },
+  {
+   "token": "kale",
+   "eppocode": "BRSOC",
+   "cientifico": "Brassica oleracea var. sabellica"
+  },
+  {
+   "token": "kohlrabi",
+   "eppocode": "BRSOG",
+   "cientifico": "Brassica oleracea var. gongylodes"
+  },
+  {
+   "token": "gai-lan",
+   "eppocode": "BRSAG",
+   "cientifico": "Brassica oleracea var. alboglabra"
+  },
+  {
+   "token": "nabo",
+   "eppocode": "BRSRR",
+   "cientifico": "Brassica rapa"
+  },
+  {
+   "token": "napa",
+   "eppocode": "BRSPK",
+   "cientifico": "Brassica rapa subsp. pekinensis"
+  },
+  {
+   "token": "pak-choi",
+   "eppocode": "BRSCH",
+   "cientifico": "Brassica rapa subsp. chinensis"
+  },
+  {
+   "token": "baby-back-choi",
+   "eppocode": "BRSCH",
+   "cientifico": "Brassica rapa subsp. chinensis"
+  },
+  {
+   "token": "boi-choi",
+   "eppocode": "BRSCH",
+   "cientifico": "Brassica rapa subsp. chinensis"
+  },
+  {
+   "token": "shangai-bock-choy",
+   "eppocode": "BRSCH",
+   "cientifico": "Brassica rapa subsp. chinensis"
+  },
+  {
+   "token": "choi-sum",
+   "eppocode": "BRSRR",
+   "cientifico": "Brassica rapa var. parachinensis"
+  },
+  {
+   "token": "yu-choy",
+   "eppocode": "BRSRR",
+   "cientifico": "Brassica rapa var. parachinensis"
+  },
+  {
+   "token": "rapini",
+   "eppocode": "BRSRR",
+   "cientifico": "Brassica rapa var. ruvo"
+  },
+  {
+   "token": "shop-suey",
+   "eppocode": "BRSRR",
+   "cientifico": "Brassica rapa"
+  },
+  {
+   "token": "rabano",
+   "eppocode": "RAPSR",
+   "cientifico": "Raphanus sativus"
+  },
+  {
+   "token": "lechuga",
+   "eppocode": "LACSA",
+   "cientifico": "Lactuca sativa"
+  },
+  {
+   "token": "espinaca",
+   "eppocode": "SPQOL",
+   "cientifico": "Spinacia oleracea"
+  },
+  {
+   "token": "betabel",
+   "eppocode": "BEAVX",
+   "cientifico": "Beta vulgaris"
+  },
+  {
+   "token": "remolacha",
+   "eppocode": "BEAVX",
+   "cientifico": "Beta vulgaris"
+  },
+  {
+   "token": "acelga",
+   "eppocode": "BEAVV",
+   "cientifico": "Beta vulgaris var. cicla"
+  },
+  {
+   "token": "zanahoria",
+   "eppocode": "DAUCA",
+   "cientifico": "Daucus carota"
+  },
+  {
+   "token": "apio",
+   "eppocode": "APUGV",
+   "cientifico": "Apium graveolens"
+  },
+  {
+   "token": "esparrago",
+   "eppocode": "ASPOF",
+   "cientifico": "Asparagus officinalis"
+  },
+  {
+   "token": "alcachofa",
+   "eppocode": "CYUCA",
+   "cientifico": "Cynara cardunculus"
+  },
+  {
+   "token": "okra",
+   "eppocode": "ABMES",
+   "cientifico": "Abelmoschus esculentus"
+  },
+  {
+   "token": "jicama",
+   "eppocode": "PACER",
+   "cientifico": "Pachyrhizus erosus"
+  },
+  {
+   "token": "camote",
+   "eppocode": "IPOBA",
+   "cientifico": "Ipomoea batatas"
+  },
+  {
+   "token": "yuca",
+   "eppocode": "MANES",
+   "cientifico": "Manihot esculenta"
+  },
+  {
+   "token": "malanga",
+   "eppocode": "XATSA",
+   "cientifico": "Xanthosoma sagittifolium"
+  },
+  {
+   "token": "huauzontle",
+   "eppocode": "CHEBE",
+   "cientifico": "Chenopodium berlandieri"
+  },
+  {
+   "token": "quelite",
+   "eppocode": "CHEBE",
+   "cientifico": "Chenopodium berlandieri"
+  },
+  {
+   "token": "verdolaga",
+   "eppocode": "POROL",
+   "cientifico": "Portulaca oleracea"
+  },
+  {
+   "token": "romerito",
+   "eppocode": "1SUEG",
+   "cientifico": "Suaeda edulis"
+  },
+  {
+   "token": "chay",
+   "eppocode": "1CXFG",
+   "cientifico": "Cnidoscolus aconitifolius"
+  },
+  {
+   "token": "hongos",
+   "eppocode": "AGARBI",
+   "cientifico": "Agaricus bisporus"
+  },
+  {
+   "token": "cilantro",
+   "eppocode": "CORSA",
+   "cientifico": "Coriandrum sativum"
+  },
+  {
+   "token": "perejil",
+   "eppocode": "PARCR",
+   "cientifico": "Petroselinum crispum"
+  },
+  {
+   "token": "albahaca",
+   "eppocode": "OCIBA",
+   "cientifico": "Ocimum basilicum"
+  },
+  {
+   "token": "oregano",
+   "eppocode": "ORIVU",
+   "cientifico": "Origanum vulgare"
+  },
+  {
+   "token": "mejorana",
+   "eppocode": "MAJHO",
+   "cientifico": "Origanum majorana"
+  },
+  {
+   "token": "romero",
+   "eppocode": "RMSOF",
+   "cientifico": "Salvia rosmarinus"
+  },
+  {
+   "token": "tomillo",
+   "eppocode": "THYVU",
+   "cientifico": "Thymus vulgaris"
+  },
+  {
+   "token": "hierbabuena",
+   "eppocode": "MENSP",
+   "cientifico": "Mentha spicata"
+  },
+  {
+   "token": "menta",
+   "eppocode": "MENPI",
+   "cientifico": "Mentha x piperita"
+  },
+  {
+   "token": "salvia",
+   "eppocode": "SALOF",
+   "cientifico": "Salvia officinalis"
+  },
+  {
+   "token": "tarragon",
+   "eppocode": "ARTDR",
+   "cientifico": "Artemisia dracunculus"
+  },
+  {
+   "token": "eneldo",
+   "eppocode": "AFEGR",
+   "cientifico": "Anethum graveolens"
+  },
+  {
+   "token": "anis",
+   "eppocode": "PIMAN",
+   "cientifico": "Pimpinella anisum"
+  },
+  {
+   "token": "comino",
+   "eppocode": "CVUCY",
+   "cientifico": "Cuminum cyminum"
+  },
+  {
+   "token": "pimienta",
+   "eppocode": "PIPNI",
+   "cientifico": "Piper nigrum"
+  },
+  {
+   "token": "jengibre",
+   "eppocode": "ZINOF",
+   "cientifico": "Zingiber officinale"
+  },
+  {
+   "token": "jenjibre",
+   "eppocode": "ZINOF",
+   "cientifico": "Zingiber officinale"
+  },
+  {
+   "token": "manzanilla",
+   "eppocode": "MATCH",
+   "cientifico": "Matricaria chamomilla"
+  },
+  {
+   "token": "epazote",
+   "eppocode": "CHEAM",
+   "cientifico": "Dysphania ambrosioides"
+  },
+  {
+   "token": "papalo",
+   "eppocode": "POQER",
+   "cientifico": "Porophyllum ruderale"
+  },
+  {
+   "token": "pipicha",
+   "eppocode": "POQER",
+   "cientifico": "Porophyllum ruderale"
+  },
+  {
+   "token": "te-limon",
+   "eppocode": "CYGCI",
+   "cientifico": "Cymbopogon citratus"
+  },
+  {
+   "token": "rosa",
+   "eppocode": "ROSHY",
+   "cientifico": "Rosa hybrida"
+  },
+  {
+   "token": "crisantemo",
+   "eppocode": "CHYHO",
+   "cientifico": "Chrysanthemum x morifolium"
+  },
+  {
+   "token": "polar",
+   "eppocode": "CHYHO",
+   "cientifico": "Chrysanthemum x morifolium"
+  },
+  {
+   "token": "pon-pon",
+   "eppocode": "CHYHO",
+   "cientifico": "Chrysanthemum x morifolium"
+  },
+  {
+   "token": "gladiola",
+   "eppocode": "GLAHY",
+   "cientifico": "Gladiolus hybrids"
+  },
+  {
+   "token": "clavel",
+   "eppocode": "DINCA",
+   "cientifico": "Dianthus caryophyllus"
+  },
+  {
+   "token": "zempoalxochitl",
+   "eppocode": "TAGER",
+   "cientifico": "Tagetes erecta"
+  },
+  {
+   "token": "nochebuena",
+   "eppocode": "EPHPU",
+   "cientifico": "Euphorbia pulcherrima"
+  },
+  {
+   "token": "lilium",
+   "eppocode": "LILHY",
+   "cientifico": "Lilium hybrids"
+  },
+  {
+   "token": "nardo",
+   "eppocode": "POCTU",
+   "cientifico": "Agave amica"
+  },
+  {
+   "token": "nube",
+   "eppocode": "GYPPA",
+   "cientifico": "Gypsophila paniculata"
+  },
+  {
+   "token": "statice",
+   "eppocode": "LIISI",
+   "cientifico": "Limonium sinuatum"
+  },
+  {
+   "token": "limonium",
+   "eppocode": "LIISI",
+   "cientifico": "Limonium sinuatum"
+  },
+  {
+   "token": "alheli",
+   "eppocode": "MTLIN",
+   "cientifico": "Matthiola incana"
+  },
+  {
+   "token": "terciopelo",
+   "eppocode": "CEOAR",
+   "cientifico": "Celosia argentea"
+  },
+  {
+   "token": "mano-de-leon",
+   "eppocode": "CEOAR",
+   "cientifico": "Celosia argentea"
+  },
+  {
+   "token": "palma-camedor",
+   "eppocode": "CMDEL",
+   "cientifico": "Chamaedorea elegans"
+  },
+  {
+   "token": "palma-taco",
+   "eppocode": "CMDEL",
+   "cientifico": "Chamaedorea elegans"
+  },
+  {
+   "token": "palma-de-ornato",
+   "eppocode": "CMDEL",
+   "cientifico": "Chamaedorea elegans"
+  },
+  {
+   "token": "arbol-de-navidad",
+   "eppocode": "PSTME",
+   "cientifico": "Pseudotsuga menziesii"
+  },
+  {
+   "token": "agapando",
+   "eppocode": "AGPAF",
+   "cientifico": "Agapanthus africanus"
+  },
+  {
+   "token": "ave-del-paraiso",
+   "eppocode": "STZRE",
+   "cientifico": "Strelitzia reginae"
+  },
+  {
+   "token": "flor-perrito",
+   "eppocode": "ATHMM",
+   "cientifico": "Antirrhinum majus"
+  },
+  {
+   "token": "aster",
+   "eppocode": "CSPCH",
+   "cientifico": "Callistephus chinensis"
+  },
+  {
+   "token": "gerbera",
+   "eppocode": "GEBJA",
+   "cientifico": "Gerbera jamesonii"
+  },
+  {
+   "token": "alstroemeria",
+   "eppocode": "ALTHY",
+   "cientifico": "Alstroemeria hybrids"
+  },
+  {
+   "token": "helecho",
+   "eppocode": "POIAD",
+   "cientifico": "Rumohra adiantiformis"
+  },
+  {
+   "token": "flor-cera",
+   "eppocode": "CQAUN",
+   "cientifico": "Chamelaucium uncinatum"
+  },
+  {
+   "token": "solidago",
+   "eppocode": "SOOCA",
+   "cientifico": "Solidago canadensis"
+  },
+  {
+   "token": "dolar",
+   "eppocode": "EUCCN",
+   "cientifico": "Eucalyptus cinerea"
+  },
+  {
+   "token": "eucalipto",
+   "eppocode": "EUCCN",
+   "cientifico": "Eucalyptus cinerea"
+  },
+  {
+   "token": "geranio",
+   "eppocode": "PELZO",
+   "cientifico": "Pelargonium x hortorum"
+  },
+  {
+   "token": "orquidea",
+   "eppocode": "1ORCF",
+   "cientifico": "Orchidaceae"
+  },
+  {
+   "token": "margarita",
+   "eppocode": "CHYLE",
+   "cientifico": "Leucanthemum vulgare"
+  },
+  {
+   "token": "coquia",
+   "eppocode": "KCHSC",
+   "cientifico": "Bassia scoparia"
+  },
+  {
+   "token": "inmortal",
+   "eppocode": "HECBR",
+   "cientifico": "Xerochrysum bracteatum"
+  },
+  {
+   "token": "petunia",
+   "eppocode": "PEUHY",
+   "cientifico": "Petunia x hybrida"
+  },
+  {
+   "token": "cyclamen",
+   "eppocode": "CYZPE",
+   "cientifico": "Cyclamen persicum"
+  },
+  {
+   "token": "cineraria",
+   "eppocode": "SENCR",
+   "cientifico": "Pericallis x hybrida"
+  },
+  {
+   "token": "alcatraz",
+   "eppocode": "ZNTAE",
+   "cientifico": "Zantedeschia aethiopica"
+  },
+  {
+   "token": "begonia",
+   "eppocode": "BEGSH",
+   "cientifico": "Begonia x semperflorens-cultorum"
+  },
+  {
+   "token": "pensamiento",
+   "eppocode": "VIOWH",
+   "cientifico": "Viola x wittrockiana"
+  },
+  {
+   "token": "calancoe",
+   "eppocode": "KANBL",
+   "cientifico": "Kalanchoe blossfeldiana"
+  },
+  {
+   "token": "belen",
+   "eppocode": "IPAWA",
+   "cientifico": "Impatiens walleriana"
+  },
+  {
+   "token": "palo-de-arco",
+   "eppocode": "TECST",
+   "cientifico": "Tecoma stans"
+  },
+  {
+   "token": "tulipan",
+   "eppocode": "TULGE",
+   "cientifico": "Tulipa gesneriana"
+  },
+  {
+   "token": "aretillo",
+   "eppocode": "FUCHY",
+   "cientifico": "Fuchsia hybrids"
+  },
+  {
+   "token": "flor-hawaiana",
+   "eppocode": "AIIPU",
+   "cientifico": "Alpinia purpurata"
+  },
+  {
+   "token": "dalia",
+   "eppocode": "DAHPI",
+   "cientifico": "Dahlia pinnata"
+  },
+  {
+   "token": "hortensia",
+   "eppocode": "HYEMA",
+   "cientifico": "Hydrangea macrophylla"
+  },
+  {
+   "token": "flor-lisianthus",
+   "eppocode": "EVMGR",
+   "cientifico": "Eustoma grandiflorum"
+  },
+  {
+   "token": "anturios",
+   "eppocode": "AURAN",
+   "cientifico": "Anthurium andraeanum"
+  },
+  {
+   "token": "albricia",
+   "eppocode": "1ALBG",
+   "cientifico": "Albizia spp."
+  }
+ ]
+}

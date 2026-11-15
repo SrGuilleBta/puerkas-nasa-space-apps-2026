@@ -5,6 +5,7 @@ import EnConstruccion from "./components/EnConstruccion.jsx";
 import Layout from "./components/Layout.jsx";
 import SelectorUbicacion from "./components/SelectorUbicacion.jsx";
 import useDatos from "./hooks/useDatos.js";
+import Cultivos from "./pages/Cultivos/Cultivos.jsx";
 import Noticias from "./pages/Noticias/Noticias.jsx";
 import Planificador from "./pages/Planificador/Planificador.jsx";
 import Principal from "./pages/Principal/Principal.jsx";
@@ -91,7 +92,9 @@ export default function App() {
   return (
     <Layout
       seccion={seccion}
+      // Cultivos tiene su propio filtro (estado o municipio de SIAP), distinto de este selector por coordenadas
       selector={
+        seccion.id !== "cultivos" &&
         activa && (
           <SelectorUbicacion
             ubicaciones={lista}
@@ -109,6 +112,8 @@ export default function App() {
         </Cargable>
       ) : seccion.id === "planificador" ? (
         <Planificador municipio={activa?.nombre} />
+      ) : seccion.id === "cultivos" ? (
+        <Cultivos ubicacion={activa} />
       ) : seccion.id === "suelo" ? (
         <Cargable estado={ubicaciones} alto={200}>
           {() => activa && <Suelo ubicacion={activa} />}

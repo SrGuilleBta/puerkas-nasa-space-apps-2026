@@ -43,11 +43,11 @@ def ubicaciones() -> dict:
 @lru_cache(maxsize=1)
 def _indice_ubicaciones() -> dict:
     """clave -> descriptor de ubicación, para todas las claves válidas (con o sin datos)."""
-    idx = {"00": {"nivel": "nacional", "clave": "00", "nombre": "México"}}
+    idx = {"00": {"nivel": "national", "clave": "00", "nombre": "Mexico"}}
     for e in ubicaciones()["estados"]:
-        idx[e["clave"]] = {"nivel": "estado", "clave": e["clave"], "nombre": e["nombre"]}
+        idx[e["clave"]] = {"nivel": "state", "clave": e["clave"], "nombre": e["nombre"]}
         for m in e["municipios"]:
-            idx[m["clave"]] = {"nivel": "municipio", "clave": m["clave"], "nombre": m["nombre"],
+            idx[m["clave"]] = {"nivel": "municipality", "clave": m["clave"], "nombre": m["nombre"],
                                "cve_ent": e["clave"], "estado": e["nombre"]}
     return idx
 
@@ -99,10 +99,10 @@ def viabilidad(clave: str, cultivo: str) -> dict:
     """
     ficha = catalogo()["por_id"].get(cultivo)
     if ficha is None:
-        raise SinDatos(f"cultivo {cultivo}")
+        raise SinDatos(f"crop {cultivo}")
     descriptor = _indice_ubicaciones().get(clave)
     if descriptor is None:
-        raise SinDatos(f"ubicación {clave}")
+        raise SinDatos(f"location {clave}")
 
     cadena = [clave]
     if len(clave) == 5:
@@ -121,7 +121,7 @@ def viabilidad(clave: str, cultivo: str) -> dict:
             break
 
     enchar = ficha.get("tolerancia_encharcamiento")
-    cve_ent = descriptor.get("cve_ent") or (clave if descriptor["nivel"] == "estado" else None)
+    cve_ent = descriptor.get("cve_ent") or (clave if descriptor["nivel"] == "state" else None)
     pct_riego = ((indicadores or {}).get("riesgo_hidrico") or {}).get("pct_riego")
     return {
         "ubicacion": descriptor,
@@ -134,9 +134,9 @@ def viabilidad(clave: str, cultivo: str) -> dict:
         "ubicacion_datos": origen,
         "indicadores": indicadores,
         "sensibilidad_inundacion": {
-            "nivel": {"tolera": "baja", "sensible": "alta"}.get(enchar),
-            "fuente": "EcoCrop (tolerancia a mal drenaje)",
-            "pendiente": "Atlas Nacional de Riesgos (CENAPRED)",
+            "nivel": {"tolerant": "low", "sensitive": "high"}.get(enchar),
+            "fuente": "EcoCrop (tolerance to poor drainage)",
+            "pendiente": "National Risk Atlas (CENAPRED)",
         },
         "manejo": manejo(cve_ent, cultivo, ficha, pct_riego),
     }
@@ -172,45 +172,74 @@ def manejo(cve_ent: str | None, cultivo: str, ficha: dict, pct_riego: float | No
     sustituto = ESTADO_SUSTITUTO.get(cve_ent)
     fichas = list(_fichas_inifap().get((sustituto or cve_ent, cultivo), [])) if cve_ent else []
     if fichas:
-        preferida = None if pct_riego is None else ("riego" if pct_riego >= 0.5 else "temporal")
+        preferida = None if pct_riego is None else ("irrigated" if pct_riego >= 0.5 else "rainfed")
         fichas.sort(key=lambda f: f.get("modalidad") != preferida)
         return {
             "fuente": "INIFAP",
-            "nota": "Ciudad de México no tiene Agenda Técnica; se usa la del Estado de México." if sustituto else None,
+            "nota": "Mexico City has no INIFAP Technical Agenda; the State of Mexico agenda is used." if sustituto else None,
             "fichas": fichas,
             "siembra_meses": fichas[0]["siembra"]["meses"],
         }
     return {
         "fuente": "general" if ficha.get("cuidados") else None,
-        "nota": "Sin agenda técnica INIFAP para este estado y cultivo; texto general en borrador.",
+        "nota": "No INIFAP technical agenda for this state and crop; general draft text.",
         "cuidados": ficha.get("cuidados"),
         "fichas": [],
         "siembra_meses": None,
     }
 
 
-def biblioteca(clave: str | None = None, buscar: str | None = None) -> list[dict]:
-    """Lista ligera para la barra lateral. Con `clave`, ordena por superficie en esa
-    ubicación y marca qué cultivos se siembran ahí."""
+def biblioteca(clave: str | None = None, buscar: str | None = None, tipo: str | None = None) -> list[dict]:
+    """Lista ligera para la biblioteca del frontend.
+
+    `buscar` se compara (sin acentos ni mayúsculas) con el nombre en inglés, el nombre SIAP en
+    español, el nombre científico y el id. `tipo` filtra por tipo de cultivo (p. ej. "Cereal");
+    "Other" trae los que no tienen tipo. Con `clave`, ordena por superficie en esa ubicación y
+    marca qué cultivos se siembran ahí; sin ella, por superficie nacional.
+    """
     cat = catalogo()["cultivos"]
     locales = {}
     if clave:
         if clave not in _indice_ubicaciones():
-            raise SinDatos(f"ubicación {clave}")
+            raise SinDatos(f"location {clave}")
         try:
             locales = {c["id"]: c for c in ubicacion(clave)["cultivos"]}
         except SinDatos:
             pass  # municipio válido sin registros agrícolas: catálogo completo sin marcar
+    q = _normal(buscar).strip() if buscar else ""
+
+    # Duplicados: mismo nombre, mismo tipo y misma descripción (SIAP reporta algunos cultivos en dos
+    # unidades, p. ej. fresa en toneladas y en plantas). Se muestra solo el más relevante: el que más
+    # se siembra en la zona (o en el país si no hay zona). Si cambia alguno de los tres, son cultivos distintos.
+    grupo = lambda c: (c["nombre"].strip().lower(), c.get("tipo") or "Other", c.get("descripcion") or "")
+    relevancia = lambda c: ((locales[c["id"]]["superficie_sembrada_prom_ha"] if c["id"] in locales else 0),
+                            c["nacional"]["superficie_sembrada_prom_ha"])
+    representante: dict = {}
+    for c in cat:
+        g = grupo(c)
+        if g not in representante or relevancia(c) > relevancia(representante[g]):
+            representante[g] = c
+
     filas = []
     for c in cat:
-        if buscar and _normal(buscar) not in _normal(c["nombre"]):
+        if representante[grupo(c)] is not c:
             continue
+        if tipo and (c.get("tipo") or "Other") != tipo:
+            continue
+        if q:
+            pajar = " ".join(_normal(t) for t in (c["nombre"], c.get("nombre_es") or "", c.get("cientifico") or "",
+                                                  c["id"].replace("-", " ")))
+            if q not in pajar:
+                continue
         loc = locales.get(c["id"])
         filas.append({
-            "id": c["id"], "nombre": c["nombre"], "tipo": c.get("tipo"),
+            "id": c["id"], "nombre": c["nombre"], "nombre_es": c.get("nombre_es"),
+            "cientifico": c.get("cientifico"), "tipo": c.get("tipo") or "Other",
             "ciclo_dias": c.get("ciclo_dias"), "perenne": c.get("perenne"),
+            "unidad": c.get("unidad"),
             "sembrado_en_ubicacion": loc is not None,
             "superficie_local_ha": loc["superficie_sembrada_prom_ha"] if loc else None,
+            "superficie_nacional_ha": c["nacional"]["superficie_sembrada_prom_ha"],
         })
     if clave:
         filas.sort(key=lambda f: -(f["superficie_local_ha"] or 0))

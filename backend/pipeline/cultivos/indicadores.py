@@ -93,7 +93,7 @@ def contexto_sequia(seq: pd.DataFrame, fin_ventana: int) -> pd.DataFrame:
 def preparar_anual(niveles: pd.DataFrame, flags: pd.DataFrame, deflactor: dict) -> pd.DataFrame:
     y = niveles.merge(flags, on=GEO + ["anio", "ciclo"], how="left")
     y["valor_real"] = y["valor"] * y["anio"].map(deflactor)
-    y["sem_riego"] = np.where(y["modalidad"] == "riego", y["sembrada"], 0.0)
+    y["sem_riego"] = np.where(y["modalidad"] == "irrigated", y["sembrada"], 0.0)
     seq = y["severa"].eq(True)
     norm = y["severa"].eq(False)  # sin dato del Monitor no cuenta en ninguno de los dos
     y["sem_seq"] = np.where(seq, y["sembrada"], 0.0)
@@ -169,7 +169,7 @@ def calcular(niveles, flags, deflactor):
     por_cult = estadisticas(anual_cult, cult_keys)
 
     # Variabilidad del rendimiento solo en temporal: es la que refleja el riesgo de lluvia.
-    temp = y[y["modalidad"] == "temporal"].groupby(cult_keys + ["anio"], as_index=False)[SUMAS].sum()
+    temp = y[y["modalidad"] == "rainfed"].groupby(cult_keys + ["anio"], as_index=False)[SUMAS].sum()
     por_cult["cv_rendimiento_temporal"] = estadisticas(temp, cult_keys)["cv_rendimiento"]
 
     # Reparto por ciclo (para "siembra ideal" según lo que se practica en la zona).
@@ -206,17 +206,17 @@ def riesgo_hidrico(pct_riego, cv_temporal, frec_d2):
     amenaza = min(frec_d2 / 0.3, 1.0) if _valido(frec_d2) else 0.5
     vuln = min(cv_temporal / 0.4, 1.0) if _valido(cv_temporal) else 0.5
     score = 0.25 * amenaza + 0.75 * (1 - pct_riego) * (0.5 + 0.5 * vuln)
-    nivel = "bajo" if score < 0.33 else "medio" if score < 0.6 else "alto"
+    nivel = "low" if score < 0.33 else "medium" if score < 0.6 else "high"
     return round(score, 2), nivel
 
 
 def sensibilidad_sequia(tasa_seq, tasa_norm, n_seq, n_norm):
     """Compara la tasa de siniestro en temporadas con sequía severa contra las normales."""
     if n_seq < 1 or n_norm < 2 or np.isnan(tasa_seq) or np.isnan(tasa_norm):
-        return "sin_evidencia"
+        return "no_evidence"
     dif = tasa_seq - tasa_norm
     if dif >= 0.10 or tasa_seq >= 0.25:
-        return "alta"
+        return "high"
     if dif >= 0.03:
-        return "media"
-    return "baja"
+        return "medium"
+    return "low"

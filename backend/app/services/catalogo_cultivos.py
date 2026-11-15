@@ -128,17 +128,18 @@ def mercado(catalogo_id: str | None, cve_ent: str | None) -> dict | None:
 
     # Los chips salen de los campos estructurados (no del texto de las etiquetas de la pipeline)
     chips = []
+    # La pipeline traducida da "high"/"low"; la anterior daba "alta"/"baja"/"alto": se aceptan las dos.
     nivel = (ind.get("rentabilidad") or {}).get("nivel")
-    if nivel == "alta":
+    if nivel in ("high", "alta"):
         chips.append(("positiva", "High profitability"))
-    elif nivel == "baja":
+    elif nivel in ("low", "baja"):
         chips.append(("negativa", "Low profitability"))
     sequia = ind.get("sensibilidad_sequia")
-    if sequia == "alta":
+    if sequia in ("high", "alta"):
         chips.append(("negativa", "Drought sensitive"))
-    elif sequia == "baja":
+    elif sequia in ("low", "baja"):
         chips.append(("positiva", "Drought tolerant"))
-    if (ind.get("riesgo_hidrico") or {}).get("nivel") == "alto":
+    if (ind.get("riesgo_hidrico") or {}).get("nivel") in ("high", "alto"):
         chips.append(("negativa", "High water risk"))
 
     return {

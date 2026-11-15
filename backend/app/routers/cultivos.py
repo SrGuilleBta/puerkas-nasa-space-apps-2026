@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Query
 
-from app.services import cultivos
+from app.services import cultivos, cultivos_zona
 
 router = APIRouter(prefix="/api/cultivos", tags=["cultivos"])
 
@@ -9,7 +9,7 @@ CLAVE = Query(..., pattern=r"^(\d{2}|\d{5})$",
 
 
 def _no_encontrado(e: cultivos.SinDatos):
-    raise HTTPException(404, f"Sin datos: {e}. ¿Se corrió la pipeline? (python -m pipeline.cultivos)")
+    raise HTTPException(404, f"No data: {e}. Has the pipeline been run? (python -m pipeline.cultivos)")
 
 
 @router.get("/catalogo")
@@ -23,10 +23,11 @@ def catalogo():
 
 
 @router.get("/biblioteca")
-def biblioteca(clave: str | None = Query(None, pattern=r"^(\d{2}|\d{5})$"), buscar: str | None = None):
+def biblioteca(clave: str | None = Query(None, pattern=r"^(\d{2}|\d{5})$"), buscar: str | None = None,
+               tipo: str | None = None):
     """Lista ligera para el buscador; con `clave` se ordena por lo que se siembra ahí."""
     try:
-        return cultivos.biblioteca(clave, buscar)
+        return cultivos.biblioteca(clave, buscar, tipo)
     except cultivos.SinDatos as e:
         _no_encontrado(e)
 
@@ -36,6 +37,19 @@ def ubicaciones():
     """Estados y municipios para el selector."""
     try:
         return cultivos.ubicaciones()
+    except cultivos.SinDatos as e:
+        _no_encontrado(e)
+
+
+@router.get("/zona")
+async def zona(nombre: str | None = Query(None, max_length=120), lat: float | None = Query(None, ge=-90, le=90),
+               lon: float | None = Query(None, ge=-180, le=180)):
+    """Municipio (o, si no hay correspondencia, estado) de SIAP que corresponde a una ubicación del proyecto.
+
+    Responde `null` si no se puede determinar (el frontend usa entonces su zona por defecto).
+    """
+    try:
+        return await cultivos_zona.resolver(nombre, lat, lon)
     except cultivos.SinDatos as e:
         _no_encontrado(e)
 

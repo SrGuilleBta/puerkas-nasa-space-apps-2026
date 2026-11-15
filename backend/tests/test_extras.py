@@ -19,6 +19,9 @@ from app.services import catalogo_cultivos, estados  # noqa: E402
 
 P = "/api/planificador"
 
+# El cultivo de demo se renombra al nombre del catálogo (en inglés si la pipeline lo tradujo).
+MAIZ = (catalogo_cultivos._catalogo()["por_id"].get("maiz-grano") or {}).get("nombre", "Maíz grano")
+
 
 class PruebasExtras(unittest.TestCase):
     @classmethod
@@ -37,7 +40,7 @@ class PruebasExtras(unittest.TestCase):
         self.parcela = self.c.post(
             f"{P}/planes/{self.plan['id']}/parcelas", json={"nombre": "Lote", "hectareas": 10}
         ).json()
-        self.maiz = next(x for x in self.c.get(f"{P}/cultivos").json() if x["nombre"] == "Maíz grano")
+        self.maiz = next(x for x in self.c.get(f"{P}/cultivos").json() if x["nombre"] == MAIZ)
         self.creados = [self.plan["id"]]
 
     def tearDown(self):
@@ -169,7 +172,7 @@ class PruebasExtras(unittest.TestCase):
         self.assertEqual(datos["total"], 2)  # no cuenta la hecha ni la futura
         self.assertEqual([t["titulo"] for t in datos["tareas"]], ["Mas vieja", "Vieja"])  # la más atrasada primero
         primera = datos["tareas"][0]
-        self.assertEqual((primera["diasRetraso"], primera["cultivo"], primera["parcela"]), (20, "Maíz grano", "Lote"))
+        self.assertEqual((primera["diasRetraso"], primera["cultivo"], primera["parcela"]), (20, MAIZ, "Lote"))
 
         # El mismo día de la fecha de la tarea todavía no cuenta como vencida
         self.assertEqual(self.c.get(url, params={"planId": self.plan["id"], "hoy": "2030-01-12"}).json()["total"], 0)
@@ -203,6 +206,20 @@ class PruebasExtras(unittest.TestCase):
             [e["texto"] for e in r["etiquetas"]], ["High profitability", "Drought sensitive", "High water risk"]
         )
         self.assertEqual([e["tipo"] for e in r["etiquetas"]], ["positiva", "negativa", "negativa"])
+
+    def test_mercado_entiende_los_niveles_en_ingles_de_la_pipeline_traducida(self):
+        ind = {**self.IND, "rentabilidad": {"nivel": "high"}, "sensibilidad_sequia": "high",
+               "riesgo_hidrico": {"nivel": "high"}}
+        with patch.object(catalogo_cultivos.catalogo_servicio, "indicadores_de", return_value=(ind, {"nombre": "Nuevo León"})):
+            r = catalogo_cultivos.mercado("maiz-grano", "19")
+        self.assertEqual(
+            [e["texto"] for e in r["etiquetas"]], ["High profitability", "Drought sensitive", "High water risk"]
+        )
+        ind = {**self.IND, "rentabilidad": {"nivel": "low"}, "sensibilidad_sequia": "low",
+               "riesgo_hidrico": {"nivel": "low"}}
+        with patch.object(catalogo_cultivos.catalogo_servicio, "indicadores_de", return_value=(ind, {"nombre": "Nuevo León"})):
+            r = catalogo_cultivos.mercado("maiz-grano", "19")
+        self.assertEqual([e["texto"] for e in r["etiquetas"]], ["Low profitability", "Drought tolerant"])
 
     def test_mercado_sin_estado_usa_los_datos_nacionales_y_no_inventa(self):
         servicio = catalogo_cultivos.catalogo_servicio

@@ -90,7 +90,7 @@ export default function ManejoInifap({ manejo, municipio, onEstado }) {
         <div className="manejo__modalidades" role="tablist" aria-label="Production system">
           {manejo.fichas.map((x, i) => (
             <button key={i} type="button" role="tab" aria-selected={i === elegida} onClick={() => setElegida(i)}>
-              {x.modalidad === "riego" ? "Irrigated" : x.modalidad === "temporal" ? "Rainfed" : `Option ${i + 1}`}
+              {["riego", "irrigated"].includes(x.modalidad) ? "Irrigated" : ["temporal", "rainfed"].includes(x.modalidad) ? "Rainfed" : `Option ${i + 1}`}
               {x.ciclo ? ` · ${x.ciclo}` : ""}
             </button>
           ))}

@@ -8,7 +8,7 @@ Uso (desde backend/):
 import sys
 import time
 
-from . import catalogo, config, descargas, exportar, fuentes, indicadores, rotacion
+from . import catalogo, config, descargas, exportar, fuentes, indicadores, rotacion, traduccion
 
 
 def construir():
@@ -47,21 +47,22 @@ def construir():
 
     paso("Rotación practicada")
     co = rotacion.coocurrencia(agg, desde)
-    rot = rotacion.puntuar(co, rasgos, nombres_cult["nombre"].to_dict())
+    rot = rotacion.puntuar(co, rasgos, {e["id"]: e["nombre"] for e in cat})  # nombres ya en inglés
 
     paso("Escribiendo JSON")
     fuentes_meta = {
-        "siap": f"Cierre de la Producción Agrícola {desde}-{hasta}",
-        "sequia": f"Monitor de Sequía de México (CONAGUA/SMN), corte {ctx['fecha_actual'].iloc[0]}",
-        "ecocrop": "FAO EcoCrop (tabla OpenCLIM/ecocrop)",
-        "inflacion": "FMI WEO, inflación promedio anual de México (PCPIPCH)",
-        "gaez": "pendiente",
-        "cenapred": "pendiente",
+        "siap": f"SIAP Agricultural Production Closing (Cierre de la Producción Agrícola) {desde}-{hasta}",
+        "sequia": f"Mexico Drought Monitor (CONAGUA/SMN), as of {ctx['fecha_actual'].iloc[0]}",
+        "ecocrop": "FAO EcoCrop (OpenCLIM/ecocrop table)",
+        "inflacion": "IMF WEO, Mexico average annual inflation (PCPIPCH)",
+        "gaez": "pending",
+        "cenapred": "pending",
     }
     n = exportar.exportar(cat, por_cult, por_combo, rot, ctx, (estados, municipios),
                           desde, hasta, fuentes_meta)
     con_datos = set(por_cult.loc[por_cult["nivel"] == "municipio", "clave"])
     exportar.exportar_ubicaciones(estados, municipios, nombres_seq, con_datos)
+    traduccion.cerrar()
     paso(f"Listo: {len(cat)} cultivos en catálogo, {n} archivos de ubicación en {config.SALIDA_DIR}")
 
 

@@ -12,7 +12,7 @@ Solo se versiona `cuidados/`.
 |---|---|---|
 | `agendas/` | PDF originales, renombrados como `<estado>.pdf` | No |
 | `extraido/` | Texto por cultivo y sección, más los cuadros de costos (salida de `python -m pipeline.inifap`) | No |
-| `cuidados/` | Resumen curado por estado: siembra, manejo, plagas, cuidados | Sí |
+| `cuidados/` | Resumen curado por estado: siembra, manejo, plagas, cuidados. **Está en inglés** (ver docs/cultivos-pipeline.md) | Sí |
 
 ## Cómo actualizar
 

@@ -23,6 +23,8 @@ services:
       # Credenciales de la API de Meteomatics (ver .env.example)
       - METEOMATICS_USER=${METEOMATICS_USER:-}
       - METEOMATICS_PASSWORD=${METEOMATICS_PASSWORD:-}
+      # Opcional: traduce nombres de cultivo nuevos en la pipeline de Cultivos (ver .env.example)
+      - DEEPL_API_KEY=${DEEPL_API_KEY:-}
       # Token de NASA Earthdata para SRTM y GRACE (módulo Suelo)
       - EARTHDATA_TOKEN=${EARTHDATA_TOKEN:-}
       - PYTHONDONTWRITEBYTECODE=1

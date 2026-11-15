@@ -18,10 +18,16 @@ def _r(v, n=2):
     return round(float(v), n)
 
 
+# Niveles tal como salen en los JSON (internamente la pipeline usa los nombres en español).
+NIVEL_EN = {"municipio": "municipality", "estado": "state", "nacional": "national"}
+
+SIEMPRE_PRESENTES = {"eppocode"}  # se conservan aunque sean null, para que el campo exista en todo cultivo
+
+
 def _limpio(d):
     """Quita llaves con None para que los archivos pesen menos."""
     if isinstance(d, dict):
-        return {k: _limpio(v) for k, v in d.items() if v is not None}
+        return {k: _limpio(v) for k, v in d.items() if v is not None or k in SIEMPRE_PRESENTES}
     if isinstance(d, list):
         return [_limpio(v) for v in d]
     return d
@@ -47,29 +53,29 @@ def _etiquetas(c, ficha, rot, sens, riesgo):
     pctl = c["pctl_ingreso"]
     if not pd.isna(pctl):
         if pctl >= 0.75:
-            et.append(("positiva", "Alta rentabilidad",
-                       "Ingreso por hectárea sembrada entre el 25% más alto de la zona"))
+            et.append(("positive", "High profitability",
+                       "Income per planted hectare in the top 25% of the area"))
         elif pctl <= 0.25:
-            et.append(("negativa", "Rentabilidad baja",
-                       "Ingreso por hectárea sembrada entre el 25% más bajo de la zona"))
+            et.append(("negative", "Low profitability",
+                       "Income per planted hectare in the bottom 25% of the area"))
     if rot:
         mejor = rot[0]
         if mejor["afinidad"] >= 0.6 and mejor["socio_id"] != c["cultivo_id"]:
-            extra = " (leguminosa)" if mejor["fija_nitrogeno"] else ""
-            et.append(("positiva", "Rotación favorable", f"Compatible con {mejor['socio'].lower()}{extra}"))
-    if sens == "alta":
-        et.append(("negativa", "Sensible a sequía",
-                   f"El siniestro sube de {c['tasa_siniestro_normal']:.0%} a "
-                   f"{c['tasa_siniestro_sequia']:.0%} en temporadas de sequía severa"))
-    elif sens == "baja" and c["pct_riego"] < 0.5:
-        et.append(("positiva", "Tolera la sequía",
-                   "El siniestro casi no cambia en temporadas de sequía severa"))
-    if riesgo == "alto":
-        et.append(("negativa", "Riesgo hídrico alto", "Depende de la lluvia y su rendimiento varía mucho"))
-    elif riesgo == "bajo" and c["pct_riego"] >= 0.7:
-        et.append(("positiva", "Mayormente de riego", f"{c['pct_riego']:.0%} de la superficie es de riego"))
-    if ficha.get("tolerancia_encharcamiento") == "sensible" and len(et) < 3:
-        et.append(("negativa", "Sensible a encharcamiento", "Requiere suelo con buen drenaje (EcoCrop)"))
+            extra = " (legume)" if mejor["fija_nitrogeno"] else ""
+            et.append(("positive", "Favorable rotation", f"Compatible with {mejor['socio'].lower()}{extra}"))
+    if sens == "high":
+        et.append(("negative", "Drought sensitive",
+                   f"Crop loss rises from {c['tasa_siniestro_normal']:.0%} to "
+                   f"{c['tasa_siniestro_sequia']:.0%} in severe drought seasons"))
+    elif sens == "low" and c["pct_riego"] < 0.5:
+        et.append(("positive", "Drought tolerant",
+                   "Crop loss barely changes in severe drought seasons"))
+    if riesgo == "high":
+        et.append(("negative", "High water risk", "Depends on rainfall and its yield varies widely"))
+    elif riesgo == "low" and c["pct_riego"] >= 0.7:
+        et.append(("positive", "Mostly irrigated", f"{c['pct_riego']:.0%} of the area is irrigated"))
+    if ficha.get("tolerancia_encharcamiento") == "sensitive" and len(et) < 3:
+        et.append(("negative", "Waterlogging sensitive", "Needs well-drained soil (EcoCrop)"))
     return [{"tipo": t, "titulo": a, "detalle": b} for t, a, b in et]
 
 
@@ -80,23 +86,23 @@ def _situacion(c, ctx, desde):
         delta = ult / prev - 1
         periodo = f"{desde}–{int(c['anio_ultimo']) - 1}"
         if delta >= 0.05:
-            s.append(("positiva", "Precio por encima del promedio",
-                      f"El precio medio rural de {int(c['anio_ultimo'])} fue {delta:.0%} mayor "
-                      f"que la mediana {periodo} (pesos de {config.ANIO_BASE_PRECIOS})"))
+            s.append(("positive", "Price above average",
+                      f"The {int(c['anio_ultimo'])} farm-gate price was {delta:.0%} higher "
+                      f"than the {periodo} median ({config.ANIO_BASE_PRECIOS} pesos)"))
         elif delta <= -0.05:
-            s.append(("alerta", "Precio por debajo del promedio",
-                      f"El precio medio rural de {int(c['anio_ultimo'])} fue {abs(delta):.0%} menor "
-                      f"que la mediana {periodo} (pesos de {config.ANIO_BASE_PRECIOS})"))
+            s.append(("alert", "Price below average",
+                      f"The {int(c['anio_ultimo'])} farm-gate price was {abs(delta):.0%} lower "
+                      f"than the {periodo} median ({config.ANIO_BASE_PRECIOS} pesos)"))
     if ctx and c["pct_riego"] < 0.5:
         cat = ctx.get("cat_actual_max")
         if cat is not None and cat >= 1:
             if ctx["nivel"] == "municipio":
-                det = f"Monitor de Sequía al {ctx['fecha_actual']}: D{int(cat)} en el municipio."
+                det = f"Mexico Drought Monitor as of {ctx['fecha_actual']}: D{int(cat)} in the municipality."
             else:
-                det = (f"Monitor de Sequía al {ctx['fecha_actual']}: {ctx['pct_mun_en_sequia']:.0%} "
-                       f"de los municipios con sequía (hasta D{int(cat)}).")
-            det += f" El {1 - c['pct_riego']:.0%} de este cultivo aquí es de temporal."
-            s.append(("alerta", "Riesgo hídrico próximo", det))
+                det = (f"Mexico Drought Monitor as of {ctx['fecha_actual']}: {ctx['pct_mun_en_sequia']:.0%} "
+                       f"of municipalities in drought (up to D{int(cat)}).")
+            det += f" {1 - c['pct_riego']:.0%} of this crop here is rainfed."
+            s.append(("alert", "Upcoming water risk", det))
     return [{"tipo": t, "titulo": a, "detalle": b} for t, a, b in s]
 
 
@@ -114,15 +120,15 @@ def _combo(r):
 
 
 def _entrada(c, ficha, combos, rot, rot_nivel, ctx, desde):
-    unidad = ficha.get("unidad", "Tonelada")
-    u_rend = "t/ha" if unidad == "Tonelada" else f"{unidad}/ha"
-    u_precio = "$/t" if unidad == "Tonelada" else f"$/{unidad}"
+    unidad = ficha.get("unidad", "Ton")  # ya viene traducida en el catálogo
+    u_rend = "t/ha" if unidad == "Ton" else f"{unidad.lower()}/ha"
+    u_precio = "MXN/t" if unidad == "Ton" else f"MXN/{unidad.lower()}"
     sens = sensibilidad_sequia(c["tasa_siniestro_sequia"], c["tasa_siniestro_normal"],
                                c["n_temporadas_sequia"], c["n_temporadas_normales"])
     score, riesgo = riesgo_hidrico(c["pct_riego"], c["cv_rendimiento_temporal"],
                                    (ctx or {}).get("frec_d2"))
     pctl = c["pctl_ingreso"]
-    renta = None if pd.isna(pctl) else ("alta" if pctl >= 0.75 else "baja" if pctl <= 0.25 else "media")
+    renta = None if pd.isna(pctl) else ("high" if pctl >= 0.75 else "low" if pctl <= 0.25 else "medium")
     reparto = {k: _r(c[f"pct_{k}"]) for k in ("OI", "PV", "PER") if c[f"pct_{k}"] > 0}
     principal = max(reparto, key=reparto.get) if reparto else None
 
@@ -162,13 +168,13 @@ def _entrada(c, ficha, combos, rot, rot_nivel, ctx, desde):
         "ciclo_principal": principal,
         "por_ciclo_modalidad": [_combo(r) for r in sorted(combos, key=lambda r: -r["sembrada_prom_ha"])],
         "rotacion": None if principal == "PER" else {
-            "nivel_datos": rot_nivel,
+            "nivel_datos": NIVEL_EN.get(rot_nivel),
             "socios": [{k: s[k] for k in ("socio_id", "socio", "ciclo_socio", "practica", "afinidad",
                                            "fija_nitrogeno", "razones")} for s in rot],
         },
         "etiquetas": _etiquetas(c, ficha, rot, sens, riesgo),
         "situacion_actual": _situacion(c, ctx, desde),
-        "gaez": {"score_idoneidad": None, "brecha_rendimiento": None, "estado": "pendiente"},
+        "gaez": {"score_idoneidad": None, "brecha_rendimiento": None, "estado": "pending"},
     }
 
 
@@ -199,14 +205,14 @@ def exportar(catalogo, por_cult, por_combo, rot, ctx_seq, nombres_geo, desde, ha
                                      r, r_nivel if r else None, ctx, desde))
 
         if nivel == "municipio":
-            ubic = {"nivel": nivel, "clave": clave, "nombre": municipios.get(clave),
+            ubic = {"nivel": NIVEL_EN[nivel], "clave": clave, "nombre": municipios.get(clave),
                     "cve_ent": clave[:2], "estado": estados.get(clave[:2])}
             ruta = salida / "municipios" / f"{clave}.json"
         elif nivel == "estado":
-            ubic = {"nivel": nivel, "clave": clave, "nombre": estados.get(clave)}
+            ubic = {"nivel": NIVEL_EN[nivel], "clave": clave, "nombre": estados.get(clave)}
             ruta = salida / "estados" / f"{clave}.json"
         else:
-            ubic = {"nivel": nivel, "clave": "00", "nombre": "México"}
+            ubic = {"nivel": NIVEL_EN[nivel], "clave": "00", "nombre": "Mexico"}
             ruta = salida / "nacional.json"
 
         sup = float(grupo["sembrada_prom_ha"].sum())

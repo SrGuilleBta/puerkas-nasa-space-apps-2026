@@ -12,7 +12,11 @@ lee la API). Se escribieron para que lo haga Claude, pero valen para una persona
    Se nombran las plagas, enfermedades y malezas, y las prácticas de manejo (umbral, momento,
    control cultural o biológico), pero no el producto ni la dosis: algunos pueden estar
    prohibidos. Las dosis de **fertilizante** sí van (fórmulas N-P-K, kg/ha).
-3. **Español claro para productores.** Frases cortas, sin copiar párrafos enteros.
+3. **Los valores se escriben en inglés** (las llaves del JSON se quedan en español). Frases cortas,
+   sin copiar párrafos enteros. Usa la terminología de
+   [glosario_en.json](../cultivos/glosario_en.json) y los valores fijos de
+   [instrucciones_traduccion.md](../cultivos/instrucciones_traduccion.md) (`modalidad`: `irrigated`/`rainfed`,
+   `tipo_cultivo`: `annual`/`perennial`, `fuente` con el título original y su traducción entre corchetes).
 4. **Páginas:** usar `paginas` de la ficha extraída tal cual.
 5. Todas las fichas llevan `"revisado": false`.
 

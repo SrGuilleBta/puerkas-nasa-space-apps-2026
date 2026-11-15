@@ -1,9 +1,9 @@
 {
-  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/san_luis_potosi.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, made from the text in data/inifap/extraido/san_luis_potosi.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
   "cve_ent": "24",
   "estado": "San Luis Potosí",
   "edicion": 2026,
-  "fuente": "INIFAP. Agenda Técnica Agrícola de San Luis Potosí. INIFAP, Ciudad de México, 2026.",
+  "fuente": "INIFAP. Agenda Técnica Agrícola de San Luis Potosí [Agricultural Technical Agenda of San Luis Potosí]. INIFAP, Mexico City, 2026.",
   "fichas": [
     {
       "ficha": "Alfalfa",
@@ -15,12 +15,12 @@
       "cultivo_ids": [
         "alfalfa-verde"
       ],
-      "tipo_cultivo": "perenne",
-      "modalidad": "riego",
+      "tipo_cultivo": "perennial",
+      "modalidad": "irrigated",
       "ciclo": "PER",
-      "region": "Altiplano Potosino (1,500 a 2,100 m; 14 a 29 °C; 250 a 450 mm de lluvia al año) y Zona Media (900 a 1,500 m; 450 a 600 mm). Necesita suelos profundos, con buen drenaje y bien nivelados.",
+      "region": "Altiplano Potosino (1,500 to 2,100 m; 14 to 29 °C; 250 to 450 mm of rain per year) and Zona Media (900 to 1,500 m; 450 to 600 mm). Needs deep, well-drained, well-leveled soils.",
       "siembra": {
-        "texto": "En los meses de menos calor, de octubre a enero, para evitar la maleza de primavera.",
+        "texto": "In the cooler months, from October to January, to avoid spring weeds.",
         "meses": [
           10,
           11,
@@ -39,32 +39,32 @@
         "Oaxaca"
       ],
       "hibridos_comerciales": [],
-      "densidad": "25 a 30 kg/ha de semilla limpia sin peletizar con al menos 85 % de germinación; 35 kg/ha como mínimo si es peletizada. Tapar a no más de 1.5 cm.",
-      "fertilizacion": "En la siembra, 40 kg de nitrógeno y 80 kg de fósforo por ha al voleo (90 kg de urea o 200 kg de sulfato de amonio; 180 kg de superfosfato triple o 400 kg de superfosfato simple). En alfalfa establecida, solo 80 kg de fósforo cada año. Inocular la semilla con inoculante específico para alfalfa el mismo día de la siembra. Se recomienda análisis de suelo.",
-      "riego": "Primer riego lento después de la siembra para no arrastrar la semilla; el segundo cuando el suelo empiece a orearse. Por gravedad se siembra en melgas (no más de 50 m de largo en suelos arenosos, 120 m en migajón y menos de 150 m en arcillosos). La aspersión es la mejor opción para establecer y producir.",
+      "densidad": "25 to 30 kg/ha of clean, non-pelleted seed with at least 85% germination; at least 35 kg/ha if pelleted. Cover to no more than 1.5 cm.",
+      "fertilizacion": "At planting, 40 kg of nitrogen and 80 kg of phosphorus per ha broadcast (90 kg of urea or 200 kg of ammonium sulfate; 180 kg of triple superphosphate or 400 kg of single superphosphate). In established alfalfa, only 80 kg of phosphorus each year. Inoculate the seed with an alfalfa-specific inoculant on the same day of planting. A soil analysis is recommended.",
+      "riego": "Slow first irrigation after planting so the seed is not washed away; the second when the soil begins to dry at the surface. Under gravity irrigation, plant in borders (no more than 50 m long on sandy soils, 120 m on loam and less than 150 m on clay soils). Sprinkler irrigation is the best option for establishment and production.",
       "plagas": [
-        "Pulgón verde",
-        "Pulgón manchado"
+        "Green aphid",
+        "Spotted alfalfa aphid"
       ],
       "enfermedades": [
-        "Marchitez de la alfalfa (hongo de raíz)",
-        "Pudrición de la raíz",
-        "Peca de la hoja",
-        "Mildiu velloso o cenicilla"
+        "Alfalfa wilt (root fungus)",
+        "Root rot",
+        "Leaf spot",
+        "Downy mildew or powdery mildew"
       ],
-      "malezas": "La maleza aparece en las primeras etapas; sembrando la cantidad de semilla recomendada en los meses indicados hay poca y los cortes la eliminan. Se puede sembrar 30 a 40 kg/ha de avena junto con la alfalfa para frenar la maleza, y quitar a mano o con azadón las más grandes antes del primer corte.",
-      "cosecha": "Primer corte a los 60 a 80 días de la siembra. En primavera, verano y otoño, cortar al inicio de la floración (máximo 10 % de flores), cada 28 a 30 días; en invierno, cuando los rebrotes de la corona midan hasta 5 cm, cada 35 a 38 días. Se esperan unas 110 t de forraje verde al año en 8 a 10 cortes.",
+      "malezas": "Weeds appear in the early stages; when the recommended seeding rate is planted in the indicated months there are few, and the cuttings eliminate them. Oats can be sown at 30 to 40 kg/ha together with the alfalfa to hold back weeds, and the larger weeds removed by hand or with a hoe before the first cutting.",
+      "cosecha": "First cutting 60 to 80 days after planting. In spring, summer and fall, cut at the start of flowering (maximum 10% of flowers), every 28 to 30 days; in winter, when crown regrowth is up to 5 cm, every 35 to 38 days. About 110 t of green forage per year are expected in 8 to 10 cuttings.",
       "cuidados": [
-        "Nivelar bien el terreno (unos 10 cm de pendiente en 100 m) para evitar encharcamientos y enfermedades de la raíz.",
-        "Sembrar de octubre a enero para reducir la invasión de maleza.",
-        "Inocular la semilla y protegerla del sol y el viento al hacerlo.",
-        "Aplicar 80 kg de fósforo por ha cada año en la alfalfa establecida.",
-        "Contra peca de la hoja y mildiu, adelantar un poco el corte; contra pudriciones de raíz, rotar con gramíneas (sorgo) de 3 a 5 años.",
-        "Si se aplica algún insecticida, hacerlo con 15 días de anticipación al corte."
+        "Level the field well (about 10 cm of slope in 100 m) to avoid waterlogging and root diseases.",
+        "Plant from October to January to reduce weed invasion.",
+        "Inoculate the seed and protect it from sun and wind while doing so.",
+        "Apply 80 kg of phosphorus per ha each year in established alfalfa.",
+        "Against leaf spot and downy mildew, cut a little earlier; against root rots, rotate with grasses (sorghum) for 3 to 5 years.",
+        "If any insecticide is applied, do it 15 days before cutting."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 64200,
           "rendimiento": 110,
           "unidad_rendimiento": "t/ha",
@@ -73,11 +73,11 @@
           "relacion_bc": 1.41
         }
       ],
-      "nota": "El extraído marca tipo_cultivo 'multianual 6 a 8 años'; se normalizó a 'perenne'. En el Cuadro 1 el costo total impreso ($64,200) no coincide con la suma de los conceptos ($65,350; la diferencia es justo el control de plagas, $1,150) y el ingreso impreso ($90,640) difiere un poco de 110 t × $830 ($91,300); se conservaron los valores impresos de costo, ganancia y relación B/C, que son coherentes entre sí. Precio en $/t.",
+      "nota": "The extracted text marks tipo_cultivo as 'multi-year, 6 to 8 years'; it was normalized to 'perennial'. In Table 1 the printed total cost ($64,200) does not match the sum of the items ($65,350; the difference is exactly pest control, $1,150) and the printed income ($90,640) differs slightly from 110 t × $830 ($91,300); the printed cost, profit and B/C ratio values were kept, as they are consistent with each other. Price in $/t.",
       "revisado": false
     },
     {
-      "ficha": "Avena",
+      "ficha": "Oats",
       "cientifico": "Avena sativa L.",
       "paginas": [
         19,
@@ -86,12 +86,12 @@
       "cultivo_ids": [
         "avena-forrajera-en-verde"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "temporal",
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
       "ciclo": "PV",
-      "region": "Altiplano Potosino (1,500 a 2,100 m; 14 a 29 °C; 250 a 450 mm al año) y Zona Media (900 a 1,500 m; 450 a 600 mm). En temporal el potencial es mediano a bajo.",
+      "region": "Altiplano Potosino (1,500 to 2,100 m; 14 to 29 °C; 250 to 450 mm per year) and Zona Media (900 to 1,500 m; 450 to 600 mm). Under rainfed conditions the potential is medium to low.",
       "siembra": {
-        "texto": "Del 15 de mayo al 10 de agosto.",
+        "texto": "From May 15 to August 10.",
         "meses": [
           5,
           6,
@@ -107,23 +107,23 @@
         "Chihuahua"
       ],
       "hibridos_comerciales": [],
-      "densidad": "80 a 100 kg de semilla por ha al voleo, tapada con un paso de rastra.",
-      "fertilizacion": "Se recomienda biofertilizar con micorriza (1.5 kg de producto por cada 100 kg de semilla, preparado a la sombra). Para fertilización química, hacer análisis de suelo y pedir la dosis a un agrónomo.",
+      "densidad": "80 to 100 kg of seed per ha broadcast, covered with one pass of the harrow.",
+      "fertilizacion": "Biofertilizing with mycorrhiza is recommended (1.5 kg of product per 100 kg of seed, prepared in the shade). For chemical fertilization, run a soil analysis and ask an agronomist for the dose.",
       "riego": null,
       "plagas": [],
       "enfermedades": [],
-      "malezas": "Controlar la maleza de hoja ancha cuando no pase de 7 cm de altura. En siembras al voleo no se requieren escardas.",
-      "cosecha": "Cortar cuando el grano esté en etapa lechoso-masoso. Se esperan 15 a 16 t/ha de forraje fresco (4 a 5 t/ha de materia seca).",
+      "malezas": "Control broadleaf weeds when they are no taller than 7 cm. Cultivation passes are not required in broadcast plantings.",
+      "cosecha": "Cut when the grain is at the milk-dough stage. Expect 15 to 16 t/ha of fresh forage (4 to 5 t/ha of dry matter).",
       "cuidados": [
-        "Preparar el suelo con barbecho a 30 cm y rastra, o con multiarado (labranza de conservación).",
-        "Sembrar entre el 15 de mayo y el 10 de agosto con 80 a 100 kg de semilla por ha.",
-        "Usar micorriza como biofertilizante y hacer análisis de suelo antes de fertilizar.",
-        "Monitorear el cultivo: no hay plagas ni enfermedades importantes registradas en el estado.",
-        "Cortar en grano lechoso-masoso para forraje."
+        "Prepare the soil by plowing to 30 cm and harrowing, or with a multi-plow (conservation tillage).",
+        "Plant between May 15 and August 10 with 80 to 100 kg of seed per ha.",
+        "Use mycorrhiza as a biofertilizer and run a soil analysis before fertilizing.",
+        "Monitor the crop: no important pests or diseases have been recorded in the state.",
+        "Cut at the milk-dough grain stage for forage."
       ],
       "costos": [
         {
-          "modalidad": "temporal",
+          "modalidad": "rainfed",
           "costo_total_ha": 9700,
           "rendimiento": 15,
           "unidad_rendimiento": "t/ha",
@@ -132,11 +132,11 @@
           "relacion_bc": 1.24
         }
       ],
-      "nota": "La agenda indica que no hay plagas incidentes ni enfermedades importantes registradas para la avena forrajera en San Luis Potosí. Precio en $/t.",
+      "nota": "The agenda states that no incident pests or important diseases are recorded for forage oats in San Luis Potosí. Price in $/t.",
       "revisado": false
     },
     {
-      "ficha": "Chile ancho",
+      "ficha": "Ancho chili pepper",
       "cientifico": "Capsicum annuum L.",
       "paginas": [
         23,
@@ -146,12 +146,12 @@
         "chile-verde",
         "chile-seco"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "riego",
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
       "ciclo": "PV",
-      "region": "Altiplano Potosino, de 1,800 a 2,200 m, con temperatura media de 17.4 °C y unos 350 mm de lluvia al año.",
+      "region": "Altiplano Potosino, from 1,800 to 2,200 m, with a mean temperature of 17.4 °C and about 350 mm of rain per year.",
       "siembra": {
-        "texto": "Trasplante en riego del 1 de abril al 30 de mayo. Con fertirriego, según la zona, del 16 de marzo o 1 de abril al 15-20 de mayo (San Luis Potosí, Catorce, Cedral, Vanegas, Guadalcázar, Villa de Guadalupe, Villa de Arista, Moctezuma, Venado, Bocas, Salinas, Villa de Ramos, Santo Domingo); con híbridos precoces de carga compacta se puede extender hasta el 31 de mayo, 15 o 20 de junio según la zona.",
+        "texto": "Transplanting under irrigation from April 1 to May 30. With fertigation, depending on the zone, from March 16 or April 1 to May 15-20 (San Luis Potosí, Catorce, Cedral, Vanegas, Guadalcázar, Villa de Guadalupe, Villa de Arista, Moctezuma, Venado, Bocas, Salinas, Villa de Ramos, Santo Domingo); with early compact-load hybrids it can be extended to May 31, June 15 or 20 depending on the zone.",
         "meses": [
           3,
           4,
@@ -167,35 +167,35 @@
         "AP-VR (ancho poblano, INIFAP)"
       ],
       "hibridos_comerciales": [],
-      "densidad": "37,037 plantas por ha: 0.30 m entre plantas y 0.90 m entre surcos, con acolchado plástico blanco/negro y cintilla con goteros cada 0.30 m.",
-      "fertilizacion": "Fertirriego con 180-90-00 (600 kg/ha de fosfonitrato y 85 kg/ha de ácido fosfórico). Solución nutritiva por etapa: N de 60 a 140 ppm, P 50, K de 100 a 170, Ca de 100 a 170 y Mg de 40 a 50 ppm, del trasplante al final del ciclo. Mantener pH de 5.5 a 6.5 (el agua de la región suele requerir acidificar) y CE de 0.7 al inicio hasta 1.8 desde el 5º piso de frutos. Muestreo foliar desde floración.",
-      "riego": "Por goteo, buscando 10 a 15 % de lixiviado. Con tensiómetro a 30 cm: regar a 20-30 cb los primeros 25 días, a 15-25 cb los siguientes 20 días y a 10 cb después de los 65 días. Poner tres tensiómetros por estación a 15, 30 y 45 cm.",
+      "densidad": "37,037 plants per ha: 0.30 m between plants and 0.90 m between rows, with white/black plastic mulch and drip tape with emitters every 0.30 m.",
+      "fertilizacion": "Fertigation with 180-90-00 (600 kg/ha of phosphonitrate and 85 kg/ha of phosphoric acid). Nutrient solution by stage: N from 60 to 140 ppm, P 50, K from 100 to 170, Ca from 100 to 170 and Mg from 40 to 50 ppm, from transplanting to the end of the cycle. Keep pH between 5.5 and 6.5 (the region's water usually needs acidifying) and EC from 0.7 at the start to 1.8 from the 5th tier of fruits. Leaf sampling from flowering.",
+      "riego": "By drip, aiming for 10 to 15% leachate. With a tensiometer at 30 cm: irrigate at 20-30 cb for the first 25 days, at 15-25 cb for the next 20 days and at 10 cb after 65 days. Place three tensiometers per station at 15, 30 and 45 cm.",
       "plagas": [
-        "Mosca blanca (Trialeurodes vaporariorum)",
-        "Pulgón verde (Myzus persicae)",
-        "Minador de la hoja (Liriomyza spp.)",
-        "Insectos vectores de virus",
-        "Barrenillo del chile",
-        "Paratrioza",
-        "Ácaros",
-        "Gusanos"
+        "Whitefly (Trialeurodes vaporariorum)",
+        "Green peach aphid (Myzus persicae)",
+        "Leafminer (Liriomyza spp.)",
+        "Virus-vector insects",
+        "Pepper weevil",
+        "Potato psyllid",
+        "Mites",
+        "Worms"
       ],
       "enfermedades": [
-        "Marchitez del chile"
+        "Pepper wilt"
       ],
-      "malezas": "Escardas en el fondo de los surcos durante el ciclo y deshierbe manual en los orificios del acolchado.",
-      "cosecha": "Para fresco se corta verde en estado 'sazón', cada 14 a 21 días; para secado, cuando los frutos cambian a rojo o café. La cosecha se reparte de agosto a noviembre. En malla sombra se esperan 6.5 kg/m² de chile verde con variedades y 8 kg/m² con híbridos comerciales.",
+      "malezas": "Cultivation passes in the furrow bottoms during the cycle and hand weeding in the mulch holes.",
+      "cosecha": "For fresh market it is cut green at the 'sazón' (mature green) stage, every 14 to 21 days; for drying, when the fruits turn red or brown. Harvest is spread from August to November. Under shade net, 6.5 kg/m² of green chili are expected with varieties and 8 kg/m² with commercial hybrids.",
       "cuidados": [
-        "Monitorear plagas dos veces por semana con trampas adhesivas amarillas y azules, y mantener cerradas las puertas de la malla sombra.",
-        "Rotar los insecticidas autorizados para evitar resistencia y preferir los de bajo impacto a la salud.",
-        "Desinfectar tijeras, navajas, calzado y manos al podar y cosechar; no dejar entrar a personas de campos hortícolas a cielo abierto.",
-        "Regar según tensiómetros y mantener el pH de la solución entre 5.5 y 6.5.",
-        "Entutorar con malla o estacas y rafia, y quitar brotes laterales al inicio del cultivo.",
-        "Usar abejorros para polinizar; si pasa de 30 °C, complementar con sopladores o moviendo las plantas."
+        "Monitor pests twice a week with yellow and blue sticky traps, and keep the shade-net doors closed.",
+        "Rotate the authorized insecticides to avoid resistance and prefer those with low health impact.",
+        "Disinfect scissors, knives, footwear and hands when pruning and harvesting; do not let in people from open-field vegetable farms.",
+        "Irrigate according to the tensiometers and keep the solution pH between 5.5 and 6.5.",
+        "Stake with netting or stakes and raffia, and remove side shoots at the start of the crop.",
+        "Use bumblebees for pollination; if the temperature exceeds 30 °C, supplement with blowers or by shaking the plants."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 147645,
           "rendimiento": 40,
           "unidad_rendimiento": "t/ha",
@@ -204,7 +204,7 @@
           "relacion_bc": 1.76
         },
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 190395,
           "rendimiento": 30,
           "unidad_rendimiento": "t/ha",
@@ -213,11 +213,11 @@
           "relacion_bc": 2.36
         }
       ],
-      "nota": "Se corrigió el nombre científico (el extraído dice 'Capsicum annum'). El primer costo es el Cuadro 5 (chile ancho, riego) y el segundo el Cuadro 6 (chile con fertirriego). Cuadro 5: el costo impreso ($147,645) no cuadra con la suma de conceptos (subtotales suman $153,895 y el de preparación del terreno no coincide con sus partidas), y el renglón de valor de la producción ('30 × 15,000 = 260,000') no es coherente con el rendimiento de 40 t, por eso precio en null; se conservaron costo, utilidad y B/C impresos, coherentes entre sí. Cuadro 6: los subtotales suman $189,895 contra $190,395 impresos; se conservó el impreso. Precio en $/t. La agenda enlista además materiales de otros tipos de chile (serrano, jalapeño, ancho, morrón, habanero, caloro, húngaro) sin indicar su origen; para chile ancho: Corcel, Caballero, Don Emilio, Don Matías, Doroteo, Vencedor, San Matías, Duque, Don Javier, Fortuna, Allende y Monarca. No se clasificaron como comerciales porque el texto no lo dice.",
+      "nota": "The scientific name was corrected (the extracted text says 'Capsicum annum'). The first cost is Table 5 (ancho chili, irrigated) and the second is Table 6 (chili with fertigation). Table 5: the printed cost ($147,645) does not match the sum of the items (subtotals add up to $153,895 and the land preparation subtotal does not match its line items), and the production value line ('30 × 15,000 = 260,000') is not consistent with the 40 t yield, so price is null; the printed cost, profit and B/C were kept, as they are consistent with each other. Table 6: the subtotals add up to $189,895 versus $190,395 printed; the printed one was kept. Price in $/t. The agenda also lists materials for other chili types (serrano, jalapeño, ancho, bell pepper, habanero, caloro, Hungarian) without stating their origin; for ancho chili: Corcel, Caballero, Don Emilio, Don Matías, Doroteo, Vencedor, San Matías, Duque, Don Javier, Fortuna, Allende and Monarca. They were not classified as commercial because the text does not say so.",
       "revisado": false
     },
     {
-      "ficha": "Frijol",
+      "ficha": "Common bean",
       "cientifico": "Phaseolus vulgaris L.",
       "paginas": [
         36,
@@ -226,12 +226,12 @@
       "cultivo_ids": [
         "frijol"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "temporal",
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
       "ciclo": "PV",
-      "region": "Altiplano Potosino, de 1,400 a 2,100 m, 14 a 29 °C y 250 a 400 mm de lluvia de junio a noviembre. Potencial bajo; limitan la falta de humedad, las plagas y las enfermedades.",
+      "region": "Altiplano Potosino, from 1,400 to 2,100 m, 14 to 29 °C and 250 to 400 mm of rain from June to November. Low potential; limited by lack of moisture, pests and diseases.",
       "siembra": {
-        "texto": "Del 15 de mayo al 30 de junio (la agenda dice '31 de junio').",
+        "texto": "From May 15 to June 30 (the agenda says 'June 31').",
         "meses": [
           5,
           6
@@ -244,29 +244,29 @@
         "Centauro"
       ],
       "hibridos_comerciales": [],
-      "densidad": "125,000 plantas por ha (10 plantas por metro), surcos de 76 a 80 cm, con sembradora de labranza cero.",
-      "fertilizacion": "Fórmula 40-40-00, todo al momento de la siembra, con 18-46-00 y sulfato de amonio. Inocular la semilla con 1.0 kg/ha de micorriza.",
+      "densidad": "125,000 plants per ha (10 plants per meter), rows of 76 to 80 cm, with a no-till planter.",
+      "fertilizacion": "Formula 40-40-00, all at planting, with 18-46-00 and ammonium sulfate. Inoculate the seed with 1.0 kg/ha of mycorrhiza.",
       "riego": null,
       "plagas": [
-        "Conchuela"
+        "Mexican bean beetle (conchuela)"
       ],
       "enfermedades": [
-        "Roya (Uromyces phaseoli)",
-        "Cenicilla (Erysiphe polygoni)"
+        "Rust (Uromyces phaseoli)",
+        "Powdery mildew (Erysiphe polygoni)"
       ],
-      "malezas": "Dos escardas en los primeros 40 días, con deshierbe manual si hace falta. En la segunda escarda hacer pileteo para retener el agua de lluvia.",
-      "cosecha": "Cuando el grano tenga 12 a 14 % de humedad. Dejar enfriar el grano a temperatura ambiente antes de envasar y guardarlo en un almacén fresco, ventilado y seco. Rendimiento esperado de 0.750 t/ha.",
+      "malezas": "Two cultivation passes in the first 40 days, with hand weeding if needed. At the second pass, make small basins to retain rainwater.",
+      "cosecha": "When the grain has 12 to 14% moisture. Let the grain cool to room temperature before packing and store it in a cool, ventilated, dry warehouse. Expected yield of 0.750 t/ha.",
       "cuidados": [
-        "Preparar con multiarado y uno o dos pasos de rastra.",
-        "Sembrar del 15 de mayo al 30 de junio con variedades adaptadas al Altiplano (Pinto Saltillo, Centenario, Libertad, Centauro).",
-        "Aplicar toda la fórmula 40-40-00 en la siembra e inocular con micorriza.",
-        "Hacer dos escardas en los primeros 40 días y pileteo en la segunda.",
-        "Las variedades recomendadas toleran las enfermedades; vigilar roya, cenicilla y conchuela.",
-        "Cosechar con 12 a 14 % de humedad y almacenar en lugar fresco y seco."
+        "Prepare the soil with a multi-plow and one or two passes of the harrow.",
+        "Plant from May 15 to June 30 with varieties adapted to the Altiplano (Pinto Saltillo, Centenario, Libertad, Centauro).",
+        "Apply the entire 40-40-00 formula at planting and inoculate with mycorrhiza.",
+        "Make two cultivation passes in the first 40 days and basins at the second.",
+        "The recommended varieties tolerate the diseases; watch for rust, powdery mildew and stink bug.",
+        "Harvest at 12 to 14% moisture and store in a cool, dry place."
       ],
       "costos": [
         {
-          "modalidad": "temporal",
+          "modalidad": "rainfed",
           "costo_total_ha": 9054.5,
           "rendimiento": 0.75,
           "unidad_rendimiento": "t/ha",
@@ -275,11 +275,11 @@
           "relacion_bc": 1.66
         }
       ],
-      "nota": "El Cuadro 7 no imprime la ganancia; el ingreso neto se calculó como valor de la producción ($15,000) menos costo ($9,054.5), coherente con la relación B/C de 1.66. Precio en $/t. La fecha de siembra impresa termina el '31 de junio' (error de la agenda); se interpretó como fin de junio.",
+      "nota": "Table 7 does not print the profit; net income was calculated as production value ($15,000) minus cost ($9,054.5), consistent with the B/C ratio of 1.66. Price in $/t. The printed planting date ends on 'June 31' (an error in the agenda); it was interpreted as the end of June.",
       "revisado": false
     },
     {
-      "ficha": "Maíz",
+      "ficha": "Maize",
       "cientifico": "Zea mays L.",
       "paginas": [
         40,
@@ -288,12 +288,12 @@
       "cultivo_ids": [
         "maiz-grano"
       ],
-      "tipo_cultivo": "anual",
+      "tipo_cultivo": "annual",
       "modalidad": null,
       "ciclo": "PV",
-      "region": "Altiplano Potosino (1,400 a 2,100 m; 11.3 a 28.1 °C; 250 a 400 mm de junio a noviembre), con potencial medio a bajo por lluvia escasa y mal distribuida y suelos someros. Con fertirriego, Altiplano y Zona Media (900 a 2,100 m) con potencial alto.",
+      "region": "Altiplano Potosino (1,400 to 2,100 m; 11.3 to 28.1 °C; 250 to 400 mm from June to November), with medium to low potential because of scarce, poorly distributed rain and shallow soils. With fertigation, Altiplano and Zona Media (900 to 2,100 m) with high potential.",
       "siembra": {
-        "texto": "Del 15 de abril al 15 de junio.",
+        "texto": "From April 15 to June 15.",
         "meses": [
           4,
           5,
@@ -307,8 +307,8 @@
         "H-311",
         "H-358",
         "HV-313",
-        "Cafime (temporal)",
-        "VS-209 (temporal)"
+        "Cafime (rainfed)",
+        "VS-209 (rainfed)"
       ],
       "hibridos_comerciales": [
         "DEKALB 2031",
@@ -317,39 +317,39 @@
         "ASGROW JABALI",
         "ASGROW PUMA",
         "ASGROW CIMARRON",
-        "ASGROW TIGRE AMARILLO (amarillo)",
-        "ASGROW GUEPARDO (amarillo)",
+        "ASGROW TIGRE AMARILLO (yellow)",
+        "ASGROW GUEPARDO (yellow)",
         "PIONEER 9620",
         "PIONEER CRM52",
-        "PIONEER 9617 (amarillo)",
+        "PIONEER 9617 (yellow)",
         "CERES XR45",
-        "CERES XR20A (amarillo)"
+        "CERES XR20A (yellow)"
       ],
-      "densidad": "25 a 30 kg/ha de semilla en surcos a 0.80 m, para 50,000 a 60,000 plantas por ha. Con fertirriego, 100,000 plantas por ha.",
-      "fertilizacion": "Riego: 160-60-00 (348 kg de urea y 130 kg de superfosfato triple por ha), con la mitad del nitrógeno y todo el fósforo en la siembra y el resto en la segunda escarda. Temporal: 60-20-00 (130 kg de urea y 44 kg de superfosfato triple) solo si se espera buen temporal, repartida igual; se recomienda inocular con 0.5 kg/ha de micorriza. Fertirriego: 300-100-100 por goteo con Venturi, tres veces por semana.",
-      "riego": "Un riego de presiembra y cuatro de auxilio: en la primera escarda, en la segunda escarda, en prefloración y en floración.",
+      "densidad": "25 to 30 kg/ha of seed in rows at 0.80 m, for 50,000 to 60,000 plants per ha. With fertigation, 100,000 plants per ha.",
+      "fertilizacion": "Irrigated: 160-60-00 (348 kg of urea and 130 kg of triple superphosphate per ha), with half of the nitrogen and all of the phosphorus at planting and the rest at the second cultivation pass. Rainfed: 60-20-00 (130 kg of urea and 44 kg of triple superphosphate) only if good rainfall is expected, split the same way; inoculating with 0.5 kg/ha of mycorrhiza is recommended. Fertigation: 300-100-100 by drip with a Venturi injector, three times per week.",
+      "riego": "One pre-planting irrigation and four supplemental irrigations: at the first cultivation pass, at the second cultivation pass, at pre-flowering and at flowering.",
       "plagas": [
-        "Gusano cogollero (Spodoptera frugiperda)",
-        "Picudo del cogollo (Nicentrites testaceipes y Geraeus senilis)"
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Whorl weevil (Nicentrites testaceipes and Geraeus senilis)"
       ],
       "enfermedades": [
-        "Roya o chahuixtle (Puccinia sorghi, Puccinia polysora)",
-        "Carbón común o huitlacoche",
-        "Mildiu"
+        "Rust (Puccinia sorghi, Puccinia polysora)",
+        "Common smut or huitlacoche",
+        "Downy mildew"
       ],
-      "malezas": "Mantener el cultivo limpio al menos los primeros 40 días; dos escardas en ese periodo y deshierbe. Los herbicidas deben ser los autorizados por SENASICA.",
-      "cosecha": "Cuando el grano tenga 15 a 17 % de humedad; secar unos tres días al sol tapando con plástico por la noche. Rendimiento esperado: riego 8 t/ha de grano y 5 t de rastrojo; temporal 2.5 a 3.5 t de grano y 1 a 2 t de rastrojo.",
+      "malezas": "Keep the crop clean for at least the first 40 days; two cultivation passes in that period and weeding. Herbicides must be those authorized by SENASICA.",
+      "cosecha": "When the grain has 15 to 17% moisture; dry for about three days in the sun, covering with plastic at night. Expected yield: irrigated 8 t/ha of grain and 5 t of stover; rainfed 2.5 to 3.5 t of grain and 1 to 2 t of stover.",
       "cuidados": [
-        "En terrenos con 8 a 10 % de pendiente, levantar bordos en curvas a nivel para contener el escurrimiento.",
-        "Sembrar del 15 de abril al 15 de junio con 25 a 30 kg/ha de semilla.",
-        "En temporal, fertilizar solo si se espera buen temporal; si no, no fertilizar.",
-        "Dar el riego de presiembra y los cuatro de auxilio, sin faltar en prefloración y floración.",
-        "Usar híbridos tolerantes a roya y mildiu y controlar plagas según el porcentaje de infestación.",
-        "Secar el grano al sol y protegerlo de la humedad antes de almacenar."
+        "On land with 8 to 10% slope, build contour bunds to contain runoff.",
+        "Plant from April 15 to June 15 with 25 to 30 kg/ha of seed.",
+        "Under rainfed conditions, fertilize only if good rainfall is expected; otherwise do not fertilize.",
+        "Give the pre-planting irrigation and the four supplemental irrigations, without missing pre-flowering and flowering.",
+        "Use hybrids tolerant to rust and downy mildew and control pests according to the infestation percentage.",
+        "Dry the grain in the sun and protect it from moisture before storing."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 50150,
           "rendimiento": 8,
           "unidad_rendimiento": "t/ha",
@@ -358,7 +358,7 @@
           "relacion_bc": 1.27
         },
         {
-          "modalidad": "temporal",
+          "modalidad": "rainfed",
           "costo_total_ha": 17010,
           "rendimiento": 3,
           "unidad_rendimiento": "t/ha",
@@ -367,11 +367,11 @@
           "relacion_bc": 1.41
         }
       ],
-      "nota": "La ficha cubre maíz grano de riego, temporal y fertirriego (modalidad null). Precio en $/t de grano; los ingresos incluyen además el rastrojo (riego 5 t a $1,500; temporal 2 t a $1,500). Cuadro 9: los subtotales suman $51,950 contra $50,150 impresos; se conservó el impreso, coherente con la utilidad y la B/C. Cuadro 10: la etiqueta de la B/C copia la del Cuadro 9 ($63,500/$50,150), pero el valor 1.41 sí corresponde a $24,000/$17,010. Los híbridos H-323, H-376, H-311, H-358 y HV-313 se listaron como variedades públicas por su nomenclatura; el texto solo identifica explícitamente como INIFAP al H-377E.",
+      "nota": "The record covers grain maize under irrigation, rainfed and fertigation (modalidad null). Price in $/t of grain; income also includes the stover (irrigated 5 t at $1,500; rainfed 2 t at $1,500). Table 9: the subtotals add up to $51,950 versus $50,150 printed; the printed one was kept, as it is consistent with the profit and the B/C. Table 10: the B/C label copies that of Table 9 ($63,500/$50,150), but the value 1.41 does correspond to $24,000/$17,010. The hybrids H-323, H-376, H-311, H-358 and HV-313 were listed as public varieties because of their nomenclature; the text explicitly identifies only H-377E as INIFAP.",
       "revisado": false
     },
     {
-      "ficha": "Maíz elotero",
+      "ficha": "Sweet corn",
       "cientifico": "Zea mays L.",
       "paginas": [
         47,
@@ -380,12 +380,12 @@
       "cultivo_ids": [
         "elote"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "riego",
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
       "ciclo": "PV",
-      "region": "Zona Media (Rioverde, Ciudad Fernández, San Ciro, Cerritos y Villa Juárez), de 900 a 1,100 m, 21.3 °C de media y unos 500 mm de lluvia de junio a noviembre. Potencial alto; limitan plagas y enfermedades.",
+      "region": "Zona Media (Rioverde, Ciudad Fernández, San Ciro, Cerritos and Villa Juárez), from 900 to 1,100 m, 21.3 °C mean and about 500 mm of rain from June to November. High potential; limited by pests and diseases.",
       "siembra": {
-        "texto": "Del 15 de marzo al 30 de abril.",
+        "texto": "From March 15 to April 30.",
         "meses": [
           3,
           4
@@ -409,30 +409,30 @@
         "CERES XR45",
         "PIONEER CRM52"
       ],
-      "densidad": "25 a 30 kg/ha de semilla en surcos de 0.80 a 0.92 m, para 50,000 a 60,000 plantas por ha.",
-      "fertilizacion": "Fórmula 160-60-00 (348 kg de urea y 130 kg de superfosfato triple por ha): mitad del nitrógeno y todo el fósforo en la siembra, y el resto en la segunda escarda.",
-      "riego": "Un riego de presiembra y cuatro de auxilio: en la primera escarda, en la segunda escarda, en prefloración y en floración.",
+      "densidad": "25 to 30 kg/ha of seed in rows of 0.80 to 0.92 m, for 50,000 to 60,000 plants per ha.",
+      "fertilizacion": "Formula 160-60-00 (348 kg of urea and 130 kg of triple superphosphate per ha): half of the nitrogen and all of the phosphorus at planting, and the rest at the second cultivation pass.",
+      "riego": "One pre-planting irrigation and four supplemental irrigations: at the first cultivation pass, at the second cultivation pass, at pre-flowering and at flowering.",
       "plagas": [
-        "Gusano cogollero (Spodoptera frugiperda)",
-        "Picudo del cogollo (Nicentrites testaceipes y Geraeus senilis)"
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Whorl weevil (Nicentrites testaceipes and Geraeus senilis)"
       ],
       "enfermedades": [
-        "Roya o chahuixtle (Puccinia sorghi, Puccinia polysora)",
-        "Carbón común o huitlacoche",
-        "Mildiu"
+        "Rust (Puccinia sorghi, Puccinia polysora)",
+        "Common smut or huitlacoche",
+        "Downy mildew"
       ],
-      "malezas": "Mantener el cultivo limpio al menos los primeros 40 días, con dos escardas y deshierbe. Los herbicidas deben ser los autorizados por SENASICA.",
-      "cosecha": "Cuando el grano está masoso; vender de inmediato porque es muy perecedero. Se esperan 16 a 18 t/ha de elote y 25 t/ha de forraje verde para ensilar.",
+      "malezas": "Keep the crop clean for at least the first 40 days, with two cultivation passes and weeding. Herbicides must be those authorized by SENASICA.",
+      "cosecha": "When the grain is at the dough stage; sell immediately because it is highly perishable. Expect 16 to 18 t/ha of fresh ears and 25 t/ha of green forage for silage.",
       "cuidados": [
-        "Sembrar del 15 de marzo al 30 de abril.",
-        "Aplicar la mitad del nitrógeno y todo el fósforo en la siembra y el resto en la segunda escarda.",
-        "No dejar faltar los riegos de prefloración y floración.",
-        "Usar híbridos tolerantes a roya y mildiu.",
-        "Comercializar el elote en cuanto se cosecha y aprovechar el forraje para ensilar."
+        "Plant from March 15 to April 30.",
+        "Apply half of the nitrogen and all of the phosphorus at planting and the rest at the second cultivation pass.",
+        "Do not skip the pre-flowering and flowering irrigations.",
+        "Use hybrids tolerant to rust and downy mildew.",
+        "Market the fresh ears as soon as they are harvested and use the forage for silage."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 52650,
           "rendimiento": 18,
           "unidad_rendimiento": "t/ha",
@@ -441,7 +441,7 @@
           "relacion_bc": 2.18
         }
       ],
-      "nota": "Precio en $/t de elote; el ingreso del Cuadro 11 incluye además 25 t de forraje a $1,000/t. La etiqueta de la B/C dice '$115,000/$51,950', pero el valor 2.18 corresponde a $115,000/$52,650, que es el costo que suman los conceptos. Las variedades se dividieron entre públicas y comerciales por su nombre; el texto solo identifica como INIFAP al H-377E, y A-7573, SB-308, KS E-103 y Elotero 15-MG se listaron como comerciales sin que el texto nombre la empresa.",
+      "nota": "Price in $/t of fresh ears; the income in Table 11 also includes 25 t of forage at $1,000/t. The B/C label says '$115,000/$51,950', but the value 2.18 corresponds to $115,000/$52,650, which is the cost that the items add up to. The varieties were split between public and commercial by name; the text identifies only H-377E as INIFAP, and A-7573, SB-308, KS E-103 and Elotero 15-MG were listed as commercial although the text does not name the company.",
       "revisado": false
     }
   ]
