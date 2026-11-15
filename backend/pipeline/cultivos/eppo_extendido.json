@@ -37,17 +37,17 @@
  "tokens": [
   {
    "token": "maiz",
-   "eppocode": "ZEAMS",
+   "eppocode": "ZEAMX",
    "cientifico": "Zea mays"
   },
   {
    "token": "elote",
-   "eppocode": "ZEAMS",
+   "eppocode": "ZEAMX",
    "cientifico": "Zea mays"
   },
   {
    "token": "trigo",
-   "eppocode": "TRZSP",
+   "eppocode": "TRZAX",
    "cientifico": "Triticum aestivum"
   },
   {

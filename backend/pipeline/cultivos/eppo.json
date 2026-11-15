@@ -1,8 +1,8 @@
 {
-  "_nota": "Códigos EPPO (EPPO Global Database, gd.eppo.int) por especie. El catálogo asigna el código al cultivo SIAP cuyo nombre, sin acentos y en minúsculas, contiene como palabra completa alguno de los 'nombres' y no contiene ninguno de los 'excluir'. Así 'Semilla de maíz grano', 'Elote' y 'Maíz forrajero en verde' reciben ZEAMS, pero 'Tomate verde' no recibe LYPES. Si un cultivo no coincide con ninguna regla, eppocode queda en null.",
+  "_nota": "Códigos EPPO (EPPO Global Database, gd.eppo.int) por especie. El catálogo asigna el código al cultivo SIAP cuyo nombre, sin acentos y en minúsculas, contiene como palabra completa alguno de los 'nombres' y no contiene ninguno de los 'excluir'. Así 'Semilla de maíz grano', 'Elote' y 'Maíz forrajero en verde' reciben ZEAMX, pero 'Tomate verde' no recibe LYPES. Si un cultivo no coincide con ninguna regla, eppocode queda en null.",
   "codigos": [
-    {"eppocode": "ZEAMS", "cultivo": "Maíz", "cientifico": "Zea mays", "nombres": ["maiz", "elote"]},
-    {"eppocode": "TRZSP", "cultivo": "Trigo", "cientifico": "Triticum aestivum", "nombres": ["trigo"]},
+    {"eppocode": "ZEAMX", "cultivo": "Maíz", "cientifico": "Zea mays", "nombres": ["maiz", "elote"]},
+    {"eppocode": "TRZAX", "cultivo": "Trigo", "cientifico": "Triticum aestivum", "nombres": ["trigo"]},
     {"eppocode": "SORVU", "cultivo": "Sorgo", "cientifico": "Sorghum bicolor", "nombres": ["sorgo"]},
     {"eppocode": "ORYSA", "cultivo": "Arroz", "cientifico": "Oryza sativa", "nombres": ["arroz"]},
     {"eppocode": "HORVX", "cultivo": "Cebada", "cientifico": "Hordeum vulgare", "nombres": ["cebada"]},

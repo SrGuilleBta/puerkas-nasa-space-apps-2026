@@ -224,7 +224,7 @@ Se asignan en `catalogo.py` en este orden:
 
 1. **Reglas por nombre** ([eppo.json](../backend/pipeline/cultivos/eppo.json)): un cultivo SIAP recibe el
    código si su nombre contiene, como palabra completa, alguno de los `nombres` de la regla y ninguno de
-   los `excluir`. Así "Semilla de maíz grano", "Elote" y "Maíz forrajero en verde" reciben `ZEAMS`, pero
+   los `excluir`. Así "Semilla de maíz grano", "Elote" y "Maíz forrajero en verde" reciben `ZEAMX`, pero
    "Tomate verde" no recibe el del jitomate.
 2. **Respaldo por palabras del id** ([eppo_extendido.json](../backend/pipeline/cultivos/eppo_extendido.json),
    del script `asignar-eppo-code.py`): primero excepciones por id exacto (`te-limon`, `tomate-verde`…) o por
