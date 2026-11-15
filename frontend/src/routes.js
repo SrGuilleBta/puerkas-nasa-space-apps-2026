@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 export const SECCIONES = [
   { id: "principal", nombre: "Principal", hash: "#/" },
   { id: "clima", nombre: "Clima", hash: "#/clima" },
+  { id: "suelo", nombre: "Suelo", hash: "#/suelo" },
   { id: "mercado", nombre: "Mercado", hash: "#/mercado" },
   { id: "cultivos", nombre: "Cultivos", hash: "#/cultivos" },
   { id: "planificador", nombre: "Planificador", hash: "#/planificador" },

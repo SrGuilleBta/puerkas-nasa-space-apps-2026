@@ -3,11 +3,42 @@ import { SECCIONES } from "../routes.js";
 import { Brote, Cerrar, Menu } from "./Iconos.jsx";
 import "./Layout.css";
 
+// El agricultor elige su ESTADO; los datos de todas las pantallas son por estado. Se conserva el
+// nombre MUNICIPIOS para no cambiar el código que ya lo usa. Debe coincidir con
+// backend/app/services/municipios.py.
 export const MUNICIPIOS = [
-  "Monterrey, NL",
-  "Saltillo, COAH",
-  "Culiacán, SIN",
-  "Mérida, YUC",
+  "Aguascalientes",
+  "Baja California",
+  "Baja California Sur",
+  "Campeche",
+  "Chiapas",
+  "Chihuahua",
+  "Ciudad de México",
+  "Coahuila",
+  "Colima",
+  "Durango",
+  "Estado de México",
+  "Guanajuato",
+  "Guerrero",
+  "Hidalgo",
+  "Jalisco",
+  "Michoacán",
+  "Morelos",
+  "Nayarit",
+  "Nuevo León",
+  "Oaxaca",
+  "Puebla",
+  "Querétaro",
+  "Quintana Roo",
+  "San Luis Potosí",
+  "Sinaloa",
+  "Sonora",
+  "Tabasco",
+  "Tamaulipas",
+  "Tlaxcala",
+  "Veracruz",
+  "Yucatán",
+  "Zacatecas",
 ];
 
 export default function Layout({ seccion, municipio, onMunicipio, parcela, children }) {
@@ -44,7 +75,7 @@ export default function Layout({ seccion, municipio, onMunicipio, parcela, child
         </div>
 
         <label className="layout__municipio">
-          <span className="sr-only">Municipio</span>
+          <span className="sr-only">Estado</span>
           <select value={municipio} onChange={(e) => onMunicipio(e.target.value)}>
             {MUNICIPIOS.map((m) => (
               <option key={m}>{m}</option>

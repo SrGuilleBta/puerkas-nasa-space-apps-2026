@@ -4,6 +4,7 @@ import EnConstruccion from "./components/EnConstruccion.jsx";
 import Layout, { MUNICIPIOS } from "./components/Layout.jsx";
 import useDatos from "./hooks/useDatos.js";
 import Principal from "./pages/Principal/Principal.jsx";
+import Suelo from "./pages/Suelo/Suelo.jsx";
 import { useSeccion } from "./routes.js";
 
 const SIN_PARCELA = { nombre: "—", hectareas: "—" };
@@ -41,6 +42,8 @@ export default function App() {
     >
       {seccion.id === "principal" ? (
         <Principal municipio={municipio} />
+      ) : seccion.id === "suelo" ? (
+        <Suelo municipio={municipio} />
       ) : (
         <EnConstruccion nombre={seccion.nombre} />
       )}

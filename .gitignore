@@ -8,3 +8,9 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+
+# Descargas grandes del módulo Suelo (se bajan solas la primera vez)
+backend/data/srtm/
+backend/data/grace/
+backend/data/suelo/smap/
+backend/data/suelo/modis/
