@@ -80,6 +80,16 @@ def _buscar(clave: str, cultivo: str):
     return datos, None
 
 
+def indicadores_de(cultivo: str, claves: list[str]) -> tuple[dict | None, dict | None]:
+    """Indicadores de SIAP de un cultivo (precio, rendimiento, rentabilidad...) en la primera ubicación
+    de `claves` donde se siembra, junto con el descriptor de esa ubicación. (None, None) si en ninguna."""
+    for clave in claves:
+        datos, ind = _buscar(clave, cultivo)
+        if ind is not None:
+            return ind, datos["ubicacion"]
+    return None, None
+
+
 def viabilidad(clave: str, cultivo: str) -> dict:
     """Ficha completa de un cultivo en una ubicación.
 

@@ -1,7 +1,7 @@
 import Tarjeta, { EncabezadoTarjeta } from "../../components/Tarjeta.jsx";
 import { Flecha, Gota, Lluvia, Nube, Sol, Suelo, Viento } from "../../components/Iconos.jsx";
 import { hashDe } from "../../routes.js";
-import { etiquetaDia, mismoDia, semanaDe } from "../../utils/fechas.js";
+import { deISO, etiquetaDia, mismoDia } from "../../utils/fechas.js";
 
 const ICONO_CIELO = { sol: Sol, nube: Nube, lluvia: Lluvia };
 
@@ -40,26 +40,36 @@ function Medida({ icono: Icono, etiqueta, valor }) {
   );
 }
 
-export default function PronosticoSemanal({ pronostico, hoy, esEjemplo }) {
+export default function PronosticoSemanal({ pronostico, hoy, fuente }) {
+  // El primer día es hoy: si llegara algún día anterior (respuesta vieja), se descarta. Los datos de
+  // ejemplo no traen fecha: se cuentan desde hoy.
   const ahora = new Date();
-  const dias = semanaDe(ahora);
+  const inicioHoy = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate());
+  const dias = pronostico
+    .map((d, i) => {
+      if (d.fecha) return { fecha: deISO(d.fecha), dato: d };
+      const f = new Date(inicioHoy);
+      f.setDate(f.getDate() + i);
+      return { fecha: f, dato: d };
+    })
+    .filter((x) => x.fecha >= inicioHoy);
   const IconoHoy = ICONO_CIELO[hoy.icono] ?? Sol;
 
   return (
     <Tarjeta>
       <EncabezadoTarjeta
-        etiqueta="Weekly forecast"
+        etiqueta="7-day forecast"
         titulo="Weather in your region"
         derecha={
           <span className="insignia">
-            <i /> {esEjemplo ? "SAMPLE DATA" : "LIVE DATA"}
+            <i /> LIVE DATA{fuente ? ` · ${fuente}` : ""}
           </span>
         }
       />
 
       <ol className="dias">
-        {dias.map((fecha, i) => (
-          <Dia key={fecha.toISOString()} fecha={fecha} dato={pronostico[i]} esHoy={mismoDia(fecha, ahora)} />
+        {dias.map(({ fecha, dato }) => (
+          <Dia key={fecha.toISOString()} fecha={fecha} dato={dato} esHoy={mismoDia(fecha, ahora)} />
         ))}
       </ol>
 

@@ -3,7 +3,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Response
 
 from app import db
-from app.schemas.ubicaciones import CandidatoOut, MiUbicacionIn, UbicacionIn, UbicacionOut
+from app.schemas.ubicaciones import CandidatoOut, EstadoOut, EstadoPatch, MiUbicacionIn, UbicacionIn, UbicacionOut
+from app.services import estados
 from app.services import ubicaciones as servicio
 
 router = APIRouter(prefix="/api/ubicaciones", tags=["ubicaciones"])
@@ -24,6 +25,12 @@ async def buscar(q: str):
         raise HTTPException(502, str(e))
 
 
+@router.get("/estados", response_model=list[EstadoOut])
+def listar_estados():
+    """Estados de México, para elegir el de una ubicación."""
+    return estados.listar()
+
+
 @router.put("/mi-ubicacion", response_model=UbicacionOut)
 def mi_ubicacion(datos: MiUbicacionIn, con=Depends(db.con_db)):
     """Guarda (o actualiza) "Mi ubicación" con las coordenadas que mandó el navegador."""
@@ -32,7 +39,13 @@ def mi_ubicacion(datos: MiUbicacionIn, con=Depends(db.con_db)):
 
 @router.post("", response_model=UbicacionOut, status_code=201)
 def crear(datos: UbicacionIn, con=Depends(db.con_db)):
-    return vars(servicio.crear(con, datos.nombre, datos.lat, datos.lon, datos.zona))
+    return vars(servicio.crear(con, datos.nombre, datos.lat, datos.lon, datos.zona, datos.cve_ent))
+
+
+@router.patch("/{ubicacion_id}", response_model=UbicacionOut)
+def fijar_estado(ubicacion_id: int, datos: EstadoPatch, con=Depends(db.con_db)):
+    """Guarda el estado de una ubicación (para mostrar el manejo del INIFAP de ese estado)."""
+    return vars(servicio.fijar_estado(con, ubicacion_id, datos.cve_ent))
 
 
 @router.delete("/{ubicacion_id}", status_code=204)

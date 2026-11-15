@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { SECCIONES } from "../routes.js";
 import { Brote, Cerrar, Menu } from "./Iconos.jsx";
+import PlanLateral from "./PlanLateral.jsx";
 import "./Layout.css";
 
 // `selector` es lo que va a la derecha del encabezado (el selector de ubicación).
-export default function Layout({ seccion, selector, parcela, children }) {
+export default function Layout({ seccion, selector, children }) {
   const [menuAbierto, setMenuAbierto] = useState(false);
 
   useEffect(() => {
@@ -79,11 +80,7 @@ export default function Layout({ seccion, selector, parcela, children }) {
           })}
         </ul>
 
-        <div className="layout__parcela">
-          <p>My field</p>
-          <strong>{parcela.nombre}</strong>
-          <span>{parcela.hectareas} ha</span>
-        </div>
+        <PlanLateral abierto={menuAbierto} />
       </nav>
     </div>
   );

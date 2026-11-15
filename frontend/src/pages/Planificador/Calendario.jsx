@@ -53,7 +53,29 @@ function Barra({ siembra, ventana, onEditar }) {
   );
 }
 
-function Parcela({ parcela, ventana, hoy, onAgregar, onEditarParcela, onEditarSiembra }) {
+// Cuántas siembras de la parcela quedan enteras fuera de la ventana, antes y después, y cuánto hay que
+// mover la ventana (fracción de su ancho) para traer la más cercana de cada lado a la vista.
+function fueraDeVentana(siembras, ventana) {
+  const antes = []; // posición (≤ 0) donde termina cada siembra anterior
+  const despues = []; // posición (≥ 100) donde empieza cada siembra posterior
+  for (const s of siembras) {
+    const izquierda = posicion(deISO(s.fechaSiembra), ventana);
+    const derecha = posicion(sumarDias(deISO(s.fechaCosecha), 1), ventana);
+    if (derecha <= 0) antes.push(derecha);
+    else if (izquierda >= 100) despues.push(izquierda);
+  }
+  return {
+    antes: antes.length,
+    despues: despues.length,
+    irAntes: (Math.max(...antes) - 90) / 100, // la más cercana queda terminando al 90 % del ancho
+    irDespues: (Math.min(...despues) - 10) / 100, // la más cercana queda empezando al 10 %
+  };
+}
+
+const plantings = (n) => `${n} planting${n === 1 ? "" : "s"}`;
+
+function Parcela({ parcela, ventana, hoy, onDesplazar, onAgregar, onEditarParcela, onEditarSiembra }) {
+  const fuera = fueraDeVentana(parcela.siembras, ventana);
   return (
     <section className="parcela" aria-label={`Plot ${parcela.nombre}`}>
       <header className="parcela__encabezado">
@@ -61,9 +83,31 @@ function Parcela({ parcela, ventana, hoy, onAgregar, onEditarParcela, onEditarSi
           <h3>{parcela.nombre}</h3>
           <p>{parcela.hectareas} ha</p>
         </div>
-        <button type="button" className="enlace" onClick={onEditarParcela}>
-          Edit plot
-        </button>
+        <div className="parcela__acciones">
+          {fuera.antes > 0 && (
+            <button
+              type="button"
+              className="cal__fuera"
+              title={`${plantings(fuera.antes)} before this period. Click to jump to the nearest.`}
+              onClick={() => onDesplazar(fuera.irAntes)}
+            >
+              ← {fuera.antes} earlier
+            </button>
+          )}
+          {fuera.despues > 0 && (
+            <button
+              type="button"
+              className="cal__fuera"
+              title={`${plantings(fuera.despues)} after this period. Click to jump to the nearest.`}
+              onClick={() => onDesplazar(fuera.irDespues)}
+            >
+              {fuera.despues} later →
+            </button>
+          )}
+          <button type="button" className="enlace" onClick={onEditarParcela}>
+            Edit plot
+          </button>
+        </div>
       </header>
 
       <div className="cal__fila">
@@ -204,6 +248,7 @@ export default function Calendario({ plan, ventana, hoy, onDesplazar, onHoy, onA
           parcela={p}
           ventana={ventana}
           hoy={hoy}
+          onDesplazar={onDesplazar}
           onAgregar={() => onAgregarSiembra(p)}
           onEditarParcela={() => onEditarParcela(p)}
           onEditarSiembra={(s) => onEditarSiembra(p, s)}

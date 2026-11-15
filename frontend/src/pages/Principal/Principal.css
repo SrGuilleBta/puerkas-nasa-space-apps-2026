@@ -11,6 +11,12 @@
   min-width: 0;
 }
 
+/* Los avisos (alertas del clima y tareas vencidas) van uno debajo del otro */
+.principal__aviso {
+  display: grid;
+  gap: 10px;
+}
+
 /* En pantalla ancha: aviso arriba y dos columnas debajo */
 @media (min-width: 900px) {
   .principal {
@@ -400,6 +406,80 @@
 .cultivo__fila--precio small {
   font-size: 9px;
   font-weight: 600;
+  color: var(--tinta-suave);
+}
+
+/* Precio, rendimiento y chips de SIAP */
+.cultivo__mercado {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(18, 48, 74, 0.04);
+}
+
+.cultivo__mercado dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin: 0;
+}
+
+.cultivo__mercado dt {
+  font-size: 10px;
+  color: var(--tinta-suave);
+}
+
+.cultivo__mercado dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+.tendencia {
+  margin-left: 6px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tendencia--sube {
+  color: var(--verde-oscuro);
+}
+
+.tendencia--baja {
+  color: #c0392b;
+}
+
+.cultivo__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.chip--positiva {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.chip--negativa {
+  background: var(--coral-claro);
+  color: #b3433f;
+}
+
+.cultivo__fuente {
+  font-size: 9px;
   color: var(--tinta-suave);
 }
 
@@ -874,6 +954,22 @@
 
 .banner--tranquilo .banner__titulo {
   color: var(--verde-oscuro);
+}
+
+/* Tareas vencidas: ámbar, para distinguirlas de las alertas del clima (coral) */
+.banner--tareas {
+  border-color: rgba(242, 180, 65, 0.4);
+  background: rgba(242, 180, 65, 0.14);
+}
+
+.banner--tareas .banner__icono {
+  background: rgba(242, 180, 65, 0.28);
+  color: #a86d00;
+}
+
+.banner--tareas .banner__titulo,
+.banner--tareas .banner__accion {
+  color: #a86d00;
 }
 
 .banner__titulo,

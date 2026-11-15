@@ -14,7 +14,7 @@ from zoneinfo import ZoneInfo
 
 from app import config
 
-VERSION_ESQUEMA = 3  # versión actual de la base (ver iniciar)
+VERSION_ESQUEMA = 5  # versión actual de la base (ver iniciar)
 
 # Zona horaria de referencia para "hoy" (el contenedor corre en UTC y de noche ya es mañana)
 ZONA = ZoneInfo("America/Monterrey")
@@ -144,8 +144,73 @@ def iniciar() -> None:
             with con:
                 _renombrar_mi_ubicacion(con)
                 con.execute("PRAGMA user_version = 3")
+        if version < 4:
+            _enlazar_catalogo(con)
+        if version < 5:
+            _agregar_economia_tareas_y_estado(con)
     finally:
         con.close()
+
+
+# Cultivos de demo -> cultivo del catálogo de Cultivos (nombre viejo, nombre nuevo, id del catálogo)
+DEMO_A_CATALOGO = [
+    ("Maíz amarillo", "Maíz grano", "maiz-grano"),
+    ("Frijol pinto", "Frijol", "frijol"),
+    ("Trigo cristalino", "Trigo grano", "trigo-grano"),
+    ("Sorgo", "Sorgo grano", "sorgo-grano"),
+    ("Aguacate Hass", "Aguacate", "aguacate"),
+]
+
+
+def _enlazar_catalogo(con: sqlite3.Connection) -> None:
+    """Versión 4: cada cultivo puede venir del catálogo de Cultivos (columna `catalogo_id`).
+
+    Los cultivos de demo se renombran al nombre del catálogo y se enlazan, así tienen ficha. Solo si
+    la fila conserva exactamente el nombre de demo y el nombre nuevo no está ya tomado; los cultivos
+    que creó el usuario no se tocan.
+    """
+    with con:
+        con.execute("ALTER TABLE cultivo ADD COLUMN catalogo_id TEXT")
+        for viejo, nuevo, id_catalogo in DEMO_A_CATALOGO:
+            if con.execute("SELECT 1 FROM cultivo WHERE clave = ?", (clave(nuevo),)).fetchone():
+                continue
+            con.execute(
+                "UPDATE cultivo SET nombre = ?, clave = ?, catalogo_id = ? WHERE nombre = ?",
+                (nuevo, clave(nuevo), id_catalogo, viejo),
+            )
+        con.execute("PRAGMA user_version = 4")
+
+
+# Estado (clave INEGI) de las 4 ciudades de inicio, para las agendas técnicas del INIFAP
+ESTADO_DE_INICIO = {"monterrey, nl": "19", "saltillo, coah": "05", "culiacan, sin": "25", "merida, yuc": "31"}
+
+
+def _agregar_economia_tareas_y_estado(con: sqlite3.Connection) -> None:
+    """Versión 5: costos e ingresos por siembra, tareas por siembra y estado de cada ubicación.
+
+    - `siembra` gana rendimiento (t/ha), precio ($/t) y costo ($/ha): opcionales, los captura el usuario.
+    - `tarea`: actividades de una siembra (fertilizar, regar...) con marca de hecha. Se borran con la siembra.
+    - `ubicacion.cve_ent`: estado (clave INEGI de 2 dígitos) para mostrar el manejo del INIFAP de ese estado.
+    """
+    with con:
+        con.execute("ALTER TABLE siembra ADD COLUMN rendimiento_t_ha REAL CHECK (rendimiento_t_ha IS NULL OR rendimiento_t_ha >= 0)")
+        con.execute("ALTER TABLE siembra ADD COLUMN precio_t REAL CHECK (precio_t IS NULL OR precio_t >= 0)")
+        con.execute("ALTER TABLE siembra ADD COLUMN costo_ha REAL CHECK (costo_ha IS NULL OR costo_ha >= 0)")
+        con.execute(
+            """CREATE TABLE IF NOT EXISTS tarea (
+                id         INTEGER PRIMARY KEY,
+                siembra_id INTEGER NOT NULL REFERENCES siembra(id) ON DELETE CASCADE,
+                titulo     TEXT    NOT NULL,
+                tipo       TEXT    NOT NULL DEFAULT 'other',
+                fecha      TEXT    NOT NULL,
+                hecha      INTEGER NOT NULL DEFAULT 0 CHECK (hecha IN (0, 1))
+            )"""
+        )
+        con.execute("CREATE INDEX IF NOT EXISTS idx_tarea_siembra ON tarea (siembra_id, fecha)")
+        con.execute("ALTER TABLE ubicacion ADD COLUMN cve_ent TEXT")
+        for nombre_clave, estado in ESTADO_DE_INICIO.items():
+            con.execute("UPDATE ubicacion SET cve_ent = ? WHERE clave = ?", (estado, nombre_clave))
+        con.execute("PRAGMA user_version = 5")
 
 
 def _renombrar_mi_ubicacion(con: sqlite3.Connection) -> None:

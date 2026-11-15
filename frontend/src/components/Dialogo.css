@@ -9,6 +9,10 @@
   box-shadow: 0 24px 64px rgba(18, 48, 74, 0.25);
 }
 
+.dialogo--amplio {
+  width: min(720px, calc(100vw - 24px));
+}
+
 .dialogo::backdrop {
   background: rgba(18, 48, 74, 0.4);
 }

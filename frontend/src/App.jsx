@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { getParcela } from "./api/principal.js";
 import { guardarMiUbicacion, listarUbicaciones } from "./api/ubicaciones.js";
 import Cargable from "./components/Cargable.jsx";
 import EnConstruccion from "./components/EnConstruccion.jsx";
@@ -10,9 +9,9 @@ import Cultivos from "./pages/Cultivos/Cultivos.jsx";
 import Noticias from "./pages/Noticias/Noticias.jsx";
 import Planificador from "./pages/Planificador/Planificador.jsx";
 import Principal from "./pages/Principal/Principal.jsx";
+import Suelo from "./pages/Suelo/Suelo.jsx";
 import { useSeccion } from "./routes.js";
 
-const SIN_PARCELA = { nombre: "—", hectareas: "—" };
 const CLAVE_UBICACION = "municipio"; // se conserva el nombre de la clave de cuando eran 4 municipios fijos
 const CLAVE_PREGUNTADA = "ubicacionPreguntada";
 
@@ -55,7 +54,6 @@ const redondear = (n) => Math.round(n * 1000) / 1000;
 export default function App() {
   const ubicaciones = useDatos(listarUbicaciones, []);
   const [elegida, setElegida] = useState(() => leer(CLAVE_UBICACION));
-  const parcela = useDatos(getParcela, []);
   const seccion = useSeccion();
 
   const lista = ubicaciones.datos ?? [];
@@ -94,7 +92,6 @@ export default function App() {
   return (
     <Layout
       seccion={seccion}
-      parcela={parcela.datos ?? SIN_PARCELA}
       // Cultivos tiene su propio filtro (estado o municipio de SIAP), distinto de este selector por coordenadas
       selector={
         seccion.id !== "cultivos" &&
@@ -117,6 +114,10 @@ export default function App() {
         <Planificador municipio={activa?.nombre} />
       ) : seccion.id === "cultivos" ? (
         <Cultivos ubicacion={activa} />
+      ) : seccion.id === "suelo" ? (
+        <Cargable estado={ubicaciones} alto={200}>
+          {() => activa && <Suelo ubicacion={activa} />}
+        </Cargable>
       ) : seccion.id === "noticias" ? (
         activa && <Noticias municipio={activa.nombre} />
       ) : (
