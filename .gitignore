@@ -1,4 +1,4 @@
-.env
+﻿.env
 node_modules/
 package-lock.json
 dist/
@@ -8,19 +8,18 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+QQP/
+*.bak
 
 # Salida de la pipeline de Cultivos (se regenera: python -m pipeline.cultivos)
 backend/data/cultivos/
-
-# PDFs de INIFAP y su texto extraído (solo se versiona cuidados_inifap.json)
+# PDFs de INIFAP y su texto extraÃ­do (solo se versiona cuidados_inifap.json)
 backend/data/inifap/agendas/
 backend/data/inifap/extraido/
-
 # Base de datos local del Planificador (cada quien arranca con los datos de demo)
 backend/data/*.db
 backend/data/*.db-journal
-
-# Descargas grandes del módulo Suelo (se bajan solas la primera vez)
+# Descargas grandes del mÃ³dulo Suelo (se bajan solas la primera vez)
 backend/data/srtm/
 backend/data/grace/
 backend/data/suelo/smap/
