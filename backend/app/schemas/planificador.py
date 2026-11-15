@@ -66,6 +66,7 @@ class CultivoOut(Modelo):
     nombre: str
     tipo: str
     ciclo_dias: int
+    catalogo_id: str | None = None  # id en el catálogo de Cultivos, si viene de ahí
 
 
 class CatalogoItemOut(Modelo):

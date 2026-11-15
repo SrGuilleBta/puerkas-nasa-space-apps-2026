@@ -44,12 +44,16 @@ def _existe(con, tabla: str, id_: int, que: str) -> sqlite3.Row:
 
 
 def _cultivo_dict(f) -> dict:
-    return {"id": f["id"], "nombre": f["nombre"], "tipo": f["tipo"], "ciclo_dias": f["ciclo_dias"]}
+    return {
+        "id": f["id"], "nombre": f["nombre"], "tipo": f["tipo"], "ciclo_dias": f["ciclo_dias"],
+        "catalogo_id": f["catalogo_id"],
+    }
 
 
 SIEMBRA_SQL = """
     SELECT s.id, s.parcela_id, s.fecha_siembra, s.fecha_cosecha, s.hectareas,
-           c.id AS c_id, c.nombre AS c_nombre, c.tipo AS c_tipo, c.ciclo_dias AS c_ciclo
+           c.id AS c_id, c.nombre AS c_nombre, c.tipo AS c_tipo, c.ciclo_dias AS c_ciclo,
+           c.catalogo_id AS c_catalogo
     FROM siembra s JOIN cultivo c ON c.id = s.cultivo_id
 """
 
@@ -62,7 +66,8 @@ def _siembra_dict(f) -> dict:
         "fecha_cosecha": f["fecha_cosecha"],
         "hectareas": f["hectareas"],
         "cultivo": {
-            "id": f["c_id"], "nombre": f["c_nombre"], "tipo": f["c_tipo"], "ciclo_dias": f["c_ciclo"]
+            "id": f["c_id"], "nombre": f["c_nombre"], "tipo": f["c_tipo"], "ciclo_dias": f["c_ciclo"],
+            "catalogo_id": f["c_catalogo"],
         },
     }
 

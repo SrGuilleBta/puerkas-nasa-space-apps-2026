@@ -40,8 +40,9 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 
 ## Lo que sigue
 
-- **Mejor fecha de siembra** por cultivo: rango de temperatura del catálogo contra el clima histórico
-  de NASA POWER (y los meses de siembra de las agendas INIFAP cuando haya estado).
+- ~~Mejor fecha de siembra~~: hecha con temperatura (catálogo contra NASA POWER). Mejoras: usar los meses
+  de siembra de las agendas INIFAP cuando haya estado, sumar el pH y el suelo cuando esté esa parte, y
+  afinar con variedades (el trigo de otoño sale "regular" porque EcoCrop trae un solo rango de temperatura).
 - Umbrales de las alertas por cultivo (helada, calor, lluvia) con los rangos de EcoCrop del catálogo.
 - Precio, rendimiento y chips de demanda en "Cultivos activos" (SIAP, vía el catálogo).
 - Recomendación de rotación más fina con familia y fijación de nitrógeno del catálogo.

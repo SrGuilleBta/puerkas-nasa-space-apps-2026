@@ -3,6 +3,7 @@ import { borrarSiembra, crearCultivo, crearSiembra, cultivoDesdeCatalogo, editar
 import Dialogo from "../../components/Dialogo.jsx";
 import useDatos from "../../hooks/useDatos.js";
 import InfoSiembra from "./InfoSiembra.jsx";
+import VentanaSiembra from "./VentanaSiembra.jsx";
 import { aISO, deISO, diasEntre, fechaConAnio, normalizar, sumarDias } from "../../utils/fechas.js";
 import { TIPOS, etiquetaTipo } from "../../utils/tipos.js";
 
@@ -17,7 +18,7 @@ function primerDiaLibre(parcela, hoy) {
 }
 
 // `sugerencia` = { cultivo, inicio } viene de una recomendación: deja el formulario ya lleno.
-function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, onCultivoCreado, onCerrar }) {
+function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, municipio, onGuardado, onCultivoCreado, onCerrar }) {
   const idLista = useId();
   const editando = Boolean(siembra);
 
@@ -153,6 +154,14 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
           </small>
         )}
       </label>
+
+      {(local?.catalogoId ?? nuevoDelCatalogo?.id) && municipio && (
+        <VentanaSiembra
+          catalogoId={local?.catalogoId ?? nuevoDelCatalogo.id}
+          municipio={municipio}
+          mesInicio={inicio ? Number(inicio.slice(5, 7)) : null}
+        />
+      )}
 
       {parecidos.length > 0 && (
         <div className="aviso aviso--info parecidos">

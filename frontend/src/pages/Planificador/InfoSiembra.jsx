@@ -3,6 +3,7 @@ import { getClimaNasa } from "../../api/principal.js";
 import Cargable from "../../components/Cargable.jsx";
 import useDatos from "../../hooks/useDatos.js";
 import { aISO, deISO, diasEntre, fechaConAnio, sumarDias } from "../../utils/fechas.js";
+import VentanaSiembra from "./VentanaSiembra.jsx";
 import { etiquetaTipo } from "../../utils/tipos.js";
 
 const dias = (n) => `${n} ${n === 1 ? "day" : "days"}`;
@@ -189,6 +190,10 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio }) {
           </dd>
         </div>
       </dl>
+
+      {siembra.cultivo.catalogoId && municipio && (
+        <VentanaSiembra catalogoId={siembra.cultivo.catalogoId} municipio={municipio} mesInicio={inicio.getMonth() + 1} />
+      )}
 
       <FichaCultivo cultivoId={siembra.cultivo.id} />
 

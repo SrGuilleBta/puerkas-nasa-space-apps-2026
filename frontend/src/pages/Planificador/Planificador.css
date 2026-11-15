@@ -689,3 +689,70 @@
   font-size: 11px;
   color: var(--tinta-suave);
 }
+
+/* Mejor época para sembrar */
+.ventana {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--verde-claro);
+}
+
+.ventana h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.ventana__resumen {
+  margin: 0;
+  font-size: 13px;
+}
+
+.ventana__meses {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ventana__mes {
+  padding: 6px 0;
+  border-radius: 8px;
+  background: rgba(18, 48, 74, 0.1);
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--tinta);
+}
+
+.ventana__mes--good {
+  background: var(--verde);
+}
+
+.ventana__mes--fair {
+  background: var(--ambar);
+}
+
+.ventana__mes--poor {
+  background: var(--coral-claro);
+  color: var(--tinta-suave);
+}
+
+.ventana__mes--elegido {
+  outline: 2px solid var(--tinta);
+  outline-offset: 1px;
+}
+
+.ventana small {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+@media (max-width: 480px) {
+  .ventana__meses {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}

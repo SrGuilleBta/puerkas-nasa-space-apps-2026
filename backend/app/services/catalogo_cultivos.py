@@ -81,6 +81,14 @@ def asegurar_cultivo(con, catalogo_id: str) -> dict:
     return _cultivo_dict(_existe(con, "cultivo", id_, "crop"))
 
 
+def ficha_del_catalogo(catalogo_id: str) -> dict:
+    """Ficha cruda del catálogo (la que usan los cálculos); NoEncontrado si el id no existe."""
+    datos = _catalogo()["por_id"].get(catalogo_id)
+    if datos is None:
+        raise NoEncontrado(f"The catalog has no crop \"{catalogo_id}\"")
+    return datos
+
+
 def ficha(con, cultivo_id: int) -> dict | None:
     """Ficha del catálogo de un cultivo del Planificador; None si no viene del catálogo."""
     fila = _existe(con, "cultivo", cultivo_id, "crop")
