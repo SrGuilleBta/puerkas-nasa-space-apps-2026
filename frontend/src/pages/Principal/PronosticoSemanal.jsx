@@ -15,14 +15,17 @@ function Dia({ fecha, dato, esHoy }) {
       <span className={`dia__cielo dia__cielo--${dato.cielo}`}>
         <Cielo size={22} />
       </span>
-      <span className="dia__temp">{dato.tmax}°</span>
+      <span className="dia__temp">{dato.tmax == null ? "—" : `${dato.tmax}°`}</span>
       <span className="dia__lluvia">
         <Gota size={12} />
-        {dato.lluvia}%
+        {dato.lluvia == null ? "—" : `${dato.lluvia}%`}
       </span>
     </li>
   );
 }
+
+// Muestra "—" cuando el dato todavía no existe (valor null).
+const conUnidad = (valor, unidad = "") => (valor == null ? "—" : `${valor}${unidad}`);
 
 function Medida({ icono: Icono, etiqueta, valor }) {
   return (
@@ -39,6 +42,7 @@ function Medida({ icono: Icono, etiqueta, valor }) {
 export default function PronosticoSemanal({ pronostico, hoy, esEjemplo }) {
   const ahora = new Date();
   const dias = semanaDe(ahora);
+  const IconoHoy = ICONO_CIELO[hoy.icono] ?? Sol;
 
   return (
     <Tarjeta>
@@ -61,23 +65,23 @@ export default function PronosticoSemanal({ pronostico, hoy, esEjemplo }) {
       <div className="hoy">
         <div className="hoy__principal">
           <span className="hoy__icono">
-            <Sol size={30} />
+            <IconoHoy size={30} />
           </span>
           <div>
-            <p className="hoy__temp">{hoy.temperatura}°</p>
-            <p className="hoy__sensacion">Sensación {hoy.sensacion}°</p>
+            <p className="hoy__temp">{conUnidad(hoy.temperatura, "°")}</p>
+            <p className="hoy__sensacion">Sensación {conUnidad(hoy.sensacion, "°")}</p>
           </div>
           <div className="hoy__cielo">
-            <p>{hoy.cielo}</p>
+            <p>{hoy.cielo ?? "—"}</p>
             {hoy.optimoParaCampo && <span>Óptimo para campo</span>}
           </div>
         </div>
 
         <dl className="hoy__medidas">
-          <Medida icono={Gota} etiqueta="Humedad" valor={`${hoy.humedad}%`} />
-          <Medida icono={Viento} etiqueta="Viento" valor={`${hoy.vientoKmh} km/h`} />
-          <Medida icono={Suelo} etiqueta="Humedad suelo" valor={`${hoy.humedadSuelo}%`} />
-          <Medida icono={Suelo} etiqueta="pH del suelo" valor={hoy.phSuelo} />
+          <Medida icono={Gota} etiqueta="Humedad" valor={conUnidad(hoy.humedad, "%")} />
+          <Medida icono={Viento} etiqueta="Viento" valor={conUnidad(hoy.vientoKmh, " km/h")} />
+          <Medida icono={Suelo} etiqueta="Humedad suelo" valor={conUnidad(hoy.humedadSuelo, "%")} />
+          <Medida icono={Suelo} etiqueta="pH del suelo" valor={conUnidad(hoy.phSuelo)} />
         </dl>
       </div>
     </Tarjeta>

@@ -6,6 +6,7 @@
 //   export const getClima = (municipio) => obtener("/api/principal/clima", { municipio });
 //
 // La pantalla no cambia mientras la forma del objeto devuelto sea la misma.
+import { obtener } from "./cliente.js";
 import * as ejemplo from "./datosEjemplo.js";
 
 // Simula una consulta al backend. Se borra cuando la sección deje de usar el ejemplo.
@@ -15,9 +16,12 @@ export const getParcela = () => simular(ejemplo.parcela);
 
 export const getAviso = (municipio) => simular(ejemplo.aviso);
 
-// `esEjemplo` hace que la tarjeta muestre "DATOS DE EJEMPLO" en lugar de "DATOS REALES".
-export const getClima = (municipio) =>
-  simular({ pronostico: ejemplo.pronostico, hoy: ejemplo.hoy, esEjemplo: true });
+// Clima real (Meteomatics, vía el backend). `esEjemplo` controla la insignia de la tarjeta.
+// El pH del suelo viene como null hasta que se conecte SoilGrids.
+export const getClima = async (municipio) => {
+  const { pronostico, hoy } = await obtener("/api/principal/clima", { municipio });
+  return { pronostico, hoy, esEjemplo: false };
+};
 
 export const getAlertaRegional = (municipio) => simular(ejemplo.alertaRegional);
 

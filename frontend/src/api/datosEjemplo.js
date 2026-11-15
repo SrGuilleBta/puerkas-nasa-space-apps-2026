@@ -24,6 +24,7 @@ export const hoy = {
   temperatura: 30,
   sensacion: 31,
   cielo: "Soleado",
+  icono: "sol",
   optimoParaCampo: true,
   humedad: 48,
   vientoKmh: 12,
