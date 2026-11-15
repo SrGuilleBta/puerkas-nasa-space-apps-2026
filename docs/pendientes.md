@@ -65,8 +65,10 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 
 - Hecho: mapa de México con lluvia y calor (Open-Meteo, malla de 84 puntos, caché de 3 h). "Calor" se entendió como
   **temperatura máxima**, que es la capa Temperatura del diseño; si se quería la intensidad de la lluvia, ya es la capa Rain.
-- Falta el **selector de día pasado** y las **condiciones locales** de la pantalla del diseño (humedad, viento, suelo,
-  "ventana óptima para labores"): hoy esos datos solo están en Principal y en el Crop guide.
+- Hecho: **condiciones locales** del día (temperatura, viento con dirección, lluvia en % y mm, humedad y temperatura del
+  suelo, "ventana para labores") en una tarjeta arriba del mapa, para la ubicación activa (`GET /api/clima/local`).
+  La temperatura del suelo es la de 18 cm, no la de 20 cm del diseño; la humedad es la de la zona de raíz (NASA POWER).
+- Falta el **selector de día pasado** de la pantalla del diseño: las condiciones locales son solo de hoy.
 - Falta una capa de **lluvia observada** (lo que ya cayó): NASA POWER se podría usar con una malla gruesa y caché diaria,
   o GPM IMERG si se consigue cuenta de Earthdata. Hoy el mapa es solo pronóstico.
 - Falta una capa de **suelo** (SMAP) en el mapa; el diseño la traía junto a Temperatura y Precipitación.

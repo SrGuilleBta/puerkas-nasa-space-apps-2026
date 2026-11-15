@@ -110,9 +110,12 @@
 
 .mercado__lista {
   display: grid;
+  /* minmax(0, 1fr): la columna no crece más que la tarjeta, así no hay barra horizontal ni se corta el precio */
+  grid-template-columns: minmax(0, 1fr);
   max-height: 460px;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   overflow-y: auto;
   list-style: none;
 }
@@ -153,6 +156,8 @@
 
 .mercado__precio {
   display: flex;
+  flex: none;
+  white-space: nowrap;
   align-items: baseline;
   gap: 6px;
   font-size: 12px;

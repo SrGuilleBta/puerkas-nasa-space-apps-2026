@@ -5,6 +5,7 @@ import Tarjeta, { EncabezadoTarjeta } from "../../components/Tarjeta.jsx";
 import useDatos from "../../hooks/useDatos.js";
 import { deISO } from "../../utils/fechas.js";
 import "./Clima.css";
+import CondicionesLocales from "./CondicionesLocales.jsx";
 import { CAPAS, textoValor, valorDe } from "./escalas.js";
 import MapaMexico from "./MapaMexico.jsx";
 
@@ -155,6 +156,7 @@ export default function Clima({ municipio }) {
   return (
     <div className="clima">
       <h1 className="sr-only">Weather</h1>
+      <CondicionesLocales municipio={municipio} />
       <Cargable estado={mapa} alto={420}>
         {(datos) => <Contenido datos={datos} municipio={municipio} />}
       </Cargable>
