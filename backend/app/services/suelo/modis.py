@@ -32,7 +32,7 @@ COLECCION_LC = "C2484079608-LPCLOUD"  # MCD12Q1 v061
 VAR_LC = "/MCD12Q1/Data_Fields/LC_Type1"
 CARPETA = Path(__file__).resolve().parents[3] / "data" / "suelo" / "modis"
 CONSULTAS_SIMULTANEAS = 16
-MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+MESES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 # Cuadrícula sinusoidal de MODIS
 _R = 6371007.181
@@ -64,7 +64,7 @@ def pixel_sinusoidal(lat: float, lon: float, pixeles: int) -> tuple[int, int, in
 def _token() -> str:
     token = os.getenv("EARTHDATA_TOKEN")
     if not token:
-        raise RuntimeError("Falta EARTHDATA_TOKEN en .env para consultar MODIS")
+        raise RuntimeError("EARTHDATA_TOKEN is missing in .env (needed for MODIS)")
     return token
 
 
@@ -112,14 +112,14 @@ async def _pixel(cliente: httpx.AsyncClient, coleccion: str, granulo: str, var: 
 
 def clase_usgs(ndvi: float) -> str:
     if ndvi <= 0.1:
-        return "suelo desnudo"
+        return "bare soil"
     if ndvi < 0.2:
-        return "vegetación muy escasa"
+        return "very sparse vegetation"
     if ndvi <= 0.3:
-        return "matorral o pastizal"
+        return "shrubland or grassland"
     if ndvi < 0.6:
-        return "vegetación moderada"
-    return "vegetación densa"
+        return "moderate vegetation"
+    return "dense vegetation"
 
 
 def _archivo(lat: float, lon: float) -> Path:
@@ -146,11 +146,11 @@ async def _serie(lat: float, lon: float, anios: int) -> dict[str, float | None]:
 
             resultados = await asyncio.gather(*(una(f, g) for f, g in pendientes.items()), return_exceptions=True)
     except httpx.HTTPError as e:
-        raise RuntimeError("MODIS (NASA Earthdata) no respondió. Intenta de nuevo en un momento.") from e
+        raise RuntimeError("MODIS (NASA Earthdata) did not respond. Please try again in a moment.") from e
     CARPETA.mkdir(parents=True, exist_ok=True)
     archivo.write_text(json.dumps(cache, sort_keys=True), encoding="utf-8")
     if not any(f >= inicio for f in cache) and any(isinstance(x, Exception) for x in resultados):
-        raise RuntimeError("MODIS (NASA Earthdata) no respondió. Intenta de nuevo en un momento.")
+        raise RuntimeError("MODIS (NASA Earthdata) did not respond. Please try again in a moment.")
     return {f: v for f, v in cache.items() if f >= inicio}
 
 
@@ -176,7 +176,7 @@ async def cobertura(lat: float, lon: float, anios: int = 3) -> dict:
         "mes_menor_cobertura": min(con_dato, key=lambda m: m["ndvi_promedio"]) if con_dato else None,
         "serie_ultimo_anio": [{"fecha": f, "ndvi": v} for f, v in ultimos],
         "anios_promediados": f"{date.today().year - anios}-{date.today().year - 1}",
-        "metodo": "Clases USGS: NDVI <= 0.1 suelo desnudo; 0.2-0.3 matorral/pastizal; >= 0.6 vegetación densa",
+        "metodo": "USGS classes: NDVI <= 0.1 bare soil; 0.2-0.3 shrubland/grassland; >= 0.6 dense vegetation",
         "fuente": "NASA MODIS MOD13Q1 v061 (NDVI, 250 m, 16 días) vía NASA Earthdata",
     }
 
@@ -196,7 +196,7 @@ async def tipo_cobertura(lat: float, lon: float) -> dict:
             anio = max(granulos)
             clase = await _pixel(cliente, COLECCION_LC, granulos[anio], VAR_LC, fila, col, 2400)
     except httpx.HTTPError as e:
-        raise RuntimeError("MODIS (NASA Earthdata) no respondió. Intenta de nuevo en un momento.") from e
+        raise RuntimeError("MODIS (NASA Earthdata) did not respond. Please try again in a moment.") from e
     return {
         "clase_igbp": clase,
         "cobertura": CLASES_IGBP.get(clase, "sin dato"),
@@ -204,3 +204,66 @@ async def tipo_cobertura(lat: float, lon: float) -> dict:
         "anio": anio[:4],
         "fuente": "NASA MODIS MCD12Q1 v061 (500 m, clases IGBP)",
     }
+
+
+# ---------- Punto de cultivo más cercano (para lugares que agrega el usuario) ----------
+# Las ubicaciones de inicio ya traen su punto de suelo (db.py). Para un lugar nuevo se busca el píxel
+# de CULTIVO más cercano según MCD12Q1 (clases IGBP 12 y 14), primero a ~25 km y luego a ~50 km.
+# Una sola consulta por lugar; el resultado se guarda en backend/data/suelo/cultivo_cercano.json.
+
+CULTIVO = (12, 14)
+RADIOS_CULTIVO = [50, 100]  # en píxeles de 500 m: ~25 km y ~50 km
+ARCHIVO_CULTIVO = CARPETA.parent / "cultivo_cercano.json"
+
+
+def _lat_lon_de_pixel(h: int, v: int, fila: int, col: int, pixeles: int) -> tuple[float, float]:
+    celda = _MOSAICO / pixeles
+    x = _X0 + h * _MOSAICO + (col + 0.5) * celda
+    y = _Y0 - v * _MOSAICO - (fila + 0.5) * celda
+    lat = math.degrees(y / _R)
+    lon = math.degrees(x / (_R * math.cos(math.radians(lat))))
+    return round(lat, 4), round(lon, 4)
+
+
+async def cultivo_cercano(lat: float, lon: float) -> dict | None:
+    """{lat, lon, km, clase} del píxel de cultivo más cercano, o None si no hay a ~50 km."""
+    clave = f"{lat:.4f},{lon:.4f}"
+    guardados = json.loads(ARCHIVO_CULTIVO.read_text(encoding="utf-8")) if ARCHIVO_CULTIVO.exists() else {}
+    if clave in guardados:
+        return guardados[clave]
+    n = 2400
+    h, v, fila, col = pixel_sinusoidal(lat, lon, n)
+    hoy = date.today()
+    async with httpx.AsyncClient(timeout=180, follow_redirects=True) as cliente:
+        granulos = await _granulos(cliente, COLECCION_LC, lat, lon, f"h{h:02d}v{v:02d}",
+                                   f"{hoy.year - 4}-01-01", hoy.isoformat())
+        if not granulos:
+            return None
+        granulo = granulos[max(granulos)]
+        resultado = None
+        for radio in RADIOS_CULTIVO:
+            f0, f1 = max(0, fila - radio), min(n - 1, fila + radio)
+            c0, c1 = max(0, col - radio), min(n - 1, col + radio)
+            r = await cliente.get(
+                OPENDAP.format(c=COLECCION_LC, g=granulo),
+                params={"dap4.ce": f"{VAR_LC}[{f0}:1:{f1}][{c0}:1:{c1}]"},
+                headers={"Authorization": f"Bearer {_token()}"},
+            )
+            r.raise_for_status()
+            filas = [ln.partition(",")[2] for ln in r.text.splitlines()[1:] if "[" in ln]
+            mejor = None
+            for i, linea in enumerate(filas):
+                for j, valor in enumerate(linea.split(",")):
+                    if valor.strip() and int(float(valor)) in CULTIVO:
+                        d = math.hypot(f0 + i - fila, c0 + j - col)
+                        if mejor is None or d < mejor[0]:
+                            mejor = (d, f0 + i, c0 + j, int(float(valor)))
+            if mejor:
+                la, lo = _lat_lon_de_pixel(h, v, mejor[1], mejor[2], n)
+                resultado = {"lat": la, "lon": lo, "km": round(mejor[0] * _MOSAICO / n / 1000, 1),
+                             "clase": CLASES_IGBP[mejor[3]]}
+                break
+    guardados[clave] = resultado
+    ARCHIVO_CULTIVO.parent.mkdir(parents=True, exist_ok=True)
+    ARCHIVO_CULTIVO.write_text(json.dumps(guardados, ensure_ascii=False, indent=1), encoding="utf-8")
+    return resultado

@@ -45,28 +45,28 @@ def textura_usda(arena: float, limo: float, arcilla: float) -> str:
     """Clase de textura según el triángulo de texturas del USDA (porcentajes)."""
     s, l, a = arena, limo, arcilla
     if l + 1.5 * a < 15:
-        return "arena"
+        return "sand"
     if l + 2 * a < 30:
-        return "arena francosa"
+        return "loamy sand"
     if (7 <= a < 20 and s > 52) or (a < 7 and l < 50):
-        return "franco arenoso"
+        return "sandy loam"
     if 7 <= a < 27 and 28 <= l < 50 and s <= 52:
-        return "franco"
+        return "loam"
     if (l >= 50 and 12 <= a < 27) or (50 <= l < 80 and a < 12):
-        return "franco limoso"
+        return "silt loam"
     if l >= 80 and a < 12:
-        return "limo"
+        return "silt"
     if 20 <= a < 35 and l < 28 and s > 45:
-        return "franco arcillo arenoso"
+        return "sandy clay loam"
     if 27 <= a < 40 and 20 < s <= 45:
-        return "franco arcilloso"
+        return "clay loam"
     if 27 <= a < 40 and s <= 20:
-        return "franco arcillo limoso"
+        return "silty clay loam"
     if a >= 35 and s > 45:
-        return "arcilla arenosa"
+        return "sandy clay"
     if a >= 40 and l >= 40:
-        return "arcilla limosa"
-    return "arcilla"
+        return "silty clay"
+    return "clay"
 
 
 async def consultar_soilgrids(lat: float, lon: float) -> dict:
@@ -83,7 +83,7 @@ async def consultar_soilgrids(lat: float, lon: float) -> dict:
             r.raise_for_status()
             capas = r.json()["properties"]["layers"]
     except httpx.HTTPError as e:
-        raise RuntimeError("SoilGrids no respondió (es lento a veces). Intenta de nuevo en un momento.") from e
+        raise RuntimeError("SoilGrids did not respond (it is sometimes slow). Please try again in a moment.") from e
     datos = {}
     for capa in capas:
         factor = capa["unit_measure"]["d_factor"]
@@ -146,8 +146,8 @@ async def propiedades(lat: float, lon: float, municipio: str | None = None) -> d
     return {
         "capas": capas,
         "sin_datos": sin_datos,
-        "aviso": "SoilGrids no tiene datos aquí (posible zona urbana o agua). Prueba un punto de campo." if sin_datos else None,
-        "metodo_materia_organica": "Estimada: carbono orgánico × 1.724 (factor de Van Bemmelen, NOM-021-SEMARNAT-2000)",
+        "aviso": "SoilGrids has no data here (probably urban area or water)." if sin_datos else None,
+        "metodo_materia_organica": "Estimated: organic carbon × 1.724 (Van Bemmelen factor, NOM-021-SEMARNAT-2000)",
         "fuente": "SoilGrids (ISRIC), 250 m",
         "origen": origen,  # "tabla" = archivo pre-consultado; "en vivo" = consulta directa a SoilGrids
     }

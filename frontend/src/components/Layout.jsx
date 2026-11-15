@@ -3,45 +3,8 @@ import { SECCIONES } from "../routes.js";
 import { Brote, Cerrar, Menu } from "./Iconos.jsx";
 import "./Layout.css";
 
-// El agricultor elige su ESTADO; los datos de todas las pantallas son por estado. Se conserva el
-// nombre MUNICIPIOS para no cambiar el código que ya lo usa. Debe coincidir con
-// backend/app/services/municipios.py.
-export const MUNICIPIOS = [
-  "Aguascalientes",
-  "Baja California",
-  "Baja California Sur",
-  "Campeche",
-  "Chiapas",
-  "Chihuahua",
-  "Ciudad de México",
-  "Coahuila",
-  "Colima",
-  "Durango",
-  "Estado de México",
-  "Guanajuato",
-  "Guerrero",
-  "Hidalgo",
-  "Jalisco",
-  "Michoacán",
-  "Morelos",
-  "Nayarit",
-  "Nuevo León",
-  "Oaxaca",
-  "Puebla",
-  "Querétaro",
-  "Quintana Roo",
-  "San Luis Potosí",
-  "Sinaloa",
-  "Sonora",
-  "Tabasco",
-  "Tamaulipas",
-  "Tlaxcala",
-  "Veracruz",
-  "Yucatán",
-  "Zacatecas",
-];
-
-export default function Layout({ seccion, municipio, onMunicipio, parcela, children }) {
+// `selector` es lo que va a la derecha del encabezado (el selector de ubicación).
+export default function Layout({ seccion, selector, parcela, children }) {
   const [menuAbierto, setMenuAbierto] = useState(false);
 
   useEffect(() => {
@@ -57,7 +20,7 @@ export default function Layout({ seccion, municipio, onMunicipio, parcela, child
         <button
           type="button"
           className="layout__menu"
-          aria-label="Abrir menú"
+          aria-label="Open menu"
           aria-expanded={menuAbierto}
           onClick={() => setMenuAbierto(true)}
         >
@@ -74,14 +37,7 @@ export default function Layout({ seccion, municipio, onMunicipio, parcela, child
           <span className="layout__beta">beta</span>
         </div>
 
-        <label className="layout__municipio">
-          <span className="sr-only">Estado</span>
-          <select value={municipio} onChange={(e) => onMunicipio(e.target.value)}>
-            {MUNICIPIOS.map((m) => (
-              <option key={m}>{m}</option>
-            ))}
-          </select>
-        </label>
+        <div className="layout__selector">{selector}</div>
       </header>
 
       <main className="layout__contenido">{children}</main>
@@ -91,13 +47,13 @@ export default function Layout({ seccion, municipio, onMunicipio, parcela, child
       )}
       <nav
         className={`layout__lateral ${menuAbierto ? "layout__lateral--abierto" : ""}`}
-        aria-label="Secciones"
+        aria-label="Sections"
         aria-hidden={!menuAbierto}
       >
         <button
           type="button"
           className="layout__cerrar"
-          aria-label="Cerrar menú"
+          aria-label="Close menu"
           tabIndex={menuAbierto ? 0 : -1}
           onClick={() => setMenuAbierto(false)}
         >
@@ -124,7 +80,7 @@ export default function Layout({ seccion, municipio, onMunicipio, parcela, child
         </ul>
 
         <div className="layout__parcela">
-          <p>Mi parcela</p>
+          <p>My field</p>
           <strong>{parcela.nombre}</strong>
           <span>{parcela.hectareas} ha</span>
         </div>

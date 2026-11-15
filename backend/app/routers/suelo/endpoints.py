@@ -3,27 +3,44 @@ from datetime import date, timedelta
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 
-from app.services import municipios
+from app import db
+from app.services import ubicaciones
 from app.services.suelo import grace, modis, smap, soilgrids, srtm
 from app.services.suelo import nasa_power as suelo_power
 
 router = APIRouter(prefix="/api/suelo", tags=["suelo"])
 
 
-def punto(
-    municipio: str | None = Query(None, description='Municipio del selector, ej. "Monterrey, NL"'),
+async def punto_de_ubicacion(nombre: str) -> tuple[float, float]:
+    """Punto de suelo de una ubicación guardada (tabla `ubicacion`, ver db.py): SIEMPRE el píxel de
+    cultivo más cercano al lugar según NASA MODIS (MCD12Q1), con la misma regla para todas las
+    ubicaciones. No se usa `lat_suelo` de la tabla: al revisarlos con MODIS, 3 de los 4 puntos de inicio
+    caían en pastizal o matorral, no en cultivo (y lo usa la Principal para el pH, que es otra cosa).
+    Si no hay cultivo a ~50 km, o MODIS no responde, se usa el lugar mismo."""
+    con = db.conectar()
+    try:
+        u = ubicaciones.buscar(con, nombre)
+    finally:
+        con.close()
+    if u is None:
+        raise HTTPException(404, f"Unknown location: {nombre}")
+    try:
+        c = await modis.cultivo_cercano(u.lat, u.lon)
+    except Exception:  # noqa: BLE001 - sin MODIS se usa el lugar mismo
+        c = None
+    return (c["lat"], c["lon"]) if c else (u.lat, u.lon)
+
+
+async def punto(
+    municipio: str | None = Query(None, description='Ubicación guardada, ej. "Monterrey, NL"'),
     lat: float | None = Query(None, ge=-90, le=90, description="Latitud (si no se manda municipio)"),
     lon: float | None = Query(None, ge=-180, le=180, description="Longitud (si no se manda municipio)"),
 ) -> tuple[float, float]:
-    """Ubicación a consultar. Con `municipio` se usa su punto de campo agrícola (lat_suelo/lon_suelo
-    de services/municipios.py), porque en la ciudad SoilGrids no tiene datos. Si no, lat y lon."""
+    """Punto a consultar: el de la ubicación guardada (`municipio`) o lat y lon directos."""
     if municipio:
-        m = municipios.buscar(municipio)
-        if m is None:
-            raise HTTPException(404, f"Municipio desconocido: {municipio}")
-        return m.lat_suelo, m.lon_suelo
+        return await punto_de_ubicacion(municipio)
     if lat is None or lon is None:
-        raise HTTPException(400, "Manda municipio, o lat y lon")
+        raise HTTPException(400, "Send municipio, or lat and lon")
     return lat, lon
 
 
@@ -36,7 +53,7 @@ async def actual(p: tuple[float, float] = PUNTO):
     lat, lon = p
     dato = await suelo_power.actual(lat, lon)
     if dato is None:
-        raise HTTPException(404, "NASA POWER no tiene datos recientes para ese punto")
+        raise HTTPException(404, "NASA POWER has no recent data for this point")
     return {**dato, "fuente": "NASA POWER"}
 
 
@@ -49,7 +66,7 @@ async def historico(
     """Serie mensual de humedad, temperatura del suelo y evaporación (mm/día), para la gráfica de tendencia."""
     lat, lon = p
     if anio_inicio > anio_fin:
-        raise HTTPException(400, "anio_inicio debe ser menor o igual que anio_fin")
+        raise HTTPException(400, "anio_inicio must be less than or equal to anio_fin")
     serie = await suelo_power.mensual(lat, lon, anio_inicio, anio_fin)
     return {"serie": serie, "fuente": "NASA POWER (mensual)"}
 
@@ -78,15 +95,15 @@ async def propiedades(p: tuple[float, float] = PUNTO, municipio: str | None = Qu
 
 # Clases de pendiente de la FAO, Guidelines for Soil Description (4a ed., 2006), cuadro 5.
 CLASES_PENDIENTE_FAO = [
-    (0.2, "plano"),
-    (0.5, "nivelado"),
-    (1, "casi nivelado"),
-    (2, "muy ligeramente inclinado"),
-    (5, "ligeramente inclinado"),
-    (10, "inclinado"),
-    (15, "fuertemente inclinado"),
-    (30, "moderadamente escarpado"),
-    (60, "escarpado"),
+    (0.2, "flat"),
+    (0.5, "level"),
+    (1, "nearly level"),
+    (2, "very gently sloping"),
+    (5, "gently sloping"),
+    (10, "sloping"),
+    (15, "strongly sloping"),
+    (30, "moderately steep"),
+    (60, "steep"),
 ]
 
 
@@ -96,7 +113,7 @@ def clase_pendiente(pct: float | None) -> str | None:
     for limite, nombre in CLASES_PENDIENTE_FAO:
         if pct <= limite:
             return nombre
-    return "muy escarpado"
+    return "very steep"
 
 
 @router.get("/erosion")
@@ -174,7 +191,7 @@ async def retencion(p: tuple[float, float] = PUNTO, dias: int = Query(45, ge=10,
         })
     return {
         "dias": dias_lista,
-        "nota": "La lluvia de los últimos 2-3 días puede faltar (NASA POWER tiene retraso). SMAP no mide todos los días.",
+        "nota": "Rain for the last 2-3 days may be missing (NASA POWER has a delay). SMAP does not measure every day.",
         "fuente": "Humedad: NASA SMAP L3 (9 km) · Lluvia: NASA POWER (PRECTOTCORR)",
     }
 
@@ -197,7 +214,7 @@ async def _con_limite(coro):
     try:
         return await asyncio.wait_for(coro, ESPERA_RESUMEN_SEGUNDOS), None
     except asyncio.TimeoutError:
-        return None, "tardó demasiado (corre scripts/precargar_suelo.py para dejarlo guardado)"
+        return None, "took too long (run scripts/precargar_suelo.py to cache it)"
     except Exception as e:  # noqa: BLE001 - se reporta en "faltantes"
         return None, str(e) or e.__class__.__name__
 
@@ -227,7 +244,7 @@ async def resumen(p: tuple[float, float] = PUNTO, municipio: str | None = Query(
 
     capa = (prop or {}).get("capas", [{}])[0] if prop and not prop.get("sin_datos") else None
     return {
-        "estado": municipios.buscar(municipio).nombre if municipio and municipios.buscar(municipio) else None,
+        "ubicacion": municipio,
         "punto": {"lat": lat, "lon": lon},
         # Humedad del suelo medida (SMAP) vs. el mismo periodo de otros años. NO es sequía oficial.
         "humedad_vs_normal": None if not humedad or humedad.get("mensaje") else {

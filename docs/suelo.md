@@ -29,10 +29,9 @@ erosion reduction, organic matter improvement* (y opcional *frost risk*, *vegeta
 
 ## Endpoints propuestos
 
-Todos reciben **`municipio`** (el del selector de arriba, ej. `Monterrey, NL`) o, si no, `lat` y `lon`.
-Con municipio se usa su **punto de campo agrícola** (`lat_suelo`/`lon_suelo` en
-`backend/app/services/municipios.py`, de Guille), porque en la ciudad SoilGrids no tiene datos.
-La pantalla de Suelo usa el municipio que eligió el agricultor.
+Todos reciben **`municipio`** (el nombre de la ubicación guardada, ej. `Monterrey, NL`) o, si no,
+`lat` y `lon`. Con `municipio` se usa su punto de cultivo (ver "Ubicaciones" más abajo). La pantalla
+de Suelo usa la ubicación que eligió el agricultor en el selector de arriba.
 
 | Ruta | Parámetros extra | Devuelve | Sección |
 |---|---|---|---|
@@ -120,7 +119,7 @@ una sola vez el punto de campo de cada municipio y lo guarda en
 - La app lee de la tabla: responde en milisegundos, sin el límite de ~5 consultas/min de SoilGrids.
 - Si el punto no está en la tabla, consulta SoilGrids **una vez y lo agrega a la tabla** (la tabla se
   llena sola). Los puntos sin datos (ciudad, agua) no se guardan.
-- Al agregar municipios en `services/municipios.py`, correr (salta los que ya están):
+- Para llenarla con las ubicaciones guardadas de una vez (salta las que ya están):
 
   ```bash
   docker compose exec backend python -m scripts.generar_suelo_municipios
@@ -130,24 +129,33 @@ una sola vez el punto de campo de cada municipio y lo guarda en
 - Trae las capas 0–5, 5–15 y 15–30 cm, así que también sirve para el pH de la Principal
   (pendiente de platicar con Guille).
 
-## Selector: por estado
+## Ubicaciones: de dónde sale el punto de suelo
 
-El selector de arriba tiene los **32 estados** y los datos son por estado (`services/municipios.py`).
-El punto de campo de cada estado es **el píxel de cultivo más cercano a la capital** según el mapa de
-cobertura de NASA MODIS (MCD12Q1 v061, 500 m, clases IGBP 12 "cultivo" y 14 "mosaico de cultivo"),
-elegido con `python -m scripts.buscar_cultivo` (una consulta por estado, ~1 min en total). Casi todos
-quedan a 1–10 km de la capital; Baja California Sur a ~47 km (alrededor de La Paz es desierto).
-Excepción: en CDMX el cultivo más cercano caía en el Estado de México, así que se usa uno en Tláhuac.
+Suelo usa las **ubicaciones guardadas** del agricultor (tabla `ubicacion`, ver `backend/app/db.py` y
+`services/ubicaciones.py`): las 4 ciudades de inicio, las que agregue con el buscador y "My location".
+La pantalla manda el nombre de la ubicación elegida (`?municipio=Monterrey, NL`) y el backend:
 
-Antes se usaba "el punto más cercano a la capital donde SoilGrids tiene dato", pero al verificar con
-MODIS solo 7 de 32 caían en cultivo (Jalisco caía en ciudad y CDMX en Gustavo A. Madero).
+1. Para **todas** las ubicaciones (las 4 de inicio y las que agregue el agricultor) busca **el píxel de
+   cultivo más cercano** según el mapa de cobertura de NASA MODIS (MCD12Q1 v061, 500 m, clases IGBP 12
+   "cultivo" y 14 "mosaico de cultivo"), a menos de ~50 km. Una consulta (~2 s); se guarda en
+   `backend/data/suelo/cultivo_cercano.json`.
+2. Si no hay cultivo cerca o MODIS no responde, usa las coordenadas del lugar.
 
-Al cambiar los puntos hay que volver a bajar sus datos: la app lo hace sola la primera vez que se
-abre cada estado, o de una vez con `python -m scripts.precargar_suelo`.
+No usa `lat_suelo`/`lon_suelo` de la tabla: al revisar los 4 puntos de inicio con MODIS, Pesquería (NL)
+y Hunucmá (YUC) salen como pastizal y Arteaga (COAH) como matorral; solo el de Culiacán es cultivo. Esos
+puntos los sigue usando la Principal para el pH.
+
+Se probó con las 32 capitales: el cultivo más cercano quedó a 1–10 km en casi todas (Baja California
+Sur a ~47 km). Los datos ya descargados de esos puntos se quedan guardados, así que si el agricultor
+agrega una capital, sale rápido.
+
+**SMAP y las ciudades:** SMAP deja vacía la celda de 9 km cuando tiene mucha ciudad o agua. Si la celda
+del punto no tiene ninguna medición en los últimos 10 días, se usa siempre la celda vecina con más
+mediciones (~9 km); la respuesta lo indica con `celda_vecina: true`. Pasó en Monterrey, Puebla y Chetumal.
 
 ## Para el Planificador
 
-Quien haga el Planificador **no necesita llamar a cada endpoint**: `GET /api/suelo/resumen?municipio=...`
+Quien haga el Planificador **no necesita llamar a cada endpoint**: `GET /api/suelo/resumen?municipio=<nombre de la ubicación>`
 (en el front: `getResumen({ municipio })` de `frontend/src/api/suelo.js`) devuelve todo lo de suelo
 ya clasificado con reglas oficiales. Si una fuente no responde, su sección viene en `null` y el motivo
 en `faltantes` (la primera vez puede tardar; con `scripts/precargar_suelo.py` queda guardado).
@@ -189,7 +197,7 @@ y deben salir de una regla citable (p. ej. guías de la FAO), no inventadas.
 | *Heat stress*, *frost risk* | (no es de Suelo) | Módulo Clima (temperaturas máximas y mínimas) |
 
 ### Límites que el Planificador debe conocer
-- **Datos por estado**: un punto de cultivo por estado (MODIS), cerca de la capital; no representa todo el estado.
+- **Un punto por ubicación**: el cultivo más cercano al lugar (MODIS); no representa toda la región.
 - `humedad_vs_normal` mide solo humedad del suelo: **no es sequía oficial** (en algunos estados del sur
   SMAP marca más seco que el Monitor de Sequía de CONAGUA).
 - SMAP marca muchas mediciones como "calidad no recomendada" (vegetación densa, interferencia).
@@ -201,7 +209,7 @@ y deben salir de una regla citable (p. ej. guías de la FAO), no inventadas.
 |---|---|
 | Router | `backend/app/routers/suelo/endpoints.py` |
 | Servicios | `backend/app/services/suelo/`: `nasa_power.py`, `soilgrids.py`, `srtm.py`, `grace.py`, `smap.py` (L3 y L4), `modis.py` |
-| Scripts | `backend/scripts/`: `buscar_cultivo.py` (puntos de cultivo), `generar_suelo_municipios.py` (tabla SoilGrids), `precargar_suelo.py` (SMAP, SRTM, MODIS) |
+| Scripts | `backend/scripts/`: `generar_suelo_municipios.py` (tabla SoilGrids) y `precargar_suelo.py` (SMAP, SRTM, MODIS), para las ubicaciones guardadas |
 | Front (API) | `frontend/src/api/suelo.js` |
 | Front (pantalla) | `frontend/src/pages/Suelo/Suelo.jsx` |
 | Menú | Agregar "Suelo" en `frontend/src/App.jsx` |

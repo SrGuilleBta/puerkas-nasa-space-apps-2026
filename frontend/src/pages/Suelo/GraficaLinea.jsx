@@ -13,7 +13,7 @@ export default function GraficaLinea({
 }) {
   const id = useId().replace(/:/g, "");
   const validos = puntos.filter((p) => p.y !== null && p.y !== undefined);
-  if (validos.length < 2) return <p className="suelo-nota">Sin datos suficientes para graficar.</p>;
+  if (validos.length < 2) return <p className="suelo-nota">Not enough data to chart.</p>;
 
   const W = 480, H = alto, M = { t: 12, r: 16, b: 28, l: 50 };
   const ys = validos.map((p) => p.y);
@@ -39,7 +39,7 @@ export default function GraficaLinea({
 
   return (
     <div className="suelo-grafica">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Gráfica de tendencia">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Trend chart">
         {marcas.map((m, k) => (
           <g key={k}>
             <line x1={M.l} x2={W - M.r} y1={y(m)} y2={y(m)} className="suelo-grafica-rejilla" />
@@ -73,7 +73,7 @@ export default function GraficaLinea({
         <path d={d} fill="none" stroke={color} strokeWidth="2" strokeLinejoin="round" />
         <circle cx={x(iUltimo)} cy={y(ultimo.y)} r="4" fill={color} />
       </svg>
-      <p className="suelo-nota">Último: {ultimo.y} {unidad} ({ultimo.x})</p>
+      <p className="suelo-nota">Latest: {ultimo.y} {unidad} ({ultimo.x})</p>
     </div>
   );
 }

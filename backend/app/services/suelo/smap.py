@@ -56,8 +56,54 @@ def celda_ease2(lat: float, lon: float) -> tuple[int, int]:
 def _token() -> str:
     token = os.getenv("EARTHDATA_TOKEN")
     if not token:
-        raise RuntimeError("Falta EARTHDATA_TOKEN en .env para consultar SMAP")
+        raise RuntimeError("EARTHDATA_TOKEN is missing in .env (needed for SMAP)")
     return token
+
+
+# ---------- celda a usar ----------
+# SMAP deja vacía la celda de 9 km cuando tiene mucha ciudad o agua. Si la celda del punto no tiene
+# NINGUNA medición en los últimos 10 días, se usa (siempre la misma) la celda vecina con más
+# mediciones, a ~9 km. Se decide una vez y se guarda en backend/data/suelo/smap/celdas.json.
+
+ARCHIVO_CELDAS = CARPETA / "celdas.json"
+
+
+async def celda_para(lat: float, lon: float) -> tuple[int, int, bool]:
+    """(fila, columna, es_vecina) de la celda de SMAP a usar para el punto."""
+    fila, col = celda_ease2(lat, lon)
+    clave = f"{fila}_{col}"
+    elegidas = json.loads(ARCHIVO_CELDAS.read_text(encoding="utf-8")) if ARCHIVO_CELDAS.exists() else {}
+    if clave in elegidas:
+        f, c = elegidas[clave]
+        return f, c, (f, c) != (fila, col)
+    hoy = date.today()
+    conteo: dict[tuple[int, int], int] = {}
+    try:
+        async with httpx.AsyncClient(timeout=120, follow_redirects=True) as cliente:
+            granulos = await _granulos(cliente, hoy - timedelta(days=10), hoy)
+            semaforo = asyncio.Semaphore(CONSULTAS_SIMULTANEAS)
+
+            async def una(g: str):
+                async with semaforo:
+                    return await _ventana(cliente, g, fila, col)
+
+            for ventana in await asyncio.gather(*(una(g) for g in granulos.values()), return_exceptions=True):
+                if isinstance(ventana, dict):
+                    for (di, dj), m in ventana.items():
+                        if m is not None:
+                            conteo[(di, dj)] = conteo.get((di, dj), 0) + 1
+    except httpx.HTTPError:
+        return fila, col, False  # sin respuesta: se usa la del punto y no se guarda la decisión
+    if conteo.get((0, 0)) or not conteo:
+        f, c = fila, col
+    else:
+        # la vecina con más mediciones; si empatan, la más cercana (lados antes que esquinas)
+        di, dj = max(conteo, key=lambda k: (conteo[k], -(abs(k[0]) + abs(k[1]))))
+        f, c = fila + di, col + dj
+    elegidas[clave] = [f, c]
+    CARPETA.mkdir(parents=True, exist_ok=True)
+    ARCHIVO_CELDAS.write_text(json.dumps(elegidas), encoding="utf-8")
+    return f, c, (f, c) != (fila, col)
 
 
 # ---------- caché en disco por celda: {fecha: medición o null} ----------
@@ -113,8 +159,25 @@ def _leer_csv(texto: str) -> dict[str, list[list[float]]]:
     return datos
 
 
-async def _medicion(cliente: httpx.AsyncClient, granulo: str, fila: int, col: int) -> dict | None:
-    # Se pide una ventana de 3×3 (OPeNDAP no devuelve bien un solo valor) y se usa el centro.
+def _de_celda(d: dict, i: int, j: int) -> dict | None:
+    for pasada, sm, flag in (("AM (6 am)", "soil_moisture", "retrieval_qual_flag"),
+                             ("PM (6 pm)", "soil_moisture_pm", "retrieval_qual_flag_pm")):
+        try:
+            valor = d[sm][i][j]
+            bandera = int(d[flag][i][j])
+        except (KeyError, IndexError):
+            continue
+        if valor != SIN_DATO and valor >= 0:
+            return {
+                "humedad_pct_volumen": round(valor * 100, 1),
+                "pasada": pasada,
+                "calidad_recomendada": (bandera & 1) == 0,
+            }
+    return None
+
+
+async def _ventana(cliente: httpx.AsyncClient, granulo: str, fila: int, col: int) -> dict:
+    """Mediciones de la ventana de 3×3 alrededor de (fila, col): {(di, dj): medición o None}."""
     v = f"[{fila - 1}:1:{fila + 1}][{col - 1}:1:{col + 1}]"
     am, pm = "/Soil_Moisture_Retrieval_Data_AM", "/Soil_Moisture_Retrieval_Data_PM"
     ce = ";".join([
@@ -128,26 +191,18 @@ async def _medicion(cliente: httpx.AsyncClient, granulo: str, fila: int, col: in
     )
     r.raise_for_status()
     d = _leer_csv(r.text)
-    for pasada, sm, flag in (("AM (6 am)", "soil_moisture", "retrieval_qual_flag"),
-                             ("PM (6 pm)", "soil_moisture_pm", "retrieval_qual_flag_pm")):
-        try:
-            valor = d[sm][1][1]
-            bandera = int(d[flag][1][1])
-        except (KeyError, IndexError):
-            continue
-        if valor != SIN_DATO and valor >= 0:
-            return {
-                "humedad_pct_volumen": round(valor * 100, 1),
-                "pasada": pasada,
-                "calidad_recomendada": (bandera & 1) == 0,
-            }
-    return None
+    return {(i - 1, j - 1): _de_celda(d, i, j) for i in range(3) for j in range(3)}
+
+
+async def _medicion(cliente: httpx.AsyncClient, granulo: str, fila: int, col: int) -> dict | None:
+    # Se pide una ventana de 3×3 (OPeNDAP no devuelve bien un solo valor) y se usa el centro.
+    return (await _ventana(cliente, granulo, fila, col))[(0, 0)]
 
 
 async def serie(lat: float, lon: float, rangos: list[tuple[date, date]]) -> dict[str, dict | None]:
     """Mediciones del punto en uno o varios rangos de fechas: {fecha: medición o None (sin dato)}.
     Usa la caché en disco y solo consulta a NASA los días que faltan."""
-    fila, col = celda_ease2(lat, lon)
+    fila, col, _ = await celda_para(lat, lon)
     bloqueo = _bloqueos.setdefault((fila, col), asyncio.Lock())
     async with bloqueo:
         cache = _leer_cache(fila, col)
@@ -172,7 +227,7 @@ async def serie(lat: float, lon: float, rangos: list[tuple[date, date]]) -> dict
                     *(una(f, g) for f, g in pendientes.items()), return_exceptions=True
                 )
         except httpx.HTTPError as e:
-            raise RuntimeError("SMAP (NASA Earthdata) no respondió. Intenta de nuevo en un momento.") from e
+            raise RuntimeError("SMAP (NASA Earthdata) did not respond. Please try again in a moment.") from e
 
         for res in resultados:
             if isinstance(res, tuple):
@@ -198,13 +253,13 @@ async def humedad(lat: float, lon: float, dias: int = 10) -> dict:
     hoy = date.today()
     datos = await serie(lat, lon, [(hoy - timedelta(days=dias), hoy)])
     lista = sorted(({"fecha": f, **m} for f, m in datos.items() if m), key=lambda m: m["fecha"])
-    fila, col = celda_ease2(lat, lon)
+    fila, col, vecina = await celda_para(lat, lon)
     return {
         "ultima": lista[-1] if lista else None,
         "serie": lista,
         "dias_revisados": dias,
-        "celda_9km": {"fila": fila, "columna": col},
-        "nota": "Medición satelital de los primeros ~5 cm. El satélite no pasa por todo el país cada día, por eso hay días sin dato.",
+        "celda_9km": {"fila": fila, "columna": col, "vecina": vecina},
+        "nota": "Satellite measurement of the top ~5 cm. The satellite does not cover the whole country every day, so some days have no data.",
         "fuente": "NASA SMAP L3 Enhanced (SPL3SMP_E v006), 9 km",
     }
 
@@ -216,11 +271,11 @@ async def humedad(lat: float, lon: float, dias: int = 10) -> dict:
 # sequía (la oficial de CONAGUA combina lluvia, presas, ríos, vegetación, etc.). Por eso se
 # reporta como "más seco de lo normal" y no como "sequía". El código D0-D4 queda como referencia.
 CATEGORIAS_SEQUIA = [
-    (2, "D4", "mucho más seco de lo normal"),
-    (5, "D3", "mucho más seco de lo normal"),
-    (10, "D2", "más seco de lo normal"),
-    (20, "D1", "más seco de lo normal"),
-    (30, "D0", "un poco más seco de lo normal"),
+    (2, "D4", "much drier than normal"),
+    (5, "D3", "much drier than normal"),
+    (10, "D2", "drier than normal"),
+    (20, "D1", "drier than normal"),
+    (30, "D0", "slightly drier than normal"),
 ]
 MIN_MEDICIONES = 8  # por ventana de 30 días (SMAP pasa cada 2-3 días)
 
@@ -229,7 +284,7 @@ def categoria_sequia(percentil: float) -> tuple[str | None, str]:
     for limite, codigo, nombre in CATEGORIAS_SEQUIA:
         if percentil <= limite:
             return codigo, nombre
-    return None, "normal o más húmedo de lo normal"
+    return None, "normal or wetter than normal"
 
 
 def _restar_anios(d: date, n: int) -> date:
@@ -253,7 +308,7 @@ async def estado_sequia(lat: float, lon: float, dias: int = 30) -> dict:
 
     actual = ventana(inicio, fin)
     if len(actual) < MIN_MEDICIONES:
-        return {"categoria": None, "mensaje": f"SMAP tiene pocas mediciones recientes en este punto ({len(actual)})"}
+        return {"categoria": None, "mensaje": f"SMAP has few recent measurements at this point ({len(actual)})"}
 
     historicos = []
     for n in anios:
@@ -261,7 +316,7 @@ async def estado_sequia(lat: float, lon: float, dias: int = 30) -> dict:
         if len(v) >= MIN_MEDICIONES:
             historicos.append(sum(m["humedad_pct_volumen"] for m in v) / len(v))
     if len(historicos) < 5:
-        return {"categoria": None, "mensaje": "SMAP no tiene suficientes años para comparar en este punto"}
+        return {"categoria": None, "mensaje": "SMAP does not have enough years to compare at this point"}
 
     prom_actual = sum(m["humedad_pct_volumen"] for m in actual) / len(actual)
     promedio = sum(historicos) / len(historicos)
@@ -281,11 +336,13 @@ async def estado_sequia(lat: float, lon: float, dias: int = 30) -> dict:
         "mediciones_periodo": len(actual),
         "pct_calidad_recomendada": round(100 * recomendadas / len(actual)),
         "metodo": (
-            f"Promedio de humedad SMAP de {dias} días vs. el mismo periodo de {len(historicos)} años "
-            f"({PRIMER_ANIO} en adelante); cortes por percentil del Drought Monitor (D0 <=30, D1 <=20, D2 <=10, "
-            "D3 <=5, D4 <=2). Mide solo la humedad del suelo: no es una declaración oficial de sequía"
+            f"Average SMAP moisture over {dias} days vs. the same period of {len(historicos)} years "
+            f"({PRIMER_ANIO} onward); Drought Monitor percentile cuts (D0 <=30, D1 <=20, D2 <=10, "
+            "D3 <=5, D4 <=2). Measures only soil moisture: not an official drought declaration"
         ),
         "fuente": "NASA SMAP L3 Enhanced (SPL3SMP_E v006), 9 km",
+        # True si la celda del punto no tiene datos (ciudad o agua) y se usó la vecina, a ~9 km
+        "celda_vecina": (await celda_para(lat, lon))[2],
     }
 
 
@@ -299,7 +356,7 @@ HORA_L4 = "T133000"
 
 
 async def raiz(lat: float, lon: float, dias: int = 14) -> dict:
-    fila, col = celda_ease2(lat, lon)
+    fila, col, _ = await celda_para(lat, lon)
     hoy = date.today()
     v = f"[{fila - 1}:1:{fila + 1}][{col - 1}:1:{col + 1}]"
     try:
@@ -345,12 +402,12 @@ async def raiz(lat: float, lon: float, dias: int = 14) -> dict:
 
             resultados = await asyncio.gather(*(una(f, g) for f, g in granulos.items()), return_exceptions=True)
     except httpx.HTTPError as e:
-        raise RuntimeError("SMAP L4 (NASA Earthdata) no respondió. Intenta de nuevo en un momento.") from e
+        raise RuntimeError("SMAP L4 (NASA Earthdata) did not respond. Please try again in a moment.") from e
 
     lista = sorted((x for x in resultados if isinstance(x, dict)), key=lambda x: x["fecha"])
     return {
         "ultima": lista[-1] if lista else None,
         "serie": lista,
-        "nota": "Zona de raíces = 0-100 cm. SMAP L4 es el modelo de NASA corregido con las mediciones de SMAP (no es medición directa).",
+        "nota": "Root zone = 0-100 cm. SMAP L4 is the NASA model corrected with SMAP measurements (not a direct measurement).",
         "fuente": "NASA SMAP L4 (SPL4SMGP v008), 9 km",
     }

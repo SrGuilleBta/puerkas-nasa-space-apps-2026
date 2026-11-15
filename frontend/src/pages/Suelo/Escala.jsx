@@ -21,7 +21,7 @@ export default function Escala({ tramos, valor, min = 0, max = 100, extremos = [
           );
         })}
         {valor != null && (
-          <span className="escala__marca" style={{ left: `${pos(valor)}%` }} aria-label="Tu terreno está aquí">
+          <span className="escala__marca" style={{ left: `${pos(valor)}%` }} aria-label="Your land is here">
             ▼
           </span>
         )}

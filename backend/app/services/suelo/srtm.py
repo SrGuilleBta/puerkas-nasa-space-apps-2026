@@ -37,7 +37,7 @@ async def _asegurar_mosaico(nombre: str) -> Path:
         return hgt
     token = os.getenv("EARTHDATA_TOKEN")
     if not token:
-        raise RuntimeError("Falta EARTHDATA_TOKEN en .env para descargar SRTM")
+        raise RuntimeError("EARTHDATA_TOKEN is missing in .env (needed for SRTM)")
     async with _bloqueo:
         if hgt.exists():
             return hgt
@@ -46,7 +46,7 @@ async def _asegurar_mosaico(nombre: str) -> Path:
         async with httpx.AsyncClient(timeout=300, follow_redirects=True) as cliente:
             r = await cliente.get(URL.format(t=nombre), headers={"Authorization": f"Bearer {token}"})
             if r.status_code == 404:
-                raise FileNotFoundError(f"SRTM no tiene mosaico {nombre} (probablemente es mar)")
+                raise FileNotFoundError(f"SRTM has no tile {nombre} (probably sea)")
             r.raise_for_status()
             zip_path.write_bytes(r.content)
         with zipfile.ZipFile(zip_path) as z:
@@ -170,5 +170,5 @@ async def factor_ls(lat: float, lon: float, radio_cuenca: int = 60, radio_punto:
         "ls_maximo": round(max(valores), 2) if valores else None,
         "area_analizada_m": round((2 * radio_punto + 1) * dy),
         "metodo": "Factor LS de la RUSLE con modelo de elevación (Moore y Burch, 1986): (As/22.13)^0.4 × (sen β/0.0896)^1.3; flujo D8",
-        "referencia": "LS = 1 equivale a la parcela estándar de la RUSLE (22.13 m, 9 % de pendiente)",
+        "referencia": "LS = 1 equals the standard RUSLE plot (22.13 m long, 9 % slope)",
     }

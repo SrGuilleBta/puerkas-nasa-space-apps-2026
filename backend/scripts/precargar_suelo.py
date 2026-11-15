@@ -1,4 +1,4 @@
-"""Precarga los datos lentos del módulo Suelo para los 32 estados, para que la app (y el demo)
+"""Precarga los datos lentos del módulo Suelo para todas las ubicaciones guardadas (las 32 capitales y las que agregue el usuario), para que la app (y el demo)
 respondan rápido:
 
 - SMAP: últimos 30 días + el mismo periodo de cada año desde 2015 (~330 días por estado, ~1.5 min
@@ -16,11 +16,12 @@ nuevos de SMAP).
 import asyncio
 import time
 
-from app.services.municipios import MUNICIPIOS
+from app.services.suelo.puntos import de_ubicaciones
 from app.services.suelo import modis, smap, srtm
 
 
 async def main() -> None:
+    MUNICIPIOS = await de_ubicaciones()
     inicio_total = time.monotonic()
     for i, m in enumerate(MUNICIPIOS, 1):
         t = time.monotonic()

@@ -1,0 +1,448 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/san_luis_potosi.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "24",
+  "estado": "San Luis Potosí",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de San Luis Potosí. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Alfalfa",
+      "cientifico": "Medicago sativa L.",
+      "paginas": [
+        11,
+        18
+      ],
+      "cultivo_ids": [
+        "alfalfa-verde"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Altiplano Potosino (1,500 a 2,100 m; 14 a 29 °C; 250 a 450 mm de lluvia al año) y Zona Media (900 a 1,500 m; 450 a 600 mm). Necesita suelos profundos, con buen drenaje y bien nivelados.",
+      "siembra": {
+        "texto": "En los meses de menos calor, de octubre a enero, para evitar la maleza de primavera.",
+        "meses": [
+          10,
+          11,
+          12,
+          1
+        ]
+      },
+      "variedades": [
+        "San Miguelito",
+        "Gigante",
+        "Atlixco",
+        "Júpiter",
+        "Vía Láctea",
+        "Jeff",
+        "Temporalera",
+        "Oaxaca"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "25 a 30 kg/ha de semilla limpia sin peletizar con al menos 85 % de germinación; 35 kg/ha como mínimo si es peletizada. Tapar a no más de 1.5 cm.",
+      "fertilizacion": "En la siembra, 40 kg de nitrógeno y 80 kg de fósforo por ha al voleo (90 kg de urea o 200 kg de sulfato de amonio; 180 kg de superfosfato triple o 400 kg de superfosfato simple). En alfalfa establecida, solo 80 kg de fósforo cada año. Inocular la semilla con inoculante específico para alfalfa el mismo día de la siembra. Se recomienda análisis de suelo.",
+      "riego": "Primer riego lento después de la siembra para no arrastrar la semilla; el segundo cuando el suelo empiece a orearse. Por gravedad se siembra en melgas (no más de 50 m de largo en suelos arenosos, 120 m en migajón y menos de 150 m en arcillosos). La aspersión es la mejor opción para establecer y producir.",
+      "plagas": [
+        "Pulgón verde",
+        "Pulgón manchado"
+      ],
+      "enfermedades": [
+        "Marchitez de la alfalfa (hongo de raíz)",
+        "Pudrición de la raíz",
+        "Peca de la hoja",
+        "Mildiu velloso o cenicilla"
+      ],
+      "malezas": "La maleza aparece en las primeras etapas; sembrando la cantidad de semilla recomendada en los meses indicados hay poca y los cortes la eliminan. Se puede sembrar 30 a 40 kg/ha de avena junto con la alfalfa para frenar la maleza, y quitar a mano o con azadón las más grandes antes del primer corte.",
+      "cosecha": "Primer corte a los 60 a 80 días de la siembra. En primavera, verano y otoño, cortar al inicio de la floración (máximo 10 % de flores), cada 28 a 30 días; en invierno, cuando los rebrotes de la corona midan hasta 5 cm, cada 35 a 38 días. Se esperan unas 110 t de forraje verde al año en 8 a 10 cortes.",
+      "cuidados": [
+        "Nivelar bien el terreno (unos 10 cm de pendiente en 100 m) para evitar encharcamientos y enfermedades de la raíz.",
+        "Sembrar de octubre a enero para reducir la invasión de maleza.",
+        "Inocular la semilla y protegerla del sol y el viento al hacerlo.",
+        "Aplicar 80 kg de fósforo por ha cada año en la alfalfa establecida.",
+        "Contra peca de la hoja y mildiu, adelantar un poco el corte; contra pudriciones de raíz, rotar con gramíneas (sorgo) de 3 a 5 años.",
+        "Si se aplica algún insecticida, hacerlo con 15 días de anticipación al corte."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 64200,
+          "rendimiento": 110,
+          "unidad_rendimiento": "t/ha",
+          "precio": 830,
+          "ingreso_neto": 26440,
+          "relacion_bc": 1.41
+        }
+      ],
+      "nota": "El extraído marca tipo_cultivo 'multianual 6 a 8 años'; se normalizó a 'perenne'. En el Cuadro 1 el costo total impreso ($64,200) no coincide con la suma de los conceptos ($65,350; la diferencia es justo el control de plagas, $1,150) y el ingreso impreso ($90,640) difiere un poco de 110 t × $830 ($91,300); se conservaron los valores impresos de costo, ganancia y relación B/C, que son coherentes entre sí. Precio en $/t.",
+      "revisado": false
+    },
+    {
+      "ficha": "Avena",
+      "cientifico": "Avena sativa L.",
+      "paginas": [
+        19,
+        22
+      ],
+      "cultivo_ids": [
+        "avena-forrajera-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Altiplano Potosino (1,500 a 2,100 m; 14 a 29 °C; 250 a 450 mm al año) y Zona Media (900 a 1,500 m; 450 a 600 mm). En temporal el potencial es mediano a bajo.",
+      "siembra": {
+        "texto": "Del 15 de mayo al 10 de agosto.",
+        "meses": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Turquesa",
+        "Karma",
+        "Avemex",
+        "Obsidiana",
+        "Chihuahua"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "80 a 100 kg de semilla por ha al voleo, tapada con un paso de rastra.",
+      "fertilizacion": "Se recomienda biofertilizar con micorriza (1.5 kg de producto por cada 100 kg de semilla, preparado a la sombra). Para fertilización química, hacer análisis de suelo y pedir la dosis a un agrónomo.",
+      "riego": null,
+      "plagas": [],
+      "enfermedades": [],
+      "malezas": "Controlar la maleza de hoja ancha cuando no pase de 7 cm de altura. En siembras al voleo no se requieren escardas.",
+      "cosecha": "Cortar cuando el grano esté en etapa lechoso-masoso. Se esperan 15 a 16 t/ha de forraje fresco (4 a 5 t/ha de materia seca).",
+      "cuidados": [
+        "Preparar el suelo con barbecho a 30 cm y rastra, o con multiarado (labranza de conservación).",
+        "Sembrar entre el 15 de mayo y el 10 de agosto con 80 a 100 kg de semilla por ha.",
+        "Usar micorriza como biofertilizante y hacer análisis de suelo antes de fertilizar.",
+        "Monitorear el cultivo: no hay plagas ni enfermedades importantes registradas en el estado.",
+        "Cortar en grano lechoso-masoso para forraje."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 9700,
+          "rendimiento": 15,
+          "unidad_rendimiento": "t/ha",
+          "precio": 800,
+          "ingreso_neto": 2300,
+          "relacion_bc": 1.24
+        }
+      ],
+      "nota": "La agenda indica que no hay plagas incidentes ni enfermedades importantes registradas para la avena forrajera en San Luis Potosí. Precio en $/t.",
+      "revisado": false
+    },
+    {
+      "ficha": "Chile ancho",
+      "cientifico": "Capsicum annuum L.",
+      "paginas": [
+        23,
+        35
+      ],
+      "cultivo_ids": [
+        "chile-verde",
+        "chile-seco"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Altiplano Potosino, de 1,800 a 2,200 m, con temperatura media de 17.4 °C y unos 350 mm de lluvia al año.",
+      "siembra": {
+        "texto": "Trasplante en riego del 1 de abril al 30 de mayo. Con fertirriego, según la zona, del 16 de marzo o 1 de abril al 15-20 de mayo (San Luis Potosí, Catorce, Cedral, Vanegas, Guadalcázar, Villa de Guadalupe, Villa de Arista, Moctezuma, Venado, Bocas, Salinas, Villa de Ramos, Santo Domingo); con híbridos precoces de carga compacta se puede extender hasta el 31 de mayo, 15 o 20 de junio según la zona.",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "VR-91 (guajillo, INIFAP)",
+        "Don Ramón (guajillo, INIFAP)",
+        "Don Luis (guajillo, INIFAP)",
+        "AM-VR (ancho mulato, INIFAP)",
+        "AP-VR (ancho poblano, INIFAP)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "37,037 plantas por ha: 0.30 m entre plantas y 0.90 m entre surcos, con acolchado plástico blanco/negro y cintilla con goteros cada 0.30 m.",
+      "fertilizacion": "Fertirriego con 180-90-00 (600 kg/ha de fosfonitrato y 85 kg/ha de ácido fosfórico). Solución nutritiva por etapa: N de 60 a 140 ppm, P 50, K de 100 a 170, Ca de 100 a 170 y Mg de 40 a 50 ppm, del trasplante al final del ciclo. Mantener pH de 5.5 a 6.5 (el agua de la región suele requerir acidificar) y CE de 0.7 al inicio hasta 1.8 desde el 5º piso de frutos. Muestreo foliar desde floración.",
+      "riego": "Por goteo, buscando 10 a 15 % de lixiviado. Con tensiómetro a 30 cm: regar a 20-30 cb los primeros 25 días, a 15-25 cb los siguientes 20 días y a 10 cb después de los 65 días. Poner tres tensiómetros por estación a 15, 30 y 45 cm.",
+      "plagas": [
+        "Mosca blanca (Trialeurodes vaporariorum)",
+        "Pulgón verde (Myzus persicae)",
+        "Minador de la hoja (Liriomyza spp.)",
+        "Insectos vectores de virus",
+        "Barrenillo del chile",
+        "Paratrioza",
+        "Ácaros",
+        "Gusanos"
+      ],
+      "enfermedades": [
+        "Marchitez del chile"
+      ],
+      "malezas": "Escardas en el fondo de los surcos durante el ciclo y deshierbe manual en los orificios del acolchado.",
+      "cosecha": "Para fresco se corta verde en estado 'sazón', cada 14 a 21 días; para secado, cuando los frutos cambian a rojo o café. La cosecha se reparte de agosto a noviembre. En malla sombra se esperan 6.5 kg/m² de chile verde con variedades y 8 kg/m² con híbridos comerciales.",
+      "cuidados": [
+        "Monitorear plagas dos veces por semana con trampas adhesivas amarillas y azules, y mantener cerradas las puertas de la malla sombra.",
+        "Rotar los insecticidas autorizados para evitar resistencia y preferir los de bajo impacto a la salud.",
+        "Desinfectar tijeras, navajas, calzado y manos al podar y cosechar; no dejar entrar a personas de campos hortícolas a cielo abierto.",
+        "Regar según tensiómetros y mantener el pH de la solución entre 5.5 y 6.5.",
+        "Entutorar con malla o estacas y rafia, y quitar brotes laterales al inicio del cultivo.",
+        "Usar abejorros para polinizar; si pasa de 30 °C, complementar con sopladores o moviendo las plantas."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 147645,
+          "rendimiento": 40,
+          "unidad_rendimiento": "t/ha",
+          "precio": null,
+          "ingreso_neto": 112355,
+          "relacion_bc": 1.76
+        },
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 190395,
+          "rendimiento": 30,
+          "unidad_rendimiento": "t/ha",
+          "precio": 15000,
+          "ingreso_neto": 259605,
+          "relacion_bc": 2.36
+        }
+      ],
+      "nota": "Se corrigió el nombre científico (el extraído dice 'Capsicum annum'). El primer costo es el Cuadro 5 (chile ancho, riego) y el segundo el Cuadro 6 (chile con fertirriego). Cuadro 5: el costo impreso ($147,645) no cuadra con la suma de conceptos (subtotales suman $153,895 y el de preparación del terreno no coincide con sus partidas), y el renglón de valor de la producción ('30 × 15,000 = 260,000') no es coherente con el rendimiento de 40 t, por eso precio en null; se conservaron costo, utilidad y B/C impresos, coherentes entre sí. Cuadro 6: los subtotales suman $189,895 contra $190,395 impresos; se conservó el impreso. Precio en $/t. La agenda enlista además materiales de otros tipos de chile (serrano, jalapeño, ancho, morrón, habanero, caloro, húngaro) sin indicar su origen; para chile ancho: Corcel, Caballero, Don Emilio, Don Matías, Doroteo, Vencedor, San Matías, Duque, Don Javier, Fortuna, Allende y Monarca. No se clasificaron como comerciales porque el texto no lo dice.",
+      "revisado": false
+    },
+    {
+      "ficha": "Frijol",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        36,
+        39
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Altiplano Potosino, de 1,400 a 2,100 m, 14 a 29 °C y 250 a 400 mm de lluvia de junio a noviembre. Potencial bajo; limitan la falta de humedad, las plagas y las enfermedades.",
+      "siembra": {
+        "texto": "Del 15 de mayo al 30 de junio (la agenda dice '31 de junio').",
+        "meses": [
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Pinto Saltillo",
+        "Centenario",
+        "Libertad",
+        "Centauro"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "125,000 plantas por ha (10 plantas por metro), surcos de 76 a 80 cm, con sembradora de labranza cero.",
+      "fertilizacion": "Fórmula 40-40-00, todo al momento de la siembra, con 18-46-00 y sulfato de amonio. Inocular la semilla con 1.0 kg/ha de micorriza.",
+      "riego": null,
+      "plagas": [
+        "Conchuela"
+      ],
+      "enfermedades": [
+        "Roya (Uromyces phaseoli)",
+        "Cenicilla (Erysiphe polygoni)"
+      ],
+      "malezas": "Dos escardas en los primeros 40 días, con deshierbe manual si hace falta. En la segunda escarda hacer pileteo para retener el agua de lluvia.",
+      "cosecha": "Cuando el grano tenga 12 a 14 % de humedad. Dejar enfriar el grano a temperatura ambiente antes de envasar y guardarlo en un almacén fresco, ventilado y seco. Rendimiento esperado de 0.750 t/ha.",
+      "cuidados": [
+        "Preparar con multiarado y uno o dos pasos de rastra.",
+        "Sembrar del 15 de mayo al 30 de junio con variedades adaptadas al Altiplano (Pinto Saltillo, Centenario, Libertad, Centauro).",
+        "Aplicar toda la fórmula 40-40-00 en la siembra e inocular con micorriza.",
+        "Hacer dos escardas en los primeros 40 días y pileteo en la segunda.",
+        "Las variedades recomendadas toleran las enfermedades; vigilar roya, cenicilla y conchuela.",
+        "Cosechar con 12 a 14 % de humedad y almacenar en lugar fresco y seco."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 9054.5,
+          "rendimiento": 0.75,
+          "unidad_rendimiento": "t/ha",
+          "precio": 20000,
+          "ingreso_neto": 5945.5,
+          "relacion_bc": 1.66
+        }
+      ],
+      "nota": "El Cuadro 7 no imprime la ganancia; el ingreso neto se calculó como valor de la producción ($15,000) menos costo ($9,054.5), coherente con la relación B/C de 1.66. Precio en $/t. La fecha de siembra impresa termina el '31 de junio' (error de la agenda); se interpretó como fin de junio.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        40,
+        46
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Altiplano Potosino (1,400 a 2,100 m; 11.3 a 28.1 °C; 250 a 400 mm de junio a noviembre), con potencial medio a bajo por lluvia escasa y mal distribuida y suelos someros. Con fertirriego, Altiplano y Zona Media (900 a 2,100 m) con potencial alto.",
+      "siembra": {
+        "texto": "Del 15 de abril al 15 de junio.",
+        "meses": [
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "INIFAP H-377E",
+        "H-323",
+        "H-376",
+        "H-311",
+        "H-358",
+        "HV-313",
+        "Cafime (temporal)",
+        "VS-209 (temporal)"
+      ],
+      "hibridos_comerciales": [
+        "DEKALB 2031",
+        "DEKALB 2025",
+        "DEKALB 2034",
+        "ASGROW JABALI",
+        "ASGROW PUMA",
+        "ASGROW CIMARRON",
+        "ASGROW TIGRE AMARILLO (amarillo)",
+        "ASGROW GUEPARDO (amarillo)",
+        "PIONEER 9620",
+        "PIONEER CRM52",
+        "PIONEER 9617 (amarillo)",
+        "CERES XR45",
+        "CERES XR20A (amarillo)"
+      ],
+      "densidad": "25 a 30 kg/ha de semilla en surcos a 0.80 m, para 50,000 a 60,000 plantas por ha. Con fertirriego, 100,000 plantas por ha.",
+      "fertilizacion": "Riego: 160-60-00 (348 kg de urea y 130 kg de superfosfato triple por ha), con la mitad del nitrógeno y todo el fósforo en la siembra y el resto en la segunda escarda. Temporal: 60-20-00 (130 kg de urea y 44 kg de superfosfato triple) solo si se espera buen temporal, repartida igual; se recomienda inocular con 0.5 kg/ha de micorriza. Fertirriego: 300-100-100 por goteo con Venturi, tres veces por semana.",
+      "riego": "Un riego de presiembra y cuatro de auxilio: en la primera escarda, en la segunda escarda, en prefloración y en floración.",
+      "plagas": [
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Picudo del cogollo (Nicentrites testaceipes y Geraeus senilis)"
+      ],
+      "enfermedades": [
+        "Roya o chahuixtle (Puccinia sorghi, Puccinia polysora)",
+        "Carbón común o huitlacoche",
+        "Mildiu"
+      ],
+      "malezas": "Mantener el cultivo limpio al menos los primeros 40 días; dos escardas en ese periodo y deshierbe. Los herbicidas deben ser los autorizados por SENASICA.",
+      "cosecha": "Cuando el grano tenga 15 a 17 % de humedad; secar unos tres días al sol tapando con plástico por la noche. Rendimiento esperado: riego 8 t/ha de grano y 5 t de rastrojo; temporal 2.5 a 3.5 t de grano y 1 a 2 t de rastrojo.",
+      "cuidados": [
+        "En terrenos con 8 a 10 % de pendiente, levantar bordos en curvas a nivel para contener el escurrimiento.",
+        "Sembrar del 15 de abril al 15 de junio con 25 a 30 kg/ha de semilla.",
+        "En temporal, fertilizar solo si se espera buen temporal; si no, no fertilizar.",
+        "Dar el riego de presiembra y los cuatro de auxilio, sin faltar en prefloración y floración.",
+        "Usar híbridos tolerantes a roya y mildiu y controlar plagas según el porcentaje de infestación.",
+        "Secar el grano al sol y protegerlo de la humedad antes de almacenar."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 50150,
+          "rendimiento": 8,
+          "unidad_rendimiento": "t/ha",
+          "precio": 7000,
+          "ingreso_neto": 13350,
+          "relacion_bc": 1.27
+        },
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 17010,
+          "rendimiento": 3,
+          "unidad_rendimiento": "t/ha",
+          "precio": 7000,
+          "ingreso_neto": 6990,
+          "relacion_bc": 1.41
+        }
+      ],
+      "nota": "La ficha cubre maíz grano de riego, temporal y fertirriego (modalidad null). Precio en $/t de grano; los ingresos incluyen además el rastrojo (riego 5 t a $1,500; temporal 2 t a $1,500). Cuadro 9: los subtotales suman $51,950 contra $50,150 impresos; se conservó el impreso, coherente con la utilidad y la B/C. Cuadro 10: la etiqueta de la B/C copia la del Cuadro 9 ($63,500/$50,150), pero el valor 1.41 sí corresponde a $24,000/$17,010. Los híbridos H-323, H-376, H-311, H-358 y HV-313 se listaron como variedades públicas por su nomenclatura; el texto solo identifica explícitamente como INIFAP al H-377E.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz elotero",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        47,
+        58
+      ],
+      "cultivo_ids": [
+        "elote"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Zona Media (Rioverde, Ciudad Fernández, San Ciro, Cerritos y Villa Juárez), de 900 a 1,100 m, 21.3 °C de media y unos 500 mm de lluvia de junio a noviembre. Potencial alto; limitan plagas y enfermedades.",
+      "siembra": {
+        "texto": "Del 15 de marzo al 30 de abril.",
+        "meses": [
+          3,
+          4
+        ]
+      },
+      "variedades": [
+        "INIFAP H-377E",
+        "H-311",
+        "HV-313"
+      ],
+      "hibridos_comerciales": [
+        "A-7573",
+        "SB-308",
+        "DEKALB 2031",
+        "DEKALB 2025",
+        "DEKALB 2034",
+        "Maíz Elotero KS E-103",
+        "Elotero 15-MG",
+        "ASGROW JABALI",
+        "ASGROW CIMARRON",
+        "CERES XR45",
+        "PIONEER CRM52"
+      ],
+      "densidad": "25 a 30 kg/ha de semilla en surcos de 0.80 a 0.92 m, para 50,000 a 60,000 plantas por ha.",
+      "fertilizacion": "Fórmula 160-60-00 (348 kg de urea y 130 kg de superfosfato triple por ha): mitad del nitrógeno y todo el fósforo en la siembra, y el resto en la segunda escarda.",
+      "riego": "Un riego de presiembra y cuatro de auxilio: en la primera escarda, en la segunda escarda, en prefloración y en floración.",
+      "plagas": [
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Picudo del cogollo (Nicentrites testaceipes y Geraeus senilis)"
+      ],
+      "enfermedades": [
+        "Roya o chahuixtle (Puccinia sorghi, Puccinia polysora)",
+        "Carbón común o huitlacoche",
+        "Mildiu"
+      ],
+      "malezas": "Mantener el cultivo limpio al menos los primeros 40 días, con dos escardas y deshierbe. Los herbicidas deben ser los autorizados por SENASICA.",
+      "cosecha": "Cuando el grano está masoso; vender de inmediato porque es muy perecedero. Se esperan 16 a 18 t/ha de elote y 25 t/ha de forraje verde para ensilar.",
+      "cuidados": [
+        "Sembrar del 15 de marzo al 30 de abril.",
+        "Aplicar la mitad del nitrógeno y todo el fósforo en la siembra y el resto en la segunda escarda.",
+        "No dejar faltar los riegos de prefloración y floración.",
+        "Usar híbridos tolerantes a roya y mildiu.",
+        "Comercializar el elote en cuanto se cosecha y aprovechar el forraje para ensilar."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 52650,
+          "rendimiento": 18,
+          "unidad_rendimiento": "t/ha",
+          "precio": 5000,
+          "ingreso_neto": 62350,
+          "relacion_bc": 2.18
+        }
+      ],
+      "nota": "Precio en $/t de elote; el ingreso del Cuadro 11 incluye además 25 t de forraje a $1,000/t. La etiqueta de la B/C dice '$115,000/$51,950', pero el valor 2.18 corresponde a $115,000/$52,650, que es el costo que suman los conceptos. Las variedades se dividieron entre públicas y comerciales por su nombre; el texto solo identifica como INIFAP al H-377E, y A-7573, SB-308, KS E-103 y Elotero 15-MG se listaron como comerciales sin que el texto nombre la empresa.",
+      "revisado": false
+    }
+  ]
+}

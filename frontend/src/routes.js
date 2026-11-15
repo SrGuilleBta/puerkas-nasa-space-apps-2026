@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 // Pantallas de la app. `hash` es lo que va en la dirección: http://localhost:8000/#/clima
 // Se usa hash para que refrescar funcione tanto en desarrollo como en la imagen de producción.
 export const SECCIONES = [
-  { id: "principal", nombre: "Principal", hash: "#/" },
-  { id: "clima", nombre: "Clima", hash: "#/clima" },
-  { id: "suelo", nombre: "Suelo", hash: "#/suelo" },
-  { id: "mercado", nombre: "Mercado", hash: "#/mercado" },
-  { id: "cultivos", nombre: "Cultivos", hash: "#/cultivos" },
-  { id: "planificador", nombre: "Planificador", hash: "#/planificador" },
-  { id: "noticias", nombre: "Noticias", hash: "#/noticias" },
+  { id: "principal", nombre: "Home", hash: "#/" },
+  { id: "clima", nombre: "Weather", hash: "#/clima" },
+  { id: "suelo", nombre: "Soil", hash: "#/suelo" },
+  { id: "mercado", nombre: "Market", hash: "#/mercado" },
+  { id: "cultivos", nombre: "Crops", hash: "#/cultivos" },
+  { id: "planificador", nombre: "Planner", hash: "#/planificador" },
+  { id: "noticias", nombre: "News", hash: "#/noticias" },
 ];
 
 export const hashDe = (id) => SECCIONES.find((s) => s.id === id).hash;

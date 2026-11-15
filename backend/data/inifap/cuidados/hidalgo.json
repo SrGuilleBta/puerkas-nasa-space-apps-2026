@@ -1,0 +1,434 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/hidalgo.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "13",
+  "estado": "Hidalgo",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Hidalgo. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Alfalfa",
+      "cientifico": "Medicago sativa L.",
+      "paginas": [
+        10,
+        17
+      ],
+      "cultivo_ids": [
+        "alfalfa-verde"
+      ],
+      "tipo_cultivo": "perenne",
+      "modalidad": "riego",
+      "ciclo": "PER",
+      "region": "Climas subtropical árido y semiárido templado, de 1,700 a 2,500 msnm, con temperatura media anual de 19 a 27 °C. Prefiere suelos profundos, fértiles y permeables, con pH de 7.5 a 8.0. En Hidalgo se siembra sobre todo en el Valle del Mezquital y el Valle de Tulancingo.",
+      "siembra": {
+        "texto": "Del 15 de octubre al 15 de enero; fuera de ese periodo se puede sembrar, pero con menores resultados.",
+        "meses": [
+          10,
+          11,
+          12,
+          1
+        ]
+      },
+      "variedades": [
+        "San Miguelito",
+        "Atlixco",
+        "Moapa"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "50 a 100 plantas por m², equivalente a 40 a 50 kg/ha de semilla. Profundidad de 0.6 a 1.3 cm en suelos arcillosos o de migajón y de 1.3 a 2.5 cm en suelos arenosos.",
+      "fertilizacion": "Unos 100 kg/ha de la mezcla granulada triple 17 (17-17-17) a la siembra, y repetir la dosis cada año en invierno. Además, 2 L/ha de fertilizante foliar (N-P-K + microelementos) en noviembre y enero; como alternativa, productos orgánicos (tiosulfato de potasio o prebióticos) en cortes alternos.",
+      "riego": "Riego de germinación ligero y lento para no arrastrar la semilla; segundo riego, también ligero, a los 45 días para romper la costra; tercero 20 días después. Luego un riego al mes, unos ocho días después de cada corte. Evitar encharcamientos prolongados.",
+      "plagas": [
+        "Pulgón verde (Myzus persicae)",
+        "Pulgón negro (Aphis fabae)",
+        "Trips (Frankliniella occidentalis)",
+        "Gusano soldado (Spodoptera praefica y S. exigua)",
+        "Chicharritas (Empoasca spp.)"
+      ],
+      "enfermedades": [
+        "Peca (Pseudopeziza jonesii)",
+        "Mancha de la hoja (Pseudopeziza spp.)",
+        "Mildiú velloso (Peronospora trifoliorum)"
+      ],
+      "malezas": "El control es muy importante a los 45 días de establecido el cultivo. Ayudan una buena preparación del terreno, rotar al menos un año con otro cultivo como el maíz, sembrar en la fecha recomendada y manejar bien nutrición, riegos y cortes. Malezas: diente de león, malva, lengua de vaca y pastos.",
+      "cosecha": "Primer corte a los 75 a 90 días de la siembra. Después, cortar con 5 a 10 % de floración o cuando los rebrotes midan 5 a 7 cm: cada 25 a 28 días en primavera y verano, 30 a 35 en otoño y 40 a 45 en invierno. Almacenar el forraje con al menos 14 % de humedad. Rendimiento potencial promedio de 1.8 a 3.4 t de materia seca por hectárea, o unas 85 a 100 pacas.",
+      "cuidados": [
+        "Preparar el terreno con subsoleo, barbecho y rastra, y dejarlo libre de malezas.",
+        "Tapar la semilla con cuidado: ni muy profunda ni muy superficial, para que el riego no la arrastre.",
+        "Dar los primeros riegos ligeros y regar unos ocho días después de cada corte.",
+        "No retrasar los cortes, usar variedades resistentes y rotar cultivos para prevenir la peca, la mancha de la hoja y el mildiú.",
+        "Se puede hacer control biológico de plagas con crisopas (Chrysoperla carnea) de enero a marzo.",
+        "No meter animales a pastorear después del corte: el pisoteo y el consumo de rebrotes acortan la vida del alfalfar."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 34310,
+          "rendimiento": 765,
+          "unidad_rendimiento": "pacas/ha",
+          "precio": 100,
+          "ingreso_neto": 42190,
+          "relacion_bc": 2.23
+        }
+      ],
+      "nota": "Costos del Cuadro 3 (años 2 a 4, producción); el rendimiento y el precio están en pacas por hectárea y pesos por paca. El Cuadro 2 (establecimiento, año 1) da un costo de $51,850/ha, ingreso neto de $24,650 y relación B/C de 1.47. Se omitieron productos y dosis de plaguicidas y herbicidas que trae el texto.",
+      "revisado": false
+    },
+    {
+      "ficha": "Avena forrajera",
+      "cientifico": "Avena sativa L.",
+      "paginas": [
+        18,
+        23
+      ],
+      "cultivo_ids": [
+        "avena-forrajera-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": null,
+      "region": "Valles Altos de Hidalgo (2,100 a 2,700 msnm, 400 a 700 mm de lluvia al año y 12 a 14 °C de media, templado subhúmedo) y Valle del Mezquital (1,700 a 2,100 msnm, 400 a 500 mm y 14 a 16 °C). Más del 95 % se siembra en P-V en el Altiplano.",
+      "siembra": {
+        "texto": "Ciclo P-V: del 15 de mayo al 30 de junio. Ciclo O-I en los Valles de Tulancingo y del Mezquital: del 15 de noviembre al 30 de diciembre.",
+        "meses": [
+          5,
+          6,
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Turquesa (precoz a intermedia, grano y forraje)",
+        "Ágata (precoz a intermedia, grano y forraje)",
+        "Saia (tardía, forraje verde de alto rendimiento)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "80 kg/ha de semilla para Saia y 100 kg/ha para las otras variedades, con sembradora de grano pequeño o al voleo.",
+      "fertilizacion": "23-23-15 por hectárea, todo a la siembra (dos bultos de 25 kg de urea, dos de superfosfato triple y uno de cloruro de potasio). Con el Programa de Fertilizantes para el Bienestar: 11 kg de urea, 50 kg de DAP y 25 kg de cloruro de potasio. Dos aplicaciones foliares opcionales: en el amacollo y entre el embuche y el inicio del espigamiento.",
+      "riego": null,
+      "plagas": [
+        "Plagas del suelo",
+        "Pulgón (Schizaphis graminum)"
+      ],
+      "enfermedades": [
+        "Roya de la hoja (Puccinia coronata)",
+        "Roya del tallo (Puccinia graminis f. sp. avenae)",
+        "Manchas foliares (Drechslera avenacea, Septoria avenae, Colletotrichum graminicola)"
+      ],
+      "malezas": "Controlar las malezas de hoja ancha (quelite cenizo, quintonil, malva y acahualillo) a los 30 a 35 días después de la siembra. Uno o dos pasos de rastra un mes antes de sembrar destruyen las malezas que ya nacieron.",
+      "cosecha": "En P-V con siembras tardías (temporal), cortar con 5 a 10 % de espigamiento (90 a 100 días) para evitar heladas; en siembras antes del 10 de junio, con el grano en estado lechoso-masoso (110 a 120 días). En O-I, si sigue maíz, cortar con 5 a 10 % de espigamiento (95 a 105 días); si no, en lechoso-masoso (115 a 125 días). Turquesa y Ágata rinden 8 a 10 t/ha de materia seca y Saia 12 t/ha.",
+      "cuidados": [
+        "Preparar una buena cama de siembra (barbecho y rastreo) para una nacencia uniforme.",
+        "Aplicar todo el fertilizante a la siembra.",
+        "Las royas y manchas foliares se controlan sobre todo con variedades resistentes.",
+        "Controlar los pulgones solo cuando su incidencia sea alta.",
+        "Cortar con 5 a 10 % de espigamiento para tener más proteína y escapar a las heladas; en lechoso-masoso para más volumen."
+      ],
+      "costos": [
+        {
+          "modalidad": null,
+          "costo_total_ha": 11550,
+          "rendimiento": 350,
+          "unidad_rendimiento": "pacas/ha",
+          "precio": 40,
+          "ingreso_neto": 2450,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "La ficha cubre P-V (temporal, Altiplano) y O-I (Valles de Tulancingo y Mezquital), y dice que las variedades sirven en riego y temporal; por eso modalidad y ciclo van en null aunque el extraído marca 'temporal'. El texto no trae recomendaciones de riego. Costos del Cuadro 5 en pacas por hectárea y pesos por paca: el cuadro imprime relación B/C de 0.21, que en realidad es ingreso neto entre costo (2,450/11,550); ingreso bruto entre costo da 1.21, por eso relacion_bc va en null.",
+      "revisado": false
+    },
+    {
+      "ficha": "Cebada grano",
+      "cientifico": "Hordeum vulgare L.",
+      "paginas": [
+        24,
+        35
+      ],
+      "cultivo_ids": [
+        "cebada-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Valles Altos, de 2,100 a 2,700 msnm. Ambientes de buena productividad: 500 a 700 mm de lluvia bien distribuida y suelos de 50 a 60 cm; mediana: 450 a 500 mm; baja: menos de 450 mm y suelos de menos de 40 cm.",
+      "siembra": {
+        "texto": "Según el establecimiento de las lluvias; en general del 1 de mayo al 30 de junio.",
+        "meses": [
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Estelar OH (maltera, seis hileras)",
+        "Maravilla (forrajera, alta proteína)",
+        "Monserrat D (grano desnudo, harinas y alimento balanceado)",
+        "Zurita (dos hileras, alimentación humana y ganadera)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Estelar OH y Maravilla: 100 kg/ha con sembradora y 120 al voleo en suelo pesado; 110 y 130 kg/ha en suelo ligero. Monserrat D y Zurita: 90 y 100 kg/ha en suelo pesado; 100 y 110 kg/ha en suelo ligero.",
+      "fertilizacion": "Según el ambiente: buena productividad 60-46-30; mediana 46-46-15; baja productividad sin fertilizante al suelo (no es rentable). Todo a la siembra. Fertilización foliar de dos a tres aplicaciones en ambientes buenos y medianos, y de una a dos en los de baja productividad, en el amacollo y el espigamiento.",
+      "riego": null,
+      "plagas": [
+        "Gallina ciega (Phyllophaga spp.)",
+        "Gusano de alambre (Agriotes spp.)",
+        "Pulgón ruso (Diuraphis noxia)",
+        "Pulgones del follaje (Schizaphis graminum, Metopolophium dirhodum)",
+        "Pulgón de la espiga (Sitobion avenae)",
+        "Gusano soldado (Spodoptera exigua)"
+      ],
+      "enfermedades": [
+        "Mancha reticular (Helminthosporium teres)",
+        "Mancha moteada (Helminthosporium sativum)",
+        "Escaldadura de la hoja (Rhynchosporium secalis)",
+        "Roya de la hoja (Puccinia hordei)",
+        "Roya lineal amarilla (Puccinia striiformis f. sp. hordei)",
+        "Carbón volador (Ustilago nuda)"
+      ],
+      "malezas": "Evitar las malezas porque compiten por agua y nutrientes y mezclan su semilla con el grano. Hoja ancha: malva, quelite, trébol, girasol silvestre y acahual; hoja angosta: avena silvestre y Agrostis. El control se hace durante el amacollamiento (25 a 30 días).",
+      "cosecha": "Con trilladora, cuando el grano esté maduro y lleno, con 13 a 14 % de humedad (lo mejor, 14 %), entre 20 y 25 días después de la madurez. Seleccionar y limpiar el grano en bodega mejora el precio. Rendimiento de 1.8 a 4.5 t/ha según la lluvia y el ambiente.",
+      "cuidados": [
+        "Identificar el ambiente de producción (lluvia y profundidad del suelo) para ajustar la fertilización; en ambientes pobres no fertilizar al suelo.",
+        "Usar variedades tolerantes: es el mejor control de las enfermedades.",
+        "Revisar el cultivo seguido; si las manchas o la roya llegan a la hoja bandera en el espigamiento, hay que actuar.",
+        "Contra el carbón volador: semilla certificada y tratada, rotación de cultivos y variedades tolerantes.",
+        "Eliminar en invierno las plantas voluntarias de cereales y pastos (Eragrostis mexicana) para reducir el pulgón ruso; el barbecho ayuda contra plagas del suelo.",
+        "Para gusano soldado, preferir bioplaguicidas a base de Bacillus thuringiensis y actuar con los primeros gusanos."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 16380,
+          "rendimiento": 3000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8,
+          "ingreso_neto": 7620,
+          "relacion_bc": 1.46
+        }
+      ],
+      "nota": null,
+      "revisado": false
+    },
+    {
+      "ficha": "Frijol",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        36,
+        47
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": null,
+      "ciclo": null,
+      "region": "Valle del Mezquital (1,700 a 2,000 msnm, 14 a 16 °C, suelos feozem de 40 a 60 cm), Huasteca Hidalguense (160 a 900 msnm, 20 a 24 °C) y Valles Altos (14 a 16 °C, suelos de 30 a 90 cm). Tres cuartas partes se siembran en P-V; el resto en O-I en la Huasteca, con buen temporal.",
+      "siembra": {
+        "texto": "Riego con riesgo de heladas tardías: después del 15 de febrero en la Vega de Metztitlán; en el DDR Mixquiahuala, del 1 al 15 de marzo y del 1 al 30 de junio. Punta de riego: del 15 de abril al 31 de mayo. Temporal: del 1 al 15 de junio (semiguía) o del 15 al 30 de junio (mata) si el temporal se atrasa. Huasteca: ciclo O-I, del 1 de septiembre al 31 de octubre.",
+        "meses": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          9,
+          10
+        ]
+      },
+      "variedades": [
+        "Flor de Durazno (mata)",
+        "Primavera 28",
+        "Azufradomex",
+        "Azufradoro",
+        "Huitel 143",
+        "Flor de Mayo M-38",
+        "Flor de Mayo Eugenia",
+        "Negro 8025",
+        "Bayo Azteca",
+        "Negro Verdín",
+        "Negro Tropical",
+        "Negro Rubí",
+        "Negro Comapa"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Variedades de mata: surcos de 75 a 80 cm, 13 a 14 plantas por metro, más de 170,000 plantas/ha (40 a 60 kg/ha de semilla). Semiguía: surcos de 80 cm, 10 a 11 semillas por metro, 130,000 plantas/ha (40 a 50 kg/ha). En la Vega de Metztitlán, doble hilera para unas 260,000 plantas/ha.",
+      "fertilizacion": "Valle del Mezquital: 18 kg de N y 46 de P por ha a la siembra (100 kg de fosfato diamónico) y 23 kg de N antes de la floración, en la segunda escarda (50 kg de urea o 100 kg de sulfato de amonio). El fertilizante no debe tocar la semilla. Fertilización foliar opcional antes de la floración y al inicio de la formación del ejote.",
+      "riego": "De tres a cuatro riegos según agua, suelo y temperatura. Asegurar el riego en la floración y antes de la madurez del grano.",
+      "plagas": [
+        "Conchuela (Epilachna varivestis)",
+        "Picudo del ejote (Apion godmani)",
+        "Chapulín (Brachystola, Sphenarium y Melanoplus spp.)",
+        "Chicharrita (Empoasca kraemeri)",
+        "Minador de la hoja (Xenochalepus signaticollis)",
+        "Minador serpentina (Liriomyza munda)",
+        "Mosquita blanca (Bemisia tabaci, Trialeurodes vaporariorum)",
+        "Gorgojos de almacén (Acanthoscelides obtectus, Zabrotes subfasciatus)"
+      ],
+      "enfermedades": [
+        "Chahuixtle o roya (Uromyces phaseoli)",
+        "Antracnosis (Colletotrichum lindemuthianum)",
+        "Tizón de halo (Pseudomonas syringae pv. phaseolicola)",
+        "Tizón común (Xanthomonas axonopodis pv. phaseoli)",
+        "Pudriciones de la raíz (Fusarium, Pythium, Rhizoctonia, Macrophomina)"
+      ],
+      "malezas": "Escardas oportunas y una densidad adecuada de plantas reducen mucho las malezas. Principales: quelite, rosilla, acahual, coquillo, mostacilla, perilla, verdolaga, zacate Johnson, pastos y avena silvestre.",
+      "cosecha": "Cuando las vainas están maduras, un poco antes de que la planta se seque del todo, de preferencia por la mañana con rocío para evitar desgrane. Trillar con las vainas secas y el grano a unos 15 % de humedad. Almacenar en lugar seco y en recipientes herméticos contra gorgojos. Rendimiento esperado de 1.5 t/ha (potencial de 1.5 a 2.0 t/ha).",
+      "cuidados": [
+        "Usar variedades resistentes y semilla sana: es el control más efectivo y barato de roya, antracnosis y tizones.",
+        "Barbechar a 20-30 cm tan pronto termine la cosecha anterior y nivelar bien el terreno para evitar encharcamientos y pudriciones de raíz.",
+        "Asegurar el riego en la floración y en el llenado del grano.",
+        "Controlar el picudo del ejote de forma preventiva, unos 12 días después del inicio de la floración.",
+        "El chapulín se puede controlar con el hongo Beauveria bassiana hasta la ninfa 3; vigilar las orillas cerca de la maleza.",
+        "Si llueve en la cosecha, cortar y proteger las plantas para que no se manche el grano."
+      ],
+      "costos": [
+        {
+          "modalidad": null,
+          "costo_total_ha": 21770,
+          "rendimiento": 1500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 20,
+          "ingreso_neto": 8230,
+          "relacion_bc": 1.37
+        }
+      ],
+      "nota": "La ficha cubre riego, punta de riego y temporal, y los ciclos P-V y O-I (Huasteca); por eso modalidad y ciclo van en null. La tabla de variedades salió revuelta en el extraído (Primavera 28 y Azufradomex, Negro Verdín y Negro Tropical vienen en la misma fila); los nombres se separaron, pero conviene cotejar con el PDF.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz riego",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        48,
+        53
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Valle del Mezquital, de clima seco y semidesértico, con riego principalmente de aguas residuales de la Ciudad de México. También aplica a Valles Altos.",
+      "siembra": {
+        "texto": "Valle del Mezquital: híbridos tardíos del 1 de marzo al 15 de abril; intermedios del 16 de abril al 15 de mayo; precoces del 16 de mayo al 15 de junio.",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "H-40",
+        "H-48",
+        "H-50",
+        "H-66",
+        "H-70",
+        "H-155 (Valle del Mezquital)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "90,000 semillas/ha en suelos profundos y 72,500 en suelos delgados, con sembradora de precisión a una hilera; surcos de 75 a 80 cm.",
+      "fertilizacion": "Valle del Mezquital: a la siembra, 130 kg de fosfato diamónico (DAP) mezclado con 150 kg/ha de sulfato de amonio. A los 35 a 40 días, 300 kg de sulfato de amonio en banda y 50 kg/ha de cloruro o sulfato de potasio. Aplicaciones foliares opcionales desde los 20 días.",
+      "riego": "Un riego a la siembra y de cuatro a cinco durante el ciclo. En suelos profundos, láminas grandes y más espaciadas; en suelos delgados, menores y más frecuentes. Asegurar el riego en la floración y la maduración del grano.",
+      "plagas": [
+        "Gallina ciega (Phyllophaga spp.)",
+        "Gusano alfilerillo (Diabrotica spp.)",
+        "Gusano trozador (Agrotis ipsilon)",
+        "Gusano cogollero (Spodoptera frugiperda)"
+      ],
+      "enfermedades": [
+        "Roya (Puccinia sorgi)",
+        "Pudrición de tallo y mazorca (Fusarium spp.)",
+        "Carbón de la espiga (Sporisorium reilianum)",
+        "Complejo mancha de asfalto (Phyllachora maydis, Monographella maydis, Coniothyrium phyllachorae)"
+      ],
+      "malezas": "Prevenir maleza de hoja ancha y angosta desde la preemergencia; atender también el chayotillo (Sicyos deppei), los pastos y el coquillo (Cyperus esculentus).",
+      "cosecha": "Mecanizada cuando el grano tenga 14 % de humedad, medida con determinadores portátiles, para evitar castigos en la venta. Con aguas residuales en el Valle del Mezquital se obtienen 10 a 14 t/ha; en Valles Altos, 6 a 11 t/ha.",
+      "cuidados": [
+        "Preparar con subsoleo de 40 a 60 cm, un rastreo en el sentido del surcado y otro cruzado.",
+        "Elegir el híbrido según la fecha: tardíos en marzo-abril, intermedios de abril a mayo y precoces de mayo a junio.",
+        "Asegurar el riego en floración y llenado de grano.",
+        "Contra el carbón de la espiga: variedades tolerantes, humedad los primeros 25 días, respetar fechas y Bacillus subtilis como alternativa biológica.",
+        "Contra la mancha de asfalto: materiales criollos tolerantes, monitoreo, rotación, eliminar residuos de cosecha y buena época de siembra.",
+        "Usar Trichoderma y controlar plagas a tiempo para prevenir pudriciones de tallo y mazorca."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 39050,
+          "rendimiento": 14000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5,
+          "ingreso_neto": 30950,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Costos del Cuadro 19. El cuadro imprime relación B/C de 0.793, que en realidad es ingreso neto entre costo (30,950/39,050); ingreso bruto entre costo da 1.79, por eso relacion_bc va en null. El cuadro de variedades menciona 'híbridos comerciales evaluados' sin nombres y remite al Catálogo de híbridos del comité consultivo de semillas del estado de Hidalgo.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz Temporal",
+      "cientifico": null,
+      "paginas": [
+        54,
+        67
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": null,
+      "region": "Valles Altos (1,700 a 2,000 msnm, 14 a 16 °C, suelos feozem, vertisoles y litosoles de 30 a 90 cm) y Huasteca Hidalguense (160 a 900 msnm, 20 a 24 °C, suelos de 40 a 80 cm). Más del 95 % se siembra en P-V.",
+      "siembra": {
+        "texto": "Híbridos intermedios del 10 de abril al 15 de mayo; precoces del 15 de mayo al 15 de junio. Huasteca: P-V del 15 de mayo al 30 de julio y O-I del 1 de octubre al 15 de noviembre.",
+        "meses": [
+          4,
+          5,
+          6,
+          7,
+          10,
+          11
+        ]
+      },
+      "variedades": [
+        "H-40",
+        "H-48",
+        "H-50",
+        "H-66",
+        "H-70 (Valles Altos)",
+        "V-524",
+        "H-519",
+        "H-520",
+        "Criollo Tuxpeño blanco o amarillo (trópico)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Valles Altos: 60,000 a 70,000 semillas/ha, surcos de 80 cm y una semilla cada 20.8 cm (60,000) o 17.8 cm (70,000). Huasteca: 50,000 a 60,000 semillas/ha, surcos de 80 cm; dos semillas cada 50 cm a mano o una cada 25 cm con sembradora.",
+      "fertilizacion": "Altiplano y Huasteca: 100 kg de fosfato diamónico en banda a la siembra y 25 kg de cloruro de potasio; a los 45 días, 100 kg de urea en banda. Dos aplicaciones foliares opcionales.",
+      "riego": null,
+      "plagas": [
+        "Gallina ciega (Phyllophaga spp.)",
+        "Gusano alfilerillo (Diabrotica spp.)",
+        "Gusano trozador (Agrotis ipsilon)",
+        "Gusano cogollero (Spodoptera frugiperda)"
+      ],
+      "enfermedades": [
+        "Roya (Puccinia sorgi)",
+        "Pudrición de tallo y mazorca (Fusarium spp.)",
+        "Carbón de la espiga (Sporisorium reilianum)",
+        "Complejo mancha de asfalto (Phyllachora maydis, Monographella maydis, Coniothyrium phyllachorae)"
+      ],
+      "malezas": "Prevenir maleza de hoja ancha y angosta desde la preemergencia; atender también el chayotillo (Sicyos deppei), los pastos y el coquillo (Cyperus esculentus).",
+      "cosecha": "Manual, cuando el grano tenga 14 % de humedad, para evitar castigos en la venta. Rendimiento esperado: 4 a 6 t/ha en Valles Altos y 3 a 4 t/ha en el trópico húmedo (Huasteca y región Otomí-Tepehua).",
+      "cuidados": [
+        "Sembrar intermedios de abril a mediados de mayo y precoces de mayo a mediados de junio; en la Huasteca seguir las fechas de P-V u O-I.",
+        "Ajustar la densidad: 60,000 a 70,000 semillas/ha en Valles Altos y 50,000 a 60,000 en la Huasteca.",
+        "Aplicar el fósforo a la siembra en banda y la urea a los 45 días.",
+        "Contra el carbón de la espiga: variedades tolerantes, respetar fechas de siembra y Bacillus subtilis como alternativa biológica.",
+        "Contra la mancha de asfalto: criollos tolerantes, monitoreo, rotación y eliminar residuos de cosecha."
+      ],
+      "costos": [],
+      "nota": "El Cuadro 22 de esta ficha se titula 'maíz de riego' y repite el cuadro de la ficha de riego (14 t/ha, $39,050/ha, riegos y mantenimiento de sistema de riego), muy lejos del rendimiento esperado de temporal (3 a 6 t/ha); por eso costos va vacío. La preparación del terreno del texto habla de riego de remoje y cinco riegos de auxilio, lo que parece copiado de la ficha de riego; riego va en null. Ciclo en null porque en la Huasteca también se siembra en O-I. El extraído no trae nombre científico.",
+      "revisado": false
+    }
+  ]
+}

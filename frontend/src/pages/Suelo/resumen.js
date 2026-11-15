@@ -14,32 +14,32 @@ export const COLORES = {
   info: "var(--invierno)",
 };
 
-// Escala de sequía por percentil (Drought Monitor), de lo más seco a lo normal
+// Escala de humedad por percentil (Drought Monitor), de lo más seco a lo normal
 export const TRAMOS_SEQUIA = [
-  { hasta: 2, color: "#7a0a0a", etiqueta: "Mucho más seco de lo normal" },
-  { hasta: 5, color: "#d7191c", etiqueta: "Mucho más seco de lo normal" },
-  { hasta: 10, color: "#e8742c", etiqueta: "Más seco de lo normal" },
-  { hasta: 20, color: "#f6c07a", etiqueta: "Más seco de lo normal" },
-  { hasta: 30, color: "#f7e15a", etiqueta: "Un poco más seco de lo normal" },
-  { hasta: 100, color: "#8fd9a8", etiqueta: "Normal o más húmedo" },
+  { hasta: 2, color: "#7a0a0a", etiqueta: "Much drier than normal" },
+  { hasta: 5, color: "#d7191c", etiqueta: "Much drier than normal" },
+  { hasta: 10, color: "#e8742c", etiqueta: "Drier than normal" },
+  { hasta: 20, color: "#f6c07a", etiqueta: "Drier than normal" },
+  { hasta: 30, color: "#f7e15a", etiqueta: "Slightly drier than normal" },
+  { hasta: 100, color: "#8fd9a8", etiqueta: "Normal or wetter" },
 ];
 
 // Escala de pendiente (FAO, en %); se dibuja de 0 a 30 % para que se vean los tramos bajos
 export const TRAMOS_PENDIENTE = [
-  { hasta: 2, color: "#8fd9a8", etiqueta: "Plano o casi plano" },
-  { hasta: 5, color: "#c6eb8f", etiqueta: "Ligeramente inclinado" },
-  { hasta: 10, color: "#f7e15a", etiqueta: "Inclinado" },
-  { hasta: 15, color: "#f6c07a", etiqueta: "Fuertemente inclinado" },
-  { hasta: 30, color: "#e8742c", etiqueta: "Escarpado" },
+  { hasta: 2, color: "#8fd9a8", etiqueta: "Flat or nearly level" },
+  { hasta: 5, color: "#c6eb8f", etiqueta: "Gently sloping" },
+  { hasta: 10, color: "#f7e15a", etiqueta: "Sloping" },
+  { hasta: 15, color: "#f6c07a", etiqueta: "Strongly sloping" },
+  { hasta: 30, color: "#e8742c", etiqueta: "Steep" },
 ];
 
 // Escala de plantas (NDVI, USGS)
 export const TRAMOS_NDVI = [
-  { hasta: 0.1, color: "#c98b5a", etiqueta: "Suelo desnudo" },
-  { hasta: 0.2, color: "#e9c27a", etiqueta: "Vegetación muy escasa" },
-  { hasta: 0.3, color: "#e5e08a", etiqueta: "Matorral o pastizal" },
-  { hasta: 0.6, color: "#9fdc8c", etiqueta: "Vegetación moderada" },
-  { hasta: 1, color: "#3fa96b", etiqueta: "Vegetación densa" },
+  { hasta: 0.1, color: "#c98b5a", etiqueta: "Bare soil" },
+  { hasta: 0.2, color: "#e9c27a", etiqueta: "Very sparse vegetation" },
+  { hasta: 0.3, color: "#e5e08a", etiqueta: "Shrubland or grassland" },
+  { hasta: 0.6, color: "#9fdc8c", etiqueta: "Moderate vegetation" },
+  { hasta: 1, color: "#3fa96b", etiqueta: "Dense vegetation" },
 ];
 
 export function colorNdvi(v) {
@@ -52,11 +52,11 @@ export function resumenAgua(d) {
   const masSecos = Math.round(d.percentil / 10);
   const frase =
     d.percentil >= 40 && d.percentil <= 60
-      ? "Hoy está como en un año típico para esta época"
+      ? "Today it is like a typical year for this season"
       : d.percentil > 60
-      ? `Hoy está más húmedo que ${masSecos} de cada 10 años en esta época`
-      : `Hoy está más seco que ${10 - masSecos} de cada 10 años en esta época`;
-  if (!d.categoria) return { tono: "bien", titulo: "Normal para esta época", frase };
+      ? `Today it is wetter than ${masSecos} out of 10 years at this time of year`
+      : `Today it is drier than ${10 - masSecos} out of 10 years at this time of year`;
+  if (!d.categoria) return { tono: "bien", titulo: "Normal for this season", frase };
   const tono = { D0: "ojo", D1: "alerta", D2: "alerta", D3: "mal", D4: "mal" }[d.categoria];
   const titulo = d.estado[0].toUpperCase() + d.estado.slice(1);
   return { tono, titulo, frase };
@@ -64,21 +64,27 @@ export function resumenAgua(d) {
 
 // El backend manda los meses abreviados (caben en la gráfica); en las frases van completos
 const MES_COMPLETO = {
-  ene: "enero", feb: "febrero", mar: "marzo", abr: "abril", may: "mayo", jun: "junio",
-  jul: "julio", ago: "agosto", sep: "septiembre", oct: "octubre", nov: "noviembre", dic: "diciembre",
+  Jan: "January", Feb: "February", Mar: "March", Apr: "April", May: "May", Jun: "June",
+  Jul: "July", Aug: "August", Sep: "September", Oct: "October", Nov: "November", Dec: "December",
 };
 export const mesCompleto = (m) => MES_COMPLETO[m] ?? m;
 
 export function resumenPlantas(d) {
   if (!d?.ultimo) return null;
   const c = d.ultimo.clase;
-  const tono = c === "suelo desnudo" ? "mal" : c === "vegetación muy escasa" ? "alerta" : c === "matorral o pastizal" ? "ojo" : "bien";
-  const titulo = { "suelo desnudo": "Terreno pelón", "vegetación muy escasa": "Muy pocas plantas", "matorral o pastizal": "Pocas plantas", "vegetación moderada": "Plantas regulares", "vegetación densa": "Muchas plantas" }[c];
+  const tono = c === "bare soil" ? "mal" : c === "very sparse vegetation" ? "alerta" : c === "shrubland or grassland" ? "ojo" : "bien";
+  const titulo = {
+    "bare soil": "Bare land",
+    "very sparse vegetation": "Very few plants",
+    "shrubland or grassland": "Few plants",
+    "moderate vegetation": "Some plants",
+    "dense vegetation": "Many plants",
+  }[c];
   const menor = d.mes_menor_cobertura?.mes;
   const frase = d.meses_suelo_desnudo.length
-    ? `Se queda sin plantas en ${d.meses_suelo_desnudo.map(mesCompleto).join(", ")}: ahí la tierra se puede perder`
+    ? `It is left without plants in ${d.meses_suelo_desnudo.map(mesCompleto).join(", ")}: the soil can be lost then`
     : menor
-      ? `El mes con menos plantas es ${mesCompleto(menor)}`
+      ? `The month with the fewest plants is ${mesCompleto(menor)}`
       : "";
   return { tono, titulo, frase };
 }
@@ -92,8 +98,8 @@ export function resumenTerreno(d) {
     ls == null
       ? ""
       : ls <= 1
-        ? "La forma del terreno no aumenta la pérdida de tierra con la lluvia"
-        : `La forma del terreno multiplica por ${ls} la pérdida de tierra con la lluvia`;
+        ? "The shape of the land does not increase soil loss from rain"
+        : `The shape of the land multiplies soil loss from rain by ${ls}`;
   const titulo = d.clase_pendiente_fao[0].toUpperCase() + d.clase_pendiente_fao.slice(1);
   return { tono, titulo, frase };
 }
@@ -101,15 +107,15 @@ export function resumenTerreno(d) {
 export function resumenAguaSubterranea(d) {
   if (!d) return null;
   const t = d.tendencia_cm_por_anio;
-  if (t < 0) return { tono: "mal", titulo: "Bajando con los años", frase: "En tu región hay cada vez menos agua guardada (pozos, suelo, presas)" };
-  if (t > 0) return { tono: "bien", titulo: "Subiendo con los años", frase: "En tu región hay cada vez más agua guardada" };
-  return { tono: "info", titulo: "Sin cambio", frase: "El agua guardada en tu región se mantiene" };
+  if (t < 0) return { tono: "mal", titulo: "Going down over the years", frase: "Your region stores less and less water (wells, soil, dams)" };
+  if (t > 0) return { tono: "bien", titulo: "Going up over the years", frase: "Your region stores more and more water" };
+  return { tono: "info", titulo: "No change", frase: "The water stored in your region stays the same" };
 }
 
 export function resumenTipoSuelo(d) {
   const capa = d?.capas?.[0];
   if (!capa || capa.ph == null) return null;
-  const ph = capa.ph < 6.6 ? "ácido" : capa.ph <= 7.3 ? "neutro" : "alcalino";
+  const ph = capa.ph < 6.6 ? "Acidic" : capa.ph <= 7.3 ? "Neutral" : "Alkaline";
   const tex = capa.textura ?? "";
-  return { tono: "info", titulo: `${tex[0]?.toUpperCase() ?? ""}${tex.slice(1)}`, frase: `Suelo ${ph} (pH ${capa.ph})` };
+  return { tono: "info", titulo: `${tex[0]?.toUpperCase() ?? ""}${tex.slice(1)}`, frase: `${ph} soil (pH ${capa.ph})` };
 }

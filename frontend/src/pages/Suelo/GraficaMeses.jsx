@@ -10,7 +10,7 @@ export default function GraficaMeses({ meses }) {
 
   return (
     <div className="suelo-grafica">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Plantas en el terreno por mes">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Plants on the land by month">
         {[0, 0.3, 0.6].map((v) => (
           <g key={v}>
             <line x1={M.l} x2={W - M.r} y1={y(v)} y2={y(v)} className="suelo-grafica-rejilla" />

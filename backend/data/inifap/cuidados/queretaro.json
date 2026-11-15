@@ -1,0 +1,484 @@
+{
+  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/queretaro.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "cve_ent": "22",
+  "estado": "Querétaro",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Querétaro. INIFAP, Ciudad de México, 2026.",
+  "fichas": [
+    {
+      "ficha": "Avena forrajera en verde",
+      "cientifico": "Avena sativa L.",
+      "paginas": [
+        10,
+        16
+      ],
+      "cultivo_ids": [
+        "avena-forrajera-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Bajío y zonas semiáridas (El Marqués, Pedro Escobedo, San Juan del Río, Tequisquiapan, Colón, Querétaro, Corregidora, Ezequiel Montes y Cadereyta) entre 1,850 y 1,981 msnm, con 13.4 a 17.3 °C durante el ciclo y lluvia casi nula en O-I. Pendiente no mayor a 8 %.",
+      "siembra": {
+        "texto": "Del 15 de octubre a la primera semana de enero.",
+        "meses": [
+          10,
+          11,
+          12,
+          1
+        ]
+      },
+      "variedades": [
+        "Turquesa",
+        "Ágata"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "100 a 120 kg de semilla por ha, al voleo o con sembradora mecánica. Si se siembra al voleo, rayar el suelo para conducir el riego.",
+      "fertilizacion": "120-40-00 (N-P-K): 40 % del nitrógeno y todo el fósforo al sembrar; el resto del nitrógeno en el segundo riego. Fuentes: 230 kg/ha de urea (o 510 kg/ha de sulfato de amonio, no en suelos ácidos) y 90 kg/ha de fosfato diamónico. Hacer análisis de suelo.",
+      "riego": "Normalmente 3 a 4 riegos en el ciclo, cada 25 a 35 días; depende del suelo, la temperatura y el desarrollo de las plantas. Nivelar el terreno ahorra cerca de 20 % del agua.",
+      "plagas": [
+        "Pulgones verdes (Schizaphis graminum, Rhopalosiphum padi, Metopolophium dirhodum)"
+      ],
+      "enfermedades": [],
+      "malezas": "Periodo crítico entre 25 y 40 días después de la emergencia. Principales: nabo silvestre, mostacilla y malva. Para reducir la competencia, cuidar la preparación del suelo, la fecha y la densidad de siembra.",
+      "cosecha": "Cosechar cuando el grano esté en estado lechoso-masoso: mayor rendimiento con buena proteína (9.8 a 13.5 %) y digestibilidad. Rendimiento esperado de 7 a 12 t/ha de materia seca, unas 28 a 48 t/ha de forraje verde.",
+      "cuidados": [
+        "Nivelar el terreno: ahorra cerca de 20 % del agua y evita encharcamientos que favorecen al pulgón.",
+        "Sembrar entre el 15 de octubre y la primera semana de enero con 100 a 120 kg/ha de semilla.",
+        "Aplicar el 40 % del nitrógeno y todo el fósforo al sembrar, y el resto del nitrógeno en el segundo riego.",
+        "Contra el pulgón, eliminar pastos hospederos y conservar enemigos naturales (catarinitas, crisopas, chinche pirata, sírfidos); se pueden liberar crisopas y avispas Aphidius.",
+        "Mantener la parcela sin maleza entre los 25 y 40 días después de la emergencia.",
+        "Cortar en grano lechoso-masoso para obtener el mejor forraje."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 31370.64,
+          "rendimiento": 12000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.33,
+          "ingreso_neto": 20589.36,
+          "relacion_bc": 1.66
+        }
+      ],
+      "nota": "El rendimiento del cuadro de costos (12,000 kg/ha) es de heno de avena, no de forraje verde; el precio ($4.33/kg) es por kg de heno. Si el suelo es deficiente, la agenda sugiere 20 kg/ha de sulfato ferroso y 5 a 10 kg/ha de sulfato de zinc a la siembra.",
+      "revisado": false
+    },
+    {
+      "ficha": "Cebada",
+      "cientifico": "Hordeum vulgare L. y Hordeum distichum L.",
+      "paginas": [
+        17,
+        29
+      ],
+      "cultivo_ids": [
+        "cebada-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "OI",
+      "region": "Bajío queretano: planicie aluvial con pendientes menores a 3 %, suelos vertisoles arcillosos y fértiles (susceptibles a salinizarse), entre 1,500 y 1,800 msnm. En Querétaro la cebada solo se cultiva con riego.",
+      "siembra": {
+        "texto": "Del 15 de noviembre al 15 de diciembre. Sembrar a fines de diciembre o en enero baja el rendimiento hasta 35 % y sube la proteína del grano, algo no deseado para malta.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Alina",
+        "Armida",
+        "Esperanza",
+        "Maravilla",
+        "Monserrat-D",
+        "Estelar-OH",
+        "Zurita"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Surcos a doble hilera: 120 kg/ha de semilla para Esperanza y 100 kg/ha para Alina, Armida, Maravilla, Estelar-OH, Monserrat-D y Zurita. En camas, aumentar 20 % la semilla. Usar semilla certificada.",
+      "fertilizacion": "Según el cultivo anterior: después de sorgo o maíz, 180-60-00 (N-P-K); después de hortaliza, 150-60-00; después de alfalfa u otra leguminosa, 130-60-00. En suelos arcillosos, todo el nitrógeno y el fósforo al sembrar.",
+      "riego": "Un riego de siembra y tres de auxilio a los 40, 75 y 90 días (encañe, espigamiento y llenado de grano), con láminas de 10 cm. Con solo dos riegos de auxilio el rendimiento baja 10 a 15 %. Con agua restringida: riegos a los 0, 45 y 75 días.",
+      "plagas": [
+        "Pulgón ruso (Diuraphis noxia)",
+        "Pulgón verde (Schizaphis graminum)",
+        "Pulgón del cogollo (Rhopalosiphum padi)",
+        "Pulgón de la espiga (Sitobion avenae)"
+      ],
+      "enfermedades": [
+        "Roya lineal amarilla (Puccinia striiformis f. sp. hordei)",
+        "Roya de la hoja (Puccinia hordei)",
+        "Roya del tallo (Puccinia graminis)",
+        "Cenicilla (Blumeria graminis f. sp. hordei)",
+        "Secadera de los cereales (Fusarium spp.)"
+      ],
+      "malezas": "Hoja ancha: trébol, nabo o mostaza, quelite cenizo, borraja, chayotillo de mata y acahual. Hoja angosta: avena silvestre y alpiste silvestre. Compiten por luz, humedad y nutrientes y bajan la calidad del grano.",
+      "cosecha": "Trillar con el grano maduro, amarillo cremoso y con 13 a 14 % de humedad (máximo 13.5 % para malta). Normalmente se cosecha en abril. Mantener baja la velocidad del cilindro (500 a 700 rpm) para no pelar ni quebrar el grano. Rendimiento de 6 a 9 t/ha.",
+      "cuidados": [
+        "Sembrar del 15 de noviembre al 15 de diciembre: las siembras tardías bajan el rendimiento y suben la proteína.",
+        "Ajustar el nitrógeno según el cultivo anterior y aplicar todo el fertilizante al sembrar en suelos arcillosos.",
+        "Dar los riegos de auxilio en encañe, espigamiento y llenado de grano.",
+        "Prevenir la secadera (Fusarium) con buena nivelación, sin encharcamientos, semilla certificada y rotación con crucíferas o leguminosas; se pueden usar Trichoderma y Bacillus subtilis.",
+        "Usar variedades resistentes como base del manejo de royas y cenicilla, y revisar el cultivo antes de la cosecha.",
+        "No dejar que la humedad del grano baje de 13 % ni dejar el cultivo más de 20 días en campo tras la madurez: hay mermas y grano quebrado."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 31928.5,
+          "rendimiento": 6150,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6.2,
+          "ingreso_neto": 6201.5,
+          "relacion_bc": 1.19
+        }
+      ],
+      "nota": "En el texto extraído las fórmulas salen como '18060-00' y '130 60-00'; se leyeron como 180-60-00 y 130-60-00.",
+      "revisado": false
+    },
+    {
+      "ficha": "Frijol",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        30,
+        39
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": null,
+      "region": "Entre 1,600 y 2,200 msnm, con temperaturas de 10 a 30 °C, suelo franco y pH de 6 a 7.5. Zonas principales: Bajío y corredor sur (Querétaro, Corregidora, El Marqués, Pedro Escobedo, San Juan del Río) y valles centrales y semidesérticos (Colón, Cadereyta, Tequisquiapan).",
+      "siembra": {
+        "texto": "Dos periodos: del 20 de febrero al 20 de marzo, y en junio (con punta de riego y un riego de auxilio si el temporal es errático).",
+        "meses": [
+          2,
+          3,
+          6
+        ]
+      },
+      "variedades": [
+        "Pinto Rarámuri",
+        "Pinto San Rafael",
+        "Pinto Salinas",
+        "Pinto Saltillo",
+        "Flor de Junio León",
+        "Flor de Junio Dalia",
+        "Flor de Junio Nur",
+        "Flor de Junio Marcela",
+        "Flor de Mayo Eugenia",
+        "Flor de Mayo Dolores",
+        "Verdín",
+        "Nayarita 26",
+        "San Luis 22"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "50 a 60 kg/ha de semilla, a una hilera, surcos de 75 a 80 cm y 18 a 20 plantas por metro, para 120,000 a 150,000 plantas por ha.",
+      "fertilizacion": "80-60-00 (N-P-K): la mitad del nitrógeno y todo el fósforo al sembrar; la otra mitad en la primera escarda. Potasio solo si el análisis de suelo lo indica. Se pueden añadir 1 a 2 t/ha de composta o estiércol e inocular la semilla con micorrizas.",
+      "riego": "Lámina total de 400 a 500 mm en 3 o 4 riegos: presiembra, desarrollo (30 a 40 días tras la emergencia), floración (65 a 70 días, el más crítico) y, si hace falta, llenado de grano (70 a 80 días). Riegos ligeros: el estrés en floración tira flores y el encharcamiento pudre raíces.",
+      "plagas": [
+        "Mosca blanca (Bemisia tabaci)",
+        "Pulgones (Aphis gossypii)",
+        "Chicharrita (Empoasca kraemeri)",
+        "Trips (Frankliniella spp.)",
+        "Gusano trozador o cortador (Agrotis ipsilon, Spodoptera spp.)",
+        "Diabrótica o doradilla (Diabrotica spp.)",
+        "Gorgojos en almacén"
+      ],
+      "enfermedades": [
+        "Pudriciones de raíz (Fusarium spp., Rhizoctonia solani)",
+        "Moho blanco (Sclerotinia sclerotiorum)",
+        "Antracnosis (Colletotrichum lindemuthianum)",
+        "Mancha angular (Phaeoisariopsis griseola)",
+        "Virus del mosaico común (BCMV)"
+      ],
+      "malezas": "Mantener el cultivo limpio los primeros 30 a 45 días tras la emergencia. Control cultural con escardas, deshierbes manuales, rotación, buena preparación del terreno y densidad adecuada para que el follaje cubra el suelo. Principales: quelites, chual, campanilla, tomatillo, verdolaga, zacate Johnson, zacate pinto, cola de zorra y coquillo.",
+      "cosecha": "Cosechar cuando vainas y hojas se tornan amarillas o cafés, con el grano entre 14 y 16 % de humedad. En cosecha manual, arrancar por la mañana para que no revienten las vainas y dejar secar 5 a 7 días. Rendimiento potencial: 2.5 t/ha en Pinto y Negro, 3.5 t/ha en Flor de Junio y Flor de Mayo.",
+      "cuidados": [
+        "No dejar que falte agua en floración (65 a 70 días), pero evitar encharcamientos que pudren la raíz.",
+        "Usar semilla certificada y variedades tolerantes; varias de las recomendadas resisten el mosaico común.",
+        "Controlar mosca blanca y chicharrita, que transmiten virus: eliminar malezas hospederas, usar barreras vivas y revisar el envés de las hojas.",
+        "Dar barbecho profundo para exponer larvas de gusano trozador y rotar con maíz contra la diabrótica.",
+        "Inocular la semilla con micorrizas y aplicar Trichoderma al suelo contra las pudriciones de raíz.",
+        "Almacenar el grano con menos de 13 a 16 % de humedad, en sacos sobre tarimas o en silos herméticos, sin mezclar cosechas viejas y nuevas."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 36010,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 27,
+          "ingreso_neto": 31490,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Ciclo en null porque la agenda da dos periodos de siembra (febrero-marzo y junio). Costos: el Cuadro 12 imprime una relación beneficio/costo de 1.14, pero 67,500 / 36,010 = 1.87 (coincide con el 87.44 % de retorno), así que va en null. El texto de la ficha habla de B/C de 2.39, costo de unos $34,000/ha y 3.0 t/ha, distinto del cuadro. El precio de $27/kg es el de garantía de SEGALMEX 2025.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz forrajero en verde",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        40,
+        46
+      ],
+      "cultivo_ids": [
+        "maiz-forrajero-en-verde"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Bajío y semiárido queretano (Pedro Escobedo, Corregidora, Querétaro, El Marqués, San Juan del Río, Tequisquiapan, Ezequiel Montes, Colón, Cadereyta y Tolimán), con 17 a 24 °C en el ciclo y 400 a 600 mm de lluvia anual. Pendiente no mayor a 8 %.",
+      "siembra": {
+        "texto": "Del 15 de marzo (según las heladas de inicios de mes) al 10 de junio.",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "H-316",
+        "H-317",
+        "H-383",
+        "H-327 AO",
+        "H-388 O"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "80,000 a 90,000 plantas por ha, con 32 a 36 kg/ha de semilla y sembradora mecánica.",
+      "fertilizacion": "240-70-00 (N-P-K): 40 % del nitrógeno y todo el fósforo al sembrar, 40 % del nitrógeno en la primera escarda y 20 % antes del espigamiento. Fuentes: 522 kg/ha de urea (o 1,172 kg/ha de sulfato de amonio, no en suelos ácidos) y 152 kg/ha de fosfato diamónico. Si el suelo es deficiente, 20 kg/ha de sulfato ferroso y 5 a 10 kg/ha de sulfato de zinc a la siembra.",
+      "riego": "Normalmente 4 riegos: en la aparición de la espiga (35 a 40 días), en floración (75 a 85 días) y en llenado de grano. Depende del suelo, la fecha de siembra y la lluvia.",
+      "plagas": [
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Gallina ciega (Phyllophaga sp.)"
+      ],
+      "enfermedades": [],
+      "malezas": "Periodo crítico de 30 a 45 días tras la emergencia: puede bajar mucho el forraje y la calidad del ensilado. Atender la preparación del suelo, la fecha y la densidad de siembra; en labranza reducida, las escardas incorporan el fertilizante y controlan maleza. Incluye chayotillo (Sicyos deppei).",
+      "cosecha": "Cortar cuando la línea de leche llegue a la mitad o dos tercios del grano (unos 65 % de humedad de la planta), cerca de 120 días tras la siembra. Picar en trozos no mayores a 1.5 cm para ensilar. Rendimiento esperado: más de 20 t/ha de materia seca, más de 60 t/ha de forraje verde.",
+      "cuidados": [
+        "Nivelar el terreno y preferir labranza de conservación, dejando al menos 30 % de los residuos del ciclo O-I.",
+        "Sembrar entre el 15 de marzo y el 10 de junio, cuidando las heladas de inicios de marzo.",
+        "Dividir el nitrógeno en tres aplicaciones: siembra, primera escarda y antes del espigamiento.",
+        "Contra el gusano cogollero, poner trampas de feromona y melaza al emerger las plantas y favorecer enemigos naturales (catarinas, crisopas, tijerillas, Trichogramma); actuar cuando haya huevecillos en 14 % de las plantas.",
+        "Mantener limpio el cultivo de 30 a 45 días tras la emergencia.",
+        "Vigilar la línea de leche para cortar en el punto justo de ensilado."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 34558.46,
+          "rendimiento": 70000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 0.9,
+          "ingreso_neto": 28441.54,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Costos: el Cuadro 15 imprime una relación beneficio/costo de 0.83, que es ingreso neto / costo; ingreso bruto / costo da 63,000 / 34,558.46 = 1.82, así que va en null. El cuadro no incluye costo de cosecha (trilla y flete en $0). Los híbridos H-3xx son del INIFAP, por eso van en variedades.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz grano con riego",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        47,
+        54
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Bajío y semiárido (Pedro Escobedo, El Marqués, Colón, San Juan del Río, Tequisquiapan, Querétaro, Ezequiel Montes, Cadereyta y Tolimán), de 1,700 a 2,000 msnm, con 17 a 24 °C en el ciclo y 400 a 600 mm de lluvia anual. Pendiente no mayor a 8 %.",
+      "siembra": {
+        "texto": "Del 15 de marzo (según las heladas de inicios de mes) al 10 de junio. Sembrar en mayo aprovecha la temporada de lluvias y ahorra agua.",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "H-316",
+        "H-317",
+        "H-374 C",
+        "H-383",
+        "H-387 A",
+        "H-388 O",
+        "H-389 O"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "80,000 a 90,000 plantas por ha, con sembradora mecánica.",
+      "fertilizacion": "280-70-00 (N-P-K): 40 % del nitrógeno y todo el fósforo al sembrar, 40 % del nitrógeno en la primera escarda y 20 % antes del espigamiento. Fuentes: 550 kg/ha de urea (o 1,235 kg/ha de sulfato de amonio, no en suelos ácidos) y 152 kg/ha de fosfato diamónico. Si falta potasio o se esperan más de 12 t/ha, añadir 40 kg/ha de potasio (67 kg/ha de cloruro de potasio). Corregir hierro y zinc si el suelo es deficiente.",
+      "riego": "Normalmente 4 riegos, en la aparición de la espiga (35 a 40 días), en floración (75 a 85 días) y en llenado de grano. En suelos arenosos, un riego cada 25 días; en arcillosos, cada 35 días.",
+      "plagas": [
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Gallina ciega (Phyllophaga sp.)",
+        "Trips (Frankliniella spp.)",
+        "Diabrótica (Diabrotica spp.)"
+      ],
+      "enfermedades": [
+        "Secadera (Fusarium spp.), de baja incidencia"
+      ],
+      "malezas": "Periodo crítico de 30 a 45 días tras la emergencia. Atender la preparación del suelo, la fecha y la densidad de siembra, y combinar medidas de manejo integrado; en labranza reducida, las escardas incorporan el fertilizante y controlan maleza.",
+      "cosecha": "Cosechar con el grano a cerca de 14 % de humedad. Rendimiento esperado de 12 t/ha o más.",
+      "cuidados": [
+        "Nivelar el terreno y preferir labranza de conservación, dejando al menos 30 % de los residuos del ciclo anterior.",
+        "Dividir el nitrógeno en tres aplicaciones y guiarse por el análisis de suelo.",
+        "Regar en espigamiento, floración y llenado de grano; ajustar el intervalo al tipo de suelo.",
+        "Contra el gusano cogollero, usar trampas de feromona y melaza desde la emergencia y favorecer enemigos naturales; actuar cuando haya huevecillos en 14 % de las plantas.",
+        "Rotar los modos de acción de los insecticidas y no repetir el mismo en dos generaciones seguidas de la plaga.",
+        "Si aparece la secadera, aplicar Trichoderma al suelo y avisar al Comité Estatal de Sanidad Vegetal."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 43980.28,
+          "rendimiento": 12000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 22619.72,
+          "relacion_bc": 1.51
+        }
+      ],
+      "nota": "Costos: el Cuadro 19 no imprime el precio por kg; el ingreso bruto de $66,600 entre 12,000 kg da $5.55/kg, pero se deja en null por no estar escrito. Los híbridos H-3xx son del INIFAP, por eso van en variedades.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz grano en temporal",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        55,
+        62
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "temporal",
+      "ciclo": "PV",
+      "region": "Bajío y semiárido (San Juan del Río, Pedro Escobedo, Querétaro, Tequisquiapan, El Marqués, Corregidora y Colón), de 1,800 a 2,000 msnm, con 400 a 550 mm de lluvia y 17 a 24 °C. Pendiente no mayor a 8 %.",
+      "siembra": {
+        "texto": "Desde que se establece el temporal hasta el 10 de julio.",
+        "meses": []
+      },
+      "variedades": [
+        "CAFIME",
+        "VS-201"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "50,000 a 60,000 plantas por ha, en siembra manual o mecánica.",
+      "fertilizacion": "30-20-00 (N-P-K) si la humedad es limitada o 40-30-00 si hay mejor humedad (50 kg de urea y 45 kg de fosfato diamónico, o 62 kg de urea y 66 kg de fosfato diamónico por ha). La mitad del nitrógeno y todo el fósforo al sembrar; el resto en la escarda, 30 a 40 días después.",
+      "riego": null,
+      "plagas": [
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Trips (Frankliniella spp.)",
+        "Diabrótica (Diabrotica spp.)"
+      ],
+      "enfermedades": [],
+      "malezas": "Periodo crítico de 30 a 45 días tras la emergencia. Atender la preparación del suelo, la fecha y la densidad de siembra; en labranza reducida, una o dos escardas incorporan el fertilizante y controlan maleza.",
+      "cosecha": "En cosecha manual, cortar y engavillar las plantas para que seque el grano; en cosecha mecánica, esperar a que el grano tenga cerca de 14 % de humedad. Rendimiento esperado de 1.0 a 2.5 t/ha.",
+      "cuidados": [
+        "Usar labranza reducida con uno o dos pasos de rastra para conservar la humedad del suelo.",
+        "Hacer contreo o pileteo (bordos cada 3 m entre surcos) para guardar el agua de lluvia.",
+        "Elegir la dosis de fertilizante según la humedad disponible.",
+        "Sembrar en cuanto se establezca el temporal y no después del 10 de julio.",
+        "Contra el gusano cogollero, usar trampas de feromona y melaza y favorecer enemigos naturales; actuar cuando haya huevecillos en 14 % de las plantas."
+      ],
+      "costos": [
+        {
+          "modalidad": "temporal",
+          "costo_total_ha": 22604,
+          "rendimiento": null,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.84,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Siembra sin meses porque la agenda no fija el inicio, solo el fin (10 de julio). Costos: el Cuadro 24 usa un rendimiento de 4,000 kg/ha que contradice el texto de la ficha (1.0 a 2.5 t/ha), y su costo por kg ($11.30) corresponde a unos 2,000 kg/ha. Por eso rendimiento, ingreso neto ($756) y relación B/C (1.03) van en null. El precio de $5.84/kg es el de garantía de Producción para el Bienestar 2026.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maíz grano para Valles Altos",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        63,
+        71
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "anual",
+      "modalidad": "riego",
+      "ciclo": "PV",
+      "region": "Valles altos del sur del estado, sobre todo Amealco de Bonfil: clima templado subhúmedo, 15 °C de media, 2,300 a 2,500 msnm y 600 a 700 mm de lluvia de mayo a octubre, con sequía en agosto. Lomeríos con pendientes de 4 a 12 % y suelos Feozem poco profundos, ácidos (pH 4.0 a 5.5) y pobres en materia orgánica.",
+      "siembra": {
+        "texto": "Del 1 al 30 de abril para variedades tardías e intermedias; las precoces hasta el 15 de mayo. Empezar con las tardías y cerrar con las intermedias.",
+        "meses": [
+          4,
+          5
+        ]
+      },
+      "variedades": [
+        "H-40",
+        "H-48",
+        "H-50",
+        "H-52",
+        "H-161"
+      ],
+      "hibridos_comerciales": [
+        "Faisán",
+        "Hermes",
+        "Albatros",
+        "Diamante"
+      ],
+      "densidad": "70,000 a 80,000 plantas por ha: 6 a 7 semillas por metro en surcos de 80 cm. Con sembradora de tracción animal, 2 a 3 semillas por golpe cada 50 cm; con sembradora de precisión, 5 a 6 semillas por metro.",
+      "fertilizacion": "A la siembra 80-70-50 (N-P-K): 150 kg de 18-46-00, 115 kg de urea y 83 kg de cloruro de potasio por ha. Cerca de los 40 días, 120 kg/ha de nitrógeno (260 kg de urea). Inocular la semilla con micorriza Glomus intraradices (1 kg/ha). Con 1 a 2 t/ha de abono orgánico se puede usar el 75 % de esta dosis. En suelos ácidos, encalar: 2 a 3 t/ha de cal con pH 4.0 a 4.5 y 2 t/ha con pH 4.6 a 5.0, de 2 a 3 meses antes de sembrar.",
+      "riego": "Punta de riego: un riego de presiembra (febrero-marzo) y luego el cultivo sigue con la lluvia. Si hay sequía en agosto y el maíz está en floración o jiloteo, conviene dar un riego de auxilio si hay agua.",
+      "plagas": [
+        "Gallina ciega",
+        "Gusano de alambre",
+        "Gusano alfilerillo (Diabrotica spp.)",
+        "Gusano cogollero (Spodoptera frugiperda)",
+        "Trips (Frankliniella occidentalis)",
+        "Gusano soldado (Spodoptera exigua)",
+        "Gusano barrenador del tallo (Diatraea spp.)",
+        "Picudo del follaje",
+        "Frailecillo o tongo (Macrodactylus sp.)"
+      ],
+      "enfermedades": [
+        "Pudriciones de raíz y tallo (Fusarium spp.)",
+        "Royas (Puccinia sorghi, Puccinia polysora)",
+        "Carbón de la espiga (Sporisorium reilianum)"
+      ],
+      "malezas": "Mantener limpio el cultivo al menos los primeros 40 días y dar una escarda entre los 25 y 30 días tras la emergencia. Predominan acahual, shoto cabezón, aceitilla, estrellita, cadillo, girasol morado, chayotillo y quelites; y entre las de hoja angosta, zacates, teocintle y coquillo.",
+      "cosecha": "Manual: cortar y amogotar hasta que la mazorca se desprenda fácil. Mecánica: con el follaje seco y el grano a 14 % de humedad (capa negra en la base del grano). Rendimiento esperado de 8.0 t/ha.",
+      "cuidados": [
+        "Encalar los suelos ácidos 2 a 3 meses antes de sembrar y revisar el pH cada 3 a 4 años.",
+        "Dejar al menos 30 % de los residuos de cosecha (labranza reducida) para mejorar la materia orgánica y frenar la erosión.",
+        "Sembrar en abril las variedades tardías e intermedias y hasta el 15 de mayo las precoces.",
+        "Si hay sequía en agosto durante la floración, dar un riego de auxilio si se tiene agua.",
+        "Usar trampas de feromona (4 por ha, a 25 m de las orillas, cambiando el agua cada 3 o 4 días) para vigilar el gusano cogollero; actuar cuando haya 20 % de plantas dañadas.",
+        "Nivelar el terreno, rotar cultivos y sembrar variedades validadas para reducir pudriciones, royas y carbón."
+      ],
+      "costos": [
+        {
+          "modalidad": "riego",
+          "costo_total_ha": 34821.5,
+          "rendimiento": 8000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6.0,
+          "ingreso_neto": 13178.5,
+          "relacion_bc": 1.38
+        }
+      ],
+      "nota": "La modalidad es punta de riego: un solo riego antes de sembrar y el resto del ciclo con lluvia. Faisán, Hermes, Albatros y Diamante son híbridos de empresas privadas; la agenda no dice de qué empresa.",
+      "revisado": false
+    }
+  ]
+}

@@ -5,7 +5,7 @@ export default function GraficaRetencion({ dias }) {
   const W = 960, H = 260, M = { t: 14, r: 64, b: 28, l: 48 }; // ancho: va en una tarjeta de lado a lado
   const hum = dias.map((d) => d.humedad_pct_volumen).filter((v) => v != null);
   const lluvias = dias.map((d) => d.lluvia_mm ?? 0);
-  if (hum.length < 2) return <p className="suelo-nota">SMAP no tiene suficientes mediciones recientes.</p>;
+  if (hum.length < 2) return <p className="suelo-nota">SMAP does not have enough recent measurements.</p>;
 
   const hMin = Math.floor(Math.min(...hum) - 2), hMax = Math.ceil(Math.max(...hum) + 2);
   const lMax = Math.max(10, Math.ceil(Math.max(...lluvias)));
@@ -21,7 +21,7 @@ export default function GraficaRetencion({ dias }) {
 
   return (
     <div className="suelo-grafica">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Lluvia diaria y humedad del suelo">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Daily rain and soil moisture">
         {[hMin, (hMin + hMax) / 2, hMax].map((v, k) => (
           <g key={k}>
             <line x1={M.l} x2={W - M.r} y1={yH(v)} y2={yH(v)} className="suelo-grafica-rejilla" />
@@ -56,7 +56,7 @@ export default function GraficaRetencion({ dias }) {
         ))}
       </svg>
       <p className="suelo-leyenda">
-        <span className="suelo-leyenda__linea" /> Humedad SMAP (% vol.) <span className="suelo-leyenda__barra" /> Lluvia (mm/día)
+        <span className="suelo-leyenda__linea" /> SMAP moisture (% vol.) <span className="suelo-leyenda__barra" /> Rain (mm/day)
       </p>
     </div>
   );

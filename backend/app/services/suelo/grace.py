@@ -28,7 +28,7 @@ async def _asegurar_archivo() -> Path:
         return existentes[-1]
     token = os.getenv("EARTHDATA_TOKEN")
     if not token:
-        raise RuntimeError("Falta EARTHDATA_TOKEN en .env para descargar GRACE")
+        raise RuntimeError("EARTHDATA_TOKEN is missing in .env (needed for GRACE)")
     async with _bloqueo:
         existentes = sorted(CARPETA.glob("GRCTellus*.nc"))
         if existentes:
@@ -82,17 +82,17 @@ async def agua_subterranea(lat: float, lon: float) -> dict:
     anios = [date.fromisoformat(p["fecha"]).toordinal() / 365.25 for p in serie]
     tendencia = round(_tendencia_por_anio(anios, [p["anomalia_cm"] for p in serie]), 2)
     if tendencia < 0:
-        lectura = "La región está perdiendo agua almacenada"
+        lectura = "The region is losing stored water"
     elif tendencia > 0:
-        lectura = "La región está ganando agua almacenada"
+        lectura = "The region is gaining stored water"
     else:
-        lectura = "Sin cambio claro en el agua almacenada"
+        lectura = "No clear change in stored water"
     return {
         "tendencia_cm_por_anio": tendencia,
         "lectura": lectura,
         "ultimo_dato": serie[-1] if serie else None,
         "serie": serie,
         "celda": {"lat": datos["celda_lat"], "lon": datos["celda_lon"]},
-        "nota": "Agua total almacenada (subterránea + suelo + superficial), anomalía vs. 2004-2009. Resolución ~300 km: tendencia regional, no de la parcela.",
+        "nota": "Total stored water (groundwater + soil + surface), anomaly vs. 2004-2009. ~300 km resolution: regional trend, not your field.",
         "fuente": f"NASA GRACE/GRACE-FO JPL Mascon RL06.3 ({archivo.name})",
     }

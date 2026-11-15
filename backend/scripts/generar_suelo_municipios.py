@@ -1,10 +1,10 @@
 """Genera la tabla fija de SoilGrids por municipio (módulo Suelo).
 
-Consulta SoilGrids UNA vez por cada punto de campo de services/municipios.py (lat_suelo/lon_suelo)
+Consulta SoilGrids UNA vez por cada ubicación guardada (su punto de cultivo, ver services/suelo/puntos.py)
 y guarda el resultado en backend/data/suelo/soilgrids_municipios.json. Así la app no depende de
 SoilGrids mientras se usa (es lento y limita a ~5 consultas por minuto).
 
-Correr de nuevo solo cuando se agreguen municipios. Los puntos que ya están en la tabla se saltan.
+Correr de nuevo cuando se agreguen ubicaciones. Los puntos que ya están en la tabla se saltan.
 
     docker compose exec backend python -m scripts.generar_suelo_municipios
 
@@ -16,7 +16,7 @@ import asyncio
 import json
 import sys
 
-from app.services.municipios import MUNICIPIOS
+from app.services.suelo.puntos import de_ubicaciones
 from app.services.suelo import soilgrids
 
 ESPERA_SEGUNDOS = 13  # ~4-5 consultas por minuto, debajo del límite de SoilGrids
@@ -24,12 +24,13 @@ REINTENTOS = 3
 
 
 async def main(todo: bool) -> None:
+    MUNICIPIOS = await de_ubicaciones()
     tabla = {}
     if soilgrids.TABLA.exists():
         tabla = json.loads(soilgrids.TABLA.read_text(encoding="utf-8")).get("puntos", {})
 
     pendientes = [m for m in MUNICIPIOS if todo or soilgrids.clave_punto(m.lat_suelo, m.lon_suelo) not in tabla]
-    print(f"{len(MUNICIPIOS)} municipios, {len(pendientes)} por consultar")
+    print(f"{len(MUNICIPIOS)} ubicaciones, {len(pendientes)} por consultar")
 
     fallidos = []
     for i, m in enumerate(pendientes, 1):
