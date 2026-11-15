@@ -8,3 +8,8 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+QQP/
+.venv/
+QQP/
+*.bak
+node_modules/
