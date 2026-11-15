@@ -4,8 +4,8 @@ from datetime import date, timedelta
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app import db
-from app.schemas.planificador import CultivoActivoOut
-from app.services import alertas, catalogo_cultivos, meteomatics, nasa_power, suelo_ubicacion, ubicaciones
+from app.schemas.planificador import CultivoActivoOut, TareasVencidasOut
+from app.services import alertas, catalogo_cultivos, meteomatics, nasa_power, suelo_ubicacion, tareas, ubicaciones
 from app.services import planificador as plan_servicio
 
 router = APIRouter(prefix="/api/principal", tags=["principal"])
@@ -100,10 +100,31 @@ async def alertas_del_dia(
 def cultivos_activos(
     plan_id: int | None = Query(default=None, alias="planId"),
     hoy: date | None = None,
+    municipio: str | None = None,
     con=Depends(db.con_db),
 ):
     """Siembras en curso hoy en un plan (por defecto el primero), la que cosecha primero va primero.
 
     `hoy` (AAAA-MM-DD) lo manda el navegador para usar su fecha local; sin él se usa la de Monterrey.
+    `municipio` (la ubicación activa) elige el estado de cuyos datos de SIAP sale el precio y el
+    rendimiento de cada cultivo; sin él, o si no tiene estado, se usan los nacionales.
     """
-    return plan_servicio.siembras_en_curso(con, plan_id, hoy or db.hoy())
+    activos = plan_servicio.siembras_en_curso(con, plan_id, hoy or db.hoy())
+    lugar = ubicaciones.buscar(con, municipio) if municipio else None
+    cve_ent = lugar.cve_ent if lugar else None
+    for a in activos:
+        a["mercado"] = catalogo_cultivos.mercado(a["cultivo"].get("catalogo_id"), cve_ent)
+    return activos
+
+
+@router.get("/tareas-vencidas", response_model=TareasVencidasOut)
+def tareas_vencidas(
+    plan_id: int | None = Query(default=None, alias="planId"),
+    hoy: date | None = None,
+    con=Depends(db.con_db),
+):
+    """Tareas del Planificador sin hacer cuya fecha ya pasó (por defecto del primer plan).
+
+    No depende del clima: Principal las muestra aunque falle el pronóstico.
+    """
+    return tareas.vencidas(con, plan_id, hoy or db.hoy())

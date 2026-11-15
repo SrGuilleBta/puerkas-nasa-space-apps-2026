@@ -80,6 +80,28 @@ def exportar_plan(plan_id: int, con=Depends(con_db)):
     )
 
 
+@router.get("/planes/{plan_id}/exportar-pdf")
+def exportar_plan_pdf(plan_id: int, hoy: date | None = None, con=Depends(con_db)):
+    """El plan en PDF (resumen, calendario por parcela y tabla de siembras con su economía).
+
+    `hoy` (AAAA-MM-DD) lo manda el navegador para usar su fecha local; sin él se usa la de Monterrey.
+    """
+    try:
+        # Se importa aquí y no arriba: si falta la librería (hay que recrear el contenedor después de agregarla
+        # a requirements.txt), solo falla el PDF y el resto de la app sigue funcionando.
+        from app.services import plan_pdf
+    except ImportError:
+        raise HTTPException(
+            503, "PDF export needs the fpdf2 library. Recreate the backend: docker compose up -d --force-recreate backend"
+        )
+    archivo, contenido = plan_pdf.exportar_pdf(con, plan_id, hoy or db.hoy())
+    return Response(
+        content=contenido,
+        media_type="application/pdf",
+        headers={"Content-Disposition": f'attachment; filename="{archivo}"'},
+    )
+
+
 @router.get("/planes/{plan_id}", response_model=PlanOut)
 def obtener_plan(plan_id: int, con=Depends(con_db)):
     """El plan completo: sus parcelas y, en cada una, sus siembras ordenadas por fecha."""

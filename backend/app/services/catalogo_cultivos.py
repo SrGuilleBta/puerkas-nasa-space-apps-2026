@@ -9,7 +9,7 @@ import unicodedata
 
 from app.db import clave
 from app.services import cultivos as catalogo_servicio
-from app.services import estados
+from app.services import ecocrop, estados
 from app.services.planificador import NoEncontrado, _cultivo_dict, _existe, _fila
 
 CICLO_PERENNE = 365  # un frutal o pasto perenne se planea por año
@@ -104,6 +104,55 @@ def sincronizar_nombres(con) -> None:
                         (datos["nombre"], clave(datos["nombre"]), fila["id"]))
 
 
+def mercado(catalogo_id: str | None, cve_ent: str | None) -> dict | None:
+    """Precio, rendimiento y chips de un cultivo del catálogo según SIAP, para "Cultivos activos".
+
+    Usa los datos del estado (`cve_ent`) y, si ahí no se siembra el cultivo o no se conoce el estado,
+    los nacionales. El precio es el precio medio rural del último año de SIAP, en pesos de ese año, y
+    `variacion_pct` lo compara con la mediana de los 10 años de la ventana. No hay un dato de demanda:
+    la variación del precio es lo más cercano. None si el cultivo no viene del catálogo o no hay datos.
+    """
+    if not catalogo_id:
+        return None
+    claves = [cve_ent, "00"] if cve_ent else ["00"]
+    try:
+        ind, ubicacion = catalogo_servicio.indicadores_de(catalogo_id, claves)
+    except catalogo_servicio.SinDatos:
+        return None
+    if ind is None:
+        return None
+
+    precio, rendimiento = ind.get("precio") or {}, ind.get("rendimiento") or {}
+    ultimo, tipico = precio.get("pmr_real_ultimo"), precio.get("pmr_real_p50")
+    variacion = round((ultimo / tipico - 1) * 100) if ultimo and tipico else None
+
+    # Los chips salen de los campos estructurados (no del texto de las etiquetas de la pipeline)
+    chips = []
+    nivel = (ind.get("rentabilidad") or {}).get("nivel")
+    if nivel == "alta":
+        chips.append(("positiva", "High profitability"))
+    elif nivel == "baja":
+        chips.append(("negativa", "Low profitability"))
+    sequia = ind.get("sensibilidad_sequia")
+    if sequia == "alta":
+        chips.append(("negativa", "Drought sensitive"))
+    elif sequia == "baja":
+        chips.append(("positiva", "Drought tolerant"))
+    if (ind.get("riesgo_hidrico") or {}).get("nivel") == "alto":
+        chips.append(("negativa", "High water risk"))
+
+    return {
+        "precio": ultimo,
+        "precio_unidad": precio.get("unidad"),
+        "variacion_pct": variacion,
+        "rendimiento": rendimiento.get("p50"),
+        "rendimiento_unidad": rendimiento.get("unidad"),
+        "anio": ind.get("anio_ultimo"),
+        "fuente": f"SIAP · {ubicacion['nombre']}",
+        "etiquetas": [{"tipo": tipo, "texto": texto} for tipo, texto in chips],
+    }
+
+
 def fichas_de(activos: list[dict]) -> dict:
     """Fichas del catálogo de los cultivos en curso, por id del catálogo (para las alertas por cultivo)."""
     por_id = _catalogo()["por_id"]
@@ -191,6 +240,7 @@ def ficha_por_catalogo(catalogo_id: str, cve_ent: str | None = None) -> dict | N
         "cuidados": datos.get("cuidados") or [],
         "temperaturaOptimaC": datos.get("temperatura_optima_c"),
         "phOptimo": datos.get("ph_optimo"),
+        "texturaIdeal": ecocrop.textura(datos.get("cientifico")),  # clases de EcoCrop; None si no trae
         "consumoAgua": agua.get("consumo"),
         "lluviaOptimaMm": agua.get("lluvia_optima_mm"),
         "cicloDias": datos.get("ciclo_dias"),

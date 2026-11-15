@@ -71,24 +71,66 @@ function ClimaNasa({ municipio, inicio, fin, hoy }) {
 const AGUA = { bajo: "Low", medio: "Medium", alto: "High", low: "Low", medium: "Medium", high: "High" };
 const rango = (r, unidad) => (r ? `${r[0]}–${r[1]}${unidad}` : "—");
 
-// Compara el pH del suelo de la ubicación (módulo Suelo, SoilGrids) con el rango ideal del cultivo.
-// Si no hay pH o el cultivo no trae rango, no muestra nada.
-function CompatibilidadPh({ rangoIdeal, municipio }) {
+// Texturas de suelo de EcoCrop, en palabras (light = arenoso, medium = franco, heavy = arcilloso).
+const TEXTURA_CULTIVO = { light: "light (sandy)", medium: "medium (loamy)", heavy: "heavy (clayey)", organic: "organic" };
+
+const unidas = (lista) => (lista.length < 2 ? lista[0] : `${lista.slice(0, -1).join(", ")} or ${lista.at(-1)}`);
+
+// Qué textura prefiere el cultivo según EcoCrop, o null si no trae el dato.
+function textoTexturaCultivo(ideal) {
+  const optima = ideal?.optima ?? [];
+  if (optima.includes("wide")) return "This crop grows on a wide range of soil textures (EcoCrop).";
+  if (optima.length === 0) return null;
+  return `EcoCrop lists ${unidas(optima.map((c) => TEXTURA_CULTIVO[c] ?? c))} soils as best for this crop.`;
+}
+
+// Lo que el módulo Suelo sabe del terreno de la ubicación, frente a lo que pide el cultivo:
+//  - pH: se compara con el rango ideal (es un rango numérico, así que sí hay veredicto).
+//  - Textura: se muestran las dos lado a lado, sin veredicto. EcoCrop usa clases amplias (light, medium,
+//    heavy) y no hay una equivalencia oficial con las del USDA que usa Suelo.
+// Si Suelo no tiene datos de este punto, no muestra nada.
+function SueloDelLugar({ ficha, municipio }) {
   const estado = useDatos(() => getPropiedades({ municipio }), [municipio]);
   const capa = estado.datos && !estado.datos.sin_datos ? estado.datos.capas?.[0] : null;
-  if (!rangoIdeal || !capa || capa.ph == null) return null;
-  const [min, max] = rangoIdeal;
-  const ph = capa.ph;
-  const dentro = ph >= min && ph <= max;
-  const lejos = ph < min - 1 || ph > max + 1;
-  const clase = dentro ? "ph-compat--bien" : lejos ? "ph-compat--mal" : "ph-compat--regular";
-  const texto = dentro
-    ? "within this crop's ideal range."
-    : `${ph < min ? "below" : "above"} this crop's ideal range${lejos ? ", which can limit growth and nutrient uptake" : ""}.`;
+  if (!capa) return null;
+
+  let ph = null;
+  if (ficha.phOptimo && capa.ph != null) {
+    const [min, max] = ficha.phOptimo;
+    const dentro = capa.ph >= min && capa.ph <= max;
+    const lejos = capa.ph < min - 1 || capa.ph > max + 1;
+    const clase = dentro ? "ph-compat--bien" : lejos ? "ph-compat--mal" : "ph-compat--regular";
+    const texto = dentro
+      ? "within this crop's ideal range."
+      : `${capa.ph < min ? "below" : "above"} this crop's ideal range${lejos ? ", which can limit growth and nutrient uptake" : ""}.`;
+    ph = (
+      <p className={`ph-compat ${clase}`}>
+        <b>Your soil pH is {capa.ph}</b>, {texto}
+      </p>
+    );
+  }
+
+  let textura = null;
+  if (capa.textura) {
+    const detalle = capa.arcilla_pct != null && capa.arena_pct != null ? ` (${Math.round(capa.arcilla_pct)}% clay, ${Math.round(capa.arena_pct)}% sand)` : "";
+    const delCultivo = textoTexturaCultivo(ficha.texturaIdeal);
+    textura = (
+      <p className="ph-compat ph-compat--neutro">
+        <b>
+          Your soil texture is {capa.textura}
+          {detalle}.
+        </b>{" "}
+        {delCultivo ?? "EcoCrop has no texture preference for this crop: see the soil notes below."}
+      </p>
+    );
+  }
+
+  if (!ph && !textura) return null;
   return (
-    <p className={`ph-compat ${clase}`}>
-      <b>Your soil pH is {ph}</b>, {texto}
-    </p>
+    <>
+      {ph}
+      {textura}
+    </>
   );
 }
 
@@ -119,7 +161,7 @@ function FichaCultivo({ cultivoId, municipio }) {
           <dd>{ficha.fijaNitrogeno ? "Yes" : "No"}</dd>
         </div>
       </dl>
-      {municipio && <CompatibilidadPh rangoIdeal={ficha.phOptimo} municipio={municipio} />}
+      {municipio && <SueloDelLugar ficha={ficha} municipio={municipio} />}
       {ficha.suelo && (
         <p>
           <b>Soil:</b> {ficha.suelo}
@@ -188,7 +230,12 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio, onTareas
     return (
       <div className="info-siembra">
         {siembra.cultivo.catalogoId && municipio && (
-          <VentanaSiembra catalogoId={siembra.cultivo.catalogoId} municipio={municipio} mesInicio={inicio.getMonth() + 1} />
+          <VentanaSiembra
+            catalogoId={siembra.cultivo.catalogoId}
+            municipio={municipio}
+            mesInicio={inicio.getMonth() + 1}
+            fechaInicio={siembra.fechaSiembra}
+          />
         )}
         <FichaCultivo cultivoId={siembra.cultivo.id} municipio={municipio} />
         {municipio && <ClimaNasa municipio={municipio} inicio={inicio} fin={fin} hoy={hoy} />}

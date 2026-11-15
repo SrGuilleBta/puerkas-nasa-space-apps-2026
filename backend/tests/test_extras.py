@@ -155,6 +155,115 @@ class PruebasExtras(unittest.TestCase):
         self.assertEqual((r["tareasPendientes"], r["tareasVencidas"]), (2, 1))
         self.assertEqual(a["fecha"], "2030-01-15")
 
+    def test_tareas_vencidas_para_principal(self):
+        s = self.siembra()
+        url = f"{P.replace('planificador', 'principal')}/tareas-vencidas"
+        for titulo, fecha in [("Vieja", "2030-01-15"), ("Mas vieja", "2030-01-12"), ("Futura", "2030-03-01"), ("Hecha", "2030-01-05")]:
+            self.c.post(f"{P}/siembras/{s['id']}/tareas", json={"titulo": titulo, "fecha": fecha})
+        hecha = next(t for t in self.c.get(f"{P}/siembras/{s['id']}/tareas").json() if t["titulo"] == "Hecha")
+        self.c.patch(f"{P}/tareas/{hecha['id']}", json={"hecha": True})
+
+        r = self.c.get(url, params={"planId": self.plan["id"], "hoy": "2030-02-01"})
+        self.assertEqual(r.status_code, 200, r.text)
+        datos = r.json()
+        self.assertEqual(datos["total"], 2)  # no cuenta la hecha ni la futura
+        self.assertEqual([t["titulo"] for t in datos["tareas"]], ["Mas vieja", "Vieja"])  # la más atrasada primero
+        primera = datos["tareas"][0]
+        self.assertEqual((primera["diasRetraso"], primera["cultivo"], primera["parcela"]), (20, "Maíz grano", "Lote"))
+
+        # El mismo día de la fecha de la tarea todavía no cuenta como vencida
+        self.assertEqual(self.c.get(url, params={"planId": self.plan["id"], "hoy": "2030-01-12"}).json()["total"], 0)
+        self.assertEqual(self.c.get(url, params={"planId": 999999, "hoy": "2030-02-01"}).status_code, 404)
+
+    def test_tareas_vencidas_limita_la_lista_pero_cuenta_todas(self):
+        s = self.siembra()
+        for i in range(7):
+            self.c.post(f"{P}/siembras/{s['id']}/tareas", json={"titulo": f"T{i}", "fecha": f"2030-01-{11 + i:02d}"})
+        datos = self.c.get(f"{P.replace('planificador', 'principal')}/tareas-vencidas", params={"planId": self.plan["id"], "hoy": "2030-02-01"}).json()
+        self.assertEqual((datos["total"], len(datos["tareas"])), (7, 5))
+
+    # ---------------- precio y rendimiento (SIAP) en cultivos activos ----------------
+    IND = {
+        "precio": {"pmr_real_ultimo": 5500, "pmr_real_p50": 5000, "unidad": "$/t"},
+        "rendimiento": {"p50": 3.8, "unidad": "t/ha"},
+        "anio_ultimo": 2025,
+        "rentabilidad": {"nivel": "alta"},
+        "sensibilidad_sequia": "alta",
+        "riesgo_hidrico": {"nivel": "alto"},
+    }
+
+    def test_mercado_resume_siap_y_compara_el_precio_con_su_mediana(self):
+        servicio = catalogo_cultivos.catalogo_servicio
+        with patch.object(servicio, "indicadores_de", return_value=(self.IND, {"nombre": "Nuevo León"})) as m:
+            r = catalogo_cultivos.mercado("maiz-grano", "19")
+        m.assert_called_once_with("maiz-grano", ["19", "00"])  # primero el estado, luego el país
+        self.assertEqual((r["precio"], r["variacion_pct"], r["rendimiento"], r["anio"]), (5500, 10, 3.8, 2025))
+        self.assertEqual(r["fuente"], "SIAP · Nuevo León")
+        self.assertEqual(
+            [e["texto"] for e in r["etiquetas"]], ["High profitability", "Drought sensitive", "High water risk"]
+        )
+        self.assertEqual([e["tipo"] for e in r["etiquetas"]], ["positiva", "negativa", "negativa"])
+
+    def test_mercado_sin_estado_usa_los_datos_nacionales_y_no_inventa(self):
+        servicio = catalogo_cultivos.catalogo_servicio
+        with patch.object(servicio, "indicadores_de", return_value=(self.IND, {"nombre": "México"})) as m:
+            self.assertEqual(catalogo_cultivos.mercado("maiz-grano", None)["fuente"], "SIAP · México")
+        m.assert_called_once_with("maiz-grano", ["00"])
+        self.assertIsNone(catalogo_cultivos.mercado(None, "19"))  # cultivo que no es del catálogo
+        with patch.object(servicio, "indicadores_de", return_value=(None, None)):
+            self.assertIsNone(catalogo_cultivos.mercado("maiz-grano", "19"))
+        with patch.object(servicio, "indicadores_de", side_effect=servicio.SinDatos("falta")):
+            self.assertIsNone(catalogo_cultivos.mercado("maiz-grano", "19"))  # la pipeline no se ha corrido
+
+    def test_cultivos_activos_incluye_el_mercado_del_estado_de_la_ubicacion(self):
+        self.siembra("2030-01-10", "2030-05-10")
+        falso = {
+            "precio": 5500.0, "precio_unidad": "$/t", "variacion_pct": 10, "rendimiento": 3.8,
+            "rendimiento_unidad": "t/ha", "anio": 2025, "fuente": "SIAP · Nuevo León",
+            "etiquetas": [{"tipo": "positiva", "texto": "High profitability"}],
+        }
+        with patch.object(catalogo_cultivos, "mercado", return_value=falso) as m:
+            r = self.c.get(
+                "/api/principal/cultivos-activos",
+                params={"planId": self.plan["id"], "hoy": "2030-02-01", "municipio": "Monterrey, NL"},
+            )
+        self.assertEqual(r.status_code, 200, r.text)
+        m.assert_called_once()
+        self.assertEqual(m.call_args.args[1], "19")  # Monterrey está en Nuevo León
+        mercado = r.json()[0]["mercado"]
+        self.assertEqual((mercado["precio"], mercado["variacionPct"], mercado["precioUnidad"]), (5500.0, 10, "$/t"))
+        self.assertEqual(mercado["etiquetas"], [{"tipo": "positiva", "texto": "High profitability"}])
+
+    def test_cultivos_activos_sin_datos_de_mercado_sigue_funcionando(self):
+        self.siembra("2030-01-10", "2030-05-10")
+        with patch.object(catalogo_cultivos, "mercado", return_value=None):
+            r = self.c.get("/api/principal/cultivos-activos", params={"planId": self.plan["id"], "hoy": "2030-02-01"})
+        self.assertEqual(r.status_code, 200, r.text)
+        self.assertIsNone(r.json()[0]["mercado"])
+
+    # ---------------- textura de suelo (EcoCrop) en la ficha ----------------
+    def test_textura_de_ecocrop_lee_clases_y_no_inventa(self):
+        from app.services import ecocrop
+
+        tabla = {
+            "Phaseolus vulgaris": {"optima": ["medium", "organic"], "tolerada": ["heavy", "medium", "light"]},
+            "Zea mays": {"optima": [], "tolerada": []},  # EcoCrop no trae su textura
+        }
+        with patch.object(ecocrop, "_tabla", return_value=tabla):
+            self.assertEqual(ecocrop.textura("Phaseolus vulgaris")["optima"], ["medium", "organic"])
+            self.assertIsNone(ecocrop.textura("Zea mays"))
+            self.assertIsNone(ecocrop.textura("Cultivo inexistente"))
+            self.assertIsNone(ecocrop.textura(None))
+        self.assertEqual(ecocrop._clases("heavy, medium, rara, "), ["heavy", "medium"])  # ignora lo desconocido
+        self.assertEqual(ecocrop._clases(None), [])
+
+    def test_la_ficha_incluye_la_textura_ideal(self):
+        datos = catalogo_cultivos._catalogo()["por_id"]
+        if "frijol" not in datos:
+            self.skipTest("El catálogo de Cultivos no está generado en este equipo")
+        ficha = catalogo_cultivos.ficha_por_catalogo("frijol")
+        self.assertIn("texturaIdeal", ficha)  # puede ser None si EcoCrop no trae el dato
+
     # ---------------- copiar y exportar ----------------
     def test_duplicar_mueve_las_fechas_y_conserva_la_economia(self):
         self.siembra("2030-01-10", "2030-05-10", ha=4, rendimientoTHa=3, precioT=5000, costoHa=7000)
@@ -203,6 +312,37 @@ class PruebasExtras(unittest.TestCase):
         self.assertIn("2030-01-10,2030-05-10,4.0,3.0,5000.0,7000.0,60000.0,28000.0,32000.0", texto)
         self.assertNotIn("\n=HYPERLINK", texto)  # no queda como fórmula
         self.assertIn("'=HYPERLINK(1)", texto)
+
+    def test_exportar_pdf(self):
+        # Un nombre con acentos y con caracteres que las fuentes del PDF no cubren: no debe fallar
+        self.c.patch(f"{P}/parcelas/{self.parcela['id']}", json={"nombre": "Lote ñandú 中文"})
+        self.siembra(rendimientoTHa=3, precioT=5000, costoHa=7000)
+        r = self.c.get(f"{P}/planes/{self.plan['id']}/exportar-pdf", params={"hoy": "2030-02-01"})
+        self.assertEqual(r.status_code, 200, r.text)
+        self.assertEqual(r.headers["content-type"], "application/pdf")
+        self.assertIn("attachment", r.headers["content-disposition"])
+        self.assertIn(".pdf", r.headers["content-disposition"])
+        self.assertTrue(r.content.startswith(b"%PDF"))
+        self.assertGreater(len(r.content), 1500)
+
+    def test_exportar_pdf_de_plan_vacio_o_inexistente(self):
+        r = self.c.get(f"{P}/planes/{self.plan['id']}/exportar-pdf")  # la parcela no tiene siembras
+        self.assertEqual(r.status_code, 200, r.text)
+        self.assertTrue(r.content.startswith(b"%PDF"))
+        self.assertEqual(self.c.get(f"{P}/planes/999999/exportar-pdf").status_code, 404)
+
+    def test_exportar_pdf_de_un_plan_grande_pasa_a_otra_pagina(self):
+        for i in range(22):
+            parcela = self.c.post(
+                f"{P}/planes/{self.plan['id']}/parcelas", json={"nombre": f"Parcela {i}", "hectareas": 2}
+            ).json()
+            self.c.post(
+                f"{P}/parcelas/{parcela['id']}/siembras",
+                json={"cultivoId": self.maiz["id"], "fechaSiembra": "2030-01-10", "fechaCosecha": "2030-05-10"},
+            )
+        r = self.c.get(f"{P}/planes/{self.plan['id']}/exportar-pdf", params={"hoy": "2030-02-01"})
+        self.assertEqual(r.status_code, 200, r.text)
+        self.assertGreater(r.content.count(b"/Type /Page\n") + r.content.count(b"/Type /Page "), 2)  # varias páginas
 
     # ---------------- estado de la ubicación ----------------
     def test_las_ciudades_de_inicio_traen_su_estado(self):

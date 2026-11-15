@@ -4,11 +4,60 @@ import { Brote, Flecha } from "../../components/Iconos.jsx";
 import { hashDe } from "../../routes.js";
 import { colorCultivo } from "../../utils/colores.js";
 import { deISO, fechaLarga } from "../../utils/fechas.js";
+import { numero, pesos } from "../../utils/formato.js";
 
 // "4 de enero" y, si no es de este año, "4 de enero de 2027".
 function fechaCosecha(texto) {
   const f = deISO(texto);
   return f.getFullYear() === new Date().getFullYear() ? fechaLarga(f) : `${fechaLarga(f)}, ${f.getFullYear()}`;
+}
+
+// Precio y rendimiento de SIAP para el estado de la ubicación (o del país), y chips de rentabilidad
+// y sequía. La flecha compara el precio del último año con su mediana de 10 años.
+function Mercado({ m }) {
+  const porUnidad = (m.precioUnidad ?? "").replace(/^\$/, ""); // "$/t" -> "/t"
+  const v = m.variacionPct;
+  return (
+    <div className="cultivo__mercado">
+      <dl>
+        {m.precio != null && (
+          <div>
+            <dt>Price{m.anio ? ` ${m.anio}` : ""}</dt>
+            <dd>
+              {pesos(m.precio)}
+              {porUnidad}
+              {v != null && Math.abs(v) >= 1 && (
+                <small
+                  className={v > 0 ? "tendencia tendencia--sube" : "tendencia tendencia--baja"}
+                  title="Latest yearly farm-gate price compared with its 10-year median (inflation-adjusted)"
+                >
+                  {v > 0 ? "▲" : "▼"} {Math.abs(v)}%
+                </small>
+              )}
+            </dd>
+          </div>
+        )}
+        {m.rendimiento != null && (
+          <div>
+            <dt>Typical yield</dt>
+            <dd>
+              {numero(m.rendimiento)} {m.rendimientoUnidad}
+            </dd>
+          </div>
+        )}
+      </dl>
+      {m.etiquetas.length > 0 && (
+        <ul className="cultivo__chips">
+          {m.etiquetas.map((e) => (
+            <li key={e.texto} className={`chip chip--${e.tipo}`}>
+              {e.texto}
+            </li>
+          ))}
+        </ul>
+      )}
+      <small className="cultivo__fuente">Source: {m.fuente}</small>
+    </div>
+  );
 }
 
 function Siembra({ s }) {
@@ -29,6 +78,8 @@ function Siembra({ s }) {
           {s.hectareas} ha · {s.parcela.nombre} · Day {s.dia}
         </p>
       </div>
+
+      {s.mercado && <Mercado m={s.mercado} />}
 
       <div>
         <div className="cultivo__fila cultivo__fila--precio">

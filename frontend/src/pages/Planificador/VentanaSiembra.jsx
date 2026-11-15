@@ -1,5 +1,12 @@
 import { getVentanaSiembra } from "../../api/planificador.js";
+import { getEstado } from "../../api/suelo.js";
 import useDatos from "../../hooks/useDatos.js";
+import { deISO, diasEntre } from "../../utils/fechas.js";
+import { resumenAgua } from "../Suelo/resumen.js";
+
+// La humedad medida por SMAP describe los últimos 30 días: solo dice algo de una siembra que es pronto
+const DIAS_ANTES = 7;
+const DIAS_DESPUES = 30;
 
 const MESES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const NIVEL = { good: "Good", fair: "Fair", poor: "Poor" };
@@ -20,9 +27,17 @@ function rangos(meses) {
 
 // Mejor época para sembrar este cultivo en la ubicación activa (temperatura ideal del cultivo contra
 // el clima promedio de NASA POWER). `mesInicio` (1-12) marca el mes elegido y avisa si no conviene.
+// `fechaInicio` (AAAA-MM-DD) es la fecha de siembra: si es de aquí a un mes, también se avisa si el suelo
+// está más seco de lo normal ahora (módulo Suelo, SMAP).
 // No aparece si el cultivo es perenne, si no viene del catálogo o si falla la consulta.
-export default function VentanaSiembra({ catalogoId, municipio, mesInicio }) {
+export default function VentanaSiembra({ catalogoId, municipio, mesInicio, fechaInicio }) {
   const v = useDatos(() => getVentanaSiembra(catalogoId, municipio), [catalogoId, municipio]).datos;
+
+  const faltan = fechaInicio ? diasEntre(new Date(), deISO(fechaInicio)) : null;
+  const pronto = faltan !== null && faltan >= -DIAS_ANTES && faltan <= DIAS_DESPUES;
+  const suelo = useDatos(() => (pronto ? getEstado({ municipio }) : Promise.resolve(null)), [municipio, pronto]);
+  const agua = pronto && !suelo.error ? resumenAgua(suelo.datos) : null;
+
   if (!v || !v.estacional) return null;
 
   const elegido = v.meses.find((m) => m.mes === mesInicio);
@@ -62,9 +77,16 @@ export default function VentanaSiembra({ catalogoId, municipio, mesInicio }) {
           below what this crop prefers: plan on irrigation.
         </p>
       )}
+      {agua && agua.tono !== "bien" && (
+        <p className="aviso aviso--info">
+          <b>Soil moisture right now: {agua.titulo.toLowerCase()}.</b> {agua.frase}. If you plant soon, plan on irrigation
+          or wait for rain.
+        </p>
+      )}
       <small>
-        Based on NASA POWER monthly averages and the crop's ideal temperature (EcoCrop). Local varieties and practices
-        vary: confirm with a technician.
+        Based on NASA POWER monthly averages and the crop's ideal temperature (EcoCrop)
+        {pronto ? ", and NASA SMAP soil moisture of the last 30 days" : ""}. Local varieties and practices vary: confirm
+        with a technician.
       </small>
     </section>
   );

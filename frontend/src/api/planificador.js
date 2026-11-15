@@ -48,6 +48,8 @@ export const tareasSugeridas = (siembraId) => enviar("POST", `${R}/siembras/${si
 export const editarTarea = (id, cambios) => enviar("PATCH", `${R}/tareas/${id}`, cambios);
 export const borrarTarea = (id) => enviar("DELETE", `${R}/tareas/${id}`);
 
-// Copiar el plan a otro año ({ nombre, anios }) y descargarlo en CSV.
+// Copiar el plan a otro año ({ nombre, anios }) y descargarlo en CSV o en PDF.
 export const duplicarPlan = (id, datos) => enviar("POST", `${R}/planes/${id}/duplicar`, datos);
 export const urlExportarPlan = (id) => `${R}/planes/${id}/exportar`;
+// El PDF lleva la fecha local del navegador para calcular "hoy" (uso del suelo, próxima cosecha).
+export const urlExportarPlanPdf = (id) => `${R}/planes/${id}/exportar-pdf?hoy=${aISO(new Date())}`;

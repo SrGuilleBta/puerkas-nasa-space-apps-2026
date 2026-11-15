@@ -95,8 +95,17 @@ async def externas() -> tuple[list[dict], bool]:
     return noticias, all(r is not None for r in resultados)
 
 
-def propias(alertas: list[dict], activos: list[dict], nasa: dict | None, lugar: str, hoy: date) -> list[dict]:
-    """Noticias calculadas con los datos del usuario: alertas, cosechas cercanas y lluvia reciente."""
+def _atraso(dias: int) -> str:
+    return "1 day late" if dias == 1 else f"{dias} days late"
+
+
+def propias(
+    alertas: list[dict], activos: list[dict], nasa: dict | None, lugar: str, hoy: date, vencidas: dict | None = None
+) -> list[dict]:
+    """Noticias calculadas con los datos del usuario: alertas, tareas vencidas, cosechas cercanas y lluvia reciente.
+
+    `vencidas` es lo que devuelve `tareas.vencidas` (total y las más atrasadas).
+    """
     ahora = hoy.isoformat()
     items = []
 
@@ -111,6 +120,22 @@ def propias(alertas: list[dict], activos: list[dict], nasa: dict | None, lugar: 
             "fecha": ahora,
             "enlace": None,
             "destino": "principal",
+        })
+
+    if vencidas and vencidas["total"]:
+        n, peor = vencidas["total"], vencidas["tareas"][0]
+        items.append({
+            "id": "tareas-vencidas",
+            "categoria": "farm",
+            "titulo": f"{n} overdue task{'' if n == 1 else 's'}",
+            "resumen": (
+                f"The oldest: {peor['titulo']} for {peor['cultivo']} · {peor['parcela']} ({_atraso(peor['dias_retraso'])}). "
+                "Mark tasks as done or move their dates in the Planner."
+            ),
+            "fuente": "Your plan",
+            "fecha": ahora,
+            "enlace": None,
+            "destino": "planificador",
         })
 
     cercanas = sorted(

@@ -91,6 +91,37 @@ def sugeridas(con, siembra_id: int) -> list[dict]:
     return listar(con, siembra_id)
 
 
+def vencidas(con, plan_id: int | None, hoy: date, limite: int = 5) -> dict:
+    """Tareas sin hacer cuya fecha ya pasó, en un plan (sin `plan_id`, el primero).
+
+    Devuelve el `total` y las `limite` más atrasadas (la más vieja primero), cada una con el cultivo
+    y la parcela a la que pertenece. Principal y Noticias lo usan para avisar de lo atrasado.
+    """
+    if plan_id is None:
+        primero = _fila(con, "SELECT id FROM plan ORDER BY id LIMIT 1")
+        if primero is None:
+            return {"total": 0, "tareas": []}
+        plan_id = primero["id"]
+    else:
+        _existe(con, "plan", plan_id, "plan")
+    filas = con.execute(
+        "SELECT t.id, t.siembra_id, t.titulo, t.tipo, t.fecha, c.nombre AS cultivo, p.nombre AS parcela "
+        "FROM tarea t JOIN siembra s ON s.id = t.siembra_id JOIN parcela p ON p.id = s.parcela_id "
+        "JOIN cultivo c ON c.id = s.cultivo_id "
+        "WHERE p.plan_id = ? AND t.hecha = 0 AND t.fecha < ? ORDER BY t.fecha, t.id",
+        (plan_id, hoy.isoformat()),
+    ).fetchall()
+    tareas = [
+        {
+            "id": f["id"], "siembra_id": f["siembra_id"], "titulo": f["titulo"], "tipo": f["tipo"],
+            "fecha": f["fecha"], "dias_retraso": (hoy - date.fromisoformat(f["fecha"])).days,
+            "cultivo": f["cultivo"], "parcela": f["parcela"],
+        }
+        for f in filas[:limite]
+    ]
+    return {"total": len(filas), "tareas": tareas}
+
+
 def conteo_plan(con, plan_id: int, hoy: date) -> dict:
     """Tareas sin hacer de un plan y cuántas de ellas ya vencieron."""
     fila = con.execute(

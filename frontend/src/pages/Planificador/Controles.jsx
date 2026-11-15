@@ -1,5 +1,51 @@
+import { useState } from "react";
 import { Flecha, Mas, Menos } from "../../components/Iconos.jsx";
 import { NIVELES_ZOOM } from "../../utils/ventana.js";
+
+// Botón "Export PDF". Pide el archivo y lo descarga; si el servidor responde con un error, lo muestra en
+// pantalla en vez de guardar la respuesta de error como si fuera el PDF (lo que haría un enlace de descarga).
+function ExportarPdf({ href }) {
+  const [estado, setEstado] = useState({ cargando: false, error: null });
+
+  async function descargar() {
+    setEstado({ cargando: true, error: null });
+    try {
+      const r = await fetch(href);
+      if (!r.ok) {
+        let mensaje = "";
+        try {
+          const { detail } = await r.json();
+          mensaje = typeof detail === "string" ? detail : detail?.mensaje ?? "";
+        } catch {
+          /* la respuesta de error no traía JSON */
+        }
+        throw new Error(mensaje || `The PDF could not be created (error ${r.status}).`);
+      }
+      const nombre = /filename="([^"]+)"/.exec(r.headers.get("Content-Disposition") ?? "")?.[1] ?? "plan.pdf";
+      const url = URL.createObjectURL(await r.blob());
+      const enlace = Object.assign(document.createElement("a"), { href: url, download: nombre });
+      enlace.click();
+      URL.revokeObjectURL(url);
+      setEstado({ cargando: false, error: null });
+    } catch (e) {
+      const sinServidor = e instanceof TypeError; // fetch falla con TypeError cuando no hay conexión
+      setEstado({ cargando: false, error: sinServidor ? "Could not reach the server. Try again in a moment." : e.message });
+    }
+  }
+
+  return (
+    <>
+      <button type="button" className="btn" onClick={descargar} disabled={estado.cargando}>
+        {estado.cargando ? "Creating PDF…" : "Export PDF"}
+      </button>
+      {estado.error && (
+        <p className="aviso aviso--error controles__error" role="alert">
+          {estado.error}
+        </p>
+      )}
+    </>
+  );
+}
 
 // Selector de plan y controles del calendario (moverse en el tiempo y zoom).
 export default function Controles({
@@ -9,6 +55,7 @@ export default function Controles({
   onNuevoPlan,
   onEditarPlan,
   exportHref,
+  exportPdfHref,
   meses,
   onMover,
   onZoom,
@@ -36,6 +83,7 @@ export default function Controles({
             Export CSV
           </a>
         )}
+        {exportPdfHref && <ExportarPdf href={exportPdfHref} />}
         <button type="button" className="btn btn--primario" onClick={onNuevoPlan}>
           New plan
         </button>

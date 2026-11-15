@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAnalisis, getPlan, listarCultivos, listarPlanes, urlExportarPlan } from "../../api/planificador.js";
+import { getAnalisis, getPlan, listarCultivos, listarPlanes, urlExportarPlan, urlExportarPlanPdf } from "../../api/planificador.js";
 import Cargable from "../../components/Cargable.jsx";
 import Tarjeta from "../../components/Tarjeta.jsx";
 import useDatos from "../../hooks/useDatos.js";
@@ -98,6 +98,7 @@ export default function Planificador({ municipio }) {
                   onNuevoPlan={() => setDialogo({ tipo: "plan", plan: null })}
                   onEditarPlan={() => setDialogo({ tipo: "plan", plan: planActual })}
                   exportHref={planId ? urlExportarPlan(planId) : null}
+                  exportPdfHref={planId ? urlExportarPlanPdf(planId) : null}
                   meses={ventana.meses}
                   onMover={(sentido) => setVentana((v) => mover(v, sentido))}
                   onZoom={(sentido) => setVentana((v) => cambiarZoom(v, sentido))}

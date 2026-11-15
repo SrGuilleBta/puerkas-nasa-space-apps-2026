@@ -4,3 +4,4 @@ httpx==0.28.1
 pydantic==2.10.6
 tzdata==2024.2
 h5py==3.12.1
+fpdf2>=2.8,<3

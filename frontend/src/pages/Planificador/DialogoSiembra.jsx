@@ -197,6 +197,7 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, municipio, on
           catalogoId={local?.catalogoId ?? nuevoDelCatalogo.id}
           municipio={municipio}
           mesInicio={inicio ? Number(inicio.slice(5, 7)) : null}
+          fechaInicio={inicio || null}
         />
       )}
 

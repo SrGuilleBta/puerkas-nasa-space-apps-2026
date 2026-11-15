@@ -60,6 +60,22 @@ class PruebasNoticias(unittest.TestCase):
         self.assertNotIn("cosecha-8", por_id)  # le faltan 90 días
         self.assertIn("40 mm", por_id["nasa-lluvia"]["titulo"])
 
+    def test_propias_avisa_de_tareas_vencidas(self):
+        peor = {"titulo": "Fertilize", "cultivo": "Maíz", "parcela": "Sur", "dias_retraso": 12}
+        r = noticias.propias([], [], None, "X", HOY, {"total": 3, "tareas": [peor]})
+        self.assertEqual(len(r), 1)
+        self.assertEqual(r[0]["id"], "tareas-vencidas")
+        self.assertEqual(r[0]["titulo"], "3 overdue tasks")
+        self.assertEqual((r[0]["categoria"], r[0]["destino"]), ("farm", "planificador"))
+        self.assertIn("Fertilize for Maíz · Sur (12 days late)", r[0]["resumen"])
+
+        una = noticias.propias([], [], None, "X", HOY, {"total": 1, "tareas": [{**peor, "dias_retraso": 1}]})
+        self.assertEqual(una[0]["titulo"], "1 overdue task")
+        self.assertIn("(1 day late)", una[0]["resumen"])
+
+    def test_sin_tareas_vencidas_no_hay_aviso(self):
+        self.assertEqual(noticias.propias([], [], None, "X", HOY, {"total": 0, "tareas": []}), [])
+
     def test_sin_datos_no_inventa_noticias(self):
         self.assertEqual(noticias.propias([], [], None, "X", HOY), [])
         self.assertEqual(noticias.propias([], [], {"dias": 0, "lluviaMm": None}, "X", HOY), [])

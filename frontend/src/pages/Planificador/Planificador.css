@@ -38,6 +38,17 @@
   gap: 8px;
 }
 
+/* Error al exportar: ocupa su propia línea debajo de los botones */
+.controles__plan {
+  flex-wrap: wrap;
+}
+
+.controles__error {
+  flex: 1 1 100%;
+  order: 99; /* al final: debajo de todos los botones */
+  margin: 0;
+}
+
 .controles__selector select {
   min-width: 190px;
   max-width: 100%;
@@ -148,6 +159,31 @@
   margin-left: 8px;
   font-size: 12px;
   color: var(--tinta-suave);
+}
+
+.parcela__acciones {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px 10px;
+}
+
+/* "← 2 earlier" / "3 later →": siembras de la parcela que quedan fuera de la ventana */
+.cal__fuera {
+  padding: 2px 9px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--tinta-suave);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cal__fuera:hover {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
 }
 
 .cal__pista {
@@ -1005,6 +1041,11 @@
 .ph-compat--bien {
   color: var(--verde-oscuro);
   background: var(--verde-claro);
+}
+
+.ph-compat--neutro {
+  color: var(--tinta);
+  background: rgba(18, 48, 74, 0.05);
 }
 
 .ph-compat--regular {

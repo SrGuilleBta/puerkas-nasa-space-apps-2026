@@ -42,7 +42,7 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 
 ## Lo que sigue
 
-- ~~Conectar Suelo~~: hecho en Principal (pH y humedad del módulo Suelo), el popup del cultivo (pH del suelo contra el ideal) y las alertas (suelo más seco de lo normal, SMAP). Falta usar el suelo en la franja de "cuándo sembrar aquí" y la textura en las fichas. El `services/soilgrids.py` viejo ya se borró.
+- ~~Conectar Suelo~~: hecho en Principal (pH y humedad del módulo Suelo), el popup del cultivo (pH del suelo contra el ideal) y las alertas (suelo más seco de lo normal, SMAP). También hecho: la franja de "cuándo sembrar aquí" avisa si el suelo está más seco de lo normal y la ficha muestra la textura del suelo junto a la que prefiere el cultivo (EcoCrop; solo ~65 de 399 cultivos la traen, y sin veredicto porque no hay equivalencia oficial entre las clases de EcoCrop y las del USDA). El `services/soilgrids.py` viejo ya se borró.
 
 - ~~Mejor fecha de siembra~~: hecha con temperatura (catálogo contra NASA POWER). Mejoras: usar los meses
   de siembra de las agendas INIFAP cuando haya estado, sumar el pH y el suelo cuando esté esa parte, y
@@ -50,7 +50,7 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 - ~~Umbrales de las alertas por cultivo~~: hecho para helada y calor (rango absoluto de temperatura del
   catálogo). También hecha la lluvia por cultivo (déficit y encharcamiento; solo ~78 de 399 cultivos traen su rango
   de lluvia). Falta las plagas por cultivo con el motor de la rama `plagas`.
-- Precio, rendimiento y chips de demanda en "Cultivos activos" (SIAP, vía el catálogo).
+- ~~Precio, rendimiento y chips en "Cultivos activos"~~: hecho con SIAP (estado de la ubicación o, si no, nacional). Un dato de **demanda** no existe en SIAP: se muestra la variación del precio contra su mediana de 10 años. Falta: la demanda real, si aparece una fuente (Mercado).
 - ~~Rotación más fina~~: hecha con familia y nitrógeno. Mejoras: usar el precio y el agua; sólo ~80 de 399
   cultivos traen familia y marca de nitrógeno (los demás se deducen del tipo).
 - Rentabilidad en el resumen del plan.
@@ -59,14 +59,16 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 
 - Hechos: costos e ingresos por siembra, tareas por siembra, copiar el plan a otro año, exportar a CSV
   y la agenda del INIFAP por estado.
-- Exportar a PDF (hoy solo CSV).
-- Las tareas no se copian al duplicar el plan y no aparecen todavía en Principal ni en Noticias (por ejemplo
-  "tienes 3 tareas vencidas").
+- ~~Exportar a PDF~~: hecho (resumen, calendario por parcela y tabla de siembras con su economía). Usa la librería
+  `fpdf2`: tras bajar este cambio hay que recrear el backend (`docker compose up -d --force-recreate backend`).
+  Solo cubre texto en Latin-1 (acentos y ñ sí; otros alfabetos salen como "?").
+- ~~Tareas vencidas en Principal y Noticias~~: hecho (aviso ámbar en Principal y noticia propia). Las tareas
+  no se copian al duplicar el plan a propósito: son del ciclo que ya pasó.
 - El calendario sugerido de tareas es una plantilla general; se podría armar con las etapas del cultivo y
   los cuidados de la agenda del INIFAP.
 - El texto del INIFAP está en español (la rama `cultivos_v2` lo traduce); la mediana nacional como cifra de
   partida no es precio de mercado de hoy.
-- Indicadores por fila de siembras fuera de la vista ("N antes / N después") en el calendario.
+- ~~Indicadores "N earlier / N later" de siembras fuera de la vista en el calendario~~: hechos (y saltan a la más cercana).
 
 ## Por verificar
 

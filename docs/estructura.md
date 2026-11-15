@@ -53,6 +53,7 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   ├── catalogo_cultivos.py  une el Planificador con el catálogo de Cultivos (lista, alta y ficha)
 │   │   │   ├── tareas.py        tareas de una siembra y calendario sugerido
 │   │   │   ├── plan_extras.py   copiar el plan a otro año y exportarlo a CSV
+│   │   │   ├── plan_pdf.py      exportar el plan a PDF (fpdf2)
 │   │   │   ├── estados.py       estados de México (clave INEGI) para las agendas del INIFAP
 │   │   │   ├── rotacion.py      qué sembrar después (nitrógeno y familia del catálogo)
 │   │   │   ├── ventana_siembra.py  mejores meses para sembrar (temperatura del cultivo contra NASA POWER)
@@ -60,7 +61,7 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   ├── nasa_power.py    clima observado por satélite (lluvia, temperatura, radiación, humedad de raíz)
 │   │   │   ├── cultivos.py      lee los JSON que genera la pipeline en backend/data/cultivos
 │   │   │   ├── siap.py          [pendiente] leerá los CSV de backend/data/siap
-│   │   │   └── ecocrop.py       [pendiente]
+│   │   │   └── ecocrop.py       textura de suelo de cada cultivo (lee data/ecocrop/EcoCrop_DB.csv)
 │   │   └── schemas/             modelos Pydantic de las respuestas (camelCase hacia el frontend)
 │   ├── pipeline/
 │   │   └── cultivos/            batch que genera data/cultivos (ver cultivos-pipeline.md)

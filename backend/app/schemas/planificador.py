@@ -157,6 +157,24 @@ class ParcelaResumenOut(Modelo):
     nombre: str
 
 
+class EtiquetaMercadoOut(Modelo):
+    tipo: str  # "positiva" o "negativa"
+    texto: str
+
+
+class MercadoOut(Modelo):
+    """Precio, rendimiento y chips de un cultivo según SIAP (estado o, si no, nacional)."""
+
+    precio: float | None = None  # precio medio rural del último año, en pesos de ese año
+    precio_unidad: str | None = None  # "$/t"
+    variacion_pct: int | None = None  # contra la mediana de los 10 años de SIAP
+    rendimiento: float | None = None  # mediana de la ubicación
+    rendimiento_unidad: str | None = None  # "t/ha"
+    anio: int | None = None
+    fuente: str
+    etiquetas: list[EtiquetaMercadoOut] = []
+
+
 class CultivoActivoOut(SiembraOut):
     """Una siembra en curso hoy, con lo que Principal necesita para mostrarla."""
 
@@ -166,6 +184,25 @@ class CultivoActivoOut(SiembraOut):
     avance: int  # % del ciclo transcurrido
     etapa: int
     etapas: int
+    mercado: MercadoOut | None = None  # solo si el cultivo viene del catálogo y SIAP tiene datos
+
+
+class TareaVencidaOut(Modelo):
+    """Una tarea sin hacer cuya fecha ya pasó, con lo que Principal necesita para mostrarla."""
+
+    id: int
+    siembra_id: int
+    titulo: str
+    tipo: str
+    fecha: date
+    dias_retraso: int
+    cultivo: str
+    parcela: str
+
+
+class TareasVencidasOut(Modelo):
+    total: int  # todas las vencidas del plan
+    tareas: list[TareaVencidaOut]  # las más atrasadas primero (hasta 5)
 
 
 class ProximaCosechaOut(Modelo):
