@@ -25,6 +25,20 @@ from app.main import app  # noqa: E402
 P = "/api/planificador"
 
 
+def _nombre_del_catalogo(id_, respaldo):
+    """Nombre del cultivo en el catálogo generado (en inglés si la pipeline lo tradujo); el de respaldo si no hay catálogo."""
+    from app.services import catalogo_cultivos
+
+    return (catalogo_cultivos._catalogo()["por_id"].get(id_) or {}).get("nombre", respaldo)
+
+
+# Los cultivos de demo se renombran al nombre del catálogo, así que las pruebas lo leen de ahí.
+MAIZ = _nombre_del_catalogo("maiz-grano", "Maíz grano")
+FRIJOL = _nombre_del_catalogo("frijol", "Frijol")
+SORGO = _nombre_del_catalogo("sorgo-grano", "Sorgo grano")
+AGUACATE = _nombre_del_catalogo("aguacate", "Aguacate")
+
+
 class PruebasPlanificador(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -45,8 +59,8 @@ class PruebasPlanificador(unittest.TestCase):
         self.plan = self.c.post(f"{P}/planes", json={"nombre": "Prueba"}).json()
         r = self.c.post(f"{P}/planes/{self.plan['id']}/parcelas", json={"nombre": "Lote", "hectareas": 10})
         self.parcela = r.json()
-        self.maiz = self.cultivo("Maíz grano")  # ciclo 125 días
-        self.frijol = self.cultivo("Frijol")  # ciclo 100 días
+        self.maiz = self.cultivo(MAIZ)  # ciclo 125 días
+        self.frijol = self.cultivo(FRIJOL)  # ciclo 100 días
 
     def tearDown(self):
         self.c.delete(f"{P}/planes/{self.plan['id']}")
@@ -88,7 +102,7 @@ class PruebasPlanificador(unittest.TestCase):
         r = self.siembra(self.frijol, "2030-05-01", "2030-08-01")
         self.assertEqual(r.status_code, 409)
         d = r.json()["detail"]
-        self.assertIn("Maíz grano", d["mensaje"])
+        self.assertIn(MAIZ, d["mensaje"])
         self.assertEqual(d["libreDesde"], "2030-05-16")
         self.assertEqual(d["conflicto"]["fechaCosecha"], "2030-05-15")
 
@@ -164,7 +178,7 @@ class PruebasPlanificador(unittest.TestCase):
     # ---- catálogo ----
     def test_buscar_cultivos_sin_importar_acentos(self):
         nombres = [x["nombre"] for x in self.c.get(f"{P}/cultivos", params={"q": "MAIZ"}).json()]
-        self.assertEqual(nombres, ["Maíz grano"])
+        self.assertEqual(nombres, [MAIZ])
         self.assertEqual(self.c.get(f"{P}/cultivos", params={"q": "zzz"}).json(), [])
 
     def test_crear_cultivo_y_evitar_duplicados(self):
@@ -200,7 +214,7 @@ class PruebasPlanificador(unittest.TestCase):
         ultimo = self.activos("2030-01-10").json()[0]  # el día de la cosecha todavía está en curso
         self.assertEqual((ultimo["dia"], ultimo["etapa"], ultimo["avance"]), (10, 5, 100))
         self.assertEqual(ultimo["parcela"]["nombre"], "Lote")
-        self.assertEqual(ultimo["cultivo"]["nombre"], "Maíz grano")
+        self.assertEqual(ultimo["cultivo"]["nombre"], MAIZ)
 
     def test_activos_excluye_pasadas_y_futuras(self):
         self.siembra(self.maiz, "2030-01-01", "2030-01-10")
@@ -212,7 +226,7 @@ class PruebasPlanificador(unittest.TestCase):
         self.siembra(self.maiz, "2030-01-01", "2030-01-10")
         self.siembra(self.frijol, "2030-01-03", "2030-01-08", parcela=otra)
         nombres = [a["cultivo"]["nombre"] for a in self.activos("2030-01-05").json()]
-        self.assertEqual(nombres, ["Frijol", "Maíz grano"])
+        self.assertEqual(nombres, [FRIJOL, MAIZ])
 
     def test_activos_solo_del_plan_pedido(self):
         self.siembra(self.maiz, "2030-01-01", "2030-01-10")
@@ -227,7 +241,7 @@ class PruebasPlanificador(unittest.TestCase):
 
         r = self.c.get("/api/principal/cultivos-activos", params={"hoy": db.hoy().isoformat()})
         self.assertEqual(r.status_code, 200)
-        self.assertGreaterEqual({a["cultivo"]["nombre"] for a in r.json()}, {"Maíz grano", "Sorgo grano"})
+        self.assertGreaterEqual({a["cultivo"]["nombre"] for a in r.json()}, {MAIZ, SORGO})
         r = self.c.get("/api/principal/cultivos-activos", params={"planId": 99999})
         self.assertEqual(r.status_code, 404)
         self.assertIn("mensaje", r.json()["detail"])
@@ -251,7 +265,7 @@ class PruebasPlanificador(unittest.TestCase):
         self.assertEqual((r["hectareasTotales"], r["hectareasEnUso"], r["usoSuelo"]), (15, 13, 87))
         self.assertEqual(r["proximaCosecha"]["fecha"], "2030-01-10")
         self.assertEqual(r["proximaCosecha"]["diasRestantes"], 5)
-        self.assertEqual((r["proximaCosecha"]["cultivo"], r["proximaCosecha"]["parcela"]), ("Maíz grano", "Lote"))
+        self.assertEqual((r["proximaCosecha"]["cultivo"], r["proximaCosecha"]["parcela"]), (MAIZ, "Lote"))
 
     def test_resumen_de_un_plan_sin_siembras(self):
         r = self.analisis("2030-01-05")["resumen"]
@@ -268,8 +282,8 @@ class PruebasPlanificador(unittest.TestCase):
         self.assertEqual(len(recs), 1)
         r = recs[0]
         self.assertEqual(r["parcela"]["nombre"], "Lote")
-        self.assertEqual(r["despuesDe"]["cultivo"]["nombre"], "Maíz grano")
-        self.assertEqual(r["sugerido"]["nombre"], "Frijol")
+        self.assertEqual(r["despuesDe"]["cultivo"]["nombre"], MAIZ)
+        self.assertEqual(r["sugerido"]["nombre"], FRIJOL)
         self.assertEqual(r["desde"], "2030-05-16")  # el día siguiente a la cosecha
         self.assertIn("nitrogen", r["razon"])
         self.assertNotIn("afinidad", str(r).lower())  # sin porcentajes inventados
@@ -278,7 +292,7 @@ class PruebasPlanificador(unittest.TestCase):
         self.siembra(self.frijol, "2030-01-10")
         r = self.analisis("2030-01-01")["recomendaciones"][0]
         self.assertEqual(r["sugerido"]["tipo"], "cereal")
-        self.assertEqual(r["sugerido"]["nombre"], "Maíz grano")  # empate: el primero por nombre
+        self.assertEqual(r["sugerido"]["nombre"], MAIZ)  # empate: el primero por nombre
 
     def test_se_prefiere_variar_y_nunca_repetir_el_ultimo(self):
         self.c.post(f"{P}/cultivos", json={"nombre": "Haba", "tipo": "leguminosa", "cicloDias": 120})  # 409 si ya existe
@@ -287,14 +301,14 @@ class PruebasPlanificador(unittest.TestCase):
         r = self.analisis("2030-01-01")["recomendaciones"][0]
         # El frijol ya se sembró en esta parcela: se propone otra leguminosa que no se haya usado
         self.assertEqual(r["sugerido"]["tipo"], "leguminosa")
-        self.assertNotEqual(r["sugerido"]["nombre"], "Frijol")
+        self.assertNotEqual(r["sugerido"]["nombre"], FRIJOL)
         # Y tras un cultivo nunca se propone el mismo
         self.siembra(self.frijol, "2030-08-16", "2030-12-01")
         r = self.analisis("2030-01-01")["recomendaciones"][0]
-        self.assertNotEqual(r["sugerido"]["nombre"], "Frijol")
+        self.assertNotEqual(r["sugerido"]["nombre"], FRIJOL)
 
     def test_sin_recomendacion_para_frutales_ni_parcelas_vacias(self):
-        aguacate = self.cultivo("Aguacate")
+        aguacate = self.cultivo(AGUACATE)
         otra = self.parcela_nueva("Huerta", 3)
         self.siembra(aguacate, "2030-01-01", "2030-12-31", parcela=otra)
         # "Lote" no tiene siembras y "Huerta" tiene un frutal: ninguna recibe sugerencia
