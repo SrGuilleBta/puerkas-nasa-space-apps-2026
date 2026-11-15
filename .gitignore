@@ -8,3 +8,6 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+
+# Salida de la pipeline de Cultivos (se regenera: python -m pipeline.cultivos)
+backend/data/cultivos/

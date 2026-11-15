@@ -3,7 +3,11 @@ from pathlib import Path
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
+from app.routers import cultivos
+
 app = FastAPI(title="Adapting Farms with NASA Data", version="0.1.0")
+
+app.include_router(cultivos.router)
 
 
 @app.get("/api/health")

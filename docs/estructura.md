@@ -39,7 +39,7 @@ clonar, se crea con `mkdir` y aparece en el repo en cuanto tenga su primer archi
 │   │   │   ├── principal.py     [crear]
 │   │   │   ├── clima.py         [crear] incluye suelo (humedad, temperatura, pH)
 │   │   │   ├── mercado.py       [crear]
-│   │   │   ├── cultivos.py      [crear]
+│   │   │   ├── cultivos.py      [existe] lee los JSON de data/cultivos
 │   │   │   ├── planificador.py  [crear]
 │   │   │   └── noticias.py      [crear]
 │   │   ├── services/            lógica y clientes de datos; no importan FastAPI
@@ -49,8 +49,12 @@ clonar, se crea con `mkdir` y aparece en el repo en cuanto tenga su primer archi
 │   │   │   ├── siap.py          [crear] lee los CSV de backend/data/siap
 │   │   │   └── ecocrop.py       [crear]
 │   │   └── schemas/             modelos Pydantic de las respuestas (opcional)
+│   ├── pipeline/
+│   │   └── cultivos/            [existe] batch que genera data/cultivos (ver cultivos-pipeline.md)
 │   ├── data/
-│   │   └── siap/                [existe] CSV 2015-2025 y su README
+│   │   ├── siap/                [existe] CSV 2015-2025 y su README
+│   │   ├── sequia/, ecocrop/, inflacion/   [existen] entradas de la pipeline de Cultivos
+│   │   └── cultivos/            generado por la pipeline (no se commitea)
 │   ├── tests/
 │   └── requirements.txt         [existe]
 ├── frontend/
