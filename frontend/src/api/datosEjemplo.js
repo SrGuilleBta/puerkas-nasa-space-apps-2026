@@ -9,7 +9,7 @@ export const aviso = {
   texto: "A heavy rain front is approaching next month. Consider adjusting irrigation.",
 };
 
-// Un valor por día, de lunes a domingo.
+// Un valor por día, empezando hoy.
 export const pronostico = [
   { tmax: 28, lluvia: 10, cielo: "sol" },
   { tmax: 29, lluvia: 5, cielo: "sol" },

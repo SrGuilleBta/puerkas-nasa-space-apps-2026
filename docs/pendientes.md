@@ -23,8 +23,8 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 - **Plagas y enfermedades:** el equipo pondrá la información después. Hoy son reglas generales en
   `backend/app/services/alertas.py` (hongos, pulgón y mosca blanca, gusano cogollero en maíz). Cambiar
   textos, cultivos y umbrales cuando llegue esa información.
-- El pronóstico llega hasta el domingo, así que las alertas del domingo ven solo ese día.
-  Si Clima ofrece más días, usarlos.
+- El pronóstico de Principal cubre hoy y los 6 días siguientes, así que las alertas siempre ven la
+  semana que viene. Si Clima ofrece más días, usarlos.
 
 ## Catálogo de Cultivos (ya llegó)
 

@@ -15,7 +15,7 @@ ESPERA_SUELO_SEGUNDOS = 6
 
 @router.get("/clima")
 async def clima(municipio: str, con=Depends(db.con_db)):
-    """Pronóstico de la semana (lunes a domingo) y condiciones de hoy para una ubicación guardada.
+    """Pronóstico de 7 días (hoy y los 6 siguientes) y condiciones de hoy para una ubicación guardada.
 
     `municipio` es el nombre de la ubicación (ver /api/ubicaciones). El clima viene de Meteomatics;
     el pH y la humedad del suelo, del módulo Suelo (SoilGrids y NASA POWER), con el mismo punto que la
