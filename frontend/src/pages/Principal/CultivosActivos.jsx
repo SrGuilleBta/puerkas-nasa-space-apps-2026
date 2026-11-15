@@ -12,6 +12,27 @@ function fechaCosecha(texto) {
   return f.getFullYear() === new Date().getFullYear() ? fechaLarga(f) : `${fechaLarga(f)}, ${f.getFullYear()}`;
 }
 
+// Último precio al consumidor (Profeco) del producto equivalente en el estado de la ubicación y su tendencia.
+function PrecioConsumidor({ p }) {
+  const c = p.cambio30dPct;
+  return (
+    <div className="cultivo__consumidor">
+      <span>
+        Retail price <b>{pesos(p.precio)}/kg</b>
+        {c != null && Math.abs(c) >= 1 && (
+          <small className={c > 0 ? "tendencia tendencia--sube" : "tendencia tendencia--baja"} title="Change over the 30 days before the latest real price">
+            {c > 0 ? "▲" : "▼"} {Math.abs(c)}%
+          </small>
+        )}
+      </span>
+      <small className="cultivo__fuente">
+        Profeco, {p.estado.toLowerCase().replace(/(^|\s)\S/g, (m) => m.toUpperCase())}
+        {p.desactualizado ? ` · as of ${p.fecha}` : ""}
+      </small>
+    </div>
+  );
+}
+
 // Precio y rendimiento de SIAP para el estado de la ubicación (o del país), y chips de rentabilidad
 // y sequía. La flecha compara el precio del último año con su mediana de 10 años.
 function Mercado({ m }) {
@@ -80,6 +101,7 @@ function Siembra({ s }) {
       </div>
 
       {s.mercado && <Mercado m={s.mercado} />}
+      {s.precioMercado && <PrecioConsumidor p={s.precioMercado} />}
 
       <div>
         <div className="cultivo__fila cultivo__fila--precio">

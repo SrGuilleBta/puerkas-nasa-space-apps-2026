@@ -1,0 +1,14 @@
+# Dependencias de los scripts de Mercado (solo para quien actualiza los datos o reentrena; la app no las necesita).
+# exportar_json.py (el que usa docker compose al arrancar) solo necesita pandas y pyarrow.
+pandas>=2.2
+pyarrow>=15
+numpy>=1.26
+# Traducción automática de productos nuevos (opcional: sin ella se usa el glosario)
+deep_translator>=1.11
+# actualizar_profeco.py (descarga de los archivos de Profeco)
+beautifulsoup4>=4.12
+requests>=2.31
+curl_cffi>=0.7
+# Modelo_Prediccion.py (ejemplo con Prophet para un solo producto)
+prophet>=1.1
+matplotlib>=3.8

@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app import db
 from app.schemas.planificador import CultivoActivoOut, TareasVencidasOut
-from app.services import alertas, catalogo_cultivos, nasa_power, suelo_ubicacion, tareas, ubicaciones
+from app.services import alertas, catalogo_cultivos, mercado, nasa_power, suelo_ubicacion, tareas, ubicaciones
 from app.services import clima as clima_servicio
 from app.services import planificador as plan_servicio
 from app.services import plagas as motor_plagas
@@ -114,9 +114,21 @@ def cultivos_activos(
     activos = plan_servicio.siembras_en_curso(con, plan_id, hoy or db.hoy())
     lugar = ubicaciones.buscar(con, municipio) if municipio else None
     cve_ent = lugar.cve_ent if lugar else None
+    dia = hoy or db.hoy()
+    estado_mercado = mercado.clave_de_estado(cve_ent) if mercado_disponible() else None
     for a in activos:
         a["mercado"] = catalogo_cultivos.mercado(a["cultivo"].get("catalogo_id"), cve_ent)
+        a["precio_mercado"] = mercado.tendencia(a["cultivo"].get("catalogo_id"), estado_mercado, dia)
     return activos
+
+
+def mercado_disponible() -> bool:
+    """Si ya se generaron los precios de Mercado (si no, las tarjetas solo muestran SIAP)."""
+    try:
+        mercado.meta()
+        return True
+    except mercado.SinDatos:
+        return False
 
 
 @router.get("/tareas-vencidas", response_model=TareasVencidasOut)

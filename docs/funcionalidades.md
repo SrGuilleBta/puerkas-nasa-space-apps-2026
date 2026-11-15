@@ -9,8 +9,8 @@ Para cada pantalla: qué muestra, de dónde saldría cada dato (fuentes en [dato
 el dato está **resuelto**, **parcial** o **falta**. Es un punto de partida para mejorarlo.
 
 **Avance (2026-11-15):** **Principal**, **Planificador**, **Noticias** y **Suelo** ya están implementados con datos
-reales (clima de Meteomatics, suelo de NASA y SoilGrids, planes en SQLite, feeds de CIMMYT y NASA). **Clima** y
-**Mercado** siguen pendientes; de **Cultivos** ya están el catálogo y la API (`/api/cultivos`) y falta su pantalla.
+reales (clima de Meteomatics, suelo de NASA y SoilGrids, planes en SQLite, feeds de CIMMYT y NASA). **Clima** ya
+tiene su mapa de México (lluvia y calor; falta su selector de día con datos observados de NASA POWER) y **Mercado** su pantalla con precios al consumidor; de **Cultivos** ya están el catálogo y la API (`/api/cultivos`) y falta su pantalla.
 Donde la tabla dice "Implementado" ya funciona en la aplicación.
 
 ## Piezas compartidas (en todas las pantallas)
@@ -43,7 +43,7 @@ Resumen de todo en una pantalla.
 | **Selector de día** (anterior/siguiente) | Pasado: NASA POWER (diario). Futuro: Open-Meteo | Resuelto |
 | **Condiciones locales** del día: temperatura, sensación, humedad, viento, probabilidad y mm de lluvia, humedad del suelo (a 20 cm), temperatura del suelo | POWER (temperatura, lluvia, humedad, humedad de suelo) y Open-Meteo (temperatura del suelo probada a 0 cm; otras profundidades no probadas) | Parcial |
 | Mensaje "Condiciones favorables / ventana óptima para labores hasta las 16:30" | Regla nuestra sobre el pronóstico por hora (Open-Meteo o SMN `method=3`) | Parcial |
-| **Mapa climático global** con capas Temperatura, Precipitación y Suelo; puntos con ciudades (Monterrey, Madrid, Sídney) | Capas NASA (IMERG para lluvia, SMAP para suelo) o puntos de Open-Meteo por ciudad. No probé servicios de mapas de NASA | Falta investigar |
+| **Mapa de México** (pantalla **Weather**) con la capa **Rain** (lluvia pronosticada en mm) y la capa **Heat** (temperatura máxima en °C, el "mapa de calor"), por día (hoy a +6) o de la semana (lluvia sumada, calor máximo). Manchas de color sobre el contorno del país, leyenda, lectura al pasar el cursor, dos cifras del país (zona con lluvia y lluvia máxima, o punto más caliente y promedio) y el valor de cada lugar guardado | **Open-Meteo** en una malla de 84 puntos cada 1.5° dentro de México (`GET /api/clima/mapa`, caché de 3 h: ~84 consultas por actualización de las 10 000 diarias gratis). Se decidió pronóstico y no NASA: POWER no trae pronóstico e IMERG pide cuenta de Earthdata y descarga de imágenes; la lluvia observada de NASA POWER ya está en el Crop guide. Ver [pendientes.md](pendientes.md) | **Implementado** (capa Soil del diseño: no, ya es la pantalla Soil) |
 
 ## 3. Mercado
 
@@ -124,7 +124,7 @@ punto de cultivo más cercano a la ubicación activa (NASA MODIS). Detalle de fu
 | Suelo (pantalla aparte, "similar al clima") | Sigue siendo pantalla (**Soil**, sección 7); además su pH y humedad salen en Principal |
 | Línea de tiempo | Se llama **Planificador** |
 | — | **Noticias** es nueva |
-| Datos de México | El mapa de Clima es global (Monterrey, Madrid, Sídney) |
+| Datos de México | El mapa de Clima del Figma es global (Monterrey, Madrid, Sídney); en la app es de **México** |
 
 ## Qué datos del Figma todavía no tienen fuente
 
@@ -141,6 +141,6 @@ punto de cultivo más cercano a la ubicación activa (NASA MODIS). Detalle de fu
 1. ~~¿Dónde se guardan las parcelas y planes del usuario?~~ Resuelto: SQLite en `backend/data/` (un solo usuario por ahora).
 2. **¿Mercado con datos reales o con serie anual de SIAP?** Con SIAP solo hay vista de 1 año; semana y mes exigen el scraper de SNIIM.
 3. ~~¿Noticias reales, escritas por nosotros o calculadas?~~ Resuelto: calculadas con nuestros datos más feeds externos.
-4. **¿El mapa global usa capas NASA o puntos por ciudad?**
+4. ~~¿El mapa global usa capas NASA o puntos por ciudad?~~ Resuelto: mapa de México con una malla de puntos de Open-Meteo (pronóstico); ver sección 2.
 5. ~~¿Qué ciudades?~~ Resuelto: 4 de inicio más las que agregue el usuario (solo México). Falta ligar cada lugar con SIAP.
 6. ~~Estructura de carpetas~~: ya está ajustada al Figma (`pages/` tiene Principal, Clima, Mercado, Cultivos, Planificador y Noticias).

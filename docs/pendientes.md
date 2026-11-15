@@ -13,8 +13,9 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 ## Noticias
 
 - Hecha: avisos propios más feeds de CIMMYT y NASA Earth Observatory (en inglés).
-- Falta una noticia de **precios** (pendiente extra; depende de Mercado) y más fuentes si aparece
-  algún feed de México o la FAO que responda.
+- ~~Noticia de precios~~: hecha con Mercado. Sale cuando el precio al consumidor (Profeco) de un cultivo en curso cambia
+  5 % o más en 30 días, solo si el último dato real no tiene más de 14 días (hoy los datos son de julio y no sale ninguna:
+  ver [mercado.md](mercado.md)). Faltan más fuentes si aparece algún feed de México o la FAO que responda.
 - La tarjeta de Principal (antes "alerta regional") ya muestra el último titular de Noticias. Si se
   consigue una fuente oficial de alertas (Protección Civil, SMN), se puede volver a usar ahí.
 
@@ -54,10 +55,25 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 - ~~Umbrales de las alertas por cultivo~~: hecho para helada y calor (rango absoluto de temperatura del
   catálogo). También hecha la lluvia por cultivo (déficit y encharcamiento; solo ~78 de 399 cultivos traen su rango
   de lluvia). Las plagas por cultivo ya salen del motor de plagas (ver arriba).
-- ~~Precio, rendimiento y chips en "Cultivos activos"~~: hecho con SIAP (estado de la ubicación o, si no, nacional). Un dato de **demanda** no existe en SIAP: se muestra la variación del precio contra su mediana de 10 años. Falta: la demanda real, si aparece una fuente (Mercado).
+- ~~Precio, rendimiento y chips en "Cultivos activos"~~: hecho con SIAP (estado de la ubicación o, si no, nacional). Un dato de **demanda** no existe en SIAP: se muestra la variación del precio contra su mediana de 10 años. La tarjeta suma además el **precio al consumidor** de Profeco y su tendencia a 30 días para los cultivos con producto
+  equivalente. Sigue sin haber una demanda real.
 - ~~Rotación más fina~~: hecha con familia y nitrógeno. Mejoras: usar el precio y el agua; sólo ~80 de 399
   cultivos traen familia y marca de nitrógeno (los demás se deducen del tipo).
 - Rentabilidad en el resumen del plan.
+
+## Clima
+
+- Hecho: mapa de México con lluvia y calor (Open-Meteo, malla de 84 puntos, caché de 3 h). "Calor" se entendió como
+  **temperatura máxima**, que es la capa Temperatura del diseño; si se quería la intensidad de la lluvia, ya es la capa Rain.
+- Falta el **selector de día pasado** y las **condiciones locales** de la pantalla del diseño (humedad, viento, suelo,
+  "ventana óptima para labores"): hoy esos datos solo están en Principal y en el Crop guide.
+- Falta una capa de **lluvia observada** (lo que ya cayó): NASA POWER se podría usar con una malla gruesa y caché diaria,
+  o GPM IMERG si se consigue cuenta de Earthdata. Hoy el mapa es solo pronóstico.
+- Falta una capa de **suelo** (SMAP) en el mapa; el diseño la traía junto a Temperatura y Precipitación.
+- El contorno de México está dibujado a mano con ~120 puntos (`CONTORNO` en `services/mapa_clima.py`): sirve para el
+  dibujo y para elegir puntos, pero no es cartografía oficial; sin estados ni municipios. Si se quiere, cambiarlo por el
+  marco geoestadístico de INEGI simplificado.
+- Si crece el uso, la malla (1.5°) se puede afinar a 1° (~190 puntos) vigilando el límite de Open-Meteo.
 
 ## Planificador
 

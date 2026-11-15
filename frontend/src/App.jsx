@@ -5,7 +5,9 @@ import EnConstruccion from "./components/EnConstruccion.jsx";
 import Layout from "./components/Layout.jsx";
 import SelectorUbicacion from "./components/SelectorUbicacion.jsx";
 import useDatos from "./hooks/useDatos.js";
+import Clima from "./pages/Clima/Clima.jsx";
 import Cultivos from "./pages/Cultivos/Cultivos.jsx";
+import Mercado from "./pages/Mercado/Mercado.jsx";
 import Noticias from "./pages/Noticias/Noticias.jsx";
 import Planificador from "./pages/Planificador/Planificador.jsx";
 import Principal from "./pages/Principal/Principal.jsx";
@@ -114,6 +116,10 @@ export default function App() {
         <Planificador municipio={activa?.nombre} />
       ) : seccion.id === "cultivos" ? (
         <Cultivos ubicacion={activa} />
+      ) : seccion.id === "clima" ? (
+        <Clima municipio={activa?.nombre} />
+      ) : seccion.id === "mercado" ? (
+        <Mercado municipio={activa?.nombre} />
       ) : seccion.id === "suelo" ? (
         <Cargable estado={ubicaciones} alto={200}>
           {() => activa && <Suelo ubicacion={activa} />}

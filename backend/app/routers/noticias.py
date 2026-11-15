@@ -4,12 +4,27 @@ from datetime import date, timedelta
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app import db
-from app.services import alertas, catalogo_cultivos, nasa_power, noticias, tareas, ubicaciones
+from app.services import alertas, catalogo_cultivos, mercado, nasa_power, noticias, tareas, ubicaciones
 from app.services import clima as clima_servicio
 from app.services import planificador as plan_servicio
 from app.services import plagas as motor_plagas
 
 router = APIRouter(prefix="/api/noticias", tags=["noticias"])
+
+
+def _precios_de_mercado(activos: list[dict], ciudad, dia: date) -> list[dict]:
+    """Tendencia del precio al consumidor (Profeco) de los cultivos en curso, una por producto; vacío si no hay datos."""
+    try:
+        estado = mercado.clave_de_estado(ciudad.cve_ent)
+    except mercado.SinDatos:
+        return []
+    vistos, lista = set(), []
+    for a in activos:
+        t = mercado.tendencia(a["cultivo"].get("catalogo_id"), estado, dia)
+        if t and t["producto"] not in vistos:
+            vistos.add(t["producto"])
+            lista.append(t)
+    return lista
 
 
 @router.get("")
@@ -40,6 +55,7 @@ async def listar(
     plagas = motor_plagas.para_alertas(fichas, ciudad)  # lo ya calculado; lo demás arranca en segundo plano
     lista_alertas = alertas.calcular(clima, activos, dia, fichas, nasa if isinstance(nasa, dict) else None, None, plagas) if isinstance(clima, dict) else []
     vencidas = tareas.vencidas(con, plan_id, dia)
-    propias = noticias.propias(lista_alertas, activos, nasa if isinstance(nasa, dict) else None, ciudad.nombre, dia, vencidas)
+    precios = _precios_de_mercado(activos, ciudad, dia)
+    propias = noticias.propias(lista_alertas, activos, nasa if isinstance(nasa, dict) else None, ciudad.nombre, dia, vencidas, precios)
     externas, completas = ext if isinstance(ext, tuple) else ([], False)
     return {"items": propias + externas, "externasCompletas": completas}

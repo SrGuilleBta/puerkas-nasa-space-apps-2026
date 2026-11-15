@@ -175,6 +175,22 @@ class MercadoOut(Modelo):
     etiquetas: list[EtiquetaMercadoOut] = []
 
 
+class PrecioConsumidorOut(Modelo):
+    """Último precio al consumidor (Profeco) de un cultivo en el estado de la ubicación y su tendencia."""
+
+    producto: str  # producto de Profeco (AGUACATE)
+    nombre: str  # en inglés
+    estado: str
+    precio: float  # MXN por kilo
+    fecha: str  # del último dato real
+    cambio_30d_pct: float | None = None  # contra hace 30 días
+    proyeccion_30d_pct: float | None = None  # proyectado a 30 días del último dato
+    unidad: str
+    fuente: str
+    desactualizado: bool  # el último dato real tiene más de 14 días
+    dias_sin_datos: int
+
+
 class CultivoActivoOut(SiembraOut):
     """Una siembra en curso hoy, con lo que Principal necesita para mostrarla."""
 
@@ -185,6 +201,7 @@ class CultivoActivoOut(SiembraOut):
     etapa: int
     etapas: int
     mercado: MercadoOut | None = None  # solo si el cultivo viene del catálogo y SIAP tiene datos
+    precio_mercado: PrecioConsumidorOut | None = None  # solo si Profeco vende un producto equivalente en el estado
 
 
 class TareaVencidaOut(Modelo):

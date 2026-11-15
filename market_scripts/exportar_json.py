@@ -1,6 +1,8 @@
 import json
 import os
 import re
+import unicodedata
+from pathlib import Path
 import pandas as pd
 
 try:
@@ -113,6 +115,26 @@ GLOSARIO_EXACTO = {
     "UVA ROJA": "RED GRAPE",
     "ZANAHORIA": "CARROT",
 }
+
+# Correcciones al glosario: traducciones que salían literales, sin traducir o con una palabra en español.
+# "TOMATE" a secas es el tomate verde (tomatillo); el tomate rojo es "JITOMATE".
+GLOSARIO_EXACTO.update({
+    "ALUBIA": "WHITE BEANS (ALUBIA)",
+    "AMARANTO": "AMARANTH",
+    "CALABAZA": "SQUASH (CALABAZA)",
+    "CHILE FRESCO": "FRESH CHILI PEPPER",
+    "CHILE SECO": "DRIED CHILI PEPPER",
+    "ELOTE": "SWEET CORN (ELOTE)",
+    "GRANADA": "POMEGRANATE",
+    "LINAZA": "FLAXSEED",
+    "MELON": "CANTALOUPE",
+    "PIMIENTO": "BELL PEPPER",
+    "SEMILLA DE GIRASOL": "SUNFLOWER SEEDS",
+    "SOYA": "SOYBEAN",
+    "TOMATE": "TOMATILLO (GREEN TOMATO)",
+    "VERDOLAGA": "PURSLANE (VERDOLAGA)",
+})
+
 
 # Reemplazos parciales para descriptores o variedades compuestas
 TERMINOS_COMPUESTOS = [
@@ -228,9 +250,10 @@ ESTADOS_EN = {
 
 
 def cargar_cache():
-    if os.path.exists(RUTA_CACHE_TRAD):
+    ruta = Path(__file__).resolve().parent.parent / RUTA_CACHE_TRAD
+    if ruta.exists():
         try:
-            with open(RUTA_CACHE_TRAD, "r", encoding="utf-8") as f:
+            with open(ruta, "r", encoding="utf-8") as f:
                 return json.load(f)
         except Exception:
             return {}
@@ -273,9 +296,51 @@ def traducir_estado(estado_es):
     return ESTADOS_EN.get(clave, clave)
 
 
+# Salida: archivos compactos por estado que lee el backend (backend/app/services/mercado.py).
+#   backend/data/mercado/meta.json            estados, productos y fechas de corte
+#   backend/data/mercado/estados/<estado>.json  precios reales y proyección de cada producto en ese estado
+# Se puede correr desde cualquier carpeta:  python market_scripts/exportar_json.py
+# (los datos de entrada se buscan junto a esta carpeta; la salida se puede cambiar con MERCADO_SALIDA)
+RAIZ = Path(__file__).resolve().parent.parent
+CARPETA_SALIDA = Path(os.environ.get("MERCADO_SALIDA") or RAIZ / "backend" / "data" / "mercado")
+DIAS_HISTORIAL = 400  # un poco más de un año de precios reales: alcanza para el rango "1 año"
+DIAS_REALES_DIARIOS = 90  # lo anterior se guarda como promedio semanal: pesa menos y la gráfica de 1 año se ve igual
+DIAS_PROYECCION_DIARIOS = 30  # la proyección lejana se guarda cada 7 días
+
+
+def slug(texto):
+    sin_acentos = unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "_", sin_acentos.lower()).strip("_")
+
+
+def real_compacto(fechas, precios):
+    """Precios reales: diarios los últimos DIAS_REALES_DIARIOS días y, antes, el promedio de cada semana."""
+    pares = list(zip(fechas, precios))
+    if not pares:
+        return []
+    corte = pares[-1][0] - pd.Timedelta(days=DIAS_REALES_DIARIOS)
+    semanas = {}
+    for f, v in pares:
+        if f < corte:
+            semanas.setdefault(f.isocalendar()[:2], []).append((f, float(v)))
+    semanal = [[g[-1][0].strftime("%Y-%m-%d"), round(sum(v for _, v in g) / len(g), 2)] for _, g in sorted(semanas.items())]
+    diario = [[f.strftime("%Y-%m-%d"), round(float(v), 2)] for f, v in pares if f >= corte]
+    return semanal + diario
+
+
+def proyeccion_compacta(fechas, precios):
+    """Proyección: diaria los primeros DIAS_PROYECCION_DIARIOS días y después un punto por semana (y el último)."""
+    pares = list(zip(fechas, precios))
+    return [
+        [f.strftime("%Y-%m-%d"), round(float(v), 2)]
+        for i, (f, v) in enumerate(pares)
+        if i < DIAS_PROYECCION_DIARIOS or i % 7 == 0 or i == len(pares) - 1
+    ]
+
+
 print("1. Cargando datasets de histórico y predicciones...")
-df_hist = pd.read_parquet("market_data/dataset_agricola_por_estado.parquet")
-df_pred = pd.read_parquet("market_data/predicciones_agricolas_nacionales.parquet")
+df_hist = pd.read_parquet(RAIZ / "market_data" / "dataset_agricola_por_estado.parquet")
+df_pred = pd.read_parquet(RAIZ / "market_data" / "predicciones_agricolas_nacionales.parquet")
 
 df_hist["fecha"] = pd.to_datetime(df_hist["fecha"])
 columna_fecha_pred = "fecha_prediccion" if "fecha_prediccion" in df_pred.columns else "fecha"
@@ -284,14 +349,18 @@ df_pred[columna_fecha_pred] = pd.to_datetime(df_pred[columna_fecha_pred])
 posibles_columnas_precio = ["precio_estimado", "yhat", "precio_por_kilo", "precio", "valor"]
 columna_precio_pred = next((col for col in posibles_columnas_precio if col in df_pred.columns), None)
 
-anio_actual = pd.Timestamp.now().year
-df_hist_reciente = df_hist[df_hist["fecha"] >= f"{anio_actual}-01-01"].sort_values("fecha")
+ultimo_real_global = df_hist["fecha"].max()
+df_hist_reciente = df_hist[df_hist["fecha"] >= ultimo_real_global - pd.Timedelta(days=DIAS_HISTORIAL)]
+# Un precio por día (hay varias tiendas por día y estado)
+df_hist_reciente = (
+    df_hist_reciente.groupby(["estado", "producto", "fecha"], as_index=False)["precio_por_kilo"].mean()
+)
 
 # 2. Traducir catálogo de productos únicos
 cache_trad = cargar_cache()
 traductor = GoogleTranslator(source="es", target="en") if TRADUCTOR_DISPONIBLE else None
 
-productos_unicos = sorted(df_pred["producto"].unique())
+productos_unicos = sorted(set(df_pred["producto"].unique()) | set(df_hist["producto"].unique()))
 print(f"2. Traduciendo {len(productos_unicos)} productos al inglés...")
 
 mapa_productos_en = {
@@ -299,61 +368,57 @@ mapa_productos_en = {
     for prod in productos_unicos
 }
 
-os.makedirs("market_data", exist_ok=True)
-with open(RUTA_CACHE_TRAD, "w", encoding="utf-8") as f:
-    json.dump(cache_trad, f, ensure_ascii=False, indent=2)
+try:  # la caché de traducciones solo se actualiza si la carpeta se puede escribir
+    os.makedirs(RAIZ / "market_data", exist_ok=True)
+    with open(RAIZ / RUTA_CACHE_TRAD, "w", encoding="utf-8") as f:
+        json.dump(cache_trad, f, ensure_ascii=False, indent=2)
+except OSError:
+    pass
 
-# Mostrar resumen de traducciones en consola
 print("\n   Muestra de traducciones aplicadas:")
 for prod_es in productos_unicos[:15]:
     print(f"   - {prod_es:<22} -> {mapa_productos_en[prod_es]}")
 if len(productos_unicos) > 15:
     print(f"   ... y {len(productos_unicos) - 15} más (guardados en '{RUTA_CACHE_TRAD}').\n")
 
-# 3. Construir el JSON agrupando si dos variantes en español se tradujeron al mismo término en inglés
-estructura_web = {}
-estados = sorted(df_pred["estado"].unique())
+# 3. Un archivo por estado: {producto en español: {nombre en inglés, real: [[fecha, precio]], proyeccion: [[fecha, precio]]}}
+(CARPETA_SALIDA / "estados").mkdir(parents=True, exist_ok=True)
+for viejo in (CARPETA_SALIDA / "estados").glob("*.json"):
+    viejo.unlink()  # no dejar estados que ya no existen
 
+meta_estados = []
+estados = sorted(set(df_pred["estado"].unique()) | set(df_hist_reciente["estado"].unique()))
 for estado in estados:
-    estado_en = traducir_estado(estado)
-    if estado_en not in estructura_web:
-        estructura_web[estado_en] = {}
+    productos_estado = {}
+    h_estado = df_hist_reciente[df_hist_reciente["estado"] == estado]
+    p_estado = df_pred[df_pred["estado"] == estado]
+    for prod in sorted(set(h_estado["producto"].unique()) | set(p_estado["producto"].unique())):
+        h = h_estado[h_estado["producto"] == prod].sort_values("fecha")
+        p = p_estado[p_estado["producto"] == prod].sort_values(columna_fecha_pred)
+        productos_estado[prod] = {
+            "nombre": mapa_productos_en.get(prod, prod),
+            "real": real_compacto(h["fecha"], h["precio_por_kilo"]),
+            "proyeccion": proyeccion_compacta(p[columna_fecha_pred], p[columna_precio_pred]),
+        }
 
-    prods_estado = sorted(df_pred[df_pred["estado"] == estado]["producto"].unique())
+    clave = slug(estado)
+    with open(CARPETA_SALIDA / "estados" / f"{clave}.json", "w", encoding="utf-8") as f:
+        json.dump(
+            {"estado": estado, "estadoEn": traducir_estado(estado), "productos": productos_estado},
+            f, ensure_ascii=False, separators=(",", ":"),
+        )
+    meta_estados.append({"clave": clave, "nombre": estado, "nombreEn": traducir_estado(estado), "productos": len(productos_estado)})
 
-    for prod in prods_estado:
-        prod_en = mapa_productos_en.get(prod, prod)
+with open(CARPETA_SALIDA / "meta.json", "w", encoding="utf-8") as f:
+    json.dump(
+        {
+            "ultimoDatoReal": ultimo_real_global.strftime("%Y-%m-%d"),
+            "proyeccionHasta": df_pred[columna_fecha_pred].max().strftime("%Y-%m-%d"),
+            "fuente": "Profeco, programa Quién es Quién en los Precios (precios al consumidor, por kilo)",
+            "estados": meta_estados,
+            "productos": {prod: mapa_productos_en.get(prod, prod) for prod in productos_unicos},
+        },
+        f, ensure_ascii=False, indent=1,
+    )
 
-        h = df_hist_reciente[(df_hist_reciente["estado"] == estado) & (df_hist_reciente["producto"] == prod)]
-        p = df_pred[(df_pred["estado"] == estado) & (df_pred["producto"] == prod)]
-
-        serie_combinada = {}
-
-        for _, row in h.iterrows():
-            f_str = row["fecha"].strftime("%Y-%m-%d")
-            serie_combinada[f_str] = {
-                "fecha": f_str,
-                "real": round(float(row["precio_por_kilo"]), 2),
-                "proyeccion": None,
-            }
-
-        if not h.empty and not p.empty:
-            ultima_fecha = h.iloc[-1]["fecha"].strftime("%Y-%m-%d")
-            ultimo_valor = round(float(h.iloc[-1]["precio_por_kilo"]), 2)
-            if ultima_fecha in serie_combinada:
-                serie_combinada[ultima_fecha]["proyeccion"] = ultimo_valor
-
-        for _, row in p.iterrows():
-            f_str = row[columna_fecha_pred].strftime("%Y-%m-%d")
-            if f_str not in serie_combinada:
-                serie_combinada[f_str] = {"fecha": f_str, "real": None}
-            serie_combinada[f_str]["proyeccion"] = round(float(row[columna_precio_pred]), 2)
-
-        lista_ordenada = sorted(serie_combinada.values(), key=lambda x: x["fecha"])
-        estructura_web[estado_en][prod_en] = lista_ordenada
-
-os.makedirs("market_front/src", exist_ok=True)
-with open("market_front/src/datos_dashboard.json", "w", encoding="utf-8") as f:
-    json.dump(estructura_web, f, ensure_ascii=False)
-
-print("¡Listo! Archivo 'market_front/src/datos_dashboard.json' exportado en inglés.")
+print(f"¡Listo! {len(meta_estados)} estados exportados en '{CARPETA_SALIDA}'.")

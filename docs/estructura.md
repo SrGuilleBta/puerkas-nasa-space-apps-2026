@@ -24,7 +24,7 @@ Navegador (React)  ──/api/...──▶  FastAPI  ──▶  fuentes de datos
 
 ## Árbol de carpetas
 
-Así está hoy el repo. `[pendiente]` = lo pone el módulo que falta (Clima, Mercado y la pantalla de Cultivos).
+Así está hoy el repo. `[pendiente]` = lo pone el módulo que falta (la pantalla de Cultivos).
 Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto tenga su primer archivo.
 
 ```
@@ -39,17 +39,19 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   ├── planificador.py  planes, parcelas, siembras, resumen y recomendaciones
 │   │   │   ├── ubicaciones.py   lugares guardados, búsqueda por nombre y "Mi ubicación"
 │   │   │   ├── suelo/           /api/suelo: humedad, propiedades, erosión, agua subterránea, cobertura y resumen
-│   │   │   ├── clima.py         [pendiente]
-│   │   │   ├── mercado.py       [pendiente]
+│   │   │   ├── clima.py         /api/clima/mapa: lluvia y calor de México para el mapa de Clima
+│   │   │   ├── mercado.py       /api/mercado: estados, productos y series de precios (Profeco)
 │   │   │   ├── cultivos.py      catálogo, indicadores por municipio y cuidados por estado (/api/cultivos)
 │   │   │   └── noticias.py      noticias propias y feeds externos
 │   │   ├── services/            lógica y clientes de datos; no importan FastAPI
 │   │   │   ├── meteomatics.py   pronóstico y condiciones de hoy (caché de 10 min)
 │   │   │   ├── openmeteo.py     el mismo clima desde Open-Meteo (respaldo, sin llave)
 │   │   │   ├── clima.py         elige la fuente: Meteomatics si hay llaves y responde; si no, Open-Meteo
+│   │   │   ├── mapa_clima.py    pronóstico de lluvia y calor en una malla de puntos de México (Open-Meteo, caché de 3 h)
 │   │   │   ├── suelo/           módulo Suelo: NASA POWER, SMAP, MODIS, SRTM, GRACE y SoilGrids (ver suelo.md)
 │   │   │   ├── suelo_ubicacion.py pH, humedad y percentil de humedad de una ubicación, con el módulo Suelo
 │   │   │   ├── alertas.py       reglas de clima, plagas y enfermedades
+│   │   │   ├── mercado.py       precios al consumidor por estado y producto; tendencia de un cultivo (ver docs/mercado.md)
 │   │   │   ├── plagas/          motor de plagas por cultivo (EPPO, clima, GBIF e iNaturalist; ver docs/plagas.md)
 │   │   │   ├── planificador.py  reglas del plan (sin traslapes, rotación, resumen)
 │   │   │   ├── ubicaciones.py   lugares guardados y geocodificación (solo México)
@@ -82,13 +84,15 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │       ├── routes.js            rutas con hash (#/clima, #/planificador)
 │       ├── api/                 una función por consulta al backend
 │       │   ├── cliente.js       fetch común con manejo de errores
-│       │   └── principal.js, planificador.js, ubicaciones.js, noticias.js, suelo.js
+│       │   └── principal.js, planificador.js, ubicaciones.js, noticias.js, suelo.js, mercado.js, clima.js
 │       ├── pages/               una carpeta por pantalla
 │       │   ├── Principal/       banner de alertas, pronóstico, cultivos activos, plan anual
 │       │   ├── Planificador/    calendario, barra de tiempo, popups, resumen, recomendaciones
 │       │   ├── Noticias/        filtros y tarjetas de noticias propias y externas
 │       │   ├── Suelo/           humedad, plantas, terreno, agua subterránea y tipo de suelo, con gráficas y ayudas
-│       │   ├── Clima/, Mercado/, Cultivos/   [pendiente]
+│       │   ├── Mercado/         precios al consumidor por estado: lista de productos, gráfica con proyección y favoritos
+│       │   ├── Clima/           mapa de México en SVG con las capas Rain y Heat, selector de día y lugares guardados
+│       │   ├── Cultivos/        [pendiente]
 │       ├── components/          Layout (con PlanLateral: el plan activo en el menú), Dialogo, Cargable, SelectorUbicacion, Iconos...
 │       ├── hooks/               useDatos (cargando / error / recargar)
 │       ├── utils/               fechas, ventana de tiempo, colores, plan activo

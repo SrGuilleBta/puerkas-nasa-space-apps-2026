@@ -99,12 +99,42 @@ def _atraso(dias: int) -> str:
     return "1 day late" if dias == 1 else f"{dias} days late"
 
 
-def propias(
-    alertas: list[dict], activos: list[dict], nasa: dict | None, lugar: str, hoy: date, vencidas: dict | None = None
-) -> list[dict]:
-    """Noticias calculadas con los datos del usuario: alertas, tareas vencidas, cosechas cercanas y lluvia reciente.
+UMBRAL_PRECIO_PCT = 5  # cambio del precio al consumidor en 30 días a partir del cual es noticia
 
-    `vencidas` es lo que devuelve `tareas.vencidas` (total y las más atrasadas).
+
+def _noticia_de_precio(t: dict, ahora: str) -> dict | None:
+    """Noticia de un producto cuyo precio al consumidor (Profeco) cambió bastante. `t` es lo que devuelve `mercado.tendencia`.
+
+    No se crea si el último dato real está desactualizado: "subió este mes" sobre datos de hace meses no es noticia.
+    """
+    cambio = t.get("cambio30dPct")
+    if t.get("desactualizado") or cambio is None or abs(cambio) < UMBRAL_PRECIO_PCT:
+        return None
+    proyectado = t.get("proyeccion30dPct")
+    siguiente = f" Projected change over the next 30 days: {proyectado:+.0f}%." if proyectado is not None else ""
+    return {
+        "id": f"precio-{t['producto']}",
+        "categoria": "farm",
+        "titulo": f"{t['nombre'].title()} {'up' if cambio > 0 else 'down'} {abs(cambio):.0f}% in {t['estado'].title()} over 30 days",
+        "resumen": (
+            f"Latest retail price: {t['precio']:.1f} {t['unidad']} (as of {t['fecha']}).{siguiente} "
+            "These are consumer prices from Profeco, not farm-gate prices."
+        ),
+        "fuente": "Profeco",
+        "fecha": ahora,
+        "enlace": None,
+        "destino": "mercado",
+    }
+
+
+def propias(
+    alertas: list[dict], activos: list[dict], nasa: dict | None, lugar: str, hoy: date, vencidas: dict | None = None,
+    precios: list[dict] | None = None,
+) -> list[dict]:
+    """Noticias calculadas con los datos del usuario: alertas, tareas vencidas, cosechas cercanas, precios y lluvia reciente.
+
+    `vencidas` es lo que devuelve `tareas.vencidas` (total y las más atrasadas) y `precios` las tendencias de
+    `mercado.tendencia` de los cultivos en curso.
     """
     ahora = hoy.isoformat()
     items = []
@@ -155,6 +185,11 @@ def propias(
             "enlace": None,
             "destino": "planificador",
         })
+
+    for t in precios or []:
+        noticia = _noticia_de_precio(t, ahora)
+        if noticia:
+            items.append(noticia)
 
     if nasa and nasa.get("dias") and nasa.get("lluviaMm") is not None:
         items.append({

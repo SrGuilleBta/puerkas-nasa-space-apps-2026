@@ -1,0 +1,172 @@
+.clima {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.clima__capas,
+.clima__dias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.clima__capas {
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: var(--tarjeta);
+}
+
+.clima__capas button,
+.clima__dias button {
+  padding: 8px 16px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: var(--tarjeta);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+
+.clima__capas button {
+  border-color: transparent;
+  background: transparent;
+}
+
+.clima__capas button[aria-selected="true"] {
+  background: var(--turquesa);
+  color: #fff;
+}
+
+.clima__dias {
+  margin-bottom: 14px;
+}
+
+.clima__dias button[aria-selected="true"] {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.clima .aviso {
+  margin: 0 0 12px;
+}
+
+/* Panel oscuro del mapa, como en el diseño */
+.clima-mapa {
+  border-radius: 20px;
+  background: radial-gradient(120% 120% at 30% 20%, #10305a, #0b1f3a 70%);
+  overflow: hidden;
+}
+
+.clima-mapa svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: pan-y;
+}
+
+.clima-mapa__nombre {
+  font-size: 13px;
+  fill: rgba(255, 255, 255, 0.7);
+}
+
+.clima-mapa__valor {
+  font-size: 15px;
+  font-weight: 700;
+  fill: #fff;
+}
+
+.clima-mapa__lectura {
+  margin: 0;
+  padding: 8px 16px 12px;
+  min-height: 34px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.clima-leyenda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tinta-suave);
+}
+
+.clima-leyenda i {
+  flex: 1;
+  max-width: 320px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.clima__nota {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.clima__resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.clima__resumen article {
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--verde-claro);
+}
+
+.clima__resumen h3 {
+  margin: 2px 0;
+  font-size: 20px;
+}
+
+.clima__resumen p {
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.clima__resumen .clima__etiqueta {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--verde-oscuro);
+}
+
+.clima__lugares {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clima__lugares li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+.clima__lugares b {
+  font-size: 16px;
+}
+
+.clima__lugar--activo {
+  border-color: var(--verde-oscuro);
+  background: var(--verde-claro);
+}

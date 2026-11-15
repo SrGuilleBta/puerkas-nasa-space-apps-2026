@@ -1,0 +1,270 @@
+.mercado {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.mercado__estado {
+  padding: 8px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: var(--tarjeta);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+.mercado__rangos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.mercado__rangos button {
+  padding: 8px 16px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: var(--tarjeta);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+
+.mercado__rangos button[aria-selected="true"] {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.mercado__interruptor {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.mercado__controles .aviso {
+  margin: 12px 0 0;
+}
+
+.mercado__destacados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.mercado__destacados article {
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: var(--verde-claro);
+}
+
+.mercado__destacados h3 {
+  margin: 2px 0;
+  font-size: 15px;
+}
+
+.mercado__destacados p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.mercado__etiqueta {
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mercado__cuerpo {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.mercado__buscar {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  font: inherit;
+  font-size: 13px;
+}
+
+.mercado__productos {
+  display: grid;
+  gap: 10px;
+}
+
+.mercado__productos .mercado__interruptor {
+  margin-left: 0;
+}
+
+.mercado__lista {
+  display: grid;
+  max-height: 460px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.mercado__lista li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.mercado__lista label {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 8px 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.mercado__color {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mercado__nombre {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.mercado__precio {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.mercado__cambio {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mercado__cambio--sube {
+  color: var(--verde-oscuro);
+}
+
+.mercado__cambio--baja {
+  color: #a63a3a;
+}
+
+.mercado__cambio--igual {
+  color: var(--tinta-suave);
+}
+
+.mercado__estrella {
+  flex: none;
+  padding: 4px 6px;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  line-height: 1;
+  color: rgba(18, 48, 74, 0.25);
+  cursor: pointer;
+}
+
+.mercado__estrella--activa {
+  color: var(--ambar);
+}
+
+.mercado__graficas {
+  display: grid;
+  gap: 12px;
+}
+
+.mercado__nota {
+  margin: 0;
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.mercado__leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mercado__leyenda i,
+.mercado__una h3 i,
+.grafica-precios__valores i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+.mercado__una h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+
+.grafica-precios svg {
+  width: 100%;
+  height: auto;
+}
+
+.grafica-precios__rejilla {
+  stroke: rgba(18, 48, 74, 0.08);
+}
+
+.grafica-precios__texto {
+  fill: var(--tinta-suave);
+  font-size: 10px;
+}
+
+.grafica-precios__corte {
+  stroke: var(--tinta-suave);
+  stroke-dasharray: 3 3;
+}
+
+.grafica-precios__cursor {
+  stroke: rgba(18, 48, 74, 0.25);
+}
+
+.grafica-precios__valores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .mercado__cuerpo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mercado__lista {
+    max-height: 280px;
+  }
+}

@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from app import db
-from app.routers import cultivos, noticias, planificador, principal, suelo, ubicaciones
+from app.routers import clima, cultivos, mercado, noticias, planificador, principal, suelo, ubicaciones
 from app.services import catalogo_cultivos
 from app.services.planificador import ErrorPlanificador
 
@@ -28,6 +28,8 @@ app.include_router(planificador.router)
 app.include_router(ubicaciones.router)
 app.include_router(noticias.router)
 app.include_router(cultivos.router)
+app.include_router(mercado.router)
+app.include_router(clima.router)
 app.include_router(suelo.router)
 app.add_exception_handler(ErrorPlanificador, planificador.error_planificador)
 

@@ -20,7 +20,8 @@ DATASET_ID = "programa_quien_es_quien_precios_2026"
 URL_PAGINA_DATASET = f"https://www.datos.gob.mx/dataset/{DATASET_ID}"
 URL_API_CKAN = f"https://www.datos.gob.mx/api/3/action/package_show?id={DATASET_ID}"
 
-RUTA_QQP = r"c:\Users\david\Desktop\DAVID\NASA\puerkas-nasa-space-apps-2026\QQP"
+# Carpeta donde se descargan los archivos de Profeco (QQP/ está en .gitignore): en la raíz del repo, junto a market_scripts/
+RUTA_QQP = os.environ.get("QQP_CARPETA") or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "QQP")
 RUTA_HISTORIAL = "market_data/historial_descargas.json"
 
 
