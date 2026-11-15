@@ -11,7 +11,7 @@ function Dia({ fecha, dato, esHoy }) {
     <li className={`dia ${esHoy ? "dia--hoy" : ""}`}>
       <span className="dia__nombre">
         {etiquetaDia(fecha)}
-        {esHoy && <b className="dia__hoy">HOY</b>}
+        {esHoy && <b className="dia__hoy">TODAY</b>}
       </span>
       <span className={`dia__cielo dia__cielo--${dato.cielo}`}>
         <Cielo size={22} />
@@ -48,11 +48,11 @@ export default function PronosticoSemanal({ pronostico, hoy, esEjemplo }) {
   return (
     <Tarjeta>
       <EncabezadoTarjeta
-        etiqueta="Pronóstico semanal"
-        titulo="Clima en tu región"
+        etiqueta="Weekly forecast"
+        titulo="Weather in your region"
         derecha={
           <span className="insignia">
-            <i /> {esEjemplo ? "DATOS DE EJEMPLO" : "DATOS REALES"}
+            <i /> {esEjemplo ? "SAMPLE DATA" : "LIVE DATA"}
           </span>
         }
       />
@@ -70,22 +70,22 @@ export default function PronosticoSemanal({ pronostico, hoy, esEjemplo }) {
           </span>
           <div>
             <p className="hoy__temp">{conUnidad(hoy.temperatura, "°")}</p>
-            <p className="hoy__sensacion">Sensación {conUnidad(hoy.sensacion, "°")}</p>
+            <p className="hoy__sensacion">Feels like {conUnidad(hoy.sensacion, "°")}</p>
           </div>
           <div className="hoy__cielo">
             <p>{hoy.cielo ?? "—"}</p>
-            {hoy.optimoParaCampo && <span>Óptimo para campo</span>}
+            {hoy.optimoParaCampo && <span>Good for fieldwork</span>}
           </div>
           <a className="hoy__mas" href={hashDe("clima")}>
-            Más detalles <Flecha size={14} />
+            More details <Flecha size={14} />
           </a>
         </div>
 
         <dl className="hoy__medidas">
-          <Medida icono={Gota} etiqueta="Humedad" valor={conUnidad(hoy.humedad, "%")} />
-          <Medida icono={Viento} etiqueta="Viento" valor={conUnidad(hoy.vientoKmh, " km/h")} />
-          <Medida icono={Suelo} etiqueta="Humedad suelo" valor={conUnidad(hoy.humedadSuelo, "%")} />
-          <Medida icono={Suelo} etiqueta="pH del suelo" valor={conUnidad(hoy.phSuelo)} />
+          <Medida icono={Gota} etiqueta="Humidity" valor={conUnidad(hoy.humedad, "%")} />
+          <Medida icono={Viento} etiqueta="Wind" valor={conUnidad(hoy.vientoKmh, " km/h")} />
+          <Medida icono={Suelo} etiqueta="Soil moisture" valor={conUnidad(hoy.humedadSuelo, "%")} />
+          <Medida icono={Suelo} etiqueta="Soil pH" valor={conUnidad(hoy.phSuelo)} />
         </dl>
       </div>
     </Tarjeta>

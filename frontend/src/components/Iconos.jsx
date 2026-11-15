@@ -112,3 +112,19 @@ export const Calendario = (p) => (
     <path d="M3.5 10h17M8 3v4M16 3v4" />
   </Icono>
 );
+export const Ubicacion = (p) => (
+  <Icono {...p}>
+    <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" />
+    <circle cx="12" cy="10" r="2.3" />
+  </Icono>
+);
+export const Check = (p) => (
+  <Icono {...p}>
+    <path d="M5 12.5l4.5 4.5L19 7.5" />
+  </Icono>
+);
+export const Abajo = (p) => (
+  <Icono {...p}>
+    <path d="M6 9l6 6 6-6" />
+  </Icono>
+);

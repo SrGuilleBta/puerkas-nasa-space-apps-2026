@@ -6,7 +6,7 @@ export default function Cargable({ estado, alto = 160, children }) {
   if (estado.error) {
     return (
       <Tarjeta className="estado estado--error" role="alert">
-        <p>No se pudo cargar esta sección.</p>
+        <p>This section could not be loaded.</p>
         <small>{estado.error.message}</small>
       </Tarjeta>
     );
@@ -17,7 +17,7 @@ export default function Cargable({ estado, alto = 160, children }) {
         className="estado estado--cargando"
         style={{ minHeight: alto }}
         aria-busy="true"
-        aria-label="Cargando"
+        aria-label="Loading"
       />
     );
   }

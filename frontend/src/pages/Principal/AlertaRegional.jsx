@@ -8,7 +8,7 @@ export default function AlertaRegional({ hace, titulo, detalle }) {
         <Documento size={22} />
       </span>
       <span className="alerta__cuerpo">
-        <span className="alerta__etiqueta">Alerta regional · hace {hace}</span>
+        <span className="alerta__etiqueta">Regional alert · {hace} ago</span>
         <strong>{titulo}</strong>
         <small>{detalle}</small>
       </span>

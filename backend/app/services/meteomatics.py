@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 import httpx
 
 from app import config
-from app.services.municipios import Municipio
+from app.services.ubicaciones import Ubicacion
 
 BASE = "https://api.meteomatics.com"
 SEGUNDOS_CACHE = 600  # 10 minutos: la API cobra por consulta y el clima no cambia tan rápido
@@ -36,22 +36,22 @@ AHORA = [
 
 # Símbolos de Meteomatics (los de noche suman 100, por eso se usa % 100)
 TEXTO_CIELO = {
-    1: "Despejado",
-    2: "Poco nublado",
-    3: "Parcialmente nublado",
-    4: "Nublado",
-    5: "Lluvia",
-    6: "Lluvia y nieve",
-    7: "Nieve",
-    8: "Chubascos",
-    9: "Chubascos de nieve",
-    10: "Aguanieve",
-    11: "Neblina",
-    12: "Niebla densa",
-    13: "Lluvia helada",
-    14: "Tormenta",
-    15: "Llovizna",
-    16: "Tormenta de arena",
+    1: "Clear",
+    2: "Mostly clear",
+    3: "Partly cloudy",
+    4: "Cloudy",
+    5: "Rain",
+    6: "Rain and snow",
+    7: "Snow",
+    8: "Showers",
+    9: "Snow showers",
+    10: "Sleet",
+    11: "Mist",
+    12: "Dense fog",
+    13: "Freezing rain",
+    14: "Thunderstorm",
+    15: "Drizzle",
+    16: "Sandstorm",
 }
 
 
@@ -86,16 +86,16 @@ def _redondear(valor: float | None, decimales: int = 0):
     return int(r) if decimales == 0 else r
 
 
-async def _consultar(cliente: httpx.AsyncClient, fecha: str, parametros: list[str], m: Municipio):
+async def _consultar(cliente: httpx.AsyncClient, fecha: str, parametros: list[str], m: Ubicacion):
     url = f"{BASE}/{fecha}/{','.join(parametros)}/{m.lat},{m.lon}/json"
     try:
         r = await cliente.get(url, auth=(config.METEOMATICS_USER, config.METEOMATICS_PASSWORD))
     except httpx.HTTPError as e:
-        raise MeteomaticsError(f"No se pudo conectar con Meteomatics ({type(e).__name__})") from e
+        raise MeteomaticsError(f"Could not connect to Meteomatics ({type(e).__name__})") from e
     if r.status_code == 401:
-        raise MeteomaticsError("Meteomatics rechazó el usuario o la contraseña")
+        raise MeteomaticsError("Meteomatics rejected the username or password")
     if r.status_code >= 400:
-        raise MeteomaticsError(f"Meteomatics respondió {r.status_code}")
+        raise MeteomaticsError(f"Meteomatics responded with {r.status_code}")
     datos = r.json()["data"]
     return {
         p["parameter"]: [d["value"] for d in p["coordinates"][0]["dates"]] for p in datos
@@ -114,11 +114,12 @@ def _optimo_para_campo(temp, viento, prob_lluvia) -> bool | None:
     return 10 <= temp <= 35 and viento < 25 and prob_lluvia < 30
 
 
-async def clima(m: Municipio) -> dict:
+async def clima(m: Ubicacion) -> dict:
     if not config.METEOMATICS_USER or not config.METEOMATICS_PASSWORD:
-        raise SinCredenciales("Faltan METEOMATICS_USER y METEOMATICS_PASSWORD en el .env")
+        raise SinCredenciales("METEOMATICS_USER and METEOMATICS_PASSWORD are missing from .env")
 
-    guardado = _cache.get(m.nombre)
+    llave = f"{m.lat:.3f},{m.lon:.3f}"  # por coordenadas: "Mi ubicación" cambia de lugar con el mismo nombre
+    guardado = _cache.get(llave)
     if guardado and time.monotonic() - guardado[0] < SEGUNDOS_CACHE:
         return guardado[1]
 
@@ -169,5 +170,5 @@ async def clima(m: Municipio) -> dict:
             "phSuelo": None,  # Meteomatics no lo da: lo agrega el router con SoilGrids
         },
     }
-    _cache[m.nombre] = (time.monotonic(), resultado)
+    _cache[llave] = (time.monotonic(), resultado)
     return resultado
