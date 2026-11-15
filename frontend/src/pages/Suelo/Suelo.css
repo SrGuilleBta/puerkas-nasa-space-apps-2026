@@ -306,3 +306,88 @@
   line-height: 1.45;
   color: var(--tinta);
 }
+
+/* ---------- Mapa de Suelo (MapaSuelo.jsx), con el mismo estilo que el mapa de Clima ---------- */
+.suelo-mapa {
+  border-radius: 20px;
+  background: radial-gradient(120% 120% at 30% 20%, #10305a, #0b1f3a 70%);
+  overflow: hidden;
+}
+.suelo-mapa svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: pan-y;
+}
+.suelo-mapa__nombre {
+  font-size: 13px;
+  fill: rgba(255, 255, 255, 0.7);
+}
+.suelo-mapa__valor {
+  font-size: 15px;
+  font-weight: 700;
+  fill: #fff;
+}
+.suelo-mapa__lectura {
+  margin: 0;
+  padding: 8px 16px 12px;
+  min-height: 34px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.suelo-mapa__capas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: var(--tarjeta);
+}
+.suelo-mapa__capas button {
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+.suelo-mapa__capas button[aria-selected="true"] {
+  background: var(--turquesa);
+  color: #fff;
+}
+.suelo-mapa__leyenda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tinta-suave);
+}
+.suelo-mapa__leyenda i {
+  flex: 1;
+  max-width: 320px;
+  height: 8px;
+  border-radius: 999px;
+}
+.suelo-mapa__lugares {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+.suelo-mapa__lugares li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  font-size: 14px;
+}
+.suelo-mapa__lugar--activo {
+  background: var(--verde-claro);
+  border-color: var(--verde-oscuro) !important;
+}
