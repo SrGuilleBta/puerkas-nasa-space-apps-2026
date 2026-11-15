@@ -166,7 +166,7 @@ async def clima(m: Municipio) -> dict:
             "humedad": _redondear(primero("relative_humidity_2m:p")),
             "vientoKmh": _redondear(viento),
             "humedadSuelo": None if humedad_suelo is None else _redondear(humedad_suelo * 100),
-            "phSuelo": None,  # Meteomatics no lo da: pendiente con SoilGrids
+            "phSuelo": None,  # Meteomatics no lo da: lo agrega el router con SoilGrids
         },
     }
     _cache[m.nombre] = (time.monotonic(), resultado)
