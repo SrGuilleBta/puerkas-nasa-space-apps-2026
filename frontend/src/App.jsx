@@ -6,6 +6,7 @@ import EnConstruccion from "./components/EnConstruccion.jsx";
 import Layout from "./components/Layout.jsx";
 import SelectorUbicacion from "./components/SelectorUbicacion.jsx";
 import useDatos from "./hooks/useDatos.js";
+import Noticias from "./pages/Noticias/Noticias.jsx";
 import Planificador from "./pages/Planificador/Planificador.jsx";
 import Principal from "./pages/Principal/Principal.jsx";
 import { useSeccion } from "./routes.js";
@@ -111,6 +112,8 @@ export default function App() {
         </Cargable>
       ) : seccion.id === "planificador" ? (
         <Planificador municipio={activa?.nombre} />
+      ) : seccion.id === "noticias" ? (
+        activa && <Noticias municipio={activa.nombre} />
       ) : (
         <EnConstruccion nombre={seccion.nombre} />
       )}
