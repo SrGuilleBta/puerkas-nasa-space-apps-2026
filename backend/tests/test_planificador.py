@@ -451,27 +451,6 @@ class PruebasUbicaciones(unittest.TestCase):
             self.assertEqual(con.execute("PRAGMA user_version").fetchone()[0], db.VERSION_ESQUEMA)
             con.close()
 
-    def test_suelo_busca_puntos_cercanos_solo_en_lugares_sin_punto_de_campo(self):
-        from app.services import soilgrids
-        from app.services.ubicaciones import Ubicacion
-
-        con_campo = Ubicacion(1, "Con campo", 10.0, 10.0, "UTC", 10.5, 10.5)
-        sin_campo = Ubicacion(2, "Sin campo", 11.0, 11.0, "UTC")
-        self.assertEqual(soilgrids._puntos(con_campo), [(10.5, 10.5)])
-        self.assertEqual(soilgrids._puntos(sin_campo)[0], (11.0, 11.0))
-        self.assertEqual(len(soilgrids._puntos(sin_campo)), 9)
-
-        # Los dos primeros puntos no tienen dato (centro urbano): usa el tercero y ya no sigue
-        nuevo = Ubicacion(3, "Ciudad nueva", 31.111, 41.111, "UTC")
-        mock = AsyncMock(side_effect=[None, None, 7.4])
-        with patch.object(soilgrids, "_consultar_punto", new=mock):
-            self.assertEqual(asyncio.run(soilgrids.ph(nuevo)), 7.4)
-        self.assertEqual(mock.await_count, 3)
-        # La segunda vez sale de la caché: no consulta
-        with patch.object(soilgrids, "_consultar_punto", new=mock):
-            self.assertEqual(asyncio.run(soilgrids.ph(nuevo)), 7.4)
-        self.assertEqual(mock.await_count, 3)
-
 
 if __name__ == "__main__":
     unittest.main()

@@ -7,7 +7,7 @@ ciclo (no depende del cultivo): sirve de punto de partida y todo se puede editar
 
 from datetime import date, timedelta
 
-from app.services.planificador import Conflicto, Invalido, NoEncontrado, _existe, _fila
+from app.services.planificador import Conflicto, Invalido, _existe, _fila
 
 TIPOS = ("plant", "weed", "fertilize", "irrigate", "pests", "harvest", "other")
 
