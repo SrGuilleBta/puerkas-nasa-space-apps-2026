@@ -21,6 +21,7 @@ import Escala from "./Escala.jsx";
 import GraficaLinea from "./GraficaLinea.jsx";
 import GraficaMeses from "./GraficaMeses.jsx";
 import GraficaRetencion from "./GraficaRetencion.jsx";
+import MapaSuelo from "./MapaSuelo.jsx";
 import { AguaSubterranea, Montana } from "./IconosSuelo.jsx";
 import {
   COLORES,
@@ -167,6 +168,10 @@ export default function Suelo({ ubicacion }) {
             Colors follow official scales: Drought Monitor percentiles (water), USGS (plants), FAO (land).
           </p>
         </Tarjeta>
+      </div>
+
+      <div className="suelo__ancho">
+        <MapaSuelo municipio={nombre} />
       </div>
 
       <div className="suelo__ancho suelo-detalle__boton">
