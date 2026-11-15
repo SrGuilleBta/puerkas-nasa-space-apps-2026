@@ -12,7 +12,7 @@ function Formulario({ onAgregada }) {
 
   async function buscar(e) {
     e.preventDefault();
-    if (texto.trim().length < 2) return setError(new Error("Escribe al menos 2 letras del lugar."));
+    if (texto.trim().length < 2) return setError(new Error("Type at least 2 letters of the place name."));
     setBuscando(true);
     setError(null);
     try {
@@ -41,17 +41,17 @@ function Formulario({ onAgregada }) {
     <div className="formulario">
       <form className="ubic-busqueda" onSubmit={buscar} noValidate>
         <label className="campo">
-          Buscar un lugar
+          Search for a place
           <input
             value={texto}
             onChange={(e) => setTexto(e.target.value)}
-            placeholder="Ej. Guadalajara, Hermosillo, Querétaro (solo México)"
+            placeholder="E.g. Guadalajara, Hermosillo, Querétaro (Mexico only)"
             autoFocus
             maxLength={80}
           />
         </label>
         <button type="submit" className="btn btn--primario" disabled={buscando}>
-          {buscando ? "Buscando…" : "Buscar"}
+          {buscando ? "Searching…" : "Search"}
         </button>
       </form>
 
@@ -62,7 +62,7 @@ function Formulario({ onAgregada }) {
       )}
 
       {resultados && resultados.length === 0 && (
-        <p className="campo__ayuda">No encontramos ese lugar en México. Prueba con otro nombre.</p>
+        <p className="campo__ayuda">We couldn't find that place in Mexico. Try another name.</p>
       )}
 
       {resultados && resultados.length > 0 && (
@@ -79,7 +79,7 @@ function Formulario({ onAgregada }) {
                 </small>
               </span>
               <button type="button" className="btn" disabled={agregando !== null} onClick={() => agregar(r)}>
-                <Mas size={14} /> {agregando === r ? "Agregando…" : "Agregar"}
+                <Mas size={14} /> {agregando === r ? "Adding…" : "Add"}
               </button>
             </li>
           ))}
@@ -87,7 +87,7 @@ function Formulario({ onAgregada }) {
       )}
 
       <p className="campo__ayuda">
-        Solo se envía lo que escribes para buscar el lugar. Después de agregarlo, el clima y el suelo se consultan para sus coordenadas.
+        Only what you type is sent to look up the place. Once added, weather and soil data are fetched for its coordinates.
       </p>
     </div>
   );
@@ -96,7 +96,7 @@ function Formulario({ onAgregada }) {
 // Busca un lugar por nombre y lo agrega a la lista de ubicaciones.
 export default function DialogoUbicacion({ abierto, onCerrar, onAgregada }) {
   return (
-    <Dialogo abierto={abierto} titulo="Agregar ubicación" onCerrar={onCerrar}>
+    <Dialogo abierto={abierto} titulo="Add location" onCerrar={onCerrar}>
       <Formulario onAgregada={onAgregada} />
     </Dialogo>
   );

@@ -20,7 +20,7 @@ const hoyLocal = () => {
   return new Date(d.getFullYear(), d.getMonth(), d.getDate());
 };
 
-export default function Planificador() {
+export default function Planificador({ municipio }) {
   const planes = useDatos(listarPlanes, []);
   const cultivos = useDatos(listarCultivos, []);
   const [planElegido, setPlanElegido] = useState(leerPlanActivo);
@@ -77,15 +77,15 @@ export default function Planificador() {
 
   return (
     <div className="planificador">
-      <h1 className="planificador__titulo">Planificador</h1>
+      <h1 className="planificador__titulo">Planner</h1>
 
       <Cargable estado={planes} alto={90}>
         {(lista) =>
           lista.length === 0 ? (
             <Tarjeta className="planificador__vacio">
-              <p>Todavía no tienes ningún plan.</p>
+              <p>You don't have any plans yet.</p>
               <button type="button" className="btn btn--primario" onClick={() => setDialogo({ tipo: "plan", plan: null })}>
-                Crear mi primer plan
+                Create my first plan
               </button>
             </Tarjeta>
           ) : (
@@ -109,7 +109,7 @@ export default function Planificador() {
                   p && (
                     <Tarjeta className="planificador__calendario">
                       {p.parcelas.length === 0 ? (
-                        <p className="planificador__aviso">Este plan aún no tiene parcelas. Añade la primera para empezar a planear.</p>
+                        <p className="planificador__aviso">This plan has no plots yet. Add the first one to start planning.</p>
                       ) : (
                         <>
                           {/* Barra de desplazamiento; usa las mismas columnas que el calendario para quedar alineada */}
@@ -137,7 +137,7 @@ export default function Planificador() {
                         </>
                       )}
                       <button type="button" className="btn planificador__parcela-nueva" onClick={() => setDialogo({ tipo: "parcela", parcela: null })}>
-                        + Añadir parcela
+                        + Add plot
                       </button>
                     </Tarjeta>
                   )
@@ -170,6 +170,7 @@ export default function Planificador() {
         sugerencia={dialogo?.sugerencia}
         cultivos={cultivos.datos ?? []}
         hoy={hoy}
+        municipio={municipio}
         onCerrar={cerrar}
         onGuardado={guardado}
         onCultivoCreado={cultivos.recargar}

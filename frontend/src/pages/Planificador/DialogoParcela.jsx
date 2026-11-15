@@ -26,8 +26,8 @@ function Formulario({ planId, parcela, onGuardado, onCerrar }) {
 
   function guardar(e) {
     e.preventDefault();
-    if (!nombre.trim()) return setError(new Error("Escribe el nombre de la parcela."));
-    if (!(Number(hectareas) > 0)) return setError(new Error("Las hectáreas deben ser mayores a 0."));
+    if (!nombre.trim()) return setError(new Error("Enter the plot name."));
+    if (!(Number(hectareas) > 0)) return setError(new Error("Hectares must be greater than 0."));
     const datos = { nombre: nombre.trim(), hectareas: Number(hectareas) };
     ejecutar(() => (editando ? editarParcela(parcela.id, datos) : crearParcela(planId, datos)));
   }
@@ -37,11 +37,11 @@ function Formulario({ planId, parcela, onGuardado, onCerrar }) {
   return (
     <form className="formulario" onSubmit={guardar} noValidate>
       <label className="campo">
-        Nombre
-        <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Ej. La Esperanza" autoFocus maxLength={80} />
+        Name
+        <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="e.g. North Field" autoFocus maxLength={80} />
       </label>
       <label className="campo">
-        Hectáreas
+        Hectares
         <input type="number" step="0.1" min="0.1" value={hectareas} onChange={(e) => setHectareas(e.target.value)} />
       </label>
 
@@ -56,10 +56,10 @@ function Formulario({ planId, parcela, onGuardado, onCerrar }) {
           (confirmaBorrar ? (
             <>
               <span className="campo__ayuda">
-                {siembras ? `Se borrarán también sus ${siembras} cultivos. ` : ""}¿Eliminar?
+                {siembras ? `Its ${siembras} ${siembras === 1 ? "crop" : "crops"} will be deleted too. ` : ""}Delete?
               </span>
               <button type="button" className="btn btn--peligro" disabled={guardando} onClick={() => ejecutar(() => borrarParcela(parcela.id))}>
-                Sí, eliminar
+                Yes, delete
               </button>
               <button type="button" className="btn" onClick={() => setConfirmaBorrar(false)}>
                 No
@@ -67,15 +67,15 @@ function Formulario({ planId, parcela, onGuardado, onCerrar }) {
             </>
           ) : (
             <button type="button" className="btn btn--peligro" onClick={() => setConfirmaBorrar(true)}>
-              Eliminar
+              Delete
             </button>
           ))}
         <span className="acciones__espacio" />
         <button type="button" className="btn" onClick={onCerrar}>
-          Cancelar
+          Cancel
         </button>
         <button type="submit" className="btn btn--primario" disabled={guardando}>
-          {guardando ? "Guardando…" : editando ? "Guardar cambios" : "Añadir parcela"}
+          {guardando ? "Saving…" : editando ? "Save changes" : "Add plot"}
         </button>
       </div>
     </form>
@@ -84,7 +84,7 @@ function Formulario({ planId, parcela, onGuardado, onCerrar }) {
 
 export default function DialogoParcela({ abierto, planId, parcela, onCerrar, onGuardado }) {
   return (
-    <Dialogo abierto={abierto} titulo={parcela ? "Editar parcela" : "Añadir parcela"} onCerrar={onCerrar}>
+    <Dialogo abierto={abierto} titulo={parcela ? "Edit plot" : "Add plot"} onCerrar={onCerrar}>
       <Formulario planId={planId} parcela={parcela} onGuardado={onGuardado} onCerrar={onCerrar} />
     </Dialogo>
   );

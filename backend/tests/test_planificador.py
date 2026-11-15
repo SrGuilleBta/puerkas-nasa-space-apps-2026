@@ -266,7 +266,7 @@ class PruebasPlanificador(unittest.TestCase):
         self.assertEqual(r["despuesDe"]["cultivo"]["nombre"], "Maíz amarillo")
         self.assertEqual(r["sugerido"]["nombre"], "Frijol pinto")
         self.assertEqual(r["desde"], "2030-05-16")  # el día siguiente a la cosecha
-        self.assertIn("nitrógeno", r["razon"])
+        self.assertIn("nitrogen", r["razon"])
         self.assertNotIn("afinidad", str(r).lower())  # sin porcentajes inventados
 
     def test_despues_de_una_leguminosa_se_sugiere_un_cereal_distinto_al_ultimo(self):
@@ -304,7 +304,7 @@ class PruebasPlanificador(unittest.TestCase):
 
 
 class PruebasUbicaciones(unittest.TestCase):
-    """Lugares para el clima: listar, agregar, "Mi ubicación", borrar, búsqueda y suelo."""
+    """Lugares para el clima: listar, agregar, "My location", borrar, búsqueda y suelo."""
 
     @classmethod
     def setUpClass(cls):
@@ -337,16 +337,16 @@ class PruebasUbicaciones(unittest.TestCase):
     def test_datos_invalidos(self):
         r = self.c.post(self.U, json={**self.GDL, "zona": "Marte/Olimpo"})
         self.assertEqual(r.status_code, 422)
-        self.assertIn("zona horaria", r.json()["detail"]["mensaje"])
+        self.assertIn("time zone", r.json()["detail"]["mensaje"])
         self.assertEqual(self.c.post(self.U, json={**self.GDL, "lat": 95}).status_code, 422)  # fuera de rango
         self.assertEqual(self.c.post(self.U, json={**self.GDL, "nombre": "   "}).status_code, 422)
 
     def test_mi_ubicacion_se_actualiza_y_es_una_sola(self):
         a = self.c.put(f"{self.U}/mi-ubicacion", json={"lat": 25.5, "lon": -100.1, "zona": "America/Monterrey"}).json()
         b = self.c.put(f"{self.U}/mi-ubicacion", json={"lat": 26.0, "lon": -101.0, "zona": "America/Monterrey"}).json()
-        self.assertEqual((a["nombre"], a["id"]), ("Mi ubicación", b["id"]))
+        self.assertEqual((a["nombre"], a["id"]), ("My location", b["id"]))
         self.assertEqual((b["lat"], b["lon"]), (26.0, -101.0))
-        self.assertEqual(sum(u["nombre"] == "Mi ubicación" for u in self.c.get(self.U).json()), 1)
+        self.assertEqual(sum(u["nombre"] == "My location" for u in self.c.get(self.U).json()), 1)
         self.c.delete(f"{self.U}/{b['id']}")
 
     def test_no_se_puede_borrar_la_ultima_ubicacion(self):
@@ -419,7 +419,28 @@ class PruebasUbicaciones(unittest.TestCase):
             con = db.conectar()
             self.assertEqual(con.execute("SELECT COUNT(*) FROM ubicacion").fetchone()[0], 4)
             self.assertEqual(con.execute("SELECT nombre FROM plan").fetchone()[0], "Plan de antes")
-            self.assertEqual(con.execute("PRAGMA user_version").fetchone()[0], 2)
+            self.assertEqual(con.execute("PRAGMA user_version").fetchone()[0], db.VERSION_ESQUEMA)
+            con.close()
+
+    def test_migracion_v3_renombra_mi_ubicacion(self):
+        from app import config, db
+
+        ruta = Path(tempfile.mkdtemp()) / "v2.db"
+        con = sqlite3.connect(ruta)
+        con.executescript(db.ESQUEMA + db.MIGRACION_UBICACIONES)
+        con.execute(
+            "INSERT INTO ubicacion (nombre, clave, lat, lon, zona) VALUES ('Mi ubicación', ?, 1, 1, 'UTC')",
+            (db.clave("Mi ubicación"),),
+        )
+        con.execute("PRAGMA user_version = 2")
+        con.commit()
+        con.close()
+        with patch.object(config, "DB_PATH", ruta):
+            db.iniciar()
+            con = db.conectar()
+            fila = con.execute("SELECT nombre, clave FROM ubicacion WHERE lat = 1").fetchone()
+            self.assertEqual((fila["nombre"], fila["clave"]), ("My location", "my location"))
+            self.assertEqual(con.execute("PRAGMA user_version").fetchone()[0], 3)
             con.close()
 
     def test_suelo_busca_puntos_cercanos_solo_en_lugares_sin_punto_de_campo(self):

@@ -20,7 +20,7 @@ export default function Layout({ seccion, selector, parcela, children }) {
         <button
           type="button"
           className="layout__menu"
-          aria-label="Abrir menú"
+          aria-label="Open menu"
           aria-expanded={menuAbierto}
           onClick={() => setMenuAbierto(true)}
         >
@@ -47,13 +47,13 @@ export default function Layout({ seccion, selector, parcela, children }) {
       )}
       <nav
         className={`layout__lateral ${menuAbierto ? "layout__lateral--abierto" : ""}`}
-        aria-label="Secciones"
+        aria-label="Sections"
         aria-hidden={!menuAbierto}
       >
         <button
           type="button"
           className="layout__cerrar"
-          aria-label="Cerrar menú"
+          aria-label="Close menu"
           tabIndex={menuAbierto ? 0 : -1}
           onClick={() => setMenuAbierto(false)}
         >
@@ -80,7 +80,7 @@ export default function Layout({ seccion, selector, parcela, children }) {
         </ul>
 
         <div className="layout__parcela">
-          <p>Mi parcela</p>
+          <p>My field</p>
           <strong>{parcela.nombre}</strong>
           <span>{parcela.hectareas} ha</span>
         </div>

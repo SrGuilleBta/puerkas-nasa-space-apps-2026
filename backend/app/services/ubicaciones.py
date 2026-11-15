@@ -14,7 +14,7 @@ import httpx
 from app.db import clave
 from app.services.planificador import Conflicto, Invalido, NoEncontrado
 
-NOMBRE_MI_UBICACION = "Mi ubicación"
+NOMBRE_MI_UBICACION = "My location"
 URL_BUSQUEDA = "https://geocoding-api.open-meteo.com/v1/search"
 PAIS = "MX"  # la búsqueda de lugares se limita a México
 
@@ -52,13 +52,13 @@ def buscar(con, nombre: str) -> Ubicacion | None:
 def _validar(nombre: str, lat: float, lon: float, zona: str) -> str:
     nombre = " ".join(nombre.split())
     if not nombre:
-        raise Invalido("Escribe el nombre del lugar")
+        raise Invalido("Enter the place name")
     if not (-90 <= lat <= 90 and -180 <= lon <= 180):
-        raise Invalido("Las coordenadas no son válidas")
+        raise Invalido("The coordinates are not valid")
     try:
         ZoneInfo(zona)
     except (ZoneInfoNotFoundError, ValueError, OSError):
-        raise Invalido(f"La zona horaria «{zona}» no existe")
+        raise Invalido(f"The time zone \"{zona}\" does not exist")
     return nombre
 
 
@@ -66,7 +66,7 @@ def crear(con, nombre: str, lat: float, lon: float, zona: str) -> Ubicacion:
     nombre = _validar(nombre, lat, lon, zona)
     existente = buscar(con, nombre)
     if existente:
-        raise Conflicto(f"Ya tienes guardado «{existente.nombre}»")
+        raise Conflicto(f"You already saved \"{existente.nombre}\"")
     with con:
         id_ = con.execute(
             "INSERT INTO ubicacion (nombre, clave, lat, lon, zona) VALUES (?, ?, ?, ?, ?)",
@@ -90,14 +90,14 @@ def guardar_mi_ubicacion(con, lat: float, lon: float, zona: str) -> Ubicacion:
 def buscar_por_id(con, id_: int) -> Ubicacion:
     f = con.execute("SELECT * FROM ubicacion WHERE id = ?", (id_,)).fetchone()
     if f is None:
-        raise NoEncontrado(f"No existe la ubicación con id {id_}")
+        raise NoEncontrado(f"No location with id {id_}")
     return _desde_fila(f)
 
 
 def borrar(con, id_: int) -> None:
     buscar_por_id(con, id_)
     if con.execute("SELECT COUNT(*) FROM ubicacion").fetchone()[0] <= 1:
-        raise Conflicto("Debe quedar al menos una ubicación")
+        raise Conflicto("At least one location must remain")
     with con:
         con.execute("DELETE FROM ubicacion WHERE id = ?", (id_,))
 
@@ -111,17 +111,17 @@ async def geocodificar(texto: str) -> list[dict]:
     """
     texto = " ".join(texto.split())
     if len(texto) < 2:
-        raise Invalido("Escribe al menos 2 letras para buscar")
+        raise Invalido("Type at least 2 letters to search")
     try:
         async with httpx.AsyncClient(timeout=10) as cliente:
             r = await cliente.get(
                 URL_BUSQUEDA,
-                params={"name": texto, "count": 6, "language": "es", "format": "json", "countryCode": PAIS},
+                params={"name": texto, "count": 6, "language": "en", "format": "json", "countryCode": PAIS},
             )
             r.raise_for_status()
         resultados = r.json().get("results") or []
     except (httpx.HTTPError, ValueError) as e:
-        raise ErrorBusqueda(f"No se pudo buscar el lugar ({type(e).__name__})") from e
+        raise ErrorBusqueda(f"Could not search for the place ({type(e).__name__})") from e
 
     candidatos = []
     for x in resultados:

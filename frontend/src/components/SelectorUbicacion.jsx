@@ -66,7 +66,7 @@ export default function SelectorUbicacion({ ubicaciones, elegida, onElegir, onUs
         className="ubic__boton"
         aria-haspopup="true"
         aria-expanded={abierto}
-        aria-label={`Ubicación: ${elegida}. Cambiar`}
+        aria-label={`Location: ${elegida}. Change`}
         onClick={() => {
           setAbierto((a) => !a);
           setAviso(null);
@@ -78,7 +78,7 @@ export default function SelectorUbicacion({ ubicaciones, elegida, onElegir, onUs
       </button>
 
       {abierto && (
-        <div className="ubic__panel" role="group" aria-label="Ubicaciones">
+        <div className="ubic__panel" role="group" aria-label="Locations">
           <ul className="ubic__lista">
             {ubicaciones.map((u) => (
               <li key={u.id} className="ubic__fila">
@@ -92,7 +92,7 @@ export default function SelectorUbicacion({ ubicaciones, elegida, onElegir, onUs
                   {u.nombre}
                 </button>
                 {!unica && (
-                  <button type="button" className="ubic__quitar" aria-label={`Quitar ${u.nombre}`} title="Quitar de la lista" onClick={() => quitar(u)}>
+                  <button type="button" className="ubic__quitar" aria-label={`Remove ${u.nombre}`} title="Remove from list" onClick={() => quitar(u)}>
                     <Cerrar size={14} />
                   </button>
                 )}
@@ -102,7 +102,7 @@ export default function SelectorUbicacion({ ubicaciones, elegida, onElegir, onUs
 
           <div className="ubic__acciones">
             <button type="button" className="ubic__accion" disabled={buscandoMia} onClick={usarMia}>
-              <Ubicacion size={16} /> {buscandoMia ? "Buscando tu ubicación…" : "Usar mi ubicación"}
+              <Ubicacion size={16} /> {buscandoMia ? "Finding your location…" : "Use my location"}
             </button>
             <button
               type="button"
@@ -112,7 +112,7 @@ export default function SelectorUbicacion({ ubicaciones, elegida, onElegir, onUs
                 setAgregando(true);
               }}
             >
-              <Mas size={16} /> Agregar ubicación…
+              <Mas size={16} /> Add location…
             </button>
           </div>
 

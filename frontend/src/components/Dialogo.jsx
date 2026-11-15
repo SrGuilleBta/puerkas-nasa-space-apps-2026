@@ -26,7 +26,7 @@ export default function Dialogo({ abierto, titulo, onCerrar, children }) {
         <div className="dialogo__cuerpo">
           <header className="dialogo__encabezado">
             <h2 id={idTitulo}>{titulo}</h2>
-            <button type="button" className="dialogo__cerrar" aria-label="Cerrar" onClick={onCerrar}>
+            <button type="button" className="dialogo__cerrar" aria-label="Close" onClick={onCerrar}>
               <Cerrar size={18} />
             </button>
           </header>

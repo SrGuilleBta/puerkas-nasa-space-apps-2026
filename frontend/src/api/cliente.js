@@ -19,8 +19,8 @@ function leerError(estado, cuerpo, ruta) {
     return new ErrorApi(detalle.mensaje, { estado, datos: detalle });
   }
   if (typeof detalle === "string") return new ErrorApi(detalle, { estado });
-  if (Array.isArray(detalle)) return new ErrorApi("Revisa los datos: hay campos vacíos o inválidos.", { estado });
-  return new ErrorApi(`No se pudo completar la solicitud a ${ruta} (${estado})`, { estado });
+  if (Array.isArray(detalle)) return new ErrorApi("Check your input: some fields are empty or invalid.", { estado });
+  return new ErrorApi(`The request to ${ruta} could not be completed (${estado})`, { estado });
 }
 
 async function pedir(metodo, ruta, parametros, cuerpo) {
@@ -36,7 +36,7 @@ async function pedir(metodo, ruta, parametros, cuerpo) {
   try {
     respuesta = await fetch(url, opciones);
   } catch {
-    throw new ErrorApi("No hay conexión con el servidor.");
+    throw new ErrorApi("Cannot connect to the server.");
   }
 
   if (!respuesta.ok) {

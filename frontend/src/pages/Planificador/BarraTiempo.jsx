@@ -98,7 +98,7 @@ export default function BarraTiempo({ ventana, rango, controla, onMoverA, onDesp
       <button
         type="button"
         className="tiempo__flecha"
-        aria-label="Mover el calendario hacia atrás"
+        aria-label="Move calendar backward"
         tabIndex={-1}
         onPointerDown={(e) => empezarFlecha(-1, e)}
         onPointerUp={detenerFlecha}
@@ -121,7 +121,7 @@ export default function BarraTiempo({ ventana, rango, controla, onMoverA, onDesp
           className="tiempo__manija"
           style={{ left: `${izquierda}%`, width: `${ancho}%` }}
           role="scrollbar"
-          aria-label="Mover el calendario en el tiempo"
+          aria-label="Move calendar through time"
           aria-orientation="horizontal"
           aria-controls={controla}
           aria-valuemin={0}
@@ -135,7 +135,7 @@ export default function BarraTiempo({ ventana, rango, controla, onMoverA, onDesp
       <button
         type="button"
         className="tiempo__flecha"
-        aria-label="Mover el calendario hacia adelante"
+        aria-label="Move calendar forward"
         tabIndex={-1}
         onPointerDown={(e) => empezarFlecha(1, e)}
         onPointerUp={detenerFlecha}

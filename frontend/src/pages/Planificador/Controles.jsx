@@ -28,29 +28,29 @@ export default function Controles({
           </select>
         </label>
         <button type="button" className="btn" onClick={onEditarPlan}>
-          Editar plan
+          Edit plan
         </button>
         <button type="button" className="btn btn--primario" onClick={onNuevoPlan}>
-          Nuevo plan
+          New plan
         </button>
       </div>
 
-      <div className="controles__tiempo" role="group" aria-label="Periodo del calendario">
-        <button type="button" className="controles__icono controles__icono--atras" aria-label="Periodo anterior" onClick={() => onMover(-1)}>
+      <div className="controles__tiempo" role="group" aria-label="Calendar period">
+        <button type="button" className="controles__icono controles__icono--atras" aria-label="Previous period" onClick={() => onMover(-1)}>
           <Flecha size={16} />
         </button>
         <button type="button" className="btn" onClick={onHoy}>
-          Hoy
+          Today
         </button>
-        <button type="button" className="controles__icono" aria-label="Periodo siguiente" onClick={() => onMover(1)}>
+        <button type="button" className="controles__icono" aria-label="Next period" onClick={() => onMover(1)}>
           <Flecha size={16} />
         </button>
         <span className="controles__zoom">
-          <button type="button" className="controles__icono" aria-label="Ver menos meses" disabled={i <= 0} onClick={() => onZoom(-1)}>
+          <button type="button" className="controles__icono" aria-label="Show fewer months" disabled={i <= 0} onClick={() => onZoom(-1)}>
             <Mas size={16} />
           </button>
-          <output>{meses} meses</output>
-          <button type="button" className="controles__icono" aria-label="Ver más meses" disabled={i >= NIVELES_ZOOM.length - 1} onClick={() => onZoom(1)}>
+          <output>{meses} months</output>
+          <button type="button" className="controles__icono" aria-label="Show more months" disabled={i >= NIVELES_ZOOM.length - 1} onClick={() => onZoom(1)}>
             <Menos size={16} />
           </button>
         </span>

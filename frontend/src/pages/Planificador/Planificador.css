@@ -623,3 +623,40 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Clima observado (NASA POWER) en la información de la siembra */
+.info-siembra__nasa {
+  display: grid;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--verde-claro);
+}
+
+.info-siembra__nasa h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.info-siembra__nasa-datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.info-siembra__nasa-datos dt {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.info-siembra__nasa-datos dd {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.info-siembra__nasa small {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}

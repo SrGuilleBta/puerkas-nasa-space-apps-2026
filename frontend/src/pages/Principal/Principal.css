@@ -848,3 +848,68 @@
     letter-spacing: 0;
   }
 }
+
+/* ---------- Alertas (banner y lista) ---------- */
+.banner--tranquilo {
+  border-color: rgba(0, 150, 80, 0.25);
+  background: var(--verde-claro);
+}
+
+.banner--tranquilo .banner__icono {
+  background: rgba(0, 230, 118, 0.25);
+  color: var(--verde-oscuro);
+}
+
+.banner--tranquilo .banner__titulo {
+  color: var(--verde-oscuro);
+}
+
+.banner__titulo,
+.banner__texto {
+  min-width: 0;
+}
+
+.alertas-lista {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.alertas-lista__item {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--borde);
+  border-radius: 14px;
+  background: rgba(18, 48, 74, 0.04);
+}
+
+.alertas-lista__item--alta {
+  border-left-color: var(--coral);
+  background: var(--coral-claro);
+}
+
+.alertas-lista__item--media {
+  border-left-color: #e0a526;
+}
+
+.alertas-lista__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+
+.alertas-lista__cabecera span,
+.alertas-lista__item small {
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.alertas-lista__item p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+}

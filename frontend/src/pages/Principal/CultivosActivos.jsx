@@ -8,7 +8,7 @@ import { deISO, fechaLarga } from "../../utils/fechas.js";
 // "4 de enero" y, si no es de este año, "4 de enero de 2027".
 function fechaCosecha(texto) {
   const f = deISO(texto);
-  return f.getFullYear() === new Date().getFullYear() ? fechaLarga(f) : `${fechaLarga(f)} de ${f.getFullYear()}`;
+  return f.getFullYear() === new Date().getFullYear() ? fechaLarga(f) : `${fechaLarga(f)}, ${f.getFullYear()}`;
 }
 
 function Siembra({ s }) {
@@ -19,27 +19,27 @@ function Siembra({ s }) {
           <Brote size={30} />
         </span>
         <span className="cultivo__etapa">
-          ETAPA {s.etapa} DE {s.etapas}
+          STAGE {s.etapa} OF {s.etapas}
         </span>
       </div>
 
       <div>
         <h3 className="cultivo__nombre">{s.cultivo.nombre}</h3>
         <p className="cultivo__meta">
-          {s.hectareas} ha · {s.parcela.nombre} · Día {s.dia}
+          {s.hectareas} ha · {s.parcela.nombre} · Day {s.dia}
         </p>
       </div>
 
       <div>
         <div className="cultivo__fila cultivo__fila--precio">
-          <span>Avance del ciclo</span>
+          <span>Cycle progress</span>
           <strong>{s.avance}%</strong>
         </div>
-        <div className="progreso" role="progressbar" aria-label="Avance del ciclo" aria-valuenow={s.avance} aria-valuemin={0} aria-valuemax={100}>
+        <div className="progreso" role="progressbar" aria-label="Cycle progress" aria-valuenow={s.avance} aria-valuemin={0} aria-valuemax={100}>
           <i style={{ width: `${s.avance}%` }} />
         </div>
         <div className="cultivo__fila cultivo__fila--cosecha">
-          <span>Cosecha estimada</span>
+          <span>Estimated harvest</span>
           <strong>{fechaCosecha(s.fechaCosecha)}</strong>
         </div>
       </div>
@@ -73,11 +73,11 @@ export default function CultivosActivos({ activos }) {
   return (
     <Tarjeta className="cultivos">
       <EncabezadoTarjeta
-        etiqueta="Cultivos activos"
-        titulo="Tu cosecha"
+        etiqueta="Active crops"
+        titulo="Your harvest"
         derecha={
           <a className="enlace" href={hashDe("planificador")}>
-            Ver todos
+            View all
           </a>
         }
       />
@@ -87,9 +87,9 @@ export default function CultivosActivos({ activos }) {
           <span className="cultivo__brote">
             <Brote size={30} />
           </span>
-          <p>No hay cultivos en curso hoy.</p>
+          <p>No crops are growing today.</p>
           <a className="boton-secundario" href={hashDe("planificador")}>
-            Planificar un cultivo
+            Plan a crop
           </a>
         </div>
       ) : (
@@ -97,8 +97,8 @@ export default function CultivosActivos({ activos }) {
           <div
             className="carrusel"
             role="region"
-            aria-roledescription="carrusel"
-            aria-label="Cultivos en curso"
+            aria-roledescription="carousel"
+            aria-label="Crops in progress"
             tabIndex={varios ? 0 : undefined}
             onKeyDown={alTeclear}
           >
@@ -108,8 +108,8 @@ export default function CultivosActivos({ activos }) {
                   key={s.id}
                   className="carrusel__diapositiva"
                   role="group"
-                  aria-roledescription="diapositiva"
-                  aria-label={`${i + 1} de ${activos.length}`}
+                  aria-roledescription="slide"
+                  aria-label={`${i + 1} of ${activos.length}`}
                   // Las diapositivas fuera de vista no reciben foco ni se leen
                   inert={i === indice ? undefined : ""}
                 >
@@ -120,7 +120,7 @@ export default function CultivosActivos({ activos }) {
 
             {varios && (
               <div className="carrusel__controles">
-                <button type="button" className="carrusel__flecha carrusel__flecha--atras" aria-label="Cultivo anterior" disabled={indice === 0} onClick={() => ir(indice - 1)}>
+                <button type="button" className="carrusel__flecha carrusel__flecha--atras" aria-label="Previous crop" disabled={indice === 0} onClick={() => ir(indice - 1)}>
                   <Flecha size={14} />
                 </button>
                 <span className="carrusel__puntos">
@@ -129,13 +129,13 @@ export default function CultivosActivos({ activos }) {
                       key={s.id}
                       type="button"
                       className={`carrusel__punto ${i === indice ? "carrusel__punto--activo" : ""}`}
-                      aria-label={`Ver ${s.cultivo.nombre}, ${s.parcela.nombre}`}
+                      aria-label={`View ${s.cultivo.nombre}, ${s.parcela.nombre}`}
                       aria-current={i === indice ? "true" : undefined}
                       onClick={() => ir(i)}
                     />
                   ))}
                 </span>
-                <button type="button" className="carrusel__flecha" aria-label="Cultivo siguiente" disabled={indice === activos.length - 1} onClick={() => ir(indice + 1)}>
+                <button type="button" className="carrusel__flecha" aria-label="Next crop" disabled={indice === activos.length - 1} onClick={() => ir(indice + 1)}>
                   <Flecha size={14} />
                 </button>
               </div>
@@ -143,7 +143,7 @@ export default function CultivosActivos({ activos }) {
           </div>
 
           <a className="boton-principal" href={hashDe("planificador")}>
-            Ver plan del cultivo <Flecha size={16} />
+            View crop plan <Flecha size={16} />
           </a>
         </>
       )}

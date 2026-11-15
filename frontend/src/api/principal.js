@@ -17,7 +17,9 @@ const simular = (datos) => Promise.resolve(datos);
 
 export const getParcela = () => simular(ejemplo.parcela);
 
-export const getAviso = (municipio) => simular(ejemplo.aviso);
+// Alertas reales: riesgos del clima y condiciones favorables para plagas según los cultivos en curso.
+export const getAlertas = (municipio, planId) =>
+  obtener("/api/principal/alertas", { municipio, hoy: aISO(new Date()), ...(planId ? { planId } : {}) });
 
 // Clima real (Meteomatics, vía el backend). `esEjemplo` controla la insignia de la tarjeta.
 // El pH del suelo viene como null hasta que se conecte SoilGrids.
@@ -42,3 +44,7 @@ export async function getPlanificacion() {
   ]);
   return { plan, activos };
 }
+
+// Lo que pasó en el campo en un periodo (lluvia, temperatura, radiación y humedad de la raíz), NASA POWER.
+export const getClimaNasa = (municipio, desde, hasta) =>
+  obtener("/api/principal/clima-nasa", { municipio, desde: aISO(desde), hasta: aISO(hasta) });

@@ -3,8 +3,9 @@ import { borrarSiembra, crearCultivo, crearSiembra, editarSiembra } from "../../
 import Dialogo from "../../components/Dialogo.jsx";
 import InfoSiembra from "./InfoSiembra.jsx";
 import { aISO, deISO, diasEntre, fechaConAnio, normalizar, sumarDias } from "../../utils/fechas.js";
+import { TIPOS, etiquetaTipo } from "../../utils/tipos.js";
 
-const TIPOS = ["cereal", "leguminosa", "frutal", "hortaliza", "oleaginosa", "forraje", "otro"];
+const dias = (n) => `${n} ${n === 1 ? "day" : "days"}`;
 const AVISO_CICLO = 0.25; // se avisa si el periodo se aleja más de 25% del ciclo normal
 
 // Primer día libre de la parcela: hoy, o el día siguiente a su última cosecha si aún no llega.
@@ -53,14 +54,14 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
   }
 
   function validar() {
-    if (!texto.trim()) return "Escribe el cultivo.";
-    if (esNuevo && !tipoNuevo.trim()) return "Elige el tipo del cultivo nuevo.";
-    if (esNuevo && !(Number(cicloNuevo) > 0)) return "Escribe el ciclo del cultivo nuevo en días.";
-    if (!inicio || !finEfectivo) return "Indica la fecha de siembra y la de cosecha.";
-    if (diasEntre(deISO(inicio), deISO(finEfectivo)) <= 0) return "La cosecha debe ser después de la siembra.";
+    if (!texto.trim()) return "Enter the crop.";
+    if (esNuevo && !tipoNuevo.trim()) return "Choose the type of the new crop.";
+    if (esNuevo && !(Number(cicloNuevo) > 0)) return "Enter the new crop's cycle in days.";
+    if (!inicio || !finEfectivo) return "Enter the planting date and the harvest date.";
+    if (diasEntre(deISO(inicio), deISO(finEfectivo)) <= 0) return "The harvest must be after planting.";
     const ha = Number(hectareas);
-    if (!(ha > 0)) return "Las hectáreas deben ser mayores a 0.";
-    if (ha > parcela.hectareas) return `La parcela solo tiene ${parcela.hectareas} ha.`;
+    if (!(ha > 0)) return "Hectares must be greater than 0.";
+    if (ha > parcela.hectareas) return `The plot only has ${parcela.hectareas} ha.`;
     return null;
   }
 
@@ -116,16 +117,16 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
   return (
     <form className="formulario" onSubmit={guardar} noValidate>
       <p className="campo__ayuda">
-        Parcela <b>{parcela.nombre}</b> · {parcela.hectareas} ha
+        Plot <b>{parcela.nombre}</b> · {parcela.hectareas} ha
       </p>
 
       <label className="campo">
-        Cultivo
+        Crop
         <input
           list={idLista}
           value={texto}
           onChange={(e) => setTexto(e.target.value)}
-          placeholder="Escribe o elige uno"
+          placeholder="Type or pick one"
           autoComplete="off"
           autoFocus={!editando}
         />
@@ -136,14 +137,14 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
         </datalist>
         {coincidencia && (
           <small>
-            {coincidencia.tipo} · ciclo de {coincidencia.cicloDias} días
+            {etiquetaTipo(coincidencia.tipo)} · {dias(coincidencia.cicloDias)} cycle
           </small>
         )}
       </label>
 
       {parecidos.length > 0 && (
         <div className="aviso aviso--info parecidos">
-          ¿Quisiste decir…
+          Did you mean…
           <span>
             {parecidos.map((c) => (
               <button key={c.id} type="button" onClick={() => setTexto(c.nombre)}>
@@ -157,21 +158,23 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
       {esNuevo && (
         <div className="formulario__nuevo">
           <b>
-            «{texto.trim()}» no está en el catálogo.{" "}
-            {parecidos.length > 0 ? "Si es otro cultivo, se agregará con estos datos:" : "Se agregará con estos datos:"}
+            “{texto.trim()}” is not in the catalog.{" "}
+            {parecidos.length > 0 ? "If it is a different crop, it will be added with these details:" : "It will be added with these details:"}
           </b>
           <div className="campos">
             <label className="campo">
-              Tipo
+              Type
               <select value={tipoNuevo} onChange={(e) => setTipoNuevo(e.target.value)}>
-                <option value="">Elige…</option>
+                <option value="">Choose…</option>
                 {TIPOS.map((t) => (
-                  <option key={t}>{t}</option>
+                  <option key={t} value={t}>
+                    {etiquetaTipo(t)}
+                  </option>
                 ))}
               </select>
             </label>
             <label className="campo">
-              Ciclo (días)
+              Cycle (days)
               <input type="number" min="1" max="1500" value={cicloNuevo} onChange={(e) => setCicloNuevo(e.target.value)} />
             </label>
           </div>
@@ -180,11 +183,11 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
 
       <div className="campos">
         <label className="campo">
-          Siembra
+          Planting
           <input type="date" value={inicio} onChange={(e) => cambiarInicio(e.target.value)} />
         </label>
         <label className="campo">
-          Cosecha
+          Harvest
           <input
             type="date"
             value={finEfectivo}
@@ -198,18 +201,18 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
 
       {duracion > 0 && (
         <p className="campo__ayuda">
-          Duración: <b>{duracion} días</b>
-          {!finManual && finPropuesto && " (calculada con el ciclo del cultivo; puedes cambiarla)"}
+          Duration: <b>{dias(duracion)}</b>
+          {!finManual && finPropuesto && " (calculated from the crop's cycle; you can change it)"}
         </p>
       )}
       {lejosDelCiclo && (
         <p className="aviso aviso--info">
-          El ciclo normal de este cultivo es de {ciclo} días y este periodo dura {duracion}.
+          This crop's normal cycle is {dias(ciclo)} and this period lasts {dias(duracion)}.
         </p>
       )}
 
       <label className="campo">
-        Hectáreas sembradas
+        Hectares planted
         <input type="number" step="0.1" min="0.1" value={hectareas} onChange={(e) => setHectareas(e.target.value)} />
       </label>
 
@@ -224,7 +227,7 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
                 setError(null);
               }}
             >
-              Empezar el {fechaConAnio(deISO(libreDesde))}
+              Start on {fechaConAnio(deISO(libreDesde))}
             </button>
           )}
         </div>
@@ -234,9 +237,9 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
         {editando &&
           (confirmaBorrar ? (
             <>
-              <span className="campo__ayuda">¿Eliminar esta siembra?</span>
+              <span className="campo__ayuda">Delete this planting?</span>
               <button type="button" className="btn btn--peligro" disabled={guardando} onClick={borrar}>
-                Sí, eliminar
+                Yes, delete
               </button>
               <button type="button" className="btn" onClick={() => setConfirmaBorrar(false)}>
                 No
@@ -244,22 +247,22 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, onGuardado, o
             </>
           ) : (
             <button type="button" className="btn btn--peligro" onClick={() => setConfirmaBorrar(true)}>
-              Eliminar
+              Delete
             </button>
           ))}
         <span className="acciones__espacio" />
         <button type="button" className="btn" onClick={onCerrar}>
-          Cancelar
+          Cancel
         </button>
         <button type="submit" className="btn btn--primario" disabled={guardando}>
-          {guardando ? "Guardando…" : editando ? "Guardar cambios" : "Añadir cultivo"}
+          {guardando ? "Saving…" : editando ? "Save changes" : "Add crop"}
         </button>
       </div>
     </form>
   );
 }
 
-// Una siembra existente se abre en "Información"; "Editar" tiene el formulario. Una nueva va directo al formulario.
+// Una siembra existente se abre en "Info"; "Edit" tiene el formulario. Una nueva va directo al formulario.
 function Contenido({ parcela, siembra, ...resto }) {
   const [pestana, setPestana] = useState("info");
   if (!siembra) return <Formulario parcela={parcela} siembra={siembra} {...resto} />;
@@ -268,8 +271,8 @@ function Contenido({ parcela, siembra, ...resto }) {
     <>
       <div className="pestanas" role="tablist">
         {[
-          ["info", "Información"],
-          ["editar", "Editar"],
+          ["info", "Info"],
+          ["editar", "Edit"],
         ].map(([id, texto]) => (
           <button key={id} type="button" role="tab" aria-selected={pestana === id} onClick={() => setPestana(id)}>
             {texto}
@@ -278,14 +281,14 @@ function Contenido({ parcela, siembra, ...resto }) {
       </div>
       {pestana === "info" ? (
         <>
-          <InfoSiembra parcela={parcela} siembra={siembra} hoy={resto.hoy} />
+          <InfoSiembra parcela={parcela} siembra={siembra} hoy={resto.hoy} municipio={resto.municipio} />
           <div className="acciones">
             <span className="acciones__espacio" />
             <button type="button" className="btn" onClick={resto.onCerrar}>
-              Cerrar
+              Close
             </button>
             <button type="button" className="btn btn--primario" onClick={() => setPestana("editar")}>
-              Editar
+              Edit
             </button>
           </div>
         </>
@@ -296,9 +299,9 @@ function Contenido({ parcela, siembra, ...resto }) {
   );
 }
 
-export default function DialogoSiembra({ abierto, parcela, siembra, sugerencia, cultivos, hoy, onCerrar, onGuardado, onCultivoCreado }) {
+export default function DialogoSiembra({ abierto, parcela, siembra, sugerencia, cultivos, hoy, municipio, onCerrar, onGuardado, onCultivoCreado }) {
   return (
-    <Dialogo abierto={abierto} titulo={siembra ? siembra.cultivo.nombre : "Añadir cultivo"} onCerrar={onCerrar}>
+    <Dialogo abierto={abierto} titulo={siembra ? siembra.cultivo.nombre : "Add crop"} onCerrar={onCerrar}>
       {parcela && (
         <Contenido
           parcela={parcela}
@@ -306,6 +309,7 @@ export default function DialogoSiembra({ abierto, parcela, siembra, sugerencia, 
           sugerencia={sugerencia}
           cultivos={cultivos}
           hoy={hoy}
+          municipio={municipio}
           onGuardado={onGuardado}
           onCultivoCreado={onCultivoCreado}
           onCerrar={onCerrar}

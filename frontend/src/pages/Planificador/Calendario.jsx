@@ -41,7 +41,7 @@ function Barra({ siembra, ventana, onEditar }) {
       className={clases.filter(Boolean).join(" ")}
       style={{ left: `${izquierda}%`, width: `${derecha - izquierda}%`, "--color": colorCultivo(siembra.cultivo.id) }}
       title={`${siembra.cultivo.nombre} · ${periodo} · ${siembra.hectareas} ha`}
-      aria-label={`${siembra.cultivo.nombre}, ${periodo}. Editar`}
+      aria-label={`${siembra.cultivo.nombre}, ${periodo}. Edit`}
       onClick={onEditar}
     >
       <Lapiz size={12} />
@@ -55,21 +55,21 @@ function Barra({ siembra, ventana, onEditar }) {
 
 function Parcela({ parcela, ventana, hoy, onAgregar, onEditarParcela, onEditarSiembra }) {
   return (
-    <section className="parcela" aria-label={`Parcela ${parcela.nombre}`}>
+    <section className="parcela" aria-label={`Plot ${parcela.nombre}`}>
       <header className="parcela__encabezado">
         <div>
           <h3>{parcela.nombre}</h3>
           <p>{parcela.hectareas} ha</p>
         </div>
         <button type="button" className="enlace" onClick={onEditarParcela}>
-          Editar parcela
+          Edit plot
         </button>
       </header>
 
       <div className="cal__fila">
         <div className="cal__pista">
           <Fondo ventana={ventana} hoy={hoy} />
-          {parcela.siembras.length === 0 && <p className="cal__vacio">Aún sin cultivos</p>}
+          {parcela.siembras.length === 0 && <p className="cal__vacio">No crops yet</p>}
           <ul className="cal__barras">
             {parcela.siembras.map((s) => (
               <li key={s.id}>
@@ -78,9 +78,9 @@ function Parcela({ parcela, ventana, hoy, onAgregar, onEditarParcela, onEditarSi
             ))}
           </ul>
         </div>
-        <button type="button" className="cal__agregar" onClick={onAgregar} aria-label={`Añadir cultivo a ${parcela.nombre}`}>
+        <button type="button" className="cal__agregar" onClick={onAgregar} aria-label={`Add crop to ${parcela.nombre}`}>
           <Mas size={16} />
-          <span>Cultivo</span>
+          <span>Crop</span>
         </button>
       </div>
     </section>
@@ -164,7 +164,7 @@ export default function Calendario({ plan, ventana, hoy, onDesplazar, onHoy, onA
       id="calendario-siembras"
       className={`cal ${arrastrando ? "cal--arrastrando" : ""}`}
       role="group"
-      aria-label="Calendario de siembras. Usa las flechas izquierda y derecha para moverte en el tiempo, Inicio para volver a hoy."
+      aria-label="Planting calendar. Use the left and right arrow keys to move through time, Home to return to today."
       tabIndex={0}
       onPointerDown={alPresionar}
       onPointerMove={alMover}
@@ -178,7 +178,7 @@ export default function Calendario({ plan, ventana, hoy, onDesplazar, onHoy, onA
         }
       }}
     >
-      <p className="cal__ayuda">Arrastra el calendario o la barra de arriba para moverte en el tiempo</p>
+      <p className="cal__ayuda">Drag the calendar or the bar above to move through time</p>
 
       {/* Eje de meses: usa las mismas columnas que las filas para quedar alineado con las pistas */}
       <div className="cal__fila cal__eje">
@@ -191,7 +191,7 @@ export default function Calendario({ plan, ventana, hoy, onDesplazar, onHoy, onA
           ))}
           {ahora >= 0 && ahora <= 100 && (
             <li className="cal__hoy-etiqueta" style={{ left: `${ahora}%`, width: "auto" }}>
-              HOY
+              TODAY
             </li>
           )}
         </ol>

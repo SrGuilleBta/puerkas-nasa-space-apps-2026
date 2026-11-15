@@ -43,21 +43,21 @@ export default function PlanAnual({ plan }) {
     <Tarjeta>
       <header className="plan__encabezado">
         <div>
-          <p className="tarjeta__etiqueta">Plan anual de cultivos</p>
-          <h2 className="tarjeta__titulo">{plan ? plan.nombre : "Todavía no tienes un plan"}</h2>
+          <p className="tarjeta__etiqueta">Annual crop plan</p>
+          <h2 className="tarjeta__titulo">{plan ? plan.nombre : "You don't have a plan yet"}</h2>
         </div>
         <a className="boton-secundario" href={hashDe("planificador")}>
-          <Calendario size={16} /> {plan ? "Plan completo" : "Crear plan"}
+          <Calendario size={16} /> {plan ? "Full plan" : "Create plan"}
         </a>
       </header>
 
       {parcelas.length === 0 ? (
         <p className="plan__vacio">
-          {plan ? "Este plan aún no tiene parcelas." : "Crea un plan en el Planificador para ver aquí tus siembras."}
+          {plan ? "This plan has no fields yet." : "Create a plan in the Planner to see your plantings here."}
         </p>
       ) : (
         <>
-          <div className="plan__cal" role="img" aria-label={`Siembras de los próximos 12 meses del ${plan.nombre}`}>
+          <div className="plan__cal" role="img" aria-label={`Plantings over the next 12 months for ${plan.nombre}`}>
             <div className="plan__fila">
               <span />
               <ol className="plan__meses">
@@ -69,7 +69,7 @@ export default function PlanAnual({ plan }) {
                 ))}
                 {ahora >= 0 && ahora <= 100 && (
                   <li className="plan__hoy-etiqueta" style={{ left: `${ahora}%`, width: "auto" }}>
-                    HOY
+                    TODAY
                   </li>
                 )}
               </ol>
@@ -97,7 +97,7 @@ export default function PlanAnual({ plan }) {
 
           {ocultas > 0 && (
             <a className="enlace plan__mas" href={hashDe("planificador")}>
-              + {ocultas} {ocultas === 1 ? "parcela más" : "parcelas más"} en el Planificador
+              + {ocultas} {ocultas === 1 ? "more field" : "more fields"} in the Planner
             </a>
           )}
         </>

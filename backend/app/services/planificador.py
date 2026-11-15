@@ -39,7 +39,7 @@ def _fila(con: sqlite3.Connection, sql: str, *args) -> sqlite3.Row | None:
 def _existe(con, tabla: str, id_: int, que: str) -> sqlite3.Row:
     fila = _fila(con, f"SELECT * FROM {tabla} WHERE id = ?", id_)
     if fila is None:
-        raise NoEncontrado(f"No existe {que} con id {id_}")
+        raise NoEncontrado(f"No {que} with id {id_}")
     return fila
 
 
@@ -73,7 +73,7 @@ def listar_planes(con) -> list[dict]:
 
 
 def obtener_plan(con, plan_id: int) -> dict:
-    plan = _existe(con, "plan", plan_id, "el plan")
+    plan = _existe(con, "plan", plan_id, "plan")
     parcelas = [
         {"id": p["id"], "plan_id": p["plan_id"], "nombre": p["nombre"],
          "hectareas": p["hectareas"], "siembras": []}
@@ -98,14 +98,14 @@ def crear_plan(con, nombre: str) -> dict:
 
 
 def renombrar_plan(con, plan_id: int, nombre: str) -> dict:
-    _existe(con, "plan", plan_id, "el plan")
+    _existe(con, "plan", plan_id, "plan")
     with con:
         con.execute("UPDATE plan SET nombre = ? WHERE id = ?", (nombre, plan_id))
     return {"id": plan_id, "nombre": nombre}
 
 
 def borrar_plan(con, plan_id: int) -> None:
-    _existe(con, "plan", plan_id, "el plan")
+    _existe(con, "plan", plan_id, "plan")
     with con:
         con.execute("DELETE FROM plan WHERE id = ?", (plan_id,))
 
@@ -122,29 +122,29 @@ def _nombre_parcela_libre(con, plan_id: int, nombre: str, excepto_id: int | None
         plan_id, clave(nombre), excepto_id,
     )
     if repetida:
-        raise Conflicto(f"Ya existe una parcela llamada «{repetida['nombre']}» en este plan")
+        raise Conflicto(f"A parcel named \"{repetida['nombre']}\" already exists in this plan")
 
 
 def crear_parcela(con, plan_id: int, nombre: str, hectareas: float) -> dict:
-    _existe(con, "plan", plan_id, "el plan")
+    _existe(con, "plan", plan_id, "plan")
     _nombre_parcela_libre(con, plan_id, nombre)
     with con:
         id_ = con.execute(
             "INSERT INTO parcela (plan_id, nombre, clave, hectareas) VALUES (?, ?, ?, ?)",
             (plan_id, nombre, clave(nombre), hectareas),
         ).lastrowid
-    return _parcela_dict(_existe(con, "parcela", id_, "la parcela"))
+    return _parcela_dict(_existe(con, "parcela", id_, "parcel"))
 
 
 def editar_parcela(con, parcela_id: int, nombre: str | None, hectareas: float | None) -> dict:
-    actual = _existe(con, "parcela", parcela_id, "la parcela")
+    actual = _existe(con, "parcela", parcela_id, "parcel")
     nombre = nombre if nombre is not None else actual["nombre"]
     hectareas = hectareas if hectareas is not None else actual["hectareas"]
     _nombre_parcela_libre(con, actual["plan_id"], nombre, excepto_id=parcela_id)
     mayor = _fila(con, "SELECT MAX(hectareas) AS m FROM siembra WHERE parcela_id = ?", parcela_id)["m"]
     if mayor is not None and hectareas < mayor:
         raise Conflicto(
-            f"La parcela no puede tener menos de {mayor:g} ha: ya hay una siembra con esa superficie",
+            f"The parcel cannot be smaller than {mayor:g} ha: a planting already uses that area",
             hectareas_minimas=mayor,
         )
     with con:
@@ -152,11 +152,11 @@ def editar_parcela(con, parcela_id: int, nombre: str | None, hectareas: float | 
             "UPDATE parcela SET nombre = ?, clave = ?, hectareas = ? WHERE id = ?",
             (nombre, clave(nombre), hectareas, parcela_id),
         )
-    return _parcela_dict(_existe(con, "parcela", parcela_id, "la parcela"))
+    return _parcela_dict(_existe(con, "parcela", parcela_id, "parcel"))
 
 
 def borrar_parcela(con, parcela_id: int) -> None:
-    _existe(con, "parcela", parcela_id, "la parcela")
+    _existe(con, "parcela", parcela_id, "parcel")
     with con:
         con.execute("DELETE FROM parcela WHERE id = ?", (parcela_id,))
 
@@ -174,26 +174,26 @@ def crear_cultivo(con, nombre: str, tipo: str, ciclo_dias: int) -> dict:
     existente = _fila(con, "SELECT * FROM cultivo WHERE clave = ?", clave(nombre))
     if existente:
         raise Conflicto(
-            f"Ya existe el cultivo «{existente['nombre']}»", cultivo=_cultivo_dict(existente)
+            f"The crop \"{existente['nombre']}\" already exists", cultivo=_cultivo_dict(existente)
         )
     with con:
         id_ = con.execute(
             "INSERT INTO cultivo (nombre, clave, tipo, ciclo_dias) VALUES (?, ?, ?, ?)",
             (nombre, clave(nombre), tipo.strip().lower(), ciclo_dias),
         ).lastrowid
-    return _cultivo_dict(_existe(con, "cultivo", id_, "el cultivo"))
+    return _cultivo_dict(_existe(con, "cultivo", id_, "crop"))
 
 
 # ---------- Siembras ----------
 def _validar_siembra(con, parcela, cultivo_id, inicio: date, fin: date, hectareas: float,
                      excepto_id: int | None = None) -> None:
     if fin <= inicio:
-        raise Invalido("La cosecha debe ser posterior a la siembra")
+        raise Invalido("Harvest must be after planting")
     if hectareas > parcela["hectareas"]:
         raise Invalido(
-            f"La siembra ({hectareas:g} ha) no cabe en la parcela ({parcela['hectareas']:g} ha)"
+            f"The planting ({hectareas:g} ha) does not fit in the parcel ({parcela['hectareas']:g} ha)"
         )
-    _existe(con, "cultivo", cultivo_id, "el cultivo")
+    _existe(con, "cultivo", cultivo_id, "crop")
 
     # Traslape: los intervalos [siembra, cosecha] se tocan si cada uno empieza antes de que
     # termine el otro. El día de cosecha cuenta como ocupado.
@@ -206,9 +206,9 @@ def _validar_siembra(con, parcela, cultivo_id, inicio: date, fin: date, hectarea
     if choque:
         libre = date.fromisoformat(choque["fecha_cosecha"]) + timedelta(days=1)
         raise Conflicto(
-            f"Se traslapa con {choque['c_nombre']} "
-            f"({choque['fecha_siembra']} a {choque['fecha_cosecha']}) en esta parcela; "
-            f"queda libre desde {libre.isoformat()}",
+            f"Overlaps with {choque['c_nombre']} "
+            f"({choque['fecha_siembra']} to {choque['fecha_cosecha']}) in this parcel; "
+            f"it is free from {libre.isoformat()}",
             conflicto=_siembra_dict(choque),
             libre_desde=libre.isoformat(),
         )
@@ -216,8 +216,8 @@ def _validar_siembra(con, parcela, cultivo_id, inicio: date, fin: date, hectarea
 
 def crear_siembra(con, parcela_id: int, cultivo_id: int, fecha_siembra: date,
                   fecha_cosecha: date | None, hectareas: float | None) -> dict:
-    parcela = _existe(con, "parcela", parcela_id, "la parcela")
-    cultivo = _existe(con, "cultivo", cultivo_id, "el cultivo")
+    parcela = _existe(con, "parcela", parcela_id, "parcel")
+    cultivo = _existe(con, "cultivo", cultivo_id, "crop")
     if fecha_cosecha is None:
         fecha_cosecha = fecha_siembra + timedelta(days=cultivo["ciclo_dias"])
     if hectareas is None:
@@ -235,14 +235,14 @@ def crear_siembra(con, parcela_id: int, cultivo_id: int, fecha_siembra: date,
 def obtener_siembra(con, siembra_id: int) -> dict:
     fila = _fila(con, f"{SIEMBRA_SQL} WHERE s.id = ?", siembra_id)
     if fila is None:
-        raise NoEncontrado(f"No existe la siembra con id {siembra_id}")
+        raise NoEncontrado(f"No planting with id {siembra_id}")
     return _siembra_dict(fila)
 
 
 def editar_siembra(con, siembra_id: int, cambios: dict) -> dict:
     """`cambios` trae solo los campos que se quieren modificar."""
-    actual = _existe(con, "siembra", siembra_id, "la siembra")
-    parcela = _existe(con, "parcela", actual["parcela_id"], "la parcela")
+    actual = _existe(con, "siembra", siembra_id, "planting")
+    parcela = _existe(con, "parcela", actual["parcela_id"], "parcel")
     cultivo_id = cambios.get("cultivo_id") or actual["cultivo_id"]
     inicio = cambios.get("fecha_siembra") or date.fromisoformat(actual["fecha_siembra"])
     fin = cambios.get("fecha_cosecha") or date.fromisoformat(actual["fecha_cosecha"])
@@ -258,7 +258,7 @@ def editar_siembra(con, siembra_id: int, cambios: dict) -> dict:
 
 
 def borrar_siembra(con, siembra_id: int) -> None:
-    _existe(con, "siembra", siembra_id, "la siembra")
+    _existe(con, "siembra", siembra_id, "planting")
     with con:
         con.execute("DELETE FROM siembra WHERE id = ?", (siembra_id,))
 
@@ -279,7 +279,7 @@ def siembras_en_curso(con, plan_id: int | None, hoy: date) -> list[dict]:
             return []
         plan_id = primero["id"]
     else:
-        _existe(con, "plan", plan_id, "el plan")
+        _existe(con, "plan", plan_id, "plan")
 
     filas = con.execute(
         f"{SIEMBRA_SQL} JOIN parcela p ON p.id = s.parcela_id "
@@ -308,7 +308,7 @@ def siembras_en_curso(con, plan_id: int | None, hoy: date) -> list[dict]:
 
 
 def _parcela_resumen(con, parcela_id: int) -> dict:
-    p = _existe(con, "parcela", parcela_id, "la parcela")
+    p = _existe(con, "parcela", parcela_id, "parcel")
     return {"id": p["id"], "nombre": p["nombre"]}
 
 
@@ -316,8 +316,8 @@ def _parcela_resumen(con, parcela_id: int) -> dict:
 # Rotación simple por tipo de cultivo: después de un cereal conviene una leguminosa (repone
 # nitrógeno) y después de una leguminosa, un cereal (lo aprovecha). Los demás tipos no tienen regla.
 REGLAS_ROTACION = {
-    "cereal": ("leguminosa", "Repone el nitrógeno que dejó el cereal y mejora el suelo."),
-    "leguminosa": ("cereal", "Aprovecha el nitrógeno que dejó la leguminosa."),
+    "cereal": ("leguminosa", "Replenishes the nitrogen the cereal left and improves the soil."),
+    "leguminosa": ("cereal", "Makes use of the nitrogen the legume left."),
 }
 
 

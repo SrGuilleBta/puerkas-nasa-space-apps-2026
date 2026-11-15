@@ -1,26 +1,26 @@
-const DIAS = ["DOM", "LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB"];
+const DIAS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 const MESES = [
-  "enero",
-  "febrero",
-  "marzo",
-  "abril",
-  "mayo",
-  "junio",
-  "julio",
-  "agosto",
-  "septiembre",
-  "octubre",
-  "noviembre",
-  "diciembre",
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 export const etiquetaDia = (fecha) => DIAS[fecha.getDay()];
 
 export const mesCorto = (mes) => MESES[mes].slice(0, 3);
 
-export const fechaLarga = (fecha) => `${fecha.getDate()} de ${MESES[fecha.getMonth()]}`;
+export const fechaLarga = (fecha) => `${MESES[fecha.getMonth()]} ${fecha.getDate()}`;
 
-export const fechaCorta = (fecha) => `${fecha.getDate()} ${mesCorto(fecha.getMonth())}`;
+export const fechaCorta = (fecha) => `${mesCorto(fecha.getMonth())} ${fecha.getDate()}`;
 
 export const mismoDia = (a, b) =>
   a.getFullYear() === b.getFullYear() &&
@@ -66,7 +66,7 @@ export const sumarDias = (fecha, dias) => {
 export const diasEntre = (a, b) =>
   Math.round((Date.UTC(b.getFullYear(), b.getMonth(), b.getDate()) - Date.UTC(a.getFullYear(), a.getMonth(), a.getDate())) / 86400000);
 
-export const fechaConAnio = (fecha) => `${fecha.getDate()} ${mesCorto(fecha.getMonth())} ${fecha.getFullYear()}`;
+export const fechaConAnio = (fecha) => `${mesCorto(fecha.getMonth())} ${fecha.getDate()}, ${fecha.getFullYear()}`;
 
 // Compara textos sin importar acentos, mayúsculas ni espacios de más ("Maíz" = "maiz").
 export const normalizar = (texto) =>

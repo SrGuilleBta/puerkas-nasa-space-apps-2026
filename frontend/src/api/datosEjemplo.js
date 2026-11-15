@@ -5,8 +5,8 @@
 export const parcela = { nombre: "La Esperanza", hectareas: 12.4 };
 
 export const aviso = {
-  titulo: "Atención preventiva",
-  texto: "Se aproxima un frente de lluvia intensa para el próximo mes. Considera ajustar el riego.",
+  titulo: "Preventive notice",
+  texto: "A heavy rain front is approaching next month. Consider adjusting irrigation.",
 };
 
 // Un valor por día, de lunes a domingo.
@@ -23,7 +23,7 @@ export const pronostico = [
 export const hoy = {
   temperatura: 30,
   sensacion: 31,
-  cielo: "Soleado",
+  cielo: "Sunny",
   icono: "sol",
   optimoParaCampo: true,
   humedad: 48,
@@ -34,6 +34,6 @@ export const hoy = {
 
 export const alertaRegional = {
   hace: "35 min",
-  titulo: "Se pronostica un fuerte huracán en la zona norte del país",
-  detalle: "Protección Civil recomienda revisar cultivos e infraestructura de riego.",
+  titulo: "A strong hurricane is forecast for the north of the country",
+  detalle: "Civil Protection recommends checking crops and irrigation infrastructure.",
 };

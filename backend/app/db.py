@@ -14,7 +14,7 @@ from zoneinfo import ZoneInfo
 
 from app import config
 
-VERSION_ESQUEMA = 2  # versión actual de la base (ver iniciar)
+VERSION_ESQUEMA = 3  # versión actual de la base (ver iniciar)
 
 # Zona horaria de referencia para "hoy" (el contenedor corre en UTC y de noche ya es mañana)
 ZONA = ZoneInfo("America/Monterrey")
@@ -140,8 +140,24 @@ def iniciar() -> None:
                     [(n, clave(n), la, lo, z, ls, lns) for n, la, lo, z, ls, lns in UBICACIONES_INICIALES],
                 )
                 con.execute("PRAGMA user_version = 2")
+        if version < 3:
+            with con:
+                _renombrar_mi_ubicacion(con)
+                con.execute("PRAGMA user_version = 3")
     finally:
         con.close()
+
+
+def _renombrar_mi_ubicacion(con: sqlite3.Connection) -> None:
+    """Versión 3: la interfaz pasó a inglés, así que "Mi ubicación" (texto de la interfaz) pasa a
+    "My location". Solo si la fila conserva exactamente el nombre viejo y no hay ya una con el nuevo."""
+    nuevo = "My location"
+    if con.execute("SELECT 1 FROM ubicacion WHERE clave = ?", (clave(nuevo),)).fetchone():
+        return
+    con.execute(
+        "UPDATE ubicacion SET nombre = ?, clave = ? WHERE nombre = 'Mi ubicación'",
+        (nuevo, clave(nuevo)),
+    )
 
 
 def _cargar_demo(con: sqlite3.Connection) -> None:

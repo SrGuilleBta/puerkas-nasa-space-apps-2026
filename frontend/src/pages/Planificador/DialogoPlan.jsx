@@ -26,7 +26,7 @@ function Formulario({ plan, onGuardado, onCerrar }) {
 
   function guardar(e) {
     e.preventDefault();
-    if (!nombre.trim()) return setError(new Error("Escribe el nombre del plan."));
+    if (!nombre.trim()) return setError(new Error("Enter the plan name."));
     ejecutar(async () => ({
       plan: editando ? await renombrarPlan(plan.id, nombre.trim()) : await crearPlan(nombre.trim()),
       borrado: false,
@@ -36,8 +36,8 @@ function Formulario({ plan, onGuardado, onCerrar }) {
   return (
     <form className="formulario" onSubmit={guardar} noValidate>
       <label className="campo">
-        Nombre del plan
-        <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="Ej. Plan 2027" autoFocus maxLength={80} />
+        Plan name
+        <input value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder="e.g. 2027 Plan" autoFocus maxLength={80} />
       </label>
 
       {error && (
@@ -50,14 +50,14 @@ function Formulario({ plan, onGuardado, onCerrar }) {
         {editando &&
           (confirmaBorrar ? (
             <>
-              <span className="campo__ayuda">Se borrarán sus parcelas y cultivos. ¿Eliminar?</span>
+              <span className="campo__ayuda">Its plots and crops will be deleted. Delete?</span>
               <button
                 type="button"
                 className="btn btn--peligro"
                 disabled={guardando}
                 onClick={() => ejecutar(async () => (await borrarPlan(plan.id), { plan, borrado: true }))}
               >
-                Sí, eliminar
+                Yes, delete
               </button>
               <button type="button" className="btn" onClick={() => setConfirmaBorrar(false)}>
                 No
@@ -65,15 +65,15 @@ function Formulario({ plan, onGuardado, onCerrar }) {
             </>
           ) : (
             <button type="button" className="btn btn--peligro" onClick={() => setConfirmaBorrar(true)}>
-              Eliminar plan
+              Delete plan
             </button>
           ))}
         <span className="acciones__espacio" />
         <button type="button" className="btn" onClick={onCerrar}>
-          Cancelar
+          Cancel
         </button>
         <button type="submit" className="btn btn--primario" disabled={guardando}>
-          {guardando ? "Guardando…" : editando ? "Guardar nombre" : "Crear plan"}
+          {guardando ? "Saving…" : editando ? "Save name" : "Create plan"}
         </button>
       </div>
     </form>
@@ -82,7 +82,7 @@ function Formulario({ plan, onGuardado, onCerrar }) {
 
 export default function DialogoPlan({ abierto, plan, onCerrar, onGuardado }) {
   return (
-    <Dialogo abierto={abierto} titulo={plan ? "Editar plan" : "Nuevo plan"} onCerrar={onCerrar}>
+    <Dialogo abierto={abierto} titulo={plan ? "Edit plan" : "New plan"} onCerrar={onCerrar}>
       <Formulario plan={plan} onGuardado={onGuardado} onCerrar={onCerrar} />
     </Dialogo>
   );

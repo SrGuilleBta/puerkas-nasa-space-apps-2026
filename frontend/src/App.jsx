@@ -31,16 +31,16 @@ const guardar = (clave, valor) => {
 };
 
 const MENSAJE_GEOLOCALIZACION = {
-  1: "No diste permiso para usar tu ubicación. Puedes activarlo en la configuración del navegador.",
-  2: "No se pudo determinar tu ubicación.",
-  3: "Se tardó demasiado en obtener tu ubicación. Intenta de nuevo.",
+  1: "Location permission was denied. You can enable it in your browser settings.",
+  2: "Your location could not be determined.",
+  3: "Getting your location took too long. Please try again.",
 };
 
 // Pide la ubicación al navegador (que pregunta al usuario). Rechaza con un Error legible.
 function obtenerPosicion() {
   return new Promise((resolver, rechazar) => {
-    if (!navigator.geolocation) return rechazar(new Error("Tu navegador no permite obtener la ubicación."));
-    navigator.geolocation.getCurrentPosition(resolver, (e) => rechazar(new Error(MENSAJE_GEOLOCALIZACION[e.code] ?? "No se pudo obtener tu ubicación.")), {
+    if (!navigator.geolocation) return rechazar(new Error("Your browser does not support geolocation."));
+    navigator.geolocation.getCurrentPosition(resolver, (e) => rechazar(new Error(MENSAJE_GEOLOCALIZACION[e.code] ?? "Could not get your location.")), {
       timeout: 10000,
       maximumAge: 600000,
     });
@@ -110,7 +110,7 @@ export default function App() {
           {() => activa && <Principal municipio={activa.nombre} />}
         </Cargable>
       ) : seccion.id === "planificador" ? (
-        <Planificador />
+        <Planificador municipio={activa?.nombre} />
       ) : (
         <EnConstruccion nombre={seccion.nombre} />
       )}

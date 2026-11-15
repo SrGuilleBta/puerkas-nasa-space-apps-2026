@@ -8,11 +8,15 @@ que importa es qué muestra cada pieza, no el valor.
 Para cada pantalla: qué muestra, de dónde saldría cada dato (fuentes en [datos.md](datos.md)) y si
 el dato está **resuelto**, **parcial** o **falta**. Es un punto de partida para mejorarlo.
 
+**Avance (2026-11-14):** **Principal** y **Planificador** ya están implementados con datos reales
+(clima de Meteomatics, pH de SoilGrids, planes en SQLite). Clima, Mercado, Cultivos y Noticias
+siguen pendientes. Donde la tabla dice "Implementado" ya funciona en la aplicación.
+
 ## Piezas compartidas (en todas las pantallas)
 
 | Pieza | Qué hace | Dato / fuente | Estado |
 |---|---|---|---|
-| Selector de **municipio** (arriba) | Elige dónde estás: Monterrey NL, Saltillo COAH, Culiacán SIN, Mérida YUC. Todo lo demás se recalcula para ese lugar | Geocodificación de Open-Meteo para lat/lon; hay que ligar cada ciudad con el estado/municipio de SIAP | Resuelto (geocoding probado); la equivalencia con SIAP hay que armarla |
+| Selector de **ubicación** (arriba) | Elige dónde estás. Trae 4 ciudades de inicio (Monterrey, Saltillo, Culiacán, Mérida); se pueden **agregar lugares de México** buscándolos por nombre, **usar mi ubicación** (GPS del navegador, se guarda como "Mi ubicación") y quitar los que sobren (siempre debe quedar uno). Todo lo demás se recalcula para ese lugar | Tabla `ubicacion` en SQLite; búsqueda por nombre con el geocodificador de Open-Meteo limitado a México (`countryCode=MX`). Falta ligar cada lugar con el municipio de SIAP | **Implementado**; la equivalencia con SIAP hay que armarla |
 | "Datos actualizados 09:42" | Hora de la última consulta | La marca el backend al responder | Resuelto |
 | Menú lateral | Principal, Clima, Mercado, Cultivos, Planificador, Noticias | Solo navegación | Resuelto |
 | "Mi parcela" (abajo del menú) | Muestra la parcela del usuario (ej. "La Esperanza", 12.4 ha) | Datos que captura el usuario | Falta decidir dónde se guardan (ver "Preguntas") |
@@ -23,12 +27,12 @@ Resumen de todo en una pantalla.
 
 | Qué muestra | Dato / fuente | Estado |
 |---|---|---|
-| **Banner "Atención preventiva"** (ej. "frente de lluvia intensa el próximo mes") | Pronóstico a un mes: no hay fuente | Falta |
-| **Pronóstico semanal**: 7 días con temperatura y % de lluvia, marcando "hoy", badge "DATOS REALES" | Open-Meteo (7 días, Tmax/Tmin, lluvia). El % de lluvia no lo probé; el SMN da probabilidad pero solo 4 días | Parcial |
-| **Condiciones de hoy**: temperatura, sensación térmica, cielo, "óptimo para campo", humedad, viento, humedad del suelo, pH del suelo | Humedad del suelo: Open-Meteo / NASA POWER. pH: SoilGrids. Sensación, humedad y viento: Open-Meteo (no probados) y SMN (viento y nubosidad probados). "Óptimo para campo" es una regla nuestra | Parcial |
-| **Alerta regional** (ej. huracán, "hace 35 min", Protección Civil) | Alertas oficiales: no verifiqué ninguna API | Falta |
-| **Cultivos activos**: cultivo en curso, hectáreas, día del ciclo, "etapa 3 de 5", precio actual y variación, cosecha estimada, chips "Alta demanda" y "Estrés hídrico" | Del plan del usuario + SIAP (precio, rendimiento) + EcoCrop (ciclo en días). La etapa y la cosecha estimada se calculan con la fecha de siembra y el ciclo | Parcial |
-| **Plan anual**: barras por cultivo con fechas, línea de "hoy", filtro por estación | Del Planificador (misma información) | Depende del Planificador |
+| **Banner de alertas** (clima, plagas y enfermedades) | Reglas sobre el pronóstico de Meteomatics y los cultivos en curso del plan (`services/alertas.py`, `GET /api/principal/alertas`). Avisa helada, calor, lluvia fuerte y viento, y "condiciones favorables" para hongos (roya, tizón), pulgón/mosca blanca/araña roja y gusano cogollero. Son avisos para revisar el campo, no detecciones; los umbrales son generales y se afinarán con el catálogo de Cultivos. Alcance: lo que queda de la semana (el pronóstico es de lunes a domingo) | **Implementado** |
+| **Pronóstico semanal**: 7 días con temperatura y % de lluvia, marcando "hoy" | Meteomatics (Tmax/Tmin, probabilidad de lluvia, símbolo del cielo), con caché de 10 minutos | **Implementado** |
+| **Condiciones de hoy**: temperatura, sensación térmica, cielo, "óptimo para campo", humedad, viento, humedad del suelo, pH del suelo | Meteomatics (todo menos pH) y SoilGrids (pH; en zonas urbanas busca el punto con dato más cercano; si tarda más de 4 s sale vacío y queda en caché). "Óptimo para campo" es una regla nuestra | **Implementado** |
+| **Alerta regional** (ej. huracán, "hace 35 min", Protección Civil) | Alertas oficiales: no verifiqué ninguna API. Hoy muestra un ejemplo fijo | Falta (dato de ejemplo) |
+| **Cultivos activos**: carrusel con los cultivos en curso del plan, hectáreas, día del ciclo, etapa y avance | Del Planificador (`GET /api/principal/cultivos-activos`). Precio, variación y chips de demanda dependen de SIAP y no están | **Implementado** (sin precio) |
+| **Plan anual**: barras por cultivo con fechas y línea de "hoy" | Del Planificador (mismo plan) | **Implementado** |
 
 ## 2. Clima
 
@@ -61,14 +65,18 @@ Resumen de todo en una pantalla.
 
 ## 5. Planificador (la "línea de tiempo")
 
-Es el gestor de proyectos de cultivos del documento original.
+Es el gestor de proyectos de cultivos del documento original. Los datos se guardan en SQLite
+(`backend/data/planificador.db`, un solo usuario, varios planes).
 
 | Qué muestra | Dato / fuente | Estado |
 |---|---|---|
-| Plan principal: parcelas, hectáreas y ciclo, con botón **Nuevo plan** y zoom | Lo captura el usuario | Falta dónde guardarlo |
-| **Calendario por parcela** (ene–dic): barras por cultivo con fechas, línea de "hoy", **Añadir parcela**, **Editar** cultivo | Lo captura el usuario; las barras usan fechas y ciclo | Falta dónde guardarlo |
-| **Recomendación inteligente**: "después del maíz, considera… frijol 92% de afinidad (restaura nitrógeno, bajo consumo de agua)" | Puntaje de rotación. Es el centro del reto de NASA: hay que armar la tabla de rasgos (nitrógeno, agua, raíz, precio, clima) con EcoCrop + FAO-56 + SIAP | Parcial |
-| **Resumen del ciclo**: número de cultivos, % de uso del suelo, % de rentabilidad | Calculado del plan y de SIAP | Parcial |
+| Planes: crear, renombrar y borrar varios planes; parcelas con hectáreas y ciclo | Lo captura el usuario (SQLite) | **Implementado** |
+| **Calendario por parcela**: barras por cultivo con fechas, línea de "hoy", añadir/editar/borrar parcelas y siembras en un popup. Ventana de tiempo libre (zoom de 3 a 36 meses, hasta ±10 años) que se mueve arrastrando, con la rueda, con el teclado o con la barra de tiempo | Lo captura el usuario; la cosecha se propone con el ciclo del cultivo | **Implementado** |
+| **Sin traslapes**: no se puede sembrar sobre otra siembra de la misma parcela (el día de cosecha cuenta; la siguiente puede empezar al día siguiente). Los nombres de cultivos no distinguen mayúsculas ni acentos y sugieren "¿Quisiste decir…?" para no duplicar | Reglas del backend | **Implementado** |
+| **Popup de cada siembra** con dos pestañas: **Información** (estado, avance del ciclo, parcela, siembra anterior y siguiente) y **Editar** | Del plan | **Implementado** |
+| **Clima observado de NASA POWER** dentro de la pestaña Información: lluvia (mm y días con lluvia), temperatura media, mínima y máxima, humedad de la raíz y radiación solar, desde la siembra (o los últimos 30 días si aún no empieza) en la ubicación activa | NASA POWER (`GET /api/principal/clima-nasa`, caché de 6 h; los datos llevan ~2 días de retraso). Falta la "mejor fecha de siembra" por cultivo, que necesita rangos por cultivo del catálogo | **Implementado** (sin fecha ideal) |
+| **Recomendación de rotación**: después de un cereal, una leguminosa y viceversa; prefiere el cultivo menos usado y nunca repite el último. Sin "% de afinidad" inventado | Regla sencilla sobre el tipo de cultivo del catálogo. El puntaje con nitrógeno, agua, raíz y precio (EcoCrop + FAO-56 + SIAP) queda como mejora | **Parcial** |
+| **Resumen del plan**: número de siembras, cultivos distintos, próxima cosecha, uso del suelo | Calculado del plan | **Implementado**; la rentabilidad depende de SIAP |
 
 ## 6. Noticias
 
@@ -91,16 +99,17 @@ Es el gestor de proyectos de cultivos del documento original.
 
 1. Precios de mercado diarios (semana/mes) y la distinción compra/venta.
 2. Predicción de precios.
-3. Alertas oficiales (huracán, lluvia intensa) y pronóstico a un mes.
+3. Alertas oficiales (huracán, lluvia intensa) y pronóstico a un mes. (Las alertas de clima y plagas
+   de Principal ya se calculan con nuestras reglas; esto se refiere a avisos oficiales.)
 4. Contenido de Noticias.
 5. Siembra ideal por cultivo.
 6. Capas del mapa global.
 
 ## Preguntas para decidir
 
-1. **¿Dónde se guardan las parcelas y planes del usuario?** El backend hoy no guarda nada. Opciones: un archivo SQLite en el backend (se comparte entre usuarios) o `localStorage` del navegador (solo guarda en el equipo de cada usuario).
+1. ~~¿Dónde se guardan las parcelas y planes del usuario?~~ Resuelto: SQLite en `backend/data/` (un solo usuario por ahora).
 2. **¿Mercado con datos reales o con serie anual de SIAP?** Con SIAP solo hay vista de 1 año; semana y mes exigen el scraper de SNIIM.
 3. **¿Noticias reales, escritas por nosotros o calculadas?**
 4. **¿El mapa global usa capas NASA o puntos por ciudad?**
-5. **¿Qué ciudades?** El Figma trae 4; hay que ligar cada una con SIAP.
+5. ~~¿Qué ciudades?~~ Resuelto: 4 de inicio más las que agregue el usuario (solo México). Falta ligar cada lugar con SIAP.
 6. ~~Estructura de carpetas~~: ya está ajustada al Figma (`pages/` tiene Principal, Clima, Mercado, Cultivos, Planificador y Noticias).
