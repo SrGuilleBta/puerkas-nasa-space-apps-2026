@@ -1,0 +1,484 @@
+{
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, made from the text of data/inifap/extraido/queretaro.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
+  "cve_ent": "22",
+  "estado": "Querétaro",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Querétaro [Agricultural Technical Agenda of Querétaro]. INIFAP, Mexico City, 2026.",
+  "fichas": [
+    {
+      "ficha": "Green forage oats",
+      "cientifico": "Avena sativa L.",
+      "paginas": [
+        10,
+        16
+      ],
+      "cultivo_ids": [
+        "avena-forrajera-en-verde"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "Bajío and semiarid zones (El Marqués, Pedro Escobedo, San Juan del Río, Tequisquiapan, Colón, Querétaro, Corregidora, Ezequiel Montes and Cadereyta) at 1,850 to 1,981 m a.s.l., with 13.4 to 17.3 °C during the cycle and almost no rain in FW. Slope no greater than 8%.",
+      "siembra": {
+        "texto": "From October 15 to the first week of January.",
+        "meses": [
+          10,
+          11,
+          12,
+          1
+        ]
+      },
+      "variedades": [
+        "Turquesa",
+        "Ágata"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "100 to 120 kg of seed per ha, broadcast or with a mechanical seeder. If broadcast, scratch the soil to guide the irrigation water.",
+      "fertilizacion": "120-40-00 (N-P-K): 40% of the nitrogen and all the phosphorus at sowing; the rest of the nitrogen at the second irrigation. Sources: 230 kg/ha of urea (or 510 kg/ha of ammonium sulfate, not on acid soils) and 90 kg/ha of diammonium phosphate. Do a soil analysis.",
+      "riego": "Normally 3 to 4 irrigations per cycle, every 25 to 35 days; it depends on the soil, temperature and plant development. Leveling the land saves about 20% of the water.",
+      "plagas": [
+        "Green aphids (Schizaphis graminum, Rhopalosiphum padi, Metopolophium dirhodum)"
+      ],
+      "enfermedades": [],
+      "malezas": "Critical period between 25 and 40 days after emergence. Main weeds: wild turnip, tansy mustard and mallow. To reduce competition, take care with soil preparation, sowing date and sowing density.",
+      "cosecha": "Harvest when the grain is at the milk-dough stage: higher yield with good protein (9.8 to 13.5%) and digestibility. Expected yield of 7 to 12 t/ha of dry matter, about 28 to 48 t/ha of green forage.",
+      "cuidados": [
+        "Level the land: it saves about 20% of the water and avoids waterlogging that favors aphids.",
+        "Sow between October 15 and the first week of January with 100 to 120 kg/ha of seed.",
+        "Apply 40% of the nitrogen and all the phosphorus at sowing, and the rest of the nitrogen at the second irrigation.",
+        "Against aphids, remove host grasses and conserve natural enemies (ladybugs, lacewings, minute pirate bugs, hover flies); lacewings and Aphidius wasps can be released.",
+        "Keep the plot free of weeds between 25 and 40 days after emergence.",
+        "Cut at the milk-dough grain stage to get the best forage."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 31370.64,
+          "rendimiento": 12000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.33,
+          "ingreso_neto": 20589.36,
+          "relacion_bc": 1.66
+        }
+      ],
+      "nota": "The yield in the cost table (12,000 kg/ha) is for oat hay, not green forage; the price ($4.33/kg) is per kg of hay. If the soil is deficient, the agenda suggests 20 kg/ha of ferrous sulfate and 5 to 10 kg/ha of zinc sulfate at sowing.",
+      "revisado": false
+    },
+    {
+      "ficha": "Barley",
+      "cientifico": "Hordeum vulgare L. y Hordeum distichum L.",
+      "paginas": [
+        17,
+        29
+      ],
+      "cultivo_ids": [
+        "cebada-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "Querétaro Bajío: alluvial plain with slopes under 3%, clayey and fertile Vertisol soils (prone to salinization), between 1,500 and 1,800 m a.s.l. In Querétaro, barley is grown only under irrigation.",
+      "siembra": {
+        "texto": "From November 15 to December 15. Sowing in late December or in January lowers yield by up to 35% and raises grain protein, which is undesirable for malting.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Alina",
+        "Armida",
+        "Esperanza",
+        "Maravilla",
+        "Monserrat-D",
+        "Estelar-OH",
+        "Zurita"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Double-row furrows: 120 kg/ha of seed for Esperanza and 100 kg/ha for Alina, Armida, Maravilla, Estelar-OH, Monserrat-D and Zurita. On beds, increase the seed by 20%. Use certified seed.",
+      "fertilizacion": "Depending on the previous crop: after sorghum or maize, 180-60-00 (N-P-K); after vegetables, 150-60-00; after alfalfa or another legume, 130-60-00. On clay soils, apply all the nitrogen and phosphorus at sowing.",
+      "riego": "One sowing irrigation and three supplemental irrigations at 40, 75 and 90 days (stem elongation, heading and grain filling), with depths of 10 cm. With only two supplemental irrigations, yield drops 10 to 15%. With restricted water: irrigations at 0, 45 and 75 days.",
+      "plagas": [
+        "Russian wheat aphid (Diuraphis noxia)",
+        "Greenbug (Schizaphis graminum)",
+        "Bird cherry-oat aphid (Rhopalosiphum padi)",
+        "English grain aphid (Sitobion avenae)"
+      ],
+      "enfermedades": [
+        "Stripe rust (Puccinia striiformis f. sp. hordei)",
+        "Leaf rust (Puccinia hordei)",
+        "Stem rust (Puccinia graminis)",
+        "Powdery mildew (Blumeria graminis f. sp. hordei)",
+        "Cereal root rot (Fusarium spp.)"
+      ],
+      "malezas": "Broadleaf: clover, turnip or mustard, lamb's-quarters, borage, wild chayote and acahual. Narrow-leaf: wild oats and wild canary grass. They compete for light, moisture and nutrients and lower grain quality.",
+      "cosecha": "Thresh when the grain is mature, creamy yellow and at 13 to 14% moisture (maximum 13.5% for malting). Harvest is normally in April. Keep the cylinder speed low (500 to 700 rpm) so the grain is not hulled or broken. Yield of 6 to 9 t/ha.",
+      "cuidados": [
+        "Sow from November 15 to December 15: late sowings lower yield and raise protein.",
+        "Adjust the nitrogen according to the previous crop and apply all the fertilizer at sowing on clay soils.",
+        "Give the supplemental irrigations at stem elongation, heading and grain filling.",
+        "Prevent root rot (Fusarium) with good leveling, no waterlogging, certified seed and rotation with crucifers or legumes; Trichoderma and Bacillus subtilis can be used.",
+        "Use resistant varieties as the basis of rust and powdery mildew management, and scout the crop before harvest.",
+        "Do not let grain moisture drop below 13% or leave the crop more than 20 days in the field after maturity: there are losses and broken grain."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 31928.5,
+          "rendimiento": 6150,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6.2,
+          "ingreso_neto": 6201.5,
+          "relacion_bc": 1.19
+        }
+      ],
+      "nota": "In the extracted text the formulas appear as '18060-00' and '130 60-00'; they were read as 180-60-00 and 130-60-00.",
+      "revisado": false
+    },
+    {
+      "ficha": "Common bean",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        30,
+        39
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": null,
+      "region": "Between 1,600 and 2,200 m a.s.l., with temperatures of 10 to 30 °C, loam soil and pH of 6 to 7.5. Main zones: Bajío and the southern corridor (Querétaro, Corregidora, El Marqués, Pedro Escobedo, San Juan del Río) and the central and semidesert valleys (Colón, Cadereyta, Tequisquiapan).",
+      "siembra": {
+        "texto": "Two periods: from February 20 to March 20, and in June (with limited irrigation and one supplemental irrigation if the rainfall is erratic).",
+        "meses": [
+          2,
+          3,
+          6
+        ]
+      },
+      "variedades": [
+        "Pinto Rarámuri",
+        "Pinto San Rafael",
+        "Pinto Salinas",
+        "Pinto Saltillo",
+        "Flor de Junio León",
+        "Flor de Junio Dalia",
+        "Flor de Junio Nur",
+        "Flor de Junio Marcela",
+        "Flor de Mayo Eugenia",
+        "Flor de Mayo Dolores",
+        "Verdín",
+        "Nayarita 26",
+        "San Luis 22"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "50 to 60 kg/ha of seed, in a single row, furrows 75 to 80 cm apart and 18 to 20 plants per meter, for 120,000 to 150,000 plants per ha.",
+      "fertilizacion": "80-60-00 (N-P-K): half of the nitrogen and all the phosphorus at sowing; the other half at the first cultivation. Potassium only if the soil analysis indicates it. 1 to 2 t/ha of compost or manure can be added and the seed inoculated with mycorrhizae.",
+      "riego": "Total depth of 400 to 500 mm in 3 or 4 irrigations: pre-planting, development (30 to 40 days after emergence), flowering (65 to 70 days, the most critical) and, if needed, grain filling (70 to 80 days). Keep irrigations light: stress at flowering causes flower drop and waterlogging rots roots.",
+      "plagas": [
+        "Whitefly (Bemisia tabaci)",
+        "Aphids (Aphis gossypii)",
+        "Leafhopper (Empoasca kraemeri)",
+        "Thrips (Frankliniella spp.)",
+        "Cutworm (Agrotis ipsilon, Spodoptera spp.)",
+        "Rootworm or bean leaf beetle (Diabrotica spp.)",
+        "Storage weevils"
+      ],
+      "enfermedades": [
+        "Root rots (Fusarium spp., Rhizoctonia solani)",
+        "White mold (Sclerotinia sclerotiorum)",
+        "Anthracnose (Colletotrichum lindemuthianum)",
+        "Angular leaf spot (Phaeoisariopsis griseola)",
+        "Bean common mosaic virus (BCMV)"
+      ],
+      "malezas": "Keep the crop clean for the first 30 to 45 days after emergence. Cultural control with cultivation passes, hand weeding, rotation, good land preparation and adequate density so the foliage covers the soil. Main weeds: quelites, chual, morning glory, tomatillo, purslane, Johnson grass, pinto grass, foxtail and nutsedge.",
+      "cosecha": "Harvest when pods and leaves turn yellow or brown, with the grain at 14 to 16% moisture. In hand harvesting, pull the plants in the morning so the pods do not burst and let them dry for 5 to 7 days. Potential yield: 2.5 t/ha in Pinto and Black, 3.5 t/ha in Flor de Junio and Flor de Mayo.",
+      "cuidados": [
+        "Do not let water run short at flowering (65 to 70 days), but avoid waterlogging that rots the roots.",
+        "Use certified seed and tolerant varieties; several of the recommended ones resist common mosaic.",
+        "Control whitefly and leafhopper, which transmit viruses: remove host weeds, use living barriers and check the underside of the leaves.",
+        "Plow deeply to expose cutworm larvae and rotate with maize against rootworm.",
+        "Inoculate the seed with mycorrhizae and apply Trichoderma to the soil against root rots.",
+        "Store the grain at less than 13 to 16% moisture, in sacks on pallets or in hermetic silos, without mixing old and new harvests."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 36010,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 27,
+          "ingreso_neto": 31490,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Cycle left as null because the agenda gives two sowing periods (February-March and June). Costs: Table 12 prints a benefit-cost ratio of 1.14, but 67,500 / 36,010 = 1.87 (which matches the 87.44% return), so it is left as null. The text of the crop sheet mentions a B/C of 2.39, a cost of about $34,000/ha and 3.0 t/ha, which differs from the table. The $27/kg price is the SEGALMEX 2025 guaranteed price.",
+      "revisado": false
+    },
+    {
+      "ficha": "Green forage maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        40,
+        46
+      ],
+      "cultivo_ids": [
+        "maiz-forrajero-en-verde"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "Bajío and semiarid Querétaro (Pedro Escobedo, Corregidora, Querétaro, El Marqués, San Juan del Río, Tequisquiapan, Ezequiel Montes, Colón, Cadereyta and Tolimán), with 17 to 24 °C during the cycle and 400 to 600 mm of annual rainfall. Slope no greater than 8%.",
+      "siembra": {
+        "texto": "From March 15 (depending on the frosts at the start of the month) to June 10.",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "H-316",
+        "H-317",
+        "H-383",
+        "H-327 AO",
+        "H-388 O"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "80,000 to 90,000 plants per ha, with 32 to 36 kg/ha of seed and a mechanical seeder.",
+      "fertilizacion": "240-70-00 (N-P-K): 40% of the nitrogen and all the phosphorus at sowing, 40% of the nitrogen at the first cultivation and 20% before heading. Sources: 522 kg/ha of urea (or 1,172 kg/ha of ammonium sulfate, not on acid soils) and 152 kg/ha of diammonium phosphate. If the soil is deficient, 20 kg/ha of ferrous sulfate and 5 to 10 kg/ha of zinc sulfate at sowing.",
+      "riego": "Normally 4 irrigations: at tassel emergence (35 to 40 days), at flowering (75 to 85 days) and at grain filling. It depends on the soil, sowing date and rainfall.",
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda)",
+        "White grub (Phyllophaga sp.)"
+      ],
+      "enfermedades": [],
+      "malezas": "Critical period of 30 to 45 days after emergence: forage and silage quality can drop sharply. Take care with soil preparation, sowing date and density; under reduced tillage, cultivation passes incorporate the fertilizer and control weeds. Includes wild chayote (Sicyos deppei).",
+      "cosecha": "Cut when the milk line reaches half or two thirds of the kernel (about 65% plant moisture), around 120 days after sowing. Chop into pieces no larger than 1.5 cm for ensiling. Expected yield: more than 20 t/ha of dry matter, more than 60 t/ha of green forage.",
+      "cuidados": [
+        "Level the land and prefer conservation tillage, leaving at least 30% of the residues from the FW cycle.",
+        "Sow between March 15 and June 10, watching for frosts in early March.",
+        "Split the nitrogen into three applications: sowing, first cultivation and before heading.",
+        "Against fall armyworm, set pheromone and molasses traps when the plants emerge and favor natural enemies (ladybugs, lacewings, earwigs, Trichogramma); act when egg masses are present on 14% of the plants.",
+        "Keep the crop clean from 30 to 45 days after emergence.",
+        "Watch the milk line to cut at the right ensiling point."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 34558.46,
+          "rendimiento": 70000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 0.9,
+          "ingreso_neto": 28441.54,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Costs: Table 15 prints a benefit-cost ratio of 0.83, which is net income / cost; gross income / cost gives 63,000 / 34,558.46 = 1.82, so it is left as null. The table does not include harvest cost (threshing and freight at $0). The H-3xx hybrids are from INIFAP, which is why they are listed under varieties.",
+      "revisado": false
+    },
+    {
+      "ficha": "Irrigated grain maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        47,
+        54
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "Bajío and semiarid zones (Pedro Escobedo, El Marqués, Colón, San Juan del Río, Tequisquiapan, Querétaro, Ezequiel Montes, Cadereyta and Tolimán), from 1,700 to 2,000 m a.s.l., with 17 to 24 °C during the cycle and 400 to 600 mm of annual rainfall. Slope no greater than 8%.",
+      "siembra": {
+        "texto": "From March 15 (depending on the frosts at the start of the month) to June 10. Sowing in May takes advantage of the rainy season and saves water.",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "H-316",
+        "H-317",
+        "H-374 C",
+        "H-383",
+        "H-387 A",
+        "H-388 O",
+        "H-389 O"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "80,000 to 90,000 plants per ha, with a mechanical seeder.",
+      "fertilizacion": "280-70-00 (N-P-K): 40% of the nitrogen and all the phosphorus at sowing, 40% of the nitrogen at the first cultivation and 20% before heading. Sources: 550 kg/ha of urea (or 1,235 kg/ha of ammonium sulfate, not on acid soils) and 152 kg/ha of diammonium phosphate. If potassium is lacking or more than 12 t/ha is expected, add 40 kg/ha of potassium (67 kg/ha of potassium chloride). Correct iron and zinc if the soil is deficient.",
+      "riego": "Normally 4 irrigations, at tassel emergence (35 to 40 days), at flowering (75 to 85 days) and at grain filling. On sandy soils, one irrigation every 25 days; on clay soils, every 35 days.",
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda)",
+        "White grub (Phyllophaga sp.)",
+        "Thrips (Frankliniella spp.)",
+        "Rootworm (Diabrotica spp.)"
+      ],
+      "enfermedades": [
+        "Root rot (Fusarium spp.), low incidence"
+      ],
+      "malezas": "Critical period of 30 to 45 days after emergence. Take care with soil preparation, sowing date and density, and combine integrated management measures; under reduced tillage, cultivation passes incorporate the fertilizer and control weeds.",
+      "cosecha": "Harvest with the grain at about 14% moisture. Expected yield of 12 t/ha or more.",
+      "cuidados": [
+        "Level the land and prefer conservation tillage, leaving at least 30% of the residues from the previous cycle.",
+        "Split the nitrogen into three applications and be guided by the soil analysis.",
+        "Irrigate at heading, flowering and grain filling; adjust the interval to the soil type.",
+        "Against fall armyworm, use pheromone and molasses traps from emergence and favor natural enemies; act when egg masses are present on 14% of the plants.",
+        "Rotate the modes of action of insecticides and do not repeat the same one in two consecutive generations of the pest.",
+        "If root rot appears, apply Trichoderma to the soil and notify the State Plant Health Committee."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 43980.28,
+          "rendimiento": 12000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 22619.72,
+          "relacion_bc": 1.51
+        }
+      ],
+      "nota": "Costs: Table 19 does not print the price per kg; the gross income of $66,600 divided by 12,000 kg gives $5.55/kg, but it is left as null because it is not written in the table. The H-3xx hybrids are from INIFAP, which is why they are listed under varieties.",
+      "revisado": false
+    },
+    {
+      "ficha": "Rainfed grain maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        55,
+        62
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Bajío and semiarid zones (San Juan del Río, Pedro Escobedo, Querétaro, Tequisquiapan, El Marqués, Corregidora and Colón), from 1,800 to 2,000 m a.s.l., with 400 to 550 mm of rain and 17 to 24 °C. Slope no greater than 8%.",
+      "siembra": {
+        "texto": "From the onset of the rainy season until July 10.",
+        "meses": []
+      },
+      "variedades": [
+        "CAFIME",
+        "VS-201"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "50,000 to 60,000 plants per ha, by hand or mechanical sowing.",
+      "fertilizacion": "30-20-00 (N-P-K) if moisture is limited or 40-30-00 if moisture is better (50 kg of urea and 45 kg of diammonium phosphate, or 62 kg of urea and 66 kg of diammonium phosphate per ha). Half of the nitrogen and all the phosphorus at sowing; the rest at cultivation, 30 to 40 days later.",
+      "riego": null,
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Thrips (Frankliniella spp.)",
+        "Rootworm (Diabrotica spp.)"
+      ],
+      "enfermedades": [],
+      "malezas": "Critical period of 30 to 45 days after emergence. Take care with soil preparation, sowing date and density; under reduced tillage, one or two cultivation passes incorporate the fertilizer and control weeds.",
+      "cosecha": "In hand harvesting, cut and bundle the plants so the grain dries; in mechanical harvesting, wait until the grain has about 14% moisture. Expected yield of 1.0 to 2.5 t/ha.",
+      "cuidados": [
+        "Use reduced tillage with one or two harrowing passes to conserve soil moisture.",
+        "Make small basins (contreo or pileteo: ridges every 3 m between furrows) to retain rainwater.",
+        "Choose the fertilizer rate according to the available moisture.",
+        "Sow as soon as the rainy season sets in and no later than July 10.",
+        "Against fall armyworm, use pheromone and molasses traps and favor natural enemies; act when egg masses are present on 14% of the plants."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 22604,
+          "rendimiento": null,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.84,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Sowing without months because the agenda does not set a start, only the end (July 10). Costs: Table 24 uses a yield of 4,000 kg/ha that contradicts the text of the crop sheet (1.0 to 2.5 t/ha), and its cost per kg ($11.30) corresponds to about 2,000 kg/ha. For that reason yield, net income ($756) and B/C ratio (1.03) are left as null. The $5.84/kg price is the 2026 Producción para el Bienestar guaranteed price.",
+      "revisado": false
+    },
+    {
+      "ficha": "Grain maize for Valles Altos",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        63,
+        71
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "High valleys in the south of the state, especially Amealco de Bonfil: temperate subhumid climate, 15 °C average, 2,300 to 2,500 m a.s.l. and 600 to 700 mm of rain from May to October, with a drought in August. Hilly terrain with slopes of 4 to 12% and shallow, acidic Phaeozem soils (pH 4.0 to 5.5) poor in organic matter.",
+      "siembra": {
+        "texto": "From April 1 to 30 for late and intermediate varieties; early ones until May 15. Start with the late ones and finish with the intermediate ones.",
+        "meses": [
+          4,
+          5
+        ]
+      },
+      "variedades": [
+        "H-40",
+        "H-48",
+        "H-50",
+        "H-52",
+        "H-161"
+      ],
+      "hibridos_comerciales": [
+        "Faisán",
+        "Hermes",
+        "Albatros",
+        "Diamante"
+      ],
+      "densidad": "70,000 to 80,000 plants per ha: 6 to 7 seeds per meter in 80 cm furrows. With an animal-drawn seeder, 2 to 3 seeds per hill every 50 cm; with a precision seeder, 5 to 6 seeds per meter.",
+      "fertilizacion": "At sowing 80-70-50 (N-P-K): 150 kg of 18-46-00, 115 kg of urea and 83 kg of potassium chloride per ha. Around day 40, 120 kg/ha of nitrogen (260 kg of urea). Inoculate the seed with Glomus intraradices mycorrhiza (1 kg/ha). With 1 to 2 t/ha of organic fertilizer, 75% of this rate can be used. On acid soils, apply lime: 2 to 3 t/ha of lime at pH 4.0 to 4.5 and 2 t/ha at pH 4.6 to 5.0, 2 to 3 months before sowing.",
+      "riego": "Limited irrigation: one pre-planting irrigation (February-March) and then the crop continues on rainfall. If there is a drought in August and the maize is at flowering or silking, a supplemental irrigation is advisable if water is available.",
+      "plagas": [
+        "White grub",
+        "Wireworm",
+        "Rootworm (Diabrotica spp.)",
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Thrips (Frankliniella occidentalis)",
+        "Beet armyworm (Spodoptera exigua)",
+        "Stalk borer (Diatraea spp.)",
+        "Foliage weevil",
+        "Rose chafer or tongo (Macrodactylus sp.)"
+      ],
+      "enfermedades": [
+        "Root and stalk rots (Fusarium spp.)",
+        "Rusts (Puccinia sorghi, Puccinia polysora)",
+        "Head smut (Sporisorium reilianum)"
+      ],
+      "malezas": "Keep the crop clean for at least the first 40 days and give one cultivation pass between 25 and 30 days after emergence. Predominant weeds are acahual, shoto cabezón, aceitilla, estrellita, cocklebur, purple sunflower, wild chayote and quelites; among the narrow-leaf ones, grasses, teosinte and nutsedge.",
+      "cosecha": "Manual: cut and stack until the ear detaches easily. Mechanical: with dry foliage and grain at 14% moisture (black layer at the base of the kernel). Expected yield of 8.0 t/ha.",
+      "cuidados": [
+        "Lime acid soils 2 to 3 months before sowing and check the pH every 3 to 4 years.",
+        "Leave at least 30% of the crop residues (reduced tillage) to improve organic matter and curb erosion.",
+        "Sow the late and intermediate varieties in April and the early ones until May 15.",
+        "If there is a drought in August during flowering, give a supplemental irrigation if water is available.",
+        "Use pheromone traps (4 per ha, 25 m from the edges, changing the water every 3 or 4 days) to monitor fall armyworm; act when 20% of plants are damaged.",
+        "Level the land, rotate crops and sow validated varieties to reduce rots, rusts and smut."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 34821.5,
+          "rendimiento": 8000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6.0,
+          "ingreso_neto": 13178.5,
+          "relacion_bc": 1.38
+        }
+      ],
+      "nota": "The modality is limited irrigation: a single irrigation before sowing and the rest of the cycle on rainfall. Faisán, Hermes, Albatros and Diamante are hybrids from private companies; the agenda does not say which company.",
+      "revisado": false
+    }
+  ]
+}

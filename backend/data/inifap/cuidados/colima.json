@@ -1,0 +1,139 @@
+{
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, prepared from the text of data/inifap/extraido/colima.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
+  "cve_ent": "06",
+  "estado": "Colima",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Colima [Agricultural Technical Agenda of Colima]. INIFAP, Mexico City, 2026.",
+  "fichas": [
+    {
+      "ficha": "Mexican lime",
+      "cientifico": "Citrus aurantifolia (Christm) Swingle",
+      "paginas": [
+        12,
+        33
+      ],
+      "cultivo_ids": [
+        "limon"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "irrigated",
+      "ciclo": "PER",
+      "region": "From 10 to 500 m a.s.l., with optimal temperatures of 23 to 32 °C (no growth below 13 °C) and 700 to 1,500 mm of summer rainfall, so it needs reliable irrigation in the dry season. It prefers a warm semi-dry climate and loam, sandy loam or clay loam soils more than 90 cm deep, well drained, without salinity and with a pH of 6.0 to 7.0 (tolerates 4.8 to 8.3); slopes under 5 %.",
+      "siembra": {
+        "texto": "It can be planted at any time of the year if irrigation is available, but planting in the rainy season is recommended.",
+        "meses": []
+      },
+      "variedades": [
+        "Colimex",
+        "Lise",
+        "Macrophylla rootstock (Citrus macrophylla Wester)",
+        "Volkameriana rootstock (Citrus volkameriana Pasq.)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "8 x 4 m (312 trees/ha), 7 x 4 m (357 trees/ha) or 6 x 4 m (416 trees/ha); preferably the higher densities, to recover the investment and offset losses from HLB. Rows oriented north-south; planting holes 30 cm in diameter and 50 cm deep, with the root collar at ground level.",
+      "fertilizacion": "Base it on soil, saturated paste and leaf analyses. Without analysis: in the first year apply 25, 50, 75 and 150 kg/ha of N at 3, 6, 9 and 12 months after planting. In bearing orchards the rate (kg/tree/year of N, P2O5 and K2O) depends on age and density (Table 1); for example, trees 9 years or older at more than 300 trees/ha: 0.70 N, 0.35 P2O5 and 0.35 K2O. Split the rate into as many applications as possible (through the irrigation water every 8 to 15 days under pressurized irrigation). For soil application, bury the fertilizer 15 cm deep, halfway between the trunk and the edge of the canopy, with moist soil. Incorporate organic matter (compost, humic and fulvic acids) and apply Fe, Zn, Mn and B as foliar sprays.",
+      "riego": "With furrow (gravity) irrigation, irrigate every 21 days on sandy soil during the dry season or when residual soil moisture drops to 15 %; with developing fruit, keep it above 65 %. With pressurized irrigation (drip or micro-sprinkler), at least two irrigations per week depending on canopy diameter. A mature orchard uses about 1,300 mm per year: from 140 L per tree per day in January to 200 L in July. It is sensitive to salinity: water with an EC of 3.3 reduces production by up to 50 %. Install the irrigation system before planting.",
+      "plagas": [
+        "Spider mite",
+        "Snow scale",
+        "Citrus blackfly",
+        "Aphids (including the brown citrus aphid, vector of citrus tristeza virus)",
+        "Whitefly",
+        "Citrus leafminer",
+        "Asian citrus psyllid (Diaphorina citri)"
+      ],
+      "enfermedades": [
+        "Gummosis or foot rot (Phytophthora)",
+        "Anthracnose",
+        "Sooty mold",
+        "Branch dieback (Lasiodiplodia)",
+        "Huanglongbing (HLB)"
+      ],
+      "malezas": "Remove parasitic plants (mistletoe and dodder) by hand, cutting off the branch if necessary, and uproot climbing weeds (field bindweed, morning glory). Between rows, run the mower every 30 to 40 days; in tree basins, manual or chemical control. In young orchards do not use pre-emergence herbicides or volatile hormone-type herbicides, because they damage roots, shoots and flowers.",
+      "cosecha": "Pick only fruit at harvest maturity: ellipsoid to spherical shape, 31 to 40 mm in diameter, smooth, shiny light-green peel and more than 45 % juice. Harvest in the morning when leaves and fruit are dry, keep the fruit in the shade and take it to the packing house the same day in 30 kg plastic crates without overfilling. It is harvested year-round; in Colima 80 % comes in from May to October. Store at 11 °C and 85 to 90 % relative humidity (below 7 °C there is chilling injury). Colimex and Lise yield 15 to 25 t/ha from the fourth year with 416 trees/ha.",
+      "cuidados": [
+        "Buy certified nursery trees free of viruses, viroids and HLB, with the graft 30 to 40 cm above the substrate, and ask for a letter of guarantee.",
+        "Monitor tender flushes and control the Asian citrus psyllid in coordination with neighbors, especially at the end of the rainy season, because it transmits HLB.",
+        "Avoid wounds on the trunk and branches, maintain good drainage and use tolerant rootstocks to prevent gummosis.",
+        "Split the fertilization and reinforce foliar nutrition (Fe, Zn, Mn, B) in trees with HLB to sustain their production.",
+        "Irrigate frequently in the dry season to avoid dust on the leaves, which favors spider mite, and sample fruit from match-head to marble size.",
+        "Prune dead wood and water sprouts; in mature trees, control height and canopy so that light gets in."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 181245.44,
+          "rendimiento": 22230,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 9.05,
+          "ingreso_neto": 19936.1,
+          "relacion_bc": 1.11
+        }
+      ],
+      "nota": "The costs are from Table 3 (5-year-old bearing orchard), which in the extracted file appears inside the harvest text and not under 'costos'. They check out: the sum of the line items gives 181,245.44, gross income 201,181.5 = 22,230 kg x $9.05, and B/C = 201,181.5 / 181,245.44 = 1.11. Table 2, for establishment (151,050.92 $/ha), was not used. The agenda does not give exact planting months, only 'rainy season'.",
+      "revisado": false
+    },
+    {
+      "ficha": "Tamarind",
+      "cientifico": "Tamarindus indica",
+      "paginas": [
+        34,
+        47
+      ],
+      "cultivo_ids": [
+        "tamarindo"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": null,
+      "ciclo": "PER",
+      "region": "Dry tropics below 800 m a.s.l., with no defined winter, maximum temperatures of 33 to 37 °C, minimums of 9.5 to 20 °C and 500 to 1,500 mm of rainfall; it withstands drought and strong winds. It needs a dry winter and spring to flower and fill fruit. Best on deep alluvial soils, well drained, from sandy loam to clay loam and with a pH of 5.5 to 7.5; on soils with sodium carbonate it shows yellowing from iron deficiency.",
+      "siembra": {
+        "texto": "Establish plantations in the rainy season (July to September); with irrigation it can be planted at any time of the year.",
+        "meses": [
+          7,
+          8,
+          9
+        ]
+      },
+      "variedades": [
+        "Colima 204 (INIFAP)",
+        "INIFAP 149 (INIFAP)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "From seed, square layout of 10 x 10 m (100 trees/ha). With grafted trees, 6 to 10 m; 9 x 7, 8 x 7, 9 x 6 and 8 x 6 m (158, 178, 185 and 208 trees/ha) are suggested, in a square or triangular (quincunx) layout, with north-south rows at high densities. Planting holes 60 cm deep and 50 cm wide.",
+      "fertilizacion": "Base it on soil, leaf and water analyses. Without analysis, per tree per year: 1st year 80 g of N, 2nd year 100 g of N and 3rd year 140 g of N (in 4 applications); 4th year 200 g of N in 2 applications; 5th year 300-100-100 g of N-P-K; 6th year 400-100-100; 7th year 640-150-150; 8th and 9th years 800-200-200; from the 10th year on 1,000-300-300, always in 2 applications per year (at flushing, flowering and fruit development).",
+      "riego": "Irrigate in the dry season (November to June). Plantations under two years old: every 20 to 30 days in the dry season. Mature orchards: two to three irrigations after harvest (April or May) to stimulate flushing and flowering, and supplemental irrigations from November to January. Irrigation is by flooding, micro-sprinkler or drip.",
+      "plagas": [
+        "Branch and trunk borer",
+        "Fruit borer (Caryedon gonagra)",
+        "Leafcutter ants or chancharras (Atta spp.)"
+      ],
+      "enfermedades": [
+        "Powdery mildew (Oidium tamarindi)"
+      ],
+      "malezas": "It is a serious problem in newly established orchards, because the tree grows slowly and the weeds grow fast. Combine manual, mechanical (mowing) and chemical control.",
+      "cosecha": "From March to June, in about three pickings (the first two are the largest); rainfed orchards ripen earlier than irrigated ones. The fruit is ready when it dries out, turns brown or grayish brown, sounds hollow when knocked together, the shell cracks when pressed and the seed is hard and shiny. Cut with shears and catch in baskets or 'cangureras', or spread a tarp or net under the canopy so the fruit does not fall to the ground. Sun-dry 2 to 3 days, sort by size and soundness and pack in 16 kg boxes free of impurities. Orchards with Colima 204 produce 80 to 90 kg per tree, with a potential of 12 to 15 t/ha.",
+      "cuidados": [
+        "Plant the INIFAP variety Colima 204, the best adapted and most preferred in the region.",
+        "Monitor the orchard from July to October, when the main flushes emerge, to detect powdery mildew in time, and support its control with pruning, irrigation, fertilization and removal of residues.",
+        "Inspect every 15 days from November to April, and prune and burn branches with borers.",
+        "Cut off the fruit left on the tree after harvest to reduce the fruit borer.",
+        "Against leafcutter ants, prune the lower skirt of the tree to 40-50 cm above the ground and install barriers (vegetable wax over a plastic strip, or plastic cones on small plants).",
+        "Early production: sanitation pruning in March-April, induced defoliation at the end of April and three heavy irrigations (irrigation depth of 20 to 30 cm) every 12 to 15 days; it brings the harvest forward by 20 to 30 days and escapes powdery mildew."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": null,
+          "rendimiento": 9000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 35,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "The entry covers irrigated and rainfed orchards, so modalidad is null even though the extracted file says 'riego'; the cost table includes irrigations. Table 7 has errors: the printed cost (70,043 $/ha) does not match the sum of the line items (81,970 $/ha); the harvest says 562.5 boxes x $50 = 39,375, but that gives 28,125; the printed net income (244,237.5) is not 315,000 - 70,043, and the B/C of 3.48 corresponds to net income / cost, not gross income / cost. Only the yield (9 t/ha) and the price ($35/kg) were copied, which match the gross income of 315,000. Early production uses a growth regulator to defoliate; the product and dose were omitted.",
+      "revisado": false
+    }
+  ]
+}

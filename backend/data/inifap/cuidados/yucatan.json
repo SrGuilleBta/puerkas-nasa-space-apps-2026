@@ -1,0 +1,580 @@
+{
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, prepared from the text of data/inifap/extraido/yucatan.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
+  "cve_ent": "31",
+  "estado": "Yucatán",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Yucatán [Agricultural Technical Agenda of Yucatán]. INIFAP, Mexico City, 2026.",
+  "fichas": [
+    {
+      "ficha": "Habanero pepper",
+      "cientifico": "Capsicum chinense Jacq.",
+      "paginas": [
+        12,
+        23
+      ],
+      "cultivo_ids": [
+        "chile-verde"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "Tropical crop from 0 to 1,200 m a.s.l. (best below 600 m), with 25 to 30 °C, 1,200 to 1,500 mm of rainfall and 70 to 90 % relative humidity; above 90 % favors fungi. It needs irrigation, preferably drip, flat land or slopes under 8 % and fertile, well-drained soils with pH 5.5 to 7.0. It is produced mainly in the center and south of the state.",
+      "siembra": {
+        "texto": "In open field, transplant from late September to October (fall-winter cycle). In shade houses or greenhouses transplanting can be brought forward to January to harvest before the rains. The seedling spends 25 to 35 days in the seedbed.",
+        "meses": [
+          9,
+          10
+        ]
+      },
+      "variedades": [
+        "Mayapán (INIFAP)",
+        "Jaguar (INIFAP)",
+        "Calakmul (INIFAP)",
+        "Orange-fruited landrace materials"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Rows 1.25 to 1.50 m apart and 30 cm between plants: 26,666 to 33,333 plants/ha on stony soils and about 22,222 plants/ha on soils suitable for machinery. In protected agriculture, about 22,200 plants/ha on stony soil (beds 1.5 m apart) and about 18,500 plants/ha on mechanizable soil (beds 1.8 m apart).",
+      "fertilizacion": "Through fertigation: keep 350 to 500 ppm of nitrates, 30 to 60 ppm of phosphates, 120 to 200 ppm of potassium, 120 ppm of calcium and 60 ppm of magnesium. Use less nitrogen and potassium until fruit set and raise them during fruiting and harvest; phosphorus higher at the start. Check soil electrical conductivity every week (1.5 to 2.0 mmhos/cm); one to three applications per week. Supplement with chelated micronutrients and boron from flowering onward, and neutralize water bicarbonates with acid.",
+      "riego": "Drip. On mechanizable soils, one heavy irrigation before transplanting and then daily irrigations of 1 to 1.25 L per plant in fall-winter and 1.5 to 2.0 L in spring-summer. On stony soils, daily irrigation of 1 to 1.5 L per plant in fall-winter and 2.5 to 3.5 L in spring-summer. With tensiometers, keep 5 to 10 cb at 30 cm; scheduling can also be based on daily evaporation (bucket or evaporation pan).",
+      "plagas": [
+        "Whitefly (Bemisia tabaci)",
+        "Pepper weevil (Anthonomus eugenii)",
+        "Leafminer (Liriomyza spp.)",
+        "Broad mite (Polyphagotarsonemus latus)",
+        "Spider mite (Tetranychus urticae)"
+      ],
+      "enfermedades": [
+        "Bacterial spot (Xanthomonas spp.)",
+        "Viruses transmitted by whitefly",
+        "Root-knot nematode (Meloidogyne spp.)"
+      ],
+      "malezas": "The critical period is 45 to 60 days after transplanting. Prepare the land well (brush clearing, plowing, harrowing and land leveling on mechanizable soils) and control weeds before transplanting and in the crop alleys. In Yucatán there are about 123 associated species; broadleaf weeds are the most aggressive and several host whitefly, such as chak tees (Amaranthus spinosus), claudiosa (Capraria biflora), chichibé and malva (Sida spp.), altaniza (Parthenium hysterophorus) and tso'ots kab (Merremia aegyptia).",
+      "cosecha": "In orange-ripening varieties for the fresh market, the first picking is 75 to 85 days after transplanting, with bright, firm green fruit; then weekly pickings. If ripe fruits are requested, pick when the change from green to orange begins; red habanero is picked with uniform bright red color. Good yield: 20 to 30 t/ha with varieties and 45 to 60 t/ha with hybrids. Store at 7 to 10 °C and 90 to 95 % relative humidity (keeps two to three weeks).",
+      "cuidados": [
+        "Raise seedlings in a greenhouse or under anti-aphid netting, with yellow traps, to prevent viruses from the seedbed stage.",
+        "Transplant in late September or October; outside that window whitefly and viruses increase.",
+        "Scout the plot every week (at least 100 plants per ha) and start whitefly control at 1 to 2 adults per plant.",
+        "Plant two rows of eggplant around the field as a barrier to attract and control whitefly.",
+        "Prune old leaves and shoots up to the first fork and stake with posts and twine to ventilate the plant.",
+        "Keep the crop weed-free for the first 45 to 60 days and remove weeds that host whitefly."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 139647,
+          "rendimiento": 18000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 25.83,
+          "ingreso_neto": 325293,
+          "relacion_bc": 3.3
+        }
+      ],
+      "nota": "There is no habanero pepper id in the catalog; chile-verde was assigned because it is sold mainly fresh. Costs estimated for the northern region of the state; SIAP 2024 farm-gate price.",
+      "revisado": false
+    },
+    {
+      "ficha": "Common bean",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        24,
+        32
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Rainfed in a warm subhumid climate with summer rains; optimum temperature of 16 to 24 °C (above 27 °C at flowering, pod set drops) and 60 to 70 % relative humidity. It needs 300 to 500 mm over the cycle; from September to December about 530 mm of rain falls. Best soils: deep, well-drained and not very stony (k'ankab, yaax-hom and chac-lu'um). With INIFAP technology up to 1.2 t/ha is reached under rainfed conditions.",
+      "siembra": {
+        "texto": "In mechanized areas, the first half of September; in milpa, from August 15 to September 30, and in some cases up to October 15. Do not delay planting beyond September.",
+        "meses": [
+          8,
+          9
+        ]
+      },
+      "variedades": [
+        "Jamapa",
+        "Comapa",
+        "Negro INIFAP",
+        "Tacaná",
+        "Veracruz",
+        "Tropical",
+        "Cotaxtla 91",
+        "Huasteco 81",
+        "Medellín",
+        "Verdín",
+        "Rubí",
+        "San Blas"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "133 to 160 thousand plants/ha with 25 to 30 kg of seed, in rows 75 cm apart and 8 to 10 cm between plants, no deeper than 5 to 6 cm. In milpa or hand planting, 4 to 5 seeds per hill every 20 to 25 cm in rows 70 to 80 cm apart; mechanized, drilled with one plant every 5 cm.",
+      "fertilizacion": "Formula 30-40-00 with about 200 kg of diammonium phosphate (18-46-00): at planting on mechanized soil or within the first 10 days after emergence in dibble-stick planting, beside the plant and covered. The seed can be inoculated with mycorrhizae and Bacillus subtilis one day before sowing, and foliar urea at 1.75 % can be applied at pre-flowering (35 to 40 days) and at grain filling (60 to 65 days). A soil analysis is advisable to adjust phosphorus and potassium.",
+      "riego": null,
+      "plagas": [
+        "Leafhopper (Empoasca spp.)",
+        "Rootworms (Diabrotica)",
+        "Whitefly (Bemisia tabaci)",
+        "Fireflies (Lampyridae)"
+      ],
+      "enfermedades": [
+        "Root rot (Fusarium and Rhizoctonia solani)",
+        "Common blight (Xanthomonas axonopodis pv. phaseoli)",
+        "Halo blight (Pseudomonas syringae pv. phaseolicola)",
+        "Common mosaic",
+        "Golden mosaic virus",
+        "Anthracnose (Colletotrichum lindemuthianum)",
+        "Angular leaf spot (Pseudocercospora griseola)",
+        "Rust (Uromyces appendiculatus)"
+      ],
+      "malezas": "Keep the crop clean for the first 40 days after emergence, because beans compete poorly. In mechanized systems, two cultivation passes at 15 and 30 days after germination; in milpa or stony soils, slashing or manual clearing.",
+      "cosecha": "When 70 % of the plants reach physiological maturity (the foliage turns from green to yellow and drops), about 90 days after sowing. Cut, leave to dry in windrows in the field, thresh and clean. Expected yield: 800 to 1,200 kg/ha rainfed.",
+      "cuidados": [
+        "Sow on time: first half of September in mechanized fields and from August 15 to September 30 in milpa.",
+        "Use virus-tolerant black-seeded INIFAP varieties and certified seed.",
+        "Keep the plot weed-free for the first 40 days after emergence.",
+        "Apply fertilizer at planting or within the first 10 days, plus two foliar urea sprays at pre-flowering and grain filling.",
+        "Monitor pests and control only when reaching 5 % damage or 1 to 1.5 insects per plant, especially early in the cycle.",
+        "Prevent diseases with crop rotation, good drainage and seed treatment."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 25339,
+          "rendimiento": 1250,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 27,
+          "ingreso_neto": 8411,
+          "relacion_bc": 1.33
+        }
+      ],
+      "nota": "Cost for mechanized soils with a medium technology level; the price is the 2026 guaranteed price for black beans ($27/kg). The agenda gives no irrigation recommendations (rainfed crop).",
+      "revisado": false
+    },
+    {
+      "ficha": "Persian lime",
+      "cientifico": "Citrus x latifolia",
+      "paginas": [
+        33,
+        44
+      ],
+      "cultivo_ids": [
+        "limon"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "irrigated",
+      "ciclo": "PER",
+      "region": "Areas with warm subhumid climate (Aw0 and Aw1) from 0 to 200 m a.s.l.; avoid arid climates (BS0 and BS1). Optimum temperature of 20 to 25 °C and 1,200 to 2,000 mm of rainfall per year, but the dry season from February to May and the midsummer drought (canícula) in July make supplemental irrigation necessary.",
+      "siembra": {
+        "texto": null,
+        "meses": []
+      },
+      "variedades": [
+        "Clones Page, Ponds, SPB7 and Bears",
+        "C-22 Bitters rootstock (calcareous soils)",
+        "Volkamer lemon rootstock (Luvisol soils)",
+        "Macrophylla rootstock (Luvisol soils)",
+        "Citrange C-35 rootstock (Luvisol soils)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Recommended spacing of 6 x 5 m (333 trees/ha); in general 300 to 500 trees/ha, with 6 to 8 m between rows and 4 to 6 m between trees. The higher the density, the more pruning.",
+      "fertilizacion": "Fertilize in February, June, September and November (flushing periods), based on soil, leaf and water analysis. Guideline dose per tree per year (g of N-P2O5-K2O), in 4 applications: year 1 80-20-0; year 2 120-20-32; year 3 140-32-40; year 4 200-40-80; year 5 500-160-240; year 6 900-300-440; year 7 1,040-360-520. Correct magnesium, zinc, manganese, iron and boron with foliar sprays on flushes with expanded leaves. With HLB, split the fertilization further.",
+      "riego": "Stony, very permeable soils call for frequent, low-volume irrigations, especially from January to May. Micro-sprinkler with one emitter per tree, or drip with up to 8 drippers of 2 L/h per tree. The tree uses 20 to 200 L of water per day (0.5 to 4 hours of irrigation). With tensiometers at 15 and 30 cm, irrigate between 30 and 60 centibars depending on soil type.",
+      "plagas": [
+        "Citrus leafminer (Phyllocnistis citrella)",
+        "Mites (Polyphagotarsonemus latus, Panonychus citri and Brevipalpus spp.)",
+        "Citrus blackfly (Aleurocanthus woglumi)",
+        "Scales",
+        "Fruit flies",
+        "Asian citrus psyllid (Diaphorina citri), vector of HLB",
+        "Aphids (Aphis spp.), vectors of citrus tristeza virus"
+      ],
+      "enfermedades": [
+        "Sectorial spotting (physiological disorder)",
+        "Gummosis caused by Lasiodiplodia spp.",
+        "Huanglongbing or HLB (Candidatus Liberibacter spp.)",
+        "Citrus tristeza virus (CTV)",
+        "Exocortis (CEVd viroid)",
+        "Cachexia (HSVd viroid)"
+      ],
+      "malezas": "Control focused on the tree row. In the alleys, cut back the cover with a brush cutter or slasher to conserve water and soil and provide refuge for beneficial insects.",
+      "cosecha": "Harvested about 120 days after flowering, according to size grade (110, 150, 175 or 200) and color uniformity. Do not pick under high humidity to avoid staining the fruit. Expected yield: 25 t/ha on average.",
+      "cuidados": [
+        "Use healthy rootstocks and budwood from certified nurseries according to soil type (calcareous or Luvisol).",
+        "Prune in May to shape the tree and in September-October to stimulate the flush that bears fruit in January to March, when prices are better.",
+        "Seal pruning wounds to reduce branch dieback caused by Lasiodiplodia.",
+        "Irrigate from January to May with frequent, low-volume irrigations to avoid the stress that triggers sectorial spotting.",
+        "Fertilize during flushing periods and correct micronutrients through the foliage.",
+        "Control the HLB psyllid and aphids with biological control (Tamarixia radiata, Isaria javanica, lady beetles and lacewings)."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 100153,
+          "rendimiento": 25000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6.06,
+          "ingreso_neto": 51347,
+          "relacion_bc": 1.5
+        }
+      ],
+      "nota": "The agenda gives no planting date. The cost table is for the production cycle (orchard in production); the 25 t/ha yield comes from the harvest text and matches the gross income ($151,500 at $6.06/kg, SIAP 2024 farm-gate price).",
+      "revisado": false
+    },
+    {
+      "ficha": "Mechanized maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        45,
+        51
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Rainfed in a warm subhumid climate, with a mean of 24.6 to 27.7 °C, 75 % relative humidity and about 1,100 mm of rainfall per year. During the cycle 400 to 720 mm of rain falls, less than the crop requires (700 to 1,300 mm), so water is the main constraint. The best soils are Cambisols and Luvisols; mechanized maize is mainly in the south and east of the state. Average yield of 2.6 t/ha.",
+      "siembra": {
+        "texto": "At the onset of the rains, between May and July, no later than July 15.",
+        "meses": [
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "VS-536",
+        "V-540",
+        "V-560",
+        "V-561",
+        "V-562"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "60 to 70 thousand plants/ha, depending on moisture, soil fertility and variety, sown with a mechanical planter.",
+      "fertilizacion": "Base it on soil analysis. Without analysis, for medium potential: formula 145-90-00, with 100 kg/ha of DAP at planting and 200 kg/ha of urea at 30 to 35 days. The seed can be inoculated with Azospirillum spp. (380 g/ha) or mycorrhizae (1 kg/ha). In higher-potential environments, a higher formula with nitrogen, zinc and boron.",
+      "riego": null,
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Cutworm (Agrotis spp.)",
+        "Soil pests (wireworm, white grub)",
+        "Corn leafhopper (Dalbulus maidis), vector of corn stunt"
+      ],
+      "enfermedades": [
+        "Corn stunt (Spiroplasma kunkelii)"
+      ],
+      "malezas": "Keep the crop weed-free for the first 35 to 40 days after sowing. Sow on time, at a good density, and leave residues on the soil to suppress weeds; supplement with inter-row cultivation passes, which also conserve moisture.",
+      "cosecha": "When the grain is hard and at 14 to 16 % moisture, 130 to 140 days after sowing in intermediate-cycle varieties. Store clean, dry grain (14 % moisture) in hermetic containers, protected from moisture, insects and rodents. INIFAP varieties can yield over 5.5 t/ha with good rainfall.",
+      "cuidados": [
+        "Sow at the onset of the rains and not after July 15.",
+        "Prepare the land in advance, without burning residues and without excessive harrowing passes.",
+        "Use INIFAP open-pollinated varieties, cheaper and better adapted to the region than hybrids.",
+        "Check for fall armyworm every 5 to 7 days from the first week and act at about 20 % of plants with small larvae.",
+        "Prevent corn stunt by removing weeds in and around the plot and controlling the leafhopper during the first 35 days.",
+        "Harvest on time to avoid damage from animals and rot."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 28736,
+          "rendimiento": 5500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7.2,
+          "ingreso_neto": 10864,
+          "relacion_bc": 1.38
+        }
+      ],
+      "nota": "Cost with a medium technology level; the price is the 2026 guaranteed price for white maize ($7.2/kg).",
+      "revisado": false
+    },
+    {
+      "ficha": "Milpa maize",
+      "cientifico": "Zea mays L",
+      "paginas": [
+        52,
+        58
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Rainfed in a warm subhumid climate, with a mean of 24.6 to 27.7 °C and about 1,100 mm of rainfall per year; during the cycle 400 to 720 mm of rain falls, less than the crop requires. The milpa is on stony, shallow soils (Leptosols and Rendzinas), where the traditional yield is about 0.7 t/ha.",
+      "siembra": {
+        "texto": "At the onset of the rains, between May and July, no later than July 15; after that date use short-cycle varieties. Hand planting with a dibble stick.",
+        "meses": [
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Sac Beh (INIFAP, quality protein white grain)",
+        "Nukuch Nah (INIFAP, quality protein yellow grain)",
+        "Native maize of the Nal-Tel, Tuxpeño and Dzit-Bacal races"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "About 45 thousand plants/ha, with 12 to 15 kg of seed/ha depending on kernel size.",
+      "fertilizacion": "Formula 59-92-00: 200 kg of diammonium phosphate (DAP) within the first 10 days after sowing and 50 kg of urea/ha at 40 days after emergence, about 5 cm from the plant and covered with soil. The seed can be inoculated with Azospirillum spp. (380 g/ha) or mycorrhizae (1 kg/ha).",
+      "riego": null,
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Cutworm (Agrotis spp.)",
+        "Soil pests (wireworm, white grub)"
+      ],
+      "enfermedades": [],
+      "malezas": "Keep the crop weed-free for the first 35 to 40 days after sowing. Sow on time, use a good density and leave residues on the soil; in the milpa, regrowth and weeds are cut by hand during the cycle.",
+      "cosecha": "Bend the stalks 45 to 50 days after flowering to speed drying. Harvest with hard grain at 18 to 20 % moisture, 140 to 150 days after sowing in intermediate-cycle varieties. Store the grain at 14 % moisture in hermetic containers. INIFAP varieties can yield over 2.5 t/ha.",
+      "cuidados": [
+        "Do slash-and-fell (roza y tumba) in the dry season and reduce or avoid burning to leave residues as cover.",
+        "Build firebreaks if burning, so the fire does not spread to neighboring land.",
+        "Sow at the onset of the rains, no later than July 15; if later, use short-cycle varieties.",
+        "Use Sac Beh or Nukuch Nah, or native maize of the region.",
+        "Check for fall armyworm every 5 to 7 days and act at about 20 % of plants with small larvae.",
+        "Bend the stalks and harvest on time to avoid losses from animals and rot."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 15327,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7.2,
+          "ingreso_neto": 2673,
+          "relacion_bc": 1.17
+        }
+      ],
+      "nota": "The price in the table is the 2026 guaranteed price for white maize ($7.2/kg). The sheet does not cover diseases.",
+      "revisado": false
+    },
+    {
+      "ficha": "Valencia orange",
+      "cientifico": "Citrus x sinensis L.",
+      "paginas": [
+        59,
+        74
+      ],
+      "cultivo_ids": [
+        "naranja"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "irrigated",
+      "ciclo": "PER",
+      "region": "Areas with warm subhumid climate (Aw0 and Aw1) from 0 to 200 m a.s.l.; avoid arid climates (BS0 and BS1). Optimum temperature of 20 to 25 °C and 1,200 to 2,000 mm of rainfall, but the dry season from February to May and the midsummer drought (canícula) in July make supplemental irrigation necessary for the crop to be profitable.",
+      "siembra": {
+        "texto": "Plant in the rainy season; on vertisol soils it is better in the dry season, for access and maneuvering. Row orientation matters more than the date.",
+        "meses": []
+      },
+      "variedades": [
+        "Valencia (late, harvest from February to May)",
+        "Valencia Campbell",
+        "Hamlin (early, September to October)",
+        "Parson Brown",
+        "Pineapple (October to November)",
+        "Marrs (July to September)",
+        "Rootstocks for calcareous soils: US-942, C-22 Bitters, US-812",
+        "Rootstocks for Luvisol soils: Carrizo citrange, Citrange C-35, Swingle citrumelo"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Recommended spacing of 6 x 7 m (238 trees/ha). In the region it ranges from 204 to 500 or more trees/ha, with 6 to 8 m between rows (6 m is the minimum for machinery) and 4 to 6 m between trees, with light pruning.",
+      "fertilizacion": "Base it on soil, leaf, water and fruit analysis. Young trees, per application (g/tree of N-P2O5-K2O): 0-1 year 100-0-40; 1-2 years 220-100-120; 2-3 years 300-140-200; 3-4 years 400-210-400; 4-5 years 500-280-500. Mature orchards: 200-120-180 kg/ha per year in one or two applications. With HLB, split further (with micro-sprinklers and a Venturi injector, every month). Correct micronutrients through the foliage; with HLB, zinc deficiency is the most common.",
+      "riego": "Stony, permeable soils make irrigation necessary, especially from January to May. A tree with a 6 m canopy needs 28 to 230 L of water per day depending on the season. In several wells the water carries a lot of carbonates, which can burn the leaves under micro-sprinkler irrigation.",
+      "plagas": [
+        "Citrus leafminer (Phyllocnistis citrella)",
+        "Mites (citrus rust mite, spider mite, Texas citrus mite, Polyphagotarsonemus latus and Brevipalpus spp.)",
+        "Citrus blackfly (Aleurocanthus woglumi)",
+        "Fruit flies (Anastrepha spp.)",
+        "Scales (California red, snow, black and soft scale)",
+        "Asian citrus psyllid (Diaphorina citri), vector of HLB",
+        "Aphids (Aphis spp.), vectors of citrus tristeza virus"
+      ],
+      "enfermedades": [
+        "Huanglongbing or HLB (Candidatus Liberibacter spp.)",
+        "Gummosis",
+        "Citrus tristeza virus (CTV)",
+        "Basal canker (Ustulina deusta)",
+        "Greasy spot (Mycosphaerella citri)",
+        "Exocortis (CEVd viroid)",
+        "Cachexia (HSVd viroid)",
+        "Leprosis (transmitted by Brevipalpus mites)"
+      ],
+      "malezas": "Control focused on the tree row. In the alleys, cut back the cover with a brush cutter or slasher to conserve water and soil and provide refuge for beneficial insects.",
+      "cosecha": "Harvest with at least 9 °Bx of soluble solids, a solids/acidity ratio of 9 to 1 and 35 % juice. Pick all fruit that meets maturity and do not leave ripe fruit on the tree. HLB can reduce yield by up to 40 %. Expected yield: 40 t/ha on average.",
+      "cuidados": [
+        "Use healthy plants and grafts from certified nurseries and the rootstock suited to the soil (calcareous or Luvisol).",
+        "Irrigate from January to May and fertilize according to tree age, splitting more in orchards with HLB.",
+        "Control the HLB psyllid and the citrus blackfly with biological control (Tamarixia radiata, Encarsia opulenta, Isaria javanica, lady beetles and lacewings).",
+        "Against fruit fly, collect and bury fallen fruit and do not leave ripe fruit on the tree; use trapping as a guide.",
+        "Prevent gummosis: graft at 25 cm height, do not plant the tree too deep and avoid poorly drained land.",
+        "Prune in November and December, remove water sprouts and disinfect pruning tools so as not to spread viroids."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 93710,
+          "rendimiento": 40000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.63,
+          "ingreso_neto": 131490,
+          "relacion_bc": 2.4
+        }
+      ],
+      "nota": "The sheet covers several sweet orange varieties, not only Valencia. The table is for the production cycle (orchard in production); the 40 t/ha yield comes from the harvest text and matches the gross income ($225,200 at $5.63/kg, SIAP 2024 farm-gate price). The planting date gives no specific months.",
+      "revisado": false
+    },
+    {
+      "ficha": "Soybean",
+      "cientifico": "Glycine max",
+      "paginas": [
+        75,
+        85
+      ],
+      "cultivo_ids": [
+        "soya"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Mechanized red soils in the south of the state (k'ankab and yaax-hom, Luvisols), deep, clayey and flat, mainly in Tekax, Oxkutzcab, Akil and Tzucacab, and some in Tizimín. Warm subhumid climate of 24.6 to 27.7 °C and over 1,100 mm of rainfall, concentrated from May to October. Transgenic soybean has been banned in Yucatán since 2017.",
+      "siembra": {
+        "texto": "Huasteca 100, Huasteca 300, Tamesí and Huasteca 600: from June 15 to July 15, always before July 20. Late plantings (July 16 to August 15): Huasteca 200 and Huasteca 400. Later is risky because rain may be lacking at flowering and pod formation.",
+        "meses": [
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Huasteca 100",
+        "Huasteca 200",
+        "Huasteca 300",
+        "Huasteca 400",
+        "Tamesí",
+        "Huasteca 600"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Rows 75 to 80 cm apart with 160 to 200 thousand plants/ha. Tamesí allows rows 60 cm apart with about 300 thousand plants/ha; Huasteca 600, rows 70 to 80 cm apart with 250 to 300 thousand plants/ha.",
+      "fertilizacion": "Three to four bags per hectare of 18-46-00 at planting, banded. Inoculate the seed with Bradyrhizobium japonicum, in the shade, right after seed treatment.",
+      "riego": null,
+      "plagas": [
+        "Velvetbean caterpillar (Anticarsia gemmatalis)",
+        "Soybean looper (Pseudoplusia includens)",
+        "Green, brown and alfalfa stink bugs",
+        "Blister beetles (E. vittata and E. fabricii)",
+        "Rootworms (Diabrotica balteata, D. variegata and Cerotoma ruficornis)",
+        "Whitefly (Bemisia tabaci and B. argentifolii)"
+      ],
+      "enfermedades": [
+        "Frogeye leaf spot (Cercospora sojina)",
+        "Anthracnose (Colletotrichum truncatum)",
+        "Target spot (Corynespora cassiicola)",
+        "Downy mildew (Peronospora manshurica)",
+        "Brown spot (Septoria glycines)",
+        "Purple seed stain (Cercospora kikuchii)",
+        "Seedling damping-off (Pythium, Rhizoctonia, Phytophthora and Fusarium)",
+        "Rust"
+      ],
+      "malezas": "Keep the crop clean for the first 45 days: one cultivation pass at 20 days after emergence, hand weeding if needed and a second cultivation pass 8 to 10 days later. The second harrowing pass, shortly after the first rains, removes weeds before sowing.",
+      "cosecha": "The plant is mature when the stems are dry and all leaves have dropped. For industry, thresh at 15 % grain moisture and never below 13 %, because pod shattering increases. Adjust the combine (speed, cylinder, and a sharp cutter bar close to the ground). The varieties yield 2.7 to 3.2 t/ha.",
+      "cuidados": [
+        "Prepare the land before the rains: plowing in April, two harrowing passes and land leveling.",
+        "Sow on each variety's date; late sowing makes grain filling coincide with rust.",
+        "Use healthy seed of Huasteca or Tamesí varieties, treated and inoculated with Bradyrhizobium.",
+        "Keep the crop weed-free for the first 45 days with cultivation passes.",
+        "Sample pests: velvetbean caterpillar at 10 to 20 larvae per meter or 15 to 30 % defoliation; stink bugs at two adults per meter during grain filling; whitefly at five adults per plant.",
+        "Encourage biological control of defoliating larvae, because the crop harbors many natural enemies."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 16041,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7.33,
+          "ingreso_neto": 2284,
+          "relacion_bc": 1.1
+        }
+      ],
+      "nota": "SIAP 2024 farm-gate price ($7.33/kg). The printed benefit-cost ratio (1.1) is rounded; with the table figures it comes to 1.14.",
+      "revisado": false
+    },
+    {
+      "ficha": "Tomato",
+      "cientifico": "Solanum lycopersicum",
+      "paginas": [
+        86,
+        99
+      ],
+      "cultivo_ids": [
+        "tomate-rojo-jitomate"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "North-central-eastern region (Mérida district and part of Tizimín district), with a warm subhumid climate, a mean of 26.8 °C and 984 mm of rainfall. Stony, shallow soils (Leptosol, tzekel) with pH 7.7 to 7.9, at 4 to 20 m a.s.l. and gentle slopes.",
+      "siembra": {
+        "texto": "Sow the seedbed from August to December, to transplant from late August to late January, at 21 to 25 days (plants 12 to 15 cm tall). Before August there are more diseases due to the rains; after December, spring heat limits fruit set.",
+        "meses": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Río Grande (saladette type)",
+        "Zocato (landrace)"
+      ],
+      "hibridos_comerciales": [
+        "Pony Express"
+      ],
+      "densidad": "16,500 to 22,000 plants/ha, with rows 1.50 m apart and 0.30 to 0.40 m between plants.",
+      "fertilizacion": "Manual fertilization: 120-120-120 for varieties (706 kg of Triple 17) and 200-150-250 for hybrids, in three parts: at transplanting, at the start of flowering and at the start of harvest (in hybrids, 450 kg of Triple 17, then 430 kg of Triple 17 and finally 108 kg of urea plus 200 kg of potassium sulfate). With fertigation through drip tape, a 215-140-256 treatment with soluble fertilizers (potassium nitrate, MAP and urea) in frequent applications according to the stage. On stony soil, fill the planting holes with 500 to 750 g of manure or compost per hole.",
+      "riego": "It must be grown under irrigation, preferably drip tape (6000 gauge tape, emitters every 30 cm, tapes 1.50 m apart). Saturate the soil before transplanting and give light daily irrigations the first days; then keep available moisture between 70 and 80 %, with 0.5 to 2.5 L per plant per day depending on weather and plant age.",
+      "plagas": [
+        "Whitefly",
+        "Tomato fruitworm",
+        "Armyworm"
+      ],
+      "enfermedades": [
+        "Viruses transmitted by whitefly",
+        "Early blight",
+        "Root knots (nematodes)"
+      ],
+      "malezas": "Start from good land preparation. Hand weed near the plants and use slashing or a brush cutter in the alleys to reduce applications. On land in continuous vegetable use, altaniza is common.",
+      "cosecha": "Starts 70 to 75 days after transplanting, with 8 to 12 pickings every 3 to 4 days. Pick fruits turning from green to red, without letting them color fully. Expected yield: 40 t/ha in commercial varieties, up to 50 t/ha with hybrids and 30 to 40 t/ha with the Zocato landrace.",
+      "cuidados": [
+        "Raise or buy healthy seedlings, produced under plastic cover and anti-aphid netting.",
+        "Respect the dates: seedbed from August to December; in late plantings, protect with a crop-fabric microtunnel.",
+        "On stony soil, remove stones 15 cm on each side of the drip line or make planting holes with soil and compost.",
+        "Against viruses, remove diseased plants from transplanting to flowering and set yellow sticky (grease) traps.",
+        "Prune old leaves and shoots up to the first branch and stake with 2 m poles and strings every 25 cm.",
+        "Harvest twice a week when the fruit begins to turn red."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 293511,
+          "rendimiento": 30000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 10.74,
+          "ingreso_neto": 28689,
+          "relacion_bc": 1.09
+        },
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 403511,
+          "rendimiento": 50000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 10.74,
+          "ingreso_neto": 133489,
+          "relacion_bc": 1.33
+        }
+      ],
+      "nota": "Two scenarios on stony soil: the first cost is a variety with manual fertilization and the second a hybrid with fertigation. The printed totals add up all items in the table, including both fertilization methods (manual and fertigation), so each scenario is probably overestimated. The income uses $10.74/kg, although the table footnote also mentions a 2024 farm-gate price of $10.06. Río Grande was kept under varieties because the text does not say which company it is from.",
+      "revisado": false
+    }
+  ]
+}

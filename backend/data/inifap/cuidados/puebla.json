@@ -1,0 +1,460 @@
+{
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, made from the text of data/inifap/extraido/puebla.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
+  "cve_ent": "21",
+  "estado": "Puebla",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Puebla [Agricultural Technical Agenda of Puebla]. INIFAP, Mexico City, 2026.",
+  "fichas": [
+    {
+      "ficha": "Maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        13,
+        19
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Dry and humid high valleys from 2,200 to 3,000 m a.s.l. (Teziutlán, Ciudad Serdán, Chignahuapan, Cholula, Atlixco, Tecamachalco, Libres, Tehuacán, among others), 18 to 24 °C and 700 to 1,300 mm of rainfall. Soils with organic matter, loam to clay loam, with good drainage and pH of 5.5 to 7.0.",
+      "siembra": {
+        "texto": "Rainfed S-S cycle: sow in March and April, once deep rains are established in the field (cycle of about 125 days). Later, the risk of frost in October increases. If it was not possible to sow in March or April, use purple, blue or red landraces of 90 to 100 days to take advantage of the September rains.",
+        "meses": [
+          3,
+          4
+        ]
+      },
+      "variedades": [
+        "H-40",
+        "H-48",
+        "H-50",
+        "H-66",
+        "H-137",
+        "H-139",
+        "H-30",
+        "H-34",
+        "H-33",
+        "VS-22",
+        "Amarillo 61",
+        "Amarillo 62"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Seed: 15 to 20 kg/ha hill-planted, 20 to 25 kg/ha with an animal-drawn planter and 25 to 35 kg/ha with a tractor planter. Population: 65,000 plants/ha rainfed; 40,000 to 60,000 plants/ha in dryland; 50,000 to 60,000 in mixed environments; 85,000 to 95,000 with hybrids in environments with irrigation potential. Rows 90 cm apart with landraces and 60 to 80 cm with improved materials.",
+      "fertilizacion": "Temperate subhumid zones: 160-60-80 (297 kg of urea, 130 kg of DAP and 133 kg of potassium chloride). Dry and semiwarm to warm zones: 120-50-70 (218 kg of urea, 109 kg of DAP and 116 kg of potassium chloride). Cold zones: 160-80-90 (280 kg of urea, 174 kg of DAP and 150 kg of potassium chloride). All the phosphorus and 30 % of the nitrogen at sowing, 5–10 cm from the seed, with at least 20 kg/ha of micronutrients; the rest of the nitrogen and the potassium at the second cultivation. Rates designed for about 70,000 plants/ha.",
+      "riego": "Rainfed: depends on rainfall. An average yield requires about 480 mm accumulated and optimal development 700 to 1,300 mm over the cycle.",
+      "plagas": [
+        "White grub (Phyllophaga spp.)",
+        "Fall armyworm",
+        "Wireworm (Melanotus and Agriotes spp.)",
+        "Rootworm larvae (Diabrotica spp.)",
+        "Thrips (Frankliniella occidentalis)",
+        "Spider mite (Oligonychus mexicanus and Tetranychus spp.)",
+        "Corn leafhopper",
+        "Leaf weevil",
+        "Aphids (Rhopalosiphum maidis and Schizaphis graminum)"
+      ],
+      "enfermedades": [],
+      "malezas": "Keep the crop clean for the first 40 days after sowing. Two cultivation passes: the first at 30 days (plants 30 to 40 cm tall) and the second between 45 and 55 days (60 to 70 cm). If weeds are abundant, chemical control is used.",
+      "cosecha": "At physiological maturity: when the pedicel is removed, a black layer should be visible at the base of the kernel. Do not knock the dry plant to the ground; stack it in shocks (amogotar). To store for up to half a year, sun-dry to 12–15 % moisture (salt or jar test); for longer, BIOGRAN modules. Expected yield of 3 to 4 t/ha rainfed.",
+      "cuidados": [
+        "Sow in March and April with rains already established; if delayed, use short-cycle colored landraces (90 to 100 days).",
+        "Plow to about 30 cm and furrow on the contour on sloping land; on steep slopes, build terraces.",
+        "Apply all the phosphorus at sowing and split the nitrogen: 30 % at the start and the rest at the second cultivation with the potassium.",
+        "Keep the plot free of weeds for the first 40 days with two cultivation passes.",
+        "Manage pests preventively with garlic, chili or neem extracts, potassium soaps and traps (blue and yellow bands, pheromones, light); use authorized insecticides only if the damage threshold is exceeded.",
+        "Harvest when the black layer appears at the base of the kernel and store at 12 to 15 % moisture."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 25432,
+          "rendimiento": 3500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8,
+          "ingreso_neto": 2568,
+          "relacion_bc": 1.1
+        }
+      ],
+      "nota": "Hybrids H-40 to H-66, H-30 to H-139 and the synthetic varieties VS-22, Amarillo 61 and Amarillo 62 are from the INIFAP certified seed catalog; they are listed as public varieties. Varieties VS-22, Amarillo 61 and Amarillo 62 are recommended for maize of forage interest. The agenda states that no outstanding maize diseases have been reported in Puebla.",
+      "revisado": false
+    },
+    {
+      "ficha": "Common bean",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        20,
+        26
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "High Valleys from 2,000 to 3,400 m a.s.l., mainly the Tecamachalco, Libres and Cholula DDRs; 12 to 25 °C and rains from June to October (300 to 600 mm in semiarid zones, more than 1,200 mm in the north and east). Soils rich in nutrients or organic matter, pH of 4.5 to 8.0.",
+      "siembra": {
+        "texto": "From May 25 and through June; later there is a risk of early frosts. Flor de Junio and Flor de Mayo types go on the earliest dates and Pinto types at the end of the period.",
+        "meses": [
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Salinas",
+        "Rarámuri",
+        "San Rafael",
+        "Río Grande",
+        "Tepehuan RS",
+        "Dalia",
+        "Junio León",
+        "Junio Nur",
+        "Flor de Mayo Eugenia",
+        "Negro Comapa",
+        "Negro 8025",
+        "San Luis"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Rows 70 cm apart and 125,000 plants/ha, with 45 to 50 kg/ha of seed depending on the variety and its germination.",
+      "fertilizacion": "40-40-00 N-P-K: 87 kg of urea and 87 kg of triple superphosphate per hectare.",
+      "riego": "Rainfed.",
+      "plagas": [
+        "Whitefly",
+        "Grasshoppers",
+        "Leafhopper",
+        "Rootworm (Diabrotica)"
+      ],
+      "enfermedades": [
+        "Root rot (Fusarium sp., Rhizoctonia sp. and Pythium sp.)",
+        "Rust (Uromyces appendiculatus var. appendiculatus)",
+        "Anthracnose (Colletotrichum lindemuthianum)"
+      ],
+      "malezas": "Hand weeding in the rows at the same time as the two mechanical cultivation passes (at 25 days after sowing and 15 days later). If a post-emergence herbicide is used, apply it with weeds at 2 to 4 true leaves.",
+      "cosecha": "Between 95 and 115 days after sowing. Pull the plants when 60 % of the leaves are yellow and starting to fall; form tight piles or \"piñas\" to protect the pods from rain and keep the grain from staining. Thresh a week later, with the beans dry, avoiding hard surfaces. Expected yield of 1.8 t/ha.",
+      "cuidados": [
+        "Sow from May 25 to late June to avoid early frosts; Flor de Junio and Flor de Mayo first, Pinto last.",
+        "Plow after the previous harvest to conserve winter rain moisture; give one harrow pass after plowing and another before sowing.",
+        "Against grasshoppers, control them in the grasses before they enter the crop; against whitefly, leafhopper and rootworm, Beauveria bassiana can be used.",
+        "For root rot, rotate crops, plant on well-drained land and treat the seed (in agroecological production, with Trichoderma spp.).",
+        "Against anthracnose, use healthy seed and rotate with grasses; watch for rust from the first symptoms.",
+        "Pull when 60 % of the leaves turn yellow and protect the plants in \"piñas\" until threshing when dry."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 28232,
+          "rendimiento": 1800,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 27,
+          "ingreso_neto": 20368,
+          "relacion_bc": 1.72
+        }
+      ],
+      "nota": "The region section gives an expected yield of 1.2 t/ha (up to 2.0 t/ha in the Cholula DDR), while the harvest section and the cost table use 1.8 t/ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Sweet corn (fresh ears)",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        27,
+        35
+      ],
+      "cultivo_ids": [
+        "elote"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "From 2,200 to 3,000 m a.s.l. in Atlixco, Tecamachalco, Valle de Puebla, Valle de Tehuacán, Ciudad Serdán, Cholula, Libres, Huixcolotla and other zones; 18 to 24 °C and 700 to 1,300 mm of rainfall. Soils with organic matter, loam to clay loam, with good drainage and pH of 5.5 to 7.0.",
+      "siembra": {
+        "texto": "Valle de Puebla: from the first week of March to the first week of July. Valle de Tehuacán: from the first week of March to the last week of June. In Atlixco two cycles can be achieved with intensive management. In general it is sown in March and April (cycle of about 90 days); later there is a risk of the first frosts in October.",
+        "meses": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "H-70",
+        "H-50",
+        "Huaco Amarillo"
+      ],
+      "hibridos_comerciales": [
+        "AS-722",
+        "SBA470",
+        "Albatros",
+        "Antilope",
+        "Faisan",
+        "Comanche",
+        "Cherokee"
+      ],
+      "densidad": "60,000 to 75,000 plants/ha depending on the seed (60,000 to 65,000 are indicated as recommended), with rows 80 cm apart and a precision planter calibrated to one seed every 30 cm.",
+      "fertilizacion": "150-60-60 N-P-K per hectare (11 bags): 125 kg of DAP 18-46-00, 250 kg of urea and 125 kg of potassium chloride. At sowing, all the DAP, all the potassium chloride and one bag of urea, without burning the seedling; one month later, the rest of the nitrogen. Each hybrid may have its own package.",
+      "riego": "Five irrigations during the cycle: the first after sowing and then every 20 days, giving priority to silking and ear filling.",
+      "plagas": [
+        "White grub (Phyllophaga spp.)",
+        "Fall armyworm",
+        "Wireworm (Melanotus and Agriotes spp.)",
+        "Rootworm larvae (Diabrotica spp.)",
+        "Thrips (Frankliniella occidentalis)",
+        "Spider mite (Oligonychus mexicanus and Tetranychus spp.)",
+        "Corn leafhopper",
+        "Leaf weevil",
+        "Aphids (Rhopalosiphum maidis and Schizaphis graminum)"
+      ],
+      "enfermedades": [
+        "Damping off (Pythium spp.)",
+        "Leaf blight (Helminthosporium spp.)",
+        "Seedling rot (Fusarium oxysporum)",
+        "Tassel smut (Sphacelotheca reiliana)",
+        "Ergot or false huitlacoche (Claviceps spp.)",
+        "Stalk and root rot"
+      ],
+      "malezas": "Keep the crop clean for the first 40 days after sowing. Two cultivation passes: at 30 days (plants 30 to 40 cm tall) and between 45 and 55 days (60 to 70 cm), which also support the plant. Weeds cited: bitter weed (hierba amargosa), quelite and Johnson, chaparro and pinto grasses.",
+      "cosecha": "The silks turn from yellow to brown and feel dry, the husks remain green and the ear is filled to the tip. If the kernel looks translucent, it is not ready yet; if it releases a milky liquid when pressed, it is at the right stage (sazón). Almost all hybrids are ready at around 90 days. Expected yield of 9 to 10 t/ha under irrigation.",
+      "cuidados": [
+        "Use early-cycle sweet corn seed and, preferably, with a high rate of double-ear plants (cuateo).",
+        "Leave the plowed land exposed to the sun for about 3 days to reduce soil pest larvae.",
+        "Give five irrigations, every 20 days, without water shortage at silking and ear filling.",
+        "Hill up when adventitious roots appear so the wind does not knock the plants down.",
+        "Monitor the crop constantly, especially with high humidity and temperature, which favor diseases.",
+        "Harvest at the sazón stage, when the kernel releases a milky liquid when pressed."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 44880,
+          "rendimiento": 60000,
+          "unidad_rendimiento": "pieces/ha",
+          "precio": 2,
+          "ingreso_neto": 75120,
+          "relacion_bc": 2.67
+        }
+      ],
+      "nota": "The cost table expresses yield in ears per hectare (60,000) and the price per ear ($2), not in kg. The agenda gives two different seed amounts for the precision planter (30 to 40 kg/ha and 12 to 15 kg/ha); they are not included in densidad. The planting months cover the windows of the Valle de Puebla and Tehuacán (March to July), although March and April are the most common. Commercial materials are listed without a company because the text does not give one.",
+      "revisado": false
+    },
+    {
+      "ficha": "Orange",
+      "cientifico": "Citrus sinensis (L.) Osbeck",
+      "paginas": [
+        36,
+        46
+      ],
+      "cultivo_ids": [
+        "naranja"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "rainfed",
+      "ciclo": "PER",
+      "region": "Sierra Norte and Sierra Nororiental, from 150 to 900 m a.s.l. (Francisco Z. Mena, San José Acateno, Venustiano Carranza, Pantepec, Hueytamalco), warm or semiwarm humid climate, 20 to 26 °C and 1,200 to 2,500 mm of rainfall. Deep, well-drained soils, loam, clay loam or sandy loam, pH of 5.5 to 7.0.",
+      "siembra": {
+        "texto": "Plant preferably between July and August, with moderate rains; avoid saturated soils or heavy rains.",
+        "meses": [
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Late Valencia",
+        "Marrs",
+        "Hamlin",
+        "Washington Navel",
+        "Pineapple"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Spacing of 7 x 7 m (204 trees/ha) or 7 x 6 m (238 trees/ha).",
+      "fertilizacion": "Establishment: DAP 18-46-00, 0.165 kg per tree (33.66 kg/ha) in July-August. In production, three soil applications: January, 15.5-00-00 + 19 Ca + 0.3 B, 0.714 kg per tree (145.66 kg/ha); March, 12-11-18 + 2.7 MgO + 8 S + micronutrients, 0.714 kg per tree (145.66 kg/ha); June-July, 19-04-19 + 3 MgO + 2 S + 0.12 B + 0.10 Zn, 0.857 kg per tree (174.83 kg/ha). Foliar: boron at flowering (February-March, 1 L/ha of 65 g/L N + 150 g/L B); N-Mg-Mn-Zn in March-April (2 L/ha) and N-Mg in June-July (3 L/ha).",
+      "riego": "Depends on rainfall, which usually covers what the crop needs; supplemental irrigations when necessary.",
+      "plagas": [
+        "Asian citrus psyllid (Diaphorina citri)",
+        "Leafminer (Phyllocnistis citrella)",
+        "Phytophagous mites (Brevipalpus spp., Phyllocoptruta oleivora and Panonychus citri)",
+        "Aphids (Aphis citricidus and Aphis spiraecola)"
+      ],
+      "enfermedades": [
+        "Huanglongbing (HLB)",
+        "Citrus leprosis",
+        "Citrus tristeza virus",
+        "Gummosis (Phytophthora spp.)",
+        "Anthracnose (Colletotrichum spp.)",
+        "Greasy spot (Zasmidium citri-griseum)"
+      ],
+      "malezas": "Maintain a managed ground cover between rows, especially on slopes, to reduce erosion and conserve moisture. Weed control is directed only at the planting line, in January, April and June, without touching foliage, shoots or trunk.",
+      "cosecha": "By hand, without damaging the fruit or the tree, when the fruit has adequate development, color and juice. Seasonal fruit is harvested mainly between January and March. Yield of 7 t/ha with conventional management and up to 15 t/ha with the INIFAP technology package.",
+      "cuidados": [
+        "Use only certified plants from nurseries authorized by SENASICA; do not use sour orange as rootstock in new orchards because of its susceptibility to tristeza (Volkamer lemon, Swingle citrumelo, Carrizo, Troyer and C-35 citranges and Cleopatra mandarin are recommended).",
+        "On slopes, plant on contour lines and keep ground cover between rows; on poorly drained soils, build surface drainage before planting.",
+        "Intensify monitoring of the psyllid in the February-March and October flushes, and of the leafminer in February-March and June-July.",
+        "Use biological control: Tamarixia radiata against the psyllid and Chrysoperla carnea against aphids; conserve the natural enemies of mites.",
+        "Remove suckers (water sprouts) in December to eliminate vigorous shoots from the trunk and main branches.",
+        "Fertilize three times a year (January, March and June-July) following flushing, flowering and fruit filling."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 47188.53,
+          "rendimiento": 15000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 21311.82,
+          "relacion_bc": 1.45
+        }
+      ],
+      "nota": "The cost table is for maintenance of orchards in production with the technology package (15 t/ha); it does not include the establishment costs of years 1 to 3 (land preparation and planting appear in the table but are not added up). The table does not give the sale price, so it is null; the gross income is $68,500.35/ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Coffee",
+      "cientifico": "Coffea arabica L.",
+      "paginas": [
+        47,
+        59
+      ],
+      "cultivo_ids": [
+        "cafe-cereza"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "rainfed",
+      "ciclo": "PER",
+      "region": "Mountains from 800 to 1,400 m a.s.l. in the Sierra Norte, Sierra Nororiental and Sierra Negra (Xicotepec, Huauchinango, Zihuateutla, Ajalpan, Cuetzalan, Tlatlauquitepec, Teziutlán, Coyomeapan), 18 to 24 °C and 1,500 to 2,500 mm of rainfall, in shaded agroforestry systems. Deep Andosols, Luvisols and Cambisols, pH of 5.5 to 6.5.",
+      "siembra": {
+        "texto": "Plant when the rains are already established, from May 15 to June 15; the optimum moisture and temperature period for planting ends around October 15.",
+        "meses": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      "variedades": [
+        "Oro Azteca",
+        "Costa Rica 95",
+        "Sarchimor T-5296",
+        "Marsellesa",
+        "IAPAR-59",
+        "Colombia",
+        "Typica",
+        "Borbón",
+        "Mundo Novo",
+        "Geisha",
+        "Pacamara",
+        "Catuaí",
+        "Garnica",
+        "Caturra"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Tall growth habit: 2,000 to 2,500 coffee plants/ha (2.5 x 2.0 m or 2.0 x 2.0 m). Short growth habit: more than 3,000 coffee plants/ha (2.5 x 1.25 m, 2.0 x 1.5 m or 1.75 x 1.75 m). Double planting can be used. Nursery plants of 8 to 10 months, 25 to 30 cm tall.",
+      "fertilizacion": "Mix of 100 kg of urea, 50 kg of DAP and 75 kg of KCl: year 1, 50 g per plant every three months; year 2, three applications of 100 g per plant; year 3, three applications of 150 g per plant of the mix with 100 kg of KCl. In production (35 to 55 % shade): March-April, 100 g per plant of 100 kg of urea + 55 kg of DAP + 80 kg of KCl + 66 kg of K-Mag; June-July, 80 g of 100 kg of urea + 55 kg of DAP + 76 kg of KCl + 66 kg of K-Mag; August-September, 60 g of urea per plant. Cover the fertilizer in the tree basin or the drip area, considering rains within the next two or three days.",
+      "riego": null,
+      "plagas": [
+        "Coffee berry borer (Hypothenemus hampei)",
+        "Stem and branch borers (Plagiohammus maculosus, P. mexicanus and P. spinipennis)"
+      ],
+      "enfermedades": [
+        "Coffee leaf rust (Hemileia vastatrix)",
+        "Nematodes (Meloidogyne paranaensis, corky root; Meloidogyne incognita)"
+      ],
+      "malezas": "Young coffee plantations: six to eight weedings per year. In production: two to three brush clearings (slashings) per year at about 10 cm above the ground, in March, June-July and October-November, without leaving the soil bare, especially on slopes.",
+      "cosecha": "Selective picking of ripe fruit only, deep red (and some overripe purple ones); green or turning fruit lowers cup quality and dry fruit is processed separately. Flotation test before pulping, clean and calibrated pulpers, grain at no more than 45 °C when drying and dried to 10–12 % moisture; store in sacks with an airtight liner in a clean, dry and ventilated place. Puebla averages about 12.5 quintals/ha; with the technology package, close to 10 t/ha of cherry coffee (more than 30 quintals of dry parchment).",
+      "cuidados": [
+        "Prefer rust-resistant or tolerant varieties (Oro Azteca, Costa Rica 95, Sarchimor T-5296, Marsellesa, IAPAR-59).",
+        "Maintain 40 to 60 % shade with about 133 trees/ha and regulate it between March and May; in the first two years use temporary shade (banana, pigeon pea, sunn hemp and others).",
+        "Against the berry borer: collect the fruit left on the plant and the ground after harvest, set 16 traps/ha with an ethanol and methanol attractant replaced every 15 days and apply Beauveria bassiana in the afternoon or on cloudy days when the fruit is 90 to 120 days old. Chemical control of the berry borer is not recommended.",
+        "Do rejuvenation pruning in strips, between March and May, so as not to interrupt production.",
+        "Against nematodes, graft onto resistant Coffea canephora rootstocks (\"Reyna\" graft) and add organic fertilizers.",
+        "Prepare the land between February and May with selective clearing, without burning, and plant on contour lines on slopes above 15 %."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 64523,
+          "rendimiento": 8000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 18.5,
+          "ingreso_neto": 83477,
+          "relacion_bc": 2.3
+        }
+      ],
+      "nota": "The cost table is for one annual cycle of a coffee plantation in production; it does not add up land preparation or establishment. The price ($18.5/kg) is the average of the 2024/2025 harvest; the table does not say whether the yield of 8,000 kg/ha is cherry coffee. The ficha has no irrigation section (the crop is rainfed). Coffea arabica had no author in the extracted text; it was completed with \"L.\" according to the text of the region section.",
+      "revisado": false
+    },
+    {
+      "ficha": "Sugarcane",
+      "cientifico": "Saccharum officinarum L.",
+      "paginas": [
+        60,
+        76
+      ],
+      "cultivo_ids": [
+        "cana-de-azucar"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": null,
+      "ciclo": "PER",
+      "region": "Supply zones of the Atencingo (Chietla) and Calípam (Coxcatlán) sugar mills, warm subhumid, with 800 to 1,000 mm of rainfall in Atencingo and 450 to 600 mm in Calípam, so they depend on irrigation. Optimum of 26 to 30 °C. Well-drained land, preferably loam and with more than 2 % organic matter.",
+      "siembra": {
+        "texto": "The best time in the Central region of Puebla is from July to September.",
+        "meses": [
+          7,
+          8,
+          9
+        ]
+      },
+      "variedades": [
+        "CP 72-2086",
+        "Mex 69-290",
+        "Mex 79-431",
+        "ITV 92-1424",
+        "MEX 94-8"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Single row: cuttings of 50 to 60 cm with 4 to 5 buds, 8 to 10 t of seed cane/ha. Double row: 12 to 14 t/ha. Clump planting: 12 buds per meter (at 15 cm) in rows 1.2 to 1.4 m apart, 4 to 6 t/ha. Tissue-culture plantlets: 1.4 x 0.70 m, 10,000 to 12,000 plantlets/ha. Rows 1.20 to 1.30 m apart with hand harvest and more than 1.40 m with mechanical harvest (1.4 to 1.5 m rainfed).",
+      "fertilizacion": "Defined by the technical committees of each sugar mill. Atencingo: 500 kg/ha of 16-16-16 plus 500 kg/ha of ammonium sulfate. Calípam: poultry manure or cattle manure with 20-10-20 and urea. Apply all the phosphorus, potassium and correctives (ferrous sulfate, 25 kg/ha, against iron chlorosis) at planting or at stubble shaving, and the rest of the nitrogen at 60 or 90 days. 75 % chemical fertilization and 25 % biofertilizers (mycorrhizae and rhizobacteria) is suggested.",
+      "riego": "Atencingo: up to 12 irrigations in plant cane and 8 in ratoon and second ratoon. Calípam: 8 to 10 gravity irrigations per year on terraces. Stop all irrigation 60 days before harvest to concentrate the sucrose.",
+      "plagas": [
+        "Stalk borer (Diatraea spp. and Eoreuma loftini)",
+        "Sugarcane weevil (stool weevil)",
+        "Nematodes (Meloidogyne javanica and Pratylenchus zeae)",
+        "Spittlebug (Aeneolamia postica)",
+        "Cane looper"
+      ],
+      "enfermedades": [
+        "Vascular wilt or dieback (Fusarium sacchari, Fusarium verticillioides)",
+        "Smut (Ustilago scitaminea)",
+        "Rusts (Puccinia spp.)",
+        "Mosaic",
+        "Yellow leaf"
+      ],
+      "malezas": "Combine hand weeding (machete or hoe), mechanical cultivation and pre- or post-emergence chemical control according to the crop stage and the type of weed (broadleaf, narrow-leaf, grasses and sedges).",
+      "cosecha": "Mostly by hand with mechanical loading; burning before cutting is still common because 85 % of the area does not allow mechanized harvest, and green-cane harvest is limited to the 15 % that is flat and mechanized. After cutting: loading, hauling and freight to the mill. Expected yield of 110 t/ha.",
+      "cuidados": [
+        "Plant from July to September with disinfected seed cane from 8- to 10-month-old nurseries.",
+        "Replant when germination gaps reach about 10 %, and give one or two cultivation passes at 50–60 and 90 days.",
+        "In ratoons, gather the cane trash (tlazole) without burning it and shave the stubble level with the ground so that shoots come out vigorous.",
+        "Stop irrigation 60 days before harvest.",
+        "Against the borer, use pheromone traps and release Trichogramma pretiosum; against the stool weevil, traps made of cane pieces with molasses.",
+        "Prevent diseases with resistant varieties (such as CP 72-2086), well-draining land and a weed-free crop; against dieback, apply Trichoderma 25 days after planting or stubble shaving."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 85810,
+          "rendimiento": 110,
+          "unidad_rendimiento": "t/ha",
+          "precio": 800,
+          "ingreso_neto": 2190,
+          "relacion_bc": 1.03
+        }
+      ],
+      "nota": "The cost table is for plant cane and includes $4,000 of irrigation labor; according to the agenda, for strictly rainfed production that item must be subtracted. The price is $800 per ton. The ficha covers irrigated and rainfed, which is why the modalidad is null.",
+      "revisado": false
+    }
+  ]
+}

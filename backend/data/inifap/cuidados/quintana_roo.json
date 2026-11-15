@@ -1,0 +1,639 @@
+{
+  "_nota": "Summary of the INIFAP Agricultural Technical Agenda 2026, made from the text in data/inifap/extraido/quintana_roo.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
+  "cve_ent": "23",
+  "estado": "Quintana Roo",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Quintana Roo [Agricultural Technical Agenda of Quintana Roo]. INIFAP, Mexico City, 2026.",
+  "fichas": [
+    {
+      "ficha": "Sugarcane",
+      "cientifico": "Saccharum officinarum",
+      "paginas": [
+        11,
+        21
+      ],
+      "cultivo_ids": [
+        "cana-de-azucar"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "rainfed",
+      "ciclo": "PER",
+      "region": "Humid to subhumid tropical or subtropical climate; in dry areas it needs supplemental irrigation. Grows best between 21 and 38 °C; ripening is favored by hot days and cool nights in the 4 or 5 weeks before the harvest season (zafra). Vertisol, Luvisol and Leptosol soils of the Ingenio San Rafael de Pucté area.",
+      "siembra": {
+        "texto": "Under rainfed conditions, from May to mid-November, depending on soil type, variety and harvest scheduling.",
+        "meses": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      },
+      "variedades": [
+        "MEX 69-290 (medium maturity, Vertisols)",
+        "CP 72-2086 (early, Luvisols and Leptosols)",
+        "RD 75-11 (medium-late, Luvisols and Leptosols)",
+        "ITV 92-1424 (early, Luvisols and Leptosols)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Rows of 1.40 to 1.60 m (or the width of the harvester wheel track if cutting is mechanical). Seed cane in double stalk or line, cut into 60 cm pieces: 10 to 12 t/ha of seed cane 6 to 9 months old, from a verified field. Depth of 20 to 25 cm, covered with 5 cm of soil.",
+      "fertilizacion": "144-144-144 in two applications: 425 kg/ha of triple 17 banded at the bottom of the furrow before planting (or at trimming in ratoons and second ratoons) and another 425 kg/ha at the first hilling. Adjust with soil analysis. In ratoons, apply 50 % of the formula after cutting and incorporate it with a cultivator.",
+      "riego": null,
+      "plagas": [
+        "Stalk borer (Diatraea spp.)",
+        "Spittlebug (Aeneolamia postica)",
+        "Field rat (Sigmodon hispidus)",
+        "White grub (Phyllophaga spp.)",
+        "Mealybug (species not identified)"
+      ],
+      "enfermedades": [
+        "Sugarcane wilt (Fusarium sacchari)",
+        "Rusts (Puccinia melanocephala and Puccinia kuehnii)",
+        "Smut (Sporisorium scitamineum)",
+        "Sugarcane mosaic (SCMV)",
+        "Pokkah boeng"
+      ],
+      "malezas": "They compete for water, light and nutrients and reduce tillering and the life of the cane field. Manual control with hoe or machete and cultivations with animal or mechanical traction in the first two to three months after planting or stubble shaving, until the crop closes. Keep field borders, lanes and ditches clean: grasses host the spittlebug and the false looper. Aggressive weeds: Johnson grass, Guinea grass and Bermuda grass.",
+      "cosecha": "Harvest season (zafra) from November to May (or until the start of the rains), authorized by the mill according to the maturity index. Manual cutting with prior burning (take the cane to the mill yard within 24 hours at most) or mechanical green cutting, without burning. Expected yield: up to 80 t/ha rainfed. With good management the cane field lasts 8 to 10 years.",
+      "cuidados": [
+        "Subsoil (except in Leptosols), plow and harrow; in Leptosols use only a semi-heavy harrow to conserve the soil.",
+        "Level the small depressions in the land to avoid stool failures from waterlogging in the rains.",
+        "Use healthy seed cane 6 to 9 months old, from a verified field, and check the mechanical covering to cover by hand the stretches left uncovered.",
+        "Against the borer: pest-free seed cane, monthly releases of Trichogramma, biweekly sampling and stubble shaving flush to the ground after cutting.",
+        "Against the spittlebug: remove grasses inside and outside the crop, avoid waterlogging and monitor with yellow traps every eight days.",
+        "In case of Fusarium wilt, incorporate composts, manures or dung and apply Trichoderma or Bacillus subtilis at the base of the plants."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 62500,
+          "rendimiento": 80,
+          "unidad_rendimiento": "t/ha",
+          "precio": 900,
+          "ingreso_neto": 9500,
+          "relacion_bc": 1.15
+        }
+      ],
+      "nota": "Costs from Table 2 for ratoon cane (maintenance), which does not include land preparation or establishment; the items add up. Plant cane (establishment) costs 84,460 $/ha and, with 80 t/ha at 900 $/t (gross income 72,000), gives a net income of -12,460 and B/C 0.85. The weed text came out inside the diseases section. The varieties are not from private companies according to the text; MEX 69-290 and CP 72-2086 occupy more than 90 % of the mill area.",
+      "revisado": false
+    },
+    {
+      "ficha": "Black bean",
+      "cientifico": "Phaseolus vulgaris",
+      "paginas": [
+        22,
+        28
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "OI",
+      "region": "Warm subhumid climate. Planted taking advantage of the moisture left at the end of the heavy rainy season, without irrigation. Ya'ax-hom or k'ankab soils.",
+      "siembra": {
+        "texto": "October 15 to November 15. Earlier there are more diseases; later, risk of pests or lack of rain.",
+        "meses": [
+          10,
+          11
+        ]
+      },
+      "variedades": [
+        "Jamapa",
+        "Negro INIFAP",
+        "Negro Veracruz"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "185 thousand plants/ha with 35 kg/ha of seed and a planter. With a planting stick (espeque): 40 cm between plants and 80 cm between rows, at 5 cm depth, with 20 to 25 kg/ha of seed.",
+      "fertilizacion": "30-40-00: 65 kg/ha of urea plus 87 kg/ha of triple calcium superphosphate, or 87 kg/ha of 18-46-00 with 32 kg/ha of urea.",
+      "riego": null,
+      "plagas": [
+        "Rootworms (Diabrotica balteata)",
+        "Leafhoppers (Cicadellidae)",
+        "Whitefly (Bemisia tabaci)",
+        "Fall armyworm",
+        "Weevils and moths of stored beans"
+      ],
+      "enfermedades": [
+        "Cottony blight (Pythium spp. or Sclerotinia sclerotiorum)",
+        "Rhizoctonia solani",
+        "Rust",
+        "Bean common mosaic (BCMV) and bean yellow mosaic (BYMV)"
+      ],
+      "malezas": "Keep the crop free of weeds for the first 40 days. Main weeds: Amaranthus, purslane, pigweed, Johnson grass, honey grass and foxtail. Cultural control with crop rotation and mulching with stubble or straw; mechanical control with hand weeding or with tools.",
+      "cosecha": "When the pods ripen, 80 or 90 days after sowing. Harvest in the morning, with moist pods, to avoid shattering losses. Expected yield: 1.5 to 2.0 t/ha.",
+      "cuidados": [
+        "If the field comes from maize, remove the stalks early and give two cross passes of the harrow; if it was idle, plow at 25-30 cm, preferably in the August midsummer drought (canícula).",
+        "Plant from October 15 to November 15 with black-grain varieties (Jamapa, Negro INIFAP, Negro Veracruz).",
+        "Place molasses and pineapple traps every 20 m at the edge of the plot against the fall armyworm.",
+        "Watch for leafhoppers (act at 3 or more per young plant or 5 or more per adult plant) and whitefly (more than 4 per plant).",
+        "Keep free of weeds for the first 40 days and use certified seed to prevent diseases and mosaics.",
+        "Harvest in the morning and protect stored grain from weevils and moths."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 11710,
+          "rendimiento": 1000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 27,
+          "ingreso_neto": 15290,
+          "relacion_bc": 2.31
+        }
+      ],
+      "nota": "Costs from Table 5: the items add up to 11,710 $/ha and gross income is 1,000 kg × 27 $/kg (guaranteed price) = 27,000. The table uses 1,000 kg/ha, less than the 1.5 to 2.0 t/ha given by the harvest text. B/C ratio calculated (27,000 / 11,710); the table prints 2.3.",
+      "revisado": false
+    },
+    {
+      "ficha": "Persian lime",
+      "cientifico": "Citrus latifolia Tanaka",
+      "paginas": [
+        29,
+        38
+      ],
+      "cultivo_ids": [
+        "limon"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": null,
+      "ciclo": "PER",
+      "region": "Karstic plain from 0 to 100 m a.s.l., flat relief, with 23 to 30 °C, 1,200 to 1,500 mm of rain (May to October), relative humidity of 70 to 85 % and no frost. Well-drained limestone soils; the drought from November to April makes irrigation necessary.",
+      "siembra": {
+        "texto": "Rainfed, in the rainy season; with irrigation, at any time of the year.",
+        "meses": []
+      },
+      "variedades": [
+        "Sour orange rootstock (Citrus aurantium)",
+        "Macrophylla lemon rootstock (Citrus macrophylla)",
+        "Volkamer lemon rootstock (Citrus volkameriana)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "6 m between rows and 4 m between plants: 416 trees/ha.",
+      "fertilizacion": "According to soil analysis and age, in 4 applications per year (N-P2O5-K2O in g per tree): 0-2 years, 25-13-4; 3-4 years, 43-9-15; 5-6 years, 175-58-85; 7-8 years (full production), 312-105-156. At transplanting, at the bottom of the planting hole; afterwards, in the drip zone of the canopy.",
+      "riego": "Mandatory in the November to April drought. Micro-sprinklers are used: at least two irrigations per week of 3 to 5 hours each, depending on soil, density and tree size.",
+      "plagas": [
+        "Mites: red spider mite, flat red mite, white mite, bud mite and russet mite",
+        "Citrus leafminer (Phyllocnistis citrella)",
+        "Asian citrus psyllid (Diaphorina citri)",
+        "Aphids (Aphididae)"
+      ],
+      "enfermedades": [
+        "Huanglongbing (HLB)",
+        "Gummosis (Phytophthora spp.)",
+        "Dieback (Lasiodiplodia spp.)",
+        "Greasy spot (Mycosphaerella citri)",
+        "Viroids: exocortis and cachexia"
+      ],
+      "malezas": "Manual or brush-cutter slashing in the rows and tractor brush clearing in the alleys; keep beneficial ground covers that hold back problem weeds.",
+      "cosecha": "Manual, when the fruit has 42 % juice or 50 to 63 mm in diameter, 110 to 120 days after flowering (it can start at 85). Potential yield of 25 to 50 t/ha depending on density; maximum production arrives at 5 or 6 years.",
+      "cuidados": [
+        "Plant certified HLB-free trees from authorized propagation units.",
+        "Graft at 25-30 cm from the ground, avoid wounds on the trunk and drain waterlogged spots to prevent gummosis.",
+        "Monitor the Asian citrus psyllid at every flush and remove trees with HLB symptoms.",
+        "Do formation pruning, remove suckers and do sanitary pruning; disinfect cutting tools with hypochlorite.",
+        "Irrigate with micro-sprinklers twice a week from November to April.",
+        "Conserve natural enemies by avoiding unnecessary applications of broad-spectrum insecticides."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 90779,
+          "rendimiento": 20000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8.5,
+          "ingreso_neto": 79221,
+          "relacion_bc": 1.87
+        }
+      ],
+      "nota": "The sheet covers irrigated and rainfed (modalidad null); Table 7 is for irrigation. The production cost of year 7 is used (90,779 $/ha, its items add up) with its yield (20,000 kg) and price (8.5 $/kg; gross income 170,000); net income and B/C of year 7 were calculated because the table only prints them cumulatively. Cumulative years 1 to 7: cost 209,119, gross income 425,000, net 215,881 and B/C 2. Establishment (year 1) costs 81,140 $/ha and maintenance of years 2 to 6 is given as 37,200 $. The agenda does not name lime varieties, only rootstocks. It gives no planting months, only 'rainy season'.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maize",
+      "cientifico": "Zea mays",
+      "paginas": [
+        39,
+        44
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Milpa system (slash-and-burn) in very stony soils that cannot be mechanized, chac-lu'um with patches of k'ankab. INIFAP proposes leaving the stubble as a cover to plant the same plot several years in a row after the first year with burning.",
+      "siembra": {
+        "texto": "From the onset of rains in May until July 31.",
+        "meses": [
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "V-539",
+        "Sac-Beh (white grain)",
+        "Chichén-Itzá (yellow grain)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "One meter between rows and between hills, with 4 to 5 seeds per hill at 5-7 cm depth: minimum 40 thousand plants/ha. 10 to 12 kg of seed with at least 80 % germination are needed.",
+      "fertilizacion": "30-80-00 (potassium is not needed) at 15 or 20 days after emergence, with good moisture: 65 kg of urea and 174 kg of triple superphosphate, 6 g of the mix per hill. In addition, three foliar applications of biofertilizer every 15 days starting 30 days after sowing (3 L per 20 L backpack sprayer).",
+      "riego": null,
+      "plagas": [
+        "Rootworm (Diabrotica spp.)",
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Stalk borers"
+      ],
+      "enfermedades": [
+        "Corn stunt, transmitted by the leafhopper (Dalbulus maidis)"
+      ],
+      "malezas": "Manual control when weeds are 20 to 30 cm tall.",
+      "cosecha": "At maturity, between 150 and 160 days after sowing. Expected yield: 2,000 kg/ha.",
+      "cuidados": [
+        "Plant in rows with a string or raffia marked at one meter, to ease weeding and the selection of plants and ears for seed.",
+        "Plant within the optimum period (May to July 31) to avoid corn stunt.",
+        "Inoculate the seed with biofertilizer one day before planting (20 mL of inoculant and 50 mL of adhesive per kg).",
+        "Fertilize with 30-80-00 at 15-20 days after emergence, 6 g of mix per hill, with moist soil.",
+        "Monitor the leafhopper every week and watch for fall armyworm and stalk borers.",
+        "Hand-weed when weeds reach 20 to 30 cm."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 13850,
+          "rendimiento": 2000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7.2,
+          "ingreso_neto": 550,
+          "relacion_bc": 1.04
+        }
+      ],
+      "nota": "Costs from Table 8: the items add up to 13,850 $/ha; gross income 2,000 kg × 7.2 $/kg (guaranteed price) = 14,400. B/C ratio calculated (14,400 / 13,850); the table prints 1. The introduction says '1.5 to 2.0 Kg ha-1' with the technology, apparently meaning t/ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Coconut palm",
+      "cientifico": "Cocos nucifera L.",
+      "paginas": [
+        45,
+        52
+      ],
+      "cultivo_ids": [
+        "coco-fruta",
+        "copra"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "rainfed",
+      "ciclo": "PER",
+      "region": "Warm subhumid climate, 1,300 mm of rain (May to October), drought from November to April, 26 °C average and 85 % relative humidity; hurricane risk in August and September. Suitable soils: arenosols, fluvisols, regosols, luvisols, nitisols, phaeozems and cambisols; avoid gleysols, vertisols, leptosols and calcisols. It is grown mainly in Othón P. Blanco and Bacalar.",
+      "siembra": {
+        "texto": "Transplanting at the start of the rains, with bagged seedlings six months old (first leaf already split) or bare-root seedlings three to five months old; never plants more than one year old.",
+        "meses": []
+      },
+      "variedades": [
+        "Acapulco Dwarf",
+        "Pacific Tall landraces: Capi, Costa Chica, Gigante and Felícitos",
+        "Hybrids Chactemal, Donají, Ordaz, Cancún and Xcaret",
+        "Green Dwarf"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Square or triangular (staggered) layout. Dwarf at 7 or 9 m (196 or 121 plants/ha in square; 235 or 143 in triangular); hybrids at 8.5 or 9 m (144 or 121; 160 or 143); Pacific Tall landrace at 9 or 10 m (121 or 100; 143 or 115). Planting holes of 50 to 70 cm per side in sandy soil (filled with sand and sargassum) and 40 to 50 cm in transition soil (coconut husk and soil or dry manure).",
+      "fertilizacion": "According to soil and foliar analysis. Reference per plant per year (urea, triple superphosphate and potassium chloride, in g): year 1, 150-200-250 in three holes at 25 cm from the stem; year 2, 300-300-500 at 40 cm; year 3, 450-400-750 in a circular trench at 1.5 m; year 4 onward, 600-400-1,000 in a trench at 2 m. Divide the dose into at least two applications (up to 12, one per month). Alternatives: biofertilizers, decomposed manure, vermicompost, green manures and mulching with coconut residues.",
+      "riego": "Almost all is rainfed, but it is advisable to give supplemental irrigation at least from January to May, when production drops by about 50 % for lack of water.",
+      "plagas": [
+        "Palm weevil (Rhynchophorus palmarum)",
+        "Coconut mite or fruit scab (Aceria guerreronis)"
+      ],
+      "enfermedades": [
+        "Coconut lethal yellowing (LY)",
+        "Red ring (Bursaphelenchus cocophilus)",
+        "Gray leaf spot (Pestalotia palmarum)",
+        "Helminthosporium leaf spot (Helminthosporium incurvatum)"
+      ],
+      "malezas": "Avoid bare soil. If weeds grow too much, manual or mechanical control. Use mulch with plantation residues, cover crops in the alleys and intercrops between the palms.",
+      "cosecha": "Coconut fruit: harvest at 7-8 months (dwarf) or 8-9 months (tall and hybrids); yield per ha per year of 24,456 fruits (dwarf), 17,592 (tall landraces) and 25,596 (hybrids). Copra: harvest at 12 months, 2.6 to 3.1 t/ha (dwarf), 3.8 to 4.5 (tall) and 5.4 to 6.4 (hybrids). The first harvest comes between the third and fourth year; the cutting is done by the buyers.",
+      "cuidados": [
+        "Buy cultivars registered with SNICS, of an origin that guarantees genetic purity and resistance to lethal yellowing.",
+        "Transplant six-month-old seedlings at the start of the rains; do not use plants more than one year old.",
+        "Keep the palm well nourished from establishment and split the fertilization into at least two applications per year.",
+        "Place traps with attractant and pheromone at the edge of the plantation against the palm weevil, vector of red ring.",
+        "Fell and remove palms with red ring; do phytosanitary pruning, removal of dry fronds and whitewashing.",
+        "Give supplemental irrigation from January to May and do not leave the soil bare."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 35769.36,
+          "rendimiento": 25596,
+          "unidad_rendimiento": "fruits/ha",
+          "precio": 10,
+          "ingreso_neto": 220190.64,
+          "relacion_bc": 7.16
+        }
+      ],
+      "nota": "Costs from Table 15 for hybrid coconut (143 plants/ha) in production, from the 5th year onward: cost 35,769.36 $/ha, 25,596 fruits at 10 $ per fruit (gross income 255,960). The table does not break down the annual cost or include harvest, because the buyers do it. B/C ratio calculated (255,960 / 35,769.36); the table prints 7.15. The first four years cost 164,254.12 $/ha (their items add up). Coconut fruit and copra are assigned because the sheet gives yields for both. 'Green Dwarf' is the material that producers request; the agenda does not give its origin.",
+      "revisado": false
+    },
+    {
+      "ficha": "Pineapple",
+      "cientifico": "Ananas comosus var. comosus",
+      "paginas": [
+        53,
+        64
+      ],
+      "cultivo_ids": [
+        "pina"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "1,000 to 1,800 mm of well-distributed rain, 24 to 25 °C (not below 20 nor above 35 °C), up to 250 m a.s.l., slope under 6 % and winds under 50 km/h. Very well-drained soils, deeper than one meter, sandy or sandy loam, with pH of 4.5 to 5.5; with higher pH, Phytophthora rots increase.",
+      "siembra": {
+        "texto": "From the onset of rains in May until August 31.",
+        "meses": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Smooth Cayenne",
+        "Champaka"
+      ],
+      "hibridos_comerciales": [
+        "MD-2 or honey pineapple"
+      ],
+      "densidad": "35,000 to 40,000 plants/ha in double rows: 60 cm between rows, 90 cm alleys and 33 cm between plants. Preferably use large, vigorous 'slips' (clavos); they give fruit at 12 to 16 months.",
+      "fertilizacion": "350-150-350 over the whole cycle. 1st: 10 days after planting, 10 g per plant of 18-46-00. 2nd: three months later, 750 kg of ammonium sulfate and 300 kg of potassium chloride (26 g of mix per plant). 3rd: three months later, 300 kg of urea and 300 kg of potassium chloride (15 g per plant, in the axils of the basal leaves). Foliar mix of micronutrients, potassium and calcium at 4, 6 and 8 months (7 kg per application).",
+      "riego": "Rainfed crop; irrigation, plastic mulch and shade cloth reduce the effect of dry periods.",
+      "plagas": [
+        "Termite (Gnathamitermes tubidormans)",
+        "Fruit borer (Thecla basilides)",
+        "Bromeliad weevil (Metamasius callizona)",
+        "Elaphria nucicolora",
+        "Mealybugs (Dysmicoccus brevipes and D. neobrevipes)",
+        "Red mite (Dolichotetranychus floridanus)",
+        "White grub (Phyllophaga sp.)",
+        "Symphylans (Scutigerella sakimurai)",
+        "Ants (Solenopsis geminata and Pheidole megacephala)",
+        "Pineapple fruit white mite (Steneotarsonemus ananas)",
+        "Thrips (Thrips tabaci)",
+        "Field cricket (Acheta assimilis)",
+        "Rotten-fruit beetle (Carpophilus hemipterus)",
+        "Opossum, badger (coati) and wild birds"
+      ],
+      "enfermedades": [
+        "Nematodes (Pratylenchus, Meloidogyne and others)",
+        "Mealybug wilt of pineapple (viruses PMWaV-1, 2 and 3)",
+        "Heart and root rot (Phytophthora nicotianae var. parasitica, P. cinnamomi)",
+        "Bacterial heart and fruit rot (Erwinia chrysanthemi)",
+        "Root rot (Pythium arrhenomanes)",
+        "Black rot of stem and fruit (Thielaviopsis paradoxa)",
+        "Fruitlet core rot (Penicillium funiculosum)",
+        "Yeast fruit rot",
+        "Marbled fruit",
+        "Brown fruit spot (physiological disorder)"
+      ],
+      "malezas": "Main weeds: Chinese violet (Asystasia gangetica) and itchgrass (Rottboellia cochinchinensis). Black plastic mulch avoids herbicides. Without mulch, four hand weedings are done, every two months after the treatments.",
+      "cosecha": "Manual, with baskets of up to 20 fruits, without bumps or scrapes and taking care of food safety. Harvest ripe fruit, because once cut it no longer ripens. Yield: 40 to 50 t/ha.",
+      "cuidados": [
+        "Do the slashing and felling in December, remove stumps and roots and move residues to the edge so as not to give shelter to termites.",
+        "Lay out the rows from east to west; 150-gauge black plastic mulch conserves moisture, prevents weeds and lasts about two harvests.",
+        "Disinfect the planting material and use large, vigorous slips.",
+        "Do floral induction preferably around December-January; stop nitrogen one month before and give priority to potassium.",
+        "Protect the fruit from the sun in its last two months (50 % shade cloth or newspaper), since sunburn can damage up to 60 % of the fruit.",
+        "Monitor pests and diseases at least every two months by plots, checking root, stem, leaves and fruits, and prefer organic and biological products."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 242690,
+          "rendimiento": 45000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": null,
+          "relacion_bc": 1.11
+        }
+      ],
+      "nota": "Costs from Table 16: the items add up to 242,690 $/ha; gross income 45,000 kg × 6 $/kg = 270,000. The table prints a net income of 27,100, but 270,000 − 242,690 = 27,310, so it is left as null. B/C calculated (270,000 / 242,690); the table prints 1.1. In the table, planting material says 3,500 units at 3 $ = 105,000, which seems to be 35,000 units. The cost of the plastic mulch is not included. tipo_cultivo was left as 'annual' as in the extracted text, although the cycle to harvest is 12 to 16 months. MD-2 is placed under hybrids because the text calls it 'hybrid'; it does not give the company.",
+      "revisado": false
+    },
+    {
+      "ficha": "Dragon fruit (pitahaya)",
+      "cientifico": "Selenicereus undatus",
+      "paginas": [
+        65,
+        72
+      ],
+      "cultivo_ids": [
+        "pitahaya"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "rainfed",
+      "ciclo": "PER",
+      "region": "Adapts to very stony soils, like those of the north of the state; yields better in deep soils, with organic matter, moisture and good drainage, with pH of 6.0 to 7.0 (optimum 6.5). The main area is Los Chunes, in Felipe Carrillo Puerto.",
+      "siembra": {
+        "texto": "In the rainy season, from June to September, at 5-10 cm depth.",
+        "meses": [
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "variedades": [
+        "Regional landrace with red-purple skin and white pulp"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Traditional system with living stakes at 3.0 m between rows and 2.5 m between plants: about 1,250 stakes/ha and one cutting per stake (1,200 cuttings). Stakes of 8 to 10 cm in diameter and a maximum height of 1.5 m (jabín, chacá, dzidzilché). Other options: 3.0 × 2.0 m (1,666 plants/ha), palma de petate at 2.5 × 2.0 m (2,000) or stone wall (albarrada) at 4.0 × 1.0 m (2,500).",
+      "fertilizacion": "For 1,666 plants/ha: fall (harvest) 100-100-100; spring (flowering-production) 00-50-100; summer (production-harvest) 00-100-150. Organic manure (chicken, cattle or pig manure or henequen bagasse): maximum 5 kg per plant per year in three applications, with 1 kg per plant at transplanting.",
+      "riego": null,
+      "plagas": [
+        "Leaf-footed bug",
+        "Stem miner",
+        "Stem and fruit borer"
+      ],
+      "enfermedades": [
+        "Fisheye",
+        "Anthracnose",
+        "Bacterial diseases"
+      ],
+      "malezas": "Remove grasses and small legumes: two cleanings after planting the cuttings during establishment and three to four slashings per year during maintenance.",
+      "cosecha": "In the morning, with stainless steel scissors or knife, when the bracts turn pink and the peduncle becomes brittle; commercial maturity 34 days after bagging the fruit following sepal drop. Sort by maturity, size and shape and pack in 12 kg boxes. It is harvested in four cuttings from June to October; with the technology up to 8 t/ha are achieved (state average 3 t/ha).",
+      "cuidados": [
+        "Choose huamil or acahual land with five or more years of fallow, or land from the previous cycle's milpa, and keep trees as living stakes.",
+        "Tie the cutting to the stake with vine, henequen or raffia that decomposes and does not strangle the plant.",
+        "Give a light formation pruning 50 days after transplanting, leaving two apical shoots.",
+        "Do sanitary pruning of diseased parts and destroy the removed material; avoid agrochemicals as far as possible.",
+        "Fertilize according to the stage: 100-100-100 in fall, 00-50-100 in spring and 00-100-150 in summer.",
+        "Harvest in the morning and do not leave cut fruit exposed to the sun."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 70950,
+          "rendimiento": 4500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 30,
+          "ingreso_neto": 64050,
+          "relacion_bc": 1.9
+        }
+      ],
+      "nota": "The extracted text marked crop type as 'annual'; the text describes a perennial plantation with establishment and maintenance stages, annual slashings and ha in development and in production, so it was corrected to perennial. Costs from Table 20: the items add up to 70,950 $/ha and gross income is 4,500 kg × 30 $/kg = 135,000; net and B/C add up. Note: the table includes establishment items (clearing, stakes, cuttings) and does not separate maintenance. The pests came out inside the fertilization section (Table 18). The harvest text says '8 to 10 ha-1' without a unit; the 'up to eight tons per hectare' from the introduction was used.",
+      "revisado": false
+    },
+    {
+      "ficha": "Watermelon",
+      "cientifico": "Citrullus lanatus",
+      "paginas": [
+        73,
+        82
+      ],
+      "cultivo_ids": [
+        "sandia"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "José María Morelos, central-southern zone: warm subhumid climate with summer rains, 24 to 28 °C and 1,100 to 1,300 mm. Calcareous soils, shallow, stony and prone to degradation.",
+      "siembra": {
+        "texto": "December 1 to February 15 (highest yields). It can be moved up from November 1 for better prices, with more disease risk.",
+        "meses": [
+          12,
+          1,
+          2
+        ]
+      },
+      "variedades": [
+        "Royal Majestic",
+        "Jubilee",
+        "Allsweet"
+      ],
+      "hibridos_comerciales": [
+        "Sangría"
+      ],
+      "densidad": "Beds at 6 m with two rows and 1.5 to 2.0 m between plants; 3 to 4 seeds per spot at 2.5 cm, thinning to one plant at two true leaves. About 3,340 plants/ha with 1.0 kg/ha of seed. Tray seedlings can also be transplanted.",
+      "fertilizacion": "200-300-250 in red or brown soils and 150-300-250 in black soils, in three parts: at planting one third of the N and all the P and K; at the start of flowering another third of the N; at 45 days after emergence the last third. Sources: urea, triple superphosphate and potassium chloride, mixed in the loosened planting hole at 30 cm. It can be complemented with fertigation every other day.",
+      "riego": "Two pre-emergence irrigations: one heavy at planting (depth of 15 to 20 cm) and another five days later (10 cm). The third at 12-15 days after plant emergence and then one per week of 10 cm: 13 to 15 irrigations in the cycle.",
+      "plagas": [
+        "Cutworms (caterpillars, birds, crickets and ants)",
+        "Green aphid",
+        "Rootworms",
+        "Leafhoppers",
+        "Leafminer",
+        "Whitefly",
+        "Vine or fruit borer"
+      ],
+      "enfermedades": [
+        "Damping-off (fungal complex)",
+        "Gummy stem blight (Didymella bryoniae)",
+        "Leaf blight (Alternaria spp.)",
+        "Wilt (soil pathogen complex)",
+        "Watermelon viruses",
+        "Blossom-end rot (disorder from calcium deficiency and irregular irrigation)"
+      ],
+      "malezas": "Keep the crop clean the whole cycle, especially at the start: one hilling and three hand weedings. Arrange and orient the vines before each irrigation so the fruits do not touch the wet soil.",
+      "cosecha": "When the leaves and the tendril next to the fruit dry and the fruit sounds dry when patted; the first cutting is usually between 85 and 90 days after sowing. Yield: 30 to 50 t/ha.",
+      "cuidados": [
+        "Subsoil every three years, plow at 25-30 cm and level to avoid waterlogging that favors diseases.",
+        "Plant between December 1 and February 15 to dodge diseases and the start of the rains.",
+        "Split the nitrogen into three applications so as not to lose it through volatilization or leaching.",
+        "Irrigate every week with a depth of 10 cm after the two pre-emergence irrigations.",
+        "Control aphids, whitefly and host weeds to prevent viruses.",
+        "Do not plant in fields that flood and use disinfected seed against wilt."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 47524,
+          "rendimiento": 30000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4,
+          "ingreso_neto": 72476,
+          "relacion_bc": 2.53
+        }
+      ],
+      "nota": "Costs from Table 24: the items add up to 47,524 $/ha; gross income 30,000 kg × 4 $/kg = 120,000 and net 72,476. B/C calculated (120,000 / 47,524); the table prints 2.5. The text calls only Sangría 'hybrid'; it does not indicate the origin or company of Royal Majestic, Jubilee and Allsweet, which are left under varieties. The scientific name came as 'Citrullus lanatusa' in the extracted text. Part of Table 23 (blossom-end rot) came out inside the fertilization section and part of Table 22 (borer) inside the weeds section.",
+      "revisado": false
+    },
+    {
+      "ficha": "Soybean",
+      "cientifico": "Glycine max",
+      "paginas": [
+        83,
+        91
+      ],
+      "cultivo_ids": [
+        "soya"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Mechanizable soils with good surface and internal drainage, rhodic and chromic Luvisols (k'ankab and ya'ax-hom), with more than 500 thousand potential ha in the state.",
+      "siembra": {
+        "texto": "Rainfed Spring-Summer cycle: Huasteca 100 and Huasteca 300 from June 15 to July 15; Huasteca 200 and Huasteca 400 from July 15 to August 15.",
+        "meses": [
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Huasteca 100",
+        "Huasteca 200",
+        "Huasteca 300",
+        "Huasteca 400"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Rows at 80 cm with 23 to 25 seeds per meter: 300,000 plants/ha. Seed: 53 kg/ha (Huasteca 100), 55 (Huasteca 200), 69 (Huasteca 300) and 50 (Huasteca 400).",
+      "fertilizacion": "36-92-00 banded at planting, with 200 kg/ha of DAP (18-46-00). Do not overdo nitrogen: it gives very large plants with few pods or empty pods.",
+      "riego": null,
+      "plagas": [
+        "Velvetbean caterpillar (Anticarsia gemmatalis)",
+        "Soybean looper (Pseudoplusia includens)",
+        "Cabbage looper (Trichoplusia ni)",
+        "Green stink bug (Nezara viridula)",
+        "Striped blister beetle (Epicauta vittata)",
+        "Gray blister beetle (Epicauta fabricii)",
+        "Rootworm or banded cucumber beetle (Diabrotica balteata)",
+        "Whitefly (Bemisia tabaci)"
+      ],
+      "enfermedades": [
+        "Frogeye leaf spot (Cercospora sojina)",
+        "Anthracnose (Colletotrichum truncatum)",
+        "Damping-off (Pythium spp.)",
+        "Leaf blight or downy mildew (Peronospora manshurica)",
+        "Charcoal rot (Macrophomina phaseolina)",
+        "Leaf and stem spot (Alternaria spp.)",
+        "Asian soybean rust (Phakopsora pachyrhizi)",
+        "Shot hole"
+      ],
+      "malezas": "Critical period: the first 45 days after emergence. Grasses (Johnson grass, crabgrasses): first cultivation about 20 days after emergence and, if needed, another 8 to 10 days later. Before harvest, slashing or hand weeding if there are many weeds that hinder threshing. Broadleaf: quelites and purslane.",
+      "cosecha": "When the stems are dry and the leaves have fallen. For industry, thresh at 15 % moisture and never below 13 %, because shattering losses increase. Adjust the thresher and moderate the speed. Yield: up to 3.0 t/ha.",
+      "cuidados": [
+        "Plow in April at 30 cm and give two cross harrowings, the second after the first rains to eliminate the first flush of weeds.",
+        "Plant on the date for each Huasteca variety, with healthy seed, to prevent frogeye leaf spot.",
+        "Monitor from the start: act against defoliating larvae at 10 to 20 larvae longer than 1.5 cm and 15 to 30 % defoliation (from flowering to grain filling).",
+        "Watch for green stink bug at filling and maturity (threshold: two adults per meter) and whitefly (three adults per plant).",
+        "Favor biological control with Trichogramma and Chrysoperla carnea.",
+        "Thresh at 15 % moisture and not below 13 %."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 15400,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8,
+          "ingreso_neto": 4600,
+          "relacion_bc": 1.3
+        }
+      ],
+      "nota": "Costs from Table 29: the items add up to 15,400 $/ha; gross income 2,500 kg × 8 $/kg = 20,000; net and B/C add up. The variety table (Table 28) was split between the varieties and planting sections. The text does not say the origin of the Huasteca varieties.",
+      "revisado": false
+    }
+  ]
+}

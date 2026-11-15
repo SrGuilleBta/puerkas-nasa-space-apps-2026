@@ -1,0 +1,427 @@
+{
+  "_nota": "Summary of the INIFAP Agricultural Technical Agenda 2026, made from the text in data/inifap/extraido/baja_california.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
+  "cve_ent": "02",
+  "estado": "Baja California",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Baja California [Agricultural Technical Agenda of Baja California]. INIFAP, Mexico City, 2026.",
+  "fichas": [
+    {
+      "ficha": "Alfalfa",
+      "cientifico": "Medicago sativa",
+      "paginas": [
+        11,
+        18
+      ],
+      "cultivo_ids": [
+        "alfalfa-verde",
+        "alfalfa-achicalada"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "irrigated",
+      "ciclo": "PER",
+      "region": "Mexicali Valley: very dry climate, mean temperature of 22.3 °C (from below 0 °C up to 50 °C) and about 200 mm of rain per year, so it is grown only under irrigation. Prefers deep sandy loam to clay loam soils, pH 6.5 to 7.5 and electrical conductivity below 4 dS/m.",
+      "siembra": {
+        "texto": "From October 15 to November 30; this favors roots and crowns before the cuttings and reduces weed competition.",
+        "meses": [
+          10,
+          11
+        ]
+      },
+      "variedades": [
+        "CUF-101",
+        "UC Cibola",
+        "Highline"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "30 to 35 kg/ha of certified seed (SNICS or another accredited body) with 85 to 90 % germination. With a grain drill, at 1.5 to 2.0 cm depth; if broadcast, incorporate afterwards with a cultipacker roller or harrow.",
+      "fertilizacion": "New alfalfa (October-November): 40 to 50 kg/ha of N before planting. Stands one year old or more: the same rate in February. Solid sources are incorporated with a harrow; liquid or gaseous ones, with the germination irrigation. Phosphorus: 100 kg/ha of P per year, half in spring and half in fall. If dry manure is available, incorporate it before planting.",
+      "riego": "After the germination irrigation, two or three supplemental irrigations; then one to two irrigations between cuttings depending on climate and soil. In summer, very light irrigations: the standing water should not last more than 24 hours; in extreme heat, suspend irrigation and resume it five to eight days after cutting.",
+      "plagas": [
+        "Egyptian alfalfa weevil",
+        "Lygus bug",
+        "Three-cornered alfalfa hopper",
+        "Green cloverworm",
+        "Armyworm",
+        "Thrips",
+        "Leafhoppers",
+        "Pea aphid",
+        "Blue alfalfa aphid",
+        "Spotted alfalfa aphid",
+        "Root and stem nematodes"
+      ],
+      "enfermedades": [
+        "Texas root rot",
+        "Downy mildew",
+        "Rust",
+        "Crown rot"
+      ],
+      "malezas": "Narrow-leaf weeds in spring-summer (watergrass, barnyardgrass, bermudagrass, Johnsongrass, nutsedges) and wild oat and canarygrass in late fall; broadleaf weeds such as dodder, morning glory, wild mustard, pigweed and lambsquarters. Control: certified seed, planting into moist soil, weeding of canals and ditches, cleaning machinery after cutting and hand weeding if needed.",
+      "cosecha": "Eight to nine cuttings per year for three to five years. Cut at the start of 10 % flowering; in winter, at a minimum height of 35 cm and regrowth of 3 to 5 cm; in July and August, at 20 to 30 % flowering and 40 to 50 cm height. Bale early in the morning at about 20 % moisture (the stem cuticle does not peel off when scraped with a fingernail).",
+      "cuidados": [
+        "Sow between October 15 and November 30 with certified seed inoculated with Rhizobium specific to alfalfa, protected from sun and wind.",
+        "Level the field well and adjust the borders to the soil; in clay soils with poor drainage, subsoil every three or four years.",
+        "In summer, irrigate very lightly and do not leave water standing for more than 24 hours so the alfalfa does not scorch.",
+        "Cut at the right time (10 % flowering) to keep the plant stand and hold back weeds.",
+        "Cutting frequency helps control pests; against nematodes, use resistant varieties or rotate with sorghum, wheat or barley.",
+        "Bale at around 20 % moisture to keep the hay from heating up and rotting."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 45472.33,
+          "rendimiento": 14000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 3.8,
+          "ingreso_neto": 7728,
+          "relacion_bc": 1.17
+        }
+      ],
+      "nota": "FIRA costs (2026) for Mexicali: the cost is the 3-year average (year 1: $52,983; years 2 and 3: $41,717 per ha) and the yield is the 3-year forage average (14,000 kg/ha at $3.8 per kg; gross income $53,200). The introduction gives a regional mean yield of 83.70 t/ha, which does not match the table. The ids alfalfa-verde and alfalfa-achicalada are assigned because the sheet covers forage and its hay production.",
+      "revisado": false
+    },
+    {
+      "ficha": "Cotton",
+      "cientifico": "Gossypium hirsutum",
+      "paginas": [
+        19,
+        30
+      ],
+      "cultivo_ids": [
+        "algodon-hueso"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "Mexicali Valley: dry desert climate, summer highs of 41 to 43 °C and about 90 mm of rain per year; depends on irrigation from the Colorado River. The monsoon (July to September) combines heat and humidity and causes shedding of squares, flowers and bolls. The best yields occur in moderately deep, well-drained soils.",
+      "siembra": {
+        "texto": "From February 15 to March 31. The window opens once 300 heat units have accumulated since January 1 (optimum 400 to 700 HU) and with soil at 15 °C or more at 10 cm depth, at 8:00 a.m., for five days in a row. Start with intermediate and long-cycle varieties and finish with early ones.",
+        "meses": [
+          2,
+          3
+        ]
+      },
+      "variedades": [
+        "Gos 27",
+        "CIAN PRECOZ"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "100,000 to 120,000 plants/ha: 10 to 12 plants per meter in 1.0 m rows (planter calibrated to about 150,000 seeds/ha), or 9 to 10 plants per meter on 172 cm double-row beds. Planting into moist soil, seed at 5 to 6 cm depth. With this population no thinning is needed.",
+      "fertilizacion": "Nitrogen according to the yield target: 22 to 29 kg of N per 227 kg fiber bale, in three equal parts (start and peak of square formation and flowering, with the first three supplemental irrigations). If the previous crop was sorghum or sudangrass, add 50 to 60 kg/ha of N before planting. Phosphorus according to Olsen analysis (0-30 and 30-60 cm): if there is less than 21 kg/ha of available P, apply 9 kg of P for each missing unit, granular before planting or liquid at planting and with the first supplemental irrigation.",
+      "riego": "First supplemental irrigation at the start of square formation, before the first flowers (700 to 1,100 HU since planting). Following irrigations when 35 % of soil moisture is depleted (without dropping below 50 %) or every 15 to 20 days in medium soils, covering square formation, flowering, boll formation and opening of the first bolls. Last irrigation: 10 to 12 days after cutout in a short cycle; one or two more supplemental irrigations in a long cycle.",
+      "plagas": [
+        "Whitefly",
+        "Lygus bug",
+        "Pink bollworm",
+        "Cotton bollworm",
+        "Leaf perforator",
+        "Hairy caterpillar",
+        "Armyworm",
+        "Spider mite",
+        "Mealybug"
+      ],
+      "enfermedades": [
+        "Damping-off (Pythium and Rhizoctonia)",
+        "Texas root rot",
+        "Fusarium wilt",
+        "Verticillium wilt",
+        "Nematodes"
+      ],
+      "malezas": "Saltgrass, watergrass, barnyardgrass, horsenettle, bermudagrass, pigweed, nutsedge, tomatillo, field bindweed and Johnsongrass; left uncontrolled they reduce yield by up to 50 %. Integrated management: clean the equipment, use certified seed and seed traps in canals; plant into moist soil and run a harrow ('gallinitas') after weed emergence; hand weeding of the most harmful species.",
+      "cosecha": "Mechanical harvest when all bolls are open and dry; going in earlier lowers ginning yield and stains the fiber. Defoliate with four to five fruiting branches above the last open boll (60 to 70 % opening), about 20 days after the last irrigation. Afterwards, shred stalks and plow to reduce whitefly and mealybug.",
+      "cuidados": [
+        "Sow between February 15 and March 31; late plantings suffer more from monsoon stress.",
+        "Schedule the first irrigation at the start of square formation and do not let soil moisture fall below 50 %.",
+        "Calculate nitrogen according to the bale target and split it into three applications; avoid excess, which favors Verticillium.",
+        "Monitor whitefly and lygus bug: left uncontrolled they can reduce production by up to 50 %.",
+        "In vigorous varieties, balance growth and fruiting with growth regulators, always with technical advice.",
+        "Shred stalks and plow right after harvest to break the pest cycle."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 51709.5,
+          "rendimiento": 1750,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 1030.25,
+          "relacion_bc": 1.02
+        }
+      ],
+      "nota": "FIRA table (2026): gross income $52,739.65. The price per kg is not printed (it would be about $30.14) and is left as null. The table yield (1,750 kg/ha of seed cotton) does not match the text, which gives yields of 3.84 to 4.61 t/ha and a break-even point of about 4.5 t/ha in SS 2022; in addition, some table items do not add up (stalk shredding of $817 recorded as $8,171; harrowing). Defoliation appears in the text within the weeds section.",
+      "revisado": false
+    },
+    {
+      "ficha": "Safflower",
+      "cientifico": "Carthamus tinctorius L.",
+      "paginas": [
+        31,
+        37
+      ],
+      "cultivo_ids": [
+        "cartamo"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "Fall-Winter oilseed crop, an alternative to wheat in the Mexicali Valley because of its low water requirement. Prefers little rain and low humidity, temperatures of 20 to 35 °C (it is affected by those below 5 to 10 °C), elevations of 0 to 800 m and fertile, well-drained soils.",
+      "siembra": {
+        "texto": "From November 15 to December 31.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Chey-Ol",
+        "Semay-Ol",
+        "Huatson Ol",
+        "S-323",
+        "S-390",
+        "CW-3268",
+        "AS-3427",
+        "AS-23"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "12 to 15 kg/ha of certified seed with at least 80 % germination. Medium and light soils: 75 cm rows with a single line or 100 cm rows with double lines (25 to 30 cm between lines). Clay soils: 1.0 to 1.5 m beds with double lines, dry planting, seed at 2 to 3 cm.",
+      "fertilizacion": "120 to 140 kg/ha of N (the higher rate on heavy soils): half before planting and the rest with the first supplemental irrigation.",
+      "riego": "Water-saving crop thanks to its deep root, but water stress must be avoided at germination, branching, flower bud formation and flowering.",
+      "plagas": [
+        "Myzus aphid",
+        "Lygus bug"
+      ],
+      "enfermedades": [
+        "Rust",
+        "Root rot",
+        "False powdery mildew (Ramularia carthami)"
+      ],
+      "malezas": "Wild oat, wild canarygrass, wild mustard, alambrillo and clover. Because of its slow initial growth, keep the crop clean during the critical period after emergence: two mechanical cultivations (20 to 25 days after emergence and after the first supplemental irrigation, with the soil at the right moisture) and hand weeding on the furrow ridge.",
+      "cosecha": "Thresh when the plant is completely dry and the seed detaches easily from the head, at about 6 % moisture.",
+      "cuidados": [
+        "Sow from November 15 to December 31 with certified seed.",
+        "Level the field well: waterlogging causes root rot, especially on heavy soils.",
+        "Keep the crop free of weeds early on, when it grows slowly, with two mechanical cultivations and hand weeding.",
+        "Avoid water shortage at germination, branching, flower bud and flowering.",
+        "Lygus bug is a secondary pest: up to 30 bugs per sweep net do not reduce yield.",
+        "Rust does not cause economic losses; for false powdery mildew, consult a technician."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 24168,
+          "rendimiento": 2.5,
+          "unidad_rendimiento": "t/ha",
+          "precio": 8390,
+          "ingreso_neto": null,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Price in $ per ton. The FIRA table (2026) labels 'Ingreso prob. Neto' [probable net income] $20,975, but that figure is the gross income (2.5 t x $8,390); the resulting net income would be negative (about -$3,193) and the table prints neither net income nor benefit-cost ratio, so they are left as null. The 'break-even point 2.5' does not match those values either. The agenda does not distinguish between public and commercial varieties in Table 10 (all oleic, recommended by CEMEXI).",
+      "revisado": false
+    },
+    {
+      "ficha": "Grain maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        38,
+        47
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "Irrigation District 002 Río Colorado. Silt loam or clay loam soils one meter or more deep and pH 5.5 to 7.5. Favorable temperatures of 25 to 33 °C by day and 17 to 22 °C at night; at 40 °C the tassel dehydrates and pollen viability drops.",
+      "siembra": {
+        "texto": "Spring: during February; planting later lowers yield and increases the risk of aflatoxins. Summer: throughout July.",
+        "meses": [
+          2,
+          7
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Hipopótamo",
+        "PG143",
+        "PG145",
+        "P1445",
+        "RX860",
+        "RX840"
+      ],
+      "densidad": "75,000 to 100,000 plants/ha: six to eight plants per meter in 80 cm rows (75 to 80 cm in medium and light soils), with a pneumatic or precision planter. Planting into moist soil on the furrow ridge, at 5 to 6 cm. More plants increase the risk of lodging.",
+      "fertilizacion": "Nitrogen: about 25 kg per ton of grain; for 10 t/ha, 250 kg/ha of N split into 92 kg at planting or before planting, 115 kg between the first and second supplemental irrigations and 43 kg at the third (add or subtract 40 kg of N per ton of difference). Phosphorus: 7 kg of P2O5 per ton (70 kg for 10 t/ha), before planting. Potassium only if the diagnosis calls for it: granular before planting or liquid at the second and third supplemental irrigations.",
+      "riego": "February plantings in medium soil: six to seven supplemental irrigations (40-45, 60-65, 75-80, 90-95, 100-105, 110-115 and 120-125 days after sowing), from vegetative growth to milk stage. July plantings: five to six supplemental irrigations (30-35, 45-50, 55-60, 65-70, 75-80 and 85-90 days), covering heading and grain filling.",
+      "plagas": [
+        "Lesser cornstalk borer",
+        "Cutworms",
+        "Fall armyworm",
+        "Leafhoppers",
+        "Flea beetle",
+        "Corn earworm"
+      ],
+      "enfermedades": [
+        "Aflatoxins (Aspergillus flavus and A. parasiticus)",
+        "Stalk rot",
+        "Phytoplasma disease or corn stunt",
+        "Huitlacoche or common smut"
+      ],
+      "malezas": "Keep the crop clean for the first 50 days after emergence. Narrow-leaf weeds (watergrass, barnyardgrass, bermudagrass, Johnsongrass, nutsedges; wild oat and canarygrass in late fall) and broadleaf weeds (pigweeds, lambsquarters, saltbush, wild mustards, prickly lettuce, field bindweed, morning glory). Hand cleaning after mechanical cultivation and furrow lifting, especially against Johnsongrass and field bindweed.",
+      "cosecha": "At physiological maturity (black layer at the base of the kernel) or by measuring moisture with a meter; harvest at 14 to 16 % moisture. In summer plantings maturity arrives in late November or early December and it is not advisable to wait in the field because of winter humidity; consult a technician. Expected yield: 9 to more than 12 t/ha.",
+      "cuidados": [
+        "Sow in February (or in July for the summer cycle); late plantings raise the risk of aflatoxins.",
+        "Choose hybrids with good yield and aflatoxin tolerance, which the local white maize market requires.",
+        "Avoid plant stress, especially at flowering and grain filling, by keeping to the irrigation schedule.",
+        "Do not exceed the recommended density or nitrogen: they favor lodging, stalk rot and huitlacoche.",
+        "Monitor corn earworm and fall armyworm: damaged kernels are the main focus of aflatoxins.",
+        "Keep the crop free of weeds during the first 50 days."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 46341.36,
+          "rendimiento": 11000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.895,
+          "ingreso_neto": 7503.64,
+          "relacion_bc": 1.16
+        }
+      ],
+      "nota": "Hybrids from Table 16 with no company indicated: white Hipopótamo, PG143 and PG145; yellow P1445, RX860 and RX840. The sheet covers two planting dates (February, 'spring plantings', and July, 'summer cycle'); it is marked as PV (Spring-Summer). FIRA costs (2026), gross income $53,845 per ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Date palm",
+      "cientifico": "Phoenix dactylifera L.",
+      "paginas": [
+        48,
+        59
+      ],
+      "cultivo_ids": [
+        "datil"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "irrigated",
+      "ciclo": "PER",
+      "region": "Subtropical fruit tree of arid zones: needs hot summers and mild winters. Grows between 9 and 44 °C (stops below 7 °C; 5 °C damages leaves, flowers and bunches) and requires a dry environment during pollination and ripening. Tolerates pH 7.7 to 8.7 (up to 11) and salinity of 3 to 11 dS/m.",
+      "siembra": {
+        "texto": "Removal and transplanting of offshoots from March 15 to June 15 (Mexicali Valley and San Luis Río Colorado).",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Mejhoul (Medjool)",
+        "Deglet Noor",
+        "Barhee",
+        "Zahidí",
+        "Khadrawy",
+        "Halawy"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "8 m between rows and 8 m between palms. Planting holes of 1 x 1 x 1 m, or 0.7 to 1 m in diameter and 1 m deep if made with an auger. Propagation by offshoots, the traditional method that preserves quality.",
+      "fertilizacion": "Based on soil and water analysis (every two years) and foliar analysis (every year). Split the program from February to October (5, 10, 12, 20, 21, 14, 8, 5 and 5 %). For Mejhoul, the units per hectare rise with age: year 2, 55-17-58 of N-P2O5-K2O; year 4, 110-39-120; at more than 25 years, 525-138-540, plus compost and micronutrients.",
+      "riego": "Tolerates drought, but to grow and produce well it needs 10,000 to 20,000 m³/ha per year, depending on climate, soil texture, irrigation method and plantation age.",
+      "plagas": [
+        "Carob moth (Ectomyelois ceratoniae)",
+        "Lesser date moth (Batrachedra amydraula)"
+      ],
+      "enfermedades": [
+        "Black mold (Aspergillus niger)",
+        "White fruit rot (Rhizopus spp.)"
+      ],
+      "malezas": "Weeds are most damaging in the first four or five years after transplanting. The hardest are field bindweed, which climbs young palms, and bermudagrass, very invasive during establishment.",
+      "cosecha": "Leave the fruit on the palm until commercial maturity; two or three selective pickings are required because ripening is uneven. At harvest, the date has wrinkled skin, a shiny tip and a dull base. Adult palms: 80 to 120 kg per plant; Mejhoul at 12 to 15 years, 6.78 to 7.90 t/ha. Store at 65 to 75 % relative humidity.",
+      "cuidados": [
+        "Transplant offshoots from March 15 to June 15.",
+        "Hand-pollinate the female flower with a mix of flour and dry pollen (from 2:1 to 6:1).",
+        "Thin 3 to 4 weeks after pollination, leaving 2.5 to 3 cm between fruits, and keep 8 to 10 leaves per bunch (never fewer than 6).",
+        "Bag the bunches with cloth or anti-aphid mesh to protect them from moths and other pests.",
+        "Ventilate the bunch (wire rings or removing strands from the center) to reduce humidity and fruit fungi.",
+        "Base fertilization on soil, water and leaf analysis."
+      ],
+      "costos": [],
+      "nota": "Table 20 (FIRA 2026) gives costs by year from 1 to 8, but the extracted text is cut off before the last totals, the yield and the income, so no full-production value could be confirmed. Legible totals: year 1 (establishment) $329,312; years 2 to 4 about $48,000; years 5 to 7 from $161,362 to $179,914 per ha.",
+      "revisado": false
+    },
+    {
+      "ficha": "Wheat",
+      "cientifico": "Triticum spp.",
+      "paginas": [
+        60,
+        69
+      ],
+      "cultivo_ids": [
+        "trigo-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "Mexicali Valley, Fall-Winter cycle: cold at the start and mild conditions (6 to 24 °C) at flowering and filling; more than 30 °C or less than 10 °C during grain formation lowers yield. Requires an irrigation depth of 85 to 100 cm and yields more on light to medium, well-drained soils.",
+      "siembra": {
+        "texto": "From November 15 to December 31; the highest yields are obtained in the first half of December.",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "CIRNO C2008 (durum)",
+        "QUETCHEHUECA ORO C2013 (durum)",
+        "CENEB ORO C2017 (durum)",
+        "ISABEL ORO C2018 (durum)",
+        "NOROESTE C2021 (durum)",
+        "CAMACHO ORO C2022 (durum)",
+        "ROELY HP C2024 (durum)",
+        "CRUZ ORO C2025 (durum)",
+        "NOHELY F2018 (bread wheat)",
+        "HANS F2019 (bread wheat)",
+        "MARCELA F2023 (bread wheat)",
+        "FINORTE F2024 (bread wheat)",
+        "BORLAUG 100 (bread wheat)",
+        "CIANO M2018 (bread wheat)",
+        "PITAHAYA M2024 (bread wheat)",
+        "SAFIN M2024 (bread wheat)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "120 to 160 kg/ha of seed with a small-grain drill; dry planting, no deeper than 3 cm. Excess seed causes lodging. Borders 12 to 20 m wide depending on the soil.",
+      "fertilizacion": "About 35 kg of N per expected ton; all phosphorus before planting (10 kg/ha per ton). For 7 t/ha: 70 kg of P and N at planting, 55 of N at tillering, 75 at stem elongation and boot stage and 40 at flowering. A fraction of N at flowering or the start of grain filling raises protein by 1 to 3 points.",
+      "riego": "Critical stages: stem elongation, heading and grain filling. Medium soils: pre-planting irrigation and four supplemental irrigations (tillering at 45-55 days; stem elongation 30 days later; heading 25 days later; milk-dough stage 15 to 20 days later). Light soils: one more irrigation with a smaller depth; heavy soils: germination irrigation and five supplemental irrigations. Irrigating after the milk-dough stage causes lodging.",
+      "plagas": [
+        "Greenbug (foliage aphid)",
+        "English grain aphid",
+        "Bird cherry-oat aphid",
+        "Russian wheat aphid"
+      ],
+      "enfermedades": [
+        "Yellow rust",
+        "Leaf rust"
+      ],
+      "malezas": "Preventive: certified seed, clean machinery, do not graze the stubble regrowth, and clean canals and ditches. Mechanical: plant into moist soil; on double-row furrows, two cultivation passes (20 to 25 days after emergence and after the first supplemental irrigation). Biological: against field bindweed, inoculate the gall mite (Aceria malherbae) after the second supplemental irrigation.",
+      "cosecha": "May and June, at 8 to 13 % grain moisture; below that, losses occur from shattering and breakage. Take care when threshing durum wheats. Expected yield: 6 to 7 t/ha on clay soils and 8 to 9 t/ha on weed-free loam soils.",
+      "cuidados": [
+        "Sow in the first half of December for the best yields (window from November 15 to December 31).",
+        "Do not use more seed than recommended, to avoid lodging.",
+        "Do not let water run short at stem elongation, heading and filling; a shortage can cost up to 1,000 kg/ha.",
+        "Apply part of the nitrogen at flowering to reach the minimum protein (12.5 % in bread and durum wheats, 10 % in cookie wheats).",
+        "Plant varieties resistant to yellow rust, the most profitable strategy.",
+        "Protect the ladybug and the Orius bug, which control aphids naturally."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 30106,
+          "rendimiento": 6580,
+          "unidad_rendimiento": "kg/ha",
+          "precio": null,
+          "ingreso_neto": 8150,
+          "relacion_bc": 1.27
+        }
+      ],
+      "nota": "FIRA table (2026): gross income $38,256. The price per kg is not printed (it would be about $5.81) and is left as null. Varieties from Table 25 in capitals as printed; the letter indicates the quality group (C durum, F strong gluten, M medium-strong gluten).",
+      "revisado": false
+    }
+  ]
+}

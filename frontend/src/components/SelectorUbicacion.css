@@ -1,0 +1,219 @@
+.ubic {
+  position: relative;
+}
+
+.ubic__boton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 230px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: var(--tarjeta);
+  box-shadow: var(--sombra);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ubic__boton svg {
+  flex: none;
+  color: var(--verde-oscuro);
+}
+
+.ubic__nombre {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ubic__panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 20;
+  display: grid;
+  gap: 8px;
+  width: min(320px, calc(100vw - 32px));
+  padding: 8px;
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  background: #f9fefb;
+  box-shadow: 0 16px 40px rgba(18, 48, 74, 0.2);
+}
+
+.ubic__lista {
+  display: grid;
+  gap: 2px;
+  max-height: 260px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.ubic__fila {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.ubic__opcion {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px 10px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.ubic__opcion:hover {
+  background: rgba(0, 230, 118, 0.1);
+}
+
+.ubic__opcion--actual {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.ubic__marca {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 16px;
+}
+
+.ubic__quitar {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--tinta-suave);
+}
+
+.ubic__quitar:hover {
+  background: var(--coral-claro);
+  color: #a63f3f;
+}
+
+.ubic__acciones {
+  display: grid;
+  gap: 2px;
+  padding-top: 8px;
+  border-top: 1px solid var(--borde);
+}
+
+.ubic__accion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  text-align: left;
+}
+
+.ubic__accion:hover:not(:disabled) {
+  background: rgba(0, 230, 118, 0.1);
+}
+
+.ubic__accion:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.ubic__aviso {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--coral-claro);
+  color: #a63f3f;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* ---------- Popup de agregar ubicación ---------- */
+.ubic-busqueda {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: end;
+}
+
+.ubic-resultados {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ubic-resultados li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(0, 230, 118, 0.08);
+}
+
+.ubic-resultados__icono {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.ubic-resultados__texto {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+  font-size: 13px;
+}
+
+.ubic-resultados__texto small {
+  font-size: 10px;
+  color: var(--tinta-suave);
+}
+
+.ubic-resultados .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .ubic__boton {
+    max-width: 150px;
+    padding: 0 10px;
+  }
+}
+
+/* Escritorio: mismo alto compacto que el botón del menú (así Principal sigue cabiendo sin scroll) */
+@media (min-width: 900px) {
+  .ubic__boton {
+    height: 40px;
+  }
+}

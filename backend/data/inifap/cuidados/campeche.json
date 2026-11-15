@@ -1,0 +1,790 @@
+{
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, made from the text in data/inifap/extraido/campeche.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
+  "cve_ent": "04",
+  "estado": "Campeche",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Campeche [Agricultural Technical Agenda of Campeche]. INIFAP, Mexico City, 2026.",
+  "fichas": [
+    {
+      "ficha": "Irrigated rice",
+      "cientifico": "Oryza sativa L.",
+      "paginas": [
+        19,
+        32
+      ],
+      "cultivo_ids": [
+        "arroz-palay"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "Central zone of the state, with groundwater pumping or water from the Usumacinta River, and the savannas of the south and southwest. Nearly flat, deep Ak'alché soils over a compact clay layer that allows them to be flooded; pH 5.5 to 6.5 when dry and 7.0 to 7.2 when flooded.",
+      "siembra": {
+        "texto": "From January 1 to February 28, so that the reproductive stage and grain filling coincide with maximum solar radiation.",
+        "meses": [
+          1,
+          2
+        ]
+      },
+      "variedades": [
+        "Aztecas",
+        "INIFLAR RT"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "80 kg/ha of seed with a planter (rows of 15 to 30 cm) or 100 kg/ha broadcast, covering the seed no deeper than 5 cm; the target is 150 to 250 plants/m². Use certified seed.",
+      "fertilizacion": "Soils with less than 3 years of cropping: 70-92-60; with more than 3 years: 92-46-60; clay loam soils of the south and southwest: 92-70-60; soils with many years of rice: 138-92-60. All the phosphorus and potassium before the second harrowing or at planting. Urea in two parts: half at 30-35 days after germination and half at panicle initiation (55 to 65 days), with the soil saturated or a water depth no greater than 10 cm.",
+      "riego": "Light germination irrigation (10 to 12 cm) and drain the next day. In the vegetative stage, intermittent irrigations without standing water; from panicle initiation, through flowering and the start of ripening, keep a water depth of 15 to 20 cm.",
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Rice skipper (gusano cabezón) (Telicota sp.)",
+        "False looper (Trichoplusia sp.)",
+        "Rice delphacid (sogata) (Tagosodes oryzicolus), vector of hoja blanca virus",
+        "Rice stink bug (Oebalus insularis)",
+        "Soil pests: wireworm, white grub, centipedes and ants"
+      ],
+      "enfermedades": [
+        "Rice blast (Pyricularia oryzae)",
+        "Brown spot (Bipolaris oryzae)",
+        "Leaf scald (Rhynchosporium oryzae)",
+        "Grain discoloration (complex of fungi and bacteria)"
+      ],
+      "malezas": "Grasses (junglerice (zacate pinto), kanchín, Johnson grass, itchgrass (caminadora), yazcomel), red rice, broadleaf weeds (tripa de pollo, vines, mallow) and nutsedges. Against red rice: certified seed, hand pulling before it sheds seed, flooding and letting the weeds germinate before planting in order to eliminate them, and rotating with residual-moisture or FW sorghum for three years.",
+      "cosecha": "At 30-35 days after flowering, with a combine, when the grain has 18 to 22 % moisture and the panicles are light yellow or golden. Dry slowly to 14 % for storage. Average yield: 8.0 t/ha.",
+      "cuidados": [
+        "Level the land well (1.0 to 1.5 per thousand) and build levees and canals: this improves water, weed and fertilizer management.",
+        "Plant between January 1 and February 28 with certified seed of Aztecas or INIFLAR RT.",
+        "Drain after the germination irrigation and keep a 15 to 20 cm water depth from panicle initiation to the start of ripening.",
+        "Split the urea into two applications and apply it with the soil saturated so that nitrogen is not lost.",
+        "Monitor caterpillars (act at 10 % of seedlings or 20 % of plants damaged), rice stink bug (15 to 20 insects per 100 net sweeps) and rice blast (5 % leaf damage or damage at the base of the panicle).",
+        "Fight red rice with certified seed, hand pulling and rotation with sorghum."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 51721.9,
+          "rendimiento": 8,
+          "unidad_rendimiento": "t/ha",
+          "precio": 7900,
+          "ingreso_neto": 11478.1,
+          "relacion_bc": 1.22
+        }
+      ],
+      "nota": "Price in $/t (farm-gate price of 7,900). Gross income of 63,200 $/ha; net income and B/C ratio match the table.",
+      "revisado": false
+    },
+    {
+      "ficha": "Rainfed rice",
+      "cientifico": "Oryza sativa L.",
+      "paginas": [
+        33,
+        45
+      ],
+      "cultivo_ids": [
+        "arroz-palay"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Champotón, Escárcega, Candelaria, Carmen and Palizada, with Ak'alché soils and 1,200 to 1,300 mm of rain. Nearly flat, deep soils over a compact clay layer that allows them to be flooded; pH 5.5 to 6.5 when dry and 7.0 to 7.2 when flooded.",
+      "siembra": {
+        "texto": "Center and north-center: from May 15 to June 30, if there is enough rain and moisture. Southwestern savannas: it can continue until August 30.",
+        "meses": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "INIFLAR RT (certified seed)",
+        "El Silverio (certified seed)",
+        "Temporalero A95 (farmer-saved seed)",
+        "Sabanero A95 (farmer-saved seed)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Broadcast on dry soil, 120 kg/ha of seed, covered with a light harrow no deeper than 3 cm; or with a planter-fertilizer in rows at 11, 15 or 30 cm. Use certified seed.",
+      "fertilizacion": "Regular rainfed (center and south): 46-92-00 on land with less than 4 years of cropping and 92-46-00 with more than 4 years. Palizada savannas: 92-70-00. Triple superphosphate in a single application after the first harrowing. Urea in two equal parts: at 20-35 days after germination (with weeds already controlled) and at panicle initiation, with the soil saturated.",
+      "riego": "Under regular rainfed conditions it depends only on rain. With supplemental irrigation (if there is a river or lagoon nearby), keep the soil saturated or a water depth of 10 to 15 cm at panicle initiation, panicle emergence and flowering; an irrigation is also advisable if rain is not enough for germination or before applying fertilizer or herbicide on dry soil.",
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Rice skipper (gusano cabezón) (Telicota sp.)",
+        "Looper (Trichoplusia sp.)",
+        "Rice stink bug (Oebalus insularis)"
+      ],
+      "enfermedades": [
+        "Rice blast (Pyricularia oryzae)",
+        "Brown spot (Bipolaris oryzae)"
+      ],
+      "malezas": "Critical period: the first 40 days. Grasses (junglerice (zacate pinto), false itchgrass, Johnson grass, kanchín, itchgrass (caminadora), licendrilla, pajón, yaxcomel), red rice, broadleaf weeds (tripa de pollo, vines, lengua de gallo) and sedges (nutsedge, navajuela). Good land preparation is the basis; red rice is controlled before planting with intensive soil preparation.",
+      "cosecha": "With a tracked combine and an experienced operator, when the panicles are light yellow or golden or the grain has 18 to 22 % moisture. Yield: 5.0 t/ha under regular rainfed conditions and 6.5 t/ha with supplemental irrigation.",
+      "cuidados": [
+        "Prepare the land well: destroy residues, harrow and level so that rainwater spreads evenly.",
+        "Lay out contour levees and, if there is a water source, canals and drains to give supplemental irrigations in the reproductive stage.",
+        "Plant from May 15 to June 30 (until August 30 in the southwestern savannas) with certified seed.",
+        "Keep the crop free of weeds for the first 40 days.",
+        "Apply the urea in two parts and with the soil saturated, after a rain.",
+        "Monitor caterpillars (10 % of seedlings damaged), rice stink bug at flowering (15 to 20 per 100 net sweeps) and rice blast (5 % of leaf area or panicles damaged)."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 38667.7,
+          "rendimiento": 5.5,
+          "unidad_rendimiento": "t/ha",
+          "precio": 7900,
+          "ingreso_neto": 4782.3,
+          "relacion_bc": 1.12
+        }
+      ],
+      "nota": "The extracted text marks the regime as 'rainfed and irrigated': the sheet covers regular rainfed and rainfed with supplemental irrigation, hence modality 'rainfed'. The cost table uses 5.5 t/ha (the harvest text gives 5.0 and 6.5 t/ha depending on the system). Price in $/t; gross income 43,450 $/ha; net and B/C match. Scientific name corrected (the extracted text says 'Oriza').",
+      "revisado": false
+    },
+    {
+      "ficha": "Pumpkin seed (chihua squash)",
+      "cientifico": "Cucurbita argyrosperma Huber",
+      "paginas": [
+        46,
+        58
+      ],
+      "cultivo_ids": [
+        "calabaza-semilla-o-chihua"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": null,
+      "region": "Warm subhumid climate, from 0 to 400 m a.s.l., with 1,000 to 1,500 mm of rain (80 % from June to October) and midsummer drought (canícula) in July-August. It is planted on stony soils (maize-ib-chihua milpa, less than 300 kg/ha of pepita) and, with better yields, on arable red Kan'kab and Yaax-hom soils as a monocrop with maize or relay sorghum.",
+      "siembra": {
+        "texto": "North and center (Spring-Summer): from late March to early June. Center and south (Fall-Winter): from late October to late January.",
+        "meses": [
+          3,
+          4,
+          5,
+          6,
+          10,
+          11,
+          12,
+          1
+        ]
+      },
+      "variedades": [
+        "Small-seeded landraces",
+        "Large-seeded landraces"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Stony soils: 4,000 to 6,000 plants/ha, 2 to 3 seeds per planting hole, 2 m between plants and 4 m between rows. Red soils: 8,000 to 12,000 plants/ha, rows of 2 to 3 m and 0.50 to 0.75 m between plants.",
+      "fertilizacion": "Responds to nitrogen and phosphorus and to foliar feeds with biostimulant. The 60-105-00 rate gave the highest yields in small and large pepita; one to three foliar applications with biostimulant increase yield.",
+      "riego": null,
+      "plagas": [
+        "Defoliating caterpillars (Diaphania spp.)",
+        "Whitefly",
+        "Rootworms (Diabrotica)",
+        "Aphids",
+        "Leafminer",
+        "Stink bugs",
+        "Thrips",
+        "Mites"
+      ],
+      "enfermedades": [
+        "Downy and powdery mildew",
+        "Anthracnose",
+        "Sclerotinia",
+        "Bacterial spot and angular leaf spot",
+        "Viruses (transmitted by whitefly and aphids)",
+        "Phytoplasmas"
+      ],
+      "malezas": "Keep the crop weed-free for the first 28 to 35 days. Combine chemical control with cultivation passes by tractor or hand tools; on stony soils, brush clearing (slashing) before planting.",
+      "cosecha": "By hand or mechanically at 95-110 days after emergence. Sun-dry the seed for three days, 3 to 4 hours a day, without letting it get wet. With the recommended technology: small pepita 1,311 to 1,981 kg/ha and large pepita 880 to 1,060 kg/ha; with 60-105-00, up to 2,496 and 1,560 kg/ha.",
+      "cuidados": [
+        "Plant on the zone's date: late March to early June in the north and center; late October to late January in the center and south.",
+        "On red soils prefer small pepita, which yields more than large pepita.",
+        "Fertilize with nitrogen and phosphorus (60-105-00 gave the best yields) and supplement with foliar feeds.",
+        "Keep the plot weed-free for the first 28 to 35 days with cultivation passes.",
+        "Control whitefly and aphids, which transmit viruses, in time.",
+        "Harvest on time (95 to 110 days) and dry the seed in the sun without letting it get wet, to avoid rots."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 28424.36,
+          "rendimiento": null,
+          "unidad_rendimiento": null,
+          "precio": null,
+          "ingreso_neto": 11575.64,
+          "relacion_bc": 1.41
+        }
+      ],
+      "nota": "Cycle null: the sheet gives Spring-Summer and Fall-Winter plantings. Cost table with swapped labels: '40,000 kg/ha' is the gross income ($/ha) and '28,424.36 $/kg' is the cost per hectare. The table gives neither yield nor price (the text says it is for large pepita); net income (40,000 − 28,424.36) and B/C (1.41) match. The text also mentions a net income of 33,575 $/ha for small pepita, without a table.",
+      "revisado": false
+    },
+    {
+      "ficha": "Habanero pepper",
+      "cientifico": "Capsicum chinense Jacq.",
+      "paginas": [
+        59,
+        76
+      ],
+      "cultivo_ids": [
+        "chile-verde"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": null,
+      "region": "Loam-textured K'ankab (Luvisol) or stony Tzek'el (Litosol) soils, at least 0.40 to 0.50 m deep, with optimum pH of 6 to 7.5. Preferably 550 to 700 mm of rain per cycle. In the center and north the water table is at 8-20 m, which allows irrigation.",
+      "siembra": {
+        "texto": "With irrigation, on very permeable soils (Leptosols, Luvisols) it can be planted year-round; on poorly drained soils (Vertisols), in the dry season, from November to January. Without irrigation, on permeable soils, at the start of the rainy season (June). Seedlings in trays and transplanting at 45 days.",
+        "meses": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Jaguar",
+        "Mayapán",
+        "Calakmul"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "0.25 to 0.30 m between plants and 1.1 to 1.8 m between rows: 30,000 to 36,000 plants/ha, with 300 to 400 g of seed per ha. Raised beds with black-silver mulch and double staggered rows.",
+      "fertilizacion": "Drip fertigation guided by tensiometers and soil solution extractors. In Kan'kab: nitrates 300 to 350 ppm and potassium 15 to 30 ppm; in Yax-hom: nitrates 100 to 150 ppm and potassium 30 to 60 ppm; lower the nitrogen when the fruits ripen. Without soil data, start with 40 ppm of N and 100 ppm of K in the irrigation water. Apply calcium, magnesium and microelements (Fe, Zn, B); water at pH 5.5 to 6.0 and EC of 1.0 to 2.0 mmhos/cm.",
+      "riego": "Heavy irrigation before transplanting and light daily irrigations for the following three days; afterwards, depending on soil and weather, with drip or drip tape, 1 to 4 L per plant per day. Tensiometers should not exceed 20-25 centibars in rendzina soils nor 14-18 in Kan'kab.",
+      "plagas": [
+        "Whitefly (Bemisia tabaci)",
+        "Pepper weevil (Anthonomus eugenii)",
+        "Green peach aphid (Myzus persicae)",
+        "Leafminer (Liriomyza)",
+        "Thrips (Thrips spp.)",
+        "Beet armyworm (Spodoptera exigua)",
+        "Broad mite (Polyphagotarsonemus latus)"
+      ],
+      "enfermedades": [
+        "Damping-off (Pythium, Fusarium, Rhizoctonia, Alternaria, Phytophthora)",
+        "Pepper wilt (Phytophthora capsici)",
+        "Botrytis",
+        "Stemphylium",
+        "Sclerotium",
+        "Bacterial diseases (Xanthomonas, Pseudomonas)",
+        "Blight in early stages"
+      ],
+      "malezas": "Mulch reduces weeds; a single herbicide application directed at the weeds before establishing the crop is enough, plus two to four mechanical or manual cultivation passes if the weed population is high.",
+      "cosecha": "By hand every 8 to 12 days, when the fruits are 3 to 5 cm, firm and with the color the market demands (bright green, streaked or orange). Do not delay it, to avoid cracked fruit and fruit drop. Average yield of 30 t/ha (20 to 50 t/ha with varieties and hybrids identified by INIFAP); about 40 t/ha are needed for it to be profitable.",
+      "cuidados": [
+        "Produce seedlings in trays under protection and transplant them into moist soil at 45 days, when they are 15 to 20 cm tall.",
+        "Use raised beds with black-silver mulch and Agribon micro-tunnels after transplanting as a barrier against pests.",
+        "Irrigate by drip or drip tape and guide irrigation and fertilization with tensiometers and soil solution extractors.",
+        "Prevent damping-off in the seedbed and avoid waterlogging to prevent Phytophthora wilt.",
+        "Monitor whitefly, pepper weevil, thrips and broad mite from transplanting and flowering; biological control with entomopathogenic fungi is available.",
+        "Harvest every 8 to 12 days without delaying the picking."
+      ],
+      "costos": [],
+      "nota": "cultivo_ids: SIAP has no id of its own for habanero pepper; 'chile-verde' is used (to be reviewed). Cycle null: with irrigation it is planted year-round (on poorly drained soils, from November to January); without irrigation, in June. Costs []: Table 17 is truncated in the extracted text (no total cost or income); the expected yield (40 t/ha) is in harvest. The varieties table is split across sections.",
+      "revisado": false
+    },
+    {
+      "ficha": "Common bean",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        77,
+        82
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Planted on residual soil moisture, on soils that hold moisture until the end of the cycle or with a water source for supplemental irrigation: rhodic Nitisols and ferric Luvisols (Ya'ax hom and K'ankab) of Calkiní, Hecelchakán, Tenabo and Campeche. Optimum mean temperature of 20 to 26 °C and pH of 6.5 to 7.5.",
+      "siembra": {
+        "texto": "From August 15 to September 15.",
+        "meses": [
+          8,
+          9
+        ]
+      },
+      "variedades": [
+        "Negro Jamapa",
+        "Negro Huasteco-81",
+        "Negro Comapa",
+        "Negro Veracruz"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "28 to 30 kg/ha of seed for 139,000 to 278,000 plants/ha, with a planter or by hand.",
+      "fertilizacion": "30 kg of N and 80 kg of P per ha, with 174 kg/ha of diammonium phosphate (18-46-00) at planting with a planter-fertilizer.",
+      "riego": "Residual soil moisture; supplemental irrigation if the soil is not enough to cover the cycle and a water source is available.",
+      "plagas": [
+        "Leafhopper (Empoasca sp.)",
+        "Whitefly (Bemisia tabaci)",
+        "Rootworms (doradillas) (Diabrotica spp.)"
+      ],
+      "enfermedades": [
+        "Rhizoctonia web blight (Rhizoctonia sp.)",
+        "Golden mosaic virus (BGMV, Begomovirus)"
+      ],
+      "malezas": "Keep the crop clean for the first 45 days, with a cultivator while plant height allows it; if herbicides are used, apply them 15 to 20 days after emergence.",
+      "cosecha": "At 95 days after sowing, by hand or with a thresher. Expected yield: 750 to 1,300 kg/ha.",
+      "cuidados": [
+        "Prepare the land with brush clearing, plowing and harrowing during the rainy season, and level it to avoid waterlogging.",
+        "Plant from August 15 to September 15: this helps avoid Rhizoctonia and golden mosaic.",
+        "Use seed of INIFAP varieties (Negro Jamapa, Negro Huasteco-81, Negro Comapa, Negro Veracruz) instead of saved seed.",
+        "Fertilize at planting with 174 kg/ha of 18-46-00.",
+        "Monitor leafhopper (1 insect per leaflet), whitefly (2 nymphs per leaflet) and rootworms (1 % of seedlings damaged).",
+        "Keep the crop weed-free for the first 45 days."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 23170,
+          "rendimiento": 800,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 30,
+          "ingreso_neto": 830,
+          "relacion_bc": 1.04
+        }
+      ],
+      "nota": "Residual soil moisture: modality 'rainfed'. SS cycle inferred from the planting date (August-September). In the table, the cost per hectare (23,170) is labeled 'per kg'. Price (30 $/kg) inferred from gross income / yield (24,000 / 800). B/C recalculated (24,000 / 23,170 = 1.04; the table prints 1.03).",
+      "revisado": false
+    },
+    {
+      "ficha": "Persian lime",
+      "cientifico": "Citrus latifolia",
+      "paginas": [
+        83,
+        94
+      ],
+      "cultivo_ids": [
+        "limon"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "irrigated",
+      "ciclo": "PER",
+      "region": "Warm subhumid climate with rains from May to October (1,000 to 1,500 mm) and a dry season from November to April, from 0 to 350 m a.s.l. and a mean of 26 to 27 °C. Common pH of 6.5 to 8.0. It is sensitive to waterlogging: on clayey Vertisols use drainage, raised ridges and moisture-tolerant rootstocks.",
+      "siembra": {
+        "texto": "Rainfed, at the start of the rains, preferably between June and July. With irrigation it can be planted year-round, avoiding extreme heat or waterlogging. Only certified grafted plants.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Swingle citrumelo (rootstock)",
+        "Carrizo citrange (rootstock)",
+        "Volkameriana (rootstock)",
+        "Rough lemon (rootstock)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Depending on soil, irrigation and pruning: 8 × 6 m (208 trees/ha), 7 × 5 m (286), 7 × 4 m (357) or 6 × 4 m (417, high density with efficient irrigation and constant pruning). Planting holes from 40 × 40 × 40 to 60 × 60 × 60 cm.",
+      "fertilizacion": "Based on soil and leaf analysis, age, density and expected yield. Establishment: P, moderate N, Ca and Zn, split. Years 1-3: N, K, Ca, Mg, Zn and B. Production: N, K, Ca, Mg, S and micronutrients, split between the rainy season and the dry season with irrigation. Calculate in kg or g per tree and per ha; do not put concentrated fertilizer in contact with the roots.",
+      "riego": "Essential in the dry season (November to April) for budbreak, flowering, fruit set and filling. Micro-sprinkler or drip; 20 to 200 L per tree per day as a reference, adjusted with evapotranspiration and moisture monitoring. Pre-planting (settling) irrigation at planting. Avoid saturating the soil (gummosis).",
+      "plagas": [
+        "Asian citrus psyllid (Diaphorina citri), vector of HLB",
+        "Brown citrus aphid (Toxoptera citricida), vector of tristeza",
+        "Citrus leafminer (Phyllocnistis citrella)",
+        "Citrus rust mite (Phyllocoptruta oleivora)",
+        "Citrus red mite (Panonychus citri)",
+        "Texas citrus mite (Eutetranychus banksi)"
+      ],
+      "enfermedades": [
+        "Huanglongbing (HLB)",
+        "Citrus tristeza virus (CTV)",
+        "Gummosis and root rot (Phytophthora spp.)",
+        "Dieback (Lasiodiplodia spp.)",
+        "Greasy spot (Zasmidium citri-griseum)",
+        "Viroids: exocortis and cachexia",
+        "Citrus decline (blight)"
+      ],
+      "malezas": "Johnson grass, Bermuda grass, nutsedge, itchgrass (caminadora), vines and dayflower (Commelina). Managed cover crops in the alleys (Arachis pintoi, mucuna, canavalia, among others), periodic slashing in the alleys and weeding around the tree without injuring the trunk or roots; herbicides only as directed sprays and with current registration.",
+      "cosecha": "By hand, preferably with clippers, when the fruit has about 42 % juice and 50 to 63 mm in diameter; 110 to 120 days between flowering and harvest. Do not harvest wet fruit. Yield of 25 to 35 t/ha in well-managed commercial orchards.",
+      "cuidados": [
+        "Plant only certified grafted plants, free of HLB, tristeza and gummosis; do not use sour orange as rootstock in new orchards.",
+        "Ensure drainage from establishment (raised ridges or levees) and do not bury the graft union.",
+        "Irrigate during the dry season with drip or micro-sprinklers, without saturating the soil.",
+        "Monitor the Asian citrus psyllid and HLB on tender flushes and coordinate actions with the regional plant health campaign.",
+        "Do formative and sanitary pruning (disinfecting tools) and remove water sprouts.",
+        "Fertilize according to soil and leaf analysis, in several applications."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 135000,
+          "rendimiento": 30000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 9,
+          "ingreso_neto": 135000,
+          "relacion_bc": 2.0
+        }
+      ],
+      "nota": "Full-production costs (year 6): cost 135,000 $/ha, 30,000 kg/ha and gross income 270,000 $/ha; the price (9 $/kg) was inferred from 270,000 / 30,000 and matches the 5-year cumulative (389,700 / 43,300). Establishment and year 1 cost 68,752 $/ha and the 5-year cumulative gives a B/C of 1.065. siembra.meses only gives the rainfed window (June-July); with irrigation it is planted year-round. The sheet gives rootstocks rather than varieties, listed under varieties. The fertilization and calendar sections come truncated and mixed in the extracted text.",
+      "revisado": false
+    },
+    {
+      "ficha": "Irrigated maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        95,
+        104
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "Warm subhumid and humid climate, 23 to 28 °C mean (maximums of 36 to 38 °C in April-May), from 0 to 400 m a.s.l., with slopes under 3 %. Best soils: silt loams, chromic and ferric Luvisols and rendzic Leptosols; optimum pH of 6.5.",
+      "siembra": {
+        "texto": "Irrigated plantings in Fall-Winter: from December 1 to 31.",
+        "meses": [
+          12
+        ]
+      },
+      "variedades": [
+        "V-455",
+        "V-524",
+        "V-526",
+        "V-527",
+        "V-528",
+        "V-532",
+        "VS-525",
+        "VS-536",
+        "V-537C (quality protein)",
+        "V-538C (quality protein)",
+        "H-507",
+        "H-509",
+        "H-512",
+        "H-513",
+        "H-515",
+        "H-516",
+        "H-518",
+        "H-520",
+        "H-567"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Rows at 0.80 m and 0.18 to 0.20 m between plants: about 62,500 plants/ha (sow 60,000 to 65,000 seeds/ha), with about 20 kg/ha of seed. By hand, 3 seeds every 50 cm and thin to 2.",
+      "fertilizacion": "Without a soil analysis, 40-100-00 (87 kg/ha of urea and 217 kg/ha of triple superphosphate) or 92-92-00 (200 kg/ha of triple superphosphate and 200 kg/ha of urea: 100 of urea and all the phosphorus at planting, and 100 of urea at 30-40 days). Fertilizer to the side of and below the seed. Supplement with foliar zinc and boron between V4-V6 and pre-flowering.",
+      "riego": "Without rain, 9 to 10 irrigations: pre-planting with an irrigation depth of 20 cm, 10 cm after planting and then every 8 days with about 5 cm. Flowering, tasseling and grain filling are the critical stages (losses of 25 to 35 %). Stop irrigating at 95-100 days.",
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Corn leafhopper (Dalbulus maidis), vector of corn stunt"
+      ],
+      "enfermedades": [
+        "Corn stunt ('Xcankubul' or 'Chac-lec')"
+      ],
+      "malezas": "Keep the maize weed-free for the first 40 days; two cultivation passes with machinery during the cycle. There are perennial weeds such as Johnson grass.",
+      "cosecha": "At physiological maturity (black layer at the base of the kernel), at about 18 % moisture, approximately 130 days after emergence. Dry to 12-14 % for storage. Attainable yield: 5.0 to 6.5 t/ha.",
+      "cuidados": [
+        "Shred residues right after the previous harvest, plow and give two cross harrowings.",
+        "Plant from December 1 to 31: off-date plantings increase corn stunt.",
+        "Use INIFAP varieties or hybrids for irrigation (H-520, H-567, H-518, VS-536, V-537C) and about 62,500 plants/ha.",
+        "Do not let water run short at flowering and grain filling; stop irrigating at 95-100 days.",
+        "Monitor fall armyworm from emergence to 30 days and act at the first damage or small larvae.",
+        "Keep the crop clean for the first 40 days."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 29121,
+          "rendimiento": 6500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.91,
+          "ingreso_neto": 9294,
+          "relacion_bc": 1.32
+        }
+      ],
+      "nota": "Price (5.91 $/kg) inferred from gross income / yield (38,415 / 6,500); it is not printed. Net income and B/C match. The H-series hybrids and the V/VS varieties are from INIFAP, so they go under varieties.",
+      "revisado": false
+    },
+    {
+      "ficha": "Rainfed maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        105,
+        122
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Warm subhumid climate, from 0 to 400 m a.s.l.; 80 % of the rain from June to October and midsummer drought (canícula) from July to early September. The high-potential areas are in the north, with 1,000 to 1,500 mm of rain and flat, deep, permeable red soils (Kan'kab and Yaax-hom); it is also planted on Ak'alchés with surface drainage.",
+      "siembra": {
+        "texto": "From May 20 to August 10; on clay soils, after the first rains; on red soils, from June 20 to August 10. Plantings after August 15 yield less.",
+        "meses": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "H-520",
+        "H-391",
+        "H-392",
+        "H-565",
+        "H-567",
+        "Ocotito",
+        "Chichén-Itzá",
+        "Sac-Béh"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Rows at 76 cm and about 56 seeds per 10 m of row: 65,000 to 73,000 seeds/ha in medium- and high-potential areas. By hand, at most 2 seeds per hill every 40 cm. Depth of 4 to 8 cm, with good moisture.",
+      "fertilizacion": "Red soils: 110-46-00. At planting, 100 kg of 18-46-00 mixed with 50 kg of urea; at 25-35 days, 150 kg of urea (ammonium sulfate or ammonium nitrate if it cannot be incorporated). Two foliar sprays with boron, zinc and iron. With biofertilizers (1 kg of mycorrhiza + 380 g of Azospirillum per ha on the seed) fertilizer can be reduced by 25 to 50 %.",
+      "riego": null,
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda), the most important pest",
+        "Other Spodoptera (S. eridania, S. cosmioides) and beet armyworm (S. exigua)",
+        "White grub (Phyllophaga sp.)",
+        "Wireworms",
+        "Cutworms",
+        "Leafhoppers (Dalbulus maidis)",
+        "Rootworms (Diabrotica)",
+        "Corn leaf aphid (Rhopalosiphum maidis)",
+        "Flea beetle (Chaetocnema spp.)"
+      ],
+      "enfermedades": [
+        "Corn stunt (phytoplasmas and spiroplasmas), the main problem",
+        "Leaf blights (turcicum and maydis)",
+        "Downy mildews",
+        "Rusts",
+        "Leaf spots (curvularia, cercospora) and brown spot",
+        "Anthracnose",
+        "Stalk and ear rots",
+        "Head smut"
+      ],
+      "malezas": "The crop must be weed-free for the first 30 to 40 days; combine chemical control with cultivation passes by tractor. Broadleaf weeds (altaniza, flor amarilla, mallow, vines, spiny amaranth, among others), grasses (kanchín, junglerice, Johnson grass, goosegrass, hairy grass) and nutsedges. Johnson grass and red nutsedge, which are perennial, require special management.",
+      "cosecha": "Most hybrids reach physiological maturity before 95 days after emergence; harvest is done 130 to 140 days after sowing. By hand with less than 28 % moisture or with a thresher at 16 to 18 %. Yield with the recommended technology: 5.0 to 6.5 t/ha (from 4.5 to 7.5 depending on the rainy season).",
+      "cuidados": [
+        "Plant between May 20 and August 10 (on red soils, from June 20 to August 10); late plantings yield much less.",
+        "Use seed of hybrids or varieties evaluated in the region, such as those from INIFAP (H-520, H-391, H-392, H-565).",
+        "Fertilize with 110-46-00 in two parts on red soils, with two foliar sprays of boron, zinc and iron.",
+        "Make two cultivation passes and hill up to control weeds and help the plant withstand drought better.",
+        "Sample for fall armyworm every 5 to 7 days from the first week and act at 10 to 20 % of plants with small larvae.",
+        "Keep the crop clean for the first 30 to 40 days."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 26442,
+          "rendimiento": 6500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.91,
+          "ingreso_neto": 11973,
+          "relacion_bc": 1.45
+        }
+      ],
+      "nota": "Price (5.91 $/kg) inferred from gross income / yield (38,415 / 6,500); it is not printed. Net income and B/C match. Varieties: the INIFAP genotypes of Table 25; the 'commercial check' has no name. The text mentions commercial hybrids in the fertilization figures, without naming them.",
+      "revisado": false
+    },
+    {
+      "ficha": "Papaya",
+      "cientifico": "Carica papaya L.",
+      "paginas": [
+        123,
+        140
+      ],
+      "cultivo_ids": [
+        "papaya"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "irrigated",
+      "ciclo": "PER",
+      "region": "Loam-textured K'ankab (Luvisol) or stony Tzek'el (Litosol) soils, 0.40 to 0.50 m deep, with optimum pH of 6 to 7.5. In the center and north the water table is at 8-20 m, which makes irrigation easier.",
+      "siembra": {
+        "texto": "Transplant in June and July, avoiding periods above 35 °C with low relative humidity. The seedling is transplanted at 10 to 15 cm tall (45 to 60 days in the nursery).",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Maradol",
+        "Mulata",
+        "Passion Red",
+        "MSXJ (INIFAP hybrid)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "2,000 to 2,500 plants/ha, in double rows with ridges at 1.50 m, 1.5 m between plants and 3.6 m alleys for machinery. Raised beds with black-silver mulch and drip tape.",
+      "fertilizacion": "Landrace papaya (INIFAP): 205 g of 18-46-00 per plant at transplanting and another 205 g at three months, 50 cm from the stem. Maradol (Cuban recommendation cited): 1.6 to 1.8 t/ha of 10-20-10 in five applications (basal, 30, 120, 180 and 300 days) plus 0.7 to 0.8 t/ha of urea (30, 90, 120 and 210 days). At flowering, micronutrients (boron, zinc, calcium, among others).",
+      "riego": "One irrigation every eight days on Luvisol and Litosol, by gravity or pressurized, never by sprinkler. With drip: 1 to 2 hours while the plant is small, without excess moisture; at flowering, every other day, for 3 to 5 hours, to avoid flower abortion.",
+      "plagas": [
+        "Carmine spider mite (Tetranychus cinnabarinus)",
+        "Leafhopper",
+        "Papaya leafhoppers (Empoasca papayae, E. stevensi), vector of bunchy top",
+        "Whitefly (Bemisia tabaci)",
+        "Thrips",
+        "Aphids (Aphis gossypii, Myzus persicae), vectors of ringspot virus"
+      ],
+      "enfermedades": [
+        "Anthracnose (Colletotrichum gloeosporioides)",
+        "Stem rot (Phytophthora)",
+        "Bunchy top (phytoplasma)",
+        "Papaya ringspot virus",
+        "Cat face (fruit deformation due to stress at flowering)"
+      ],
+      "malezas": "Hand weeding in the ring around the plants and control over the rest of the area during the rains, taking care not to damage fruit or trunk: papaya is very sensitive to contact herbicides, which favor Phytophthora.",
+      "cosecha": "From the sixth or seventh month, when the fruit turns from dark green to light green and then to yellow; it is picked according to the distance to market. By hand, twisting the fruit, into padded boxes in the shade. Peak production between months 11 and 16; with 2,200 plants/ha at least 120 t/ha per cycle (26 months) are expected.",
+      "cuidados": [
+        "Use certified seed of Maradol, Mulata, Passion Red or the heat-tolerant INIFAP hybrid MSXJ.",
+        "Transplant in June-July, on time (10 to 15 cm tall), avoiding extreme heat at flowering.",
+        "At 70-75 days after transplanting, remove male plants and leave one hermaphrodite plant per hole.",
+        "Irrigate frequently at flowering to avoid flower abortion.",
+        "Remove virus-infected plants and do not plant cucumber or squash nearby; control aphids and leafhoppers.",
+        "Do not injure the trunk with a machete or herbicides, to prevent Phytophthora rot."
+      ],
+      "costos": [],
+      "nota": "The extracted text marks papaya as 'annual', but the text speaks of a 26-month life cycle per plant: it was corrected to perennial (cycle PER). Modality 'irrigated' (the text only describes management with irrigation; the extracted text says 'rainfed and irrigated'). Costs []: Table 30 is truncated in the extracted text (no total cost, income or B/C). The text does not say which company developed Mulata and Passion Red; they stay under varieties as the agenda names them.",
+      "revisado": false
+    },
+    {
+      "ficha": "Grain sorghum",
+      "cientifico": "Sorghum bicolor",
+      "paginas": [
+        141,
+        180
+      ],
+      "cultivo_ids": [
+        "sorgo-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": null,
+      "region": "Short-day plant, tolerant of heat, drought and salinity. In SS it is planted on red Kan'kab and Ya'ax-hom soils (clayey, deep, flat); in FW, on U'bell-ha and Ak'alché soils (Vertisols) with residual soil moisture. It is produced mainly in Champotón, Campeche, Hopelchén and Carmen.",
+      "siembra": {
+        "texto": "Rainfed on Kan'kab (north and center): July 1 to August 15. Rainfed on Ya'ax-hom: August 1 to September 15-30 (in the north also October 1 to 31). Residual moisture in the north and center: November. Residual moisture in the south (U'bell-ha, Ak'alché, Ya'ax-hom): November 15 to December 30.",
+        "meses": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "RB-Huasteco",
+        "RB-Norteño",
+        "RB-Paloma"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "8 to 10 kg/ha of certified seed (minimum 80 % germination), 22 to 25 seeds per meter at 3-5 cm depth, for about 20 plants per meter and 250,000 plants/ha. Rows of 70 to 80 cm; double rows at 80 cm between furrows and 25 cm between rows.",
+      "fertilizacion": "100-46-00 as a single crop, in summer or winter: 100 kg of 18-46-00 at planting and 178.3 kg of urea at 30-35 days, incorporated with the cultivation pass. Do a soil analysis beforehand.",
+      "riego": null,
+      "plagas": [
+        "White grub (Phyllophaga spp.)",
+        "Wireworm",
+        "Cutworm",
+        "Ants",
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Aphids (corn leaf aphid, greenbug and sugarcane aphid Melanaphis sacchari)",
+        "Sorghum midge (Contarinia sorghicola)",
+        "Birds at harvest"
+      ],
+      "enfermedades": [
+        "Sorghum ergot",
+        "Downy mildew",
+        "Anthracnose or red rot",
+        "Zonate leaf spot"
+      ],
+      "malezas": "Keep the crop weed-free for the first 40 to 45 days: a cultivation pass at 20 days after emergence and another 8 to 10 days later, with hand weeding if needed; rows no wider than 80 cm so the crop closes and shades.",
+      "cosecha": "At physiological maturity (rachis from green to cream, hard dark grain that threshes easily), between 120 and 130 days after sowing. Start at 15 to 16 % moisture to store at about 14 %; with a combine. Yield of 3.0 t/ha, up to 5 t/ha in the best cases.",
+      "cuidados": [
+        "Plant on the date that corresponds to your soil and zone (Table 31) so the crop has enough moisture.",
+        "Use certified seed of RB-Huasteco (north and center), RB-Norteño (south) or RB-Paloma (center).",
+        "On Ya'ax-hom soils make furrows, and on U'bell-ha and Ak'alché plant on raised beds to avoid excess moisture.",
+        "Fertilize with 100-46-00 in two parts, incorporating the urea with the cultivation pass.",
+        "Keep the crop clean for the first 40 to 45 days.",
+        "Monitor pests and favor biological control (Trichogramma, lacewings, lady beetles, Bacillus thuringiensis, Beauveria) before resorting to insecticides."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 14364.5,
+          "rendimiento": 3.0,
+          "unidad_rendimiento": "t/ha",
+          "precio": 5000,
+          "ingreso_neto": 635.5,
+          "relacion_bc": 1.04
+        }
+      ],
+      "nota": "Cycle null: the sheet covers rainfed plantings in SS and residual-moisture plantings in FW. Table 31 labels some October-November residual-moisture plantings as 'P-V'. Costs for conventional tillage (price in $/t). Minimum tillage: cost 13,564.50, net 1,435.50, B/C 1.11; zero tillage: cost 11,464.50, net 3,535.50, B/C 1.31 (all with 3.0 t/ha and 15,000 $/ha gross income; everything matches). In one place the text gives 3,355.5 for zero tillage, but the table says 3,535.50, which is the figure that matches. RB-Paloma: the text does not give its yield in Campeche (table: 3.0 t/ha). Scientific name trimmed to 'Sorghum bicolor' (the extracted text cuts it at 'Sorghum bicolor (L.').",
+      "revisado": false
+    },
+    {
+      "ficha": "Tomato",
+      "cientifico": "Solanum lycopersicum",
+      "paginas": [
+        181,
+        197
+      ],
+      "cultivo_ids": [
+        "tomate-rojo-jitomate"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "Warm subhumid climate, from 1 to 400 m a.s.l. It is planted mainly on red Kan'kab soils and to a lesser extent on Yaax-Hom: clayey, slightly alkaline pH and slopes under 1.5 %. Always irrigated.",
+      "siembra": {
+        "texto": "Sowing from October to February; transplanting about 30 days later, when the seedling is 15 to 20 cm tall.",
+        "meses": [
+          10,
+          11,
+          12,
+          1,
+          2
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Maya",
+        "Yaqui",
+        "H-882",
+        "Aztec",
+        "Pony",
+        "DRD 8551",
+        "SVTE 8444"
+      ],
+      "densidad": "22,000 to 33,000 plants/ha, 20-30 cm between plants depending on the hybrid. Beds 25 to 30 cm high spaced 1.25 to 1.5 m apart, with drip tape at 1.30-1.50 m.",
+      "fertilizacion": "Total formula 128-100-128. Basal, 30-70-00 (65.2 kg/ha of urea with 152.17 kg/ha of DAP) on the beds before laying the drip tape and mulch; the rest, 98-30-128, by fertigation over 148 days (establishment, development, flowering-fruiting and ripening) with ammonium nitrate, potassium nitrate and phosphoric acid. EC of 1.0 to 2.0, water at pH 5.5 to 6.0, plus calcium, magnesium and microelements.",
+      "riego": "Drip with 8000-gauge drip tape (emitters at 10, 20 or 30 cm). Irrigate one day before and two days after transplanting; then according to soil and weather, dividing each irrigation into plain water, acids, fertilizers and plain water.",
+      "plagas": [
+        "Whitefly (Bemisia tabaci), vector of geminiviruses",
+        "Aphid (Myzus persicae)",
+        "Leafminer (Liriomyza trifolii)",
+        "Thrips",
+        "Broad mite (Polyphagotarsonemus latus)",
+        "Beet armyworm (Spodoptera exigua)",
+        "Tomato fruitworm (Heliothis zea)"
+      ],
+      "enfermedades": [
+        "Damping-off (Pythium, Fusarium, Rhizoctonia, Phytophthora)",
+        "Bacterial spot (Xanthomonas vesicatoria)",
+        "Early blight (Alternaria solani)",
+        "Gray leaf spot (Stemphylium solani)",
+        "Gray mold",
+        "White mold (Sclerotinia sclerotiorum)",
+        "Late blight (Phytophthora infestans)",
+        "Viruses transmitted by whitefly"
+      ],
+      "malezas": "Hilling with a hoe or mechanical weeding at 10 days after transplanting. Plowing to expose Johnson grass and nutsedge rhizomes to the sun. Mulch helps keep weeds in check.",
+      "cosecha": "Red fruits for the local market, breaker (streaked) fruits for the national market and mature green or three-quarter ripe for export. Grade and pack in new, labeled boxes. The recommended hybrids yield 45 to 75 t/ha according to Table 47.",
+      "cuidados": [
+        "Produce seedlings in a greenhouse or under anti-aphid netting to avoid viruses transmitted by whitefly.",
+        "Plant from October to February; in early October plantings, step up the prevention of foliar diseases.",
+        "Irrigate by drip with fertigation and adjust rates with soil, water and leaf analyses.",
+        "Stake with poles and up to five strings from 7 days after transplanting.",
+        "Manage vectors with maize or sorghum barriers, reflective mulch, yellow traps around the plot and removal of diseased plants.",
+        "Release lacewings (at least 4,000 eggs/ha when there are 2 whitefly nymphs per leaf) and Trichogramma against caterpillars."
+      ],
+      "costos": [],
+      "nota": "Costs []: Table 51 is truncated in the extracted text (no total cost, yield or income). The harvest text says 'grain yield of 5.0 to 6.0 t/ha', which seems copied from another sheet; it was not used. The hybrids are commercial; the text does not give the companies. 'DRD 8551' and 'SVTE 8444' were reconstructed from a scrambled row of Table 47 (to be reviewed).",
+      "revisado": false
+    }
+  ]
+}

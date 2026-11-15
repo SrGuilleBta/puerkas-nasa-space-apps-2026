@@ -1,0 +1,344 @@
+{
+  "_nota": "Hand-curated data. The keys inside 'cultivos' stay in Spanish because they are the exact SIAP crop names (the pipeline uses them to join with SIAP). 'ecocrop' = scientific name as it appears in the EcoCrop table (if it differs from 'cientifico'). descripcion/suelo/cuidados are a general DRAFT: review them against INIFAP technology packages and fact sheets before publishing them as a recommendation. ciclo_dias here overrides the EcoCrop range, which is usually too wide.",
+  "cultivos": {
+    "Maíz grano": {
+      "cientifico": "Zea mays", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [120, 150],
+      "descripcion": "Staple food crop in Mexico and the crop with the largest planted area in the country. It is planted in almost every municipality, both rainfed and irrigated, and has a great diversity of varieties and hybrids adapted to each region.",
+      "suelo": "Loamy, deep and well-drained; pH 5.5 to 7.5.",
+      "cuidados": [
+        "Plant into moist soil; under rainfed conditions, once the rains are established.",
+        "High nitrogen demand: split fertilization between planting and the 6- to 8-leaf stage.",
+        "The critical periods for water are flowering (heading and silking) and grain filling.",
+        "Control weeds during the first 30 to 40 days.",
+        "Monitor fall armyworm and rotate with legumes to break the pest cycle."
+      ]
+    },
+    "Frijol": {
+      "cientifico": "Phaseolus vulgaris", "tipo": "Legume", "familia": "Fabaceae", "fija_nitrogeno": true,
+      "ciclo_dias": [90, 120],
+      "descripcion": "Grain legume that is a staple of the Mexican diet. It fixes atmospheric nitrogen, so it leaves the soil in better condition for a cereal in the following cycle.",
+      "suelo": "Loamy and well-drained; pH 6 to 7.5. Does not tolerate waterlogging or salinity.",
+      "cuidados": [
+        "Avoid soils prone to waterlogging: the roots are sensitive to lack of oxygen.",
+        "Requires little nitrogen; prioritize phosphorus at planting.",
+        "Flowering and pod formation are the stages most sensitive to drought.",
+        "Harvest when the grain is dry to avoid rots; rain at harvest stains the grain.",
+        "Monitor whitefly, stink bug (conchuela) and diseases such as anthracnose and rust."
+      ]
+    },
+    "Trigo grano": {
+      "cientifico": "Triticum durum", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [130, 160],
+      "descripcion": "Winter cereal. In Mexico it is concentrated in the Fall-Winter cycle under irrigation in the northwest (Sonora, Baja California, Sinaloa) and rainfed in the Bajío and the highlands. It includes durum wheats (for pasta) and bread wheats.",
+      "suelo": "Loamy to clayey with good drainage; pH 6 to 7.5. Tolerates some salinity.",
+      "cuidados": [
+        "Plant in the November to December window so that grain filling does not coincide with the heat.",
+        "The irrigations at tillering, heading and grain filling have the greatest influence on yield.",
+        "Fertilize with nitrogen at pre-planting and at tillering.",
+        "Monitor leaf rust and yellow rust; use resistant varieties.",
+        "Avoid lodging (the plant bending over) with adjusted nitrogen rates and irrigation."
+      ]
+    },
+    "Sorgo grano": {
+      "cientifico": "Sorghum bicolor", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [100, 130],
+      "descripcion": "Heat- and drought-tolerant cereal, used mainly as livestock feed. It is common in Tamaulipas, Guanajuato and Sinaloa, and an alternative to maize where rainfall is irregular.",
+      "suelo": "Adapts to many soil types; pH 5.5 to 8.5. Tolerates moderate salinity.",
+      "cuidados": [
+        "Tolerates drought better than maize, but flowering remains sensitive to water shortage.",
+        "Fertilize with nitrogen at planting and at 30 days.",
+        "Monitor sugarcane aphid, a major pest in Mexico since 2013.",
+        "Control weeds in the first weeks: sorghum grows slowly at the start.",
+        "Harvest on time to reduce bird damage and rain losses."
+      ]
+    },
+    "Aguacate": {
+      "cientifico": "Persea americana", "tipo": "Fruit", "familia": "Lauraceae", "fija_nitrogeno": false,
+      "descripcion": "High-value perennial fruit crop; Mexico is the world's leading producer, led by Michoacán and Jalisco. The dominant variety is Hass. It enters commercial production from the third or fourth year.",
+      "suelo": "Deep, loose and with excellent drainage; pH 5 to 7. Very sensitive to waterlogging.",
+      "cuidados": [
+        "Drainage is critical: excess moisture favors avocado root rot (Phytophthora).",
+        "Regular irrigation during flowering and fruit set; water stress causes fruit drop.",
+        "Sensitive to frost; avoid low-lying areas where cold air accumulates.",
+        "Prune to keep tree height in check and let light in.",
+        "Requires phytosanitary certification for export (seed borers and branch borers)."
+      ]
+    },
+    "Caña de azúcar": {
+      "cientifico": "Saccharum officinarum", "tipo": "Industrial", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [300, 540],
+      "descripcion": "Perennial industrial crop for sugar and ethanol production. It is concentrated in Veracruz, Jalisco, San Luis Potosí and Oaxaca, around the sugar mills. After planting, several ratoons are harvested.",
+      "suelo": "Deep and fertile; pH 5.5 to 7.5.",
+      "cuidados": [
+        "Needs a lot of water (more than 1,500 mm per year or supplemental irrigation).",
+        "Fertilize with nitrogen and potassium after each cut.",
+        "The harvest season (zafra) is coordinated with the sugar mill; cutting mature cane maximizes sugar content.",
+        "Renew the plantation when ratoon yields drop.",
+        "Monitor stem borer and spittlebug (mosca pinta)."
+      ]
+    },
+    "Tomate rojo (jitomate)": {
+      "cientifico": "Solanum lycopersicum", "ecocrop": "Lycopersicon esculentum", "tipo": "Vegetable", "familia": "Solanaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 150],
+      "descripcion": "Vegetable with the highest export value in Mexico. It is grown in open fields and increasingly in greenhouses and shade houses, especially in Sinaloa, San Luis Potosí and Michoacán.",
+      "suelo": "Loamy, rich in organic matter and well-drained; pH 5.5 to 6.8.",
+      "cuidados": [
+        "Frequent and uniform irrigation (preferably drip); sudden changes in moisture crack the fruit and cause blossom-end rot.",
+        "Do not repeat solanaceous crops (chili pepper, potato, eggplant) on the same land: they share soil-borne diseases.",
+        "Stake and prune to improve ventilation and fruit quality.",
+        "Monitor whitefly and potato psyllid (they transmit viruses) and late blight.",
+        "Sensitive to frost and to low night temperatures during flowering."
+      ]
+    },
+    "Chile verde": {
+      "cientifico": "Capsicum annuum", "tipo": "Vegetable", "familia": "Solanaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 180],
+      "descripcion": "Includes jalapeño, serrano, poblano, bell pepper and other types. It is one of the most widespread vegetables in the country; Chihuahua, Sinaloa and Zacatecas are major producers.",
+      "suelo": "Loamy and well-drained; pH 5.5 to 7. Sensitive to salinity and waterlogging.",
+      "cuidados": [
+        "Raise seedlings in a seedbed or tray and transplant.",
+        "Light, frequent irrigations; waterlogging favors wilt (Phytophthora capsici).",
+        "Rotate with grasses; do not plant after other solanaceous crops.",
+        "Monitor pepper weevil, whitefly and viruses.",
+        "Fertilize with potassium during fruiting to improve quality."
+      ]
+    },
+    "Agave": {
+      "cientifico": "Agave tequilana", "tipo": "Industrial", "familia": "Asparagaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [1800, 2900],
+      "descripcion": "Long-cycle perennial plant (5 to 8 years) whose heart (piña) is used to produce tequila and mezcal. Very drought-tolerant. Jalisco concentrates most of the tequila agave, which has a designation of origin.",
+      "suelo": "Stony or sandy with good drainage; pH 6 to 8.",
+      "cuidados": [
+        "Very drought-tolerant; the main risk is waterlogging.",
+        "Plant healthy offshoots from selected mother plants.",
+        "Weed between rows during the first years; annual crops can be intercropped.",
+        "Monitor agave weevil and wilt.",
+        "The price is very volatile: consider contracts with the industry before planting."
+      ]
+    },
+    "Limón": {
+      "cientifico": "Citrus aurantiifolia / Citrus latifolia", "ecocrop": "Citrus aurantifolia", "tipo": "Fruit", "familia": "Rutaceae", "fija_nitrogeno": false,
+      "descripcion": "Includes Mexican (key) lime and Persian lime. Perennial warm-climate fruit crop; Michoacán, Veracruz, Colima and Oaxaca are the main producers.",
+      "suelo": "Loamy to sandy and well-drained; pH 5.5 to 7.5.",
+      "cuidados": [
+        "Sensitive to frost; suited to warm areas below 1,000 m a.s.l.",
+        "Regular irrigation; withholding water followed by irrigation is used to induce flowering.",
+        "Monitor HLB (huanglongbing) and its vector, the Asian citrus psyllid.",
+        "Fertilize several times a year according to expected production.",
+        "Prune for ventilation and to remove diseased branches."
+      ]
+    },
+    "Naranja": {
+      "cientifico": "Citrus sinensis", "tipo": "Fruit", "familia": "Rutaceae", "fija_nitrogeno": false,
+      "descripcion": "Mexico's main citrus crop by area. Veracruz accounts for about half of production, followed by Tamaulipas and San Luis Potosí. Much of it is grown rainfed.",
+      "suelo": "Deep and with good drainage; pH 5.5 to 7.",
+      "cuidados": [
+        "Under rainfed conditions, drought during flowering reduces fruit set.",
+        "Monitor HLB, fruit fly and citrus tristeza virus.",
+        "Use tristeza-tolerant rootstocks.",
+        "Lime acid soils and fertilize with nitrogen, potassium and micronutrients.",
+        "Prune to keep the canopy open."
+      ]
+    },
+    "Papa": {
+      "cientifico": "Solanum tuberosum", "tipo": "Tuber", "familia": "Solanaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 140],
+      "descripcion": "Tuber crop of cool temperate climates. It is grown in Sinaloa (winter), Sonora, Chihuahua, State of Mexico and other highland states.",
+      "suelo": "Loose, loamy or sandy loam, deep; pH 5 to 6.5.",
+      "cuidados": [
+        "Use certified virus-free seed.",
+        "Hill up (mound soil around the plant) to protect tubers from sun and pests.",
+        "Steady irrigation during tuber formation; excess water favors rots.",
+        "Monitor late blight and potato psyllid (zebra chip).",
+        "Do not repeat solanaceous crops on the same land for at least 3 years."
+      ]
+    },
+    "Alfalfa verde": {
+      "cientifico": "Medicago sativa", "tipo": "Forage", "familia": "Fabaceae", "fija_nitrogeno": true,
+      "descripcion": "High-quality perennial forage legume for dairy cattle. It is cut several times a year for 3 to 5 years. It is concentrated in Chihuahua, Hidalgo, Guanajuato and the Comarca Lagunera.",
+      "suelo": "Deep and well-drained; pH 6.5 to 7.5. Does not tolerate acidity or waterlogging.",
+      "cuidados": [
+        "Uses a lot of water: in areas with overexploited aquifers it is a contested crop.",
+        "Inoculate the seed with Rhizobium to ensure nitrogen fixation.",
+        "Cut at early flowering to balance yield and quality.",
+        "Leaves the soil rich in nitrogen for the next crop when the stand is plowed under.",
+        "Monitor aphids and armyworm."
+      ]
+    },
+    "Café cereza": {
+      "cientifico": "Coffea arabica", "tipo": "Industrial", "familia": "Rubiaceae", "fija_nitrogeno": false,
+      "descripcion": "Perennial mountain shrub grown under shade in Chiapas, Veracruz, Puebla and Oaxaca, mostly by smallholders and rainfed.",
+      "suelo": "Rich in organic matter and well-drained; pH 5 to 6.5.",
+      "cuidados": [
+        "Keep shade trees to regulate temperature and conserve the soil.",
+        "Monitor coffee leaf rust and coffee berry borer; use rust-tolerant varieties.",
+        "Renew old coffee plantations to recover yield.",
+        "Pick only ripe (red) cherries to improve quality.",
+        "Grows between 600 and 1,800 m a.s.l.; lower areas are more vulnerable to heat."
+      ]
+    },
+    "Mango": {
+      "cientifico": "Mangifera indica", "tipo": "Fruit", "familia": "Anacardiaceae", "fija_nitrogeno": false,
+      "descripcion": "Perennial tropical fruit crop. Mexico is one of the leading exporters (Ataulfo, Tommy Atkins, Kent). It is grown in Guerrero, Sinaloa, Nayarit, Chiapas and Michoacán.",
+      "suelo": "Deep and well-drained; pH 5.5 to 7.5.",
+      "cuidados": [
+        "Needs a dry season before flowering to flower well.",
+        "Rain during flowering favors anthracnose and reduces fruit set.",
+        "Monitor fruit fly (control is mandatory for export).",
+        "Prune after harvest to control tree size.",
+        "Sensitive to frost."
+      ]
+    },
+    "Cebada grano": {
+      "cientifico": "Hordeum vulgare", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 130],
+      "descripcion": "Cool-climate cereal used mainly by the brewing industry. It is grown rainfed in the highlands (Hidalgo, Tlaxcala, Puebla, State of Mexico) and irrigated in the Bajío.",
+      "suelo": "Loamy and well-drained; pH 6 to 8. Tolerates moderate salinity.",
+      "cuidados": [
+        "Short cycle: useful where the rainy season is brief.",
+        "High nitrogen rates raise protein and lower malting quality.",
+        "Plant certified malting varieties if selling to the industry.",
+        "Monitor rust and aphids.",
+        "Harvest at the right grain moisture to avoid losing quality."
+      ]
+    },
+    "Garbanzo grano": {
+      "cientifico": "Cicer arietinum", "tipo": "Legume", "familia": "Fabaceae", "fija_nitrogeno": true,
+      "ciclo_dias": [100, 150],
+      "descripcion": "Winter legume, very drought-tolerant; it usually makes use of residual soil moisture. Sonora and Sinaloa produce white chickpea for export.",
+      "suelo": "Loamy to clayey with good drainage; pH 6 to 8.",
+      "cuidados": [
+        "Tolerates drought well; excess water favors chickpea wilt (Fusarium).",
+        "Plant in Fall-Winter; a good rotation after summer maize or sorghum.",
+        "Fixes nitrogen: requires little nitrogen fertilization.",
+        "Use treated seed and varieties tolerant to root diseases.",
+        "Monitor pod borer (Helicoverpa)."
+      ]
+    },
+    "Avena forrajera en verde": {
+      "cientifico": "Avena sativa", "tipo": "Forage", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 120],
+      "descripcion": "Cool-climate forage cereal that is cut green or ensiled for livestock. It is grown rainfed in the highlands and irrigated in Fall-Winter.",
+      "suelo": "Adapts to poor and somewhat acid soils; pH 5 to 7.",
+      "cuidados": [
+        "Tolerates cold and light frosts better than other cereals.",
+        "Cut at the milk-dough grain stage for good forage quality.",
+        "Can be intercropped with vetch or pea to improve protein.",
+        "Fertilize with nitrogen at planting.",
+        "Useful in rotation to cover the soil in winter."
+      ]
+    },
+    "Fresa": {
+      "cientifico": "Fragaria x ananassa", "tipo": "Fruit", "familia": "Rosaceae", "fija_nitrogeno": false,
+      "descripcion": "High-value intensive crop, almost always with drip irrigation and plastic mulch. Michoacán (Zamora) and Baja California concentrate production, much of it for export.",
+      "suelo": "Sandy to loamy, loose and well-drained; pH 5.5 to 6.8.",
+      "cuidados": [
+        "Use certified nursery plants.",
+        "Drip irrigation with fertigation; it is sensitive to salinity.",
+        "Mulch with plastic to control weeds and keep the fruit clean.",
+        "Monitor botrytis (gray mold), spider mite and thrips.",
+        "Harvest daily or every other day: requires a lot of labor."
+      ]
+    },
+    "Soya": {
+      "cientifico": "Glycine max", "tipo": "Oilseed", "familia": "Fabaceae", "fija_nitrogeno": true,
+      "ciclo_dias": [90, 130],
+      "descripcion": "Oilseed legume. In Mexico it is planted in Tamaulipas, Campeche, San Luis Potosí and Chiapas, mostly rainfed in summer.",
+      "suelo": "Loamy and well-drained; pH 6 to 7.",
+      "cuidados": [
+        "Inoculate the seed with Bradyrhizobium if the field has not had soybean before.",
+        "Choose the variety according to latitude: flowering depends on day length.",
+        "Flowering and pod filling are the stages most sensitive to drought.",
+        "Monitor whitefly, stink bugs and Asian soybean rust.",
+        "Good rotation with maize or sorghum: it supplies nitrogen to the following cereal."
+      ]
+    },
+    "Cebolla": {
+      "cientifico": "Allium cepa", "tipo": "Vegetable", "familia": "Amaryllidaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 150],
+      "descripcion": "Bulb vegetable planted year-round in different regions. Chihuahua, Zacatecas, Tamaulipas and Baja California are major producers.",
+      "suelo": "Loamy, loose and well-drained; pH 6 to 7.",
+      "cuidados": [
+        "Choose the variety according to the local day length (short-, intermediate- or long-day).",
+        "Shallow roots: light, frequent irrigations; stop before harvest.",
+        "Control weeds carefully: its thin foliage makes it a poor competitor.",
+        "Monitor thrips and downy mildew.",
+        "Cure (dry) the bulbs after harvest for storage."
+      ]
+    },
+    "Maíz forrajero en verde": {
+      "cientifico": "Zea mays", "tipo": "Forage", "familia": "Poaceae", "fija_nitrogeno": false,
+      "ciclo_dias": [90, 120],
+      "descripcion": "Maize harvested whole and green for silage to feed dairy cattle. It is concentrated in the Comarca Lagunera, Jalisco, Chihuahua and Aguascalientes.",
+      "suelo": "Loamy, deep and well-drained; pH 5.5 to 7.5.",
+      "cuidados": [
+        "Cut when the grain is at 1/3 to 1/2 milk line for good silage.",
+        "High water and nitrogen demand, like grain maize.",
+        "Use forage hybrids with high dry matter production.",
+        "Chop fine and pack the silo well to avoid losses.",
+        "Rotate with oats or legumes in Fall-Winter."
+      ]
+    },
+
+    "Pastos y praderas": {"cientifico": "Several species", "tipo": "Forage", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Alfalfa achicalada": {"cientifico": "Medicago sativa", "tipo": "Forage", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Sorgo forrajero en verde": {"cientifico": "Sorghum bicolor", "tipo": "Forage", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Avena grano": {"cientifico": "Avena sativa", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Arroz palay": {"cientifico": "Oryza sativa", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Elote": {"cientifico": "Zea mays", "tipo": "Vegetable", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Semilla de maíz grano": {"cientifico": "Zea mays", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Chile seco": {"cientifico": "Capsicum annuum", "tipo": "Vegetable", "familia": "Solanaceae", "fija_nitrogeno": false},
+    "Tomate verde": {"cientifico": "Physalis philadelphica", "tipo": "Vegetable", "familia": "Solanaceae", "fija_nitrogeno": false},
+    "Nuez": {"cientifico": "Carya illinoinensis", "ecocrop": "Carya illinoensis", "tipo": "Fruit", "familia": "Juglandaceae", "fija_nitrogeno": false},
+    "Plátano": {"cientifico": "Musa spp.", "ecocrop": "Musa acuminata x balbisiana", "tipo": "Fruit", "familia": "Musaceae", "fija_nitrogeno": false},
+    "Algodón hueso": {"cientifico": "Gossypium hirsutum", "tipo": "Industrial", "familia": "Malvaceae", "fija_nitrogeno": false},
+    "Manzana": {"cientifico": "Malus domestica", "tipo": "Fruit", "familia": "Rosaceae", "fija_nitrogeno": false},
+    "Espárrago": {"cientifico": "Asparagus officinalis", "tipo": "Vegetable", "familia": "Asparagaceae", "fija_nitrogeno": false},
+    "Uva": {"cientifico": "Vitis vinifera", "tipo": "Fruit", "familia": "Vitaceae", "fija_nitrogeno": false},
+    "Piña": {"cientifico": "Ananas comosus", "tipo": "Fruit", "familia": "Bromeliaceae", "fija_nitrogeno": false},
+    "Copra": {"cientifico": "Cocos nucifera", "tipo": "Oilseed", "familia": "Arecaceae", "fija_nitrogeno": false},
+    "Coco fruta": {"cientifico": "Cocos nucifera", "tipo": "Fruit", "familia": "Arecaceae", "fija_nitrogeno": false},
+    "Sandía": {"cientifico": "Citrullus lanatus", "tipo": "Vegetable", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Melón": {"cientifico": "Cucumis melo", "tipo": "Vegetable", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Pepino": {"cientifico": "Cucumis sativus", "tipo": "Vegetable", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Calabacita": {"cientifico": "Cucurbita pepo", "tipo": "Vegetable", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Calabaza semilla o chihua": {"cientifico": "Cucurbita argyrosperma", "tipo": "Vegetable", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Papaya": {"cientifico": "Carica papaya", "tipo": "Fruit", "familia": "Caricaceae", "fija_nitrogeno": false},
+    "Brócoli": {"cientifico": "Brassica oleracea var. italica", "tipo": "Vegetable", "familia": "Brassicaceae", "fija_nitrogeno": false},
+    "Col (repollo)": {"cientifico": "Brassica oleracea var. capitata", "tipo": "Vegetable", "familia": "Brassicaceae", "fija_nitrogeno": false},
+    "Coliflor": {"cientifico": "Brassica oleracea var. botrytis", "tipo": "Vegetable", "familia": "Brassicaceae", "fija_nitrogeno": false},
+    "Lechuga": {"cientifico": "Lactuca sativa", "ecocrop": "Lactuca sativa var. capitata", "tipo": "Vegetable", "familia": "Asteraceae", "fija_nitrogeno": false},
+    "Zanahoria": {"cientifico": "Daucus carota", "tipo": "Vegetable", "familia": "Apiaceae", "fija_nitrogeno": false},
+    "Ajo": {"cientifico": "Allium sativum", "tipo": "Vegetable", "familia": "Amaryllidaceae", "fija_nitrogeno": false},
+    "Ejote": {"cientifico": "Phaseolus vulgaris", "tipo": "Vegetable", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Haba grano": {"cientifico": "Vicia faba", "tipo": "Legume", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Chícharo": {"cientifico": "Pisum sativum", "tipo": "Legume", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Cacahuate": {"cientifico": "Arachis hypogaea", "tipo": "Oilseed", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Ajonjolí": {"cientifico": "Sesamum indicum", "tipo": "Oilseed", "familia": "Pedaliaceae", "fija_nitrogeno": false},
+    "Cártamo": {"cientifico": "Carthamus tinctorius", "tipo": "Oilseed", "familia": "Asteraceae", "fija_nitrogeno": false},
+    "Girasol": {"cientifico": "Helianthus annuus", "tipo": "Oilseed", "familia": "Asteraceae", "fija_nitrogeno": false},
+    "Palma africana o de aceite": {"cientifico": "Elaeis guineensis", "tipo": "Oilseed", "familia": "Arecaceae", "fija_nitrogeno": false},
+    "Cacao": {"cientifico": "Theobroma cacao", "tipo": "Industrial", "familia": "Malvaceae", "fija_nitrogeno": false},
+    "Durazno": {"cientifico": "Prunus persica", "tipo": "Fruit", "familia": "Rosaceae", "fija_nitrogeno": false},
+    "Frambuesa": {"cientifico": "Rubus idaeus", "ecocrop": "Rubus idaeus ssp. idaeus", "tipo": "Fruit", "familia": "Rosaceae", "fija_nitrogeno": false},
+    "Zarzamora": {"cientifico": "Rubus spp.", "ecocrop": "Rubus sp.", "tipo": "Fruit", "familia": "Rosaceae", "fija_nitrogeno": false},
+    "Arándano": {"cientifico": "Vaccinium corymbosum", "tipo": "Fruit", "familia": "Ericaceae", "fija_nitrogeno": false},
+    "Tuna": {"cientifico": "Opuntia ficus-indica", "tipo": "Fruit", "familia": "Cactaceae", "fija_nitrogeno": false},
+    "Nopalitos": {"cientifico": "Opuntia ficus-indica", "tipo": "Vegetable", "familia": "Cactaceae", "fija_nitrogeno": false},
+    "Guayaba": {"cientifico": "Psidium guajava", "tipo": "Fruit", "familia": "Myrtaceae", "fija_nitrogeno": false},
+    "Toronja (pomelo)": {"cientifico": "Citrus paradisi", "tipo": "Fruit", "familia": "Rutaceae", "fija_nitrogeno": false},
+    "Mandarina": {"cientifico": "Citrus reticulata", "tipo": "Fruit", "familia": "Rutaceae", "fija_nitrogeno": false},
+    "Tangerina": {"cientifico": "Citrus reticulata", "tipo": "Fruit", "familia": "Rutaceae", "fija_nitrogeno": false},
+    "Vainilla": {"cientifico": "Vanilla planifolia", "tipo": "Industrial", "familia": "Orchidaceae", "fija_nitrogeno": false},
+    "Tabaco": {"cientifico": "Nicotiana tabacum", "tipo": "Industrial", "familia": "Solanaceae", "fija_nitrogeno": false},
+    "Jamaica": {"cientifico": "Hibiscus sabdariffa", "tipo": "Industrial", "familia": "Malvaceae", "fija_nitrogeno": false},
+    "Jícama": {"cientifico": "Pachyrhizus erosus", "tipo": "Tuber", "familia": "Fabaceae", "fija_nitrogeno": true},
+    "Camote": {"cientifico": "Ipomoea batatas", "tipo": "Tuber", "familia": "Convolvulaceae", "fija_nitrogeno": false},
+    "Chayote": {"cientifico": "Sechium edule", "tipo": "Vegetable", "familia": "Cucurbitaceae", "fija_nitrogeno": false},
+    "Cilantro": {"cientifico": "Coriandrum sativum", "tipo": "Vegetable", "familia": "Apiaceae", "fija_nitrogeno": false},
+    "Triticale grano": {"cientifico": "x Triticosecale", "tipo": "Cereal", "familia": "Poaceae", "fija_nitrogeno": false},
+    "Amaranto": {"cientifico": "Amaranthus hypochondriacus", "tipo": "Cereal", "familia": "Amaranthaceae", "fija_nitrogeno": false},
+    "Hule hevea": {"cientifico": "Hevea brasiliensis", "tipo": "Industrial", "familia": "Euphorbiaceae", "fija_nitrogeno": false}
+  }
+}

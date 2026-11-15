@@ -1,0 +1,735 @@
+/* Enciclopedia de cultivos. Prefijo `enc` para no chocar con las clases de Principal (.cultivo__…). */
+
+.enc {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+/* En pantallas chicas: zona, biblioteca y después la ficha */
+.enc__barra {
+  order: 0;
+}
+.enc__lateral {
+  order: 1;
+}
+.enc__detalle {
+  order: 2;
+  min-width: 0;
+}
+
+/* ---------- Filtro de zona ---------- */
+.enc__zona {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--tarjeta);
+  box-shadow: var(--sombra);
+}
+
+.enc__zona-icono {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.enc__campo {
+  display: grid;
+  gap: 2px;
+  flex: 1 1 180px;
+  min-width: 0;
+}
+
+.enc__campo > span:not(.sr-only) {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.enc__campo select {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.enc__campo select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.enc__campo--corto {
+  flex: 1 1 120px;
+}
+
+.enc__limpiar {
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+
+/* ---------- Ficha del cultivo ---------- */
+.enc__ficha {
+  display: grid;
+  gap: 16px;
+}
+
+.enc__principal {
+  padding: 0;
+  overflow: hidden;
+}
+
+.enc__cabecera {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 28px;
+  background: linear-gradient(115deg, rgba(0, 230, 118, 0.18), rgba(20, 200, 192, 0.1) 55%, rgba(255, 255, 255, 0));
+}
+
+.enc__emblema {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 124px;
+  height: 124px;
+  border-radius: 50%;
+  color: var(--color);
+  background: color-mix(in srgb, var(--color) 10%, #fff);
+  box-shadow:
+    0 0 0 10px color-mix(in srgb, var(--color) 9%, transparent),
+    0 0 0 22px color-mix(in srgb, var(--color) 5%, transparent);
+  margin: 12px;
+}
+
+.enc__emblema svg {
+  stroke-width: 2.2;
+}
+
+.enc__titulos {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.enc__tipo {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tinta);
+}
+
+.enc__titulos h1 {
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 600;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.enc__cientifico {
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.enc__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.enc__chip {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(20, 200, 192, 0.14);
+  font-size: 11px;
+  font-weight: 600;
+  color: #0e6f6a;
+}
+
+.enc__chip--suave {
+  background: rgba(18, 48, 74, 0.06);
+  color: var(--tinta-suave);
+}
+
+/* Etiquetas (alta rentabilidad, rotación favorable, sensible a sequía…) */
+.enc__etiquetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 20px 28px;
+  list-style: none;
+  border-top: 1px solid var(--borde);
+}
+
+.enc__etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(0, 230, 118, 0.07);
+}
+
+.enc__etiqueta--negative {
+  background: rgba(240, 109, 109, 0.08);
+}
+
+.enc__etiqueta strong,
+.enc__alerta strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.enc__etiqueta small,
+.enc__alerta small {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--tinta-suave);
+}
+
+.enc__signo {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--tinta);
+}
+
+.enc__etiqueta--negative .enc__signo {
+  background: #f58f8f;
+  color: #fff;
+}
+
+/* Secciones de la tarjeta */
+.enc__seccion {
+  display: grid;
+  gap: 12px;
+  padding: 20px 28px 24px;
+  border-top: 1px solid var(--borde);
+}
+
+.enc__seccion h2 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.enc__alertas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enc__alerta {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--turquesa);
+}
+
+.enc__alerta--alert {
+  color: var(--coral);
+}
+
+.enc__alerta svg {
+  flex: none;
+  margin-top: 1px;
+}
+
+.enc__alerta strong {
+  color: var(--tinta);
+}
+
+.enc__nada {
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.enc__texto {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--tinta-suave);
+}
+
+.enc__texto--suave strong {
+  color: var(--tinta);
+}
+
+/* Datos del cultivo (siembra ideal, temperatura, rendimiento…) */
+.enc__datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.enc__dato {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--verde);
+  border-radius: 4px 12px 12px 4px;
+  background: rgba(0, 230, 118, 0.08);
+}
+
+.enc__dato span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.enc__dato strong {
+  font-size: 15px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.enc__dato small {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.enc__datos--secundarios .enc__dato {
+  border-left-color: var(--turquesa);
+  background: rgba(20, 200, 192, 0.07);
+}
+
+/* ---------- Guía de cultivo ---------- */
+.enc__subtitulo {
+  margin: 20px 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.enc__pestanas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.enc__pestanas button {
+  padding: 8px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: var(--tarjeta);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+
+.enc__pestanas button[aria-selected="true"] {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.enc__consejos {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0 0 0 20px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.enc__consejos li::marker {
+  color: var(--verde-oscuro);
+  font-weight: 700;
+}
+
+.enc__guia-lista {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.enc__guia-fila {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 4px 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--borde);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.enc__guia-fila dt {
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+.enc__guia-fila dd {
+  margin: 0;
+  color: var(--tinta-suave);
+}
+
+.enc__meses {
+  font-weight: 600;
+  color: var(--verde-oscuro);
+}
+
+.enc__pildoras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enc__pildoras li {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(18, 48, 74, 0.06);
+  font-size: 12px;
+  color: var(--tinta);
+}
+
+.enc__tabla-caja {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+  overflow-x: auto;
+}
+
+.enc__tabla {
+  width: 100%;
+  min-width: 420px;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.enc__tabla th,
+.enc__tabla td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--borde);
+  text-align: right;
+}
+
+.enc__tabla th:first-child {
+  text-align: left;
+}
+
+.enc__tabla thead th {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.enc__tabla-caja small,
+.enc__fuente {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--tinta-suave);
+}
+
+.enc__fuente {
+  margin-top: 10px;
+}
+
+.enc__rotacion {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enc__rotacion li {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.enc__rotacion-cabeza {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.enc__rotacion-cabeza span {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.enc__rotacion small {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--tinta-suave);
+}
+
+/* ---------- Biblioteca ---------- */
+.enc__biblioteca {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 20px 16px 8px;
+}
+
+.enc__biblioteca .tarjeta__encabezado {
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.enc__conteo {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tinta-suave);
+}
+
+.enc__buscador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--tinta);
+}
+
+.enc__buscador:focus-within {
+  outline: 2px solid var(--verde-oscuro);
+  outline-offset: 2px;
+}
+
+.enc__buscador input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+}
+
+.enc__ayuda {
+  margin: 6px 12px 10px;
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.enc__filtros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.enc__interruptor {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+
+.enc__interruptor[aria-pressed="true"] {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+.enc__vacio {
+  padding: 24px 12px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.enc__lista {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  max-height: 420px;
+  margin: 0;
+  padding: 0 0 8px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.enc__fila {
+  display: flex;
+  align-items: center;
+  border-radius: 18px;
+}
+
+.enc__fila--activa {
+  background: linear-gradient(90deg, rgba(0, 230, 118, 0.2), rgba(0, 230, 118, 0.04));
+}
+
+.enc__item {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 10px 8px 10px 10px;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
+  text-align: left;
+}
+
+.enc__fila:not(.enc__fila--activa) .enc__item:hover {
+  background: rgba(0, 230, 118, 0.07);
+}
+
+.enc__icono {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color) 16%, #fff);
+  color: var(--color);
+}
+
+.enc__textos {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.enc__textos strong {
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.enc__textos small {
+  overflow: hidden;
+  font-size: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--tinta-suave);
+}
+
+.enc__estrella {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: 4px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(18, 48, 74, 0.28);
+}
+
+.enc__estrella:hover {
+  color: var(--ambar);
+}
+
+.enc__estrella--activa {
+  color: var(--verde);
+}
+
+/* ---------- Escritorio: ficha a la izquierda, biblioteca a la derecha ---------- */
+@media (min-width: 960px) {
+  .enc {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    align-items: start;
+  }
+
+  .enc__barra {
+    grid-column: 1 / -1;
+  }
+
+  .enc__detalle {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .enc__lateral {
+    position: sticky;
+    top: 16px;
+    grid-column: 2;
+    grid-row: 2;
+    order: 2;
+  }
+
+  .enc__lista {
+    max-height: calc(100vh - 340px);
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .enc__cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .enc__emblema {
+    width: 88px;
+    height: 88px;
+  }
+
+  .enc__etiquetas,
+  .enc__seccion {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .enc__guia-fila {
+    grid-template-columns: 1fr;
+  }
+}

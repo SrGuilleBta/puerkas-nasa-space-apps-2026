@@ -1,0 +1,448 @@
+{
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, made from the text in data/inifap/extraido/san_luis_potosi.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
+  "cve_ent": "24",
+  "estado": "San Luis Potosí",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de San Luis Potosí [Agricultural Technical Agenda of San Luis Potosí]. INIFAP, Mexico City, 2026.",
+  "fichas": [
+    {
+      "ficha": "Alfalfa",
+      "cientifico": "Medicago sativa L.",
+      "paginas": [
+        11,
+        18
+      ],
+      "cultivo_ids": [
+        "alfalfa-verde"
+      ],
+      "tipo_cultivo": "perennial",
+      "modalidad": "irrigated",
+      "ciclo": "PER",
+      "region": "Altiplano Potosino (1,500 to 2,100 m; 14 to 29 °C; 250 to 450 mm of rain per year) and Zona Media (900 to 1,500 m; 450 to 600 mm). Needs deep, well-drained, well-leveled soils.",
+      "siembra": {
+        "texto": "In the cooler months, from October to January, to avoid spring weeds.",
+        "meses": [
+          10,
+          11,
+          12,
+          1
+        ]
+      },
+      "variedades": [
+        "San Miguelito",
+        "Gigante",
+        "Atlixco",
+        "Júpiter",
+        "Vía Láctea",
+        "Jeff",
+        "Temporalera",
+        "Oaxaca"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "25 to 30 kg/ha of clean, non-pelleted seed with at least 85% germination; at least 35 kg/ha if pelleted. Cover to no more than 1.5 cm.",
+      "fertilizacion": "At planting, 40 kg of nitrogen and 80 kg of phosphorus per ha broadcast (90 kg of urea or 200 kg of ammonium sulfate; 180 kg of triple superphosphate or 400 kg of single superphosphate). In established alfalfa, only 80 kg of phosphorus each year. Inoculate the seed with an alfalfa-specific inoculant on the same day of planting. A soil analysis is recommended.",
+      "riego": "Slow first irrigation after planting so the seed is not washed away; the second when the soil begins to dry at the surface. Under gravity irrigation, plant in borders (no more than 50 m long on sandy soils, 120 m on loam and less than 150 m on clay soils). Sprinkler irrigation is the best option for establishment and production.",
+      "plagas": [
+        "Green aphid",
+        "Spotted alfalfa aphid"
+      ],
+      "enfermedades": [
+        "Alfalfa wilt (root fungus)",
+        "Root rot",
+        "Leaf spot",
+        "Downy mildew or powdery mildew"
+      ],
+      "malezas": "Weeds appear in the early stages; when the recommended seeding rate is planted in the indicated months there are few, and the cuttings eliminate them. Oats can be sown at 30 to 40 kg/ha together with the alfalfa to hold back weeds, and the larger weeds removed by hand or with a hoe before the first cutting.",
+      "cosecha": "First cutting 60 to 80 days after planting. In spring, summer and fall, cut at the start of flowering (maximum 10% of flowers), every 28 to 30 days; in winter, when crown regrowth is up to 5 cm, every 35 to 38 days. About 110 t of green forage per year are expected in 8 to 10 cuttings.",
+      "cuidados": [
+        "Level the field well (about 10 cm of slope in 100 m) to avoid waterlogging and root diseases.",
+        "Plant from October to January to reduce weed invasion.",
+        "Inoculate the seed and protect it from sun and wind while doing so.",
+        "Apply 80 kg of phosphorus per ha each year in established alfalfa.",
+        "Against leaf spot and downy mildew, cut a little earlier; against root rots, rotate with grasses (sorghum) for 3 to 5 years.",
+        "If any insecticide is applied, do it 15 days before cutting."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 64200,
+          "rendimiento": 110,
+          "unidad_rendimiento": "t/ha",
+          "precio": 830,
+          "ingreso_neto": 26440,
+          "relacion_bc": 1.41
+        }
+      ],
+      "nota": "The extracted text marks tipo_cultivo as 'multi-year, 6 to 8 years'; it was normalized to 'perennial'. In Table 1 the printed total cost ($64,200) does not match the sum of the items ($65,350; the difference is exactly pest control, $1,150) and the printed income ($90,640) differs slightly from 110 t × $830 ($91,300); the printed cost, profit and B/C ratio values were kept, as they are consistent with each other. Price in $/t.",
+      "revisado": false
+    },
+    {
+      "ficha": "Oats",
+      "cientifico": "Avena sativa L.",
+      "paginas": [
+        19,
+        22
+      ],
+      "cultivo_ids": [
+        "avena-forrajera-en-verde"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Altiplano Potosino (1,500 to 2,100 m; 14 to 29 °C; 250 to 450 mm per year) and Zona Media (900 to 1,500 m; 450 to 600 mm). Under rainfed conditions the potential is medium to low.",
+      "siembra": {
+        "texto": "From May 15 to August 10.",
+        "meses": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "variedades": [
+        "Turquesa",
+        "Karma",
+        "Avemex",
+        "Obsidiana",
+        "Chihuahua"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "80 to 100 kg of seed per ha broadcast, covered with one pass of the harrow.",
+      "fertilizacion": "Biofertilizing with mycorrhiza is recommended (1.5 kg of product per 100 kg of seed, prepared in the shade). For chemical fertilization, run a soil analysis and ask an agronomist for the dose.",
+      "riego": null,
+      "plagas": [],
+      "enfermedades": [],
+      "malezas": "Control broadleaf weeds when they are no taller than 7 cm. Cultivation passes are not required in broadcast plantings.",
+      "cosecha": "Cut when the grain is at the milk-dough stage. Expect 15 to 16 t/ha of fresh forage (4 to 5 t/ha of dry matter).",
+      "cuidados": [
+        "Prepare the soil by plowing to 30 cm and harrowing, or with a multi-plow (conservation tillage).",
+        "Plant between May 15 and August 10 with 80 to 100 kg of seed per ha.",
+        "Use mycorrhiza as a biofertilizer and run a soil analysis before fertilizing.",
+        "Monitor the crop: no important pests or diseases have been recorded in the state.",
+        "Cut at the milk-dough grain stage for forage."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 9700,
+          "rendimiento": 15,
+          "unidad_rendimiento": "t/ha",
+          "precio": 800,
+          "ingreso_neto": 2300,
+          "relacion_bc": 1.24
+        }
+      ],
+      "nota": "The agenda states that no incident pests or important diseases are recorded for forage oats in San Luis Potosí. Price in $/t.",
+      "revisado": false
+    },
+    {
+      "ficha": "Ancho chili pepper",
+      "cientifico": "Capsicum annuum L.",
+      "paginas": [
+        23,
+        35
+      ],
+      "cultivo_ids": [
+        "chile-verde",
+        "chile-seco"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "Altiplano Potosino, from 1,800 to 2,200 m, with a mean temperature of 17.4 °C and about 350 mm of rain per year.",
+      "siembra": {
+        "texto": "Transplanting under irrigation from April 1 to May 30. With fertigation, depending on the zone, from March 16 or April 1 to May 15-20 (San Luis Potosí, Catorce, Cedral, Vanegas, Guadalcázar, Villa de Guadalupe, Villa de Arista, Moctezuma, Venado, Bocas, Salinas, Villa de Ramos, Santo Domingo); with early compact-load hybrids it can be extended to May 31, June 15 or 20 depending on the zone.",
+        "meses": [
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "VR-91 (guajillo, INIFAP)",
+        "Don Ramón (guajillo, INIFAP)",
+        "Don Luis (guajillo, INIFAP)",
+        "AM-VR (ancho mulato, INIFAP)",
+        "AP-VR (ancho poblano, INIFAP)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "37,037 plants per ha: 0.30 m between plants and 0.90 m between rows, with white/black plastic mulch and drip tape with emitters every 0.30 m.",
+      "fertilizacion": "Fertigation with 180-90-00 (600 kg/ha of phosphonitrate and 85 kg/ha of phosphoric acid). Nutrient solution by stage: N from 60 to 140 ppm, P 50, K from 100 to 170, Ca from 100 to 170 and Mg from 40 to 50 ppm, from transplanting to the end of the cycle. Keep pH between 5.5 and 6.5 (the region's water usually needs acidifying) and EC from 0.7 at the start to 1.8 from the 5th tier of fruits. Leaf sampling from flowering.",
+      "riego": "By drip, aiming for 10 to 15% leachate. With a tensiometer at 30 cm: irrigate at 20-30 cb for the first 25 days, at 15-25 cb for the next 20 days and at 10 cb after 65 days. Place three tensiometers per station at 15, 30 and 45 cm.",
+      "plagas": [
+        "Whitefly (Trialeurodes vaporariorum)",
+        "Green peach aphid (Myzus persicae)",
+        "Leafminer (Liriomyza spp.)",
+        "Virus-vector insects",
+        "Pepper weevil",
+        "Potato psyllid",
+        "Mites",
+        "Worms"
+      ],
+      "enfermedades": [
+        "Pepper wilt"
+      ],
+      "malezas": "Cultivation passes in the furrow bottoms during the cycle and hand weeding in the mulch holes.",
+      "cosecha": "For fresh market it is cut green at the 'sazón' (mature green) stage, every 14 to 21 days; for drying, when the fruits turn red or brown. Harvest is spread from August to November. Under shade net, 6.5 kg/m² of green chili are expected with varieties and 8 kg/m² with commercial hybrids.",
+      "cuidados": [
+        "Monitor pests twice a week with yellow and blue sticky traps, and keep the shade-net doors closed.",
+        "Rotate the authorized insecticides to avoid resistance and prefer those with low health impact.",
+        "Disinfect scissors, knives, footwear and hands when pruning and harvesting; do not let in people from open-field vegetable farms.",
+        "Irrigate according to the tensiometers and keep the solution pH between 5.5 and 6.5.",
+        "Stake with netting or stakes and raffia, and remove side shoots at the start of the crop.",
+        "Use bumblebees for pollination; if the temperature exceeds 30 °C, supplement with blowers or by shaking the plants."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 147645,
+          "rendimiento": 40,
+          "unidad_rendimiento": "t/ha",
+          "precio": null,
+          "ingreso_neto": 112355,
+          "relacion_bc": 1.76
+        },
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 190395,
+          "rendimiento": 30,
+          "unidad_rendimiento": "t/ha",
+          "precio": 15000,
+          "ingreso_neto": 259605,
+          "relacion_bc": 2.36
+        }
+      ],
+      "nota": "The scientific name was corrected (the extracted text says 'Capsicum annum'). The first cost is Table 5 (ancho chili, irrigated) and the second is Table 6 (chili with fertigation). Table 5: the printed cost ($147,645) does not match the sum of the items (subtotals add up to $153,895 and the land preparation subtotal does not match its line items), and the production value line ('30 × 15,000 = 260,000') is not consistent with the 40 t yield, so price is null; the printed cost, profit and B/C were kept, as they are consistent with each other. Table 6: the subtotals add up to $189,895 versus $190,395 printed; the printed one was kept. Price in $/t. The agenda also lists materials for other chili types (serrano, jalapeño, ancho, bell pepper, habanero, caloro, Hungarian) without stating their origin; for ancho chili: Corcel, Caballero, Don Emilio, Don Matías, Doroteo, Vencedor, San Matías, Duque, Don Javier, Fortuna, Allende and Monarca. They were not classified as commercial because the text does not say so.",
+      "revisado": false
+    },
+    {
+      "ficha": "Common bean",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        36,
+        39
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Altiplano Potosino, from 1,400 to 2,100 m, 14 to 29 °C and 250 to 400 mm of rain from June to November. Low potential; limited by lack of moisture, pests and diseases.",
+      "siembra": {
+        "texto": "From May 15 to June 30 (the agenda says 'June 31').",
+        "meses": [
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "Pinto Saltillo",
+        "Centenario",
+        "Libertad",
+        "Centauro"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "125,000 plants per ha (10 plants per meter), rows of 76 to 80 cm, with a no-till planter.",
+      "fertilizacion": "Formula 40-40-00, all at planting, with 18-46-00 and ammonium sulfate. Inoculate the seed with 1.0 kg/ha of mycorrhiza.",
+      "riego": null,
+      "plagas": [
+        "Mexican bean beetle (conchuela)"
+      ],
+      "enfermedades": [
+        "Rust (Uromyces phaseoli)",
+        "Powdery mildew (Erysiphe polygoni)"
+      ],
+      "malezas": "Two cultivation passes in the first 40 days, with hand weeding if needed. At the second pass, make small basins to retain rainwater.",
+      "cosecha": "When the grain has 12 to 14% moisture. Let the grain cool to room temperature before packing and store it in a cool, ventilated, dry warehouse. Expected yield of 0.750 t/ha.",
+      "cuidados": [
+        "Prepare the soil with a multi-plow and one or two passes of the harrow.",
+        "Plant from May 15 to June 30 with varieties adapted to the Altiplano (Pinto Saltillo, Centenario, Libertad, Centauro).",
+        "Apply the entire 40-40-00 formula at planting and inoculate with mycorrhiza.",
+        "Make two cultivation passes in the first 40 days and basins at the second.",
+        "The recommended varieties tolerate the diseases; watch for rust, powdery mildew and stink bug.",
+        "Harvest at 12 to 14% moisture and store in a cool, dry place."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 9054.5,
+          "rendimiento": 0.75,
+          "unidad_rendimiento": "t/ha",
+          "precio": 20000,
+          "ingreso_neto": 5945.5,
+          "relacion_bc": 1.66
+        }
+      ],
+      "nota": "Table 7 does not print the profit; net income was calculated as production value ($15,000) minus cost ($9,054.5), consistent with the B/C ratio of 1.66. Price in $/t. The printed planting date ends on 'June 31' (an error in the agenda); it was interpreted as the end of June.",
+      "revisado": false
+    },
+    {
+      "ficha": "Maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        40,
+        46
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Altiplano Potosino (1,400 to 2,100 m; 11.3 to 28.1 °C; 250 to 400 mm from June to November), with medium to low potential because of scarce, poorly distributed rain and shallow soils. With fertigation, Altiplano and Zona Media (900 to 2,100 m) with high potential.",
+      "siembra": {
+        "texto": "From April 15 to June 15.",
+        "meses": [
+          4,
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "INIFAP H-377E",
+        "H-323",
+        "H-376",
+        "H-311",
+        "H-358",
+        "HV-313",
+        "Cafime (rainfed)",
+        "VS-209 (rainfed)"
+      ],
+      "hibridos_comerciales": [
+        "DEKALB 2031",
+        "DEKALB 2025",
+        "DEKALB 2034",
+        "ASGROW JABALI",
+        "ASGROW PUMA",
+        "ASGROW CIMARRON",
+        "ASGROW TIGRE AMARILLO (yellow)",
+        "ASGROW GUEPARDO (yellow)",
+        "PIONEER 9620",
+        "PIONEER CRM52",
+        "PIONEER 9617 (yellow)",
+        "CERES XR45",
+        "CERES XR20A (yellow)"
+      ],
+      "densidad": "25 to 30 kg/ha of seed in rows at 0.80 m, for 50,000 to 60,000 plants per ha. With fertigation, 100,000 plants per ha.",
+      "fertilizacion": "Irrigated: 160-60-00 (348 kg of urea and 130 kg of triple superphosphate per ha), with half of the nitrogen and all of the phosphorus at planting and the rest at the second cultivation pass. Rainfed: 60-20-00 (130 kg of urea and 44 kg of triple superphosphate) only if good rainfall is expected, split the same way; inoculating with 0.5 kg/ha of mycorrhiza is recommended. Fertigation: 300-100-100 by drip with a Venturi injector, three times per week.",
+      "riego": "One pre-planting irrigation and four supplemental irrigations: at the first cultivation pass, at the second cultivation pass, at pre-flowering and at flowering.",
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Whorl weevil (Nicentrites testaceipes and Geraeus senilis)"
+      ],
+      "enfermedades": [
+        "Rust (Puccinia sorghi, Puccinia polysora)",
+        "Common smut or huitlacoche",
+        "Downy mildew"
+      ],
+      "malezas": "Keep the crop clean for at least the first 40 days; two cultivation passes in that period and weeding. Herbicides must be those authorized by SENASICA.",
+      "cosecha": "When the grain has 15 to 17% moisture; dry for about three days in the sun, covering with plastic at night. Expected yield: irrigated 8 t/ha of grain and 5 t of stover; rainfed 2.5 to 3.5 t of grain and 1 to 2 t of stover.",
+      "cuidados": [
+        "On land with 8 to 10% slope, build contour bunds to contain runoff.",
+        "Plant from April 15 to June 15 with 25 to 30 kg/ha of seed.",
+        "Under rainfed conditions, fertilize only if good rainfall is expected; otherwise do not fertilize.",
+        "Give the pre-planting irrigation and the four supplemental irrigations, without missing pre-flowering and flowering.",
+        "Use hybrids tolerant to rust and downy mildew and control pests according to the infestation percentage.",
+        "Dry the grain in the sun and protect it from moisture before storing."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 50150,
+          "rendimiento": 8,
+          "unidad_rendimiento": "t/ha",
+          "precio": 7000,
+          "ingreso_neto": 13350,
+          "relacion_bc": 1.27
+        },
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 17010,
+          "rendimiento": 3,
+          "unidad_rendimiento": "t/ha",
+          "precio": 7000,
+          "ingreso_neto": 6990,
+          "relacion_bc": 1.41
+        }
+      ],
+      "nota": "The record covers grain maize under irrigation, rainfed and fertigation (modalidad null). Price in $/t of grain; income also includes the stover (irrigated 5 t at $1,500; rainfed 2 t at $1,500). Table 9: the subtotals add up to $51,950 versus $50,150 printed; the printed one was kept, as it is consistent with the profit and the B/C. Table 10: the B/C label copies that of Table 9 ($63,500/$50,150), but the value 1.41 does correspond to $24,000/$17,010. The hybrids H-323, H-376, H-311, H-358 and HV-313 were listed as public varieties because of their nomenclature; the text explicitly identifies only H-377E as INIFAP.",
+      "revisado": false
+    },
+    {
+      "ficha": "Sweet corn",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        47,
+        58
+      ],
+      "cultivo_ids": [
+        "elote"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "Zona Media (Rioverde, Ciudad Fernández, San Ciro, Cerritos and Villa Juárez), from 900 to 1,100 m, 21.3 °C mean and about 500 mm of rain from June to November. High potential; limited by pests and diseases.",
+      "siembra": {
+        "texto": "From March 15 to April 30.",
+        "meses": [
+          3,
+          4
+        ]
+      },
+      "variedades": [
+        "INIFAP H-377E",
+        "H-311",
+        "HV-313"
+      ],
+      "hibridos_comerciales": [
+        "A-7573",
+        "SB-308",
+        "DEKALB 2031",
+        "DEKALB 2025",
+        "DEKALB 2034",
+        "Maíz Elotero KS E-103",
+        "Elotero 15-MG",
+        "ASGROW JABALI",
+        "ASGROW CIMARRON",
+        "CERES XR45",
+        "PIONEER CRM52"
+      ],
+      "densidad": "25 to 30 kg/ha of seed in rows of 0.80 to 0.92 m, for 50,000 to 60,000 plants per ha.",
+      "fertilizacion": "Formula 160-60-00 (348 kg of urea and 130 kg of triple superphosphate per ha): half of the nitrogen and all of the phosphorus at planting, and the rest at the second cultivation pass.",
+      "riego": "One pre-planting irrigation and four supplemental irrigations: at the first cultivation pass, at the second cultivation pass, at pre-flowering and at flowering.",
+      "plagas": [
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Whorl weevil (Nicentrites testaceipes and Geraeus senilis)"
+      ],
+      "enfermedades": [
+        "Rust (Puccinia sorghi, Puccinia polysora)",
+        "Common smut or huitlacoche",
+        "Downy mildew"
+      ],
+      "malezas": "Keep the crop clean for at least the first 40 days, with two cultivation passes and weeding. Herbicides must be those authorized by SENASICA.",
+      "cosecha": "When the grain is at the dough stage; sell immediately because it is highly perishable. Expect 16 to 18 t/ha of fresh ears and 25 t/ha of green forage for silage.",
+      "cuidados": [
+        "Plant from March 15 to April 30.",
+        "Apply half of the nitrogen and all of the phosphorus at planting and the rest at the second cultivation pass.",
+        "Do not skip the pre-flowering and flowering irrigations.",
+        "Use hybrids tolerant to rust and downy mildew.",
+        "Market the fresh ears as soon as they are harvested and use the forage for silage."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 52650,
+          "rendimiento": 18,
+          "unidad_rendimiento": "t/ha",
+          "precio": 5000,
+          "ingreso_neto": 62350,
+          "relacion_bc": 2.18
+        }
+      ],
+      "nota": "Price in $/t of fresh ears; the income in Table 11 also includes 25 t of forage at $1,000/t. The B/C label says '$115,000/$51,950', but the value 2.18 corresponds to $115,000/$52,650, which is the cost that the items add up to. The varieties were split between public and commercial by name; the text identifies only H-377E as INIFAP, and A-7573, SB-308, KS E-103 and Elotero 15-MG were listed as commercial although the text does not name the company.",
+      "revisado": false
+    }
+  ]
+}

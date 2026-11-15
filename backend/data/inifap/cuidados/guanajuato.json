@@ -1,0 +1,1144 @@
+{
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, made from the text of data/inifap/extraido/guanajuato.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
+  "cve_ent": "11",
+  "estado": "Guanajuato",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Guanajuato [Agricultural Technical Agenda of Guanajuato]. INIFAP, Mexico City, 2026.",
+  "fichas": [
+    {
+      "ficha": "Garlic",
+      "cientifico": "Allium sativum L.",
+      "paginas": [
+        12,
+        22
+      ],
+      "cultivo_ids": [
+        "ajo"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "Bajío and central-northern zone (Dolores Hidalgo, San Miguel de Allende), from 1,800 to 2,300 m, temperate semi-dry climate; deep soils with irrigation and intensive management.",
+      "siembra": {
+        "texto": "For maximum productivity in El Bajío, plant from September to October. It can be planted from July to November, but outside the optimal period yield drops.",
+        "meses": [
+          9,
+          10
+        ]
+      },
+      "variedades": [
+        "Chileno (purple)",
+        "Chileno Apaseo (purple)",
+        "Jaspeado Calera",
+        "Jaspeado Chaparrosa",
+        "Tingüindín (mottled)",
+        "Tacátzcuaro (mottled)",
+        "Tocumbo (mottled)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Rows 80 to 100 cm apart with two lines and 8 cm between plants (about 312,500 plants/ha), or beds 160 to 180 cm wide with 6 to 8 lines (468,750 to 555,550 plants/ha). From 1,200 to 2,000 kg of seed (cloves) per ha are used.",
+      "fertilizacion": "Weekly 15-week program adjusted with soil analysis; total 240 kg N, 50 kg P and 200 kg K per ha, plus iron, zinc, manganese and molybdenum. Sample the most recently matured leaf at 80 and 110 days to adjust the rates.",
+      "riego": "Keep the top 15 to 25 cm of soil moist. Irrigate when tension reaches 25-30 cbar (or 18-22% volumetric moisture with TDR). Approximate volume per irrigation: 80 m³/ha in sandy soil, 100 in loam and 140 in clay.",
+      "plagas": [
+        "Thrips (Thrips tabaci, Frankliniella occidentalis)",
+        "Mites (Rhizoglyphus setosus, Tyrophagus spp., Eriophyes tulipae)",
+        "Aphid"
+      ],
+      "enfermedades": [
+        "White rot (Sclerotium cepivorum)",
+        "Fusarium spp.",
+        "Penicillium spp.",
+        "Sclerotium rolfsii",
+        "Purple blotch (Alternaria porri)",
+        "Ditylenchus dipsaci nematode",
+        "Viruses"
+      ],
+      "malezas": "They compete for water, light and nutrients and favor pests; apply preventive measures and timely control.",
+      "cosecha": "Purple types from 140 days, mottled at about 160 and white from 150 to 180. Harvest when 2 to 4 basal leaves dry, the stem loses turgor and at least 10% of plants bend over. Cure in the sun for 4 to 5 days. Yield: 8-12 t/ha with furrow irrigation and 12-22 t/ha with drip.",
+      "cuidados": [
+        "Diagnose soil pathogens before planting to decide how to disinfest the soil.",
+        "Grade cloves by size, use healthy seed and plant them flat side down at 2-3 cm.",
+        "Scout the crop at least twice a week to detect thrips and mites in time.",
+        "Remove diseased plants along with one or two neighboring plants and take them off the field in bags.",
+        "Measure soil moisture daily (tensiometer, gypsum blocks or TDR) to irrigate on time.",
+        "Store table garlic at 0-1 °C and 70% relative humidity (up to 7 months); for seed, at 8-10 °C."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 363270,
+          "rendimiento": 12000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 50,
+          "ingreso_neto": 236730,
+          "relacion_bc": 1.65
+        }
+      ],
+      "nota": "The declared regime is 'rainfed and irrigated', but the text only describes irrigated production (furrow or drip); modalidad was set to irrigated. In Table 7 the row 'Net income $600,000' is actually gross income (12,000 kg × $50); net income was calculated as gross − cost (600,000 − 363,270). The B/C ratio (1.65) does check out.",
+      "revisado": false
+    },
+    {
+      "ficha": "Barley",
+      "cientifico": "Hordeum vulgare L. y Hordeum distichum L.",
+      "paginas": [
+        23,
+        36
+      ],
+      "cultivo_ids": [
+        "cebada-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "Guanajuato Bajío: alluvial plain from 1,500 to 1,800 m with clayey, deep and fertile Vertisols (prone to salinization); temperate subhumid climate and 600 to 800 mm of rain.",
+      "siembra": {
+        "texto": "From November 15 to December 15. Planting in late December or in January reduces yield by up to 35% and raises grain protein (undesirable for malt).",
+        "meses": [
+          11,
+          12
+        ]
+      },
+      "variedades": [
+        "Alina (malting)",
+        "Armida (malting)",
+        "Esperanza (malting)",
+        "Maravilla (animal feed)",
+        "Monserrat-D (human food)",
+        "Estelar-OH (malt for whisky)",
+        "Zurita (malting)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "In double-line rows, 120 kg of seed/ha for Esperanza and 100 kg/ha for the other varieties; on beds, 20% more. On wide or narrow beds, 100 to 120 kg/ha. Use certified seed.",
+      "fertilizacion": "Depending on the previous crop: after sorghum or maize, 180-60-00; after a vegetable, 150-60-00; after alfalfa or a legume, 130-60-00. All of it is applied at planting (in clay soils, all the N and P at planting).",
+      "riego": "Planting irrigation and three supplemental irrigations at 40, 75 and 90 days (stem elongation, heading and grain filling), with 10 cm depths. With only two supplemental irrigations yield drops 10-15%. With restricted water: irrigations at 0, 45 and 75 days.",
+      "plagas": [
+        "Russian wheat aphid (Diuraphis noxia)",
+        "Greenbug (Schizaphis graminum)",
+        "Bird cherry-oat aphid (Rhopalosiphum padi)",
+        "English grain aphid (Sitobion avenae)"
+      ],
+      "enfermedades": [
+        "Stripe rust (the most important under irrigation)",
+        "Stem rust",
+        "Leaf rust",
+        "Powdery mildew (Blumeria graminis)",
+        "Cereal wilt (Fusarium spp.)"
+      ],
+      "malezas": "Broadleaf: clover, wild turnip or mustard, lambsquarters, borage, chayotillo and acahual; grassy: wild oat and wild canary grass. They compete for light, moisture and nutrients and lower grain quality.",
+      "cosecha": "Thresh when the grain is ripe, creamy yellow and between 13 and 14% moisture (maximum 13.5% for malt); do not let it drop much below 13%. Usually in April. Cylinder at 500-700 rpm so as not to hull or break the grain. Yield: 6 to 9 t/ha.",
+      "cuidados": [
+        "Plant within the November 15 to December 15 window so as not to lose yield or malting quality.",
+        "Level the land well and avoid waterlogging and excessive irrigation, which favor wilt (Fusarium).",
+        "Use resistant varieties as the basis of rust management, and certified seed.",
+        "Give the supplemental irrigations at stem elongation, heading and grain filling.",
+        "Do not leave the crop in the field more than 20 days after harvest maturity: broken and hulled grains increase.",
+        "Check for rusts, powdery mildew and aphids in the weeks before harvest and avoid late applications."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 32032.5,
+          "rendimiento": 6190,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6.16,
+          "ingreso_neto": 6097.9,
+          "relacion_bc": 1.19
+        }
+      ],
+      "nota": "Cost, gross income (38,130.40), net income and B/C ratio in Table 10 check out. The price is not printed: it was derived as gross income / yield (38,130.40 / 6,190 = 6.16 $/kg), equal to the 2024 average price in Table 8.",
+      "revisado": false
+    },
+    {
+      "ficha": "Onion",
+      "cientifico": "Allium cepa L.",
+      "paginas": [
+        37,
+        54
+      ],
+      "cultivo_ids": [
+        "cebolla"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": null,
+      "region": "Bajío (Celaya, Irapuato, Salamanca, Silao, Valle de Santiago), central-northern zone and southern region; light, deep, well-drained soils with pH 5.0 to 6.5.",
+      "siembra": {
+        "texto": "Transplant according to photoperiod: short-day onions from August to January, intermediate-day from January to March and long-day from April to June. Transplant 40-50 days after sowing the seedbed, with 3-4 leaves and 8-12 cm in height.",
+        "meses": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Carta blanca",
+        "Rasta",
+        "Cougar",
+        "Blanca Montejo",
+        "Sofire",
+        "Serengueti",
+        "Stratus",
+        "Thea F1",
+        "Don Víctor",
+        "Cirrus",
+        "Red sensación",
+        "Pirate F1",
+        "Early White",
+        "Red grano",
+        "Duster",
+        "Monja blanca",
+        "Barbera",
+        "Santa María",
+        "Red maiden",
+        "SV4043NM",
+        "Bella Luna",
+        "Virgin F1",
+        "Balcanes",
+        "Palomina",
+        "Calibre 50",
+        "Frida Plus",
+        "Sierra Blanca",
+        "Red label F1",
+        "Cimarron",
+        "Aspen",
+        "SV7030NS",
+        "Canarana",
+        "Bianca",
+        "NUN6005",
+        "Canaria",
+        "Blanca Morelos",
+        "Red Floy",
+        "Himalaya",
+        "White moon",
+        "SV4643NT",
+        "Cometa",
+        "Rhea",
+        "White wing F1",
+        "Antártica F1"
+      ],
+      "densidad": "From 200 to 300 thousand plants/ha, in rows 0.8 to 1.0 m apart or beds 1.5 to 2.0 m wide, in double lines 25 cm apart and 6 to 10 cm between plants.",
+      "fertilizacion": "Weekly 16-week program adjusted with soil analysis; total 225 kg N, 55 kg P and 110 kg K per ha, plus iron, zinc, manganese and molybdenum. Sample the most recently matured leaf at 80 and 110 days after transplanting.",
+      "riego": "Short roots (15-25 cm): keep the 15-20 cm layer moist. Irrigate when tension reaches 20-25 centibars; with drip, events of 50-60 m³/ha in sandy soil and 90-120 m³/ha in clay.",
+      "plagas": [
+        "Thrips (Thrips tabaci)",
+        "Spider mite (Tetranychus urticae)",
+        "Tarnished plant bug (Lygus lineolaris)",
+        "Rootworm (Diabrotica balteata)",
+        "Leafminer (Liriomyza huidobrensis)",
+        "Aphid (Neotoxoptera formosana)"
+      ],
+      "enfermedades": [
+        "Fusarium spp.",
+        "Pink root (Phoma terrestris)",
+        "Stemphylium",
+        "White rot (Sclerotium cepivorum)",
+        "Purple blotch (Alternaria porri)",
+        "Downy mildew (Peronospora destructor)",
+        "Nematodes (Meloidogyne, Pratylenchus, Ditylenchus, Nacobbus)",
+        "Iris yellow spot virus"
+      ],
+      "malezas": "They compete for water, light and nutrients and favor plant health problems; apply preventive measures and timely control from before transplanting.",
+      "cosecha": "At 120 days in early materials, 140 in intermediate ones and up to 180 in late ones (as green onion from 90 days). Harvest when the stem loses turgor and more than 50% of the foliage bends over. Store at 4-10 °C and 50-60% relative humidity (up to 8 months). Yield: 30-40 t/ha with furrow irrigation and 50-80 t/ha with drip.",
+      "cuidados": [
+        "Choose the material according to its photoperiod (short, intermediate or long day) and the transplanting date.",
+        "Level the land, especially with furrow irrigation, and diagnose soil diseases before transplanting.",
+        "Transplant healthy 8-12 cm seedlings, 4 cm deep, with soil at field capacity and a sealing irrigation.",
+        "Keep moisture constant in the top 15-20 cm of soil.",
+        "Remove diseased plants along with one or two neighboring plants and take them off the field in bags.",
+        "Do soil and foliar analyses to adjust the weekly fertilization."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 189770,
+          "rendimiento": 55000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": 140230,
+          "relacion_bc": 1.74
+        }
+      ],
+      "nota": "The extracted text merges the Chia sheet into this one (same page range); only the onion content is here and chia has its own sheet. The declared regime is 'rainfed and irrigated' (probably from the chia header); the onion text only mentions furrow and drip irrigation, so modalidad was set to irrigated. The genotypes in Table 16 came from a scrambled table (white/purple/yellow and photoperiod columns mixed): the separation of names is approximate and should be checked against the PDF; the text does not name companies. Table 18 is incomplete in the extracted text; its 'Net income $330,000' is actually gross income (55,000 kg × $6): net income was calculated as 330,000 − 189,770. The B/C ratio (1.74) does check out.",
+      "revisado": false
+    },
+    {
+      "ficha": "Chia",
+      "cientifico": "Salvia hispanica L.",
+      "paginas": [
+        37,
+        54
+      ],
+      "cultivo_ids": [
+        "chia"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Guanajuato Bajío, irrigated and rainfed, with traditional or conservation tillage; a hardy crop with low moisture demand.",
+      "siembra": {
+        "texto": "Irrigated: from May 20 to June 30; rainfed: from the onset of the rains until July 20. The best date, irrigated and rainfed, is the first three weeks of July (a short-day plant that flowers in late September). Do not plant before the recommended dates.",
+        "meses": [
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Pinta (INIFAP, purple flower)",
+        "Blanca (INIFAP, white flower)",
+        "Local pinta-type materials"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Rows 76 or 80 cm apart, single line; 337,500 to 412,500 plants/ha (27 to 33 per meter). 1 kg of seed/ha is enough, but without special planters up to 2 kg/ha is recommended, drilled and no deeper than 2 cm.",
+      "fertilizacion": "40-40-00, all at planting; responds well to 2 L/ha of micronutrients before flowering.",
+      "riego": "Irrigations at 0, 45, 75 and 110 days after sowing, with depths of 10 to 12 cm depending on the rains.",
+      "plagas": [
+        "Rootworm (Diabrotica spp.)",
+        "Lace bug (Leptodyctia spp.)"
+      ],
+      "enfermedades": [
+        "Fusarium rots in heavy, poorly leveled soils with excess moisture"
+      ],
+      "malezas": "This is the biggest problem: chia grows slowly the first 3 weeks and the first 30 days are critical (losses of 10 to 84%). Mechanical and manual control with hilling during the first 40 days.",
+      "cosecha": "Harvest maturity at 145 days in early irrigated plantings and at 130 under rainfed conditions. Calibrate the thresher carefully because of the small seed. Yield: 1.0-1.5 t/ha irrigated and 0.8-1.2 t/ha rainfed.",
+      "cuidados": [
+        "Prepare the land very well (plowing, harrowing and land leveling): the seed is very small and the plant grows slowly at first.",
+        "Plant into moist soil, almost at the surface (maximum 2 cm).",
+        "Keep the crop free of weeds for the first 30 to 40 days.",
+        "Keep the plant from exceeding 1.5 m at the start of flowering to prevent lodging.",
+        "Do not plant in heavy, poorly leveled soils that waterlog (Fusarium rots).",
+        "Adjust the combine so as not to mix grains or lose seed."
+      ],
+      "costos": [
+        {
+          "modalidad": null,
+          "costo_total_ha": 21001.1,
+          "rendimiento": 900,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 40,
+          "ingreso_neto": 14998.9,
+          "relacion_bc": 1.71
+        }
+      ],
+      "nota": "The chia sheet does not appear as its own sheet in the extracted text: it is mixed into 'Cebolla' (pages 37-54); it was separated here and the pages are those of that extracted sheet. Table 20: cost 21,001.10, gross income 36,000 (900 kg × $40), net and B/C check out. The table does not say whether it is irrigated or rainfed.",
+      "revisado": false
+    },
+    {
+      "ficha": "Poblano pepper",
+      "cientifico": "Capsicum annuum L.",
+      "paginas": [
+        55,
+        64
+      ],
+      "cultivo_ids": [
+        "chile-verde",
+        "chile-seco"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": null,
+      "region": "North of the state (San Luis de la Paz, Dolores Hidalgo, San Miguel de Allende): semi-dry to temperate climate, 16 to 22 °C mean and 390 to 560 mm of rain.",
+      "siembra": {
+        "texto": "The agenda does not give a sowing or transplanting date. Transplant when the seedling has 3-4 pairs of true leaves and is 10-15 cm tall; prepare the land at least a month in advance.",
+        "meses": []
+      },
+      "variedades": [
+        "HAM14F (INIFAP hybrid, early)",
+        "Ancho Mulato AM-VR (INIFAP, intermediate)",
+        "Ancho Poblano AP-VR (INIFAP, intermediate)",
+        "Farmers' landraces (80 to 85% of the seed used)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Furrow irrigation: rows 76 cm apart and 25 cm between plants (about 52,000 plants/ha). Pressurized irrigation with mulch: 0.6 m beds every 1.6-1.8 m, plants staggered at 30 cm (about 30,000 plants/ha). About 250 g of seed/ha in trays.",
+      "fertilizacion": "220-100-150. At furrowing or 15 days after transplanting: 80-100-50; at the second cultivation: 70-0-50; at flowering (about 70 days): 70-0-50. With fertigation, apply 15-20% to the soil before transplanting and the rest through the system.",
+      "riego": "Keep good moisture in the root zone without stress. With furrow irrigation, adjust furrow length to the soil, slope and flow rate; cut the flow in half when the water reaches the end of the furrow.",
+      "plagas": [
+        "Pepper weevil (Anthonomus eugenii)",
+        "Potato psyllid (Bactericera cockerelli)",
+        "Beet armyworm (Spodoptera exigua)",
+        "Aphids (Myzus persicae, Aphis gossypii)",
+        "Root-knot nematode (Meloidogyne spp.)"
+      ],
+      "enfermedades": [
+        "Wilt caused by soilborne fungi (Fusarium oxysporum, Phytophthora capsici, Rhizoctonia solani)",
+        "Bacterial spot (Xanthomonas spp.)"
+      ],
+      "malezas": "Nutsedge, quelite (pigweed), bermudagrass and Johnson grass. Control with 2-3 cultivations (at 20 and 40 days after transplanting) and plastic mulch; chemical control only as a last resort.",
+      "cosecha": "Green, when the fruit is about 14 cm long and 6 cm in diameter. For dried (ancho), pick when it starts turning red or brown and dehydrate in the sun or in an oven. Yield: 35 t/ha fresh and 5 t/ha dried.",
+      "cuidados": [
+        "Run a soil analysis (CFU per gram) before planting to gauge wilt risk and decide on preventive management.",
+        "Use raised beds (40 cm or more), good drainage and rotation to prevent wilt.",
+        "Monitor with colored sticky traps and pheromone traps; prioritize biological and cultural control.",
+        "Transplant vigorous seedlings, without chlorosis and pest-free, with 3-4 pairs of true leaves.",
+        "Split fertilization into three timings (transplanting, second cultivation and flowering).",
+        "For dried pepper, dehydrate on beds with a slight slope and store in dry, ventilated containers."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 206646.14,
+          "rendimiento": 5000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 70,
+          "ingreso_neto": 143353.86,
+          "relacion_bc": 1.69
+        }
+      ],
+      "nota": "The cost in Table 25 is for drip irrigation and dried pepper: yield of 5,000 kg/ha of dried fruit and a price of $70,000 per ton ($70/kg). Gross income 350,000; net and B/C check out. chile-verde and chile-seco were assigned because the sheet covers sales as green and dried (ancho) pepper.",
+      "revisado": false
+    },
+    {
+      "ficha": "Irrigated common bean",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        65,
+        76
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": null,
+      "region": "Mainly the north (DDR 001 Dolores, 1,900 to 2,200 m, semi-arid, well water) and Salvatierra in the Bajío; Phaeozem soils in the north and Vertisols in the Bajío.",
+      "siembra": {
+        "texto": "Bajío: from the first half of February (in January only at some risk). North: traditionally from March; moving it up to the second half of February is suggested to avoid heat at flowering. In the north it is also planted from the second half of June to the first half of July, with rain plus irrigation.",
+        "meses": [
+          2,
+          3,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Rarámuri (Pinto)",
+        "San Rafael (Pinto)",
+        "Salinas (Pinto)",
+        "Junio León (Flor de Junio, resistant to common mosaic)",
+        "Dalia (Flor de Junio, resistant to common mosaic)",
+        "Junio Nur (Flor de Junio)",
+        "Flor de Mayo Eugenia (resistant to common mosaic)",
+        "Verdín (Negro Opaco, resistant to common mosaic)",
+        "Nayarita 26 (Negro Opaco)",
+        "San Luis 22 (Negro Brillante, resistant to common mosaic)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "150 thousand plants/ha (prostrate) to 180 thousand (semi-upright), in rows 75-80 cm apart or 150 cm beds with two lines. Seed: about 60 kg/ha of Rarámuri and San Rafael, 50 kg/ha of Pintos and Flores, 40 kg/ha of black beans; 15% more in double lines.",
+      "fertilizacion": "For 3.0 t/ha: 70-50-30 plus micronutrients (in the Bajío it responded to 1 kg/ha of Fe and 6 kg/ha of Zn). All the P and micronutrients with half of the N and K at planting; the rest at cultivation. Seed can be inoculated with Micorriza INIFAP (1 kg/ha).",
+      "riego": "At least three irrigations (about 450 mm): a 250 mm pre-planting irrigation and two of 100 mm at pre-flowering and at the start of grain filling. Light supplemental irrigations at 20, 40 and 75 days are suggested; shorten intervals at flowering if it is hot.",
+      "plagas": [
+        "Leafhopper (Empoasca spp.), the most important",
+        "Whitefly",
+        "Rootworm (Diabrotica)",
+        "White grub",
+        "Leafminer",
+        "Spider mite (two-spotted spider mite)"
+      ],
+      "enfermedades": [
+        "Common mosaic (BCMV) and black root (BCMNV)",
+        "Rust",
+        "Anthracnose",
+        "Common and halo bacterial blight",
+        "Root rots (Fusarium, Rhizoctonia, Macrophomina, Sclerotium)",
+        "Root-knot nematode (Meloidogyne)"
+      ],
+      "malezas": "Keep the crop clean the first 40 days. Mechanical control (cultivation at 20 days and another 15 days later) and, if needed, chemical control banded over the row.",
+      "cosecha": "Pull plants at the 'alimonado' (yellowing) stage: more than 60% defoliation, dry pods and grain at 18-22% moisture. Store in a cool, dry, pest-free place; hermetic silos or drums against weevils. Yield: 2.5 t/ha in Pintos and black beans, 3.5 t/ha in Flor de Junio and Flor de Mayo.",
+      "cuidados": [
+        "Use virus-free certified seed and varieties resistant to common mosaic.",
+        "Do not use grain from plants with mosaic or black root as seed; remove diseased plants if they are few.",
+        "Analyze the soil (CFU) before planting to decide on root rot management.",
+        "Give frequent light irrigations at flowering to reduce heat-induced flower abortion.",
+        "Keep the crop clean the first 40 days.",
+        "Use yellow traps to monitor pests and do not overuse nitrogen."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 32507,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 20,
+          "ingreso_neto": 17493,
+          "relacion_bc": 1.54
+        }
+      ],
+      "nota": "The February-March and June-July plantings belong to different cycles, hence ciclo = null. Table 31: cost 32,507, 2,500 kg/ha at $20,000/t (payment in Salvatierra 2026), gross income 50,000; net and B/C check out.",
+      "revisado": false
+    },
+    {
+      "ficha": "Rainfed common bean",
+      "cientifico": "Phaseolus vulgaris L.",
+      "paginas": [
+        77,
+        88
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
+      "ciclo": "PV",
+      "region": "Almost the whole state; especially the semi-arid north (DDR 001 Dolores), with little rain, soils poor in organic matter and 3-6% slopes prone to erosion. In the Bajío, deep Vertisols.",
+      "siembra": {
+        "texto": "The rainfed planting date can no longer be predicted; what can be controlled is the variety: Flor de Junio and Flor de Mayo until July 10, Pintos and black beans until July 20. In the Bajío it is planted from the second half of June and throughout July.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Rarámuri (Pinto)",
+        "San Rafael (Pinto)",
+        "Salinas (Pinto)",
+        "Río Grande (Pinto)",
+        "Junio León (Flor de Junio, resistant to common mosaic)",
+        "Dalia (Flor de Junio, resistant to common mosaic)",
+        "Junio Nur (Flor de Junio)",
+        "Flor de Mayo Eugenia (resistant to common mosaic)",
+        "Nayarita 26 (Negro Opaco)",
+        "Verdín (Negro Opaco, resistant to common mosaic)",
+        "San Luis 22 (Negro Brillante, resistant to common mosaic)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "130 thousand plants/ha (prostrate) to 150 thousand (semi-upright) in rows 75-80 cm apart; Negro Opaco up to 180 thousand in the Bajío. Seed: about 60 kg/ha of Rarámuri and San Rafael, 50 kg/ha of Pintos and Flores, 40 kg/ha of black beans.",
+      "fertilizacion": "40-40-00, all at planting (e.g., one bag of urea and two of DAP give 41-46-00). Alternative: 2 t/ha of compost in the row. Supplements: biol (liquid biofertilizer) at 20 and 40 days after emergence, and inoculate the seed with Micorriza INIFAP (1 kg/ha).",
+      "riego": null,
+      "plagas": [
+        "Leafhopper (Empoasca spp.), the most important",
+        "Whitefly",
+        "Rootworm (Diabrotica)",
+        "White grub",
+        "Leafminer",
+        "Spider mite"
+      ],
+      "enfermedades": [
+        "Common mosaic (BCMV) and black root (BCMNV)",
+        "Anthracnose",
+        "Rust",
+        "Bacterial blight (Pseudomonas)",
+        "Root rots (Fusarium, Rhizoctonia, Macrophomina)",
+        "Nematodes"
+      ],
+      "malezas": "Keep clean the first 40 days; mechanical cultivation at 20 days and another 15 days later (basins can be formed or fertilizer applied at the same time). Chemical control only banded and if needed.",
+      "cosecha": "Pull plants at the 'alimonado' (yellowing) stage (more than 60% defoliation, dry pods, grain at 20-22% moisture). Yield: 1.5-2.0 t/ha in the Bajío in normal years; in the north from 0.5 t/ha (drought areas) to 1.0 t/ha (DDR Dolores).",
+      "cuidados": [
+        "Choose the variety according to how late the rains arrive: Flores until July 10, Pintos and black beans until the 20th.",
+        "Apply all the fertilizer at planting, because later applications pay off little with irregular rainfall.",
+        "Use virus-free certified seed and varieties resistant to common mosaic.",
+        "Prefer vertical tillage (chisels) that does not turn the soil over, to reduce erosion.",
+        "Keep the crop clean the first 40 days.",
+        "Store the grain in a cool, dry place, or in hermetic silos or drums against weevils."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 17427,
+          "rendimiento": 1000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 27,
+          "ingreso_neto": 9573,
+          "relacion_bc": null
+        }
+      ],
+      "nota": "Table 38: total cost is not printed; 17,427 was taken = cost per kg (17.427) × 1,000 kg, which matches gross income − net income (27,000 − 9,573). But the sum of the rows gives about 18,777 and the printed B/C ratio (1.33) matches neither (27,000 / 17,427 = 1.55), so relacion_bc = null; it should be checked against the PDF. The price ($27/kg) comes from gross income (27,000 / 1,000 kg), cited from a 2024 press release.",
+      "revisado": false
+    },
+    {
+      "ficha": "Grain sunflower",
+      "cientifico": "Helianthus annuus L.",
+      "paginas": [
+        89,
+        96
+      ],
+      "cultivo_ids": [
+        "girasol"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Bajío, from 1,700 to 1,900 m, 500 to 800 mm of rain, well-drained clay soils and slopes under 12%. Cycle of 115 to 130 days.",
+      "siembra": {
+        "texto": "Rainfed: from the onset of the rains in June until July 20. Irrigated: from April 1 to June 15.",
+        "meses": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Guelmi (INIFAP, high oleic, early)",
+        "Torvic (INIFAP, high oleic, intermediate)",
+        "Beremon (INIFAP, high oleic, late)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Rows 76 or 80 cm apart; 5 kg of seed/ha with a mechanical planter, or 4-5 seeds per meter at 3-5 cm with a pneumatic one: 50,000 to 60,000 plants/ha. Under rainfed conditions plant at the bottom of the furrow; under irrigation, on the ridge.",
+      "fertilizacion": "Rainfed: 80-40-00; irrigated: 100-40-00. Half of the N and all the P at planting; the rest of the N at 35 days.",
+      "riego": "Schedule 0-35-70-105 days (planting and supplemental irrigations), with 15 cm depths.",
+      "plagas": [
+        "Green June beetle",
+        "Sunflower head moth",
+        "Sunflower stem weevil",
+        "Woolly bear caterpillar"
+      ],
+      "enfermedades": [
+        "Verticillium dahliae wilt",
+        "Leaf blight (Alternaria helianthi)"
+      ],
+      "malezas": "Keep the field clean; there are no validated biological alternatives in Guanajuato. Protect bees: do not spray against the weevil during flowering.",
+      "cosecha": "Between 130 and 140 days, at 12% moisture, with a cereal thresher at 350-400 rpm, open concave and less air. Yield: 2.1-2.6 t/ha rainfed and 2.8-3.4 t/ha irrigated.",
+      "cuidados": [
+        "Plant rainfed until July 20 and irrigated from April 1 to June 15.",
+        "Use INIFAP high-oleic varieties (Guelmi, Torvic, Beremon), tolerant to Verticillium and Alternaria.",
+        "Split the nitrogen: half at planting and half at 35 days.",
+        "Control woolly bear caterpillars when there are two or more per plant.",
+        "Protect bees by avoiding applications against the stem weevil during flowering.",
+        "Conservation tillage lowers cost and raises the benefit/cost ratio."
+      ],
+      "costos": [
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 18500,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8.3,
+          "ingreso_neto": 2250,
+          "relacion_bc": 1.12
+        },
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 21875,
+          "rendimiento": 3000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8.3,
+          "ingreso_neto": 3025,
+          "relacion_bc": 1.14
+        },
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 14600,
+          "rendimiento": 2500,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8.3,
+          "ingreso_neto": 6150,
+          "relacion_bc": 1.42
+        },
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 17975,
+          "rendimiento": 3000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 8.3,
+          "ingreso_neto": 6925,
+          "relacion_bc": 1.39
+        }
+      ],
+      "nota": "Table 44 with four scenarios, in this order: rainfed with traditional tillage, irrigated with traditional tillage, rainfed with conservation tillage and irrigated with conservation tillage. Price $8,300/t. Income and net values check out; the table rounds the B/C to 1.10 and 1.40, here it was calculated as gross income / cost.",
+      "revisado": false
+    },
+    {
+      "ficha": "Tomato",
+      "cientifico": "Solanum lycopersicum L.",
+      "paginas": [
+        97,
+        113
+      ],
+      "cultivo_ids": [
+        "tomate-rojo-jitomate"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": null,
+      "region": "Bajío (irrigated vegetables and protected agriculture), central-northern zone and southern region; temperate to semi-warm climate, few frosts, well-drained loam to sandy loam soils and pH 5.5 to 6.8. In the northeast and Sierra Gorda, prefer protected environments.",
+      "siembra": {
+        "texto": "Schedule transplanting according to temperature, frost risk, water, pest pressure and market window. Some regions of the state allow year-round production, including the winter window (November to May). Transplant with 4-6 true leaves.",
+        "meses": []
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Pony Express",
+        "SVTE8444",
+        "Valerio",
+        "Katia",
+        "Galilea",
+        "El Cid",
+        "Azores",
+        "Valinor",
+        "Heredero",
+        "Villa"
+      ],
+      "densidad": "3.2 plants/m², 0.40 m between plants and 0.30 m between lines in a staggered pattern, on 1.8 m beds: about 32,000 plants/ha.",
+      "fertilizacion": "Based on soil, substrate and water analysis. Reference for targets close to 300 t/ha: uptake of about 210 kg N, 27 kg P and 243 kg K per ha. Split applications, raise K and Ca at flowering and fruit filling and avoid excess N. Compost, vermicompost, gypsum, dolomite and molasses can be used according to analysis.",
+      "riego": "Drip, adjusted with tensiometers or sensors. In greenhouses, 1.5 to 2.0 L per plant per day at high demand, in several pulses. In soil, irrigate at a tension close to 25-30 kPa.",
+      "plagas": [
+        "Whitefly (Trialeurodes vaporariorum, Bemisia tabaci)",
+        "Thrips (Frankliniella occidentalis)",
+        "Aphids",
+        "Leafminer (Liriomyza spp.)",
+        "Spider mite (Tetranychus urticae)",
+        "Tomato leafminer moth (Tuta absoluta)",
+        "Worms (Keiferia lycopersicella, Helicoverpa zea)",
+        "Stink bugs / plant bugs",
+        "Mealybug"
+      ],
+      "enfermedades": [
+        "Soil and foliar fungi (Fusarium, Phytophthora, Rhizoctonia, Pythium, Verticillium, Botrytis, Sclerotinia, Alternaria, powdery mildew)",
+        "Bacteria (Clavibacter, Pseudomonas, Xanthomonas, Ralstonia)",
+        "Nematodes (Meloidogyne and others)",
+        "Viruses"
+      ],
+      "malezas": "Remove weeds, especially solanaceous ones, which host pests and viruses; use trap crops (black nightshade and other wild solanaceous plants) 1.5 m from the crop.",
+      "cosecha": "Starts 85 to 95 days after transplanting. Pick red for the local market or at 'breaker' stage for long-distance transport, in cool hours and with careful handling; cool promptly. Yield under protected agriculture: 75 t/ha in determinate types and 350 t/ha in indeterminate ones.",
+      "cuidados": [
+        "Use certified seed and healthy seedlings; analyze soil and water before establishment.",
+        "Scout the crop at least twice a week and use yellow and blue traps and anti-aphid netting.",
+        "Rely on biological control (lacewing, Encarsia, entomopathogenic fungi) and on neem, chili or garlic extracts.",
+        "Remove plants with viruses, wilt or bacterial canker in closed containers.",
+        "Ventilate, do not wet the foliage and disinfect tools between tasks.",
+        "Rotate with non-solanaceous crops or solarize fields with soil problems."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 273760,
+          "rendimiento": 75000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7,
+          "ingreso_neto": 251240,
+          "relacion_bc": 1.92
+        },
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 979300,
+          "rendimiento": 350000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7,
+          "ingreso_neto": 1470700,
+          "relacion_bc": 2.5
+        }
+      ],
+      "nota": "Drip-irrigated production, mainly in protected agriculture; hence modalidad irrigated even though the declared regime is 'rainfed and irrigated'. The first cost (Table 54) is for determinate materials and the second (Table 55) for indeterminate ones. In both tables the row 'Net income' ($525,000 and $2,450,000) is actually gross income (yield × $7); net income was calculated as gross − cost. The B/C ratios do check out. The text does not name the company for the genotypes in Table 52.",
+      "revisado": false
+    },
+    {
+      "ficha": "Forage maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        114,
+        123
+      ],
+      "cultivo_ids": [
+        "maiz-forrajero-en-verde"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "Center-south (semi-warm to temperate, 600-800 mm, Vertisols and Phaeozems) and north (semi-arid, 350-400 mm), from 1,400 to 2,000 m; slopes under 3%.",
+      "siembra": {
+        "texto": "Northern region: from April 10 to May 20. Central and southern region: from March 20 to May 30. Choose the hybrid by its cycle.",
+        "meses": [
+          3,
+          4,
+          5
+        ]
+      },
+      "variedades": [
+        "H-374C (INIFAP, white)",
+        "H-383 (INIFAP, white)",
+        "H-377 (INIFAP, white)",
+        "H-318 (INIFAP, white)",
+        "H-375 (INIFAP, white)",
+        "H-386 A (INIFAP, yellow)",
+        "H-384 A (INIFAP, yellow)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "90,000 to 105,000 seeds/ha. In rows 75 cm apart, one seed every 14.8 cm (single line) or every 29.6 cm (double line). Depth of 5-7 cm in clay soil and 7-10 cm in sandy soil.",
+      "fertilizacion": "Bajío: 210-60-00; north: 200-60-00. Half of the N and all the P at planting; the rest of the N 40 days after emergence (6-8 leaves); it can be adjusted with a GreenSeeker sensor. Inoculate the seed with Micorriza INIFAP. Correct Zn and Fe deficiencies with foliar applications.",
+      "riego": "Four irrigations: planting (15-18 cm depth) and supplemental irrigations at floral differentiation (35-45 days), flowering (70-85 days) and grain filling (95-110 days), 13-16 cm each.",
+      "plagas": [
+        "Soil pests",
+        "Thrips (Frankliniella spp.)",
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Corn earworm (Helicoverpa zea)",
+        "Weevils (Nicentrites testaceipes, Geraeus senilis)"
+      ],
+      "enfermedades": [
+        "Rots (Fusarium, Pythium, Rhizoctonia)",
+        "Foliar blights",
+        "Rusts"
+      ],
+      "malezas": "One or two cultivations (the first 20 days after emergence and the second 15-20 days later); chemical control is done with maize under 40 cm and weeds under 5 cm.",
+      "cosecha": "For silage, when the milk line is between 1/2 and 2/3 of the kernel (plant at 65-70% moisture). Cut at 10-20 cm for more volume or at 30-45 cm for more nutritional value; chop into pieces of 0.7 to 1.5 cm. Yield: 65-70 t/ha.",
+      "cuidados": [
+        "Prefer intermediate-cycle hybrids: they yield more than early ones and are harvested before late ones.",
+        "Split the nitrogen and adjust the side-dressing with the GreenSeeker sensor if available.",
+        "Control fall armyworm at the first signs of damage (20 out of every 100 plants) while larvae are small.",
+        "Avoid waterlogging, eliminate Johnson grass and rotate crops to prevent diseases.",
+        "Harvest at the right milk-line stage: earlier or later, silage quality drops.",
+        "Give the supplemental irrigations at floral differentiation, flowering and grain filling."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 40342,
+          "rendimiento": 65000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 1.2,
+          "ingreso_neto": 37658,
+          "relacion_bc": 1.93
+        }
+      ],
+      "nota": "The scientific name appears as 'Zea mayz L.' in the extracted text; it was corrected to Zea mays L. Table 57: cost 40,342, 65 t/ha of forage at $1.2/kg, gross income 78,000; net and B/C check out. The printed 'cost per kg' (1.48) does not check out (40,342 / 65,000 = 0.62), but it is not used here. Hybrids H-388 O, H-383 O, H-316, H-317, H-387 A and H-394 A are also adapted, but must be requested from the Campo Experimental Bajío.",
+      "revisado": false
+    },
+    {
+      "ficha": "Grain maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        124,
+        134
+      ],
+      "cultivo_ids": [
+        "maiz-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "Mainly the center-south (semi-warm to temperate, 600-800 mm, clayey Vertisols) and the north (semi-arid, 350-400 mm), from 1,400 to 2,000 m; slopes under 3%.",
+      "siembra": {
+        "texto": "Northern region: from April 10 to May 20. Center-south: from March 20 to May 30. Early plantings for late hybrids; closing plantings with intermediate or early materials.",
+        "meses": [
+          3,
+          4,
+          5
+        ]
+      },
+      "variedades": [
+        "H-377 (INIFAP, white)",
+        "H-318 (INIFAP, white)",
+        "H-375 (INIFAP, white)",
+        "H-391 (INIFAP, white)",
+        "H-392 (INIFAP, white)",
+        "H-386 A (INIFAP, yellow)",
+        "H-384 A (INIFAP, yellow)",
+        "H-385 A (INIFAP, yellow)",
+        "H-303 Zahie (INIFAP, blue)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "90,000 to 105,000 seeds/ha, in single or double lines (20-25 cm between lines). In rows 75 cm apart, one seed every 14.8 cm (single) or 29.6 cm (double). Depth of 5-7 cm in clay soil and 7-10 cm in sandy soil.",
+      "fertilizacion": "Bajío: 240-40-00; north: 220-60-00. In two parts (50% of the N and all the P at planting, the rest at 40 days) or in three (35% at planting, 45% at 40 days and the rest before the flag leaf). The side-dressing can be adjusted with GreenSeeker and seed inoculated with Micorriza INIFAP; correct Zn and Fe via foliar sprays.",
+      "riego": "Four irrigations: planting (15-18 cm) and supplemental irrigations at floral differentiation (35-45 days), flowering (70-85 days) and grain filling (95-110 days), 13-16 cm each.",
+      "plagas": [
+        "Cutworm (Agrotis ipsilon)",
+        "Rootworm (Diabrotica spp.)",
+        "White grub (Phyllophaga spp.)",
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Beet armyworm (Spodoptera exigua)",
+        "Weevils",
+        "Corn earworm (Helicoverpa zea)",
+        "Thrips"
+      ],
+      "enfermedades": [
+        "Root, stalk and ear rots (Pythium, Diplodia, Fusarium)",
+        "Rusts (Puccinia, Physopella)",
+        "Foliar blights (Helminthosporium)"
+      ],
+      "malezas": "Rotate crops, leave stubble as cover, plant into moist soil ('terreno venido') and give two cultivations (12-15 days after emergence and 15 days later). Chemical control is applied with maize under 40 cm and weeds under 5 cm.",
+      "cosecha": "At physiological maturity (black layer at the base of the kernel). By machine, thresh at 13-15% moisture; by hand, cut and stook the plants before hand harvesting the ears. Yield: 12 to 14 t/ha.",
+      "cuidados": [
+        "Respect each region's planting dates and choose the hybrid by its cycle.",
+        "Split the nitrogen into two or three applications; adjust it with GreenSeeker if available.",
+        "Use biological control: Trichogramma and lacewing against fall armyworm and corn earworm, entomopathogenic fungi against soil pests.",
+        "Treat fall armyworm when 20 out of every 100 plants are damaged, while larvae are small.",
+        "Avoid waterlogging, eliminate Johnson grass and rotate crops against rots.",
+        "Give the two cultivations on time; the second one serves to incorporate the side-dressing."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 48499,
+          "rendimiento": 14000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 5.2,
+          "ingreso_neto": 24301,
+          "relacion_bc": 1.5
+        }
+      ],
+      "nota": "The scientific name appears as 'Zea mayz L.' in the extracted text; it was corrected to Zea mays L. Table 61: the cost (48,499) matches the sum of the rows; 14 t/ha and gross income 72,800, from which the price is derived ($5.2/kg, not printed). The printed net income (29,701) does not check out: gross − cost = 24,301, which is the value used. The B/C (1.50) does check out. Hybrids H-388 O, H-389 O, H-316, H-317 and H-387 A are also adapted, but must be requested from the Campo Experimental Bajío.",
+      "revisado": false
+    },
+    {
+      "ficha": "Potato",
+      "cientifico": "Solanum tuberosum L.",
+      "paginas": [
+        135,
+        142
+      ],
+      "cultivo_ids": [
+        "papa"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": null,
+      "region": "El Bajío, from 1,700 to 1,800 m, semi-warm subhumid climate, 600-800 mm of rain and clayey Vertisols. It has the highest average yield in the country (48.24 t/ha).",
+      "siembra": {
+        "texto": "The agenda does not give a planting date. Dry planting or planting into moist soil, in rows 0.92 m apart, covering the seed at 15-20 cm; with dry planting, wait at least 4 days before irrigating.",
+        "meses": []
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Albina",
+        "Alpha mejorada",
+        "Ambra",
+        "Fianna",
+        "Orquesta"
+      ],
+      "densidad": "From 2.5 to 7 t of seed/ha depending on its size. Fianna and Ambra: 16 stems per meter; Albina, Alpha mejorada and Orquesta: 20 stems per meter.",
+      "fertilizacion": "200-300-300 plus 30 kg of zinc sulfate, 30 kg of boron and 25 or more of micronutrients. All the P and half of the N and K at planting; the rest when the plant is 30 cm tall, with 40 units of calcium.",
+      "riego": "Sprinkler: 8 to 14 irrigations of 25 to 50 mm (the planting one, 100 mm or more). Irrigate when moisture drops to 70% of available water. The well should supply at least 1.2 L/s per ha.",
+      "plagas": [
+        "Potato tuber moth (Phthorimaea operculella)",
+        "Potato psyllid (Bactericera cockerelli)",
+        "Aphids (Myzus persicae, Macrosiphum euphorbiae)",
+        "Leafhoppers",
+        "Whitefly",
+        "White grub",
+        "Wireworm",
+        "Flea beetle (Epitrix spp.)",
+        "Rootworm (Diabrotica)",
+        "Large potato weevil",
+        "Armyworm"
+      ],
+      "enfermedades": [
+        "Late blight (Phytophthora infestans)",
+        "Early blight (Alternaria solani)",
+        "Wilt (Fusarium spp.)",
+        "Powdery scab (Spongospora subterranea)",
+        "White mold (Sclerotinia sclerotiorum)",
+        "Blackleg (Erwinia spp.)",
+        "Bacterial wilt (Ralstonia solanacearum)",
+        "Common scab (Streptomyces spp.)",
+        "Golden nematode and other nematodes",
+        "PLRV, PVX and PVY viruses"
+      ],
+      "malezas": null,
+      "cosecha": "Sample tuber size from 40 days (early) or 55 days (intermediate and late). Remove the foliage and wait at least 15 days for the skin to set before harvesting. Expected yield: 60 t/ha or more.",
+      "cuidados": [
+        "Use high-quality, healthy seed stored at 4 °C (most of it comes from Chihuahua).",
+        "Choose a fertile field with a minimum slope of 0.1% to avoid waterlogging.",
+        "Form the final furrow before emergence.",
+        "Monitor pests, diseases and weather to choose the control and apply it at the most susceptible stage.",
+        "Take advantage of biological products (Trichoderma, Bacillus, Beauveria, Metarhizium), which improve yield and quality.",
+        "Wait 15 days after removing the foliage so the skin is not damaged at harvest."
+      ],
+      "costos": [],
+      "nota": "The text of Table 62 (cost-benefit) is cut off in the extracted text (it ends at 'Tumba de bordos', with no totals or yield), so no value could be confirmed and costos = []. The values given by the parser (cost 359, price 810, etc.) are not consistent. The varieties planted (Albina, Alpha mejorada, Ambra, Fianna, Orquesta) are Dutch; INIFAP has no varieties for the region.",
+      "revisado": false
+    },
+    {
+      "ficha": "Sorghum",
+      "cientifico": "Sorghum bicolor L.",
+      "paginas": [
+        143,
+        152
+      ],
+      "cultivo_ids": [
+        "sorgo-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Central Bajío (vertisols, 1,500-1,750 m, high potential under irrigation), west (phaeozems, 400-500 mm, limited under rainfed conditions), south (the wettest zone, good for rainfed) and southwest (rainfed or supplemental irrigation).",
+      "siembra": {
+        "texto": "From April 1 to June 30: late hybrids from April 1 to May 15, intermediate from May 15 to June 30 and early from June 15 to July 5.",
+        "meses": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "RB Williams (INIFAP, intermediate-late)",
+        "Arcos (INIFAP, intermediate-late)"
+      ],
+      "hibridos_comerciales": [
+        "DK-55",
+        "U 920 (Argos)",
+        "S1211730IA (Advanta)",
+        "HMI-170904 (Advanta)",
+        "G-5265 (Advanta)",
+        "84G04 (Pioneer)",
+        "NS-1 (Novaseem)",
+        "NS-2 (Novaseem)",
+        "85P14 TEMP (Pioneer)",
+        "85G10 (Pioneer)",
+        "G-3247 (Advanta)",
+        "San Jerónimo"
+      ],
+      "densidad": "Irrigated: 15 to 18 kg of seed/ha (300 to 400 thousand plants/ha). Rainfed: 10 to 12 kg/ha (200 to 270 thousand plants/ha).",
+      "fertilizacion": "Irrigated: 220-40-00; rainfed: 120-40-00. All the P and half of the N at planting; the rest of the N at the second cultivation. Run a soil analysis and apply only the difference.",
+      "riego": "From 2 to 4 supplemental irrigations. If there are only two, give them at flowering and grain filling (milk to dough); if there was water shortage at floral differentiation, give them at floral differentiation and flowering.",
+      "plagas": [
+        "Sugarcane aphid (Melanaphis sorghi)",
+        "Fall armyworm (Spodoptera frugiperda)",
+        "Sorghum midge (Contarinia sorghicola)",
+        "Rice stink bug (Oebalus mexicanus)",
+        "Greenbug (Schizaphis graminum)",
+        "White grub (Phyllophaga spp.)"
+      ],
+      "enfermedades": [
+        "Ergot (Claviceps spp.)",
+        "Rust (Puccinia purpurea)",
+        "Leaf blight"
+      ],
+      "malezas": "Weeding and cultivation 10-15 days after emergence and another about 15 days later, to keep it clean during its critical period; chemical control complements preventive, cultural and mechanical control.",
+      "cosecha": "At physiological maturity with 12-14% moisture, 140 to 180 days after sowing, with a well-calibrated thresher. Yield: about 10 t/ha irrigated (more than 12 in well-managed late hybrids) and 4-6 t/ha rainfed.",
+      "cuidados": [
+        "Match the hybrid to the date: late ones in April, intermediate ones from mid-May to June, early ones until July 5.",
+        "Control sugarcane aphid from 50 aphids per plant, honeydew on the 2-3 basal leaves or winged adults.",
+        "With little water, prioritize the flowering and grain-filling irrigations.",
+        "Run a soil analysis and apply only the nitrogen and phosphorus that are lacking.",
+        "Subsoil compacted soils with three or more years of continuous cropping.",
+        "Keep the crop clean in its first weeks with weeding and cultivations."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 31200,
+          "rendimiento": 10000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.3,
+          "ingreso_neto": 11800,
+          "relacion_bc": 1.38
+        },
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 27100,
+          "rendimiento": 10000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.3,
+          "ingreso_neto": 15900,
+          "relacion_bc": 1.59
+        },
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 20611.6,
+          "rendimiento": 5000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.3,
+          "ingreso_neto": 888.4,
+          "relacion_bc": 1.04
+        },
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 16511.6,
+          "rendimiento": 5000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 4.3,
+          "ingreso_neto": 4988.4,
+          "relacion_bc": 1.3
+        }
+      ],
+      "nota": "Costs from Tables 65 (irrigated, 10 t/ha) and 66 (rainfed, 5 t/ha), in this order: irrigated with traditional tillage, irrigated with conservation tillage, rainfed traditional and rainfed conservation. Price $4,300/t. The tables do not print net income: it was calculated as gross − cost. In rainfed conservation the printed B/C (1.25) does not check out (21,500 / 16,511.60 = 1.30); the calculated one was used. Table 66 says 'Gross income at 10 t/ha' but the value (21,500) corresponds to 5 t/ha. 'DK-55' and 'San Jerónimo' appear without a company in the text.",
+      "revisado": false
+    },
+    {
+      "ficha": "Irrigated wheat",
+      "cientifico": "Triticum durum Desf.",
+      "paginas": [
+        153,
+        161
+      ],
+      "cultivo_ids": [
+        "trigo-grano"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "OI",
+      "region": "El Bajío (Guanajuato, Michoacán, Jalisco and Querétaro), from 1,500 to 1,800 m, 20 °C mean and 450 to 650 mm; clayey, flat and slightly alkaline Vertisols. Water availability in the reservoirs is the main constraint.",
+      "siembra": {
+        "texto": "Optimal dates: November 15 to December 15; intermediate: December 16 to 31; late: January 1 to 20 (do not plant durum wheats on late dates).",
+        "meses": [
+          11,
+          12,
+          1
+        ]
+      },
+      "variedades": [
+        "Fragata F2025 (strong gluten)",
+        "Cisne F2016 (strong gluten)",
+        "Alondra F2014 (strong gluten)",
+        "Albatros M2025 (medium-strong)",
+        "Fénix M2025 (medium-strong)",
+        "Zermeño S2025 (soft)",
+        "Torcacita S2025 (soft)",
+        "Grata S2022 (soft)",
+        "Faisán S2016 (soft)",
+        "Cortazar S94 (soft)",
+        "Río Bravo C2018 (durum)",
+        "Barobampo C2015 (durum)",
+        "Quetchehueca Oro C2013 (durum)",
+        "Samayoa C2004 (durum)",
+        "Aconchi C89 (durum)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "120 kg of seed/ha on optimal dates, 150 kg/ha on intermediate and 180 kg/ha on late ones. On wide beds (1.40-1.60 m, 4 to 6 lines) or narrow beds (0.70-0.80 m, 2 to 3 lines), 120 to 150 kg/ha.",
+      "fertilizacion": "Soft bread wheats: 240-60-00; strong bread wheats and durum: 300-60-00. All the P and one third of the N at planting, one third at the first supplemental irrigation and one third at the second. In late plantings: half of the N at planting and the rest at the first supplemental irrigation. Mycorrhiza can reduce P and N by 25 to 50%.",
+      "riego": "Bread wheats: irrigations at 0, 45, 75 and 100 days after sowing. Durum (optimal and intermediate dates only): at 0, 35, 65, 85 and 105 days.",
+      "plagas": [
+        "Greenbug",
+        "Russian wheat aphid"
+      ],
+      "enfermedades": [
+        "Stripe rust (Puccinia striiformis), the most prevalent under irrigation",
+        "Root and stem rots (Fusarium and others)",
+        "Foliar blights",
+        "Head scab",
+        "Karnal bunt (partial bunt)"
+      ],
+      "malezas": "Broadleaf and grassy weeds (wild oat, canary grasses). Control must be timely, between 22 and 35-40 days after emergence, while weeds are small; consider the field history for possible resistant weeds.",
+      "cosecha": "With ripe grain at 12-13% moisture, between 112 and 145 days after emergence; adjust the thresher so as not to lose or break grain. Store in a dry, clean place. Reference yield: 7 t/ha (7 to 9 t/ha on wide beds).",
+      "cuidados": [
+        "Plant in the optimal window of November 15 to December 15; increase seed on late dates.",
+        "Use INIFAP varieties resistant or tolerant to stripe rust.",
+        "Treat the seed if there were root rots in previous cycles (Trichoderma also works).",
+        "Split the nitrogen between planting and the first supplemental irrigations.",
+        "Remove grassy weeds that host aphids and conserve their natural enemies (lady beetles, lacewings, small parasitic wasps).",
+        "Conservation tillage on permanent beds: lowers cost and improves the benefit/cost ratio."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 30418.5,
+          "rendimiento": 7000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7.6,
+          "ingreso_neto": 22781.5,
+          "relacion_bc": 1.75
+        },
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 36618.5,
+          "rendimiento": 7000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 7.6,
+          "ingreso_neto": 16581.5,
+          "relacion_bc": 1.45
+        }
+      ],
+      "nota": "In the extracted text this sheet is called 'Otoño-Invierno' (the name came out wrong from the index), but it is the irrigated wheat sheet for the FW cycle; it was renamed. The scientific name from the extracted text (Triticum durum) was kept, although the sheet also covers bread wheats. The extracted text has no parsed costs: Table 69 is inside the harvest text. First cost: conservation agriculture (30,418.50); second: traditional tillage (36,618.50, with $6,200 for land preparation). Yield of 7 t/ha and guaranteed price $7,600/t; the B/C ratios (1.75 and 1.45) check out. Net income is not printed: it was calculated as 53,200 − cost.",
+      "revisado": false
+    }
+  ]
+}

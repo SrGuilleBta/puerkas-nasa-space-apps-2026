@@ -1,0 +1,254 @@
+{
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, prepared from the text of data/inifap/extraido/durango.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
+  "cve_ent": "10",
+  "estado": "Durango",
+  "edicion": 2026,
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Durango [Agricultural Technical Agenda of Durango]. INIFAP, Mexico City, 2026.",
+  "fichas": [
+    {
+      "ficha": "Common bean",
+      "cientifico": "Phaseolus vulgaris",
+      "paginas": [
+        11,
+        20
+      ],
+      "cultivo_ids": [
+        "frijol"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": null,
+      "ciclo": "PV",
+      "region": "Temperate semi-arid climate, 17 °C annual mean, 350 to 535 mm of summer rainfall and 1,600 to 1,897 m a.s.l. Loam soils, low in organic matter (<1.5 %), pH of 7.9 and slopes of 2 to 7 % that favor erosion.",
+      "siembra": {
+        "texto": "Optimal date from June 24 to July 10, under irrigation and rainfed, for all varieties. Early plantings require more irrigation water and lengthen the cycle of photoperiod-sensitive varieties such as Pinto Saltillo; late plantings lower the yield.",
+        "meses": [
+          6,
+          7
+        ]
+      },
+      "variedades": [
+        "Pinto Saltillo (INIFAP)",
+        "Pinto Centauro (INIFAP)",
+        "PID 1 (INIFAP)",
+        "PID 2 (INIFAP)",
+        "AD 1 (INIFAP)",
+        "NOD 1 (INIFAP)",
+        "Pinto Nacional (landrace)",
+        "Negro San Luis (landrace)",
+        "Querétaro or Río Grande (landrace)",
+        "Canario (landrace)"
+      ],
+      "hibridos_comerciales": [],
+      "densidad": "Medium-seeded Pinto Saltillo, Pinto Nacional and Negro San Luis: 35 to 37 kg/ha of seed (105 to 120 thousand plants/ha). Large-seeded PID 1, Pinto Centauro and Negro San Luis: 40 kg/ha under irrigation and 40 to 45 rainfed. Querétaro and Canario (small seed): 32 to 35 kg/ha under irrigation and 30 rainfed. AD 1: 50 kg/ha.",
+      "fertilizacion": "Do a soil analysis. Average rate under irrigation: 35-50-00. For a target of 3 t/ha: 230 kg of urea and 250 kg of potassium sulfate per ha (the sulfur helps in alkaline soils). Inoculate the seed with 1 kg of Micorriza INIFAP. With less than 1.5 % organic matter, incorporate 6 t/ha of organic manure and reincorporate the straw every cycle.",
+      "riego": "Pre-planting irrigation about 8 days before sowing. First supplemental irrigation 25 to 35 days after sowing if there has not been enough rain; second, 25 days later, to cover pre-flowering, flowering and pod set (critical stages); third only if moisture is lacking. It is sensitive to waterlogging: level the land.",
+      "plagas": [
+        "Mexican bean beetle, conchuela, borreguillo or pachona (Epilachna varivestis)",
+        "Bean pod weevil (Apion spp.)",
+        "White grub (Phyllophaga spp.)"
+      ],
+      "enfermedades": [
+        "Anthracnose",
+        "Common blight",
+        "Rust (chahuixtle)",
+        "Root rots (Rhizoctonia, Fusarium and Pythium)"
+      ],
+      "malezas": "Keep the crop clean for the first 45 days after emergence. First cultivation pass 22 days after sowing and second 20 days later, with manual weeding along the row if weeds remain; herbicide is the last resort. If applied post-emergence, do it when the weeds have about four leaves and are under 10 cm, in the morning, on a sunny day with no wind, drought or threat of rain. Main weeds: beggarticks (aceitilla), quelite, lamb's quarters (quelite cenizo), purslane and zacate agrarista.",
+      "cosecha": "Cut at the end of physiological maturity, when the leaves turn from green to yellow and the first pods are almost dry; thresh about 10 days after cutting and windrowing. Calibrate the thresher so as not to crack the grain. Expected yield: 3,000 kg/ha under irrigation on the optimal date (1,400 with late planting) and 1,000 kg/ha rainfed (down to 300 with late planting and irregular rains).",
+      "cuidados": [
+        "Sow between June 24 and July 10; outside that window yield drops.",
+        "Plow at least 30 cm deep at the end of harvest and subsoil if the soil is compacted; this also reduces white grub and weeds.",
+        "Keep weed-free for the first 45 days with cultivation passes at 22 days and 20 days later; make furrow dikes (pileteo) to capture rain and curb erosion.",
+        "Give the second supplemental irrigation at pre-flowering and flowering, the critical stages.",
+        "Monitor the Mexican bean beetle: act when there are 3 to 4 larvae under 1 cm per meter of row; against the pod weevil, when the flowers begin to open.",
+        "Prevent diseases with improved varieties, rotation, clean seed and removal of diseased plants; do not enter the crop when the foliage is wet."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 32729,
+          "rendimiento": 3000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 20,
+          "ingreso_neto": 27271,
+          "relacion_bc": 1.83
+        },
+        {
+          "modalidad": "rainfed",
+          "costo_total_ha": 16679,
+          "rendimiento": 1000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 20,
+          "ingreso_neto": 3321,
+          "relacion_bc": 1.19
+        }
+      ],
+      "nota": "The entry covers irrigated and rainfed (Tables 3 and 4). For irrigated the table does not give the price: the 20 $/kg comes from gross income / yield (60,000 / 3,000); for rainfed the price is given in the text. Total costs taken from the text of the tables (the extractor did not read them); they match gross income − net income and the B/C ratio.",
+      "revisado": false
+    },
+    {
+      "ficha": "Irrigated maize",
+      "cientifico": "Zea mays L.",
+      "paginas": [
+        21,
+        30
+      ],
+      "cultivo_ids": [
+        "maiz-grano",
+        "maiz-forrajero-en-verde"
+      ],
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
+      "ciclo": "PV",
+      "region": "Climates from temperate to very dry, with an annual mean of 17.7 °C. In the Valle del Guadiana, soils 80 to 180 cm deep, summer rainfall of about 444 mm and mean altitude of 1,710 m a.s.l.",
+      "siembra": {
+        "texto": "Late maizes: May 1 to 15. Intermediate: May 15 to 31. Early: June 1 to 20 (an alternative for delayed plantings). Approximate harvest from November 20 to December 15.",
+        "meses": [
+          5,
+          6
+        ]
+      },
+      "variedades": [
+        "H-135, H-366 and H-369 (late, more than 160 days to maturity)",
+        "H-311, H-358 and H-376 (intermediate, 140 to 160 days)",
+        "H-323, H-324, VS-334 and H-326 (early, less than 140 days)",
+        "H-383",
+        "H-385",
+        "H-379",
+        "H-443-A",
+        "H-386-A",
+        "H-384-A",
+        "H-377",
+        "H-327"
+      ],
+      "hibridos_comerciales": [
+        "A-7573",
+        "DK-2038",
+        "DK-2060",
+        "DK-2027",
+        "DK-2042",
+        "Cimarrón",
+        "Caimán",
+        "Gorila",
+        "AS-910",
+        "AS-905",
+        "AS-900",
+        "30G54",
+        "SB-304",
+        "Arrayán",
+        "M-355",
+        "Ocelote",
+        "AS-1501"
+      ],
+      "densidad": "Rows 0.81 m apart. Late: 6 plants per meter (68 thousand/ha). Intermediate: 7 plants per meter (80 thousand/ha). Early: 8 seeds per meter (92 thousand/ha). Forage: up to 120 thousand plants/ha.",
+      "fertilizacion": "Calculate nitrogen from a soil analysis (inorganic N in ppm × 4 = kg/ha of available N), a yield target based on the field's history and a requirement of 14 kg of N per ton of dry matter. N efficiency: 0.6 under non-modernized furrow (gravity) irrigation, 0.7 modernized and 0.8 under sprinkler or drip. The cost table assumes 379 kg of urea and 173 kg of DAP per ha.",
+      "riego": "Pre-planting irrigation and supplemental irrigations. Intermediate-early: 1st at 35 days after sowing, 2nd 35 days later, 3rd at flowering (silking), 4th 10 to 15 days after flowering and 5th at the milk-dough grain stage. Intermediate: 1st at 35 days, 2nd and 3rd every 25 days, 4th at flowering, 5th 10 to 15 days later and 6th at the milk grain stage. Flowering and grain filling are critical. If more than 30 mm of rain falls, do not irrigate, to avoid lodging.",
+      "plagas": [
+        "Cutworm (Agrotis ipsilon)",
+        "Fall armyworm (Spodoptera frugiperda)"
+      ],
+      "enfermedades": [
+        "Head smut (Sphacelotheca reiliana)"
+      ],
+      "malezas": "Keep the crop clean for the first 50 days after sowing; after that the foliage covers the ground. Pre-emergence control is done immediately after sowing and Johnson grass control after the first cultivation pass and before the first supplemental irrigation. Two cultivation passes. Main weeds: field bindweed, bitterweed (hierba amargosa), silverleaf nightshade (trompillo), quelite, cocklebur (cadillo), and pinto, pegarropa and Johnson grasses.",
+      "cosecha": "Grain: harvest at less than 14 % moisture (the grain cracks between the teeth); expected yield of 12 t/ha. Forage: when the milk line has advanced 1/4 to 1/3 of the kernel and dry matter is between 28 and 35 %; yield of 20 t/ha of dry matter (60 t of green forage).",
+      "cuidados": [
+        "Sow according to the hybrid's cycle: late ones May 1 to 15, intermediate May 15 to 31 and early June 1 to 20.",
+        "Renew hybrid seed every year: if saved seed is replanted, yield drops sharply.",
+        "Level the land (5 to 20 cm per 100 m) and furrow across the slope to avoid waterlogging and wasting water.",
+        "Do not leave flowering or grain filling without irrigation; if more than 30 mm of rain falls, do not irrigate.",
+        "Keep weed-free for the first 50 days.",
+        "Where head smut is present, rotate crops or plant a resistant hybrid."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 36939,
+          "rendimiento": 12000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 6,
+          "ingreso_neto": 35061,
+          "relacion_bc": 1.94
+        },
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 33339,
+          "rendimiento": 60000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 1,
+          "ingreso_neto": 26661,
+          "relacion_bc": 1.79
+        }
+      ],
+      "nota": "Table 10 has two cases: the first cost is grain maize (6 $/kg) and the second forage maize (60 t/ha of green forage at 1 $/kg standing). Total costs taken from the text (the extractor did not read them); they match gross income − net income. The printed B/C ratios (1.94 and 1.79) are truncated: the calculation gives 1.95 and 1.80. The H- and VS- hybrids were placed under variedades because that is the naming of INIFAP's public materials; the agenda does not say so, nor does it give the company of the others. M-355 was left as commercial because it could not be confirmed. The planting dates in Table 9 by hybrid range from May 1 to June 20.",
+      "revisado": false
+    },
+    {
+      "ficha": "Tomato",
+      "cientifico": null,
+      "paginas": [
+        31,
+        37
+      ],
+      "cultivo_ids": [
+        "tomate-rojo-jitomate"
+      ],
+      "tipo_cultivo": "annual (greenhouse)",
+      "modalidad": "irrigated",
+      "ciclo": null,
+      "region": "Temperate sub-humid climate with summer rains, 14 to 17 °C annual mean, winter frosts and a frost-free period from late April to late October. Rainfall of 450 to 650 mm. Soils more than 90 cm deep, pH of 6.2 to 7.8 and slopes of 0 to 5 %.",
+      "siembra": {
+        "texto": "Transplant in the second half of March, with the beds at moisture close to field capacity.",
+        "meses": [
+          3
+        ]
+      },
+      "variedades": [],
+      "hibridos_comerciales": [
+        "Heredero",
+        "Mago",
+        "San Blas",
+        "Blindon"
+      ],
+      "densidad": "One row in the center of each bed, with 15 cm between plants: 30 thousand plants/ha.",
+      "fertilizacion": "Daily fertigation, adjusted to the crop stage, variety, climate and soil and water analyses. Before forming the beds, 75 t/ha of organic matter is incorporated.",
+      "riego": "Drip irrigation with drip tape under plastic mulch; the daily water requirement varies with the crop stage.",
+      "plagas": [
+        "Whitefly (Bemisia tabaci)",
+        "Potato psyllid (Bactericera cockerelli)",
+        "Thrips (Thrips spp.)",
+        "Aphids"
+      ],
+      "enfermedades": [
+        "Root rots caused by Fusarium spp. and Rhizoctonia spp.",
+        "Alternaria spp.",
+        "Powdery mildews",
+        "Tomato brown rugose fruit virus (ToBRFV)",
+        "Bacterial canker (Clavibacter michiganensis)"
+      ],
+      "malezas": "Mallow, Johnson grass and quelites. Integrated management with mechanical and chemical control; the herbicide is applied directed only at the weeds, with shields on the nozzles so as not to burn the crop.",
+      "cosecha": "It begins 80 days after transplanting and continues two to three times a week until the end of the cycle. Estimated yield: 250 t/ha.",
+      "cuidados": [
+        "Prepare the soil: clear residues, subsoil, harrow, incorporate 75 t/ha of organic matter and form beds with drip tape and mulch.",
+        "Transplant in the second half of March, with moist beds, at 15 cm between plants.",
+        "Carry out staking, ringing and twining on time, as well as sucker and leaf pruning to aerate the plant.",
+        "Ensure pollination for fruit set.",
+        "Against Fusarium and Rhizoctonia, use biological control (Trichoderma harzianum, Streptomyces lydicus).",
+        "Prevent the rugose virus and Clavibacter by disinfecting tools with sodium hypochlorite and restricting staff access to infected areas."
+      ],
+      "costos": [
+        {
+          "modalidad": "irrigated",
+          "costo_total_ha": 1380509,
+          "rendimiento": 250000,
+          "unidad_rendimiento": "kg/ha",
+          "precio": 10,
+          "ingreso_neto": 1119491,
+          "relacion_bc": 1.81
+        }
+      ],
+      "nota": "Greenhouse production with drip irrigation, so the modalidad is irrigated (the cost table does not state it). Ciclo set to null: the agenda only gives transplanting in March and does not name the cycle. The agenda does not give a scientific name. The recommended varieties (Heredero, Mago, San Blas, Blindon) were listed as commercial; the agenda does not give the company. The total cost (1,380,509 $/ha) matches gross income − net income and the sum of the line items, but some subtotals in Table 11 (fungicides, manual labor) do not match their rows; it should be checked against the PDF. The irrigation and fertilization text seems incomplete (there were probably tables that were not extracted).",
+      "revisado": false
+    }
+  ]
+}
