@@ -4,7 +4,8 @@ from datetime import date, timedelta
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app import db
-from app.services import alertas, catalogo_cultivos, meteomatics, nasa_power, noticias, tareas, ubicaciones
+from app.services import alertas, catalogo_cultivos, nasa_power, noticias, tareas, ubicaciones
+from app.services import clima as clima_servicio
 from app.services import planificador as plan_servicio
 
 router = APIRouter(prefix="/api/noticias", tags=["noticias"])
@@ -28,7 +29,7 @@ async def listar(
     dia = hoy or db.hoy()
 
     clima, nasa, ext = await asyncio.gather(
-        meteomatics.clima(ciudad),
+        clima_servicio.clima(ciudad),
         nasa_power.periodo(ciudad.lat, ciudad.lon, dia - timedelta(days=30), dia),
         noticias.externas(),
         return_exceptions=True,

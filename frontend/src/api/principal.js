@@ -13,10 +13,11 @@ export const getAlertas = (municipio, planId) =>
 export const getTareasVencidas = (planId) =>
   obtener("/api/principal/tareas-vencidas", { hoy: aISO(new Date()), ...(planId ? { planId } : {}) });
 
-// Clima real (Meteomatics, vía el backend); el pH y la humedad del suelo los agrega el módulo Suelo.
+// Clima real (Meteomatics o, si no hay llaves, Open-Meteo: `fuente` dice cuál); el pH y la humedad del suelo
+// los agrega el módulo Suelo.
 export const getClima = async (municipio) => {
-  const { pronostico, hoy } = await obtener("/api/principal/clima", { municipio });
-  return { pronostico, hoy };
+  const { pronostico, hoy, fuente } = await obtener("/api/principal/clima", { municipio });
+  return { pronostico, hoy, fuente };
 };
 
 // Lo que viene del Planificador: el plan que se está viendo (el elegido allá o el primero) y sus

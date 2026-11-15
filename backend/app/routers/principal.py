@@ -5,7 +5,8 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app import db
 from app.schemas.planificador import CultivoActivoOut, TareasVencidasOut
-from app.services import alertas, catalogo_cultivos, meteomatics, nasa_power, suelo_ubicacion, tareas, ubicaciones
+from app.services import alertas, catalogo_cultivos, nasa_power, suelo_ubicacion, tareas, ubicaciones
+from app.services import clima as clima_servicio
 from app.services import planificador as plan_servicio
 
 router = APIRouter(prefix="/api/principal", tags=["principal"])
@@ -17,8 +18,8 @@ ESPERA_SUELO_SEGUNDOS = 6
 async def clima(municipio: str, con=Depends(db.con_db)):
     """Pronóstico de 7 días (hoy y los 6 siguientes) y condiciones de hoy para una ubicación guardada.
 
-    `municipio` es el nombre de la ubicación (ver /api/ubicaciones). El clima viene de Meteomatics;
-    el pH y la humedad del suelo, del módulo Suelo (SoilGrids y NASA POWER), con el mismo punto que la
+    `municipio` es el nombre de la ubicación (ver /api/ubicaciones). El clima viene de Meteomatics y,
+    si no hay llaves o no responde, de Open-Meteo (`fuente` dice cuál); el pH y la humedad del suelo, del módulo Suelo (SoilGrids y NASA POWER), con el mismo punto que la
     pantalla Soil. Si el suelo no responde a tiempo, esos datos quedan como estaban (humedad de
     Meteomatics) o en null (pH) y el resto de la tarjeta se muestra igual.
     """
@@ -30,10 +31,8 @@ async def clima(municipio: str, con=Depends(db.con_db)):
     tarea_ph = asyncio.ensure_future(suelo_ubicacion.ph(ciudad))
     tarea_humedad = asyncio.ensure_future(suelo_ubicacion.humedad_raiz(ciudad))
     try:
-        datos = await meteomatics.clima(ciudad)
-    except meteomatics.SinCredenciales as e:
-        raise HTTPException(503, str(e))
-    except meteomatics.MeteomaticsError as e:
+        datos = await clima_servicio.clima(ciudad)
+    except clima_servicio.ClimaNoDisponible as e:
         raise HTTPException(502, str(e))
     ph, humedad = None, None
     try:
@@ -43,7 +42,7 @@ async def clima(municipio: str, con=Depends(db.con_db)):
     hoy = {**datos["hoy"], "phSuelo": ph}
     if humedad is not None:
         hoy["humedadSuelo"] = round(humedad)
-    # `datos` está en la caché de meteomatics: se copia en vez de modificarlo
+    # `datos` está en la caché del clima: se copia en vez de modificarlo
     return {**datos, "hoy": hoy}
 
 
@@ -76,10 +75,8 @@ async def alertas_del_dia(
     if ciudad is None:
         raise HTTPException(404, f"Unknown location: {municipio}")
     try:
-        datos = await meteomatics.clima(ciudad)  # misma caché que /clima: no gasta otra consulta
-    except meteomatics.SinCredenciales as e:
-        raise HTTPException(503, str(e))
-    except meteomatics.MeteomaticsError as e:
+        datos = await clima_servicio.clima(ciudad)  # misma caché que /clima: no gasta otra consulta
+    except clima_servicio.ClimaNoDisponible as e:
         raise HTTPException(502, str(e))
     dia = hoy or db.hoy()
     activos = plan_servicio.siembras_en_curso(con, plan_id, dia)

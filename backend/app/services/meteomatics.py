@@ -155,6 +155,7 @@ async def clima(m: Ubicacion) -> dict:
 
     resultado = {
         "municipio": m.nombre,
+        "fuente": "Meteomatics",
         "actualizado": datetime.now(timezone.utc).isoformat(),
         "pronostico": pronostico,
         "hoy": {

@@ -45,6 +45,8 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   └── noticias.py      noticias propias y feeds externos
 │   │   ├── services/            lógica y clientes de datos; no importan FastAPI
 │   │   │   ├── meteomatics.py   pronóstico y condiciones de hoy (caché de 10 min)
+│   │   │   ├── openmeteo.py     el mismo clima desde Open-Meteo (respaldo, sin llave)
+│   │   │   ├── clima.py         elige la fuente: Meteomatics si hay llaves y responde; si no, Open-Meteo
 │   │   │   ├── suelo/           módulo Suelo: NASA POWER, SMAP, MODIS, SRTM, GRACE y SoilGrids (ver suelo.md)
 │   │   │   ├── suelo_ubicacion.py pH, humedad y percentil de humedad de una ubicación, con el módulo Suelo
 │   │   │   ├── alertas.py       reglas de clima, plagas y enfermedades
