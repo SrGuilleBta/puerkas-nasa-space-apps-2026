@@ -362,16 +362,19 @@ function Formulario({ parcela, siembra, sugerencia, cultivos, hoy, municipio, on
   );
 }
 
-// Una siembra existente se abre en "Info"; "Edit" tiene el formulario. Una nueva va directo al formulario.
+// Una siembra existente se abre en "Overview"; "Tasks" y "Crop guide" separan lo demás y "Edit" tiene el
+// formulario. Una nueva va directo al formulario.
 function Contenido({ parcela, siembra, ...resto }) {
-  const [pestana, setPestana] = useState("info");
+  const [pestana, setPestana] = useState("resumen");
   if (!siembra) return <Formulario parcela={parcela} siembra={siembra} {...resto} />;
 
   return (
     <>
       <div className="pestanas" role="tablist">
         {[
-          ["info", "Info"],
+          ["resumen", "Overview"],
+          ["tareas", "Tasks"],
+          ["guia", "Crop guide"],
           ["editar", "Edit"],
         ].map(([id, texto]) => (
           <button key={id} type="button" role="tab" aria-selected={pestana === id} onClick={() => setPestana(id)}>
@@ -379,9 +382,16 @@ function Contenido({ parcela, siembra, ...resto }) {
           </button>
         ))}
       </div>
-      {pestana === "info" ? (
+      {pestana !== "editar" ? (
         <>
-          <InfoSiembra parcela={parcela} siembra={siembra} hoy={resto.hoy} municipio={resto.municipio} onTareas={resto.onTareas} />
+          <InfoSiembra
+            vista={pestana}
+            parcela={parcela}
+            siembra={siembra}
+            hoy={resto.hoy}
+            municipio={resto.municipio}
+            onTareas={resto.onTareas}
+          />
           <div className="acciones">
             <span className="acciones__espacio" />
             <button type="button" className="btn" onClick={resto.onCerrar}>
@@ -401,7 +411,7 @@ function Contenido({ parcela, siembra, ...resto }) {
 
 export default function DialogoSiembra({ abierto, parcela, siembra, sugerencia, cultivos, hoy, municipio, onCerrar, onGuardado, onCultivoCreado, onTareas }) {
   return (
-    <Dialogo abierto={abierto} titulo={siembra ? siembra.cultivo.nombre : "Add crop"} onCerrar={onCerrar}>
+    <Dialogo abierto={abierto} titulo={siembra ? siembra.cultivo.nombre : "Add crop"} onCerrar={onCerrar} amplio={Boolean(siembra)}>
       {parcela && (
         <Contenido
           parcela={parcela}

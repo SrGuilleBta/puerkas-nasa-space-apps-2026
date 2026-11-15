@@ -8,7 +8,7 @@ export default function EconomiaSiembra({ siembra }) {
   if (!hayDatos) {
     return (
       <p className="campo__ayuda">
-        Add the expected yield, price and cost in the Edit tab to see the estimated income and profit.
+        Add yield, price and cost in the Edit tab to see income and profit.
       </p>
     );
   }

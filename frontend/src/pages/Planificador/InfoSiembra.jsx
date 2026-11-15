@@ -144,8 +144,9 @@ function FichaCultivo({ cultivoId, municipio }) {
   );
 }
 
-// Pestaña informativa de una siembra: estado, avance del ciclo y contexto dentro de su parcela.
-export default function InfoSiembra({ parcela, siembra, hoy, municipio, onTareas }) {
+// Vistas informativas de una siembra. `vista` elige qué se muestra: "resumen" (estado, fechas, economía y
+// vecinas en la parcela), "tareas" o "guia" (cuándo sembrar, ficha del cultivo y clima de NASA).
+export default function InfoSiembra({ parcela, siembra, hoy, municipio, onTareas, vista = "resumen" }) {
   const inicio = deISO(siembra.fechaSiembra);
   const fin = deISO(siembra.fechaCosecha);
   const total = Math.max(1, diasEntre(inicio, fin));
@@ -174,6 +175,26 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio, onTareas
   const anterior = ordenadas[i - 1];
   const siguiente = ordenadas[i + 1];
   const ocupa = Math.round((siembra.hectareas / parcela.hectareas) * 100);
+
+  if (vista === "tareas") {
+    return (
+      <div className="info-siembra">
+        <TareasSiembra siembra={siembra} hoy={hoy} onCambio={onTareas} />
+      </div>
+    );
+  }
+
+  if (vista === "guia") {
+    return (
+      <div className="info-siembra">
+        {siembra.cultivo.catalogoId && municipio && (
+          <VentanaSiembra catalogoId={siembra.cultivo.catalogoId} municipio={municipio} mesInicio={inicio.getMonth() + 1} />
+        )}
+        <FichaCultivo cultivoId={siembra.cultivo.id} municipio={municipio} />
+        {municipio && <ClimaNasa municipio={municipio} inicio={inicio} fin={fin} hoy={hoy} />}
+      </div>
+    );
+  }
 
   return (
     <div className="info-siembra">
@@ -220,16 +241,6 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio, onTareas
       </dl>
 
       <EconomiaSiembra siembra={siembra} />
-
-      <TareasSiembra siembra={siembra} hoy={hoy} onCambio={onTareas} />
-
-      {siembra.cultivo.catalogoId && municipio && (
-        <VentanaSiembra catalogoId={siembra.cultivo.catalogoId} municipio={municipio} mesInicio={inicio.getMonth() + 1} />
-      )}
-
-      <FichaCultivo cultivoId={siembra.cultivo.id} municipio={municipio} />
-
-      {municipio && <ClimaNasa municipio={municipio} inicio={inicio} fin={fin} hoy={hoy} />}
 
       <div className="info-siembra__vecinas">
         <p>
