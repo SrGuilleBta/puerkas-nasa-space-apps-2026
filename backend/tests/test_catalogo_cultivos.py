@@ -53,6 +53,26 @@ class PruebasCatalogoCultivos(unittest.TestCase):
         self.assertEqual(catalogo_cultivos.ciclo_de(FALSO["por_id"]["maiz-grano"]), 135)
         self.assertEqual(catalogo_cultivos.ciclo_de(FALSO["por_id"]["aguacate"]), 365)
 
+    def test_acepta_tipos_en_ingles(self):
+        for ingles, esperado in [("Legume", "leguminosa"), ("Vegetable", "hortaliza"), ("Tuber", "tuberculo"),
+                                 ("Cereal", "cereal"), ("Oilseed", "oleaginosa"), ("Seed", "otro")]:
+            self.assertEqual(catalogo_cultivos.tipo_del_planificador(ingles), esperado)
+
+    def test_sincroniza_el_nombre_con_el_catalogo(self):
+        traducido = {**FALSO, "por_id": {**FALSO["por_id"], "maiz-grano": {**FALSO["por_id"]["maiz-grano"], "nombre": "Grain maize"}}}
+        with patch.object(catalogo_cultivos, "_catalogo", lambda: traducido):
+            catalogo_cultivos.sincronizar_nombres(self.con)
+        fila = self.con.execute("SELECT nombre, clave FROM cultivo WHERE catalogo_id = 'maiz-grano'").fetchone()
+        self.assertEqual((fila["nombre"], fila["clave"]), ("Grain maize", "grain maize"))
+
+    def test_no_sincroniza_si_el_nombre_ya_es_de_otro_cultivo(self):
+        with self.con:
+            self.con.execute("INSERT INTO cultivo (nombre, clave, tipo, ciclo_dias) VALUES ('Grain maize', 'grain maize', 'cereal', 100)")
+        traducido = {**FALSO, "por_id": {**FALSO["por_id"], "maiz-grano": {**FALSO["por_id"]["maiz-grano"], "nombre": "Grain maize"}}}
+        with patch.object(catalogo_cultivos, "_catalogo", lambda: traducido):
+            catalogo_cultivos.sincronizar_nombres(self.con)  # no debe romper por la clave repetida
+        self.assertEqual(self.con.execute("SELECT nombre FROM cultivo WHERE catalogo_id = 'maiz-grano'").fetchone()[0], "Maíz grano")
+
     def test_lista_ordenada_sin_acentos(self):
         nombres = [c["nombre"] for c in catalogo_cultivos.listar()]
         self.assertEqual(nombres, ["Aguacate", "Maíz grano", "Papa", "Semilla X"])

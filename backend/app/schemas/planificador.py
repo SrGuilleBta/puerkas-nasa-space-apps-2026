@@ -141,10 +141,20 @@ class DespuesDeOut(Modelo):
     fecha_cosecha: date
 
 
+class SugeridoOut(Modelo):
+    """Cultivo sugerido. `id` es null si todavía no está en el Planificador (viene del catálogo)."""
+
+    id: int | None = None
+    nombre: str
+    tipo: str
+    ciclo_dias: int
+    catalogo_id: str | None = None
+
+
 class RecomendacionOut(Modelo):
     parcela: ParcelaResumenOut
     despues_de: DespuesDeOut
-    sugerido: CultivoOut
+    sugerido: SugeridoOut
     desde: date  # primer día en que se puede sembrar
     razon: str
 

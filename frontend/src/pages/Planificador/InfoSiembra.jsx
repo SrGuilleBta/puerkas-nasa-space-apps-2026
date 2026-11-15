@@ -64,7 +64,7 @@ function ClimaNasa({ municipio, inicio, fin, hoy }) {
   );
 }
 
-const AGUA = { bajo: "Low", medio: "Medium", alto: "High" };
+const AGUA = { bajo: "Low", medio: "Medium", alto: "High", low: "Low", medium: "Medium", high: "High" };
 const rango = (r, unidad) => (r ? `${r[0]}–${r[1]}${unidad}` : "—");
 
 // Ficha del cultivo (catálogo de Cultivos): condiciones ideales y cuidados. No aparece si el cultivo no viene del catálogo.

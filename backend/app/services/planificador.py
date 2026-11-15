@@ -358,6 +358,20 @@ def resumen_plan(plan: dict, hoy: date) -> dict:
     }
 
 
+def recomendar_por_tipo(catalogo: list[dict], parcela: dict, ultima: dict) -> dict | None:
+    """Regla simple por tipo (cereal <-> leguminosa) con los cultivos que ya tiene el Planificador.
+    Es el respaldo cuando el último cultivo no viene del catálogo de Cultivos."""
+    regla = REGLAS_ROTACION.get(ultima["cultivo"]["tipo"])
+    if regla is None:
+        return None
+    tipo_siguiente, razon = regla
+    candidatos = [c for c in catalogo if c["tipo"] == tipo_siguiente and c["id"] != ultima["cultivo"]["id"]]
+    if not candidatos:
+        return None
+    usos = {c["id"]: sum(1 for s in parcela["siembras"] if s["cultivo"]["id"] == c["id"]) for c in candidatos}
+    return {"sugerido": min(candidatos, key=lambda c: (usos[c["id"]], c["nombre"])), "razon": razon}
+
+
 def recomendaciones_plan(con, plan: dict, hoy: date) -> list[dict]:
     """Qué sembrar después en cada parcela, según la última siembra y la regla de rotación.
 
@@ -371,22 +385,16 @@ def recomendaciones_plan(con, plan: dict, hoy: date) -> list[dict]:
         if not p["siembras"]:
             continue
         ultima = max(p["siembras"], key=lambda s: s["fecha_cosecha"])
-        regla = REGLAS_ROTACION.get(ultima["cultivo"]["tipo"])
-        if regla is None:
+        elegida = recomendar_por_tipo(catalogo, p, ultima)
+        if elegida is None:
             continue
-        tipo_siguiente, razon = regla
-        candidatos = [c for c in catalogo if c["tipo"] == tipo_siguiente and c["id"] != ultima["cultivo"]["id"]]
-        if not candidatos:
-            continue
-        usos = {c["id"]: sum(1 for s in p["siembras"] if s["cultivo"]["id"] == c["id"]) for c in candidatos}
-        sugerido = min(candidatos, key=lambda c: (usos[c["id"]], c["nombre"]))
         desde = max(hoy, date.fromisoformat(ultima["fecha_cosecha"]) + timedelta(days=1))
         resultado.append({
             "parcela": {"id": p["id"], "nombre": p["nombre"]},
             "despues_de": {"cultivo": ultima["cultivo"], "fecha_cosecha": ultima["fecha_cosecha"]},
-            "sugerido": sugerido,
+            "sugerido": elegida["sugerido"],
             "desde": desde.isoformat(),
-            "razon": razon,
+            "razon": elegida["razon"],
         })
     return resultado
 

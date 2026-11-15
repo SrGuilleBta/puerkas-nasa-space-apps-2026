@@ -49,6 +49,7 @@ Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto t
 │   │   │   ├── planificador.py  reglas del plan (sin traslapes, rotación, resumen)
 │   │   │   ├── ubicaciones.py   lugares guardados y geocodificación (solo México)
 │   │   │   ├── catalogo_cultivos.py  une el Planificador con el catálogo de Cultivos (lista, alta y ficha)
+│   │   │   ├── rotacion.py      qué sembrar después (nitrógeno y familia del catálogo)
 │   │   │   ├── ventana_siembra.py  mejores meses para sembrar (temperatura del cultivo contra NASA POWER)
 │   │   │   ├── noticias.py      avisos propios y lectura de feeds RSS (CIMMYT, NASA)
 │   │   │   ├── nasa_power.py    clima observado por satélite (lluvia, temperatura, radiación, humedad de raíz)

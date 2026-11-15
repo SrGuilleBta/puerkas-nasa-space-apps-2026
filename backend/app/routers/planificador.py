@@ -23,7 +23,7 @@ from app.schemas.planificador import (
     SiembraOut,
     SiembraPatch,
 )
-from app.services import catalogo_cultivos, nasa_power, ubicaciones, ventana_siembra
+from app.services import catalogo_cultivos, nasa_power, rotacion, ubicaciones, ventana_siembra
 from app.services import planificador as servicio
 
 router = APIRouter(prefix="/api/planificador", tags=["planificador"])
@@ -71,7 +71,7 @@ def analisis_plan(plan_id: int, hoy: date | None = None, con=Depends(con_db)):
 
     `hoy` (AAAA-MM-DD) lo manda el navegador para usar su fecha local; sin él se usa la de Monterrey.
     """
-    return servicio.analisis_plan(con, plan_id, hoy or db.hoy())
+    return rotacion.analisis(con, plan_id, hoy or db.hoy())
 
 
 @router.patch("/planes/{plan_id}", response_model=PlanResumenOut)

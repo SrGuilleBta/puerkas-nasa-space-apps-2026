@@ -285,8 +285,9 @@ class PruebasPlanificador(unittest.TestCase):
         self.siembra(self.frijol, "2030-01-01", "2030-04-10")
         self.siembra(self.maiz, "2030-04-11", "2030-08-15")
         r = self.analisis("2030-01-01")["recomendaciones"][0]
-        # El frijol ya se sembró en esta parcela y la haba no: se propone la haba
-        self.assertEqual(r["sugerido"]["nombre"], "Haba")
+        # El frijol ya se sembró en esta parcela: se propone otra leguminosa que no se haya usado
+        self.assertEqual(r["sugerido"]["tipo"], "leguminosa")
+        self.assertNotEqual(r["sugerido"]["nombre"], "Frijol")
         # Y tras un cultivo nunca se propone el mismo
         self.siembra(self.frijol, "2030-08-16", "2030-12-01")
         r = self.analisis("2030-01-01")["recomendaciones"][0]

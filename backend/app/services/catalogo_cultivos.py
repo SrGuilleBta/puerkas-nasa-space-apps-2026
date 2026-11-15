@@ -22,13 +22,21 @@ def _catalogo() -> dict:
         return {"cultivos": [], "por_id": {}}
 
 
+# El catálogo puede traer el tipo en español ("Leguminosa") o, ya traducido, en inglés ("Legume").
+TIPOS_EN_INGLES = {
+    "legume": "leguminosa", "fruit": "frutal", "vegetable": "hortaliza", "oilseed": "oleaginosa",
+    "forage": "forraje", "tuber": "tuberculo", "seed": "otro", "other": "otro",
+}
+
+
 def tipo_del_planificador(tipo: str | None) -> str:
-    """El catálogo escribe "Tubérculo"; el Planificador guarda el tipo en minúsculas y sin acentos
-    (las reglas de rotación y de plagas dependen de esos valores)."""
+    """El Planificador guarda el tipo en español, minúsculas y sin acentos ("leguminosa", "tuberculo"):
+    las reglas de rotación y de plagas dependen de esos valores, venga como venga del catálogo."""
     if not tipo:
         return "otro"
     sin_acentos = unicodedata.normalize("NFKD", tipo).encode("ascii", "ignore").decode()
     tipo = sin_acentos.strip().lower()
+    tipo = TIPOS_EN_INGLES.get(tipo, tipo)
     return "otro" if tipo in ("semilla", "") else tipo
 
 
@@ -79,6 +87,27 @@ def asegurar_cultivo(con, catalogo_id: str) -> dict:
              ciclo_de(ficha), catalogo_id),
         ).lastrowid
     return _cultivo_dict(_existe(con, "cultivo", id_, "crop"))
+
+
+def sincronizar_nombres(con) -> None:
+    """Pone en los cultivos enlazados el nombre actual del catálogo (si la pipeline lo cambió, p. ej.
+    al traducirlo). Se salta el cambio si el nombre nuevo ya lo tiene otro cultivo."""
+    for fila in con.execute("SELECT id, nombre, catalogo_id FROM cultivo WHERE catalogo_id IS NOT NULL").fetchall():
+        datos = _catalogo()["por_id"].get(fila["catalogo_id"])
+        if datos is None or datos["nombre"] == fila["nombre"]:
+            continue
+        if con.execute("SELECT 1 FROM cultivo WHERE clave = ? AND id != ?", (clave(datos["nombre"]), fila["id"])).fetchone():
+            continue
+        with con:
+            con.execute("UPDATE cultivo SET nombre = ?, clave = ? WHERE id = ?",
+                        (datos["nombre"], clave(datos["nombre"]), fila["id"]))
+
+
+def fichas_de(activos: list[dict]) -> dict:
+    """Fichas del catálogo de los cultivos en curso, por id del catálogo (para las alertas por cultivo)."""
+    por_id = _catalogo()["por_id"]
+    return {a["cultivo"]["catalogo_id"]: por_id[a["cultivo"]["catalogo_id"]]
+            for a in activos if a["cultivo"].get("catalogo_id") in por_id}
 
 
 def ficha_del_catalogo(catalogo_id: str) -> dict:

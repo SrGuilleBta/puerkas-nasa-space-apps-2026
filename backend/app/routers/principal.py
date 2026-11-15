@@ -1,11 +1,11 @@
 import asyncio
-from datetime import date
+from datetime import date, timedelta
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app import db
 from app.schemas.planificador import CultivoActivoOut
-from app.services import alertas, meteomatics, nasa_power, soilgrids, ubicaciones
+from app.services import alertas, catalogo_cultivos, meteomatics, nasa_power, soilgrids, ubicaciones
 from app.services import planificador as plan_servicio
 
 router = APIRouter(prefix="/api/principal", tags=["principal"])
@@ -77,7 +77,12 @@ async def alertas_del_dia(
     except meteomatics.MeteomaticsError as e:
         raise HTTPException(502, str(e))
     dia = hoy or db.hoy()
-    return alertas.calcular(datos, plan_servicio.siembras_en_curso(con, plan_id, dia), dia)
+    activos = plan_servicio.siembras_en_curso(con, plan_id, dia)
+    try:  # sin esta lluvia solo faltan las alertas de sequía: el resto se calcula igual
+        reciente = await nasa_power.periodo(ciudad.lat, ciudad.lon, dia - timedelta(days=30), dia)
+    except nasa_power.ErrorNasaPower:
+        reciente = None
+    return alertas.calcular(datos, activos, dia, catalogo_cultivos.fichas_de(activos), reciente)
 
 
 @router.get("/cultivos-activos", response_model=list[CultivoActivoOut])

@@ -33,8 +33,10 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 - Los **tipos** del catálogo ("Cereal", "Tubérculo", "Industrial"...) se guardan en minúsculas y sin
   acentos; "Semilla" y los que no traen tipo pasan a `otro`. La rotación solo tiene regla para
   cereal y leguminosa.
-- Los nombres del catálogo están en español. Cuando Cultivos los pase a inglés, no hay que tocar nada
-  salvo la migración de nombres de demo si cambian.
+- Los nombres del catálogo están en español. La traducción está en camino (rama `cultivos_v2`): los
+  nombres de los cultivos del Planificador se sincronizan solos con el catálogo al arrancar, y los tipos
+  se aceptan en español o inglés ("Leguminosa" o "Legume"). Al fusionarla, revisar que sigan igual los
+  ids del catálogo y los campos `ciclo_dias`, `temperatura_*` y `fija_nitrogeno`.
 - **Falta usar:** las agendas INIFAP por estado (`manejo` en `services/cultivos.py`) y la ventana de
   siembra por mes. Necesitan saber el estado de la ubicación (hoy solo guardamos lat/lon).
 
@@ -43,9 +45,12 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 - ~~Mejor fecha de siembra~~: hecha con temperatura (catálogo contra NASA POWER). Mejoras: usar los meses
   de siembra de las agendas INIFAP cuando haya estado, sumar el pH y el suelo cuando esté esa parte, y
   afinar con variedades (el trigo de otoño sale "regular" porque EcoCrop trae un solo rango de temperatura).
-- Umbrales de las alertas por cultivo (helada, calor, lluvia) con los rangos de EcoCrop del catálogo.
+- ~~Umbrales de las alertas por cultivo~~: hecho para helada y calor (rango absoluto de temperatura del
+  catálogo). También hecha la lluvia por cultivo (déficit y encharcamiento; solo ~78 de 399 cultivos traen su rango
+  de lluvia). Falta las plagas por cultivo con el motor de la rama `plagas`.
 - Precio, rendimiento y chips de demanda en "Cultivos activos" (SIAP, vía el catálogo).
-- Recomendación de rotación más fina con familia y fijación de nitrógeno del catálogo.
+- ~~Rotación más fina~~: hecha con familia y nitrógeno. Mejoras: usar el precio y el agua; sólo ~80 de 399
+  cultivos traen familia y marca de nitrógeno (los demás se deducen del tipo).
 - Rentabilidad en el resumen del plan.
 
 ## Planificador
