@@ -183,8 +183,17 @@
 }
 
 .dia__temp {
+  display: grid;
+  justify-items: center;
   font-size: 18px;
   font-weight: 700;
+}
+
+/* Mínima del día, debajo de la máxima */
+.dia__min {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tinta-suave);
 }
 
 .dia__lluvia {
@@ -228,6 +237,12 @@
   margin-top: 4px;
   font-size: 11px;
   color: var(--tinta-suave);
+}
+
+.hoy__extremos {
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .hoy__cielo {

@@ -81,7 +81,7 @@ async def condiciones(m: Ubicacion) -> dict:
         "forecast_days": 1,
         "current": "temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,wind_direction_10m,weather_code",
         "hourly": "temperature_2m,wind_speed_10m,precipitation_probability,soil_temperature_18cm",
-        "daily": "precipitation_sum,precipitation_probability_max",
+        "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max",
     })
     try:
         actual, por_hora, diario = datos["current"], datos["hourly"], datos["daily"]
@@ -100,6 +100,8 @@ async def condiciones(m: Ubicacion) -> dict:
             "humedad": openmeteo._redondear(actual.get("relative_humidity_2m")),
             "vientoKmh": openmeteo._redondear(actual.get("wind_speed_10m")),
             "vientoDireccion": punto_cardinal(actual.get("wind_direction_10m")),
+            "tmax": openmeteo._redondear(diario["temperature_2m_max"][0]),
+            "tmin": openmeteo._redondear(diario["temperature_2m_min"][0]),
             "lluviaProbabilidad": openmeteo._redondear(diario["precipitation_probability_max"][0]),
             "lluviaMm": None if diario["precipitation_sum"][0] is None else round(diario["precipitation_sum"][0], 1),
             "temperaturaSuelo": None if indice is None else openmeteo._redondear(por_hora["soil_temperature_18cm"][indice]),
@@ -110,4 +112,46 @@ async def condiciones(m: Ubicacion) -> dict:
         raise OpenMeteoError(f"Open-Meteo sent an unexpected answer ({type(e).__name__})") from e
 
     _cache[llave] = (time.monotonic(), resultado)
+    return resultado
+
+
+def unir(compartido: dict | None, extras: dict | None) -> dict | None:
+    """Junta lo que muestra la tarjeta de Clima.
+
+    `compartido` es el clima de Principal (`services/clima.py`: Meteomatics o, si no responde, Open-Meteo). La
+    temperatura, la sensación, el cielo, la humedad, el viento, la máxima, la mínima y la lluvia salen de ahí para que
+    las dos pantallas den las mismas cifras (cada modelo da números distintos). `extras` (Open-Meteo por hora) solo
+    aporta lo que Principal no trae: dirección del viento, lluvia en mm, temperatura del suelo y la ventana para
+    labores. Si falta uno de los dos se muestra lo que haya; si faltan los dos, None.
+    """
+    if compartido is None and extras is None:
+        return None
+    extras = extras or {}
+    resultado = dict(extras)
+    fuentes = [extras["fuente"]] if extras else []
+    if compartido is not None:
+        hoy = compartido["hoy"]
+        dia = compartido["pronostico"][0] if compartido["pronostico"] else {}
+        resultado.update(
+            municipio=compartido["municipio"],
+            temperatura=hoy["temperatura"],
+            sensacion=hoy["sensacion"],
+            cielo=hoy["cielo"],
+            icono=hoy["icono"],
+            humedad=hoy["humedad"],
+            vientoKmh=hoy["vientoKmh"],
+            tmax=dia.get("tmax"),
+            tmin=dia.get("tmin"),
+            lluviaProbabilidad=dia.get("lluvia"),
+        )
+        fuentes.insert(0, compartido["fuente"])
+        # Principal ya avisó que hoy no es buen día para el campo: la ventana no lo contradice
+        ventana_hoy = resultado.get("ventana")
+        if hoy.get("optimoParaCampo") is False and ventana_hoy and ventana_hoy["favorable"]:
+            resultado["ventana"] = {"favorable": False, "desde": None, "hasta": None}
+    resultado["fuente"] = " + ".join(dict.fromkeys(fuentes))  # sin repetir (Open-Meteo + Open-Meteo)
+    resultado.setdefault("ventana", None)
+    resultado.setdefault("vientoDireccion", None)
+    resultado.setdefault("lluviaMm", None)
+    resultado.setdefault("temperaturaSuelo", None)
     return resultado

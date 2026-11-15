@@ -16,7 +16,12 @@ function Dia({ fecha, dato, esHoy }) {
       <span className={`dia__cielo dia__cielo--${dato.cielo}`}>
         <Cielo size={22} />
       </span>
-      <span className="dia__temp">{dato.tmax == null ? "—" : `${dato.tmax}°`}</span>
+      <span className="dia__temp">
+        {dato.tmax == null ? "—" : `${dato.tmax}°`}
+        <small className="dia__min" title="Low">
+          {dato.tmin == null ? "—" : `${dato.tmin}°`}
+        </small>
+      </span>
       <span className="dia__lluvia">
         <Gota size={12} />
         {dato.lluvia == null ? "—" : `${dato.lluvia}%`}
@@ -54,6 +59,8 @@ export default function PronosticoSemanal({ pronostico, hoy, fuente }) {
     })
     .filter((x) => x.fecha >= inicioHoy);
   const IconoHoy = ICONO_CIELO[hoy.icono] ?? Sol;
+  // Máxima y mínima de hoy: del mismo pronóstico de los 7 días, así que coinciden con la tarjeta de hoy de la pantalla Weather
+  const extremosHoy = dias.find(({ fecha }) => mismoDia(fecha, ahora))?.dato;
 
   return (
     <Tarjeta>
@@ -81,6 +88,11 @@ export default function PronosticoSemanal({ pronostico, hoy, fuente }) {
           <div>
             <p className="hoy__temp">{conUnidad(hoy.temperatura, "°")}</p>
             <p className="hoy__sensacion">Feels like {conUnidad(hoy.sensacion, "°")}</p>
+            {extremosHoy && (
+              <p className="hoy__extremos">
+                High {conUnidad(extremosHoy.tmax, "°")} · Low {conUnidad(extremosHoy.tmin, "°")}
+              </p>
+            )}
           </div>
           <div className="hoy__cielo">
             <p>{hoy.cielo ?? "—"}</p>

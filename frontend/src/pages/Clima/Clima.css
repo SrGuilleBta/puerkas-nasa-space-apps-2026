@@ -203,6 +203,12 @@
   color: var(--tinta-suave);
 }
 
+.condiciones__extremos {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .condiciones__medidas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

@@ -69,6 +69,11 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
   suelo, "ventana para labores") en una tarjeta arriba del mapa, para la ubicación activa (`GET /api/clima/local`).
   La temperatura del suelo es la de 18 cm, no la de 20 cm del diseño; la humedad es la de la zona de raíz (NASA POWER).
 - Falta el **selector de día pasado** de la pantalla del diseño: las condiciones locales son solo de hoy.
+- Hecho: **las temperaturas coinciden con Principal**. La tarjeta de condiciones locales y la máxima de cada lugar
+  guardado ("Your places" y la etiqueta en el mapa) salen del mismo clima que Principal (Meteomatics, con Open-Meteo de
+  respaldo; misma caché de 10 min, una consulta por lugar al abrir la pantalla). Lo que sigue siendo Open-Meteo son los
+  **colores del mapa** (malla de 84 puntos, no se usa Meteomatics: es de pago y limitado), así que la mancha de color
+  junto a una etiqueta puede diferir unos grados de su número. La lluvia en mm del mapa también es de Open-Meteo.
 - Falta una capa de **lluvia observada** (lo que ya cayó): NASA POWER se podría usar con una malla gruesa y caché diaria,
   o GPM IMERG si se consigue cuenta de Earthdata. Hoy el mapa es solo pronóstico.
 - Falta una capa de **suelo** (SMAP) en el mapa; el diseño la traía junto a Temperatura y Precipitación.

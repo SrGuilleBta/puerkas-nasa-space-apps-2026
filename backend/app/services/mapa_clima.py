@@ -152,6 +152,31 @@ def _fechas_comunes(puntos: list[dict]) -> list[str]:
     return fechas
 
 
+def con_pronostico_de_principal(datos: dict, pronosticos: list) -> dict:
+    """Copia del mapa donde la temperatura máxima de cada lugar guardado es la del pronóstico de Principal.
+
+    `pronosticos` va en el mismo orden que `datos["lugares"]` y trae, por lugar, lo que devuelve `services/clima.py`
+    (Meteomatics o su respaldo) o un error. El mapa (colores, malla) sigue siendo de Open-Meteo, que es otro modelo y da
+    máximas distintas; sin esto, "Your places" no coincidía con la pantalla Principal. Un día sin dato, o un lugar
+    cuyo pronóstico falló, conserva el valor de Open-Meteo. No modifica `datos` porque está en la caché.
+    """
+    lugares = []
+    fuentes = set()
+    for lugar, pronostico in zip(datos["lugares"], pronosticos):
+        if isinstance(pronostico, BaseException):
+            lugares.append(lugar)
+            continue
+        por_fecha = {d["fecha"]: d.get("tmax") for d in pronostico["pronostico"]}
+        tmax = [por_fecha.get(fecha) if por_fecha.get(fecha) is not None else previo
+                for fecha, previo in zip(datos["dias"], lugar["tmax"])]
+        lugares.append({**lugar, "tmax": tmax})
+        fuentes.add(pronostico["fuente"])
+    resultado = {**datos, "lugares": lugares}
+    if fuentes:
+        resultado["fuenteLugares"] = " + ".join(sorted(fuentes))
+    return resultado
+
+
 async def mapa(lugares: list[tuple[str, float, float]]) -> dict:
     """Pronóstico de lluvia (mm al día) y temperatura máxima (°C) de la malla de México y de `lugares`
     ((nombre, lat, lon) de las ubicaciones guardadas)."""

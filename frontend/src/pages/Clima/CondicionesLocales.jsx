@@ -62,6 +62,9 @@ function Contenido({ d }) {
           <p className="condiciones__sensacion">
             {d.cielo ?? "—"} · Feels like {con(d.sensacion, "°")}
           </p>
+          <p className="condiciones__extremos">
+            High {con(d.tmax, "°")} · Low {con(d.tmin, "°")}
+          </p>
         </div>
       </div>
 
@@ -88,10 +91,10 @@ function Contenido({ d }) {
         />
       </ul>
 
-      <Ventana ventana={d.ventana} />
+      {d.ventana && <Ventana ventana={d.ventana} />}
       <p className="clima__nota">
-        Source: {d.fuente} (hourly forecast) and NASA POWER (soil moisture). The fieldwork window is our own rule: 10–35 °C,
-        wind under 25 km/h and under 30% chance of rain.
+        Source: {d.fuente} and NASA POWER (soil moisture). The numbers match the Home screen. The fieldwork window is our
+        own rule: 10–35 °C, wind under 25 km/h and under 30% chance of rain.
       </p>
     </>
   );

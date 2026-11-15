@@ -14,6 +14,7 @@ from fastapi.testclient import TestClient  # noqa: E402
 
 from app.main import app  # noqa: E402
 from app.services import condiciones_locales as cl  # noqa: E402
+from app.services import clima as clima_servicio  # noqa: E402
 from app.services import openmeteo  # noqa: E402
 from app.services.ubicaciones import Ubicacion  # noqa: E402
 
@@ -52,7 +53,25 @@ def respuesta(hora_actual: int = 10):
             "precipitation_probability": [8] * 24,
             "soil_temperature_18cm": [23.6] * 24,
         },
-        "daily": {"precipitation_sum": [0.24], "precipitation_probability_max": [8]},
+        "daily": {
+            "temperature_2m_max": [31.4],
+            "temperature_2m_min": [17.6],
+            "precipitation_sum": [0.24],
+            "precipitation_probability_max": [8],
+        },
+    }
+
+
+def compartido(optimo=True):
+    """Lo que devuelve el clima de Principal (Meteomatics): cifras distintas a las de Open-Meteo a propósito."""
+    return {
+        "municipio": "Monterrey, NL",
+        "fuente": "Meteomatics",
+        "pronostico": [{"fecha": "2026-11-15", "tmax": 27, "tmin": 15, "lluvia": 78, "cielo": "lluvia"}],
+        "hoy": {
+            "temperatura": 20, "sensacion": 26, "cielo": "Mostly clear", "icono": "sol", "optimoParaCampo": optimo,
+            "humedad": 82, "vientoKmh": 2, "humedadSuelo": 42, "phSuelo": 7.6,
+        },
     }
 
 
@@ -105,6 +124,7 @@ class PruebasServicio(unittest.TestCase):
         self.assertEqual(r["lluviaProbabilidad"], 8)
         self.assertEqual(r["lluviaMm"], 0.2)
         self.assertEqual(r["temperaturaSuelo"], 24)
+        self.assertEqual((r["tmax"], r["tmin"]), (31, 18))
         self.assertEqual(r["ventana"], {"favorable": True, "desde": None, "hasta": "17:00"})
 
     def test_respuesta_rara_es_un_error_claro(self):
@@ -113,24 +133,75 @@ class PruebasServicio(unittest.TestCase):
                 asyncio.run(cl.condiciones(lugar))
 
 
+class PruebasUnir(unittest.TestCase):
+    def extras(self):
+        cl._cache.clear()
+        with patch.object(openmeteo, "_pedir", AsyncMock(return_value=respuesta())):
+            return asyncio.run(cl.condiciones(lugar))
+
+    def test_las_cifras_basicas_son_las_de_principal(self):
+        r = cl.unir(compartido(), self.extras())
+        # Open-Meteo diría 30° ahora y 31/18 de máxima/mínima: se usa lo mismo que Principal
+        self.assertEqual((r["temperatura"], r["sensacion"], r["humedad"], r["vientoKmh"]), (20, 26, 82, 2))
+        self.assertEqual((r["tmax"], r["tmin"], r["lluviaProbabilidad"]), (27, 15, 78))
+        self.assertEqual(r["fuente"], "Meteomatics + Open-Meteo")
+
+    def test_los_extras_vienen_de_open_meteo(self):
+        r = cl.unir(compartido(), self.extras())
+        self.assertEqual((r["vientoDireccion"], r["lluviaMm"], r["temperaturaSuelo"]), ("NE", 0.2, 24))
+
+    def test_si_principal_dijo_que_no_es_buen_dia_la_ventana_no_lo_contradice(self):
+        r = cl.unir(compartido(optimo=False), self.extras())
+        self.assertEqual(r["ventana"], {"favorable": False, "desde": None, "hasta": None})
+        r = cl.unir(compartido(optimo=True), self.extras())
+        self.assertTrue(r["ventana"]["favorable"])
+
+    def test_sin_extras_se_muestra_lo_de_principal(self):
+        r = cl.unir(compartido(), None)
+        self.assertEqual(r["temperatura"], 20)
+        self.assertIsNone(r["ventana"])
+        self.assertIsNone(r["vientoDireccion"])
+        self.assertEqual(r["fuente"], "Meteomatics")
+
+    def test_sin_principal_se_muestra_lo_de_open_meteo(self):
+        r = cl.unir(None, self.extras())
+        self.assertEqual((r["temperatura"], r["tmax"], r["tmin"]), (30, 31, 18))
+        self.assertEqual(r["fuente"], "Open-Meteo")
+
+    def test_si_las_dos_fuentes_son_open_meteo_no_se_repite(self):
+        c = compartido()
+        c["fuente"] = "Open-Meteo"
+        self.assertEqual(cl.unir(c, self.extras())["fuente"], "Open-Meteo")
+
+    def test_sin_nada_no_hay_resultado(self):
+        self.assertIsNone(cl.unir(None, None))
+
+
+RUTA = {"municipio": "Monterrey, NL"}
+CLIMA = "app.routers.clima.clima_servicio.clima"
+HUMEDAD = "app.routers.clima.suelo_ubicacion.humedad_raiz"
+
+
 class PruebasRuta(unittest.TestCase):
     def setUp(self):
         cl._cache.clear()
 
-    def test_ruta_local_suma_la_humedad_del_suelo(self):
+    def test_ruta_local_usa_las_mismas_cifras_que_principal_y_suma_el_suelo(self):
         with TestClient(app) as cliente, patch.object(openmeteo, "_pedir", AsyncMock(return_value=respuesta())), patch(
-            "app.routers.clima.suelo_ubicacion.humedad_raiz", AsyncMock(return_value=61.6)
-        ):
-            r = cliente.get("/api/clima/local", params={"municipio": "Monterrey, NL"})
+            CLIMA, AsyncMock(return_value=compartido())
+        ), patch(HUMEDAD, AsyncMock(return_value=61.6)):
+            r = cliente.get("/api/clima/local", params=RUTA)
         self.assertEqual(r.status_code, 200)
-        self.assertEqual(r.json()["humedadSuelo"], 62)
-        self.assertEqual(r.json()["vientoDireccion"], "NE")
+        c = r.json()
+        self.assertEqual((c["temperatura"], c["tmax"], c["tmin"]), (20, 27, 15))
+        self.assertEqual(c["humedadSuelo"], 62)
+        self.assertEqual(c["vientoDireccion"], "NE")
 
     def test_ruta_local_sin_humedad_del_suelo_responde_igual(self):
         with TestClient(app) as cliente, patch.object(openmeteo, "_pedir", AsyncMock(return_value=respuesta())), patch(
-            "app.routers.clima.suelo_ubicacion.humedad_raiz", AsyncMock(return_value=None)
-        ):
-            r = cliente.get("/api/clima/local", params={"municipio": "Monterrey, NL"})
+            CLIMA, AsyncMock(return_value=compartido())
+        ), patch(HUMEDAD, AsyncMock(return_value=None)):
+            r = cliente.get("/api/clima/local", params=RUTA)
         self.assertEqual(r.status_code, 200)
         self.assertIsNone(r.json()["humedadSuelo"])
 
@@ -139,12 +210,23 @@ class PruebasRuta(unittest.TestCase):
             r = cliente.get("/api/clima/local", params={"municipio": "No existe"})
         self.assertEqual(r.status_code, 404)
 
-    def test_ruta_local_502_si_open_meteo_falla(self):
+    def test_ruta_local_si_falla_open_meteo_muestra_lo_de_principal(self):
         falla = AsyncMock(side_effect=openmeteo.OpenMeteoError("Could not get the forecast"))
         with TestClient(app) as cliente, patch.object(openmeteo, "_pedir", falla), patch(
-            "app.routers.clima.suelo_ubicacion.humedad_raiz", AsyncMock(return_value=None)
+            CLIMA, AsyncMock(return_value=compartido())
+        ), patch(HUMEDAD, AsyncMock(return_value=None)):
+            r = cliente.get("/api/clima/local", params=RUTA)
+        self.assertEqual(r.status_code, 200)
+        self.assertEqual(r.json()["temperatura"], 20)
+        self.assertIsNone(r.json()["ventana"])
+
+    def test_ruta_local_502_si_no_responde_ninguna_fuente(self):
+        falla = AsyncMock(side_effect=openmeteo.OpenMeteoError("Could not get the forecast"))
+        sin_clima = AsyncMock(side_effect=clima_servicio.ClimaNoDisponible("sin clima"))
+        with TestClient(app) as cliente, patch.object(openmeteo, "_pedir", falla), patch(CLIMA, sin_clima), patch(
+            HUMEDAD, AsyncMock(return_value=None)
         ):
-            r = cliente.get("/api/clima/local", params={"municipio": "Monterrey, NL"})
+            r = cliente.get("/api/clima/local", params=RUTA)
         self.assertEqual(r.status_code, 502)
 
 

@@ -14,6 +14,7 @@ from fastapi.testclient import TestClient  # noqa: E402
 
 from app import config  # noqa: E402
 from app.main import app  # noqa: E402
+from app.services import clima as clima_servicio  # noqa: E402
 from app.services import mapa_clima  # noqa: E402
 
 FECHAS = [f"2026-11-{15 + i}" for i in range(7)]
@@ -161,13 +162,43 @@ class PruebasMapa(unittest.TestCase):
         self.assertTrue(all(len(p["lluviaMm"]) == 5 and len(p["tmax"]) == 5 for p in puntos))
 
 
+CLIMA = "app.routers.clima.clima_servicio.clima"
+
+
+class PruebasPronosticoDePrincipal(unittest.TestCase):
+    def datos(self):
+        return {
+            "dias": ["2026-11-15", "2026-11-16", "2026-11-17"],
+            "lugares": [
+                {"nombre": "A", "tmax": [30.1, 20.3, 15.5]},
+                {"nombre": "B", "tmax": [31.0, 21.0, 16.0]},
+            ],
+        }
+
+    def test_cambia_la_maxima_por_fecha_y_no_toca_el_original(self):
+        datos = self.datos()
+        shared = {"fuente": "Meteomatics", "pronostico": [{"fecha": "2026-11-15", "tmax": 27}, {"fecha": "2026-11-16", "tmax": 20}]}
+        r = mapa_clima.con_pronostico_de_principal(datos, [shared, clima_servicio.ClimaNoDisponible("x")])
+        self.assertEqual(r["lugares"][0]["tmax"], [27, 20, 15.5])  # el día sin dato conserva Open-Meteo
+        self.assertEqual(r["lugares"][1]["tmax"], [31.0, 21.0, 16.0])  # el lugar que falló, igual
+        self.assertEqual(r["fuenteLugares"], "Meteomatics")
+        self.assertEqual(datos["lugares"][0]["tmax"], [30.1, 20.3, 15.5])  # la caché no se modifica
+
+    def test_si_todos_fallan_no_hay_fuente_de_lugares(self):
+        errores = [clima_servicio.ClimaNoDisponible("x")] * 2
+        r = mapa_clima.con_pronostico_de_principal(self.datos(), errores)
+        self.assertNotIn("fuenteLugares", r)
+        self.assertEqual(r["lugares"][0]["tmax"], [30.1, 20.3, 15.5])
+
+
 class PruebasRuta(unittest.TestCase):
     def setUp(self):
         mapa_clima._cache.clear()
         ClienteFalso.peticiones = []
 
     def test_ruta_mapa_incluye_los_lugares_guardados(self):
-        with TestClient(app) as cliente, patch.object(mapa_clima.httpx, "AsyncClient", ClienteFalso):
+        sin_clima = AsyncMock(side_effect=clima_servicio.ClimaNoDisponible("sin clima"))
+        with TestClient(app) as cliente, patch.object(mapa_clima.httpx, "AsyncClient", ClienteFalso), patch(CLIMA, sin_clima):
             r = cliente.get("/api/clima/mapa")
         self.assertEqual(r.status_code, 200)
         cuerpo = r.json()
@@ -182,6 +213,19 @@ class PruebasRuta(unittest.TestCase):
             r = cliente.get("/api/clima/mapa")
         self.assertEqual(r.status_code, 502)
         self.assertIn("map forecast", r.json()["detail"])
+
+    def test_ruta_mapa_los_lugares_usan_el_pronostico_de_principal(self):
+        principal = AsyncMock(return_value={
+            "fuente": "Meteomatics",
+            "pronostico": [{"fecha": f, "tmax": 20 + i} for i, f in enumerate(FECHAS)],
+        })
+        with TestClient(app) as cliente, patch.object(mapa_clima.httpx, "AsyncClient", ClienteFalso), patch(CLIMA, principal):
+            r = cliente.get("/api/clima/mapa")
+        self.assertEqual(r.status_code, 200)
+        cuerpo = r.json()
+        self.assertEqual(cuerpo["lugares"][0]["tmax"], [20, 21, 22, 23, 24, 25, 26])  # no los 28.0, 30.0... de Open-Meteo
+        self.assertEqual(cuerpo["fuenteLugares"], "Meteomatics")
+        self.assertEqual(cuerpo["puntos"][0]["tmax"][0], 28.0)  # la malla sigue siendo de Open-Meteo
 
 
 if __name__ == "__main__":

@@ -145,6 +145,7 @@ function Contenido({ datos, municipio }) {
         Source: {datos.fuente} forecast (model values on a grid of {datos.puntos.length} points about {Math.round(datos.paso * 111)} km apart),
         updated {actualizado} and refreshed every 3 hours. It shows the regional pattern, not how much rain falls on your field.
         Observed rain from NASA POWER is in the Crop guide of the Planner.
+        {datos.fuenteLugares && ` The temperatures of your places come from ${datos.fuenteLugares}, the same forecast as the Home screen, so they can differ a few degrees from the map colors.`}
       </p>
     </>
   );
