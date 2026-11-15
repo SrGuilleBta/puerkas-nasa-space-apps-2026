@@ -11,8 +11,8 @@ Los datos que usa cada módulo están en [datos.md](datos.md).
 
 ```
 Navegador (React)  ──/api/...──▶  FastAPI  ──▶  fuentes de datos
-                                     │            (NASA POWER, Open-Meteo, SoilGrids...)
-                                     └──────────▶  archivos locales (backend/data: SIAP, EcoCrop)
+                                     │            (Meteomatics, SoilGrids, NASA POWER...)
+                                     └──────────▶  SQLite y archivos locales (backend/data)
 ```
 
 - **El frontend nunca llama a APIs externas.** Todo pasa por el backend (`/api/...`). Así las llaves
@@ -24,59 +24,63 @@ Navegador (React)  ──/api/...──▶  FastAPI  ──▶  fuentes de datos
 
 ## Árbol de carpetas
 
-Esta es la estructura a seguir. Git no guarda carpetas vacías, así que si una carpeta no existe al
-clonar, se crea con `mkdir` y aparece en el repo en cuanto tenga su primer archivo.
-`[existe]` = ya estaba en el repo. `[crear]` = lo pone el equipo.
+Así está hoy el repo. `[pendiente]` = lo pone el módulo que falta (Clima, Mercado, Cultivos, Noticias).
+Git no guarda carpetas vacías: una carpeta nueva aparece en el repo en cuanto tenga su primer archivo.
 
 ```
 .
 ├── backend/
 │   ├── app/
-│   │   ├── main.py              [existe] crea la app, registra routers, monta el frontend
-│   │   ├── config.py            [crear] variables de entorno y rutas de datos
+│   │   ├── main.py              crea la app, registra routers, monta el frontend
+│   │   ├── config.py            variables de entorno (Meteomatics) y ruta de la base
+│   │   ├── db.py                SQLite: esquema, migraciones (PRAGMA user_version) y datos de inicio
 │   │   ├── routers/             rutas HTTP; un archivo por módulo, sin lógica pesada
-│   │   │   ├── municipios.py    [crear] el selector de municipio (lat/lon, SIAP)
-│   │   │   ├── principal.py     [crear]
-│   │   │   ├── clima.py         [crear] incluye suelo (humedad, temperatura, pH)
-│   │   │   ├── mercado.py       [crear]
-│   │   │   ├── cultivos.py      [existe] lee los JSON de data/cultivos
-│   │   │   ├── planificador.py  [crear]
-│   │   │   └── noticias.py      [crear]
+│   │   │   ├── principal.py     clima, alertas y cultivos activos de Principal
+│   │   │   ├── planificador.py  planes, parcelas, siembras, resumen y recomendaciones
+│   │   │   ├── ubicaciones.py   lugares guardados, búsqueda por nombre y "Mi ubicación"
+│   │   │   ├── clima.py         [pendiente]
+│   │   │   ├── mercado.py       [pendiente]
+│   │   │   ├── cultivos.py      catálogo, indicadores por municipio y cuidados por estado (/api/cultivos)
+│   │   │   └── noticias.py      [pendiente]
 │   │   ├── services/            lógica y clientes de datos; no importan FastAPI
-│   │   │   ├── nasa_power.py    [crear]
-│   │   │   ├── open_meteo.py    [crear]
-│   │   │   ├── soilgrids.py     [crear]
-│   │   │   ├── siap.py          [crear] lee los CSV de backend/data/siap
-│   │   │   └── ecocrop.py       [crear]
-│   │   └── schemas/             modelos Pydantic de las respuestas (opcional)
+│   │   │   ├── meteomatics.py   pronóstico y condiciones de hoy (caché de 10 min)
+│   │   │   ├── soilgrids.py     pH del suelo (caché de 24 h, busca puntos vecinos)
+│   │   │   ├── alertas.py       reglas de clima, plagas y enfermedades
+│   │   │   ├── planificador.py  reglas del plan (sin traslapes, rotación, resumen)
+│   │   │   ├── ubicaciones.py   lugares guardados y geocodificación (solo México)
+│   │   │   ├── nasa_power.py    clima observado por satélite (lluvia, temperatura, radiación, humedad de raíz)
+│   │   │   ├── cultivos.py      lee los JSON que genera la pipeline en backend/data/cultivos
+│   │   │   ├── siap.py          [pendiente] leerá los CSV de backend/data/siap
+│   │   │   └── ecocrop.py       [pendiente]
+│   │   └── schemas/             modelos Pydantic de las respuestas (camelCase hacia el frontend)
 │   ├── pipeline/
-│   │   └── cultivos/            [existe] batch que genera data/cultivos (ver cultivos-pipeline.md)
+│   │   └── cultivos/            batch que genera data/cultivos (ver cultivos-pipeline.md)
 │   ├── data/
-│   │   ├── siap/                [existe] CSV 2015-2025 y su README
-│   │   ├── sequia/, ecocrop/, inflacion/   [existen] entradas de la pipeline de Cultivos
-│   │   └── cultivos/            generado por la pipeline (no se commitea)
-│   ├── tests/
-│   └── requirements.txt         [existe]
+│   │   ├── siap/                CSV 2015-2025 y su README
+│   │   ├── sequia/, ecocrop/, inflacion/   entradas de la pipeline de Cultivos
+│   │   ├── cultivos/            generado por la pipeline (no se sube a git)
+│   │   └── planificador.db      base SQLite (se crea sola; no se sube a git)
+│   ├── tests/                   unittest: `python -m unittest discover -s tests`
+│   └── requirements.txt
 ├── frontend/
-│   ├── index.html, vite.config.js   [existen]
+│   ├── index.html, vite.config.js
 │   └── src/
-│       ├── main.jsx, App.jsx    [existen] punto de entrada, layout y rutas
+│       ├── main.jsx, App.jsx    punto de entrada; ubicación activa, layout y rutas
+│       ├── routes.js            rutas con hash (#/clima, #/planificador)
 │       ├── api/                 una función por consulta al backend
-│       │   ├── cliente.js       [crear] fetch común con manejo de errores
-│       │   └── clima.js         [crear] (uno por módulo)
+│       │   ├── cliente.js       fetch común con manejo de errores
+│       │   ├── principal.js, planificador.js, ubicaciones.js
+│       │   └── datosEjemplo.js  datos de ejemplo de lo que aún no tiene backend
 │       ├── pages/               una carpeta por pantalla
-│       │   ├── Principal/       [crear] Principal.jsx
-│       │   ├── Clima/           [crear] Clima.jsx
-│       │   ├── Mercado/         [crear] Mercado.jsx
-│       │   ├── Cultivos/        [crear] Cultivos.jsx
-│       │   ├── Planificador/    [crear] Planificador.jsx
-│       │   └── Noticias/        [crear] Noticias.jsx
-│       ├── components/          piezas reutilizables (Tarjeta, Grafica, Cargando...)
-│       ├── hooks/               lógica compartida (p. ej. useUbicacion)
-│       ├── utils/               formato de fechas, unidades, etc.
-│       └── styles/
-├── docs/                        documentación (datos.md, este archivo)
-├── Dockerfile, docker-compose.yml, Start.bat, .env.example   [existen]
+│       │   ├── Principal/       banner de alertas, pronóstico, cultivos activos, plan anual
+│       │   ├── Planificador/    calendario, barra de tiempo, popups, resumen, recomendaciones
+│       │   ├── Clima/, Mercado/, Cultivos/, Noticias/   [pendiente]
+│       ├── components/          Layout, Dialogo, Cargable, SelectorUbicacion, Iconos...
+│       ├── hooks/               useDatos (cargando / error / recargar)
+│       ├── utils/               fechas, ventana de tiempo, colores, plan activo
+│       └── styles/              global.css con los colores y medidas
+├── docs/                        documentación (datos.md, funcionalidades.md, este archivo)
+├── Dockerfile, docker-compose.yml, Start.bat, .env.example
 └── README.md
 ```
 

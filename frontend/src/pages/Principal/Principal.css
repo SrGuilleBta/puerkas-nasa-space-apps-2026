@@ -1,0 +1,915 @@
+/* ---------- Distribución de la página ---------- */
+.principal {
+  display: grid;
+  gap: 16px;
+}
+
+.principal__columna {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  min-width: 0;
+}
+
+/* En pantalla ancha: aviso arriba y dos columnas debajo */
+@media (min-width: 900px) {
+  .principal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .principal__aviso,
+  .principal__plan {
+    grid-column: 1 / -1;
+  }
+
+  .principal__columna {
+    gap: 20px;
+  }
+}
+
+/* ---------- Banner preventivo ---------- */
+.banner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(240, 109, 109, 0.25);
+  border-radius: 18px;
+  background: var(--coral-claro);
+}
+
+.banner__icono {
+  display: grid;
+  place-items: center;
+  grid-row: span 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(240, 109, 109, 0.18);
+  color: var(--coral);
+}
+
+.banner__titulo {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--coral);
+}
+
+.banner__texto {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--tinta-suave);
+}
+
+.banner__accion {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---------- Insignia y enlaces ---------- */
+.insignia {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.insignia i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--verde);
+}
+
+.enlace {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--verde-oscuro);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ---------- Pronóstico semanal ---------- */
+.dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.dia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px 0 10px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(0, 230, 118, 0.1), rgba(0, 230, 118, 0.04));
+}
+
+.dia--hoy {
+  border-color: var(--verde);
+  background: linear-gradient(180deg, rgba(0, 230, 118, 0.2), rgba(0, 230, 118, 0.06));
+}
+
+.dia__nombre {
+  position: relative;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--tinta-suave);
+}
+
+.dia__hoy {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: var(--verde);
+  color: var(--tinta);
+  font-size: 7px;
+}
+
+.dia__cielo {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.dia__cielo--sol {
+  background: var(--coral-claro);
+  color: var(--coral);
+}
+
+.dia__cielo--nube,
+.dia__cielo--lluvia {
+  background: rgba(240, 109, 109, 0.1);
+  color: var(--coral);
+}
+
+.dia__temp {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dia__lluvia {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 9px;
+  color: var(--verde-oscuro);
+}
+
+.hoy {
+  display: grid;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--borde);
+}
+
+.hoy__principal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hoy__icono {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--coral-claro);
+  color: var(--coral);
+}
+
+.hoy__temp {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hoy__sensacion {
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.hoy__cielo {
+  padding-left: 12px;
+  border-left: 1px solid var(--borde);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hoy__cielo span {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  color: var(--verde-oscuro);
+}
+
+.hoy__medidas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0;
+}
+
+.medida {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--turquesa);
+}
+
+.medida dt {
+  font-size: 10px;
+  color: var(--tinta-suave);
+}
+
+.medida dd {
+  margin: 2px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+@media (min-width: 480px) {
+  .hoy__medidas {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Alerta regional ---------- */
+.alerta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--tarjeta);
+  box-shadow: var(--sombra);
+  text-align: left;
+}
+
+.alerta__icono {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(20, 200, 192, 0.14);
+  color: #0e8a85;
+}
+
+.alerta__cuerpo {
+  display: grid;
+  flex: 1;
+  gap: 3px;
+}
+
+.alerta__etiqueta {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+
+.alerta__cuerpo strong {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.alerta__cuerpo small {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+/* ---------- Cultivo activo ---------- */
+.cultivo__imagen {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 84px;
+  margin-bottom: 16px;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color, var(--verde)) 35%, transparent),
+    color-mix(in srgb, var(--color, var(--verde)) 6%, transparent)
+  );
+  overflow: hidden;
+}
+
+.cultivo__brote {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border: 1px solid rgba(0, 230, 118, 0.5);
+  border-radius: 50%;
+  color: var(--verde-oscuro);
+}
+
+.cultivo__etapa {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--verde-oscuro);
+}
+
+.cultivo__fila {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cultivo__nombre {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cultivo__meta {
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.cultivo__fila--precio {
+  align-items: baseline;
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.cultivo__fila--precio strong {
+  font-size: 20px;
+  color: var(--tinta);
+}
+
+.cultivo__fila--precio small {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--tinta-suave);
+}
+
+.progreso {
+  height: 6px;
+  margin: 8px 0;
+  border-radius: 999px;
+  background: rgba(18, 48, 74, 0.08);
+  overflow: hidden;
+}
+
+.progreso i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--verde), var(--turquesa));
+}
+
+.cultivo__fila--cosecha {
+  font-size: 10px;
+  color: var(--tinta-suave);
+}
+
+.cultivo__fila--cosecha strong {
+  color: var(--tinta);
+}
+
+.boton-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid rgba(0, 230, 118, 0.35);
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0, 230, 118, 0.2), rgba(20, 200, 192, 0.2));
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ---------- Plan anual ---------- */
+.plan__encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.boton-secundario {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: rgba(20, 200, 192, 0.1);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ---------- Escritorio: todo en una pantalla, sin scroll vertical ---------- */
+@media (min-width: 900px) {
+  .principal,
+  .principal__columna {
+    gap: 12px;
+  }
+
+  .principal .tarjeta {
+    padding: 14px 18px;
+  }
+
+  .principal .tarjeta__encabezado {
+    margin-bottom: 10px;
+  }
+
+  .banner {
+    padding: 8px 14px;
+  }
+
+  .dias {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .dia {
+    gap: 8px;
+    padding: 8px 0;
+  }
+
+  .dia__hoy {
+    top: -18px;
+  }
+
+  .dia__cielo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dia__temp {
+    font-size: 16px;
+  }
+
+  .hoy {
+    gap: 10px;
+    padding-top: 12px;
+  }
+
+  .hoy__icono {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hoy__temp {
+    font-size: 26px;
+  }
+
+  .alerta {
+    padding: 10px 14px;
+  }
+
+  .cultivo__imagen {
+    height: 52px;
+    margin-bottom: 10px;
+  }
+
+  .cultivo__brote {
+    width: 44px;
+    height: 44px;
+  }
+
+  .cultivo__fila--precio {
+    margin-top: 10px;
+  }
+
+  .boton-principal {
+    padding: 10px;
+  }
+
+  .plan__encabezado {
+    margin-bottom: 6px;
+  }
+
+}
+
+/* Escritorio: si sobra alto, las tarjetas se estiran para llenarlo */
+@media (min-width: 900px) {
+  .principal {
+    flex: 1;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .principal__columna {
+    grid-template-rows: 1fr;
+  }
+
+  .principal__columna:nth-of-type(2) {
+    grid-template-rows: 1fr auto;
+  }
+
+  .principal .tarjeta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .principal .dias {
+    flex: 1;
+  }
+
+  .principal .cultivo__imagen {
+    flex: 1;
+    min-height: 52px;
+  }
+
+  .principal .cultivo__imagen,
+  .principal .dias {
+    align-items: stretch;
+  }
+}
+
+/* Reparto del alto sobrante */
+@media (min-width: 900px) {
+  .principal .dia {
+    justify-content: space-evenly;
+  }
+
+  .principal .cultivo__imagen {
+    max-height: 150px;
+  }
+
+}
+
+/* ---------- Enlace "Más detalles" (lleva a Clima) ---------- */
+.hoy__mas {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  padding: 8px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: rgba(20, 200, 192, 0.1);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---------- Cultivos activos (carrusel) ---------- */
+.carrusel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  margin-bottom: 14px;
+}
+
+.carrusel__pista {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carrusel__pista::-webkit-scrollbar {
+  display: none;
+}
+
+.carrusel__diapositiva {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.carrusel__diapositiva .cultivo__imagen {
+  margin-bottom: 0;
+}
+
+.carrusel__controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carrusel__flecha {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--borde);
+  border-radius: 50%;
+  background: var(--tarjeta);
+}
+
+.carrusel__flecha--atras svg {
+  transform: scaleX(-1);
+}
+
+.carrusel__flecha:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.carrusel__puntos {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.carrusel__punto {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(18, 48, 74, 0.2);
+  transition: width 0.2s ease;
+}
+
+.carrusel__punto::after {
+  content: "";
+  position: absolute;
+  inset: -9px -4px; /* área de toque más grande que el punto */
+}
+
+.carrusel__punto--activo {
+  width: 20px;
+  background: var(--verde-oscuro);
+}
+
+.cultivos__vacio {
+  display: grid;
+  flex: 1;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  padding: 16px 0;
+  color: var(--tinta-suave);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ---------- Plan anual (próximos 12 meses, una fila por parcela) ---------- */
+.plan__vacio {
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.plan__cal {
+  display: grid;
+  gap: 4px;
+}
+
+.plan__fila {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.plan__parcela {
+  overflow: hidden;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.plan__meses {
+  position: relative;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plan__meses li {
+  position: absolute;
+  top: 0;
+  display: grid;
+  justify-items: center;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  color: var(--tinta-suave);
+}
+
+.plan__meses small {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--tinta);
+}
+
+.plan__hoy-etiqueta {
+  top: auto !important;
+  bottom: 0;
+  transform: translateX(-50%);
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: var(--verde);
+  color: var(--tinta) !important;
+  font-weight: 800;
+  z-index: 2;
+}
+
+.plan__pista {
+  position: relative;
+  height: 31px;
+  border-radius: 12px;
+  background: rgba(18, 48, 74, 0.045);
+  overflow: hidden;
+}
+
+.plan__linea {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(18, 48, 74, 0.08);
+}
+
+.plan__hoy {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--verde);
+  z-index: 1;
+}
+
+.plan__barras {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.barra {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-content: center;
+  column-gap: 4px;
+  padding: 0 6px;
+  border-left: 3px solid var(--color);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--color) 26%, white);
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.barra svg {
+  grid-row: span 2;
+  align-self: center;
+  opacity: 0.7;
+}
+
+.barra__nombre {
+  overflow: hidden;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.barra__fechas {
+  grid-column: 2;
+  overflow: hidden;
+  font-size: 8px;
+  color: var(--tinta-suave);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.plan__mas {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .plan__fila {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .plan__meses li {
+    font-size: 7px;
+    letter-spacing: 0;
+  }
+}
+
+/* ---------- Alertas (banner y lista) ---------- */
+.banner--tranquilo {
+  border-color: rgba(0, 150, 80, 0.25);
+  background: var(--verde-claro);
+}
+
+.banner--tranquilo .banner__icono {
+  background: rgba(0, 230, 118, 0.25);
+  color: var(--verde-oscuro);
+}
+
+.banner--tranquilo .banner__titulo {
+  color: var(--verde-oscuro);
+}
+
+.banner__titulo,
+.banner__texto {
+  min-width: 0;
+}
+
+.alertas-lista {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.alertas-lista__item {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--borde);
+  border-radius: 14px;
+  background: rgba(18, 48, 74, 0.04);
+}
+
+.alertas-lista__item--alta {
+  border-left-color: var(--coral);
+  background: var(--coral-claro);
+}
+
+.alertas-lista__item--media {
+  border-left-color: #e0a526;
+}
+
+.alertas-lista__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+
+.alertas-lista__cabecera span,
+.alertas-lista__item small {
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+
+.alertas-lista__item p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+}

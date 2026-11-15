@@ -20,6 +20,9 @@ services:
     environment:
       # Llave de la API de NASA (ver .env.example)
       - NASA_API_KEY=${NASA_API_KEY:-DEMO_KEY}
+      # Credenciales de la API de Meteomatics (ver .env.example)
+      - METEOMATICS_USER=${METEOMATICS_USER:-}
+      - METEOMATICS_PASSWORD=${METEOMATICS_PASSWORD:-}
       - PYTHONDONTWRITEBYTECODE=1
       # En Windows los eventos de archivos no cruzan al contenedor: revisar por polling
       - WATCHFILES_FORCE_POLLING=true
