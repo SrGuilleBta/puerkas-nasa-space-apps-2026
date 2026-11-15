@@ -27,6 +27,7 @@ erosion reduction, organic matter improvement* (y opcional *frost risk*, *vegeta
 | 8 | **Tendencia de humedad** | Gráfica mensual de ~20 años | NASA POWER | Hecha |
 | 9 | Cobertura del suelo | ¿El terreno está sin plantas? (NDVI) | MODIS (MOD13, 250 m) | Hecha |
 | 10 | Suelo congelado | Riesgo de helada en el suelo | SMAP freeze/thaw o `TS` de POWER | Opcional, no hecha |
+| 11 | **Hacia dónde va el suelo** (estimación a 7 días) | Humedad de la zona de raíz, temperatura del suelo y pérdida de agua de los próximos días, con la lluvia pronosticada y un aviso si viene lluvia fuerte. **Es una estimación, no una medición**: se dibuja punteada | Último dato de NASA POWER + Open-Meteo (lluvia, ET0 de la FAO, temperatura del suelo) | Hecha |
 
 ## Endpoints
 
@@ -46,6 +47,7 @@ de Suelo usa la ubicación que eligió el agricultor en el selector de arriba.
 | `GET /api/suelo/raiz` | — | Humedad de la zona de raíces (SMAP L4) | 2 |
 | `GET /api/suelo/retencion` | — | Cuánto sube y qué tan rápido baja la humedad con la lluvia (SMAP + POWER) | 2 |
 | `GET /api/suelo/cobertura` | — | NDVI de MODIS: promedio por mes, meses de suelo desnudo y último valor | 9 |
+| `GET /api/suelo/proyeccion` | — | Últimos días reales de POWER y la estimación de hoy a +6 días (humedad de raíz, temperatura, pérdida de agua, lluvia), con resumen, aviso de lluvia fuerte y los supuestos usados (caché de 3 h) | 11 |
 | `GET /api/suelo/resumen` | — | Todo lo anterior ya clasificado, en una sola respuesta (ver "Para el Planificador") | todas |
 
 ## Variables por fuente
@@ -74,6 +76,32 @@ Open-Meteo e IMERG se consideraron al inicio y no se usan en Suelo: la lluvia sa
 - **SMAP**: cada archivo diario pesa ~600 MB, así que se pide solo el píxel del punto con OPeNDAP de
   Earthdata (~1–2 s por día). El renglón/columna de la cuadrícula EASE-Grid 2.0 de 9 km se calcula con
   la proyección oficial (verificado: cae en 25.80, −100.04 para Monterrey).
+- **Proyección a 7 días** (`services/suelo/proyeccion.py`): balance de agua diario, el planteamiento de la FAO
+  (boletín 56, Allen et al. 1998): `almacén = almacén anterior + lluvia − pérdida`. Parte del último dato real de POWER
+  (llega con 2-3 días de retraso) y avanza con el pronóstico de Open-Meteo.
+  - El almacén es la zona de raíz de POWER (0-100 cm, % de saturación) pasada a mm con **1 000 mm × 45 % de poros =
+    450 mm**. Contra los datos de POWER (≈ 30 mm de lluvia suben la humedad ≈ 5 puntos) el orden de magnitud coincide.
+  - La pérdida es la evapotranspiración de referencia del pronóstico (`et0_fao_evapotranspiration`, FAO Penman-Monteith)
+    por un factor **calibrado con los últimos 7 días del mismo punto** (evaporación real `EVLAND` de POWER entre ET0), con
+    tope de 0.2 a 1.5; sin calibración, 0.6. Para Monterrey sale ≈ 0.67.
+  - La temperatura del suelo es la de superficie (0 cm) de Open-Meteo, corregida con la diferencia promedio contra `TS`
+    de POWER de esos días para que la curva continúe sin saltos.
+  - Aviso de lluvia fuerte: un día de hoy en adelante con ≥ 20 mm (el mismo umbral R20mm que usa `/erosion`).
+  - También aparece en "Show technical details" (`pages/Suelo/estimaciones.js`): la fila de estimación de la tarjeta de
+    POWER; la humedad de raíz de **SMAP L4** continuada con línea punteada (a su último valor se le suma el mismo cambio
+    de agua del balance, mm ÷ 10 = puntos de volumen); y la gráfica de retención con la lluvia que POWER aún no trae
+    (llenada con la de Open-Meteo) y la pronosticada, en barras claras con borde punteado. La humedad **superficial** de
+    SMAP (5 cm) no se proyecta: cambia en horas y un balance diario no es confiable ahí.
+  - Las tarjetas de largo plazo **no llevan pronóstico**, solo lo que cada dato permite sin inventar, y así se rotula:
+    **Land and erosion** compara los días con lluvia ≥ 20 mm de esta semana (pronóstico) con los de un año típico (R20mm);
+    **GRACE** prolonga 3 años, con línea punteada, la tendencia de toda la serie desde el último dato ("si sigue así": ≈ −20 cm
+    en 5 años en Monterrey) y avisa si los últimos 5 años han ido más rápido; **la tendencia de humedad de 20 años**
+    muestra el rango y el promedio típicos de cada uno de los próximos 6 meses (temporada seca y húmeda). NDVI y textura
+    no cambian en una semana y no se tocaron.
+  - **No se clasifica** ("hay que regar", "sequía"): no hay una regla oficial para eso con estos datos. Solo se dice si la
+    humedad sube, baja o se mantiene (cambio de ±1 punto o menos = estable).
+  - Límites: un punto de ~50 km, un suelo medio (no usa la textura de SoilGrids), sin escurrimiento ni drenaje y un
+    pronóstico de lluvia que falla más mientras más lejos. Sirve para la tendencia, no para fechar un riego.
 - **Textura**: clasificar arcilla/arena/limo con el triángulo de texturas (USDA).
 - **Erosión**: no se calcula un "riesgo" propio; se dan la pendiente con su clase FAO y los días
   de lluvia ≥20 mm (R20mm).

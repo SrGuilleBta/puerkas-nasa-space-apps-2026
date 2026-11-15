@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app import db
 from app.services import ubicaciones
-from app.services.suelo import grace, mapa, modis, smap, soilgrids, srtm
+from app.services.suelo import grace, mapa, modis, proyeccion, smap, soilgrids, srtm
 from app.services.suelo import nasa_power as suelo_power
 
 router = APIRouter(prefix="/api/suelo", tags=["suelo"])
@@ -80,6 +80,18 @@ async def estado(p: tuple[float, float] = PUNTO):
     try:
         return await smap.estado_sequia(lat, lon)
     except RuntimeError as e:
+        raise HTTPException(503, str(e))
+
+
+@router.get("/proyeccion")
+async def proyeccion_suelo(p: tuple[float, float] = PUNTO):
+    """Hacia dónde va el suelo en los próximos 7 días: humedad de la zona de raíz, temperatura del suelo y
+    pérdida de agua. Es una ESTIMACIÓN (balance de agua con el pronóstico), no una medición; ver
+    `services/suelo/proyeccion.py` para el método y sus supuestos."""
+    lat, lon = p
+    try:
+        return await proyeccion.proyeccion(lat, lon)
+    except proyeccion.ErrorProyeccion as e:
         raise HTTPException(503, str(e))
 
 

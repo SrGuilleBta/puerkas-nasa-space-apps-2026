@@ -8,6 +8,7 @@ import {
   getEstado,
   getHistorico,
   getPropiedades,
+  getProyeccion,
   getRaiz,
   getRetencion,
   getSmap,
@@ -19,9 +20,13 @@ import useDatos from "../../hooks/useDatos.js";
 import Ayuda from "./Ayuda.jsx";
 import Escala from "./Escala.jsx";
 import GraficaLinea from "./GraficaLinea.jsx";
+import { estimarRaizSmap, lluviaConPronostico, prolongarTendencia, tipicoProximosMeses } from "./estimaciones.js";
 import GraficaMeses from "./GraficaMeses.jsx";
+import GraficaProyeccion from "./GraficaProyeccion.jsx";
 import GraficaRetencion from "./GraficaRetencion.jsx";
 import MapaSuelo from "./MapaSuelo.jsx";
+import Proyeccion from "./Proyeccion.jsx";
+import TipicoMeses from "./TipicoMeses.jsx";
 import { AguaSubterranea, Montana } from "./IconosSuelo.jsx";
 import {
   COLORES,
@@ -115,6 +120,8 @@ export default function Suelo({ ubicacion }) {
   const raiz = usarDatos(() => getRaiz(u), [nombre]);
   const retencion = usarDatos(() => getRetencion(u), [nombre]);
   const cobertura = usarDatos(() => getCobertura(u), [nombre]);
+  const proyeccion = usarDatos(() => getProyeccion(u), [nombre]);
+  const proy = proyeccion.datos; // null mientras carga o si falla: las tarjetas técnicas se ven igual, sin estimación
   const [verDetalle, setVerDetalle] = useState(false);
 
   return (
@@ -168,6 +175,12 @@ export default function Suelo({ ubicacion }) {
             Colors follow official scales: Drought Monitor percentiles (water), USGS (plants), FAO (land).
           </p>
         </Tarjeta>
+      </div>
+
+      <div className="suelo__ancho">
+        <Cargable estado={proyeccion} alto={320}>
+          {(d) => <Proyeccion nombre={nombre} d={d} />}
+        </Cargable>
       </div>
 
       <div className="suelo__ancho">
@@ -239,6 +252,24 @@ export default function Suelo({ ubicacion }) {
                   <Dato etiqueta="Evaporation" valor={d.evaporacion_mm_dia} unidad="mm/day" />
                 </div>
                 <p className="suelo-nota">% of saturation · data from {fechaPower(d.fecha)} (POWER has a 2–3 day delay)</p>
+                {proy && (
+                  <>
+                    <p className="suelo-nota suelo-nota--estimado">Estimate for the next 7 days (see “Where your soil is heading”)</p>
+                    <div className="suelo-datos">
+                      <Dato
+                        etiqueta={`Root zone on ${fechaPower(proy.resumen.fecha_final).slice(0, 5)}`}
+                        valor={proy.resumen.humedad_raiz_final}
+                        unidad="%"
+                      />
+                      <Dato
+                        etiqueta="Surface temp. (range)"
+                        valor={proy.resumen.temperatura_suelo_min == null ? null : `${proy.resumen.temperatura_suelo_min}–${proy.resumen.temperatura_suelo_max}`}
+                        unidad="°C"
+                      />
+                      <Dato etiqueta="Evaporation (total)" valor={proy.resumen.perdida_total_mm} unidad="mm" />
+                    </div>
+                  </>
+                )}
                 <Fuente>NASA POWER (GWETTOP, GWETROOT, GWETPROF, TS, EVLAND)</Fuente>
               </Tarjeta>
             )}
@@ -274,6 +305,9 @@ export default function Suelo({ ubicacion }) {
                   <p className="suelo-nota">The satellite did not pass over this point in the last {d.dias_revisados} days.</p>
                 )}
                 <p className="suelo-nota">{d.nota}</p>
+                <p className="suelo-nota suelo-nota--estimado">
+                  No estimate here: the top 5 cm can change within hours, so a daily forecast would not be reliable.
+                </p>
                 <Fuente>{d.fuente}</Fuente>
               </Tarjeta>
             )}
@@ -291,16 +325,36 @@ export default function Suelo({ ubicacion }) {
                       <Dato etiqueta="Surface (0–5 cm)" valor={d.ultima.superficie_pct_volumen} unidad="% vol." />
                       <Dato etiqueta="Date" valor={fechaPower(d.ultima.fecha)} />
                     </div>
-                    {d.serie.length > 1 && (
-                      <GraficaLinea
-                        puntos={d.serie.map((m) => ({ x: fechaPower(m.fecha).slice(0, 5), y: m.raiz_pct_volumen }))}
-                        unidad="% vol."
-                        alto={150}
-                      />
-                    )}
+                    {d.serie.length > 1 &&
+                      (() => {
+                        const estimado = estimarRaizSmap(d.serie, proy);
+                        return estimado.length > 0 ? (
+                          <GraficaProyeccion
+                            real={d.serie.map((m) => ({ fecha: m.fecha, y: m.raiz_pct_volumen }))}
+                            estimado={estimado}
+                            hoy={proy.hoy}
+                            unidad="%"
+                            color="var(--verde-oscuro)"
+                            alto={170}
+                            etiqueta="Root-zone moisture from SMAP L4, measured and estimated"
+                          />
+                        ) : (
+                          <GraficaLinea
+                            puntos={d.serie.map((m) => ({ x: fechaPower(m.fecha).slice(0, 5), y: m.raiz_pct_volumen }))}
+                            unidad="% vol."
+                            alto={150}
+                          />
+                        );
+                      })()}
                   </>
                 ) : (
                   <p className="suelo-nota">SMAP L4 has no recent data for this point.</p>
+                )}
+                {proy && d.ultima && (
+                  <p className="suelo-nota suelo-nota--estimado">
+                    The dashed line is an estimate: the last satellite value plus the change in water from the rain and
+                    evaporation forecast (same method as “Where your soil is heading”).
+                  </p>
                 )}
                 <p className="suelo-nota">{d.nota}</p>
                 <Fuente>{d.fuente}</Fuente>
@@ -338,10 +392,16 @@ export default function Suelo({ ubicacion }) {
                 <Tarjeta>
                   <EncabezadoTarjeta etiqueta="Last weeks" titulo="How your soil holds water" />
                   <Ayuda termino="retencion" />
-                  <GraficaRetencion dias={d.dias} />
+                  <GraficaRetencion {...lluviaConPronostico(d.dias, proy)} />
                   <p className="suelo-nota">
                     When it rains, moisture goes up; if it drops fast, the soil holds little water. {d.nota}
                   </p>
+                  {proy && (
+                    <p className="suelo-nota suelo-nota--estimado">
+                      Lighter dashed bars are not measurements: the last days that NASA POWER has not reported yet (filled with
+                      the rain Open-Meteo recorded) and the rain forecast for the coming days.
+                    </p>
+                  )}
                   <Fuente>{d.fuente}</Fuente>
                 </Tarjeta>
               )}
@@ -412,6 +472,28 @@ export default function Suelo({ ubicacion }) {
                   <Dato etiqueta="LS factor (RUSLE)" valor={d.factor_ls.ls_promedio} />
                   <Dato etiqueta="Max. LS factor" valor={d.factor_ls.ls_maximo} />
                 </div>
+                {proy &&
+                  (() => {
+                    const umbral = d.lluvias_fuertes.umbral_mm;
+                    const semana = proy.proyeccion.filter((r) => r.fecha >= proy.hoy);
+                    const fuertes = semana.filter((r) => (r.lluvia_mm ?? 0) >= umbral);
+                    const maximo = Math.max(0, ...semana.map((r) => r.lluvia_mm ?? 0));
+                    return (
+                      <>
+                        <p className="suelo-nota suelo-nota--estimado">
+                          Rain forecast for the next 7 days (estimate).{" "}
+                          {fuertes.length > 0
+                            ? `Heavy rain is forecast on ${fuertes.map((r) => fechaPower(r.fecha).slice(0, 5)).join(", ")}: more runoff and soil loss are possible, especially on bare or sloping land.`
+                            : `No day with ${umbral} mm of rain or more is forecast this week.`}
+                        </p>
+                        <div className="suelo-datos">
+                          <Dato etiqueta={`Days with rain ≥${umbral} mm this week`} valor={fuertes.length} />
+                          <Dato etiqueta="Typical year" valor={d.lluvias_fuertes.dias_por_anio} unidad="days" />
+                          <Dato etiqueta="Heaviest forecast day" valor={Math.round(maximo * 10) / 10} unidad="mm" />
+                        </div>
+                      </>
+                    );
+                  })()}
                 <p className="suelo-nota">
                   LS factor: how much the shape of the land increases soil loss. {d.factor_ls.referencia}; an LS of 2 means
                   twice the loss, all else being equal.
@@ -432,13 +514,29 @@ export default function Suelo({ ubicacion }) {
                 <span className={`suelo-chip ${d.tendencia_cm_por_anio < 0 ? "suelo-chip--alerta" : ""}`}>
                   {d.lectura}: {d.tendencia_cm_por_anio} cm/year
                 </span>
-                <GraficaLinea
-                  puntos={d.serie.map((p) => ({ x: p.fecha.slice(0, 7), y: p.anomalia_cm }))}
-                  unidad="cm"
-                  color="var(--invierno)"
-                  lineaCero
-                  colorPorSigno
-                />
+                {(() => {
+                  const t = prolongarTendencia(d.serie, d.tendencia_cm_por_anio);
+                  return (
+                    <>
+                      <GraficaLinea
+                        puntos={d.serie.map((p) => ({ x: p.fecha.slice(0, 7), y: p.anomalia_cm }))}
+                        extension={t?.extension}
+                        unidad="cm"
+                        color="var(--invierno)"
+                        lineaCero
+                        colorPorSigno
+                      />
+                      {t && d.tendencia_cm_por_anio < 0 && (
+                        <p className="suelo-nota suelo-nota--estimado">
+                          If it keeps losing water at the 2002–2026 average pace ({d.tendencia_cm_por_anio} cm/year), the dashed line
+                          shows where it would be: about {t.en5Anios} cm in 5 years.
+                          {t.ritmoReciente != null && t.ritmoReciente < d.tendencia_cm_por_anio && ` In the last 5 years it has been faster (${t.ritmoReciente} cm/year).`}{" "}
+                          This is not a forecast: it depends on future rain and on how much water is pumped.
+                        </p>
+                      )}
+                    </>
+                  );
+                })()}
                 <p className="suelo-nota">{d.nota}</p>
                 <Fuente>JPL Mascon RL06.3</Fuente>
               </Tarjeta>
@@ -451,6 +549,21 @@ export default function Suelo({ ubicacion }) {
                 <Tarjeta>
                   <EncabezadoTarjeta etiqueta="Trend" titulo={`Root-zone moisture ${ANIO_INICIO}–${ANIO_FIN}`} />
                   <GraficaLinea puntos={d.serie.map((p) => ({ x: fechaPower(p.fecha), y: p.humedad_raiz }))} unidad="%" />
+                  {(() => {
+                    const tipico = tipicoProximosMeses(d.serie, new Date().getMonth());
+                    return (
+                      tipico && (
+                        <>
+                          <h3 className="suelo-proy__subtitulo">What usually comes in the next 6 months</h3>
+                          <TipicoMeses tipico={tipico} />
+                          <p className="suelo-nota suelo-nota--estimado">
+                            Typical values for this place in each month, from the {tipico.anios} years above. It shows the usual
+                            dry and wet season, not a forecast for this year.
+                          </p>
+                        </>
+                      )
+                    );
+                  })()}
                   <Fuente>NASA POWER (monthly)</Fuente>
                 </Tarjeta>
               )}

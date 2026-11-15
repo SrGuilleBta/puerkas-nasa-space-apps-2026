@@ -29,3 +29,5 @@ export const getRetencion = (ubicacion) => pedir("retencion", ubicacion);
 export const getCobertura = (ubicacion) => pedir("cobertura", ubicacion);
 export const getResumen = (ubicacion) => pedir("resumen", ubicacion); // para el Planificador
 export const getMapa = () => pedir("mapa", {}); // mapa de todo México (NASA POWER)
+// Estimación de los próximos 7 días (balance de agua con el pronóstico): humedad de raíz, temperatura del suelo, pérdida de agua
+export const getProyeccion = (ubicacion) => pedir("proyeccion", ubicacion);

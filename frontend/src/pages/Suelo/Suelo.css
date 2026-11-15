@@ -1,6 +1,8 @@
 /* Módulo Suelo. Usa los colores de styles/global.css y la Tarjeta de components/ (igual que Principal). */
 .suelo {
   display: grid;
+  /* minmax(0, 1fr): la columna no crece más que la pantalla (si no, en celular aparece una barra horizontal) */
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
 }
 
@@ -390,4 +392,135 @@
 .suelo-mapa__lugar--activo {
   background: var(--verde-claro);
   border-color: var(--verde-oscuro) !important;
+}
+
+/* Proyección a 7 días */
+.suelo-proy__titulo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+
+.suelo-proy__titulo small {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--tinta-suave);
+}
+
+.suelo-proy__titulo--baja {
+  color: var(--coral);
+}
+
+.suelo-proy__titulo--sube {
+  color: var(--turquesa);
+}
+
+.suelo-proy__aviso {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--coral-claro);
+}
+
+.suelo-proy__nota {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.suelo-proy__subtitulo {
+  margin: 8px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+
+.suelo-proy__lluvia {
+  fill: var(--invierno, #4a8fe0);
+  fill-opacity: 0.55;
+}
+
+.suelo-proy__leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.suelo-proy__leyenda span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.suelo-proy__trazo {
+  display: inline-block;
+  width: 22px;
+  border-top: 3px solid;
+}
+
+.suelo-proy__trazo--punteado {
+  border-top-style: dashed;
+}
+
+.suelo-proy__barra {
+  display: inline-block;
+  width: 10px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--invierno, #4a8fe0);
+  opacity: 0.55;
+}
+
+.suelo-leyenda__barra--estimada {
+  background: transparent;
+  border: 1px dashed var(--verano);
+}
+
+.suelo-proy__zona {
+  fill: var(--verano);
+  fill-opacity: 0.07;
+}
+
+/* Aclaración de lo que es estimación en las tarjetas técnicas */
+.suelo-nota--estimado {
+  padding-left: 10px;
+  border-left: 3px solid var(--turquesa);
+}
+
+/* Lo que suele venir (climatología de los próximos meses) */
+.suelo-tipico__rango {
+  fill: var(--turquesa);
+  fill-opacity: 0.25;
+}
+
+.suelo-tipico__promedio {
+  fill: var(--verde-oscuro);
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.suelo-tipico__muestra {
+  display: inline-block;
+}
+
+.suelo-tipico__muestra--rango {
+  width: 12px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--turquesa);
+  opacity: 0.35;
+}
+
+.suelo-tipico__muestra--promedio {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--verde-oscuro);
 }
