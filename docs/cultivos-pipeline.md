@@ -217,13 +217,66 @@ no se traducen); niveles `low` / `medium` / `high`; `nivel` de ubicación = `mun
 `national`; etiquetas `positive` / `negative` / `alert`. Los ids de cultivo (`maiz-grano`) y las llaves
 no cambian. Los nombres propios (variedades, híbridos, lugares, INIFAP, SIAP) se conservan.
 
-## Códigos EPPO
+## Códigos EPPO y nombre científico
 
-Cada cultivo del catálogo trae `eppocode` (código EPPO de la especie; `null` si no tiene). Las reglas
-están en [eppo.json](../backend/pipeline/cultivos/eppo.json): un cultivo SIAP recibe el código si su nombre
-contiene, como palabra completa, alguno de los `nombres` de la regla y ninguno de los `excluir`. Así
-"Semilla de maíz grano", "Elote" y "Maíz forrajero en verde" reciben `ZEAMS`, pero "Tomate verde" no
-recibe el del jitomate. Hoy 90 de los 399 cultivos tienen código.
+Cada cultivo del catálogo trae `eppocode` (código EPPO de la especie) y, cuando se conoce, `cientifico`.
+Se asignan en `catalogo.py` en este orden:
+
+1. **Reglas por nombre** ([eppo.json](../backend/pipeline/cultivos/eppo.json)): un cultivo SIAP recibe el
+   código si su nombre contiene, como palabra completa, alguno de los `nombres` de la regla y ninguno de
+   los `excluir`. Así "Semilla de maíz grano", "Elote" y "Maíz forrajero en verde" reciben `ZEAMS`, pero
+   "Tomate verde" no recibe el del jitomate.
+2. **Respaldo por palabras del id** ([eppo_extendido.json](../backend/pipeline/cultivos/eppo_extendido.json),
+   del script `asignar-eppo-code.py`): primero excepciones por id exacto (`te-limon`, `tomate-verde`…) o por
+   texto contenido (`cebollin`, `limonium`) y luego las palabras del id en bloques completos
+   (`te-limon` no coincide con `limon`). Si coinciden varias, gana la más larga; a igual largo, la primera
+   de la lista. Solo rellena lo que falte: nunca cambia un código que ya dio eppo.json.
+
+El nombre científico se toma de lo curado (`curado.json`) y, si falta, del respaldo (más específico:
+variedades de *Brassica oleracea*) o de la regla de eppo.json. Como la búsqueda en EcoCrop usa ese nombre,
+los cultivos que ahora lo tienen también reciben temperatura, agua, pH y ciclo de EcoCrop
+(de 78 a 232 cultivos con datos).
+
+Hoy 393 de los 399 cultivos tienen código. Quedan sin él solo las categorías genéricas de SIAP que no son
+una especie: *Hortalizas*, *Flores*, *Plantas de ornato* (dos registros), *Especias y medicinales* y
+*Semilla de flores*. `eppocode` siempre aparece en el JSON (`null` en esos seis).
+
+**Validación contra EPPO.** Los códigos del script original se contrastaron con la base oficial
+(gd.eppo.int; búsqueda por nombre científico): unos 70 no existían o eran de otra especie (p. ej. `HEVBR`
+en vez de `HVEBR`, `COCNU` en vez de `CCNNU`, `1SUAG` que es *Saururus*) y se corrigieron en
+eppo_extendido.json. Todos los códigos del catálogo existen en EPPO. Para revisarlos de nuevo:
+`https://gd.eppo.int/taxon/<CÓDIGO>` y, para buscar por nombre, `https://gd.eppo.int/ajax/search?k=<nombre>&s=1`.
+
+## Pantalla de Cultivos (frontend)
+
+`frontend/src/pages/Cultivos/` implementa la enciclopedia del Figma: a la izquierda la ficha del cultivo
+y a la derecha la biblioteca. Lee solo `/api/cultivos/*` (ver [api/cultivos.js](../frontend/src/api/cultivos.js)).
+
+| Parte | De dónde sale |
+|---|---|
+| Filtro de zona (todo México, estado o municipio) | `/api/cultivos/ubicaciones`. Es propio de la página: el selector global del encabezado es por coordenadas y se oculta aquí. Arranca en el municipio de la ubicación activa del proyecto (o su estado; Nuevo León si no se reconoce; ver abajo). Si la persona elige otra zona, se recuerda mientras la ubicación activa siga siendo la misma. |
+| Biblioteca: buscador, tipo, favoritos, "Grown here" | `/api/cultivos/biblioteca?clave=`; el filtrado se hace en el navegador. El buscador encuentra por nombre en inglés, nombre SIAP en español, nombre científico o id. Los favoritos se guardan en `localStorage` (no hay cuentas). |
+| Cabecera, etiquetas y "For your current situation" | `indicadores` de `/api/cultivos/viabilidad` (etiquetas y alertas ya calculadas por la pipeline) |
+| "About this crop" y los tres datos del Figma | descripción curada (o la región de la agenda INIFAP, o una frase armada con los datos); siembra ideal = `manejo.siembra_meses` (solo con estado); temperatura óptima = EcoCrop; rendimiento = mediana de la zona |
+| Datos extra (precio, riesgo hídrico, sensibilidad a sequía e inundación) | `indicadores` |
+| "How to grow it" | consejos, detalle técnico de la agenda INIFAP del estado (pestañas riego/temporal), costos y rotación |
+
+Reglas de la biblioteca: la página arranca con **Nuevo León** (después recuerda la última zona elegida) y
+oculta los **duplicados**, es decir, cultivos con el mismo nombre, el mismo tipo y la misma descripción
+(hoy 7, como la fresa que SIAP reporta en toneladas y en plantas): se muestra el que más se siembra en la
+zona. Si cambia alguno de los tres, son cultivos distintos y se muestran ambos.
+
+Prueba visual: se levantó el backend y Vite en puertos de prueba y se manejó Edge con `puppeteer-core`
+(escritorio, móvil de 390 px, búsqueda, filtros, favoritos y un cultivo con casi ningún dato).
+
+### Zona de arranque según la ubicación activa
+
+`GET /api/cultivos/zona?nombre=&lat=&lon=` ([cultivos_zona.py](../backend/app/services/cultivos_zona.py))
+traduce una ubicación del proyecto a una clave de SIAP: por **nombre** ("Monterrey, NL", "Guadalajara,
+Jalisco, Mexico": se reconoce el estado, con abreviaturas y nombres en inglés, y el municipio de ese
+estado con el mismo nombre) o, si no hay lugar en el nombre (p. ej. "My location"), por **coordenadas**
+con geocodificación inversa de OpenStreetMap (Nominatim; solo se envían las coordenadas). Responde el
+municipio; si no existe con ese nombre, el estado; si no se reconoce (fuera de México, sin red), `null`.
 
 ## Limitaciones y pendientes
 

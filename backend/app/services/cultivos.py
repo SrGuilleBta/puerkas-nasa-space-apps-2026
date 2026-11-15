@@ -179,9 +179,14 @@ def manejo(cve_ent: str | None, cultivo: str, ficha: dict, pct_riego: float | No
     }
 
 
-def biblioteca(clave: str | None = None, buscar: str | None = None) -> list[dict]:
-    """Lista ligera para la barra lateral. Con `clave`, ordena por superficie en esa
-    ubicación y marca qué cultivos se siembran ahí."""
+def biblioteca(clave: str | None = None, buscar: str | None = None, tipo: str | None = None) -> list[dict]:
+    """Lista ligera para la biblioteca del frontend.
+
+    `buscar` se compara (sin acentos ni mayúsculas) con el nombre en inglés, el nombre SIAP en
+    español, el nombre científico y el id. `tipo` filtra por tipo de cultivo (p. ej. "Cereal");
+    "Other" trae los que no tienen tipo. Con `clave`, ordena por superficie en esa ubicación y
+    marca qué cultivos se siembran ahí; sin ella, por superficie nacional.
+    """
     cat = catalogo()["cultivos"]
     locales = {}
     if clave:
@@ -191,17 +196,40 @@ def biblioteca(clave: str | None = None, buscar: str | None = None) -> list[dict
             locales = {c["id"]: c for c in ubicacion(clave)["cultivos"]}
         except SinDatos:
             pass  # municipio válido sin registros agrícolas: catálogo completo sin marcar
+    q = _normal(buscar).strip() if buscar else ""
+
+    # Duplicados: mismo nombre, mismo tipo y misma descripción (SIAP reporta algunos cultivos en dos
+    # unidades, p. ej. fresa en toneladas y en plantas). Se muestra solo el más relevante: el que más
+    # se siembra en la zona (o en el país si no hay zona). Si cambia alguno de los tres, son cultivos distintos.
+    grupo = lambda c: (c["nombre"].strip().lower(), c.get("tipo") or "Other", c.get("descripcion") or "")
+    relevancia = lambda c: ((locales[c["id"]]["superficie_sembrada_prom_ha"] if c["id"] in locales else 0),
+                            c["nacional"]["superficie_sembrada_prom_ha"])
+    representante: dict = {}
+    for c in cat:
+        g = grupo(c)
+        if g not in representante or relevancia(c) > relevancia(representante[g]):
+            representante[g] = c
+
     filas = []
     for c in cat:
-        # El nombre está en inglés; el id (slug de SIAP) sigue en español, así que se busca en ambos.
-        if buscar and _normal(buscar) not in _normal(c["nombre"]) and _normal(buscar) not in c["id"].replace("-", " "):
+        if representante[grupo(c)] is not c:
             continue
+        if tipo and (c.get("tipo") or "Other") != tipo:
+            continue
+        if q:
+            pajar = " ".join(_normal(t) for t in (c["nombre"], c.get("nombre_es") or "", c.get("cientifico") or "",
+                                                  c["id"].replace("-", " ")))
+            if q not in pajar:
+                continue
         loc = locales.get(c["id"])
         filas.append({
-            "id": c["id"], "nombre": c["nombre"], "tipo": c.get("tipo"),
+            "id": c["id"], "nombre": c["nombre"], "nombre_es": c.get("nombre_es"),
+            "cientifico": c.get("cientifico"), "tipo": c.get("tipo") or "Other",
             "ciclo_dias": c.get("ciclo_dias"), "perenne": c.get("perenne"),
+            "unidad": c.get("unidad"),
             "sembrado_en_ubicacion": loc is not None,
             "superficie_local_ha": loc["superficie_sembrada_prom_ha"] if loc else None,
+            "superficie_nacional_ha": c["nacional"]["superficie_sembrada_prom_ha"],
         })
     if clave:
         filas.sort(key=lambda f: -(f["superficie_local_ha"] or 0))

@@ -11,6 +11,7 @@ from . import traduccion
 from .fuentes import slug
 
 EPPO_JSON = Path(__file__).resolve().parent / "eppo.json"
+EPPO_EXTENDIDO_JSON = Path(__file__).resolve().parent / "eppo_extendido.json"
 
 
 def _cargar_eppo() -> list[tuple[str, list, list]]:
@@ -29,6 +30,40 @@ def eppocode(nombre: str, reglas) -> str | None:
         if any(p.search(n) for p in nombres) and not any(p.search(n) for p in excluir):
             return codigo
     return None
+
+def _cargar_eppo_extendido() -> dict:
+    with open(EPPO_EXTENDIDO_JSON, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _cientificos_eppo() -> dict:
+    """código EPPO -> nombre científico, según las reglas de eppo.json."""
+    with open(EPPO_JSON, encoding="utf-8") as f:
+        return {c["eppocode"]: c["cientifico"] for c in json.load(f)["codigos"] if c.get("cientifico")}
+
+
+def eppo_extendido(cid: str, tabla: dict) -> tuple[str, str] | None:
+    """(código EPPO, nombre científico) por el id SIAP, con el respaldo de eppo_extendido.json.
+
+    Orden: excepciones por id exacto, excepciones por texto contenido y después las palabras del
+    id (en bloques completos: "te-limon" no coincide con "limon"). Si varias coinciden, gana la
+    más larga (la más específica) y, a igual largo, la primera de la lista.
+    """
+    for e in tabla["excepciones_id"]:
+        if cid == e["id"]:
+            return e["eppocode"], e["cientifico"]
+    for e in tabla["excepciones_contiene"]:
+        if e["contiene"] in cid:
+            return e["eppocode"], e["cientifico"]
+    partes = cid.split("-")
+    mejor = None
+    for e in tabla["tokens"]:
+        t = e["token"].split("-")
+        if any(partes[i:i + len(t)] == t for i in range(len(partes) - len(t) + 1)):
+            if mejor is None or len(t) > len(mejor[0]):
+                mejor = (t, e)
+    return (mejor[1]["eppocode"], mejor[1]["cientifico"]) if mejor else None
+
 
 # EcoCrop usa nombres de familia antiguos.
 FAMILIAS = {
@@ -80,13 +115,22 @@ def construir(nombres_cult: pd.DataFrame, curado: dict, ecocrop: pd.DataFrame,
     """Devuelve (catalogo, rasgos). `rasgos` alimenta la puntuación de rotación."""
     catalogo, rasgos = [], {}
     reglas_eppo = _cargar_eppo()
+    cient_eppo = _cientificos_eppo()
+    tabla_ext = _cargar_eppo_extendido()
     nac = nacional.set_index("cultivo_id")
     for cid, fila_n in nombres_cult.iterrows():
         if cid not in nac.index:
             continue  # sin registros en la ventana
         nombre, unidad = fila_n["nombre"], fila_n["unidad"]
         c = curado.get(nombre, {})
-        sci_eco = c.get("ecocrop") or c.get("cientifico")
+        # Código EPPO y nombre científico: primero lo curado y las reglas de eppo.json; lo que falte
+        # se completa con eppo_extendido.json. Así ningún cultivo reconocible queda sin código.
+        codigo = eppocode(nombre, reglas_eppo)
+        ext = eppo_extendido(cid, tabla_ext)  # más específico que eppo.json (p. ej. variedad de Brassica oleracea)
+        cientifico = c.get("cientifico") or (ext[1] if ext else None) or cient_eppo.get(codigo)
+        if ext:
+            codigo = codigo or ext[0]
+        sci_eco = c.get("ecocrop") or cientifico
         eco = ecocrop.loc[sci_eco].to_dict() if sci_eco in ecocrop.index else {}
 
         familia = c.get("familia")
@@ -102,10 +146,11 @@ def construir(nombres_cult: pd.DataFrame, curado: dict, ecocrop: pd.DataFrame,
         entrada = {
             "id": cid,
             "nombre": traduccion.cultivo(nombre),
-            "eppocode": eppocode(nombre, reglas_eppo),
+            "nombre_es": nombre,  # nombre SIAP en español: la búsqueda del frontend lo usa
+            "eppocode": codigo,
             "unidad": traduccion.unidad(unidad),
             "tipo": traduccion.tipo(c.get("tipo") or _tipo_por_nombre(nombre)),
-            "cientifico": c.get("cientifico"),
+            "cientifico": cientifico,
             "familia": familia,
             "fija_nitrogeno": c.get("fija_nitrogeno"),
             "perenne": ciclos == ["PER"],

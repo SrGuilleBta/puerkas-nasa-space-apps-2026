@@ -128,3 +128,15 @@ export const Abajo = (p) => (
     <path d="M6 9l6 6 6-6" />
   </Icono>
 );
+export const Buscar = (p) => (
+  <Icono {...p}>
+    <circle cx="11" cy="11" r="6.5" />
+    <path d="M16 16l4 4" />
+  </Icono>
+);
+// Para rellenarla (favorito): <Estrella fill="currentColor" />
+export const Estrella = (p) => (
+  <Icono {...p}>
+    <path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 17l-5.2 2.7 1-5.9L3.5 9.7l5.9-.8L12 3.5z" />
+  </Icono>
+);
