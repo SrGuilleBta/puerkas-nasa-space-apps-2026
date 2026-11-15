@@ -34,6 +34,7 @@ _cache: dict[str, tuple[float, list[dict] | None]] = {}
 def _sin_html(texto: str | None, maximo: int = 220) -> str:
     limpio = html.unescape(re.sub(r"<[^>]+>", " ", texto or ""))
     limpio = " ".join(limpio.split()).split(" What to read next")[0]  # resto que agrega el feed de CIMMYT
+    limpio = limpio.split(" The post ")[0]  # y el de NASA ("The post ... appeared first on ...")
     return limpio if len(limpio) <= maximo else limpio[: maximo - 1].rstrip() + "…"
 
 

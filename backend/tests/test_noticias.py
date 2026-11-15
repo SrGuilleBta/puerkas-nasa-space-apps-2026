@@ -30,6 +30,10 @@ class PruebasNoticias(unittest.TestCase):
         r = noticias.parsear_rss(RSS, "Fuente")
         self.assertEqual(r[1]["resumen"], "Hello & welcome")
 
+    def test_quita_el_resto_del_feed_de_nasa(self):
+        xml = RSS.replace("<description>Short</description>", "<description>A nice story. The post Title appeared first on NASA Science .</description>")
+        self.assertEqual(noticias.parsear_rss(xml, "NASA")[0]["resumen"], "A nice story.")
+
     def test_descarta_enlaces_peligrosos_y_sin_titulo(self):
         r = noticias.parsear_rss(RSS, "Fuente")
         self.assertTrue(all(i["enlace"].startswith("https://") for i in r))

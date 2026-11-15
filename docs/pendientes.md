@@ -13,10 +13,10 @@ Lo que ya funciona está en [funcionalidades.md](funcionalidades.md).
 ## Noticias
 
 - Hecha: avisos propios más feeds de CIMMYT y NASA Earth Observatory (en inglés).
-- Falta una noticia de **precios** (depende de Mercado) y más fuentes si aparece algún feed de
-  México o la FAO que responda.
-- La **alerta regional** de Principal sigue con texto de ejemplo y enlaza a Noticias: conectarla
-  con una noticia real (por ejemplo, la alerta más grave).
+- Falta una noticia de **precios** (pendiente extra; depende de Mercado) y más fuentes si aparece
+  algún feed de México o la FAO que responda.
+- La tarjeta de Principal (antes "alerta regional") ya muestra el último titular de Noticias. Si se
+  consigue una fuente oficial de alertas (Protección Civil, SMN), se puede volver a usar ahí.
 
 ## Alertas de Principal
 
