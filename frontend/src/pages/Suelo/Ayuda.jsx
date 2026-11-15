@@ -48,6 +48,11 @@ export const GLOSARIO = {
     texto:
       "Slope is how steep the land is in %. The LS factor (from the RUSLE erosion equation) says how much the length and steepness of the slope increase soil loss: 1 is the standard test plot, 2 means twice the loss with the same rain and soil. Days with 20 mm or more of rain are the storms that wash soil away the most, especially on bare land.",
   },
+  mapa: {
+    titulo: "Soil map of Mexico (NASA POWER)",
+    texto:
+      "Each colored spot is a square of about 55 km where a NASA model estimates the soil moisture and temperature from satellite and weather data. It shows which regions are drier or wetter right now, not the exact value of your field. For your own place, the cards above use the nearest cropland point and the SMAP satellite.",
+  },
   grace: {
     titulo: "Water stored in the region (GRACE)",
     texto:

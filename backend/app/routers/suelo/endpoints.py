@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app import db
 from app.services import ubicaciones
-from app.services.suelo import grace, modis, smap, soilgrids, srtm
+from app.services.suelo import grace, mapa, modis, smap, soilgrids, srtm
 from app.services.suelo import nasa_power as suelo_power
 
 router = APIRouter(prefix="/api/suelo", tags=["suelo"])
@@ -291,3 +291,14 @@ async def resumen(p: tuple[float, float] = PUNTO, municipio: str | None = Query(
         "faltantes": faltantes,
         "fuentes": "SMAP, GRACE/GRACE-FO, MODIS, SRTM y POWER (NASA); SoilGrids (ISRIC). Reglas: Drought Monitor, USGS, FAO, OMM, USDA.",
     }
+
+
+@router.get("/mapa")
+async def mapa_suelo(con=Depends(db.con_db)):
+    """Humedad (raíz y superficie) y temperatura del suelo sobre todo México, con NASA POWER (malla de 0.5°), más los
+    lugares guardados. Promedio de los últimos 7 días con dato; caché de 12 h. Ver services/suelo/mapa.py."""
+    lugares = [(u.nombre, u.lat, u.lon) for u in ubicaciones.listar(con)]
+    try:
+        return await mapa.mapa(lugares)
+    except mapa.ErrorMapaSuelo as e:
+        raise HTTPException(503, str(e))

@@ -28,3 +28,4 @@ export const getRaiz = (ubicacion) => pedir("raiz", ubicacion);
 export const getRetencion = (ubicacion) => pedir("retencion", ubicacion);
 export const getCobertura = (ubicacion) => pedir("cobertura", ubicacion);
 export const getResumen = (ubicacion) => pedir("resumen", ubicacion); // para el Planificador
+export const getMapa = () => pedir("mapa", {}); // mapa de todo México (NASA POWER)
