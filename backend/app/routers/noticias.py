@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app import db
-from app.services import alertas, meteomatics, nasa_power, noticias, ubicaciones
+from app.services import alertas, catalogo_cultivos, meteomatics, nasa_power, noticias, ubicaciones
 from app.services import planificador as plan_servicio
 
 router = APIRouter(prefix="/api/noticias", tags=["noticias"])
@@ -34,7 +34,7 @@ async def listar(
         return_exceptions=True,
     )
     activos = plan_servicio.siembras_en_curso(con, plan_id, dia)
-    lista_alertas = alertas.calcular(clima, activos, dia) if isinstance(clima, dict) else []
+    lista_alertas = alertas.calcular(clima, activos, dia, catalogo_cultivos.fichas_de(activos), nasa if isinstance(nasa, dict) else None) if isinstance(clima, dict) else []
     propias = noticias.propias(lista_alertas, activos, nasa if isinstance(nasa, dict) else None, ciudad.nombre, dia)
     externas, completas = ext if isinstance(ext, tuple) else ([], False)
     return {"items": propias + externas, "externasCompletas": completas}

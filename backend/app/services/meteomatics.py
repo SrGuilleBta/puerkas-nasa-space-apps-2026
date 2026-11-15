@@ -125,9 +125,8 @@ async def clima(m: Ubicacion) -> dict:
 
     zona = ZoneInfo(m.zona)
     hoy_local = datetime.now(zona).date()
-    lunes = hoy_local - timedelta(days=hoy_local.weekday())
-    # Marcas "fin de día" de lunes a domingo: martes 00:00 ... lunes siguiente 00:00
-    rango = f"{_utc(lunes + timedelta(days=1), zona)}--{_utc(lunes + timedelta(days=7), zona)}:P1D"
+    # Marcas "fin de día" de hoy a dentro de 6 días: mañana 00:00 ... hoy + 7 días 00:00
+    rango = f"{_utc(hoy_local + timedelta(days=1), zona)}--{_utc(hoy_local + timedelta(days=7), zona)}:P1D"
 
     async with httpx.AsyncClient(timeout=20) as cliente:
         diarios, ahora = await asyncio.gather(
@@ -139,7 +138,7 @@ async def clima(m: Ubicacion) -> dict:
     for i in range(7):
         pronostico.append(
             {
-                "fecha": (lunes + timedelta(days=i)).isoformat(),
+                "fecha": (hoy_local + timedelta(days=i)).isoformat(),
                 "tmax": _redondear(diarios["t_max_2m_24h:C"][i]),
                 "tmin": _redondear(diarios["t_min_2m_24h:C"][i]),
                 "lluvia": _redondear(diarios["prob_precip_24h:p"][i]),
@@ -152,7 +151,7 @@ async def clima(m: Ubicacion) -> dict:
     viento = primero("wind_speed_10m:kmh")
     humedad_suelo = primero("soil_moisture_index_-10cm:idx")
     simbolo = primero("weather_symbol_1h:idx")
-    prob_hoy = pronostico[hoy_local.weekday()]["lluvia"]
+    prob_hoy = pronostico[0]["lluvia"]
 
     resultado = {
         "municipio": m.nombre,

@@ -1,0 +1,308 @@
+/* Módulo Suelo. Usa los colores de styles/global.css y la Tarjeta de components/ (igual que Principal). */
+.suelo {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .suelo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .suelo__ancho {
+    grid-column: 1 / -1;
+  }
+}
+
+.suelo .tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  min-width: 0;
+}
+
+.suelo .tarjeta__encabezado {
+  margin-bottom: 0;
+}
+
+.suelo-sequia__cuerpo {
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 700px) {
+  .suelo-sequia__cuerpo {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    align-items: center;
+  }
+}
+
+.suelo-chip {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+.suelo-sequia--seca .suelo-chip,
+.suelo-chip--alerta {
+  background: var(--coral-claro);
+  color: var(--coral);
+}
+.suelo-chip--neutro {
+  background: rgba(18, 48, 74, 0.06);
+  color: var(--tinta);
+}
+
+.suelo-datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+.suelo-dato {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.suelo-dato__etiqueta {
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+.suelo-dato__valor {
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.suelo-dato__valor small {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--tinta-suave);
+}
+
+.suelo-nota {
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+.suelo-aviso {
+  font-size: 12px;
+  color: var(--coral);
+}
+.suelo-fuente {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--borde);
+  font-size: 11px;
+  color: var(--tinta-suave);
+}
+
+.suelo-tabla {
+  overflow-x: auto;
+}
+.suelo-tabla table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.suelo-tabla th,
+.suelo-tabla td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--borde);
+  white-space: nowrap;
+}
+.suelo-tabla th {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.suelo-grafica svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.suelo-grafica-rejilla {
+  stroke: var(--borde);
+  stroke-width: 1;
+}
+.suelo-grafica-cero {
+  stroke: var(--tinta-suave);
+  stroke-dasharray: 4 4;
+}
+.suelo-grafica-texto {
+  fill: var(--tinta-suave);
+  font-size: 14px;
+}
+
+.suelo-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  font-size: 12px;
+  color: var(--tinta-suave);
+}
+.suelo-leyenda__linea {
+  display: inline-block;
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--verde-oscuro);
+}
+.suelo-leyenda__barra {
+  display: inline-block;
+  width: 10px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--verano);
+  opacity: 0.6;
+}
+
+/* ---------- Resumen simple (grande, para leerse de un vistazo) ---------- */
+.resumen .tarjeta__titulo {
+  font-size: 26px;
+}
+.resumen__cuadros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+.resumen__cuadro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--borde);
+  min-width: 0;
+}
+.resumen__etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tinta-suave);
+}
+.resumen__icono {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+.resumen__titulo {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+.resumen__frase {
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--tinta);
+}
+
+/* ---------- Escala de colores ---------- */
+.escala {
+  margin-top: 18px;
+}
+.escala__barra {
+  position: relative;
+  height: 20px;
+  border-radius: 999px;
+  overflow: visible;
+  background: var(--borde);
+}
+.escala__tramo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.escala__tramo:first-child {
+  border-radius: 999px 0 0 999px;
+}
+.escala__tramo:nth-last-child(2),
+.escala__tramo:last-child {
+  border-radius: 0 999px 999px 0;
+}
+.escala__marca {
+  position: absolute;
+  top: -24px;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: var(--tinta);
+  line-height: 1;
+}
+.escala__extremos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tinta-suave);
+}
+
+/* ---------- Botón de detalle ---------- */
+.suelo-detalle__boton {
+  display: flex;
+  justify-content: center;
+}
+.suelo-detalle__boton button {
+  padding: 14px 28px;
+  font-size: 16px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: var(--tarjeta);
+  box-shadow: var(--sombra);
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+
+/* Leyenda de colores */
+.suelo-leyenda__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.suelo-leyenda__color {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.resumen__cuadro .suelo-nota {
+  font-size: 15px;
+}
+
+/* ---------- "What does this mean?" (Ayuda.jsx) ---------- */
+.ayuda {
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+.ayuda summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  width: fit-content;
+}
+.ayuda summary:focus-visible {
+  outline: 2px solid var(--verde-oscuro);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.ayuda p {
+  margin-top: 6px;
+  line-height: 1.45;
+  color: var(--tinta);
+}

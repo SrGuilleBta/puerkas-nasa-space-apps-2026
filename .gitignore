@@ -19,3 +19,9 @@ backend/data/inifap/extraido/
 # Base de datos local del Planificador (cada quien arranca con los datos de demo)
 backend/data/*.db
 backend/data/*.db-journal
+
+# Descargas grandes del módulo Suelo (se bajan solas la primera vez)
+backend/data/srtm/
+backend/data/grace/
+backend/data/suelo/smap/
+backend/data/suelo/modis/

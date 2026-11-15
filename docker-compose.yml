@@ -23,6 +23,8 @@ services:
       # Credenciales de la API de Meteomatics (ver .env.example)
       - METEOMATICS_USER=${METEOMATICS_USER:-}
       - METEOMATICS_PASSWORD=${METEOMATICS_PASSWORD:-}
+      # Token de NASA Earthdata para SRTM y GRACE (módulo Suelo)
+      - EARTHDATA_TOKEN=${EARTHDATA_TOKEN:-}
       - PYTHONDONTWRITEBYTECODE=1
       # En Windows los eventos de archivos no cruzan al contenedor: revisar por polling
       - WATCHFILES_FORCE_POLLING=true

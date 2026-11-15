@@ -44,14 +44,34 @@ def _existe(con, tabla: str, id_: int, que: str) -> sqlite3.Row:
 
 
 def _cultivo_dict(f) -> dict:
-    return {"id": f["id"], "nombre": f["nombre"], "tipo": f["tipo"], "ciclo_dias": f["ciclo_dias"]}
+    return {
+        "id": f["id"], "nombre": f["nombre"], "tipo": f["tipo"], "ciclo_dias": f["ciclo_dias"],
+        "catalogo_id": f["catalogo_id"],
+    }
 
 
 SIEMBRA_SQL = """
     SELECT s.id, s.parcela_id, s.fecha_siembra, s.fecha_cosecha, s.hectareas,
-           c.id AS c_id, c.nombre AS c_nombre, c.tipo AS c_tipo, c.ciclo_dias AS c_ciclo
+           s.rendimiento_t_ha, s.precio_t, s.costo_ha,
+           c.id AS c_id, c.nombre AS c_nombre, c.tipo AS c_tipo, c.ciclo_dias AS c_ciclo,
+           c.catalogo_id AS c_catalogo
     FROM siembra s JOIN cultivo c ON c.id = s.cultivo_id
 """
+
+
+CAMPOS_ECONOMIA = ("rendimiento_t_ha", "precio_t", "costo_ha")
+
+
+def _economia(f) -> dict:
+    """Ingreso, costo y ganancia estimados de una siembra. Cada cifra solo sale si se capturaron los datos
+    que necesita: ingreso = rendimiento x precio x hectáreas; costo = costo por hectárea x hectáreas."""
+    ha = f["hectareas"]
+    ingreso = None
+    if f["rendimiento_t_ha"] is not None and f["precio_t"] is not None:
+        ingreso = round(f["rendimiento_t_ha"] * f["precio_t"] * ha, 2)
+    costo = round(f["costo_ha"] * ha, 2) if f["costo_ha"] is not None else None
+    ganancia = round(ingreso - costo, 2) if ingreso is not None and costo is not None else None
+    return {"ingreso_estimado": ingreso, "costo_total": costo, "ganancia_estimada": ganancia}
 
 
 def _siembra_dict(f) -> dict:
@@ -61,8 +81,13 @@ def _siembra_dict(f) -> dict:
         "fecha_siembra": f["fecha_siembra"],
         "fecha_cosecha": f["fecha_cosecha"],
         "hectareas": f["hectareas"],
+        "rendimiento_t_ha": f["rendimiento_t_ha"],
+        "precio_t": f["precio_t"],
+        "costo_ha": f["costo_ha"],
+        **_economia(f),
         "cultivo": {
-            "id": f["c_id"], "nombre": f["c_nombre"], "tipo": f["c_tipo"], "ciclo_dias": f["c_ciclo"]
+            "id": f["c_id"], "nombre": f["c_nombre"], "tipo": f["c_tipo"], "ciclo_dias": f["c_ciclo"],
+            "catalogo_id": f["c_catalogo"],
         },
     }
 
@@ -215,7 +240,7 @@ def _validar_siembra(con, parcela, cultivo_id, inicio: date, fin: date, hectarea
 
 
 def crear_siembra(con, parcela_id: int, cultivo_id: int, fecha_siembra: date,
-                  fecha_cosecha: date | None, hectareas: float | None) -> dict:
+                  fecha_cosecha: date | None, hectareas: float | None, economia: dict | None = None) -> dict:
     parcela = _existe(con, "parcela", parcela_id, "parcel")
     cultivo = _existe(con, "cultivo", cultivo_id, "crop")
     if fecha_cosecha is None:
@@ -223,11 +248,13 @@ def crear_siembra(con, parcela_id: int, cultivo_id: int, fecha_siembra: date,
     if hectareas is None:
         hectareas = parcela["hectareas"]
     _validar_siembra(con, parcela, cultivo_id, fecha_siembra, fecha_cosecha, hectareas)
+    economia = economia or {}
     with con:
         id_ = con.execute(
-            "INSERT INTO siembra (parcela_id, cultivo_id, fecha_siembra, fecha_cosecha, hectareas)"
-            " VALUES (?, ?, ?, ?, ?)",
-            (parcela_id, cultivo_id, fecha_siembra.isoformat(), fecha_cosecha.isoformat(), hectareas),
+            "INSERT INTO siembra (parcela_id, cultivo_id, fecha_siembra, fecha_cosecha, hectareas,"
+            " rendimiento_t_ha, precio_t, costo_ha) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (parcela_id, cultivo_id, fecha_siembra.isoformat(), fecha_cosecha.isoformat(), hectareas,
+             *(economia.get(k) for k in CAMPOS_ECONOMIA)),
         ).lastrowid
     return obtener_siembra(con, id_)
 
@@ -248,11 +275,13 @@ def editar_siembra(con, siembra_id: int, cambios: dict) -> dict:
     fin = cambios.get("fecha_cosecha") or date.fromisoformat(actual["fecha_cosecha"])
     hectareas = cambios.get("hectareas") or actual["hectareas"]
     _validar_siembra(con, parcela, cultivo_id, inicio, fin, hectareas, excepto_id=siembra_id)
+    # Los datos económicos se pueden borrar (mandar null): se distingue "no vino" de "vino vacío"
+    economia = [cambios[k] if k in cambios else actual[k] for k in CAMPOS_ECONOMIA]
     with con:
         con.execute(
-            "UPDATE siembra SET cultivo_id = ?, fecha_siembra = ?, fecha_cosecha = ?, hectareas = ?"
-            " WHERE id = ?",
-            (cultivo_id, inicio.isoformat(), fin.isoformat(), hectareas, siembra_id),
+            "UPDATE siembra SET cultivo_id = ?, fecha_siembra = ?, fecha_cosecha = ?, hectareas = ?,"
+            " rendimiento_t_ha = ?, precio_t = ?, costo_ha = ? WHERE id = ?",
+            (cultivo_id, inicio.isoformat(), fin.isoformat(), hectareas, *economia, siembra_id),
         )
     return obtener_siembra(con, siembra_id)
 
@@ -342,7 +371,16 @@ def resumen_plan(plan: dict, hoy: date) -> dict:
             "cultivo": s["cultivo"]["nombre"],
             "parcela": p["nombre"],
         }
+    con_ingreso = [s["ingreso_estimado"] for _, s in pares if s["ingreso_estimado"] is not None]
+    con_costo = [s["costo_total"] for _, s in pares if s["costo_total"] is not None]
+    con_ganancia = [s["ganancia_estimada"] for _, s in pares if s["ganancia_estimada"] is not None]
     return {
+        "inversion_estimada": round(sum(con_costo), 2) if con_costo else None,
+        "ingreso_estimado": round(sum(con_ingreso), 2) if con_ingreso else None,
+        "ganancia_estimada": round(sum(con_ganancia), 2) if con_ganancia else None,
+        "siembras_con_economia": sum(
+            1 for _, s in pares if s["ingreso_estimado"] is not None or s["costo_total"] is not None
+        ),
         "total_siembras": len(pares),
         "cultivos_distintos": len({s["cultivo"]["id"] for _, s in pares}),
         "en_curso": len(en_curso),
@@ -351,6 +389,20 @@ def resumen_plan(plan: dict, hoy: date) -> dict:
         "uso_suelo": round(ha_en_uso / ha_totales * 100) if ha_totales else 0,
         "proxima_cosecha": proxima,
     }
+
+
+def recomendar_por_tipo(catalogo: list[dict], parcela: dict, ultima: dict) -> dict | None:
+    """Regla simple por tipo (cereal <-> leguminosa) con los cultivos que ya tiene el Planificador.
+    Es el respaldo cuando el último cultivo no viene del catálogo de Cultivos."""
+    regla = REGLAS_ROTACION.get(ultima["cultivo"]["tipo"])
+    if regla is None:
+        return None
+    tipo_siguiente, razon = regla
+    candidatos = [c for c in catalogo if c["tipo"] == tipo_siguiente and c["id"] != ultima["cultivo"]["id"]]
+    if not candidatos:
+        return None
+    usos = {c["id"]: sum(1 for s in parcela["siembras"] if s["cultivo"]["id"] == c["id"]) for c in candidatos}
+    return {"sugerido": min(candidatos, key=lambda c: (usos[c["id"]], c["nombre"])), "razon": razon}
 
 
 def recomendaciones_plan(con, plan: dict, hoy: date) -> list[dict]:
@@ -366,22 +418,16 @@ def recomendaciones_plan(con, plan: dict, hoy: date) -> list[dict]:
         if not p["siembras"]:
             continue
         ultima = max(p["siembras"], key=lambda s: s["fecha_cosecha"])
-        regla = REGLAS_ROTACION.get(ultima["cultivo"]["tipo"])
-        if regla is None:
+        elegida = recomendar_por_tipo(catalogo, p, ultima)
+        if elegida is None:
             continue
-        tipo_siguiente, razon = regla
-        candidatos = [c for c in catalogo if c["tipo"] == tipo_siguiente and c["id"] != ultima["cultivo"]["id"]]
-        if not candidatos:
-            continue
-        usos = {c["id"]: sum(1 for s in p["siembras"] if s["cultivo"]["id"] == c["id"]) for c in candidatos}
-        sugerido = min(candidatos, key=lambda c: (usos[c["id"]], c["nombre"]))
         desde = max(hoy, date.fromisoformat(ultima["fecha_cosecha"]) + timedelta(days=1))
         resultado.append({
             "parcela": {"id": p["id"], "nombre": p["nombre"]},
             "despues_de": {"cultivo": ultima["cultivo"], "fecha_cosecha": ultima["fecha_cosecha"]},
-            "sugerido": sugerido,
+            "sugerido": elegida["sugerido"],
             "desde": desde.isoformat(),
-            "razon": razon,
+            "razon": elegida["razon"],
         })
     return resultado
 

@@ -9,6 +9,7 @@ import useDatos from "./hooks/useDatos.js";
 import Noticias from "./pages/Noticias/Noticias.jsx";
 import Planificador from "./pages/Planificador/Planificador.jsx";
 import Principal from "./pages/Principal/Principal.jsx";
+import Suelo from "./pages/Suelo/Suelo.jsx";
 import { useSeccion } from "./routes.js";
 
 const SIN_PARCELA = { nombre: "—", hectareas: "—" };
@@ -112,6 +113,10 @@ export default function App() {
         </Cargable>
       ) : seccion.id === "planificador" ? (
         <Planificador municipio={activa?.nombre} />
+      ) : seccion.id === "suelo" ? (
+        <Cargable estado={ubicaciones} alto={200}>
+          {() => activa && <Suelo ubicacion={activa} />}
+        </Cargable>
       ) : seccion.id === "noticias" ? (
         activa && <Noticias municipio={activa.nombre} />
       ) : (

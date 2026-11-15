@@ -1,7 +1,13 @@
+import { getFicha } from "../../api/planificador.js";
+import { getPropiedades } from "../../api/suelo.js";
 import { getClimaNasa } from "../../api/principal.js";
 import Cargable from "../../components/Cargable.jsx";
 import useDatos from "../../hooks/useDatos.js";
 import { aISO, deISO, diasEntre, fechaConAnio, sumarDias } from "../../utils/fechas.js";
+import EconomiaSiembra from "./EconomiaSiembra.jsx";
+import ManejoInifap from "./ManejoInifap.jsx";
+import TareasSiembra from "./TareasSiembra.jsx";
+import VentanaSiembra from "./VentanaSiembra.jsx";
 import { etiquetaTipo } from "../../utils/tipos.js";
 
 const dias = (n) => `${n} ${n === 1 ? "day" : "days"}`;
@@ -62,8 +68,85 @@ function ClimaNasa({ municipio, inicio, fin, hoy }) {
   );
 }
 
-// Pestaña informativa de una siembra: estado, avance del ciclo y contexto dentro de su parcela.
-export default function InfoSiembra({ parcela, siembra, hoy, municipio }) {
+const AGUA = { bajo: "Low", medio: "Medium", alto: "High", low: "Low", medium: "Medium", high: "High" };
+const rango = (r, unidad) => (r ? `${r[0]}–${r[1]}${unidad}` : "—");
+
+// Compara el pH del suelo de la ubicación (módulo Suelo, SoilGrids) con el rango ideal del cultivo.
+// Si no hay pH o el cultivo no trae rango, no muestra nada.
+function CompatibilidadPh({ rangoIdeal, municipio }) {
+  const estado = useDatos(() => getPropiedades({ municipio }), [municipio]);
+  const capa = estado.datos && !estado.datos.sin_datos ? estado.datos.capas?.[0] : null;
+  if (!rangoIdeal || !capa || capa.ph == null) return null;
+  const [min, max] = rangoIdeal;
+  const ph = capa.ph;
+  const dentro = ph >= min && ph <= max;
+  const lejos = ph < min - 1 || ph > max + 1;
+  const clase = dentro ? "ph-compat--bien" : lejos ? "ph-compat--mal" : "ph-compat--regular";
+  const texto = dentro
+    ? "within this crop's ideal range."
+    : `${ph < min ? "below" : "above"} this crop's ideal range${lejos ? ", which can limit growth and nutrient uptake" : ""}.`;
+  return (
+    <p className={`ph-compat ${clase}`}>
+      <b>Your soil pH is {ph}</b>, {texto}
+    </p>
+  );
+}
+
+// Ficha del cultivo (catálogo de Cultivos): condiciones ideales y cuidados. No aparece si el cultivo no viene del catálogo.
+function FichaCultivo({ cultivoId, municipio }) {
+  const estado = useDatos(() => getFicha(cultivoId, municipio), [cultivoId, municipio]);
+  const ficha = estado.datos;
+  if (!ficha) return null;
+  return (
+    <section className="info-siembra__ficha" aria-label="Crop guide">
+      <h3>Crop guide</h3>
+      {ficha.descripcion && <p>{ficha.descripcion}</p>}
+      <dl className="info-siembra__nasa-datos">
+        <div>
+          <dt>Best temperature</dt>
+          <dd>{rango(ficha.temperaturaOptimaC, " °C")}</dd>
+        </div>
+        <div>
+          <dt>Water use</dt>
+          <dd>{AGUA[ficha.consumoAgua] ?? "—"}</dd>
+        </div>
+        <div>
+          <dt>Best soil pH</dt>
+          <dd>{rango(ficha.phOptimo, "")}</dd>
+        </div>
+        <div>
+          <dt>Fixes nitrogen</dt>
+          <dd>{ficha.fijaNitrogeno ? "Yes" : "No"}</dd>
+        </div>
+      </dl>
+      {municipio && <CompatibilidadPh rangoIdeal={ficha.phOptimo} municipio={municipio} />}
+      {ficha.suelo && (
+        <p>
+          <b>Soil:</b> {ficha.suelo}
+        </p>
+      )}
+      {ficha.cuidados.length > 0 && (
+        <>
+          <b>Care tips</b>
+          <ul>
+            {ficha.cuidados.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+        </>
+      )}
+      {municipio && <ManejoInifap manejo={ficha.manejo} municipio={municipio} onEstado={estado.recargar} />}
+      <small>
+        Source: {ficha.fuentes.join(", ") || "Crops catalog"}.
+        {!ficha.textoRevisado && " General draft text: confirm with a local technician before acting on it."}
+      </small>
+    </section>
+  );
+}
+
+// Vistas informativas de una siembra. `vista` elige qué se muestra: "resumen" (estado, fechas, economía y
+// vecinas en la parcela), "tareas" o "guia" (cuándo sembrar, ficha del cultivo y clima de NASA).
+export default function InfoSiembra({ parcela, siembra, hoy, municipio, onTareas, vista = "resumen" }) {
   const inicio = deISO(siembra.fechaSiembra);
   const fin = deISO(siembra.fechaCosecha);
   const total = Math.max(1, diasEntre(inicio, fin));
@@ -93,6 +176,26 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio }) {
   const siguiente = ordenadas[i + 1];
   const ocupa = Math.round((siembra.hectareas / parcela.hectareas) * 100);
 
+  if (vista === "tareas") {
+    return (
+      <div className="info-siembra">
+        <TareasSiembra siembra={siembra} hoy={hoy} onCambio={onTareas} />
+      </div>
+    );
+  }
+
+  if (vista === "guia") {
+    return (
+      <div className="info-siembra">
+        {siembra.cultivo.catalogoId && municipio && (
+          <VentanaSiembra catalogoId={siembra.cultivo.catalogoId} municipio={municipio} mesInicio={inicio.getMonth() + 1} />
+        )}
+        <FichaCultivo cultivoId={siembra.cultivo.id} municipio={municipio} />
+        {municipio && <ClimaNasa municipio={municipio} inicio={inicio} fin={fin} hoy={hoy} />}
+      </div>
+    );
+  }
+
   return (
     <div className="info-siembra">
       <div className="info-siembra__estado">
@@ -120,7 +223,7 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio }) {
           <dd>
             {parcela.nombre}
             <small>
-              {siembra.hectareas} de {parcela.hectareas} ha ({ocupa}%)
+              {siembra.hectareas} of {parcela.hectareas} ha ({ocupa}%)
             </small>
           </dd>
         </div>
@@ -137,7 +240,7 @@ export default function InfoSiembra({ parcela, siembra, hoy, municipio }) {
         </div>
       </dl>
 
-      {municipio && <ClimaNasa municipio={municipio} inicio={inicio} fin={fin} hoy={hoy} />}
+      <EconomiaSiembra siembra={siembra} />
 
       <div className="info-siembra__vecinas">
         <p>

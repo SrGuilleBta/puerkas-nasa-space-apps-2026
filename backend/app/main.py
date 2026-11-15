@@ -5,13 +5,19 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from app import db
-from app.routers import cultivos, noticias, planificador, principal, ubicaciones
+from app.routers import cultivos, noticias, planificador, principal, suelo, ubicaciones
+from app.services import catalogo_cultivos
 from app.services.planificador import ErrorPlanificador
 
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
     db.iniciar()  # crea la base del Planificador (con demo) si es la primera vez
+    con = db.conectar()
+    try:
+        catalogo_cultivos.sincronizar_nombres(con)  # los nombres siguen al catálogo (p. ej. si se traduce)
+    finally:
+        con.close()
     yield
 
 
@@ -22,6 +28,7 @@ app.include_router(planificador.router)
 app.include_router(ubicaciones.router)
 app.include_router(noticias.router)
 app.include_router(cultivos.router)
+app.include_router(suelo.router)
 app.add_exception_handler(ErrorPlanificador, planificador.error_planificador)
 
 

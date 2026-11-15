@@ -11,7 +11,7 @@ import html
 import re
 import time
 import xml.etree.ElementTree as ET
-from datetime import date, datetime
+from datetime import date
 from email.utils import parsedate_to_datetime
 from urllib.parse import urlparse
 

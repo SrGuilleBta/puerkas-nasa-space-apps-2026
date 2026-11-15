@@ -2,8 +2,8 @@ import Tarjeta, { EncabezadoTarjeta } from "../../components/Tarjeta.jsx";
 import { Brote, Mas } from "../../components/Iconos.jsx";
 import { deISO, fechaConAnio } from "../../utils/fechas.js";
 
-// Qué sembrar después en cada parcela, con una regla simple de rotación por tipo de cultivo.
-// No lleva porcentaje de "afinidad": se muestra la razón de la regla, que es lo que se sabe.
+// Qué sembrar después en cada parcela, con la rotación del catálogo de Cultivos (nitrógeno y familia botánica).
+// No lleva porcentaje de "afinidad": se muestra la razón, que es lo que se sabe.
 export default function Recomendaciones({ recomendaciones, onAnadir }) {
   return (
     <Tarjeta>
@@ -11,8 +11,8 @@ export default function Recomendaciones({ recomendaciones, onAnadir }) {
 
       {recomendaciones.length === 0 ? (
         <p className="recomendaciones__vacio">
-          Once your plots have a cereal or a legume, we will suggest here what to plant next to
-          rotate your crops.
+          Once your plots have a cereal, a legume or a vegetable, we will suggest here what to plant next
+          to rotate your crops.
         </p>
       ) : (
         <ul className="recomendaciones">
@@ -39,7 +39,10 @@ export default function Recomendaciones({ recomendaciones, onAnadir }) {
         </ul>
       )}
 
-      <p className="recomendaciones__nota">Rotation rule: after a cereal, a legume; after a legume, a cereal.</p>
+      <p className="recomendaciones__nota">
+        Rotation rule: after a legume, a cereal; after a cereal, vegetable or oilseed, a legume. We avoid the same plant
+        family twice in a row to break pest and disease cycles.
+      </p>
     </Tarjeta>
   );
 }
