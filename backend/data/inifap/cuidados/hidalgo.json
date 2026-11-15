@@ -1,9 +1,9 @@
 {
-  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/hidalgo.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "_nota": "Summary of INIFAP's 2026 Agricultural Technical Agenda, prepared from the text in data/inifap/extraido/hidalgo.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
   "cve_ent": "13",
   "estado": "Hidalgo",
   "edicion": 2026,
-  "fuente": "INIFAP. Agenda Técnica Agrícola de Hidalgo. INIFAP, Ciudad de México, 2026.",
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Hidalgo [Agricultural Technical Agenda of Hidalgo]. INIFAP, Mexico City, 2026.",
   "fichas": [
     {
       "ficha": "Alfalfa",
@@ -15,12 +15,12 @@
       "cultivo_ids": [
         "alfalfa-verde"
       ],
-      "tipo_cultivo": "perenne",
-      "modalidad": "riego",
+      "tipo_cultivo": "perennial",
+      "modalidad": "irrigated",
       "ciclo": "PER",
-      "region": "Climas subtropical árido y semiárido templado, de 1,700 a 2,500 msnm, con temperatura media anual de 19 a 27 °C. Prefiere suelos profundos, fértiles y permeables, con pH de 7.5 a 8.0. En Hidalgo se siembra sobre todo en el Valle del Mezquital y el Valle de Tulancingo.",
+      "region": "Temperate arid and semiarid subtropical climates, from 1,700 to 2,500 m a.s.l., with an annual mean temperature of 19 to 27 °C. It prefers deep, fertile, permeable soils with pH of 7.5 to 8.0. In Hidalgo it is planted mainly in the Valle del Mezquital and the Valle de Tulancingo.",
       "siembra": {
-        "texto": "Del 15 de octubre al 15 de enero; fuera de ese periodo se puede sembrar, pero con menores resultados.",
+        "texto": "From October 15 to January 15; outside that period it can be planted, but with poorer results.",
         "meses": [
           10,
           11,
@@ -34,47 +34,47 @@
         "Moapa"
       ],
       "hibridos_comerciales": [],
-      "densidad": "50 a 100 plantas por m², equivalente a 40 a 50 kg/ha de semilla. Profundidad de 0.6 a 1.3 cm en suelos arcillosos o de migajón y de 1.3 a 2.5 cm en suelos arenosos.",
-      "fertilizacion": "Unos 100 kg/ha de la mezcla granulada triple 17 (17-17-17) a la siembra, y repetir la dosis cada año en invierno. Además, 2 L/ha de fertilizante foliar (N-P-K + microelementos) en noviembre y enero; como alternativa, productos orgánicos (tiosulfato de potasio o prebióticos) en cortes alternos.",
-      "riego": "Riego de germinación ligero y lento para no arrastrar la semilla; segundo riego, también ligero, a los 45 días para romper la costra; tercero 20 días después. Luego un riego al mes, unos ocho días después de cada corte. Evitar encharcamientos prolongados.",
+      "densidad": "50 to 100 plants per m², equivalent to 40 to 50 kg/ha of seed. Depth of 0.6 to 1.3 cm in clayey or loam soils and 1.3 to 2.5 cm in sandy soils.",
+      "fertilizacion": "About 100 kg/ha of the granular triple 17 blend (17-17-17) at planting, and repeat the dose every year in winter. In addition, 2 L/ha of foliar fertilizer (N-P-K + micronutrients) in November and January; as an alternative, organic products (potassium thiosulfate or prebiotics) on alternate cuttings.",
+      "riego": "Light, slow germination irrigation so as not to wash away the seed; second irrigation, also light, at 45 days to break the crust; third 20 days later. Then one irrigation a month, about eight days after each cutting. Avoid prolonged waterlogging.",
       "plagas": [
-        "Pulgón verde (Myzus persicae)",
-        "Pulgón negro (Aphis fabae)",
-        "Trips (Frankliniella occidentalis)",
-        "Gusano soldado (Spodoptera praefica y S. exigua)",
-        "Chicharritas (Empoasca spp.)"
+        "Green peach aphid (Myzus persicae)",
+        "Black bean aphid (Aphis fabae)",
+        "Thrips (Frankliniella occidentalis)",
+        "Armyworm (Spodoptera praefica and S. exigua)",
+        "Leafhoppers (Empoasca spp.)"
       ],
       "enfermedades": [
-        "Peca (Pseudopeziza jonesii)",
-        "Mancha de la hoja (Pseudopeziza spp.)",
-        "Mildiú velloso (Peronospora trifoliorum)"
+        "Common leaf spot (Pseudopeziza jonesii)",
+        "Leaf spot (Pseudopeziza spp.)",
+        "Downy mildew (Peronospora trifoliorum)"
       ],
-      "malezas": "El control es muy importante a los 45 días de establecido el cultivo. Ayudan una buena preparación del terreno, rotar al menos un año con otro cultivo como el maíz, sembrar en la fecha recomendada y manejar bien nutrición, riegos y cortes. Malezas: diente de león, malva, lengua de vaca y pastos.",
-      "cosecha": "Primer corte a los 75 a 90 días de la siembra. Después, cortar con 5 a 10 % de floración o cuando los rebrotes midan 5 a 7 cm: cada 25 a 28 días en primavera y verano, 30 a 35 en otoño y 40 a 45 en invierno. Almacenar el forraje con al menos 14 % de humedad. Rendimiento potencial promedio de 1.8 a 3.4 t de materia seca por hectárea, o unas 85 a 100 pacas.",
+      "malezas": "Control is very important 45 days after the crop is established. Good field preparation helps, as does rotating for at least one year with another crop such as maize, planting on the recommended date and managing nutrition, irrigation and cuttings well. Weeds: dandelion, mallow, dock and grasses.",
+      "cosecha": "First cutting 75 to 90 days after planting. Afterward, cut at 5 to 10 % flowering or when regrowth measures 5 to 7 cm: every 25 to 28 days in spring and summer, 30 to 35 in fall and 40 to 45 in winter. Store the forage at no more than 14 % moisture. Average potential yield of 1.8 to 3.4 t of dry matter per hectare, or about 85 to 100 bales.",
       "cuidados": [
-        "Preparar el terreno con subsoleo, barbecho y rastra, y dejarlo libre de malezas.",
-        "Tapar la semilla con cuidado: ni muy profunda ni muy superficial, para que el riego no la arrastre.",
-        "Dar los primeros riegos ligeros y regar unos ocho días después de cada corte.",
-        "No retrasar los cortes, usar variedades resistentes y rotar cultivos para prevenir la peca, la mancha de la hoja y el mildiú.",
-        "Se puede hacer control biológico de plagas con crisopas (Chrysoperla carnea) de enero a marzo.",
-        "No meter animales a pastorear después del corte: el pisoteo y el consumo de rebrotes acortan la vida del alfalfar."
+        "Prepare the field with subsoiling, plowing and harrowing, and leave it free of weeds.",
+        "Cover the seed carefully: neither too deep nor too shallow, so that irrigation does not wash it away.",
+        "Give the first irrigations light and irrigate about eight days after each cutting.",
+        "Do not delay cuttings, use resistant varieties and rotate crops to prevent common leaf spot, leaf spot and downy mildew.",
+        "Biological pest control can be done with lacewings (Chrysoperla carnea) from January to March.",
+        "Do not let animals graze after cutting: trampling and consumption of regrowth shorten the life of the alfalfa stand."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 34310,
           "rendimiento": 765,
-          "unidad_rendimiento": "pacas/ha",
+          "unidad_rendimiento": "bales/ha",
           "precio": 100,
           "ingreso_neto": 42190,
           "relacion_bc": 2.23
         }
       ],
-      "nota": "Costos del Cuadro 3 (años 2 a 4, producción); el rendimiento y el precio están en pacas por hectárea y pesos por paca. El Cuadro 2 (establecimiento, año 1) da un costo de $51,850/ha, ingreso neto de $24,650 y relación B/C de 1.47. Se omitieron productos y dosis de plaguicidas y herbicidas que trae el texto.",
+      "nota": "Costs from Table 3 (years 2 to 4, production); yield and price are in bales per hectare and pesos per bale. Table 2 (establishment, year 1) gives a cost of $51,850/ha, net income of $24,650 and a B/C ratio of 1.47. Pesticide and herbicide products and doses that appear in the text were omitted.",
       "revisado": false
     },
     {
-      "ficha": "Avena forrajera",
+      "ficha": "Forage oats",
       "cientifico": "Avena sativa L.",
       "paginas": [
         18,
@@ -83,12 +83,12 @@
       "cultivo_ids": [
         "avena-forrajera-en-verde"
       ],
-      "tipo_cultivo": "anual",
+      "tipo_cultivo": "annual",
       "modalidad": null,
       "ciclo": null,
-      "region": "Valles Altos de Hidalgo (2,100 a 2,700 msnm, 400 a 700 mm de lluvia al año y 12 a 14 °C de media, templado subhúmedo) y Valle del Mezquital (1,700 a 2,100 msnm, 400 a 500 mm y 14 a 16 °C). Más del 95 % se siembra en P-V en el Altiplano.",
+      "region": "Valles Altos de Hidalgo (2,100 to 2,700 m a.s.l., 400 to 700 mm of rain a year and 12 to 14 °C mean, temperate subhumid) and Valle del Mezquital (1,700 to 2,100 m a.s.l., 400 to 500 mm and 14 to 16 °C). More than 95 % is planted in SS in the Altiplano.",
       "siembra": {
-        "texto": "Ciclo P-V: del 15 de mayo al 30 de junio. Ciclo O-I en los Valles de Tulancingo y del Mezquital: del 15 de noviembre al 30 de diciembre.",
+        "texto": "SS cycle: May 15 to June 30. FW cycle in the Valles de Tulancingo and del Mezquital: November 15 to December 30.",
         "meses": [
           5,
           6,
@@ -97,48 +97,48 @@
         ]
       },
       "variedades": [
-        "Turquesa (precoz a intermedia, grano y forraje)",
-        "Ágata (precoz a intermedia, grano y forraje)",
-        "Saia (tardía, forraje verde de alto rendimiento)"
+        "Turquesa (early to intermediate, grain and forage)",
+        "Ágata (early to intermediate, grain and forage)",
+        "Saia (late, high-yielding green forage)"
       ],
       "hibridos_comerciales": [],
-      "densidad": "80 kg/ha de semilla para Saia y 100 kg/ha para las otras variedades, con sembradora de grano pequeño o al voleo.",
-      "fertilizacion": "23-23-15 por hectárea, todo a la siembra (dos bultos de 25 kg de urea, dos de superfosfato triple y uno de cloruro de potasio). Con el Programa de Fertilizantes para el Bienestar: 11 kg de urea, 50 kg de DAP y 25 kg de cloruro de potasio. Dos aplicaciones foliares opcionales: en el amacollo y entre el embuche y el inicio del espigamiento.",
+      "densidad": "80 kg/ha of seed for Saia and 100 kg/ha for the other varieties, with a small-grain drill or broadcast.",
+      "fertilizacion": "23-23-15 per hectare, all at planting (two 25 kg bags of urea, two of triple superphosphate and one of potassium chloride). With the Programa de Fertilizantes para el Bienestar: 11 kg of urea, 50 kg of DAP and 25 kg of potassium chloride. Two optional foliar applications: at tillering and between boot stage and the start of heading.",
       "riego": null,
       "plagas": [
-        "Plagas del suelo",
-        "Pulgón (Schizaphis graminum)"
+        "Soil pests",
+        "Greenbug (Schizaphis graminum)"
       ],
       "enfermedades": [
-        "Roya de la hoja (Puccinia coronata)",
-        "Roya del tallo (Puccinia graminis f. sp. avenae)",
-        "Manchas foliares (Drechslera avenacea, Septoria avenae, Colletotrichum graminicola)"
+        "Leaf rust (Puccinia coronata)",
+        "Stem rust (Puccinia graminis f. sp. avenae)",
+        "Leaf spots (Drechslera avenacea, Septoria avenae, Colletotrichum graminicola)"
       ],
-      "malezas": "Controlar las malezas de hoja ancha (quelite cenizo, quintonil, malva y acahualillo) a los 30 a 35 días después de la siembra. Uno o dos pasos de rastra un mes antes de sembrar destruyen las malezas que ya nacieron.",
-      "cosecha": "En P-V con siembras tardías (temporal), cortar con 5 a 10 % de espigamiento (90 a 100 días) para evitar heladas; en siembras antes del 10 de junio, con el grano en estado lechoso-masoso (110 a 120 días). En O-I, si sigue maíz, cortar con 5 a 10 % de espigamiento (95 a 105 días); si no, en lechoso-masoso (115 a 125 días). Turquesa y Ágata rinden 8 a 10 t/ha de materia seca y Saia 12 t/ha.",
+      "malezas": "Control broadleaf weeds (lamb's quarters, quintonil, mallow and acahualillo) 30 to 35 days after planting. One or two harrow passes a month before planting destroy weeds that have already emerged.",
+      "cosecha": "In SS with late plantings (rainfed), cut at 5 to 10 % heading (90 to 100 days) to avoid frost; in plantings before June 10, with the grain at the milk-dough stage (110 to 120 days). In FW, if maize follows, cut at 5 to 10 % heading (95 to 105 days); otherwise, at milk-dough (115 to 125 days). Turquesa and Ágata yield 8 to 10 t/ha of dry matter and Saia 12 t/ha.",
       "cuidados": [
-        "Preparar una buena cama de siembra (barbecho y rastreo) para una nacencia uniforme.",
-        "Aplicar todo el fertilizante a la siembra.",
-        "Las royas y manchas foliares se controlan sobre todo con variedades resistentes.",
-        "Controlar los pulgones solo cuando su incidencia sea alta.",
-        "Cortar con 5 a 10 % de espigamiento para tener más proteína y escapar a las heladas; en lechoso-masoso para más volumen."
+        "Prepare a good seedbed (plowing and harrowing) for uniform emergence.",
+        "Apply all the fertilizer at planting.",
+        "Rusts and leaf spots are controlled mainly with resistant varieties.",
+        "Control aphids only when their incidence is high.",
+        "Cut at 5 to 10 % heading for more protein and to escape frost; at milk-dough for more volume."
       ],
       "costos": [
         {
           "modalidad": null,
           "costo_total_ha": 11550,
           "rendimiento": 350,
-          "unidad_rendimiento": "pacas/ha",
+          "unidad_rendimiento": "bales/ha",
           "precio": 40,
           "ingreso_neto": 2450,
           "relacion_bc": null
         }
       ],
-      "nota": "La ficha cubre P-V (temporal, Altiplano) y O-I (Valles de Tulancingo y Mezquital), y dice que las variedades sirven en riego y temporal; por eso modalidad y ciclo van en null aunque el extraído marca 'temporal'. El texto no trae recomendaciones de riego. Costos del Cuadro 5 en pacas por hectárea y pesos por paca: el cuadro imprime relación B/C de 0.21, que en realidad es ingreso neto entre costo (2,450/11,550); ingreso bruto entre costo da 1.21, por eso relacion_bc va en null.",
+      "nota": "The sheet covers SS (rainfed, Altiplano) and FW (Valles de Tulancingo and del Mezquital), and says the varieties work under irrigation and rainfed conditions; therefore modality and cycle are null even though the extract marks 'rainfed'. The text has no irrigation recommendations. Costs from Table 5 in bales per hectare and pesos per bale: the table prints a B/C ratio of 0.21, which is actually net income divided by cost (2,450/11,550); gross income divided by cost gives 1.21, so the B/C is null.",
       "revisado": false
     },
     {
-      "ficha": "Cebada grano",
+      "ficha": "Grain barley",
       "cientifico": "Hordeum vulgare L.",
       "paginas": [
         24,
@@ -147,56 +147,56 @@
       "cultivo_ids": [
         "cebada-grano"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "temporal",
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
       "ciclo": "PV",
-      "region": "Valles Altos, de 2,100 a 2,700 msnm. Ambientes de buena productividad: 500 a 700 mm de lluvia bien distribuida y suelos de 50 a 60 cm; mediana: 450 a 500 mm; baja: menos de 450 mm y suelos de menos de 40 cm.",
+      "region": "Valles Altos, from 2,100 to 2,700 m a.s.l. Environments of good productivity: 500 to 700 mm of well-distributed rain and soils of 50 to 60 cm; medium: 450 to 500 mm; low: less than 450 mm and soils shallower than 40 cm.",
       "siembra": {
-        "texto": "Según el establecimiento de las lluvias; en general del 1 de mayo al 30 de junio.",
+        "texto": "According to the onset of the rains; in general from May 1 to June 30.",
         "meses": [
           5,
           6
         ]
       },
       "variedades": [
-        "Estelar OH (maltera, seis hileras)",
-        "Maravilla (forrajera, alta proteína)",
-        "Monserrat D (grano desnudo, harinas y alimento balanceado)",
-        "Zurita (dos hileras, alimentación humana y ganadera)"
+        "Estelar OH (malting, six-row)",
+        "Maravilla (forage, high protein)",
+        "Monserrat D (hulless grain, flours and balanced feed)",
+        "Zurita (two-row, human and livestock feed)"
       ],
       "hibridos_comerciales": [],
-      "densidad": "Estelar OH y Maravilla: 100 kg/ha con sembradora y 120 al voleo en suelo pesado; 110 y 130 kg/ha en suelo ligero. Monserrat D y Zurita: 90 y 100 kg/ha en suelo pesado; 100 y 110 kg/ha en suelo ligero.",
-      "fertilizacion": "Según el ambiente: buena productividad 60-46-30; mediana 46-46-15; baja productividad sin fertilizante al suelo (no es rentable). Todo a la siembra. Fertilización foliar de dos a tres aplicaciones en ambientes buenos y medianos, y de una a dos en los de baja productividad, en el amacollo y el espigamiento.",
+      "densidad": "Estelar OH and Maravilla: 100 kg/ha with a drill and 120 broadcast in heavy soil; 110 and 130 kg/ha in light soil. Monserrat D and Zurita: 90 and 100 kg/ha in heavy soil; 100 and 110 kg/ha in light soil.",
+      "fertilizacion": "According to the environment: good productivity 60-46-30; medium 46-46-15; low productivity no soil fertilizer (not profitable). All at planting. Foliar fertilization of two to three applications in good and medium environments, and one to two in low-productivity ones, at tillering and heading.",
       "riego": null,
       "plagas": [
-        "Gallina ciega (Phyllophaga spp.)",
-        "Gusano de alambre (Agriotes spp.)",
-        "Pulgón ruso (Diuraphis noxia)",
-        "Pulgones del follaje (Schizaphis graminum, Metopolophium dirhodum)",
-        "Pulgón de la espiga (Sitobion avenae)",
-        "Gusano soldado (Spodoptera exigua)"
+        "White grub (Phyllophaga spp.)",
+        "Wireworm (Agriotes spp.)",
+        "Russian wheat aphid (Diuraphis noxia)",
+        "Foliage aphids (Schizaphis graminum, Metopolophium dirhodum)",
+        "English grain aphid (Sitobion avenae)",
+        "Armyworm (Spodoptera exigua)"
       ],
       "enfermedades": [
-        "Mancha reticular (Helminthosporium teres)",
-        "Mancha moteada (Helminthosporium sativum)",
-        "Escaldadura de la hoja (Rhynchosporium secalis)",
-        "Roya de la hoja (Puccinia hordei)",
-        "Roya lineal amarilla (Puccinia striiformis f. sp. hordei)",
-        "Carbón volador (Ustilago nuda)"
+        "Net blotch (Helminthosporium teres)",
+        "Spot blotch (Helminthosporium sativum)",
+        "Scald (Rhynchosporium secalis)",
+        "Leaf rust (Puccinia hordei)",
+        "Yellow stripe rust (Puccinia striiformis f. sp. hordei)",
+        "Loose smut (Ustilago nuda)"
       ],
-      "malezas": "Evitar las malezas porque compiten por agua y nutrientes y mezclan su semilla con el grano. Hoja ancha: malva, quelite, trébol, girasol silvestre y acahual; hoja angosta: avena silvestre y Agrostis. El control se hace durante el amacollamiento (25 a 30 días).",
-      "cosecha": "Con trilladora, cuando el grano esté maduro y lleno, con 13 a 14 % de humedad (lo mejor, 14 %), entre 20 y 25 días después de la madurez. Seleccionar y limpiar el grano en bodega mejora el precio. Rendimiento de 1.8 a 4.5 t/ha según la lluvia y el ambiente.",
+      "malezas": "Avoid weeds because they compete for water and nutrients and mix their seed with the grain. Broadleaf: mallow, quelite, clover, wild sunflower and acahual; narrow-leaf: wild oats and Agrostis. Control is done during tillering (25 to 30 days).",
+      "cosecha": "With a combine, when the grain is mature and full, at 13 to 14 % moisture (best, 14 %), between 20 and 25 days after maturity. Selecting and cleaning the grain in the warehouse improves the price. Yield of 1.8 to 4.5 t/ha depending on rainfall and environment.",
       "cuidados": [
-        "Identificar el ambiente de producción (lluvia y profundidad del suelo) para ajustar la fertilización; en ambientes pobres no fertilizar al suelo.",
-        "Usar variedades tolerantes: es el mejor control de las enfermedades.",
-        "Revisar el cultivo seguido; si las manchas o la roya llegan a la hoja bandera en el espigamiento, hay que actuar.",
-        "Contra el carbón volador: semilla certificada y tratada, rotación de cultivos y variedades tolerantes.",
-        "Eliminar en invierno las plantas voluntarias de cereales y pastos (Eragrostis mexicana) para reducir el pulgón ruso; el barbecho ayuda contra plagas del suelo.",
-        "Para gusano soldado, preferir bioplaguicidas a base de Bacillus thuringiensis y actuar con los primeros gusanos."
+        "Identify the production environment (rainfall and soil depth) to adjust fertilization; in poor environments, do not fertilize the soil.",
+        "Use tolerant varieties: it is the best disease control.",
+        "Check the crop frequently; if spots or rust reach the flag leaf at heading, action is needed.",
+        "Against loose smut: certified, treated seed, crop rotation and tolerant varieties.",
+        "Eliminate volunteer cereal and grass plants (Eragrostis mexicana) in winter to reduce Russian wheat aphid; plowing helps against soil pests.",
+        "For armyworm, prefer bioinsecticides based on Bacillus thuringiensis and act at the first larvae."
       ],
       "costos": [
         {
-          "modalidad": "temporal",
+          "modalidad": "rainfed",
           "costo_total_ha": 16380,
           "rendimiento": 3000,
           "unidad_rendimiento": "kg/ha",
@@ -209,7 +209,7 @@
       "revisado": false
     },
     {
-      "ficha": "Frijol",
+      "ficha": "Common bean",
       "cientifico": "Phaseolus vulgaris L.",
       "paginas": [
         36,
@@ -218,12 +218,12 @@
       "cultivo_ids": [
         "frijol"
       ],
-      "tipo_cultivo": "anual",
+      "tipo_cultivo": "annual",
       "modalidad": null,
       "ciclo": null,
-      "region": "Valle del Mezquital (1,700 a 2,000 msnm, 14 a 16 °C, suelos feozem de 40 a 60 cm), Huasteca Hidalguense (160 a 900 msnm, 20 a 24 °C) y Valles Altos (14 a 16 °C, suelos de 30 a 90 cm). Tres cuartas partes se siembran en P-V; el resto en O-I en la Huasteca, con buen temporal.",
+      "region": "Valle del Mezquital (1,700 to 2,000 m a.s.l., 14 to 16 °C, phaeozem soils of 40 to 60 cm), Huasteca Hidalguense (160 to 900 m a.s.l., 20 to 24 °C) and Valles Altos (14 to 16 °C, soils of 30 to 90 cm). Three quarters are planted in SS; the rest in FW in the Huasteca, with good rainfed conditions.",
       "siembra": {
-        "texto": "Riego con riesgo de heladas tardías: después del 15 de febrero en la Vega de Metztitlán; en el DDR Mixquiahuala, del 1 al 15 de marzo y del 1 al 30 de junio. Punta de riego: del 15 de abril al 31 de mayo. Temporal: del 1 al 15 de junio (semiguía) o del 15 al 30 de junio (mata) si el temporal se atrasa. Huasteca: ciclo O-I, del 1 de septiembre al 31 de octubre.",
+        "texto": "Irrigated with risk of late frosts: after February 15 in the Vega de Metztitlán; in the DDR Mixquiahuala, March 1 to 15 and June 1 to 30. Limited irrigation (one pre-planting irrigation, then rain): April 15 to May 31. Rainfed: June 1 to 15 (semi-climbing) or June 15 to 30 (bush) if the rains are delayed. Huasteca: FW cycle, September 1 to October 31.",
         "meses": [
           2,
           3,
@@ -235,7 +235,7 @@
         ]
       },
       "variedades": [
-        "Flor de Durazno (mata)",
+        "Flor de Durazno (bush)",
         "Primavera 28",
         "Azufradomex",
         "Azufradoro",
@@ -250,35 +250,35 @@
         "Negro Comapa"
       ],
       "hibridos_comerciales": [],
-      "densidad": "Variedades de mata: surcos de 75 a 80 cm, 13 a 14 plantas por metro, más de 170,000 plantas/ha (40 a 60 kg/ha de semilla). Semiguía: surcos de 80 cm, 10 a 11 semillas por metro, 130,000 plantas/ha (40 a 50 kg/ha). En la Vega de Metztitlán, doble hilera para unas 260,000 plantas/ha.",
-      "fertilizacion": "Valle del Mezquital: 18 kg de N y 46 de P por ha a la siembra (100 kg de fosfato diamónico) y 23 kg de N antes de la floración, en la segunda escarda (50 kg de urea o 100 kg de sulfato de amonio). El fertilizante no debe tocar la semilla. Fertilización foliar opcional antes de la floración y al inicio de la formación del ejote.",
-      "riego": "De tres a cuatro riegos según agua, suelo y temperatura. Asegurar el riego en la floración y antes de la madurez del grano.",
+      "densidad": "Bush varieties: furrows of 75 to 80 cm, 13 to 14 plants per meter, more than 170,000 plants/ha (40 to 60 kg/ha of seed). Semi-climbing: furrows of 80 cm, 10 to 11 seeds per meter, 130,000 plants/ha (40 to 50 kg/ha). In the Vega de Metztitlán, double row for about 260,000 plants/ha.",
+      "fertilizacion": "Valle del Mezquital: 18 kg of N and 46 of P per ha at planting (100 kg of diammonium phosphate) and 23 kg of N before flowering, at the second cultivation (50 kg of urea or 100 kg of ammonium sulfate). The fertilizer must not touch the seed. Optional foliar fertilization before flowering and at the start of green pod formation.",
+      "riego": "Three to four irrigations depending on water, soil and temperature. Ensure irrigation at flowering and before grain maturity.",
       "plagas": [
-        "Conchuela (Epilachna varivestis)",
-        "Picudo del ejote (Apion godmani)",
-        "Chapulín (Brachystola, Sphenarium y Melanoplus spp.)",
-        "Chicharrita (Empoasca kraemeri)",
-        "Minador de la hoja (Xenochalepus signaticollis)",
-        "Minador serpentina (Liriomyza munda)",
-        "Mosquita blanca (Bemisia tabaci, Trialeurodes vaporariorum)",
-        "Gorgojos de almacén (Acanthoscelides obtectus, Zabrotes subfasciatus)"
+        "Mexican bean beetle (Epilachna varivestis)",
+        "Bean pod weevil (Apion godmani)",
+        "Grasshopper (Brachystola, Sphenarium and Melanoplus spp.)",
+        "Leafhopper (Empoasca kraemeri)",
+        "Leafminer (Xenochalepus signaticollis)",
+        "Serpentine leafminer (Liriomyza munda)",
+        "Whitefly (Bemisia tabaci, Trialeurodes vaporariorum)",
+        "Stored-grain weevils (Acanthoscelides obtectus, Zabrotes subfasciatus)"
       ],
       "enfermedades": [
-        "Chahuixtle o roya (Uromyces phaseoli)",
-        "Antracnosis (Colletotrichum lindemuthianum)",
-        "Tizón de halo (Pseudomonas syringae pv. phaseolicola)",
-        "Tizón común (Xanthomonas axonopodis pv. phaseoli)",
-        "Pudriciones de la raíz (Fusarium, Pythium, Rhizoctonia, Macrophomina)"
+        "Rust (Uromyces phaseoli)",
+        "Anthracnose (Colletotrichum lindemuthianum)",
+        "Halo blight (Pseudomonas syringae pv. phaseolicola)",
+        "Common blight (Xanthomonas axonopodis pv. phaseoli)",
+        "Root rots (Fusarium, Pythium, Rhizoctonia, Macrophomina)"
       ],
-      "malezas": "Escardas oportunas y una densidad adecuada de plantas reducen mucho las malezas. Principales: quelite, rosilla, acahual, coquillo, mostacilla, perilla, verdolaga, zacate Johnson, pastos y avena silvestre.",
-      "cosecha": "Cuando las vainas están maduras, un poco antes de que la planta se seque del todo, de preferencia por la mañana con rocío para evitar desgrane. Trillar con las vainas secas y el grano a unos 15 % de humedad. Almacenar en lugar seco y en recipientes herméticos contra gorgojos. Rendimiento esperado de 1.5 t/ha (potencial de 1.5 a 2.0 t/ha).",
+      "malezas": "Timely cultivations and an adequate plant density greatly reduce weeds. Main ones: quelite, rosilla, acahual, nutsedge, wild mustard, perilla, purslane, Johnsongrass, grasses and wild oats.",
+      "cosecha": "When the pods are mature, a little before the plant dries completely, preferably in the morning with dew to avoid shattering. Thresh with dry pods and grain at about 15 % moisture. Store in a dry place and in airtight containers against weevils. Expected yield of 1.5 t/ha (potential of 1.5 to 2.0 t/ha).",
       "cuidados": [
-        "Usar variedades resistentes y semilla sana: es el control más efectivo y barato de roya, antracnosis y tizones.",
-        "Barbechar a 20-30 cm tan pronto termine la cosecha anterior y nivelar bien el terreno para evitar encharcamientos y pudriciones de raíz.",
-        "Asegurar el riego en la floración y en el llenado del grano.",
-        "Controlar el picudo del ejote de forma preventiva, unos 12 días después del inicio de la floración.",
-        "El chapulín se puede controlar con el hongo Beauveria bassiana hasta la ninfa 3; vigilar las orillas cerca de la maleza.",
-        "Si llueve en la cosecha, cortar y proteger las plantas para que no se manche el grano."
+        "Use resistant varieties and healthy seed: it is the most effective and cheapest control of rust, anthracnose and blights.",
+        "Plow to 20-30 cm as soon as the previous harvest ends and level the field well to avoid waterlogging and root rots.",
+        "Ensure irrigation at flowering and grain filling.",
+        "Control the bean pod weevil preventively, about 12 days after the start of flowering.",
+        "Grasshoppers can be controlled with the fungus Beauveria bassiana up to nymph stage 3; watch the edges near weeds.",
+        "If it rains at harvest, cut and protect the plants so the grain does not stain."
       ],
       "costos": [
         {
@@ -291,11 +291,11 @@
           "relacion_bc": 1.37
         }
       ],
-      "nota": "La ficha cubre riego, punta de riego y temporal, y los ciclos P-V y O-I (Huasteca); por eso modalidad y ciclo van en null. La tabla de variedades salió revuelta en el extraído (Primavera 28 y Azufradomex, Negro Verdín y Negro Tropical vienen en la misma fila); los nombres se separaron, pero conviene cotejar con el PDF.",
+      "nota": "The sheet covers irrigated, limited irrigation and rainfed, and the SS and FW (Huasteca) cycles; therefore modality and cycle are null. The variety table came out jumbled in the extract (Primavera 28 and Azufradomex, Negro Verdín and Negro Tropical appear in the same row); the names were separated, but it should be checked against the PDF.",
       "revisado": false
     },
     {
-      "ficha": "Maíz riego",
+      "ficha": "Irrigated maize",
       "cientifico": "Zea mays L.",
       "paginas": [
         48,
@@ -304,12 +304,12 @@
       "cultivo_ids": [
         "maiz-grano"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "riego",
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
       "ciclo": "PV",
-      "region": "Valle del Mezquital, de clima seco y semidesértico, con riego principalmente de aguas residuales de la Ciudad de México. También aplica a Valles Altos.",
+      "region": "Valle del Mezquital, with a dry, semi-desert climate, irrigated mainly with wastewater from Mexico City. It also applies to Valles Altos.",
       "siembra": {
-        "texto": "Valle del Mezquital: híbridos tardíos del 1 de marzo al 15 de abril; intermedios del 16 de abril al 15 de mayo; precoces del 16 de mayo al 15 de junio.",
+        "texto": "Valle del Mezquital: late hybrids from March 1 to April 15; intermediate from April 16 to May 15; early from May 16 to June 15.",
         "meses": [
           3,
           4,
@@ -326,34 +326,34 @@
         "H-155 (Valle del Mezquital)"
       ],
       "hibridos_comerciales": [],
-      "densidad": "90,000 semillas/ha en suelos profundos y 72,500 en suelos delgados, con sembradora de precisión a una hilera; surcos de 75 a 80 cm.",
-      "fertilizacion": "Valle del Mezquital: a la siembra, 130 kg de fosfato diamónico (DAP) mezclado con 150 kg/ha de sulfato de amonio. A los 35 a 40 días, 300 kg de sulfato de amonio en banda y 50 kg/ha de cloruro o sulfato de potasio. Aplicaciones foliares opcionales desde los 20 días.",
-      "riego": "Un riego a la siembra y de cuatro a cinco durante el ciclo. En suelos profundos, láminas grandes y más espaciadas; en suelos delgados, menores y más frecuentes. Asegurar el riego en la floración y la maduración del grano.",
+      "densidad": "90,000 seeds/ha in deep soils and 72,500 in thin soils, with a single-row precision planter; furrows of 75 to 80 cm.",
+      "fertilizacion": "Valle del Mezquital: at planting, 130 kg of diammonium phosphate (DAP) mixed with 150 kg/ha of ammonium sulfate. At 35 to 40 days, 300 kg of ammonium sulfate in a band and 50 kg/ha of potassium chloride or sulfate. Optional foliar applications from 20 days.",
+      "riego": "One irrigation at planting and four to five during the cycle. In deep soils, large and more widely spaced depths; in thin soils, smaller and more frequent ones. Ensure irrigation at flowering and grain ripening.",
       "plagas": [
-        "Gallina ciega (Phyllophaga spp.)",
-        "Gusano alfilerillo (Diabrotica spp.)",
-        "Gusano trozador (Agrotis ipsilon)",
-        "Gusano cogollero (Spodoptera frugiperda)"
+        "White grub (Phyllophaga spp.)",
+        "Rootworm (Diabrotica spp.)",
+        "Black cutworm (Agrotis ipsilon)",
+        "Fall armyworm (Spodoptera frugiperda)"
       ],
       "enfermedades": [
-        "Roya (Puccinia sorgi)",
-        "Pudrición de tallo y mazorca (Fusarium spp.)",
-        "Carbón de la espiga (Sporisorium reilianum)",
-        "Complejo mancha de asfalto (Phyllachora maydis, Monographella maydis, Coniothyrium phyllachorae)"
+        "Rust (Puccinia sorgi)",
+        "Stalk and ear rot (Fusarium spp.)",
+        "Head smut (Sporisorium reilianum)",
+        "Tar spot complex (Phyllachora maydis, Monographella maydis, Coniothyrium phyllachorae)"
       ],
-      "malezas": "Prevenir maleza de hoja ancha y angosta desde la preemergencia; atender también el chayotillo (Sicyos deppei), los pastos y el coquillo (Cyperus esculentus).",
-      "cosecha": "Mecanizada cuando el grano tenga 14 % de humedad, medida con determinadores portátiles, para evitar castigos en la venta. Con aguas residuales en el Valle del Mezquital se obtienen 10 a 14 t/ha; en Valles Altos, 6 a 11 t/ha.",
+      "malezas": "Prevent broadleaf and narrow-leaf weeds from pre-emergence; also attend to chayotillo (Sicyos deppei), grasses and yellow nutsedge (Cyperus esculentus).",
+      "cosecha": "Mechanized when the grain has 14 % moisture, measured with portable moisture meters, to avoid price penalties at sale. With wastewater in the Valle del Mezquital, 10 to 14 t/ha are obtained; in Valles Altos, 6 to 11 t/ha.",
       "cuidados": [
-        "Preparar con subsoleo de 40 a 60 cm, un rastreo en el sentido del surcado y otro cruzado.",
-        "Elegir el híbrido según la fecha: tardíos en marzo-abril, intermedios de abril a mayo y precoces de mayo a junio.",
-        "Asegurar el riego en floración y llenado de grano.",
-        "Contra el carbón de la espiga: variedades tolerantes, humedad los primeros 25 días, respetar fechas y Bacillus subtilis como alternativa biológica.",
-        "Contra la mancha de asfalto: materiales criollos tolerantes, monitoreo, rotación, eliminar residuos de cosecha y buena época de siembra.",
-        "Usar Trichoderma y controlar plagas a tiempo para prevenir pudriciones de tallo y mazorca."
+        "Prepare with subsoiling to 40 to 60 cm, one harrowing in the direction of the furrows and another crosswise.",
+        "Choose the hybrid according to the date: late in March-April, intermediate from April to May and early from May to June.",
+        "Ensure irrigation at flowering and grain filling.",
+        "Against head smut: tolerant varieties, moisture in the first 25 days, respect planting dates and Bacillus subtilis as a biological alternative.",
+        "Against tar spot: tolerant landraces, monitoring, rotation, removal of crop residues and a good planting time.",
+        "Use Trichoderma and control pests on time to prevent stalk and ear rots."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 39050,
           "rendimiento": 14000,
           "unidad_rendimiento": "kg/ha",
@@ -362,11 +362,11 @@
           "relacion_bc": null
         }
       ],
-      "nota": "Costos del Cuadro 19. El cuadro imprime relación B/C de 0.793, que en realidad es ingreso neto entre costo (30,950/39,050); ingreso bruto entre costo da 1.79, por eso relacion_bc va en null. El cuadro de variedades menciona 'híbridos comerciales evaluados' sin nombres y remite al Catálogo de híbridos del comité consultivo de semillas del estado de Hidalgo.",
+      "nota": "Costs from Table 19. The table prints a B/C ratio of 0.793, which is actually net income divided by cost (30,950/39,050); gross income divided by cost gives 1.79, so relacion_bc is null. The variety table mentions 'commercial hybrids evaluated' without names and refers to the hybrid catalog of the seed advisory committee of the state of Hidalgo.",
       "revisado": false
     },
     {
-      "ficha": "Maíz Temporal",
+      "ficha": "Rainfed maize",
       "cientifico": null,
       "paginas": [
         54,
@@ -375,12 +375,12 @@
       "cultivo_ids": [
         "maiz-grano"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "temporal",
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
       "ciclo": null,
-      "region": "Valles Altos (1,700 a 2,000 msnm, 14 a 16 °C, suelos feozem, vertisoles y litosoles de 30 a 90 cm) y Huasteca Hidalguense (160 a 900 msnm, 20 a 24 °C, suelos de 40 a 80 cm). Más del 95 % se siembra en P-V.",
+      "region": "Valles Altos (1,700 to 2,000 m a.s.l., 14 to 16 °C, phaeozem, vertisol and leptosol soils of 30 to 90 cm) and Huasteca Hidalguense (160 to 900 m a.s.l., 20 to 24 °C, soils of 40 to 80 cm). More than 95 % is planted in SS.",
       "siembra": {
-        "texto": "Híbridos intermedios del 10 de abril al 15 de mayo; precoces del 15 de mayo al 15 de junio. Huasteca: P-V del 15 de mayo al 30 de julio y O-I del 1 de octubre al 15 de noviembre.",
+        "texto": "Intermediate hybrids from April 10 to May 15; early from May 15 to June 15. Huasteca: SS from May 15 to July 30 and FW from October 1 to November 15.",
         "meses": [
           4,
           5,
@@ -399,35 +399,35 @@
         "V-524",
         "H-519",
         "H-520",
-        "Criollo Tuxpeño blanco o amarillo (trópico)"
+        "Criollo Tuxpeño white or yellow (tropics)"
       ],
       "hibridos_comerciales": [],
-      "densidad": "Valles Altos: 60,000 a 70,000 semillas/ha, surcos de 80 cm y una semilla cada 20.8 cm (60,000) o 17.8 cm (70,000). Huasteca: 50,000 a 60,000 semillas/ha, surcos de 80 cm; dos semillas cada 50 cm a mano o una cada 25 cm con sembradora.",
-      "fertilizacion": "Altiplano y Huasteca: 100 kg de fosfato diamónico en banda a la siembra y 25 kg de cloruro de potasio; a los 45 días, 100 kg de urea en banda. Dos aplicaciones foliares opcionales.",
+      "densidad": "Valles Altos: 60,000 to 70,000 seeds/ha, furrows of 80 cm and one seed every 20.8 cm (60,000) or 17.8 cm (70,000). Huasteca: 50,000 to 60,000 seeds/ha, furrows of 80 cm; two seeds every 50 cm by hand or one every 25 cm with a planter.",
+      "fertilizacion": "Altiplano and Huasteca: 100 kg of diammonium phosphate in a band at planting and 25 kg of potassium chloride; at 45 days, 100 kg of urea in a band. Two optional foliar applications.",
       "riego": null,
       "plagas": [
-        "Gallina ciega (Phyllophaga spp.)",
-        "Gusano alfilerillo (Diabrotica spp.)",
-        "Gusano trozador (Agrotis ipsilon)",
-        "Gusano cogollero (Spodoptera frugiperda)"
+        "White grub (Phyllophaga spp.)",
+        "Rootworm (Diabrotica spp.)",
+        "Black cutworm (Agrotis ipsilon)",
+        "Fall armyworm (Spodoptera frugiperda)"
       ],
       "enfermedades": [
-        "Roya (Puccinia sorgi)",
-        "Pudrición de tallo y mazorca (Fusarium spp.)",
-        "Carbón de la espiga (Sporisorium reilianum)",
-        "Complejo mancha de asfalto (Phyllachora maydis, Monographella maydis, Coniothyrium phyllachorae)"
+        "Rust (Puccinia sorgi)",
+        "Stalk and ear rot (Fusarium spp.)",
+        "Head smut (Sporisorium reilianum)",
+        "Tar spot complex (Phyllachora maydis, Monographella maydis, Coniothyrium phyllachorae)"
       ],
-      "malezas": "Prevenir maleza de hoja ancha y angosta desde la preemergencia; atender también el chayotillo (Sicyos deppei), los pastos y el coquillo (Cyperus esculentus).",
-      "cosecha": "Manual, cuando el grano tenga 14 % de humedad, para evitar castigos en la venta. Rendimiento esperado: 4 a 6 t/ha en Valles Altos y 3 a 4 t/ha en el trópico húmedo (Huasteca y región Otomí-Tepehua).",
+      "malezas": "Prevent broadleaf and narrow-leaf weeds from pre-emergence; also attend to chayotillo (Sicyos deppei), grasses and yellow nutsedge (Cyperus esculentus).",
+      "cosecha": "By hand, when the grain has 14 % moisture, to avoid price penalties at sale. Expected yield: 4 to 6 t/ha in Valles Altos and 3 to 4 t/ha in the humid tropics (Huasteca and the Otomí-Tepehua region).",
       "cuidados": [
-        "Sembrar intermedios de abril a mediados de mayo y precoces de mayo a mediados de junio; en la Huasteca seguir las fechas de P-V u O-I.",
-        "Ajustar la densidad: 60,000 a 70,000 semillas/ha en Valles Altos y 50,000 a 60,000 en la Huasteca.",
-        "Aplicar el fósforo a la siembra en banda y la urea a los 45 días.",
-        "Contra el carbón de la espiga: variedades tolerantes, respetar fechas de siembra y Bacillus subtilis como alternativa biológica.",
-        "Contra la mancha de asfalto: criollos tolerantes, monitoreo, rotación y eliminar residuos de cosecha."
+        "Plant intermediates from April to mid-May and early ones from May to mid-June; in the Huasteca follow the SS or FW dates.",
+        "Adjust density: 60,000 to 70,000 seeds/ha in Valles Altos and 50,000 to 60,000 in the Huasteca.",
+        "Apply the phosphorus at planting in a band and the urea at 45 days.",
+        "Against head smut: tolerant varieties, respect planting dates and Bacillus subtilis as a biological alternative.",
+        "Against tar spot: tolerant landraces, monitoring, rotation and removal of crop residues."
       ],
       "costos": [],
-      "nota": "El Cuadro 22 de esta ficha se titula 'maíz de riego' y repite el cuadro de la ficha de riego (14 t/ha, $39,050/ha, riegos y mantenimiento de sistema de riego), muy lejos del rendimiento esperado de temporal (3 a 6 t/ha); por eso costos va vacío. La preparación del terreno del texto habla de riego de remoje y cinco riegos de auxilio, lo que parece copiado de la ficha de riego; riego va en null. Ciclo en null porque en la Huasteca también se siembra en O-I. El extraído no trae nombre científico.",
+      "nota": "Table 22 of this sheet is titled 'irrigated maize' and repeats the table of the irrigated sheet (14 t/ha, $39,050/ha, irrigations and irrigation system maintenance), far from the expected rainfed yield (3 to 6 t/ha); therefore costs is empty. The land preparation in the text talks about a soaking irrigation and five supplemental irrigations, which seems copied from the irrigated sheet; irrigation is null. Cycle is null because in the Huasteca it is also planted in FW. The extract has no scientific name.",
       "revisado": false
     }
   ]

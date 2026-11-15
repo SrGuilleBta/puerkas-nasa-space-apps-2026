@@ -1,12 +1,12 @@
 {
-  "_nota": "Resumen de la Agenda Técnica Agrícola 2026 del INIFAP, hecho a partir del texto de data/inifap/extraido/puebla.json siguiendo pipeline/inifap/instrucciones_resumen.md. Sin marcas ni dosis de plaguicidas.",
+  "_nota": "Summary of the INIFAP 2026 Agricultural Technical Agenda, made from the text of data/inifap/extraido/puebla.json following pipeline/inifap/instrucciones_resumen.md. No pesticide brands or doses.",
   "cve_ent": "21",
   "estado": "Puebla",
   "edicion": 2026,
-  "fuente": "INIFAP. Agenda Técnica Agrícola de Puebla. INIFAP, Ciudad de México, 2026.",
+  "fuente": "INIFAP. Agenda Técnica Agrícola de Puebla [Agricultural Technical Agenda of Puebla]. INIFAP, Mexico City, 2026.",
   "fichas": [
     {
-      "ficha": "Maíz",
+      "ficha": "Maize",
       "cientifico": "Zea mays L.",
       "paginas": [
         13,
@@ -15,12 +15,12 @@
       "cultivo_ids": [
         "maiz-grano"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "temporal",
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
       "ciclo": "PV",
-      "region": "Valles altos secos y húmedos de 2,200 a 3,000 msnm (Teziutlán, Ciudad Serdán, Chignahuapan, Cholula, Atlixco, Tecamachalco, Libres, Tehuacán, entre otros), 18 a 24 °C y 700 a 1,300 mm de lluvia. Suelos con materia orgánica, franco a franco-arcillosos, con buen drenaje y pH de 5.5 a 7.0.",
+      "region": "Dry and humid high valleys from 2,200 to 3,000 m a.s.l. (Teziutlán, Ciudad Serdán, Chignahuapan, Cholula, Atlixco, Tecamachalco, Libres, Tehuacán, among others), 18 to 24 °C and 700 to 1,300 mm of rainfall. Soils with organic matter, loam to clay loam, with good drainage and pH of 5.5 to 7.0.",
       "siembra": {
-        "texto": "Ciclo P-V de temporal: sembrar en marzo y abril, cuando se establezcan lluvias profundas en la parcela (ciclo de unos 125 días). Después aumenta el riesgo de heladas en octubre. Si no se pudo sembrar en marzo o abril, usar criollos morados, azules o rojos de 90 a 100 días para aprovechar las lluvias de septiembre.",
+        "texto": "Rainfed S-S cycle: sow in March and April, once deep rains are established in the field (cycle of about 125 days). Later, the risk of frost in October increases. If it was not possible to sow in March or April, use purple, blue or red landraces of 90 to 100 days to take advantage of the September rains.",
         "meses": [
           3,
           4
@@ -41,34 +41,34 @@
         "Amarillo 62"
       ],
       "hibridos_comerciales": [],
-      "densidad": "Semilla: 15 a 20 kg/ha a golpe, 20 a 25 kg/ha con sembradora de tracción animal y 25 a 35 kg/ha con sembradora de tractor. Población: 65,000 plantas/ha en temporal; 40,000 a 60,000 plantas/ha en secano; 50,000 a 60,000 en ambiente mixto; 85,000 a 95,000 con híbridos en ambientes con potencial de riego. Surcos a 90 cm con criollo y de 60 a 80 cm con materiales mejorados.",
-      "fertilizacion": "Zonas templadas subhúmedas: 160-60-80 (297 kg de urea, 130 kg de DAP y 133 kg de cloruro de potasio). Zonas secas y semicálidas a cálidas: 120-50-70 (218 kg de urea, 109 kg de DAP y 116 kg de cloruro de potasio). Zonas frías: 160-80-90 (280 kg de urea, 174 kg de DAP y 150 kg de cloruro de potasio). Todo el fósforo y 30 % del nitrógeno a la siembra, a 5–10 cm de la semilla, con al menos 20 kg/ha de microelementos; el resto del nitrógeno y el potasio en la segunda labor. Dosis pensadas para unas 70,000 plantas/ha.",
-      "riego": "Temporal: depende de la lluvia. Un rendimiento medio requiere unos 480 mm acumulados y el desarrollo óptimo de 700 a 1,300 mm en el ciclo.",
+      "densidad": "Seed: 15 to 20 kg/ha hill-planted, 20 to 25 kg/ha with an animal-drawn planter and 25 to 35 kg/ha with a tractor planter. Population: 65,000 plants/ha rainfed; 40,000 to 60,000 plants/ha in dryland; 50,000 to 60,000 in mixed environments; 85,000 to 95,000 with hybrids in environments with irrigation potential. Rows 90 cm apart with landraces and 60 to 80 cm with improved materials.",
+      "fertilizacion": "Temperate subhumid zones: 160-60-80 (297 kg of urea, 130 kg of DAP and 133 kg of potassium chloride). Dry and semiwarm to warm zones: 120-50-70 (218 kg of urea, 109 kg of DAP and 116 kg of potassium chloride). Cold zones: 160-80-90 (280 kg of urea, 174 kg of DAP and 150 kg of potassium chloride). All the phosphorus and 30 % of the nitrogen at sowing, 5–10 cm from the seed, with at least 20 kg/ha of micronutrients; the rest of the nitrogen and the potassium at the second cultivation. Rates designed for about 70,000 plants/ha.",
+      "riego": "Rainfed: depends on rainfall. An average yield requires about 480 mm accumulated and optimal development 700 to 1,300 mm over the cycle.",
       "plagas": [
-        "Gallina ciega (Phyllophaga spp.)",
-        "Gusano cogollero",
-        "Gusano de alambre (Melanotus y Agriotes spp.)",
-        "Larvas de diabrótica (Diabrotica spp.)",
-        "Trips (Frankliniella occidentalis)",
-        "Araña roja (Oligonychus mexicanus y Tetranychus spp.)",
-        "Chicharrita del maíz",
-        "Picudo de la hoja",
-        "Pulgones (Rhopalosiphum maidis y Schizaphis graminum)"
+        "White grub (Phyllophaga spp.)",
+        "Fall armyworm",
+        "Wireworm (Melanotus and Agriotes spp.)",
+        "Rootworm larvae (Diabrotica spp.)",
+        "Thrips (Frankliniella occidentalis)",
+        "Spider mite (Oligonychus mexicanus and Tetranychus spp.)",
+        "Corn leafhopper",
+        "Leaf weevil",
+        "Aphids (Rhopalosiphum maidis and Schizaphis graminum)"
       ],
       "enfermedades": [],
-      "malezas": "Mantener el cultivo limpio los primeros 40 días después de la siembra. Dos escardas: la primera a los 30 días (plantas de 30 a 40 cm) y la segunda entre los 45 y 55 días (60 a 70 cm). Si la maleza es abundante se usa control químico.",
-      "cosecha": "En madurez fisiológica: al quitar el pedicelo debe verse una capa negra en la base del grano. No tumbar la planta seca al suelo; amogotar. Para guardar hasta medio año, secar al sol hasta 12–15 % de humedad (prueba de la sal o del frasco); para más tiempo, módulos BIOGRAN. Rendimiento esperado de 3 a 4 t/ha en temporal.",
+      "malezas": "Keep the crop clean for the first 40 days after sowing. Two cultivation passes: the first at 30 days (plants 30 to 40 cm tall) and the second between 45 and 55 days (60 to 70 cm). If weeds are abundant, chemical control is used.",
+      "cosecha": "At physiological maturity: when the pedicel is removed, a black layer should be visible at the base of the kernel. Do not knock the dry plant to the ground; stack it in shocks (amogotar). To store for up to half a year, sun-dry to 12–15 % moisture (salt or jar test); for longer, BIOGRAN modules. Expected yield of 3 to 4 t/ha rainfed.",
       "cuidados": [
-        "Sembrar en marzo y abril con lluvias ya establecidas; si se atrasa, usar criollos de color de ciclo corto (90 a 100 días).",
-        "Barbechar a unos 30 cm y surcar al contorno en terrenos con pendiente; en pendientes fuertes, hacer terrazas.",
-        "Aplicar todo el fósforo a la siembra y dividir el nitrógeno: 30 % al inicio y el resto en la segunda labor con el potasio.",
-        "Mantener la parcela sin maleza los primeros 40 días con dos escardas.",
-        "Manejar plagas de forma preventiva con extractos de ajo, chile o neem, jabones potásicos y trampas (bandas azules y amarillas, feromonas, luz); usar insecticidas autorizados solo si se rebasa el umbral de daño.",
-        "Cosechar cuando aparezca la capa negra en la base del grano y almacenar con 12 a 15 % de humedad."
+        "Sow in March and April with rains already established; if delayed, use short-cycle colored landraces (90 to 100 days).",
+        "Plow to about 30 cm and furrow on the contour on sloping land; on steep slopes, build terraces.",
+        "Apply all the phosphorus at sowing and split the nitrogen: 30 % at the start and the rest at the second cultivation with the potassium.",
+        "Keep the plot free of weeds for the first 40 days with two cultivation passes.",
+        "Manage pests preventively with garlic, chili or neem extracts, potassium soaps and traps (blue and yellow bands, pheromones, light); use authorized insecticides only if the damage threshold is exceeded.",
+        "Harvest when the black layer appears at the base of the kernel and store at 12 to 15 % moisture."
       ],
       "costos": [
         {
-          "modalidad": "temporal",
+          "modalidad": "rainfed",
           "costo_total_ha": 25432,
           "rendimiento": 3500,
           "unidad_rendimiento": "kg/ha",
@@ -77,11 +77,11 @@
           "relacion_bc": 1.1
         }
       ],
-      "nota": "Los híbridos H-40 a H-66, H-30 a H-139 y las variedades sintéticas VS-22, Amarillo 61 y Amarillo 62 son del catálogo de semillas certificadas del INIFAP; se listan como variedades públicas. Las variedades VS-22, Amarillo 61 y Amarillo 62 se recomiendan para maíz de interés forrajero. La agenda indica que en Puebla no se han reportado enfermedades sobresalientes del maíz.",
+      "nota": "Hybrids H-40 to H-66, H-30 to H-139 and the synthetic varieties VS-22, Amarillo 61 and Amarillo 62 are from the INIFAP certified seed catalog; they are listed as public varieties. Varieties VS-22, Amarillo 61 and Amarillo 62 are recommended for maize of forage interest. The agenda states that no outstanding maize diseases have been reported in Puebla.",
       "revisado": false
     },
     {
-      "ficha": "Frijol",
+      "ficha": "Common bean",
       "cientifico": "Phaseolus vulgaris L.",
       "paginas": [
         20,
@@ -90,12 +90,12 @@
       "cultivo_ids": [
         "frijol"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "temporal",
+      "tipo_cultivo": "annual",
+      "modalidad": "rainfed",
       "ciclo": "PV",
-      "region": "Valles Altos de 2,000 a 3,400 msnm, sobre todo los DDR Tecamachalco, Libres y Cholula; 12 a 25 °C y lluvias de junio a octubre (300 a 600 mm en zonas semiáridas, más de 1,200 mm en el norte y este). Suelos ricos en nutrientes o materia orgánica, pH de 4.5 a 8.0.",
+      "region": "High Valleys from 2,000 to 3,400 m a.s.l., mainly the Tecamachalco, Libres and Cholula DDRs; 12 to 25 °C and rains from June to October (300 to 600 mm in semiarid zones, more than 1,200 mm in the north and east). Soils rich in nutrients or organic matter, pH of 4.5 to 8.0.",
       "siembra": {
-        "texto": "Del 25 de mayo y durante junio; más tarde hay riesgo de heladas tempranas. Los tipos Flor de Junio y Flor de Mayo van en las primeras fechas y los Pinto al final del periodo.",
+        "texto": "From May 25 and through June; later there is a risk of early frosts. Flor de Junio and Flor de Mayo types go on the earliest dates and Pinto types at the end of the period.",
         "meses": [
           5,
           6
@@ -116,33 +116,33 @@
         "San Luis"
       ],
       "hibridos_comerciales": [],
-      "densidad": "Surcos a 70 cm y 125,000 plantas/ha, con 45 a 50 kg/ha de semilla según la variedad y su germinación.",
-      "fertilizacion": "40-40-00 de N-P-K: 87 kg de urea y 87 kg de superfosfato de calcio triple por hectárea.",
-      "riego": "Temporal.",
+      "densidad": "Rows 70 cm apart and 125,000 plants/ha, with 45 to 50 kg/ha of seed depending on the variety and its germination.",
+      "fertilizacion": "40-40-00 N-P-K: 87 kg of urea and 87 kg of triple superphosphate per hectare.",
+      "riego": "Rainfed.",
       "plagas": [
-        "Mosca blanca",
-        "Chapulines",
-        "Chicharrita",
-        "Diabrótica"
+        "Whitefly",
+        "Grasshoppers",
+        "Leafhopper",
+        "Rootworm (Diabrotica)"
       ],
       "enfermedades": [
-        "Pudrición de raíces (Fusarium sp., Rhizoctonia sp. y Pythium sp.)",
-        "Roya o chahuixtle (Uromyces appendiculatus var. appendiculatus)",
-        "Antracnosis (Colletotrichum lindemuthianum)"
+        "Root rot (Fusarium sp., Rhizoctonia sp. and Pythium sp.)",
+        "Rust (Uromyces appendiculatus var. appendiculatus)",
+        "Anthracnose (Colletotrichum lindemuthianum)"
       ],
-      "malezas": "Limpia manual en las hileras al mismo tiempo que los dos cultivos mecánicos (a los 25 días de la siembra y 15 días después). Si se usa herbicida postemergente, aplicarlo con la maleza de 2 a 4 hojas verdaderas.",
-      "cosecha": "Entre 95 y 115 días después de la siembra. Arrancar las plantas cuando 60 % de las hojas estén amarillas y empiecen a caer; formar montones o \"piñas\" apretadas para proteger las vainas de la lluvia y que no se manche el grano. Trillar a la semana, con el frijol seco, evitando superficies duras. Rendimiento esperado de 1.8 t/ha.",
+      "malezas": "Hand weeding in the rows at the same time as the two mechanical cultivation passes (at 25 days after sowing and 15 days later). If a post-emergence herbicide is used, apply it with weeds at 2 to 4 true leaves.",
+      "cosecha": "Between 95 and 115 days after sowing. Pull the plants when 60 % of the leaves are yellow and starting to fall; form tight piles or \"piñas\" to protect the pods from rain and keep the grain from staining. Thresh a week later, with the beans dry, avoiding hard surfaces. Expected yield of 1.8 t/ha.",
       "cuidados": [
-        "Sembrar del 25 de mayo a fines de junio para evitar heladas tempranas; Flor de Junio y Flor de Mayo primero, Pinto al final.",
-        "Barbechar después de la cosecha anterior para conservar la humedad de las lluvias de invierno; dar una rastra después del barbecho y otra antes de sembrar.",
-        "Contra chapulines, controlarlos en los pastos antes de que entren al cultivo; contra mosca blanca, chicharrita y diabrótica se puede usar Beauveria bassiana.",
-        "Para pudrición de raíz, rotar cultivos, sembrar en terrenos con buen drenaje y tratar la semilla (en producción agroecológica, con Trichoderma spp.).",
-        "Contra antracnosis, usar semilla sana y rotar con gramíneas; vigilar la roya desde los primeros síntomas.",
-        "Arrancar cuando 60 % de las hojas amarillee y proteger las plantas en \"piñas\" hasta trillar en seco."
+        "Sow from May 25 to late June to avoid early frosts; Flor de Junio and Flor de Mayo first, Pinto last.",
+        "Plow after the previous harvest to conserve winter rain moisture; give one harrow pass after plowing and another before sowing.",
+        "Against grasshoppers, control them in the grasses before they enter the crop; against whitefly, leafhopper and rootworm, Beauveria bassiana can be used.",
+        "For root rot, rotate crops, plant on well-drained land and treat the seed (in agroecological production, with Trichoderma spp.).",
+        "Against anthracnose, use healthy seed and rotate with grasses; watch for rust from the first symptoms.",
+        "Pull when 60 % of the leaves turn yellow and protect the plants in \"piñas\" until threshing when dry."
       ],
       "costos": [
         {
-          "modalidad": "temporal",
+          "modalidad": "rainfed",
           "costo_total_ha": 28232,
           "rendimiento": 1800,
           "unidad_rendimiento": "kg/ha",
@@ -151,11 +151,11 @@
           "relacion_bc": 1.72
         }
       ],
-      "nota": "La sección de región da un rendimiento esperado de 1.2 t/ha (hasta 2.0 t/ha en el DDR Cholula), mientras que la de cosecha y el cuadro de costos usan 1.8 t/ha.",
+      "nota": "The region section gives an expected yield of 1.2 t/ha (up to 2.0 t/ha in the Cholula DDR), while the harvest section and the cost table use 1.8 t/ha.",
       "revisado": false
     },
     {
-      "ficha": "Elote",
+      "ficha": "Sweet corn (fresh ears)",
       "cientifico": "Zea mays L.",
       "paginas": [
         27,
@@ -164,12 +164,12 @@
       "cultivo_ids": [
         "elote"
       ],
-      "tipo_cultivo": "anual",
-      "modalidad": "riego",
+      "tipo_cultivo": "annual",
+      "modalidad": "irrigated",
       "ciclo": "PV",
-      "region": "De 2,200 a 3,000 msnm en Atlixco, Tecamachalco, Valle de Puebla, Valle de Tehuacán, Ciudad Serdán, Cholula, Libres, Huixcolotla y otras zonas; 18 a 24 °C y 700 a 1,300 mm de lluvia. Suelos con materia orgánica, franco a franco-arcillosos, con buen drenaje y pH de 5.5 a 7.0.",
+      "region": "From 2,200 to 3,000 m a.s.l. in Atlixco, Tecamachalco, Valle de Puebla, Valle de Tehuacán, Ciudad Serdán, Cholula, Libres, Huixcolotla and other zones; 18 to 24 °C and 700 to 1,300 mm of rainfall. Soils with organic matter, loam to clay loam, with good drainage and pH of 5.5 to 7.0.",
       "siembra": {
-        "texto": "Valle de Puebla: de la primera semana de marzo a la primera de julio. Valle de Tehuacán: de la primera semana de marzo a la última de junio. En Atlixco pueden lograrse dos ciclos con manejo intensivo. En general se siembra en marzo y abril (ciclo de unos 90 días); después hay riesgo de las primeras heladas en octubre.",
+        "texto": "Valle de Puebla: from the first week of March to the first week of July. Valle de Tehuacán: from the first week of March to the last week of June. In Atlixco two cycles can be achieved with intensive management. In general it is sown in March and April (cycle of about 90 days); later there is a risk of the first frosts in October.",
         "meses": [
           3,
           4,
@@ -192,54 +192,54 @@
         "Comanche",
         "Cherokee"
       ],
-      "densidad": "60,000 a 75,000 plantas/ha según la semilla (se indican 60,000 a 65,000 como recomendadas), con surcos a 80 cm y sembradora de precisión calibrada a una semilla cada 30 cm.",
-      "fertilizacion": "150-60-60 de N-P-K por hectárea (11 bultos): 125 kg de DAP 18-46-00, 250 kg de urea y 125 kg de cloruro de potasio. A la siembra, todo el DAP, todo el cloruro de potasio y un bulto de urea, sin quemar la plántula; al mes, el resto del nitrógeno. Cada híbrido puede tener su propio paquete.",
-      "riego": "Cinco riegos en el ciclo: el primero después de la siembra y luego cada 20 días, dando prioridad al jiloteo y al llenado del elote.",
+      "densidad": "60,000 to 75,000 plants/ha depending on the seed (60,000 to 65,000 are indicated as recommended), with rows 80 cm apart and a precision planter calibrated to one seed every 30 cm.",
+      "fertilizacion": "150-60-60 N-P-K per hectare (11 bags): 125 kg of DAP 18-46-00, 250 kg of urea and 125 kg of potassium chloride. At sowing, all the DAP, all the potassium chloride and one bag of urea, without burning the seedling; one month later, the rest of the nitrogen. Each hybrid may have its own package.",
+      "riego": "Five irrigations during the cycle: the first after sowing and then every 20 days, giving priority to silking and ear filling.",
       "plagas": [
-        "Gallina ciega (Phyllophaga spp.)",
-        "Gusano cogollero",
-        "Gusano de alambre (Melanotus y Agriotes spp.)",
-        "Larvas de diabrótica (Diabrotica spp.)",
-        "Trips (Frankliniella occidentalis)",
-        "Araña roja (Oligonychus mexicanus y Tetranychus spp.)",
-        "Chicharrita del maíz",
-        "Picudo de la hoja",
-        "Pulgones (Rhopalosiphum maidis y Schizaphis graminum)"
+        "White grub (Phyllophaga spp.)",
+        "Fall armyworm",
+        "Wireworm (Melanotus and Agriotes spp.)",
+        "Rootworm larvae (Diabrotica spp.)",
+        "Thrips (Frankliniella occidentalis)",
+        "Spider mite (Oligonychus mexicanus and Tetranychus spp.)",
+        "Corn leafhopper",
+        "Leaf weevil",
+        "Aphids (Rhopalosiphum maidis and Schizaphis graminum)"
       ],
       "enfermedades": [
         "Damping off (Pythium spp.)",
-        "Tizón de la hoja (Helminthosporium spp.)",
-        "Pudrición de plántula (Fusarium oxysporum)",
-        "Carbón de la espiga (Sphacelotheca reiliana)",
-        "Cornezuelo o falso huitlacoche (Claviceps spp.)",
-        "Pudrición del tallo y raíz"
+        "Leaf blight (Helminthosporium spp.)",
+        "Seedling rot (Fusarium oxysporum)",
+        "Tassel smut (Sphacelotheca reiliana)",
+        "Ergot or false huitlacoche (Claviceps spp.)",
+        "Stalk and root rot"
       ],
-      "malezas": "Mantener el cultivo limpio los primeros 40 días después de la siembra. Dos escardas: a los 30 días (plantas de 30 a 40 cm) y entre los 45 y 55 días (60 a 70 cm), que además dan sostén a la planta. Malezas citadas: hierba amargosa, quelite y zacates Johnson, chaparro y pinto.",
-      "cosecha": "Los estigmas pasan de amarillo a café y se sienten secos, las brácteas siguen verdes y el elote está lleno hasta la punta. Si el grano se ve transparente, todavía no; si al presionarlo suelta líquido lechoso, está en punto sazón. Casi todos los híbridos están listos alrededor de los 90 días. Rendimiento esperado de 9 a 10 t/ha en riego.",
+      "malezas": "Keep the crop clean for the first 40 days after sowing. Two cultivation passes: at 30 days (plants 30 to 40 cm tall) and between 45 and 55 days (60 to 70 cm), which also support the plant. Weeds cited: bitter weed (hierba amargosa), quelite and Johnson, chaparro and pinto grasses.",
+      "cosecha": "The silks turn from yellow to brown and feel dry, the husks remain green and the ear is filled to the tip. If the kernel looks translucent, it is not ready yet; if it releases a milky liquid when pressed, it is at the right stage (sazón). Almost all hybrids are ready at around 90 days. Expected yield of 9 to 10 t/ha under irrigation.",
       "cuidados": [
-        "Usar semilla elotera de ciclo precoz y, de preferencia, con alto índice de cuateo.",
-        "Dejar el terreno barbechado al sol unos 3 días para reducir larvas de plagas del suelo.",
-        "Dar cinco riegos, cada 20 días, sin que falte agua en el jiloteo y el llenado del elote.",
-        "Aporcar cuando aparezcan las raíces adventicias para que el viento no tumbe las plantas.",
-        "Vigilar el cultivo de forma constante, sobre todo con humedad y temperatura altas, que favorecen las enfermedades.",
-        "Cosechar en punto sazón, cuando el grano suelte líquido lechoso al presionarlo."
+        "Use early-cycle sweet corn seed and, preferably, with a high rate of double-ear plants (cuateo).",
+        "Leave the plowed land exposed to the sun for about 3 days to reduce soil pest larvae.",
+        "Give five irrigations, every 20 days, without water shortage at silking and ear filling.",
+        "Hill up when adventitious roots appear so the wind does not knock the plants down.",
+        "Monitor the crop constantly, especially with high humidity and temperature, which favor diseases.",
+        "Harvest at the sazón stage, when the kernel releases a milky liquid when pressed."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 44880,
           "rendimiento": 60000,
-          "unidad_rendimiento": "piezas/ha",
+          "unidad_rendimiento": "pieces/ha",
           "precio": 2,
           "ingreso_neto": 75120,
           "relacion_bc": 2.67
         }
       ],
-      "nota": "El cuadro de costos expresa el rendimiento en piezas de elote por hectárea (60,000) y el precio por pieza ($2), no en kg. La agenda da dos cantidades de semilla distintas para la sembradora de precisión (30 a 40 kg/ha y 12 a 15 kg/ha); no se incluyen en densidad. Los meses de siembra cubren las ventanas del Valle de Puebla y de Tehuacán (marzo a julio), aunque lo común es marzo y abril. Los materiales comerciales se listan sin empresa porque el texto no la da.",
+      "nota": "The cost table expresses yield in ears per hectare (60,000) and the price per ear ($2), not in kg. The agenda gives two different seed amounts for the precision planter (30 to 40 kg/ha and 12 to 15 kg/ha); they are not included in densidad. The planting months cover the windows of the Valle de Puebla and Tehuacán (March to July), although March and April are the most common. Commercial materials are listed without a company because the text does not give one.",
       "revisado": false
     },
     {
-      "ficha": "Naranja",
+      "ficha": "Orange",
       "cientifico": "Citrus sinensis (L.) Osbeck",
       "paginas": [
         36,
@@ -248,55 +248,55 @@
       "cultivo_ids": [
         "naranja"
       ],
-      "tipo_cultivo": "perenne",
-      "modalidad": "temporal",
+      "tipo_cultivo": "perennial",
+      "modalidad": "rainfed",
       "ciclo": "PER",
-      "region": "Sierra Norte y Sierra Nororiental, de 150 a 900 msnm (Francisco Z. Mena, San José Acateno, Venustiano Carranza, Pantepec, Hueytamalco), clima cálido o semicálido húmedo, 20 a 26 °C y 1,200 a 2,500 mm de lluvia. Suelos profundos, bien drenados, francos, franco-arcillosos o franco-arenosos, pH de 5.5 a 7.0.",
+      "region": "Sierra Norte and Sierra Nororiental, from 150 to 900 m a.s.l. (Francisco Z. Mena, San José Acateno, Venustiano Carranza, Pantepec, Hueytamalco), warm or semiwarm humid climate, 20 to 26 °C and 1,200 to 2,500 mm of rainfall. Deep, well-drained soils, loam, clay loam or sandy loam, pH of 5.5 to 7.0.",
       "siembra": {
-        "texto": "Plantar preferentemente entre julio y agosto, con lluvias moderadas; evitar suelos saturados o lluvias intensas.",
+        "texto": "Plant preferably between July and August, with moderate rains; avoid saturated soils or heavy rains.",
         "meses": [
           7,
           8
         ]
       },
       "variedades": [
-        "Valencia tardía",
+        "Late Valencia",
         "Marrs",
         "Hamlin",
         "Washington Navel",
         "Pineapple"
       ],
       "hibridos_comerciales": [],
-      "densidad": "Marco de 7 x 7 m (204 árboles/ha) o de 7 x 6 m (238 árboles/ha).",
-      "fertilizacion": "Establecimiento: DAP 18-46-00, 0.165 kg por árbol (33.66 kg/ha) en julio-agosto. En producción, tres aplicaciones al suelo: enero, 15.5-00-00 + 19 Ca + 0.3 B, 0.714 kg por árbol (145.66 kg/ha); marzo, 12-11-18 + 2.7 MgO + 8 S + micronutrientes, 0.714 kg por árbol (145.66 kg/ha); junio-julio, 19-04-19 + 3 MgO + 2 S + 0.12 B + 0.10 Zn, 0.857 kg por árbol (174.83 kg/ha). Foliares: boro en floración (febrero-marzo, 1 L/ha de 65 g/L N + 150 g/L B); N-Mg-Mn-Zn en marzo-abril (2 L/ha) y N-Mg en junio-julio (3 L/ha).",
-      "riego": "Depende de la lluvia, que suele cubrir lo que necesita el cultivo; riegos de auxilio cuando sean necesarios.",
+      "densidad": "Spacing of 7 x 7 m (204 trees/ha) or 7 x 6 m (238 trees/ha).",
+      "fertilizacion": "Establishment: DAP 18-46-00, 0.165 kg per tree (33.66 kg/ha) in July-August. In production, three soil applications: January, 15.5-00-00 + 19 Ca + 0.3 B, 0.714 kg per tree (145.66 kg/ha); March, 12-11-18 + 2.7 MgO + 8 S + micronutrients, 0.714 kg per tree (145.66 kg/ha); June-July, 19-04-19 + 3 MgO + 2 S + 0.12 B + 0.10 Zn, 0.857 kg per tree (174.83 kg/ha). Foliar: boron at flowering (February-March, 1 L/ha of 65 g/L N + 150 g/L B); N-Mg-Mn-Zn in March-April (2 L/ha) and N-Mg in June-July (3 L/ha).",
+      "riego": "Depends on rainfall, which usually covers what the crop needs; supplemental irrigations when necessary.",
       "plagas": [
-        "Psílido asiático de los cítricos (Diaphorina citri)",
-        "Minador de la hoja (Phyllocnistis citrella)",
-        "Ácaros fitófagos (Brevipalpus spp., Phyllocoptruta oleivora y Panonychus citri)",
-        "Pulgones (Aphis citricidus y Aphis spiraecola)"
+        "Asian citrus psyllid (Diaphorina citri)",
+        "Leafminer (Phyllocnistis citrella)",
+        "Phytophagous mites (Brevipalpus spp., Phyllocoptruta oleivora and Panonychus citri)",
+        "Aphids (Aphis citricidus and Aphis spiraecola)"
       ],
       "enfermedades": [
         "Huanglongbing (HLB)",
-        "Leprosis de los cítricos",
-        "Virus de la tristeza de los cítricos",
-        "Gomosis (Phytophthora spp.)",
-        "Antracnosis (Colletotrichum spp.)",
-        "Mancha grasienta (Zasmidium citri-griseum)"
+        "Citrus leprosis",
+        "Citrus tristeza virus",
+        "Gummosis (Phytophthora spp.)",
+        "Anthracnose (Colletotrichum spp.)",
+        "Greasy spot (Zasmidium citri-griseum)"
       ],
-      "malezas": "Conservar una cobertura vegetal manejada entre calles, sobre todo en ladera, para reducir erosión y conservar humedad. El control de arvenses se dirige solo a la línea de plantación, en enero, abril y junio, sin tocar follaje, brotes ni tronco.",
-      "cosecha": "Manual, sin dañar fruto ni árbol, cuando el fruto tenga desarrollo, color y jugo adecuados. La fruta de temporada se cosecha sobre todo entre enero y marzo. Rendimiento de 7 t/ha con manejo convencional y hasta 15 t/ha con el paquete tecnológico del INIFAP.",
+      "malezas": "Maintain a managed ground cover between rows, especially on slopes, to reduce erosion and conserve moisture. Weed control is directed only at the planting line, in January, April and June, without touching foliage, shoots or trunk.",
+      "cosecha": "By hand, without damaging the fruit or the tree, when the fruit has adequate development, color and juice. Seasonal fruit is harvested mainly between January and March. Yield of 7 t/ha with conventional management and up to 15 t/ha with the INIFAP technology package.",
       "cuidados": [
-        "Usar solo plantas certificadas de viveros autorizados por SENASICA; no usar naranjo agrio como portainjerto en huertas nuevas por su susceptibilidad a la tristeza (se recomiendan Volkameriana, citrumelo Swingle, citranges Carrizo, Troyer y C-35 y mandarina Cleopatra).",
-        "En ladera, plantar en curvas a nivel y mantener cobertura vegetal entre calles; en suelos con mal drenaje, hacer drenaje superficial antes de plantar.",
-        "Intensificar el monitoreo del psílido en las brotaciones de febrero-marzo y octubre, y del minador en febrero-marzo y junio-julio.",
-        "Usar control biológico: Tamarixia radiata contra el psílido y Chrysoperla carnea contra pulgones; conservar los enemigos naturales de los ácaros.",
-        "Deschuponar en diciembre para quitar los brotes vigorosos del tronco y las ramas principales.",
-        "Fertilizar tres veces al año (enero, marzo y junio-julio) siguiendo la brotación, la floración y el llenado del fruto."
+        "Use only certified plants from nurseries authorized by SENASICA; do not use sour orange as rootstock in new orchards because of its susceptibility to tristeza (Volkamer lemon, Swingle citrumelo, Carrizo, Troyer and C-35 citranges and Cleopatra mandarin are recommended).",
+        "On slopes, plant on contour lines and keep ground cover between rows; on poorly drained soils, build surface drainage before planting.",
+        "Intensify monitoring of the psyllid in the February-March and October flushes, and of the leafminer in February-March and June-July.",
+        "Use biological control: Tamarixia radiata against the psyllid and Chrysoperla carnea against aphids; conserve the natural enemies of mites.",
+        "Remove suckers (water sprouts) in December to eliminate vigorous shoots from the trunk and main branches.",
+        "Fertilize three times a year (January, March and June-July) following flushing, flowering and fruit filling."
       ],
       "costos": [
         {
-          "modalidad": "temporal",
+          "modalidad": "rainfed",
           "costo_total_ha": 47188.53,
           "rendimiento": 15000,
           "unidad_rendimiento": "kg/ha",
@@ -305,11 +305,11 @@
           "relacion_bc": 1.45
         }
       ],
-      "nota": "El cuadro de costos es de mantenimiento de huertas en producción con el paquete tecnológico (15 t/ha); no incluye los costos de establecimiento de los años 1 a 3 (preparación del terreno y plantación aparecen en el cuadro pero no se suman). El cuadro no da el precio de venta, por eso va en null; el ingreso bruto es de $68,500.35/ha.",
+      "nota": "The cost table is for maintenance of orchards in production with the technology package (15 t/ha); it does not include the establishment costs of years 1 to 3 (land preparation and planting appear in the table but are not added up). The table does not give the sale price, so it is null; the gross income is $68,500.35/ha.",
       "revisado": false
     },
     {
-      "ficha": "Café",
+      "ficha": "Coffee",
       "cientifico": "Coffea arabica L.",
       "paginas": [
         47,
@@ -318,12 +318,12 @@
       "cultivo_ids": [
         "cafe-cereza"
       ],
-      "tipo_cultivo": "perenne",
-      "modalidad": "temporal",
+      "tipo_cultivo": "perennial",
+      "modalidad": "rainfed",
       "ciclo": "PER",
-      "region": "Montaña de 800 a 1,400 msnm en la Sierra Norte, Sierra Nororiental y Sierra Negra (Xicotepec, Huauchinango, Zihuateutla, Ajalpan, Cuetzalan, Tlatlauquitepec, Teziutlán, Coyomeapan), 18 a 24 °C y 1,500 a 2,500 mm de lluvia, en sistemas agroforestales con sombra. Andosoles, Luvisoles y Cambisoles profundos, pH de 5.5 a 6.5.",
+      "region": "Mountains from 800 to 1,400 m a.s.l. in the Sierra Norte, Sierra Nororiental and Sierra Negra (Xicotepec, Huauchinango, Zihuateutla, Ajalpan, Cuetzalan, Tlatlauquitepec, Teziutlán, Coyomeapan), 18 to 24 °C and 1,500 to 2,500 mm of rainfall, in shaded agroforestry systems. Deep Andosols, Luvisols and Cambisols, pH of 5.5 to 6.5.",
       "siembra": {
-        "texto": "Plantar cuando las lluvias ya están establecidas, del 15 de mayo al 15 de junio; el periodo óptimo de humedad y temperatura para plantar termina alrededor del 15 de octubre.",
+        "texto": "Plant when the rains are already established, from May 15 to June 15; the optimum moisture and temperature period for planting ends around October 15.",
         "meses": [
           5,
           6,
@@ -350,30 +350,30 @@
         "Caturra"
       ],
       "hibridos_comerciales": [],
-      "densidad": "Porte alto: 2,000 a 2,500 cafetos/ha (2.5 x 2.0 m o 2.0 x 2.0 m). Porte bajo: más de 3,000 cafetos/ha (2.5 x 1.25 m, 2.0 x 1.5 m o 1.75 x 1.75 m). Se puede usar doble postura. Plantas de vivero de 8 a 10 meses, de 25 a 30 cm de altura.",
-      "fertilizacion": "Mezcla de 100 kg de urea, 50 kg de DAP y 75 kg de KCl: año 1, cada tres meses 50 g por planta; año 2, tres aplicaciones de 100 g por planta; año 3, tres aplicaciones de 150 g por planta de la mezcla con 100 kg de KCl. En producción (35 a 55 % de sombra): marzo-abril, 100 g por planta de 100 kg de urea + 55 kg de DAP + 80 kg de KCl + 66 kg de K-Mag; junio-julio, 80 g de 100 kg de urea + 55 kg de DAP + 76 kg de KCl + 66 kg de K-Mag; agosto-septiembre, 60 g de urea por planta. Tapar el fertilizante en cajete o en el área de goteo, considerando lluvias en los dos o tres días.",
+      "densidad": "Tall growth habit: 2,000 to 2,500 coffee plants/ha (2.5 x 2.0 m or 2.0 x 2.0 m). Short growth habit: more than 3,000 coffee plants/ha (2.5 x 1.25 m, 2.0 x 1.5 m or 1.75 x 1.75 m). Double planting can be used. Nursery plants of 8 to 10 months, 25 to 30 cm tall.",
+      "fertilizacion": "Mix of 100 kg of urea, 50 kg of DAP and 75 kg of KCl: year 1, 50 g per plant every three months; year 2, three applications of 100 g per plant; year 3, three applications of 150 g per plant of the mix with 100 kg of KCl. In production (35 to 55 % shade): March-April, 100 g per plant of 100 kg of urea + 55 kg of DAP + 80 kg of KCl + 66 kg of K-Mag; June-July, 80 g of 100 kg of urea + 55 kg of DAP + 76 kg of KCl + 66 kg of K-Mag; August-September, 60 g of urea per plant. Cover the fertilizer in the tree basin or the drip area, considering rains within the next two or three days.",
       "riego": null,
       "plagas": [
-        "Broca del grano de café (Hypothenemus hampei)",
-        "Barrenadores del tallo y ramas (Plagiohammus maculosus, P. mexicanus y P. spinipennis)"
+        "Coffee berry borer (Hypothenemus hampei)",
+        "Stem and branch borers (Plagiohammus maculosus, P. mexicanus and P. spinipennis)"
       ],
       "enfermedades": [
-        "Roya del cafeto (Hemileia vastatrix)",
-        "Nematodos (Meloidogyne paranaensis, corchosis; Meloidogyne incognita)"
+        "Coffee leaf rust (Hemileia vastatrix)",
+        "Nematodes (Meloidogyne paranaensis, corky root; Meloidogyne incognita)"
       ],
-      "malezas": "Cafetales jóvenes: de seis a ocho limpias por año. En producción: dos a tres chapeos al año a unos 10 cm del suelo, en marzo, junio-julio y octubre-noviembre, sin dejar el suelo desnudo, sobre todo en ladera.",
-      "cosecha": "Corte selectivo solo de frutos maduros, de color rojo intenso (y algunos sobremaduros púrpura); los verdes o pintones bajan la calidad en taza y los secos se procesan aparte. Prueba de flotación antes de despulpar, despulpadoras limpias y calibradas, grano a no más de 45 °C al secar y secado hasta 10–12 % de humedad; guardar en costales con bolsa hermética en lugar limpio, seco y ventilado. Puebla promedia unos 12.5 quintales/ha; con el paquete tecnológico, cerca de 10 t/ha de café cereza (más de 30 quintales de pergamino seco).",
+      "malezas": "Young coffee plantations: six to eight weedings per year. In production: two to three brush clearings (slashings) per year at about 10 cm above the ground, in March, June-July and October-November, without leaving the soil bare, especially on slopes.",
+      "cosecha": "Selective picking of ripe fruit only, deep red (and some overripe purple ones); green or turning fruit lowers cup quality and dry fruit is processed separately. Flotation test before pulping, clean and calibrated pulpers, grain at no more than 45 °C when drying and dried to 10–12 % moisture; store in sacks with an airtight liner in a clean, dry and ventilated place. Puebla averages about 12.5 quintals/ha; with the technology package, close to 10 t/ha of cherry coffee (more than 30 quintals of dry parchment).",
       "cuidados": [
-        "Preferir variedades resistentes o tolerantes a la roya (Oro Azteca, Costa Rica 95, Sarchimor T-5296, Marsellesa, IAPAR-59).",
-        "Mantener sombra de 40 a 60 % con unos 133 árboles/ha y regularla entre marzo y mayo; en los dos primeros años usar sombra temporal (plátano, gandul, crotalaria y otras).",
-        "Contra la broca: recoger los frutos que quedan en la planta y el suelo tras la cosecha, poner 16 trampas/ha con atrayente de etanol y metanol cambiado cada 15 días y aplicar Beauveria bassiana por la tarde o en días nublados cuando el fruto tenga 90 a 120 días. No se recomienda el control químico de la broca.",
-        "Hacer podas de rejuvenecimiento por franjas, entre marzo y mayo, para no cortar la producción.",
-        "Contra nematodos, injertar sobre portainjertos resistentes de Coffea canephora (injerto \"Reyna\") y aportar abonos orgánicos.",
-        "Preparar el terreno entre febrero y mayo con desmonte selectivo, sin quemas, y plantar en curvas a nivel en pendientes de más de 15 %."
+        "Prefer rust-resistant or tolerant varieties (Oro Azteca, Costa Rica 95, Sarchimor T-5296, Marsellesa, IAPAR-59).",
+        "Maintain 40 to 60 % shade with about 133 trees/ha and regulate it between March and May; in the first two years use temporary shade (banana, pigeon pea, sunn hemp and others).",
+        "Against the berry borer: collect the fruit left on the plant and the ground after harvest, set 16 traps/ha with an ethanol and methanol attractant replaced every 15 days and apply Beauveria bassiana in the afternoon or on cloudy days when the fruit is 90 to 120 days old. Chemical control of the berry borer is not recommended.",
+        "Do rejuvenation pruning in strips, between March and May, so as not to interrupt production.",
+        "Against nematodes, graft onto resistant Coffea canephora rootstocks (\"Reyna\" graft) and add organic fertilizers.",
+        "Prepare the land between February and May with selective clearing, without burning, and plant on contour lines on slopes above 15 %."
       ],
       "costos": [
         {
-          "modalidad": "temporal",
+          "modalidad": "rainfed",
           "costo_total_ha": 64523,
           "rendimiento": 8000,
           "unidad_rendimiento": "kg/ha",
@@ -382,11 +382,11 @@
           "relacion_bc": 2.3
         }
       ],
-      "nota": "El cuadro de costos es de un ciclo anual de un cafetal en producción; no suma la preparación del terreno ni el establecimiento. El precio ($18.5/kg) es el promedio de la cosecha 2024/2025; el cuadro no dice si el rendimiento de 8,000 kg/ha es de café cereza. La ficha no tiene sección de riego (el cultivo es de temporal). Coffea arabica sin autor en el extraído; se completó con \"L.\" según el texto de la sección de región.",
+      "nota": "The cost table is for one annual cycle of a coffee plantation in production; it does not add up land preparation or establishment. The price ($18.5/kg) is the average of the 2024/2025 harvest; the table does not say whether the yield of 8,000 kg/ha is cherry coffee. The ficha has no irrigation section (the crop is rainfed). Coffea arabica had no author in the extracted text; it was completed with \"L.\" according to the text of the region section.",
       "revisado": false
     },
     {
-      "ficha": "Caña de azúcar",
+      "ficha": "Sugarcane",
       "cientifico": "Saccharum officinarum L.",
       "paginas": [
         60,
@@ -395,12 +395,12 @@
       "cultivo_ids": [
         "cana-de-azucar"
       ],
-      "tipo_cultivo": "perenne",
+      "tipo_cultivo": "perennial",
       "modalidad": null,
       "ciclo": "PER",
-      "region": "Zonas de abasto de los ingenios Atencingo (Chietla) y Calípam (Coxcatlán), cálidas subhúmedas, con 800 a 1,000 mm de lluvia en Atencingo y 450 a 600 mm en Calípam, por lo que dependen del riego. Óptimo de 26 a 30 °C. Terrenos con buen drenaje, de preferencia francos y con más de 2 % de materia orgánica.",
+      "region": "Supply zones of the Atencingo (Chietla) and Calípam (Coxcatlán) sugar mills, warm subhumid, with 800 to 1,000 mm of rainfall in Atencingo and 450 to 600 mm in Calípam, so they depend on irrigation. Optimum of 26 to 30 °C. Well-drained land, preferably loam and with more than 2 % organic matter.",
       "siembra": {
-        "texto": "La mejor época en la región Centro de Puebla es de julio a septiembre.",
+        "texto": "The best time in the Central region of Puebla is from July to September.",
         "meses": [
           7,
           8,
@@ -415,36 +415,36 @@
         "MEX 94-8"
       ],
       "hibridos_comerciales": [],
-      "densidad": "Cordón sencillo: estacas de 50 a 60 cm con 4 a 5 yemas, 8 a 10 t de semilla/ha. Cordón doble: 12 a 14 t/ha. Mateado: 12 yemas por metro (a 15 cm) en surcos de 1.2 a 1.4 m, 4 a 6 t/ha. Vitroplantas: 1.4 x 0.70 m, 10,000 a 12,000 plántulas/ha. Surcos de 1.20 a 1.30 m con cosecha manual y más de 1.40 m con cosecha mecánica (1.4 a 1.5 m en temporal).",
-      "fertilizacion": "La definen los comités técnicos de cada ingenio. Atencingo: 500 kg/ha de 16-16-16 más 500 kg/ha de sulfato de amonio. Calípam: gallinaza o estiércol vacuno con 20-10-20 y urea. Aplicar todo el fósforo, el potasio y los correctores (sulfato ferroso, 25 kg/ha, contra clorosis férrica) a la siembra o al destronque, y el resto del nitrógeno a los 60 o 90 días. Se sugiere 75 % de fertilización química y 25 % con biofertilizantes (micorrizas y rizobacterias).",
-      "riego": "Atencingo: hasta 12 riegos en plantilla y 8 en socas y resocas. Calípam: 8 a 10 riegos al año por gravedad en terrazas. Suspender todo riego 60 días antes de la cosecha para concentrar la sacarosa.",
+      "densidad": "Single row: cuttings of 50 to 60 cm with 4 to 5 buds, 8 to 10 t of seed cane/ha. Double row: 12 to 14 t/ha. Clump planting: 12 buds per meter (at 15 cm) in rows 1.2 to 1.4 m apart, 4 to 6 t/ha. Tissue-culture plantlets: 1.4 x 0.70 m, 10,000 to 12,000 plantlets/ha. Rows 1.20 to 1.30 m apart with hand harvest and more than 1.40 m with mechanical harvest (1.4 to 1.5 m rainfed).",
+      "fertilizacion": "Defined by the technical committees of each sugar mill. Atencingo: 500 kg/ha of 16-16-16 plus 500 kg/ha of ammonium sulfate. Calípam: poultry manure or cattle manure with 20-10-20 and urea. Apply all the phosphorus, potassium and correctives (ferrous sulfate, 25 kg/ha, against iron chlorosis) at planting or at stubble shaving, and the rest of the nitrogen at 60 or 90 days. 75 % chemical fertilization and 25 % biofertilizers (mycorrhizae and rhizobacteria) is suggested.",
+      "riego": "Atencingo: up to 12 irrigations in plant cane and 8 in ratoon and second ratoon. Calípam: 8 to 10 gravity irrigations per year on terraces. Stop all irrigation 60 days before harvest to concentrate the sucrose.",
       "plagas": [
-        "Gusano barrenador del tallo (Diatraea spp. y Eoreuma loftini)",
-        "Picudo de la cepa",
-        "Nematodos (Meloidogyne javanica y Pratylenchus zeae)",
-        "Mosca pinta (Aeneolamia postica)",
-        "Gusano falso medidor"
+        "Stalk borer (Diatraea spp. and Eoreuma loftini)",
+        "Sugarcane weevil (stool weevil)",
+        "Nematodes (Meloidogyne javanica and Pratylenchus zeae)",
+        "Spittlebug (Aeneolamia postica)",
+        "Cane looper"
       ],
       "enfermedades": [
-        "Marchitez vascular o secadera (Fusarium sacchari, Fusarium verticillioides)",
-        "Carbón (Ustilago scitaminea)",
-        "Royas (Puccinia spp.)",
-        "Mosaico",
-        "Hoja amarilla"
+        "Vascular wilt or dieback (Fusarium sacchari, Fusarium verticillioides)",
+        "Smut (Ustilago scitaminea)",
+        "Rusts (Puccinia spp.)",
+        "Mosaic",
+        "Yellow leaf"
       ],
-      "malezas": "Combinar limpias manuales (machete o azadón), cultivos mecánicos y control químico pre o postemergente según la etapa del cultivo y el tipo de maleza (hoja ancha, hoja angosta, gramíneas y ciperáceas).",
-      "cosecha": "Mayormente manual con alce mecánico; la quema antes del corte sigue siendo común porque 85 % de la superficie no permite cosecha mecanizada, y la cosecha en verde se limita al 15 % plano y mecanizado. Después del corte, alce, acarreo y flete al ingenio. Rendimiento esperado de 110 t/ha.",
+      "malezas": "Combine hand weeding (machete or hoe), mechanical cultivation and pre- or post-emergence chemical control according to the crop stage and the type of weed (broadleaf, narrow-leaf, grasses and sedges).",
+      "cosecha": "Mostly by hand with mechanical loading; burning before cutting is still common because 85 % of the area does not allow mechanized harvest, and green-cane harvest is limited to the 15 % that is flat and mechanized. After cutting: loading, hauling and freight to the mill. Expected yield of 110 t/ha.",
       "cuidados": [
-        "Plantar de julio a septiembre con semilla desinfectada de semilleros de 8 a 10 meses.",
-        "Resembrar cuando las fallas de germinación lleguen a cerca de 10 %, y dar uno o dos pasos de cultivo a los 50–60 y 90 días.",
-        "En socas, juntar el tlazole sin quemarlo y destroncar al ras del suelo para que los brotes salgan vigorosos.",
-        "Suspender el riego 60 días antes de la cosecha.",
-        "Contra el barrenador, usar trampas con feromonas y liberar Trichogramma pretiosum; contra el picudo de la cepa, trampas de trozos de caña con melaza.",
-        "Prevenir enfermedades con variedades resistentes (como CP 72-2086), terrenos que drenen bien y cultivo libre de malezas; contra la secadera, aplicar Trichoderma 25 días después de la siembra o el destronque."
+        "Plant from July to September with disinfected seed cane from 8- to 10-month-old nurseries.",
+        "Replant when germination gaps reach about 10 %, and give one or two cultivation passes at 50–60 and 90 days.",
+        "In ratoons, gather the cane trash (tlazole) without burning it and shave the stubble level with the ground so that shoots come out vigorous.",
+        "Stop irrigation 60 days before harvest.",
+        "Against the borer, use pheromone traps and release Trichogramma pretiosum; against the stool weevil, traps made of cane pieces with molasses.",
+        "Prevent diseases with resistant varieties (such as CP 72-2086), well-draining land and a weed-free crop; against dieback, apply Trichoderma 25 days after planting or stubble shaving."
       ],
       "costos": [
         {
-          "modalidad": "riego",
+          "modalidad": "irrigated",
           "costo_total_ha": 85810,
           "rendimiento": 110,
           "unidad_rendimiento": "t/ha",
@@ -453,7 +453,7 @@
           "relacion_bc": 1.03
         }
       ],
-      "nota": "El cuadro de costos es de caña en plantilla e incluye $4,000 de jornales de riego; según la agenda, para temporal estricto hay que restar ese concepto. El precio es de $800 por tonelada. La ficha cubre riego y temporal, por eso la modalidad va en null.",
+      "nota": "The cost table is for plant cane and includes $4,000 of irrigation labor; according to the agenda, for strictly rainfed production that item must be subtracted. The price is $800 per ton. The ficha covers irrigated and rainfed, which is why the modalidad is null.",
       "revisado": false
     }
   ]

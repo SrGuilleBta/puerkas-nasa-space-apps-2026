@@ -193,7 +193,8 @@ def biblioteca(clave: str | None = None, buscar: str | None = None) -> list[dict
             pass  # municipio válido sin registros agrícolas: catálogo completo sin marcar
     filas = []
     for c in cat:
-        if buscar and _normal(buscar) not in _normal(c["nombre"]):
+        # El nombre está en inglés; el id (slug de SIAP) sigue en español, así que se busca en ambos.
+        if buscar and _normal(buscar) not in _normal(c["nombre"]) and _normal(buscar) not in c["id"].replace("-", " "):
             continue
         loc = locales.get(c["id"])
         filas.append({

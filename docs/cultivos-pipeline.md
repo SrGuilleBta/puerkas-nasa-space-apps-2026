@@ -200,6 +200,31 @@ Pendientes conocidos del extractor:
 - Los valores de costos parseados por reglas fallan seguido. Los resúmenes toman las cifras de la
   tabla cruda y dejan en `null` lo que no cuadra; muchos cuadros impresos traen errores de suma.
 
+## Idioma: los datos de Cultivos están en inglés
+
+El código, los comentarios y las llaves de los JSON están en español; **los valores que ve el usuario
+están en inglés** (nombres de cultivo, textos de manejo, etiquetas, alertas, niveles y mensajes de error).
+
+| Qué | Cómo se traduce |
+|---|---|
+| Resúmenes INIFAP (`data/inifap/cuidados/<estado>.json`) y `pipeline/cultivos/curado.json` | Traducidos una vez (con Claude, con las reglas de [instrucciones_traduccion.md](../backend/pipeline/cultivos/instrucciones_traduccion.md)) y guardados en el repo. Se comparan con el original usando `python -m pipeline.cultivos.validar_traduccion ORIGINAL.json TRADUCIDO.json` (estructura, cifras, campos de código y textos que sigan en español). |
+| Lo que genera la pipeline al arrancar (chips, alertas, razones de rotación, niveles, fuentes) | Plantillas ya escritas en inglés en el código. |
+| Nombres de cultivo, tipos y unidades de SIAP | [glosario_en.json](../backend/pipeline/cultivos/glosario_en.json): los 399 cultivos, 10 tipos, 6 unidades y ~250 términos agronómicos que deben respetar las traducciones. Los lee `traduccion.py`. |
+| Un cultivo nuevo que no esté en el glosario | `traduccion.py` usa DeepL si hay `DEEPL_API_KEY` en `.env` (opcional; guarda el resultado en `traducciones_cache.json`). Sin llave, deja el nombre en español y lo lista al final de la corrida para agregarlo al glosario. |
+
+Valores fijos de los JSON: `modalidad` = `irrigated` / `rainfed`; `ciclo` = `OI` / `PV` / `PER` (códigos,
+no se traducen); niveles `low` / `medium` / `high`; `nivel` de ubicación = `municipality` / `state` /
+`national`; etiquetas `positive` / `negative` / `alert`. Los ids de cultivo (`maiz-grano`) y las llaves
+no cambian. Los nombres propios (variedades, híbridos, lugares, INIFAP, SIAP) se conservan.
+
+## Códigos EPPO
+
+Cada cultivo del catálogo trae `eppocode` (código EPPO de la especie; `null` si no tiene). Las reglas
+están en [eppo.json](../backend/pipeline/cultivos/eppo.json): un cultivo SIAP recibe el código si su nombre
+contiene, como palabra completa, alguno de los `nombres` de la regla y ninguno de los `excluir`. Así
+"Semilla de maíz grano", "Elote" y "Maíz forrajero en verde" reciben `ZEAMS`, pero "Tomate verde" no
+recibe el del jitomate. Hoy 90 de los 399 cultivos tienen código.
+
 ## Limitaciones y pendientes
 
 1. **GAEZ** (idoneidad biofísica y brecha de rendimiento): requiere bajar los rásters de S3 y hacer
