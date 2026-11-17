@@ -1,10 +1,11 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from app import db
+from app import config, db
 from app.routers import clima, cultivos, mercado, noticias, planificador, principal, suelo, ubicaciones
 from app.services import catalogo_cultivos
 from app.services.planificador import ErrorPlanificador
@@ -33,10 +34,20 @@ app.include_router(clima.router)
 app.include_router(suelo.router)
 app.add_exception_handler(ErrorPlanificador, planificador.error_planificador)
 
+METODOS_DE_LECTURA = {"GET", "HEAD", "OPTIONS"}
+
+
+@app.middleware("http")
+async def bloquear_escritura(request: Request, call_next):
+    """En modo solo lectura rechaza cualquier POST, PUT, PATCH o DELETE de /api, antes de llegar a las rutas."""
+    if config.SOLO_LECTURA and request.url.path.startswith("/api") and request.method not in METODOS_DE_LECTURA:
+        return JSONResponse({"detail": "This demo is read-only: changes are disabled."}, status_code=403)
+    return await call_next(request)
+
 
 @app.get("/api/health")
 def health():
-    return {"status": "ok", "service": "backend"}
+    return {"status": "ok", "service": "backend", "readOnly": config.SOLO_LECTURA}
 
 
 # El frontend compilado (React) vive en /code/static dentro del contenedor.

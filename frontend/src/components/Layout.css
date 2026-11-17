@@ -4,6 +4,15 @@
   padding: 16px 16px 40px;
 }
 
+.layout__demo {
+  margin: 0 0 12px;
+  padding: 8px 14px;
+  border: 1px solid var(--ambar);
+  border-radius: 12px;
+  background: rgba(242, 180, 65, 0.16);
+  font-size: 0.85rem;
+}
+
 .layout__barra {
   display: flex;
   align-items: center;

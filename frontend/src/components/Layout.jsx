@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { obtener } from "../api/cliente.js";
 import { SECCIONES } from "../routes.js";
 import { Brote, Cerrar, Menu } from "./Iconos.jsx";
 import PlanLateral from "./PlanLateral.jsx";
@@ -7,6 +8,12 @@ import "./Layout.css";
 // `selector` es lo que va a la derecha del encabezado (el selector de ubicación).
 export default function Layout({ seccion, selector, children }) {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const [soloLectura, setSoloLectura] = useState(false);
+
+  // Si el servidor es una demo de solo lectura se avisa, para que nadie piense que los botones están rotos
+  useEffect(() => {
+    obtener("/api/health").then((s) => setSoloLectura(Boolean(s?.readOnly))).catch(() => {});
+  }, []);
 
   useEffect(() => {
     if (!menuAbierto) return;
@@ -17,6 +24,11 @@ export default function Layout({ seccion, selector, children }) {
 
   return (
     <div className="layout">
+      {soloLectura && (
+        <p className="layout__demo" role="status">
+          Read-only demo: you can explore everything, but changes (plans, plantings, places) are disabled.
+        </p>
+      )}
       <header className="layout__barra">
         <button
           type="button"

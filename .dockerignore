@@ -9,3 +9,5 @@
 **/*.db-journal
 # La imagen regenera los datos de Cultivos en el build
 backend/data/cultivos
+# Igual con Mercado: la imagen lo genera desde market_data
+backend/data/mercado
